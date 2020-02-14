@@ -34,13 +34,15 @@ Project Snoop работает на OS GNU/Linux & Android/Termux.
 
 ```bash
 $ python3 snoop.py --help
-usage: sherlock.py [-h] [--version] [--verbose] [--rank]
-                   [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--tor]
-                   [--unique-tor] [--csv] [--site SITE_NAME]
-                   [--proxy PROXY_URL] [--json JSON_FILE]
-                   [--proxy_list PROXY_LIST] [--check_proxies CHECK_PROXY]
-                   [--timeout TIMEOUT] [--print-found]
-                   USERNAMES [USERNAMES ...]
+
+usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose]
+                [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--tor]
+                [--unique-tor] [--proxy PROXY_URL] [--proxy_list PROXY_LIST]
+                [--check_proxies CHECK_PROXY] [--csv] [--json JSON_FILE]
+                [--site SITE_NAME] [--timeout --time 9] [--print-found]
+                [--no-color] [--list all] [--update Y]
+                USERNAMES [USERNAMES ...]
+
 
 Snoop: поиск никнейма по всем фронтам! (Version 1.0.0_rus)
 
