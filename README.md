@@ -1,8 +1,11 @@
 ## Snoop Project один из самых заточенных OSINT-инструментов по СНГ локации
 
-<img src="https://habrastorage.org/webt/t3/wx/n4/t3wxn4zrwqvbgrq9ffn7hqr5at8.png" />
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
 Snoop Project — это форк Sherlock Project-a и он разыскивает никнеймы в публичных данных.
+
+Различия смотри
+https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
 **В базе более 333-и сайтов, база постоянно расширяется**
 
