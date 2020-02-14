@@ -12,7 +12,7 @@ Snoop Project — это форк Sherlock Project-a и он разыскива�
 
 ```bash
 # clone the repo
-$ git clone https://
+$ git clone https://github.com/snooppr/snoop
 
 # Войти в рабочий каталог
 $ cd ~/snoop
@@ -109,6 +109,8 @@ python3 snoop.py username1 username2 username3
 ```
 
 Найденные учетные записи будут храниться в отдельном текстовом файле с соответствующим именем username1.txt...
+
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>
 
 ## Основные ошибки ложно-положительного отклика при поиске
 Cайт изменил свой ответ.
