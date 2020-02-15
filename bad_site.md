@@ -1,4 +1,4 @@
-## Snoop БД Неподдерживаемых сайтов (список), всего — 18 сайт(ов)!
+## Snoop БД Неподдерживаемых сайтов (список), всего — 17 сайт(ов)!
 1. [AngelList](https://angel.co/)
 2. [BlackPlanet](http://blackplanet.com/)
 3. [Codepen](https://codepen.io/)
@@ -8,12 +8,11 @@
 7. [Furaffinity](https://www.furaffinity.net)
 8. [Imgur](https://imgur.com/)
 9. [Khan Academy](https://www.khanacademy.org/)
-10. [PayPal](https://www.paypal.me/)
-11. [Pling](https://www.pling.com/)
-12. [PowerShell Gallery](https://www.powershellgallery.com)
-13. [Rate Your Music](https://rateyourmusic.com/)
+10. [Linkedin.com](https://www.linkedin.com/)
+11. [PayPal](https://www.paypal.me/)
+12. [Pling](https://www.pling.com/)
+13. [PowerShell Gallery](https://www.powershellgallery.com)
 14. [Shockwave](http://www.shockwave.com/)
 15. [StreamMe](https://www.stream.me/)
 16. [Teknik](https://teknik.io/)
 17. [Xss](https://xss.is/)
-18. [Linkedin.com](https://www.linkedin.com/)
