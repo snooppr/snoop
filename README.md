@@ -28,7 +28,7 @@ $ python3 -m pip install -r requirements.txt
 # Для работы Snoop на Android-е
 в Termux доставить "libcrypt"
 ```
-Project Snoop работает на OS GNU/Linux & Android/Termux. 
+Project Snoop работает на OS GNU/Linux & Android/Termux (На OS Windows доступен лишь частичный кривой функционал). 
 
 ## Использование
 

@@ -39,7 +39,7 @@ parser.add_argument("--rank","-r",
                     )
 args = parser.parse_args()
 
-with open("bad_data.json", "r") as bad_file:
+with open("bad_data.json", "r", encoding="utf8") as bad_file:
     data1 = json.load(bad_file)
 
 with open("bad_site.md", "w") as bad_site:
@@ -82,7 +82,7 @@ with open("bad_data.json", "w") as bad_file:
     
     
  
-with open("data.json", "r") as data_file:
+with open("data.json", "r", encoding="utf8") as data_file:
     data = json.load(data_file)
 
 with open("sites.md", "w") as site_file:

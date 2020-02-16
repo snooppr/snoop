@@ -5,7 +5,7 @@ print ("""
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m0.1\033[31m_rus\033[0m\n
+                         _|     \033[37mv1.\033[34m0.2\033[31m_rus\033[0m\n
 """)
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n nano user.txt\n")
@@ -32,7 +32,7 @@ from torrequest import TorRequest
 from load_proxies import load_proxies_from_csv, check_proxy_list
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.0.1_rus"
+__version__ = "1.0.2_rus"
 
 date = datetime.datetime.today()
 
@@ -433,7 +433,7 @@ def main():
                      f"\033[37m{cop}\033[0m\n"
 
 
-    with open('sites.md', 'r') as support:
+    with open('sites.md', 'r', encoding="utf8") as support:
         sup = support.read()
     sup_color = f"\033[37m{sup}\033[0m"
     
