@@ -424,7 +424,7 @@ def main():
     # Colorama module's initialization.
     init(autoreset=True)
     
-    with open('COPYRIGHT', 'r') as copyright:
+    with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
 
     version_snoop = f"%(prog)s: {__version__}\n" +  \
