@@ -2785,7 +2785,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Wikipedia": {
-    "errorMsg": "If a page was recently created here, it may not be visible yet because of a delay in updating the database",
+    "errorMsg": "is not registered",
     "errorType": "message",
     "rank": 0,
     "url": "https://www.wikipedia.org/wiki/User:{}",
