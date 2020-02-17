@@ -2795,14 +2795,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "YandexCollection": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://yandex.ru/collections/user/{}/",
-    "urlMain": "https://yandex.ru/collections/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "YandexMarket": {
     "errorMsg": "\u0422\u0443\u0442 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
     "errorType": "message",
