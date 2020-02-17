@@ -15,6 +15,7 @@ import csv
 import subprocess
 import webbrowser
 import json
+import locale
 import os
 import platform
 import re
@@ -30,6 +31,9 @@ from colorama import Fore, Style, init
 from requests_futures.sessions import FuturesSession
 from torrequest import TorRequest
 from load_proxies import load_proxies_from_csv, check_proxy_list
+
+if sys.platform == 'win32':
+    locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
 __version__ = "1.0.3_rus"
