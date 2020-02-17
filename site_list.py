@@ -76,12 +76,6 @@ sorted_json_data_bad = json.dumps(data1, indent=2, sort_keys=True)
 with open("bad_data.json", "w") as bad_file:
     bad_file.write(sorted_json_data_bad)
 
-    
-    
-    
-    
-    
- 
 with open("data.json", "r", encoding="utf8") as data_file:
     data = json.load(data_file)
 
