@@ -52,7 +52,7 @@ with open("bad_site.md", "w") as bad_site:
         url_main_bad = data1.get(social_network_bad).get("urlMain")
         data1.get(social_network_bad)["rank"] = 0
         if args.rank:
-            th1 = threading.Thread(target=get_rank, args=(url_main_bad, data.get(social_network_bad)))
+            th1 = threading.Thread(target=get_rank, args=(url_main_bad, data1.get(social_network_bad)))
         else:
             th1 = None
         pool.append((social_network_bad, url_main_bad, th1))
@@ -76,12 +76,6 @@ sorted_json_data_bad = json.dumps(data1, indent=2, sort_keys=True)
 with open("bad_data.json", "w") as bad_file:
     bad_file.write(sorted_json_data_bad)
 
-    
-    
-    
-    
-    
- 
 with open("data.json", "r", encoding="utf8") as data_file:
     data = json.load(data_file)
 

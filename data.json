@@ -330,6 +330,14 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Buymeacoffee": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://www.buymeacoffee.com/{}",
+    "urlMain": "https://www.buymeacoffee.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "BuzzFeed": {
     "errorType": "status_code",
     "rank": 0,
@@ -2749,7 +2757,7 @@
     "rank": 0,
     "url": "https://www.wikipedia.org/wiki/User:{}",
     "urlMain": "https://www.wikipedia.org/",
-    "username_claimed": "Hoadlck",
+    "username_claimed": "Zanuda_petro",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Windy": {
@@ -2784,14 +2792,6 @@
     "rank": 0,
     "url": "https://profiles.wordpress.org/{}/",
     "urlMain": "https://wordpress.org/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "YandexCollection": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://yandex.ru/collections/user/{}/",
-    "urlMain": "https://yandex.ru/collections/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -2849,14 +2849,6 @@
     "url": "https://www.zomato.com/pl/{}/foodjourney",
     "urlMain": "https://www.zomato.com/",
     "username_claimed": "deepigoyal",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "buymeacoffee": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://www.buymeacoffee.com/{}",
-    "urlMain": "https://www.buymeacoffee.com",
-    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   }
 }
