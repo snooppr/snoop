@@ -10,16 +10,17 @@ _____/ _|  _|\___/ \___/  .__/
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n nano user.txt\n")
 
-import datetime
 import csv  
-import subprocess
-import webbrowser
+import datetime
 import json
 import os
 import platform
-import re
-import sys
 import random
+import re
+import subprocess
+import webbrowser
+import sys
+
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from concurrent.futures import ThreadPoolExecutor
 from time import time
