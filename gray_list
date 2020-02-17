@@ -44,7 +44,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
 
 
-##СС.17/02/2019 (Ложное срабатывание, находит несуществующие username)
+##СС.17/02/2019 (Ложное срабатывание, находит несуществующие username, ответ верный при badusername, срабатвает, возможно captcha)
   "YandexCollection": {
     "errorType": "status_code",
     "rank": 0,
