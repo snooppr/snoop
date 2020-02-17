@@ -26,7 +26,7 @@ $ cd ~/snoop
 $ python3 -m pip install -r requirements.txt
 
 # Для работы Snoop на Android-е
-в Termux доставить "libcrypt"
+в Termux доставить "libcrypt" (возможно нужно будет доставить ещё: libxml2; libxslt; и clang [Комментарий с Habr-a QtRoS])
 ```
 Project Snoop работает на OS GNU/Linux & Android/Termux (На OS Windows доступен лишь частичный кривой функционал). 
 
