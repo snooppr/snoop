@@ -330,6 +330,14 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Buymeacoffee": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://www.buymeacoffee.com/{}",
+    "urlMain": "https://www.buymeacoffee.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "BuzzFeed": {
     "errorType": "status_code",
     "rank": 0,
@@ -2849,14 +2857,6 @@
     "url": "https://www.zomato.com/pl/{}/foodjourney",
     "urlMain": "https://www.zomato.com/",
     "username_claimed": "deepigoyal",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "buymeacoffee": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://www.buymeacoffee.com/{}",
-    "urlMain": "https://www.buymeacoffee.com",
-    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   }
 }
