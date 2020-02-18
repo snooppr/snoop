@@ -31,8 +31,9 @@ $ pip3 install module
 
 # Работа Snoop на Android-е
 Смотри Readme Snoop в ветке termux
-https://github.com/snooppr/snoop/tree/termux
 ```
+https://github.com/snooppr/snoop/tree/termux
+
 Project Snoop работает на OS GNU/Linux & Android/termux (На OS Windows доступен лишь частичный кривой функционал). 
 
 ## Использование
@@ -103,7 +104,7 @@ optional arguments:
                         значение при хорошем интернет соединении и нескольких
                         'упавших' сайтов = 9с.
   --print-found         Выводить на печать только найденные аккаунты
-  --no-color, -n       Монохромный терминал, не использовать цвета в url
+  --no-color, -n        Монохромный терминал, не использовать цвета в url
                         Отключить звук  
   --list all            Вывод на дисплей БД поддерживаемых сайтов
   --update Y            Обновить Snoop
