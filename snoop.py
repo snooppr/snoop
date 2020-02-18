@@ -39,7 +39,7 @@ if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.0.6_rus"
+__version__ = "1.0.6_rus Ветка GNU/Linux"
 
 date = datetime.datetime.today()
 
