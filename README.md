@@ -149,12 +149,10 @@ Mamochki;
 $ sudo nano /etc/ssl/openssl.cnf
 
 # Изменить в самом низу файла строки:
-[MinProtocol = TLSv1.2
-CipherString = DEFAULT @ SECLEVEL = 2]
+[CipherString = DEFAULT @ SECLEVEL = 2]
 
 на
 
-[MinProtocol = TLSv1.0
-CipherString = DEFAULT @ SECLEVEL = 1]
+[CipherString = DEFAULT @ SECLEVEL = 1]
 ```
 https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1
