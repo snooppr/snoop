@@ -1,3 +1,6 @@
+Ветка Snoop master (GNU/Linux)
+=============================
+
 ## Snoop Project один из самых заточенных OSINT-инструментов по СНГ локации
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
@@ -7,7 +10,7 @@ Snoop Project — это форк Sherlock Project-a и он разыскива�
 Различия смотри
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
-**В базе 348 сайтов, база постоянно расширяется**
+**В базе 347 сайтов, база постоянно расширяется**
 
 ## Установка
 
@@ -28,10 +31,9 @@ $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Либо установить все зависимости из 'requirements.txt' в ручную через
 $ pip3 install module
-
-# Работа Snoop на Android-е
-Смотри Readme Snoop в ветке termux
 ```
+## Работа Snoop на Android-е
+Смотри ветку Termux
 https://github.com/snooppr/snoop/tree/termux
 
 Project Snoop работает на OS GNU/Linux & Android/termux (На OS Windows доступен лишь частичный кривой функционал). 
