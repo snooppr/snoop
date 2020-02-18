@@ -24,19 +24,16 @@ $ cd ~/snoop
 $ apt-get update && apt-get install python3
 
 # Установить зависимости 'requirements'
+$ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
+# Либо установить все зависимости из 'requirements.txt' в ручную через
+$ pip3 install module
 
 # Работа Snoop на Android-е
-#В Termux доставить "libcrypt & Python3" 
-$ apt update && pkg upgrade && pkg install python libcrypt
-#Возможно, нужно будет доставить ещё: libxml2; libxslt; и clang [Комментарий с Habr-a QtRoS]
-
-# Чтобы иметь возможность обновлять Snoop на Android/Termux
-$ git config --global user.email "you@example.com"
-$ git config --global user.name "username"
-$ python3 snoop.py --update y
+Смотри Readme Snoop в ветке termux
+https://github.com/snooppr/snoop/tree/termux
 ```
-Project Snoop работает на OS GNU/Linux & Android/Termux (На OS Windows доступен лишь частичный кривой функционал). 
+Project Snoop работает на OS GNU/Linux & Android/termux (На OS Windows доступен лишь частичный кривой функционал). 
 
 ## Использование
 
@@ -106,7 +103,8 @@ optional arguments:
                         значение при хорошем интернет соединении и нескольких
                         'упавших' сайтов = 9с.
   --print-found         Выводить на печать только найденные аккаунты
-  --no-color            Монохромный терминал, не использовать цвета в url
+  --no-color, -n       Монохромный терминал, не использовать цвета в url
+                        Отключить звук  
   --list all            Вывод на дисплей БД поддерживаемых сайтов
   --update Y            Обновить Snoop
 ```
@@ -149,10 +147,10 @@ Mamochki;
 $ sudo nano /etc/ssl/openssl.cnf
 
 # Изменить в самом низу файла строки:
-[CipherString = DEFAULT @ SECLEVEL = 2]
+[CipherString = DEFAULT@SECLEVEL=2]
 
 на
 
-[CipherString = DEFAULT @ SECLEVEL = 1]
+[CipherString = DEFAULT@SECLEVEL=1]
 ```
 https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1

@@ -11,6 +11,7 @@
     "username_claimed": "JennyKrafts",
     "username_unclaimed": "noonewouldeverusethis7"
     
+    
 #БС.16/02/2019 аномальное поведение    
   "Fanpop": {
     "errorType": "response_url",
@@ -30,6 +31,7 @@
     "urlMain": "https://pixabay.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
+
 
 #CС.16/02/2019 Статус 403 ("errorType": "status_code" — не находит ники; errorMsg — положительные срабатывания)
   "Pexels": {
@@ -53,6 +55,18 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
 
+
+##ЧС.18/02/2019 (Долгий ответ от сайта, ступорит Snoop)
+  "Zomato": {
+    "errorType": "status_code",
+    "headers": {
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "rank": 0,
+    "url": "https://www.zomato.com/pl/{}/foodjourney",
+    "urlMain": "https://www.zomato.com/",
+    "username_claimed": "deepigoyal",
+    "username_unclaimed": "noonewouldeverusethis7"
 
 
     

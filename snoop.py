@@ -5,7 +5,7 @@ print ("""
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m0.5\033[31m_rus\033[0m\n
+                         _|     \033[37mv1.\033[34m0.6\033[31m_rus\033[0m\n
 """)
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n nano user.txt\n")
@@ -33,11 +33,13 @@ from requests_futures.sessions import FuturesSession
 from torrequest import TorRequest
 from load_proxies import load_proxies_from_csv, check_proxy_list
 
+from playsound import playsound
+
 if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.0.5_rus"
+__version__ = "1.0.6_rus"
 
 date = datetime.datetime.today()
 
@@ -89,6 +91,7 @@ def print_error(err, errstr, var, verbose=False, color=True):
             Fore.WHITE + "]" +
             Fore.RED + f" {errstr}" +
             Fore.YELLOW + f" {err if verbose else var}")
+        playsound('err.wav')
     else:
         print(f"[-] {errstr} {err if verbose else var}")
 
@@ -523,9 +526,10 @@ def main():
                         action="store_true", dest="print_found_only", default=False,
                         help="Выводить на печать только найденные аккаунты"
                         )
-    parser.add_argument("--no-color",
+    parser.add_argument("--no-color", "-n",
                         action="store_true", dest="no_color", default=False,
-                        help="Монохромный терминал, не использовать цвета в url"
+                        help="Монохромный терминал, не использовать цвета в url\n"
+                             "Отключить звук"
                         )                        
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
@@ -761,8 +765,10 @@ def main():
                                      results[site]['response_time_ms']
                                      ]
                                     )
-
-
+                                    
+    if args.no_color==False:
+        playsound('end.wav')
+                    
 if __name__ == "__main__":
     main()
     
@@ -770,6 +776,3 @@ if __name__ == "__main__":
 print(Fore.WHITE + "└──╼Дата выполнения этого поискового запроса:", 
 date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.\n"))   
 print("\033[37m\033[44m{}".format("Сублицензия: The MIT License"))
-
-
-

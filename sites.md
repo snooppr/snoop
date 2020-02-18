@@ -1,4 +1,4 @@
-## Snoop БД поддерживаемых сайтов (список), всего — 348 сайт(ов)!
+## Snoop БД поддерживаемых сайтов (список), всего — 347 сайт(ов)!
 1. [2Dimensions](https://2Dimensions.com/)
 2. [3dnews](http://forum.3dnews.ru/)
 3. [4pda](https://4pda.ru/)
@@ -9,7 +9,7 @@
 8. [Academia.edu](https://www.academia.edu/)
 9. [AdobeForums](https://forums.adobe.com/)
 10. [Advego](https://advego.com/)
-11. [Akniga](https://akniga.org/profile/blue/)
+11. [Akniga](https://akniga.org/)
 12. [Alik.cz](https://www.alik.cz/)
 13. [Allmylinks](https://allmylinks.com/)
 14. [AllodsRU](https://allods.mail.ru)
@@ -346,4 +346,3 @@
 345. [YouPic](https://youpic.com/)
 346. [YouTube](https://www.youtube.com/)
 347. [Zhihu](https://www.zhihu.com/)
-348. [Zomato](https://www.zomato.com/)
