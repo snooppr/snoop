@@ -5,7 +5,7 @@
     "url": "https://1examplesite.ru/member.php?username={}",
     "urlMain": "https://1examplesite.ru",
     "username_claimed": "username",
-    "username_unclaimed": "nofindusername42244"
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebsiteName2": {
     "errorType": "response_url",
@@ -14,7 +14,7 @@
     "url": "https://2examplesite.ru/member.php?u{}",
     "urlMain": "https://2examplesite.ru",
     "username_claimed": "username",
-    "username_unclaimed": "nofindusername42244"
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebsiteName3": {
     "errorMsg": "Пользователь не найден",
@@ -24,7 +24,7 @@
     "urlMain": "https://3examplesite.ru",
     "urlProbe": "https://api.3examplesite.ru?ui/ver/",
     "username_claimed": "username",
-    "username_unclaimed": "nofindusername42244"
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebsiteName4": {
     "errorType": "response_url",
@@ -33,6 +33,6 @@
     "url": "https://4examplesite.ru/member/profile@{}",
     "urlMain": "https://4examplesite.ru/",
     "username_claimed": "username",
-    "username_unclaimed": "nofindusername42244"
+    "username_unclaimed": "noonewouldeverusethis7"
   }     
 }

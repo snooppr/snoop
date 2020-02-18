@@ -30,6 +30,11 @@ $ python3 -m pip install -r requirements.txt
 #В Termux доставить "libcrypt & Python3" 
 $ apt update && pkg upgrade && pkg install python libcrypt
 #Возможно, нужно будет доставить ещё: libxml2; libxslt; и clang [Комментарий с Habr-a QtRoS]
+
+# Чтобы иметь возможность обновлять Snoop на Android/Termux
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "username"
+$ python3 snoop.py --update y
 ```
 Project Snoop работает на OS GNU/Linux & Android/Termux (На OS Windows доступен лишь частичный кривой функционал). 
 
@@ -129,4 +134,26 @@ Cайт изменил свой ответ.
 Проблемы с openssl на стороне сервера (использование старой базы кода).
 Некоторые сайты временно недоступны, например, технические работы.
 
-Все проблемы решаемые.
+
+**Например**
+Если вы постоянно (*Debian) получаете "ошибку соединения" на этих ресурсах:
+
+[GipsysTeam;
+RamblerDating;
+Mamochki;
+и т.д.]
+
+Решение следующее (проверенное):
+```bash
+$ sudo nano /etc/ssl/openssl.cnf
+
+# Изменить в самом низу файла строки:
+[MinProtocol = TLSv1.2
+CipherString = DEFAULT @ SECLEVEL = 2]
+
+на
+
+[MinProtocol = TLSv1.0
+CipherString = DEFAULT @ SECLEVEL = 1]
+```
+https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1

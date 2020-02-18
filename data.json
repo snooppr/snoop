@@ -74,6 +74,14 @@
     "username_claimed": "jack",
     "username_unclaimed": "noonewouldeverusethis77777"
   },
+  "Advego": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://advego.com/profile/{}/author/",
+    "urlMain": "https://advego.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Akniga": {
     "errorType": "status_code",
     "rank": 0,
@@ -825,6 +833,14 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Fegatch": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "http://www.fegatch.com/users/{}/artworks/",
+    "urlMain": "http://www.fegatch.com/",
+    "username_claimed": "margaret-veret",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Filmogs": {
     "errorType": "status_code",
     "rank": 0,
@@ -900,6 +916,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Forum.md": {
+    "errorMsg": "404 - Not Found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://forum.md/ru/users/{}",
+    "urlMain": "https://forum.md/ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forum.tks": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorType": "message",
@@ -925,6 +950,23 @@
     "url": "https://www.forumhouse.ru/members/?username={}",
     "urlMain": "https://www.forumhouse.ru/",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums.drom": {
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://forums.drom.ru/member.php?username={}",
+    "urlMain": "https://forums.drom.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums.sourceruns": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://forums.sourceruns.org/u/{}/summary",
+    "urlMain": "https://forums.sourceruns.org/",
+    "username_claimed": "cubedude",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Freelance.habr": {
@@ -1302,6 +1344,14 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Kali.org.ru": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://kali.org.ru/profile/{}",
+    "urlMain": "https://kali.org.ru",
+    "username_claimed": "Drozd",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "KanoWorld": {
     "errorType": "status_code",
     "rank": 0,
@@ -1335,6 +1385,15 @@
     "url": "https://www.kongregate.com/accounts/{}",
     "urlMain": "https://www.kongregate.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Kuban.forum24": {
+    "errorMsg": "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://kuban.forum24.ru/?32-{}",
+    "urlMain": "https://kuban.forum24.ru/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kwork": {
@@ -1465,6 +1524,30 @@
     "username_claimed": "wizard",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Mama": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://mama.ru/members/{}",
+    "urlMain": "https://mama.ru",
+    "username_claimed": "irina",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Mamochki": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://mamochki.by/{}",
+    "urlMain": "https://mamochki.by/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Mamuli": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://mamuli.club/profile/{}",
+    "urlMain": "https://mamuli.club/",
+    "username_claimed": "Milypa",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Mastodon": {
     "errorType": "status_code",
     "rank": 0,
@@ -1503,6 +1586,15 @@
     "url": "https://mastodon.xyz/@{}",
     "urlMain": "https://mastodon.xyz/",
     "username_claimed": "TheKinrar",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Mdregion": {
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.mdregion.ru/forum/memberlist.php?username={}",
+    "urlMain": "https://www.mdregion.ru/",
+    "username_claimed": "Nadka",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Medium": {
@@ -1920,6 +2012,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Politforums": {
+    "errorMsg": "\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0441\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u043e\u043c",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.politforums.net/free/profile.php?showuser={}",
+    "urlMain": "https://www.politforums.net/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Polygon": {
     "errorType": "status_code",
     "rank": 0,
@@ -1996,6 +2097,14 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Raidforums": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://raidforums.com/User-{}",
+    "urlMain": "https://raidforums.com/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Rajce.net": {
     "errorMsg": "410",
     "errorType": "message",
@@ -2064,14 +2173,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Redforum": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://raidforums.com/User-{}",
-    "urlMain": "https://raidforums.com/",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Redsun.tf": {
     "errorMsg": "The specified member cannot be found",
     "errorType": "message",
@@ -2133,6 +2234,22 @@
     "url": "https://rubygems.org/profiles/{}",
     "urlMain": "https://rubygems.org/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Runitonce": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://www.runitonce.com/users/{}",
+    "urlMain": "https://www.runitonce.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Runnersworld": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://forums.runnersworld.co.uk/profile/{}",
+    "urlMain": "https://forums.runnersworld.co.uk/",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rusarmy": {
@@ -2513,6 +2630,15 @@
     "url": "https://www.tradingview.com/u/{}/",
     "urlMain": "https://www.tradingview.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Trainsim": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.trainsim.com/vbts/member.php?username={}",
+    "urlMain": "https://www.trainsim.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Trakt": {

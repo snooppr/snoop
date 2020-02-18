@@ -1,5 +1,23 @@
 ##Snoop Project 
-v1.0.4_rus
+v1.0.5_rus
+* Добавлены в БС новые ресурсы:
+Advego;
+Fegatch;
+Forum.md;
+Forums.drom;
+Forums.sourceruns;
+Kali.org.ru;
+Kuban.forum24;
+Mama;
+Mamochki;
+Mamuli;
+Mdregion;
+Politforums;
+Runitonce;
+Runnersworld;
+Trainsim.
+===================================================================================
+
 * Мелкие исправления и улучшения.
 
 * Поправленые некоторые ответы от сайтов.
