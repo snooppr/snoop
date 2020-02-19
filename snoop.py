@@ -540,7 +540,7 @@ def main():
                         )
     parser.add_argument("--list all", 
                         action="store_true", dest="listing",
-                        help="Вывод на дисплей БД поддерживаемых сайтов"
+                        help="Вывод на дисплей БД (БС+ЧС) поддерживаемых сайтов"
                         )                        
     parser.add_argument("--update Y",
                         action="store_true", dest="update", 
