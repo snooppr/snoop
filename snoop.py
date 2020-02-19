@@ -1,15 +1,5 @@
 #! /usr/bin/env python3
 
-print ("""
-  ___|                          
-\___ \  __ \   _ \   _ \  __ \  
-      | |   | (   | (   | |   | 
-_____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m0.6\033[31m_rus\033[0m\n
-""")
-
-print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n nano user.txt\n")
-
 import csv  
 import datetime
 import json
@@ -36,7 +26,19 @@ from load_proxies import load_proxies_from_csv, check_proxy_list
 from playsound import playsound
 
 if sys.platform == 'win32':
-    locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
+    locale.setlocale(locale.LC_ALL, '')
+    init()
+    
+print ("""
+  ___|                          
+\___ \  __ \   _ \   _ \  __ \  
+      | |   | (   | (   | |   | 
+_____/ _|  _|\___/ \___/  .__/  
+                         _|     \033[37mv1.\033[34m0.6\033[31m_rus\033[0m\n
+""")
+
+print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n nano user.txt\n")
+
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
 __version__ = "1.0.6_rus Ветка GNU/Linux"
@@ -741,6 +743,7 @@ def main():
         file.write("\n" f"Обновлено: ")      
         file.write(date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс."))   
         print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
+        print(Fore.WHITE + "├───Положительные результаты поиска сохранёны в:", username + ".txt")
         file.close()
 
         if args.csv == True:
@@ -771,8 +774,8 @@ def main():
                     
 if __name__ == "__main__":
     main()
-    
 
-print(Fore.WHITE + "└──╼Дата выполнения этого поискового запроса:", 
-date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.\n"))   
+
+print(Fore.WHITE + "└────╼Дата выполнения этого поискового запроса:", 
+date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.\n"))
 print("\033[37m\033[44m{}".format("Сублицензия: The MIT License"))
