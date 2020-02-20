@@ -743,7 +743,7 @@ def main():
         file.write("\n" f"Обновлено: ")      
         file.write(date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс."))   
         print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
-        print(Fore.WHITE + "├───Положительные результаты поиска сохранёны в:", username + ".txt")
+        print(Fore.WHITE + "├───Положительные результаты поиска сохранены в:", username + ".txt")
         file.close()
 
         if args.csv == True:

@@ -25,14 +25,5 @@
     "urlProbe": "https://api.3examplesite.ru?ui/ver/",
     "username_claimed": "username",
     "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "WebsiteName4": {
-    "errorType": "response_url",
-    "errorUrl": "https://4examplesite.ru/",
-    "rank": 0,
-    "url": "https://4examplesite.ru/member/profile@{}",
-    "urlMain": "https://4examplesite.ru/",
-    "username_claimed": "username",
-    "username_unclaimed": "noonewouldeverusethis7"
   }     
 }
