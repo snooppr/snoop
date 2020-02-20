@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 $ git clone https://github.com/snooppr/snoop
 
 # Войти в рабочий каталог
-$ cd ~/snoop
+$ cd snoop
 
 # Установить python3 и python3-pip, если они не установлены
 $ apt-get update && apt-get install python3
