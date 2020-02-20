@@ -732,11 +732,12 @@ def main():
                            color=not args.no_color)
 
         exists_counter = 0
+        file.write("Адрес | ресурс" + "\n\n")
         for website_name in results:
             dictionary = results[website_name]
             if dictionary.get("exists") == "yes":
                 exists_counter += 1
-                file.write(dictionary["url_user"] + "\n")
+                file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
         file.write("\n" f"Запрашиваемый объект: <")
         file.write(username)
         file.write(f"> найден: {exists_counter} раз(а)")
