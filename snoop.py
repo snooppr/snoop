@@ -34,14 +34,14 @@ print ("""
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m0.6\033[31m_rus\033[0m\n
+                         _|     \033[37mv1.\033[34m0.7\033[31m_rus\033[0m\n
 """)
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n nano user.txt\n")
 
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.0.6_rus Ветка GNU/Linux"
+__version__ = "1.0.7_rus Ветка GNU/Linux"
 
 date = datetime.datetime.today()
 

@@ -1,4 +1,31 @@
 ##Snoop Project 
+v1.0.7_rus
+* Добавлены в БС новые ресурсы:
+Autokadabra;
+Beerintheevening;
+Coj;
+Discussions.apple;
+Folloart;
+Foursquare;
+Gitmemory;
+Mixupload;
+Moscow.flamp;
+Myminifactory;
+Op.gg;
+Op.ggBR;
+Op.ggEune;
+Op.ggJP;
+Op.ggLAN;
+Op.ggLAS;
+Op.ggNA;
+Op.ggOCE;
+Op.ggRU;
+Op.ggTR;
+Pypi;
+Showme;
+Waveapps.
+===================================================================================
+
 v1.0.6_rus
 * Добавлена отдельная ветка Termux (Adroid) для Snoop.
 

@@ -55,6 +55,15 @@
     "url": "https://fotolog.com/{}",
     "urlMain": "https://fotolog.com/"
   },
+  "Imgtagram": {
+    "errorType": "response_url",
+    "errorUrl": "https://imgtagram.com/error",
+    "rank": 0,
+    "url": "https://imgtagram.com/u/{}",
+    "urlMain": "https://imgtagram.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Imgur": {
     "errorType": "status_code",
     "rank": 0,
