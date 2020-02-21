@@ -1,4 +1,37 @@
 ##Snoop Project 
+v1.0.8_rus
+* Добавлены в БС новые ресурсы:
+Antipunk;
+Ap-pro;
+Arhrock;
+B17;
+Diveforum;
+Enot-poloskun;
+Forum.ixbt;
+Forum.scuba;
+Forum.sibmama;
+Forumteam;
+Glbyh;
+Indog;
+Kharkovforum;
+Lkforum;
+Music-rock;
+Pesiq;
+Prokoni;
+Proza;
+Psychologies;
+Rcmir;
+Reibert;
+Searchengines;
+Stihi;
+Studwork;
+Uaksu;
+Vezha;
+X-xack.
+
+* всего в БС <399> сайтов.
+===================================================================================
+
 v1.0.7_rus
 * Добавлены в БС новые ресурсы:
 Autokadabra;

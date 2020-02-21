@@ -89,6 +89,14 @@
     "username_claimed": "alex",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Mehack": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://mehack.org/members/?username={}",
+    "urlMain": "https://mehack.org/members",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "PayPal": {
     "errorType": "response_url",
     "errorUrl": "https://www.paypal.com/paypalme2/404",
@@ -148,6 +156,14 @@
     "url": "https://xss.is/members/?username={}",
     "urlMain": "https://xss.is/",
     "username_claimed": "boss",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Yougame": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://yougame.biz/{}",
+    "urlMain": "https://yougame.biz/",
+    "username_claimed": "dredd",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Zomato": {
