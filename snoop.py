@@ -27,7 +27,8 @@ from playsound import playsound
 
 if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, '')
-    init()
+
+init(autoreset=True)
     
 print ("""
   ___|                          
@@ -137,8 +138,9 @@ def print_invalid(social_network, msg, color=True):
 
 def get_response(request_future, error_type, social_network, verbose=False, retry_no=None, color=True):
 
+    
     global proxy_list
-
+    
     try:
         rsp = request_future.result()
         if rsp.status_code:
@@ -431,8 +433,6 @@ def update_snoop():
 
                
 def main():
-    # Colorama module's initialization.
-    init(autoreset=True)
     
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
