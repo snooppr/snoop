@@ -328,6 +328,14 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Bikepost": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://bikepost.ru/profile/{}",
+    "urlMain": "https://bikepost.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "BitBucket": {
     "errorType": "status_code",
     "rank": 0,
@@ -435,6 +443,14 @@
     "url": "https://cash.me/${}",
     "urlMain": "https://cash.me/",
     "username_claimed": "Jenny",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Ccmixter": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "http://ccmixter.org/people/{}/profile",
+    "urlMain": "http://ccmixter.org/",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Cent": {
@@ -672,6 +688,15 @@
     "url": "http://dating.ru/{}",
     "urlMain": "http://dating.ru",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Demonscity": {
+    "errorMsg": "\u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorType": "message",
+    "rank": 0,
+    "url": "http://demonscity.combats.com/inf.pl?{}",
+    "urlMain": "http://demonscity.combats.com/inf.pl?adam",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Designspiration": {
@@ -926,6 +951,15 @@
     "username_claimed": "cupparober",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Fishingsib": {
+    "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.fishingsib.ru/forum/members/?username={}",
+    "urlMain": "https://www.fishingsib.ru/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Fiverr": {
     "errorType": "response_url",
     "errorUrl": "https://www.fiverr.com/",
@@ -1001,6 +1035,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Forum.devushka": {
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+    "errorType": "message",
+    "rank": 0,
+    "url": "http://forum.devushka.ru/memberlist.php?username={}",
+    "urlMain": "http://forum.devushka.ru/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forum.ixbt": {
     "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
     "errorType": "message",
@@ -1071,6 +1114,14 @@
     "url": "https://forums.drom.ru/member.php?username={}",
     "urlMain": "https://forums.drom.ru/",
     "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums.envato": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://forums.envato.com/u/{}/summary",
+    "urlMain": "https://forums.envato.com/",
+    "username_claimed": "zigro",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forums.sourceruns": {
@@ -1198,6 +1249,15 @@
     "url": "https://glbyh.ru/member.php?username={}",
     "urlMain": "https://glbyh.ru/",
     "username_claimed": "ufo",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Gliger": {
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorType": "message",
+    "rank": 0,
+    "url": "http://www.gliger.ru/index/8-0-{}",
+    "urlMain": "http://www.gliger.ru/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "GoodReads": {
@@ -2733,6 +2793,14 @@
     "urlMain": "https://www.shitpostbot.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Shophelp": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://shophelp.ru/profile/{}",
+    "urlMain": "https://shophelp.ru/",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Showme": {
     "errorType": "status_code",

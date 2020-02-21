@@ -29,7 +29,14 @@ Uaksu;
 Vezha;
 X-xack.
 
-* всего в БС <399> сайтов.
+Bikepost;
+Ccmixter;
+Demonscity;
+Fishingsib;
+Forum.devushka;
+Forums.envato;
+Gliger;
+Shophelp.
 ===================================================================================
 
 v1.0.7_rus
