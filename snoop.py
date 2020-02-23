@@ -35,14 +35,16 @@ print ("""
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m0.9\033[31m_rus\033[0m\n
+                         _|     \033[37mv1.\033[34m1.0\033[31m_rus\033[0m\n
 """)
 
-print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n nano user.txt\n")
+print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n" + 
+" python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n" + 
+" nano user.txt или open user.html \033[37m#Открыть сохранённые результаты поиска\033[0m\n")
 
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.0.9_rus Ветка GNU/Linux"
+__version__ = "1.1.0_rus Ветка GNU/Linux"
 
 date = datetime.datetime.today()
 
@@ -698,7 +700,7 @@ def main():
         #for site in ranked_sites:
             #site_data[site] = site_dataCpy.get(site)
 
-    # Run report on all specified users.
+#Запись в txt
     for username in args.username:
         print()
 
@@ -744,9 +746,41 @@ def main():
         file.write("\n" f"Обновлено: ")      
         file.write(date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс."))   
         print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
-        print(Fore.WHITE + "├───Положительные результаты поиска сохранены в:", username + ".txt")
+       
+
+#Запись в html
+        file = open(username + ".html", "w", encoding="utf-8")
+
+        file.write("<h3>"+"Snoop Project"+"</h3>" + "Объект" + " " + 
+        "<b>" + (username) + "</b>" + " " + "найден на нижеперечисленных" + "<b> " + str(exists_counter) + "</b> ресурсах: " + "<br><ol>")
+        for website_name in results:
+            dictionary = results[website_name]
+            if dictionary.get("exists") == "yes":
+                exists_counter += 1
+                file.write("<li>" + "<a href='" + dictionary ["url_user"] + "'>"+ (website_name)+"</a>" + "</li>")
+        file.write(f"</ol> Запрашиваемый объект: <")
+        file.write(username)
+        file.write(f"> найден: <b>{exists_counter/2}</b> раз(а).")
+        file.write("<br> Обновлено: ")      
+        file.write(date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.") + "<br>")  
+        file.write("<br><a href='https://github.com/snooppr/snoop'>Snoop/Исходный код</a>")      
         file.close()
 
+       
+        if args.csv == True:
+            print(Fore.WHITE + "├───Положительные результаты поиска сохранены в:", username + ".txt" + 
+            " " + "и", username + ".html")
+            print(Fore.WHITE + "├───Расширенный анализ по поиску:" +
+            Fore.RED + "\033[5m <\033[0m" +
+            Fore.GREEN + f"{username}" +
+            Fore.RED + "\033[5m>\033[0m",           
+            "сохранён в", username + ".csv")
+        else:        
+            print(Fore.WHITE + "├───Положительные результаты поиска сохранены в:", username + ".txt" +
+            " " + "и", username + ".html")
+        file.close()
+
+#Запись в csv
         if args.csv == True:
             with open(username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
                 writer = csv.writer(csv_report)
