@@ -1,4 +1,16 @@
 ##Snoop Project 
+v1.0.9_rus
+* Добавлены в БС новые ресурсы:
+Chan4chan;
+Ecoustics;
+Ficwad;
+Forum.caravelgames;
+Ieoc;
+memrise;
+Meta.discourse;
+Quibblo.
+===================================================================================
+
 v1.0.8_rus
 * Добавлены в БС новые ресурсы:
 Antipunk;
