@@ -666,7 +666,7 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "DEV Community": {
+  "Dev.to": {
     "errorType": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -775,7 +775,7 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Docker Hub": {
+  "DockerHub": {
     "errorType": "status_code",
     "rank": 0,
     "url": "https://hub.docker.com/u/{}/",
@@ -1594,7 +1594,7 @@
     "username_claimed": "dansbecker",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Kali community": {
+  "Kali_community": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorType": "message",
     "rank": 0,
@@ -2043,7 +2043,7 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "NameMC (Minecraft.net skins)": {
+  "NameMC": {
     "errorMsg": "Profiles: 0 results",
     "errorType": "message",
     "rank": 0,
@@ -2052,7 +2052,7 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "NationStates Nation": {
+  "NationStates_Nation": {
     "errorMsg": "Was this your nation? It may have ceased to exist due to inactivity, but can rise again!",
     "errorType": "message",
     "rank": 0,
@@ -2061,7 +2061,7 @@
     "username_claimed": "the_holy_principality_of_saint_mark",
     "username_unclaimed": "noonewould"
   },
-  "NationStates Region": {
+  "NationStates_Region": {
     "errorMsg": "does not exist.",
     "errorType": "message",
     "rank": 0,
@@ -2461,7 +2461,7 @@
     "username_claimed": "plug-dj-rock",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Pokemon Showdown": {
+  "Pokemon_Showdown": {
     "errorType": "status_code",
     "rank": 0,
     "url": "https://pokemonshowdown.com/users/{}",
@@ -3021,7 +3021,7 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Star Citizen": {
+  "Star_Citizen": {
     "errorType": "status_code",
     "rank": 0,
     "url": "https://robertsspaceindustries.com/citizens/{}",
@@ -3435,7 +3435,7 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "We Heart It": {
+  "Weeartit": {
     "errorMsg": "Oops! You've landed on a moving target!",
     "errorType": "message",
     "rank": 0,

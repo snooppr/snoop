@@ -40,7 +40,7 @@ _____/ _|  _|\___/ \___/  .__/
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n" + 
 " python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n" + 
-" nano user.txt или open user.html \033[37m#Открыть сохранённые результаты поиска\033[0m\n")
+" nano results/user.txt или open results/user.html \033[37m#открыть сохранённые результаты поиска\033[0m\n")
 
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
@@ -190,11 +190,11 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
     Возвращаемые значения:
     Словарь, содержащий результаты из отчета. Ключом словаря является название
     сайта из БД, и значение другого словаря со следующими ключами::
-        url_main:      URL основного сайта.
-        url_user:      URL ведущий на пользователя (если такой аккаунт найден).
-        exists:        Указание результатов теста на наличие аккаунта.
-        http_status:   HTTP status code ответа сайта.
-        response_text: Текст, который вернулся запрос-ответ от сайта (при ошибке соединения может отсутствовать)
+        url_main:                  URL основного сайта.
+        url_user:                  URL ведущий на пользователя (если такой аккаунт найден).
+        exists/статус:             Указание результатов теста на наличие аккаунта.
+        http_status/статус кода:   HTTP status code ответа сайта.
+        response_text:    Текст, который вернулся запрос-ответ от сайта (при ошибке соединения может отсутствовать)
     """
 
     print_info("разыскиваем:", username, color)
@@ -431,6 +431,9 @@ def update_snoop():
    |                           |    
 нажмите 'y' """))
     if upd == "y":
+        if sys.platform == 'win32':
+            locale.setlocale(locale.LC_ALL, '')
+            print("\033[31mФункция обновления Snoop не поддерживается на OS Windows\033[0m")
         os.system("./update.sh")
 
                
@@ -703,7 +706,7 @@ def main():
 #Запись в txt
     for username in args.username:
         print()
-
+        
         if args.output:
             file = open(args.output, "w", encoding="utf-8")
         elif args.folderoutput:  # In case we handle multiple usernames at a targetted folder.
@@ -713,8 +716,11 @@ def main():
             file = open(os.path.join(args.folderoutput,
                                      username + ".txt"), "w", encoding="utf-8")
         else:
-            file = open(username + ".txt", "w", encoding="utf-8")
-
+            file = open("results/" + username + ".txt", "w", encoding="utf-8")
+            try:
+                file = open("results/" + username + ".txt", "w", encoding="utf-8")
+            except (SyntaxError, ValueError):
+                pass
         # We try to ad a random member of the 'proxy_list' var as the proxy of the request.
         # If we can't access the list or it is empty, we proceed with args.proxy as the proxy.
         try:
@@ -749,7 +755,7 @@ def main():
        
 
 #Запись в html
-        file = open(username + ".html", "w", encoding="utf-8")
+        file = open("results/" + username + ".html", "w", encoding="utf-8")
 
         file.write("<h3>"+"Snoop Project"+"</h3>" + "Объект" + " " + 
         "<b>" + (username) + "</b>" + " " + "найден на нижеперечисленных" + "<b> " + str(exists_counter) + "</b> ресурсах: " + "<br><ol>")
@@ -782,15 +788,15 @@ def main():
 
 #Запись в csv
         if args.csv == True:
-            with open(username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
+            with open("results/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
                 writer = csv.writer(csv_report)
-                writer.writerow(['username',
-                                 'name',
+                writer.writerow(['Объект',
+                                 'Ресурс',
                                  'url_main',
                                  'url_user',
-                                 'exists',
-                                 'http_status',
-                                 'response_time_ms'
+                                 'статус',
+                                 'статус_кода',
+                                 'время/мс'
                                  ]
                                 )
                 for site in results:
