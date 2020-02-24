@@ -433,8 +433,11 @@ def update_snoop():
     if upd == "y":
         if sys.platform == 'win32':
             locale.setlocale(locale.LC_ALL, '')
-            print("\033[31mФункция обновления Snoop не поддерживается на OS Windows\033[0m")
-        os.system("./update.sh")
+            print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS Windows")
+            os.startfile("update.bat")
+        else:
+            print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
+            os.system("./update.sh")
 
                
 def main():
