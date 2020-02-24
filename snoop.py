@@ -833,4 +833,4 @@ if __name__ == "__main__":
 
 print(Fore.WHITE + "└────╼Дата выполнения этого поискового запроса:", 
 date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.\n"))
-print("\033[37m\033[44m{}".format("Сублицензия: The MIT License"))
+print("\033[37m\033[44m{}".format("Сублицензия: авторская"))
