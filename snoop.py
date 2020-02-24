@@ -554,13 +554,17 @@ def main():
 
     args = parser.parse_args()
     
-    if args.sort: 
-        subprocess.run(["python3", "site_list.py"])
+    if args.sort:
+        if sys.platform == 'win32':
+            locale.setlocale(locale.LC_ALL, '')
+            subprocess.run(["python", "site_list.py"])
+        else:
+            subprocess.run(["python3", "site_list.py"])
         exit(0)
     
     if args.listing:
         listall = []
-        with open('sites.md') as listyes:
+        with open('sites.md', "r", encoding="utf8") as listyes:
             for site in listyes.readlines():
                 patch = (site.split(']')[0]).replace("[", "  ") 
                 listall.append(patch)
@@ -568,7 +572,7 @@ def main():
 
     if args.listing:
         listall_bad = []                
-        with open('bad_site.md') as listbad:
+        with open('bad_site.md', "r", encoding="utf8") as listbad:
             for site_bad in listbad.readlines():
                 patch_bad = (site_bad.split(']')[0]).replace("[", "  ") 
                 listall_bad.append(patch_bad)

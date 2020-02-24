@@ -666,15 +666,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Dev.to": {
-    "errorType": "status_code",
-    "rank": 0,
-    "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
-    "url": "https://dev.to/{}",
-    "urlMain": "https://dev.to/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "DailyMotion": {
     "errorType": "status_code",
     "rank": 0,
@@ -713,6 +704,15 @@
     "rank": 0,
     "url": "https://www.designspiration.net/{}/",
     "urlMain": "https://www.designspiration.net/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Dev.to": {
+    "errorType": "status_code",
+    "rank": 0,
+    "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+    "url": "https://dev.to/{}",
+    "urlMain": "https://dev.to/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -1594,6 +1594,14 @@
     "username_claimed": "dansbecker",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Kali.org.ru": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://kali.org.ru/profile/{}",
+    "urlMain": "https://kali.org.ru",
+    "username_claimed": "Drozd",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Kali_community": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorType": "message",
@@ -1601,14 +1609,6 @@
     "url": "https://forums.kali.org/member.php?username={}",
     "urlMain": "https://forums.kali.org/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Kali.org.ru": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://kali.org.ru/profile/{}",
-    "urlMain": "https://kali.org.ru",
-    "username_claimed": "Drozd",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "KanoWorld": {
@@ -3435,6 +3435,14 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "WebNode": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://{}.webnode.cz/",
+    "urlMain": "https://www.webnode.cz/",
+    "username_claimed": "radkabalcarova",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Weeartit": {
     "errorMsg": "Oops! You've landed on a moving target!",
     "errorType": "message",
@@ -3442,14 +3450,6 @@
     "url": "https://weheartit.com/{}",
     "urlMain": "https://weheartit.com/",
     "username_claimed": "ventivogue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "WebNode": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://{}.webnode.cz/",
-    "urlMain": "https://www.webnode.cz/",
-    "username_claimed": "radkabalcarova",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Whonix": {

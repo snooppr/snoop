@@ -42,7 +42,7 @@ args = parser.parse_args()
 with open("bad_data.json", "r", encoding="utf8") as bad_file:
     data1 = json.load(bad_file)
 
-with open("bad_site.md", "w") as bad_site:
+with open("bad_site.md", "w", encoding="utf8") as bad_site:
     data_length1 = len(data1)
     bad_site.write(f'## Snoop БД Неподдерживаемых сайтов (список), всего — {data_length1} сайт(ов)!\n')
 
@@ -73,13 +73,13 @@ with open("bad_site.md", "w") as bad_site:
 
 sorted_json_data_bad = json.dumps(data1, indent=2, sort_keys=True)
 
-with open("bad_data.json", "w") as bad_file:
+with open("bad_data.json", "w", encoding="utf8") as bad_file:
     bad_file.write(sorted_json_data_bad)
 
 with open("data.json", "r", encoding="utf8") as data_file:
     data = json.load(data_file)
 
-with open("sites.md", "w") as site_file:
+with open("sites.md", "w", encoding="utf8") as site_file:
     data_length = len(data)
     site_file.write(f'## Snoop БД поддерживаемых сайтов (список), всего — {data_length} сайт(ов)!\n')
 
@@ -109,7 +109,7 @@ with open("sites.md", "w") as site_file:
 
 sorted_json_data = json.dumps(data, indent=2, sort_keys=True)
 
-with open("data.json", "w") as data_file:
+with open("data.json", "w", encoding="utf8") as data_file:
     data_file.write(sorted_json_data)
     
 print("\n" "Обновлено, всего —" ,data_length1, "сайта(ов) в чёрном списке")
