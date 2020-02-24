@@ -74,6 +74,15 @@
     "username_claimed": "jack",
     "username_unclaimed": "noonewouldeverusethis77777"
   },
+  "Advancedcustomfields": {
+    "errorMsg": "Sorry, page not found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://support.advancedcustomfields.com/forums/users/{}",
+    "urlMain": "https://support.advancedcustomfields.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Advego": {
     "errorType": "status_code",
     "rank": 0,
@@ -362,6 +371,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Boardgamegeek": {
+    "errorMsg": "User does not exist.",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.boardgamegeek.com/user/{}",
+    "urlMain": "https://www.boardgamegeek.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "BodyBuilding": {
     "errorType": "response_url",
     "errorUrl": "https://bodyspace.bodybuilding.com/",
@@ -378,6 +396,15 @@
     "urlMain": "https://www.bookcrossing.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Bukkit": {
+    "errorMsg": "The specified member cannot be found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://bukkit.org/members/?username={}",
+    "urlMain": "https://bukkit.org/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Buymeacoffee": {
     "errorType": "status_code",
@@ -579,6 +606,14 @@
     "url": "https://www.colourlovers.com/lover/{}",
     "urlMain": "https://www.colourlovers.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Comicvine.gamespot": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://comicvine.gamespot.com/profile/{}",
+    "urlMain": "https://comicvine.gamespot.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Contently": {
@@ -1134,6 +1169,15 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forums.alliedmods": {
+    "errorMsg": "This user has not registered and therefore does not have a profile to view",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://forums.alliedmods.net/member.php?username={}",
+    "urlMain": "https://forums.alliedmods.net/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forums.drom": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorType": "message",
@@ -1184,6 +1228,15 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Funnyjunk": {
+    "errorMsg": "The user was not found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://funnyjunk.com/user/{}",
+    "urlMain": "https://funnyjunk.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "GDProfiles": {
     "errorType": "status_code",
     "rank": 0,
@@ -1200,6 +1253,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Gbatemp": {
+    "errorMsg": "The specified member cannot be found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://gbatemp.net/members/?username={}",
+    "urlMain": "https://gbatemp.net/",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Geocaching": {
     "errorType": "status_code",
     "rank": 0,
@@ -1214,6 +1276,14 @@
     "url": "https://gfycat.com/@{}",
     "urlMain": "https://gfycat.com/",
     "username_claimed": "Test",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Giantbomb": {
+    "errorType": "status_code",
+    "rank": 0,
+    "url": "https://www.giantbomb.com/profile/{}",
+    "urlMain": "https://www.giantbomb.com/profile/adam/",
+    "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Giphy": {
@@ -2235,7 +2305,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "OpenCollective": {
-    "errorMsg": "Open Collective - open your finances to your community",
+    "errorMsg": "Not found",
     "errorType": "message",
     "rank": 0,
     "url": "https://opencollective.com/{}",
@@ -2437,12 +2507,30 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Planetminecraft": {
+    "errorMsg": "Hmm, it seems that you've come across an invalid username",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.planetminecraft.com/member/{}",
+    "urlMain": "https://www.planetminecraft.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "PlayStore": {
     "errorType": "status_code",
     "rank": 0,
     "url": "https://play.google.com/store/apps/developer?id={}",
     "urlMain": "https://play.google.com/store",
     "username_claimed": "Facebook",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Playerup": {
+    "errorMsg": "Page Not Found",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.playerup.com/{}",
+    "urlMain": "https://www.playerup.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Plug.DJ": {
@@ -3057,6 +3145,15 @@
     "username_claimed": "tmm22",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Subeta": {
+    "errorMsg": "Invalid user",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://subeta.net/users/{}",
+    "urlMain": "https://subeta.net/",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "SublimeForum": {
     "errorType": "status_code",
     "rank": 0,
@@ -3131,6 +3228,15 @@
     "url": "https://tellonym.me/{}",
     "urlMain": "https://tellonym.me/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Theanswerbank": {
+    "errorMsg": "Welcome to the AnswerBank",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://www.theanswerbank.co.uk/members/{}",
+    "urlMain": "https://www.theanswerbank.co.uk",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Theodysseyonline": {
@@ -3383,6 +3489,15 @@
     "url": "https://www.virustotal.com/ui/users/{}/trusted_users",
     "urlMain": "https://www.virustotal.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Vkovk": {
+    "errorMsg": "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!",
+    "errorType": "message",
+    "rank": 0,
+    "url": "http://www.vkovk.ru/profile-vkontakte.php?user={}",
+    "urlMain": "http://www.vkovk.ru/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WarfaceRU": {

@@ -1,4 +1,21 @@
 ##Snoop Project 
+v1.1.1_rus
+* Добавлены в БС новые ресурсы:
+
+Advancedcustomfields;
+Boardgamegeek;
+Bukkit;
+Comicvine.gamespot;
+Forums.alliedmods;
+Funnyjunk;
+Gbatemp;
+Giantbomb;
+Planetminecraft;
+Playerup;
+Subeta;
+Theanswerbank.
+===================================================================================
+
 v1.1.0_rus
 * Добавлен формат 'html'
 Анализировать положительные результаты поиска теперь можно прямо в браузере.
