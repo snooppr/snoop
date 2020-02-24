@@ -16,6 +16,8 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from concurrent.futures import ThreadPoolExecutor
 from time import time
 
+from pathlib import *
+
 import requests
 from colorama import Fore, Style, init
 
@@ -40,13 +42,15 @@ _____/ _|  _|\___/ \___/  .__/
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n" + 
 " python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n" + 
-" nano results/user.txt или open results/user.html \033[37m#открыть сохранённые результаты поиска\033[0m\n")
+" открыть 'results/user.txt/.html/.csv' \033[37m#открыть сохранённые результаты поиска\033[0m\n")
 
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
 __version__ = "1.1.0_rus Ветка GNU/Linux"
 
 date = datetime.datetime.today()
+
+dirresults = Path.cwd()
 
 global proxy_list
 
@@ -460,7 +464,7 @@ def main():
 ├──BTC_BHC: \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m
 ├──Яндекс.Деньги: \033[37m4100111364257544\033[0m  
 └──PayPal: \033[37msnoopproject@protonmail.com\033[0m    
-\nИсходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                """)
+\nИсходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m """)
               
                 
                 
@@ -536,10 +540,11 @@ def main():
                         action="store_true", dest="print_found_only", default=False,
                         help="Выводить на печать только найденные аккаунты"
                         )
-    parser.add_argument("--no-color", "-n",
+    parser.add_argument("--no-func", "-n",
                         action="store_true", dest="no_color", default=False,
-                        help="Монохромный терминал, не использовать цвета в url\n"
-                             "Отключить звук"
+                        help="""✓Монохромный терминал, не использовать цвета в url\n
+                                ✓Отключить звук\n
+                                ✓Запретить открытие web browser-a"""
                         )                        
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
@@ -816,8 +821,10 @@ def main():
                                      results[site]['response_time_ms']
                                      ]
                                     )
-                                    
+                                            
     if args.no_color==False:
+        if exists_counter >= 1:
+            webbrowser.open(str("file://" + str(dirresults) + "/results/" + str(username) + ".html"))
         playsound('end.wav')
                     
 if __name__ == "__main__":
