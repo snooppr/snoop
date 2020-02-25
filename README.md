@@ -48,7 +48,7 @@ usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose]
                 [--unique-tor] [--proxy PROXY_URL] [--proxy_list PROXY_LIST]
                 [--check_proxies CHECK_PROXY] [--csv] [--json JSON_FILE]
                 [--site SITE_NAME] [--timeout --time 9] [--print-found]
-                [--no-color] [--list all] [--update Y]
+                [--no-func] [--list all] [--update Y]
                 USERNAMES [USERNAMES ...]
 
 

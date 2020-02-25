@@ -16,7 +16,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from concurrent.futures import ThreadPoolExecutor
 from time import time
 
-from pathlib import *
+from pathlib import Path
 
 import requests
 from colorama import Fore, Style, init
@@ -72,7 +72,7 @@ class ElapsedFuturesSession(FuturesSession):
 
         try:
             if isinstance(hooks['response'], (list, tuple)):
-                # needs to be first so we don't time other hooks execution
+# должен быть первым, поэтому мы не рассчитываем время выполнения других hooks.
                 hooks['response'].insert(0, timing)
             else:
                 hooks['response'] = [timing, hooks['response']]
@@ -154,10 +154,10 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
     except requests.exceptions.HTTPError as errh:
         print_error(errh, "HTTP Error:", social_network, verbose, color)
 
-    # In case our proxy fails, we retry with another proxy.
+# Сбой с прокси, дубль попытка.
     except requests.exceptions.ProxyError as errp:
         if retry_no>0 and len(proxy_list)>0:
-            #Selecting the new proxy.
+# Выбор нового прокси.
             new_proxy = random.choice(proxy_list)
             new_proxy = f'{new_proxy.protocol}://{new_proxy.ip}:{new_proxy.port}'
             print(f'Retrying with {new_proxy}')
@@ -203,53 +203,52 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 
     print_info("разыскиваем:", username, color)
 
-    # Create session based on request methodology
+# Создать сеанс на основе методологии запроса.
     if tor or unique_tor:
-        #Requests using Tor obfuscation
+# Requests Tor.
         underlying_request = TorRequest()
         underlying_session = underlying_request.session
     else:
-        #Normal requests
+# Normal requests.
         underlying_session = requests.session()
         underlying_request = requests.Request()
 
-    #Limit number of workers to 20.
-    #This is probably vastly overkill.
+# Рабочий лимит 20+
     if len(site_data) >= 20:
         max_workers=20
     else:
         max_workers=len(site_data)
 
-    #Create multi-threaded session for all requests.
+# Создать многопоточный сеанс для всех запросов.
     session = ElapsedFuturesSession(max_workers=max_workers,
                                     session=underlying_session)
 
-    # Results from analysis of all sites
+# Результаты анализа всех сайтов.
     results_total = {}
 
-    # First create futures for all requests. This allows for the requests to run in parallel
+# Создание futures на все запросы. Это позволит распараллетить запросы.
     for social_network, net_info in site_data.items():
 
-        # Results from analysis of this specific site
+        # Результаты анализа конкретного сайта.
         results_site = {}
 
-        # Record URL of main site
+# Запись URL основного сайта.
         results_site['url_main'] = net_info.get("urlMain")
 
-        # A user agent is needed because some sites don't return the correct
-        # information since they think that we are bots (Which we actually are...)
+# Пользовательский user-agent браузера, некоторые сайты от этого зависят напрямую.
+# Временно поставил самый популярный, чтобы не думали, что запросы идут от ботов.
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
         }
 
         if "headers" in net_info:
-            # Override/append any extra headers required by a given site.
+# Переопределить / добавить любые дополнительные заголовки, необходимые для данного сайта.
             headers.update(net_info["headers"])
 
-        # Don't make request if username is invalid for the site
+# Не делать запрос, если имя пользователя не подходит для сайта.
         regex_check = net_info.get("regexCheck")
         if regex_check and re.search(regex_check, username) is None:
-            # No need to do the check at the site: this user name is not allowed.
+# Не нужно делать проверку на сайте: если это имя пользователя не допускается.
             if not print_found_only:
                 print_invalid(social_network, "Недопустимый формат имени для данного сайта", color)
 
@@ -259,35 +258,33 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
             results_site['response_text'] = ""
             results_site['response_time_ms'] = ""
         else:
-            # URL of user on site (if it exists)
+# URL пользователя на сайте (если он существует).
             url = net_info["url"].format(username)
             results_site["url_user"] = url
             url_probe = net_info.get("urlProbe")
             if url_probe is None:
-                # Probe URL is normal one seen by people out on the web.
+# URL-адрес — является обычным, который видят люди в Интернете.
                 url_probe = url
             else:
-                # There is a special URL for probing existence separate
-                # from where the user profile normally can be found.
+# Существует специальный URL (обычно о нем мы не догадываемся) для проверки существования отдельно юзера.
                 url_probe = url_probe.format(username)
 
-            #If only the status_code is needed don't download the body
+#Если нужен только статус кода, не загружать код страницы.
             if net_info["errorType"] == 'status_code':
                 request_method = session.head
             else:
                 request_method = session.get
 
             if net_info["errorType"] == "response_url":
-                # Site forwards request to a different URL if username not
-                # found.  Disallow the redirect so we can capture the
-                # http status from the original URL request.
+# Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
+# Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
                 allow_redirects = False
             else:
-                # Allow whatever redirect that the site wants to do.
-                # The final result of the request will be what is available.
+# Разрешить любой редирект, который хочет сделать сайт.
+# Окончательным результатом запроса будет то, что доступно.
                 allow_redirects = True
 
-            # This future starts running the request in a new thread, doesn't block the main thread
+# запуск запрос в новом потоке, не блокирует основной поток.
             if proxy != None:
                 proxies = {"http": proxy, "https": proxy}
                 future = request_method(url=url_probe, headers=headers,
@@ -301,38 +298,38 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
                                         timeout=timeout
                                         )
 
-            # Store future in data for access later
+# Сохранить future in data для последующего доступа.
             net_info["request_future"] = future
 
-            # Reset identify for tor (if needed)
+# Сброс идентифкатора Tor (при необходимости).
             if unique_tor:
                 underlying_request.reset_identity()
 
-        # Add this site's results into final dictionary with all of the other results.
+# Добавлять результаты этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
 
-    # Open the file containing account links
-    # Core logic: If tor requests, make them here. If multi-threaded requests, wait for responses
+# Открыть файл, содержащий ссылки на аккаунт.
+# Основная логика: если текущие запросов, сделайте их. Если многопоточные запросы, дождаться ответов.
     for social_network, net_info in site_data.items():
 
-        # Retrieve results again
+# Получить результаты снова.
         results_site = results_total.get(social_network)
 
-        # Retrieve other site information again
+# Получить другую информацию сайта снова.
         url = results_site.get("url_user")
         exists = results_site.get("exists")
         if exists is not None:
-            # We have already determined the user doesn't exist here
+# Мы уже определили, что пользователь не существует здесь.
             continue
 
-        # Get the expected error type
+# Получить ожидаемый тип ошибки.
         error_type = net_info["errorType"]
 
-        # Default data in case there are any failures in doing a request.
+# Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
         http_status = "?"
         response_text = ""
 
-        # Retrieve future and ensure it has finished
+# Получить future и убедиться, что оно закончено.
         future = net_info["request_future"]
         r, error_type, response_time = get_response(request_future=future,
                                                     error_type=error_type,
@@ -341,7 +338,7 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
                                                     retry_no=3,
                                                     color=color)
 
-        # Attempt to get request information
+# Попытка получить информацию запроса.
         try:
             http_status = r.status_code
         except:
@@ -353,7 +350,7 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 
         if error_type == "message":
             error = net_info.get("errorMsg")
-            # Checks if the error message is in the HTML
+# Проверяет, есть ли сообщение об ошибке в HTML.
             if not error in r.text:
                 print_found(social_network, url, response_time, verbose, color)
                 exists = "yes"
@@ -363,7 +360,7 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
                 exists = "no"
 
         elif error_type == "status_code":
-            # Checks if the status code of the response is 2XX
+# Проверяет, является ли код состояния ответа 2..
             if not r.status_code >= 300 or r.status_code < 200:
                 print_found(social_network, url, response_time, verbose, color)
                 exists = "yes"
@@ -373,11 +370,11 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
                 exists = "no"
 
         elif error_type == "response_url":
-            # For this detection method, we have turned off the redirect.
-            # So, there is no need to check the response URL: it will always
-            # match the request.  Instead, we will ensure that the response
-            # code indicates that the request was successful (i.e. no 404, or
-            # forward to some odd redirect).
+
+# Для этого метода обнаружения мы отключили перенаправление.
+# Таким образом, нет необходимости проверять URL-адрес ответа: он всегда будет соответствовать запросу. 
+# Вместо этого мы обеспечим, чтобы статус кода указывал, что запрос был успешным (тоесть не 404 или перенаправлен.
+        
             if 200 <= r.status_code < 300:
                 #
                 print_found(social_network, url, response_time, verbose, color)
@@ -392,15 +389,15 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
                 print_invalid(social_network, "*Пропуск", color)
             exists = "error"
 
-        # Save exists flag
+# Сохранить сущ.флаг.
         results_site['exists'] = exists
 
-        # Save results from request
+# Сохранить результаты из запроса.
         results_site['http_status'] = http_status
         results_site['response_text'] = response_text
         results_site['response_time_ms'] = response_time
 
-        # Add this site's results into final dictionary with all of the other results.
+# Добавьление результатов этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
     return results_total
 
@@ -426,7 +423,7 @@ def timeout_check(value):
         raise ArgumentTypeError(f"Timeout '{value}' must be greater than 0.0s.")
     return timeout
 
-#Обновление Snoop
+# Обновление Snoop.
 def update_snoop():
     upd = str(input("""Вы действительно хотите: 
                     __             _  
@@ -443,7 +440,7 @@ def update_snoop():
             print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
             os.system("./update.sh")
 
-               
+# Запрос лицензии.
 def main():
     
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
@@ -458,7 +455,8 @@ def main():
     with open('sites.md', 'r', encoding="utf8") as support:
         sup = support.read()
     sup_color = f"\033[37m{sup}\033[0m"
-    
+
+# Пожертование.
     donate = ("""
 ╭donate:
 ├──BTC_BHC: \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m
@@ -468,7 +466,7 @@ def main():
               
                 
                 
-                
+# Назначение опций Snoop.
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter, 
                             description=f"{module_name} (Version {__version__})", 
                             epilog=donate 
@@ -489,9 +487,6 @@ def main():
                         action="store_true",  dest="verbose", default=False,
                         help="Вывод на дисплей отладочной информации и подробная её вербализация"
                         )
-   # parser.add_argument("--rank", "-r",
-    #                    action="store_true", dest="rank", default=False,
-     #                   help="Результаты поиска сортируются не по алфавиту, а по полуярности рейтинга Alexa #опция временно отключена")
     parser.add_argument("--folderoutput", "-fo", dest="folderoutput",
                         help="Указать каталог отличный от стандартного, куда будут сохранены результаты поиска при разовом поиске нескольких имён"
                         )
@@ -562,6 +557,7 @@ def main():
 
     args = parser.parse_args()
     
+# Опция сортировки.
     if args.sort:
         if sys.platform == 'win32':
             locale.setlocale(locale.LC_ALL, '')
@@ -587,31 +583,32 @@ def main():
             print(Fore.RED + "\n\n--Чёрный список--", *listall_bad, sep = "\n")                    
         sys.exit(0)                                        
         
+# Опция донат.
     if args.donation:
         print(donate)
         webbrowser.open("https://yasobe.ru/na/snoop_project")
         print("Выход")
         sys.exit(0)
-          
+
+# Завершение обновления Snoop.
     if args.update:
         print("=======================")
         update_snoop() 
         print("=======================\nВыход")
         sys.exit(0)
     
-    # Argument check
-    # TODO regex check on args.proxy
+# Проверка остальных аргументов.
+# Проверка регулярных выражений TODO на args.proxy.
     if args.tor and (args.proxy != None or args.proxy_list != None):
         raise Exception("Tor и Proxy не могут быть запущены одновременно.")
 
-    # Proxy argument check.
-    # Does not necessarily need to throw an error,
-    # since we could join the single proxy with the ones generated from the .csv,
-    # but it seems unnecessarily complex at this time.
+# Проверка аргументов прокси.
+# Не обязательно генерировать ошибку, так как мы могли бы объединить один прокси с теми, которые были сгенерированы из .csv,
+# но в настоящее время это кажется излишне сложным.
     if args.proxy != None and args.proxy_list != None:
         raise Exception("Один прокси не может использоваться вместе со списком прокси.")
 
-    # Make prompts
+# Делать подсказку.
     if args.proxy != None:
         print("Using the proxy: " + args.proxy)
 
@@ -622,7 +619,7 @@ def main():
 
         proxy_list = load_proxies_from_csv(args.proxy_list)
 
-    # Checking if proxies should be checked for anonymity.
+# Анонимность? Должны ли проки проверяться на анонимность.
     if args.check_prox != None and args.proxy_list != None:
         try:
             limit = int(args.check_prox)
@@ -636,30 +633,32 @@ def main():
             raise Exception("Parameter --check_proxies/-cp must be a positive integer.")
 
     if args.tor or args.unique_tor:
-        print("\033[31mВнимание запущена экспериментальная функция! 'Snoop попытается работать через луковую сеть Tor'.\nВаши запросы могут посылаться НЕ анонимно!\033[0m\nТакже многие сайты могут блокировать выходные_ноды_Tor, что приведёт к 'ошибкам соединения' на этих сайтах.")
+        print(Fore.RED + "Внимание запущена экспериментальная функция!'Snoop попытается работать через луковую сеть Tor'.\n\
+Ваши запросы могут посылаться НЕ анонимно!\n\
+Также многие сайты могут блокировать выходные_ноды_Tor, что приведёт к 'ошибкам соединения' на этих сайтах.")
 
-    # Check if both output methods are entered as input.
+# Проверка, введены ли оба метода вывода в качестве ввода.
     if args.output is not None and args.folderoutput is not None:
         print("Вы можете использовать только один метода выхода.")
         sys.exit(1)
 
-    # Check validity for single username output.
+# Проверка правильность вывода одного из имен username.
     if args.output is not None and len(args.username) != 1:
-        print("Вы можете использовать флаг --output только с одним username")
+        print("Вы можете использовать данный флаг только с одним username")
         sys.exit(1)
 
     response_json_online = None
     site_data_all = None
 
-    # Try to load json from website.
+# Попробовать загрузить JSON с веб-сайта.
     try:
         response_json_online = requests.get(url=args.json_file)
-    except requests.exceptions.MissingSchema:  # In case the schema is wrong it's because it may not be a website
+    except requests.exceptions.MissingSchema:  # В случае если Shema неверная (не может быть на сайте).
         pass
 
-    # Check if the response is appropriate.
+# Проверка на соответствие ответа.
     if response_json_online is not None and response_json_online.status_code == 200:
-        # Since we got data from a website, try to load json and exit if parsing fails.
+# Поскольку мы получили данные с веб-сайта, попробовать загрузить json и выйти, если синтаксический анализ завершился ошибкой.
         try:
             site_data_all = response_json_online.json()
         except ValueError:
@@ -669,9 +668,9 @@ def main():
 
     data_file_path = os.path.join(os.path.dirname(
         os.path.realpath(__file__)), args.json_file)
-    # This will be none if the request had a missing schema
+# Этого не будет, если в запросе отсутствовала Shema.
     if site_data_all is None:
-        # Check if the file exists otherwise exit.
+# Проверьте, существует ли файл, иначе выход.
         if not os.path.exists(data_file_path):
             print("JSON file не существует.")
             print(
@@ -685,12 +684,12 @@ def main():
                 print("Invalid загружаемый JSON file.")
 
     if args.site_list is None:
-        # Not desired to look at a sub-set of sites
+# Не желательно смотреть на подмножество сайтов.
         site_data = site_data_all
     else:
-        # User desires to selectively run queries on a sub-set of the site list.
+# Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
 
-        # Make sure that the sites are supported & build up pruned site database.
+# Убедится, что сайты поддерживаются, создать сокращенную базу данных сайта.
         site_data = {}
         site_missing = []
         for site in args.site_list:
@@ -698,7 +697,7 @@ def main():
                 if site.lower() == existing_site.lower():
                     site_data[existing_site] = site_data_all[existing_site]
             if not site_data:
-                # Build up list of sites not supported for future error message.
+# Создать список сайтов, которые не поддерживаются для будущего сообщения об ошибке.
                 site_missing.append(f"'{site}'")
 
         if site_missing:
@@ -706,23 +705,15 @@ def main():
                 f"Ошибка: желаемые сайты не найдены: {', '.join(site_missing)}.")
             sys.exit(1)
 
-#rak опция временно отключена
-    #if args.rank:
-        # Sort data by rank
-        #site_dataCpy = dict(site_data)
-        #ranked_sites = sorted(site_data, key=lambda k: ("rank" not in k, site_data[k].get("rank", sys.maxsize)))
-        #site_data = {}
-        #for site in ranked_sites:
-            #site_data[site] = site_dataCpy.get(site)
 
-#Запись в txt
+#Запись в txt.
     for username in args.username:
         print()
         
         if args.output:
             file = open(args.output, "w", encoding="utf-8")
-        elif args.folderoutput:  # In case we handle multiple usernames at a targetted folder.
-            # If the folder doesnt exist, create it first
+        elif args.folderoutput:  
+# В случае, если мы обрабатываем несколько имен пользователей в целевой папке. Если папка не существует, сначала создать её.
             if not os.path.isdir(args.folderoutput):
                 os.mkdir(args.folderoutput)
             file = open(os.path.join(args.folderoutput,
@@ -733,8 +724,8 @@ def main():
                 file = open("results/" + username + ".txt", "w", encoding="utf-8")
             except (SyntaxError, ValueError):
                 pass
-        # We try to ad a random member of the 'proxy_list' var as the proxy of the request.
-        # If we can't access the list or it is empty, we proceed with args.proxy as the proxy.
+# Попытаться объявить случайный 'proxy_list' в качестве прокси запроса.
+# Если мы не можем получить доступ к списку или он пуст, мы используем 'args.proxy' в качестве прокси.
         try:
             random_proxy = random.choice(proxy_list)
             proxy = f'{random_proxy.protocol}://{random_proxy.ip}:{random_proxy.port}'
@@ -766,7 +757,7 @@ def main():
         print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
        
 
-#Запись в html
+#Запись в html.
         file = open("results/" + username + ".html", "w", encoding="utf-8")
 
         file.write("<h3>"+"Snoop Project"+"</h3>" + "Объект" + " " + 
@@ -798,7 +789,7 @@ def main():
             " " + "и", username + ".html")
         file.close()
 
-#Запись в csv
+#Запись в csv.
         if args.csv == True:
             with open("results/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
                 writer = csv.writer(csv_report)
@@ -821,16 +812,17 @@ def main():
                                      results[site]['response_time_ms']
                                      ]
                                     )
-                                            
+# Открыть/нет браузер с результатами поиска.                                            
     if args.no_color==False:
         if exists_counter >= 1:
             webbrowser.open(str("file://" + str(dirresults) + "/results/" + str(username) + ".html"))
+# Музыка.
         playsound('end.wav')
-                    
+   
 if __name__ == "__main__":
     main()
 
-
+# Финишный вывод.
 print(Fore.WHITE + "└────╼Дата выполнения этого поискового запроса:", 
 date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.\n"))
 print("\033[37m\033[44m{}".format("Сублицензия: авторская"))

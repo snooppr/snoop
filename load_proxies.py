@@ -60,12 +60,11 @@ def check_proxy_list(proxy_list, max_proxies=None):
     """
     print((Style.BRIGHT + Fore.GREEN + "[" +
            Fore.YELLOW + "*" +
-           Fore.GREEN + "] Started checking proxies."))
+           Fore.GREEN + "] Запуск проверки прокси."))
     working_proxies = []
 
-    # If the user has limited the number of proxies we need,
-    # the function will stop when the working_proxies
-    # loads the max number of requested proxies.
+# Если пользователь ограничил количество необходимых прокси, функция остановится, когда 'working_proxies'
+# загрузит максимальное количество запрошенных прокси.
     if max_proxies != None:
         for proxy in proxy_list:
             if len(working_proxies) < max_proxies:
@@ -83,8 +82,8 @@ def check_proxy_list(proxy_list, max_proxies=None):
     if len(working_proxies) > 0:
         print((Style.BRIGHT + Fore.GREEN + "[" +
                Fore.YELLOW + "*" +
-               Fore.GREEN + "] Finished checking proxies."))
+               Fore.GREEN + "] Окончание проверки прокси"))
         return working_proxies
 
     else:
-        raise Exception("Found no working proxies.")
+        raise Exception("Рабочих прокси не найдено")

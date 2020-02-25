@@ -17,17 +17,17 @@ pool1 = list()
 def get_rank(domain_to_query, dest):
     result = -1
 
-    #Retrieve ranking data via alexa API
+# Получить данные рейтинга через API рейтинг Alexa.
     url = f"http://data.alexa.com/data?cli=10&url={domain_to_query}"
     xml_data = requests.get(url).text
     root = ET.fromstring(xml_data)
     try:
-        #Get ranking for this site.
+# Получить рейтинг для этого сайта.
         dest['rank'] = int(root.find(".//REACH").attrib["RANK"])
     except:
-        #We did not find the rank for some reason.
-        print(f"Error retrieving rank information for '{domain_to_query}'")
-        print(f"     Returned XML is |{xml_data}|")
+# Не находим
+        print(f"Ошибка при получении информации о ранге для '{domain_to_query}'")
+        print(f"     Возвращённый XML |{xml_data}|")
 
     return
 
@@ -35,7 +35,7 @@ parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter
                         )
 parser.add_argument("--rank","-r",
                     action="store_true",  dest="rank", default=False,
-                    help="Update all website ranks (not recommended)."
+                    help="Обновить все ранги сайта (не рекомендуется)."
                     )
 args = parser.parse_args()
 
