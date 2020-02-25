@@ -433,7 +433,6 @@ def update_snoop():
 нажмите 'y' """))
     if upd == "y":
         if sys.platform == 'win32':
-            locale.setlocale(locale.LC_ALL, '')
             print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS Windows")
             os.startfile("update.bat")
         else:
@@ -560,7 +559,6 @@ def main():
 # Опция сортировки.
     if args.sort:
         if sys.platform == 'win32':
-            locale.setlocale(locale.LC_ALL, '')
             subprocess.run(["python", "site_list.py"])
         else:
             subprocess.run(["python3", "site_list.py"])
