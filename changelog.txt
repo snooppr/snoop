@@ -2,6 +2,32 @@
 v1.1.1_rus
 * Добавлены в БС новые ресурсы:
 
+Barnacl;
+Connosr;
+Dasauge;
+Duno;
+Ebaumsworld;
+Fluther;
+Gigbucks;
+Influenster;
+Jigidi;
+Knowem;
+Listal;
+Lookbook;
+Moddb;
+N4g;
+People.ign;
+Profiles.tigweb;
+Qbn;
+Sbnation;
+Skyrock;
+Thechive;
+Wittyprofiles;
+===================================================================================
+
+v1.1.1_rus
+* Добавлены в БС новые ресурсы:
+
 Advancedcustomfields;
 Boardgamegeek;
 Bukkit;
