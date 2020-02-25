@@ -1,4 +1,4 @@
-## Snoop БД Неподдерживаемых сайтов (список), всего — 27 сайт(ов)!
+## Snoop БД Неподдерживаемых сайтов (список), всего — 28 сайт(ов)!
 1. [AngelList](https://angel.co/)
 2. [Basecamp](https://basecamp.com/)
 3. [BlackPlanet](http://blackplanet.com/)
@@ -23,6 +23,7 @@
 22. [Spotify](https://open.spotify.com/)
 23. [StreamMe](https://www.stream.me/)
 24. [Teknik](https://teknik.io/)
-25. [Xss](https://xss.is/)
-26. [Yougame](https://yougame.biz/)
-27. [Zomato](https://www.zomato.com/)
+25. [WebNode](https://www.webnode.cz/)
+26. [Xss](https://xss.is/)
+27. [Yougame](https://yougame.biz/)
+28. [Zomato](https://www.zomato.com/)

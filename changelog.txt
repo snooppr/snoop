@@ -14,6 +14,23 @@ Planetminecraft;
 Playerup;
 Subeta;
 Theanswerbank.
+
+Astralinux;
+Discuss.python;
+Dou;
+Eva;
+Forexdengi;
+Forum.mirf;
+Golangbridge;
+Kuharka;
+Miped;
+Prankru;
+Programmersforum;
+Pyha;
+Python.su;
+Rusforum;
+Sovserv;
+The-village.
 ===================================================================================
 
 v1.1.0_rus

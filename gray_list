@@ -102,8 +102,20 @@ Furaffinity (проверка браузера)
 ##ЧС.24/02/2019 (требуется регистрация на ресурсах)
 Boingboing.net
 Spotify
+
+
+##СС.25/02/2019 ((60) SSL certificate problem:)
+  "Forumkinopoisk": {
+    "errorMsg": "Пользователь не зарегистрирован и не имеет профиля для просмотра.",
+    "errorType": "message",
+    "rank": 0,
+    "url": "https://forumkinopoisk.ru/member.php?username={}",
+    "urlMain": "https://forumkinopoisk.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
         
 
-    
+##ЧС.25/02/2019 (сайт часто открывается закрывается для публики)
+xss.is    
  
 

@@ -1,10 +1,10 @@
 {
-  "WebsiteName1": {
+  "Pyha": {
     "errorType": "status_code",
     "rank": 0,
-    "url": "https://1examplesite.ru/member.php?username={}",
-    "urlMain": "https://1examplesite.ru",
-    "username_claimed": "username",
+    "url": "https://forum.golangbridge.org/u/{}/summary",
+    "urlMain": "https://forum.golangbridge.org/",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebsiteName2": {
