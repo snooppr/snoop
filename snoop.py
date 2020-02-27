@@ -8,49 +8,49 @@ import os
 import platform
 import random
 import re
+import requests
 import subprocess
-import webbrowser
 import sys
+import time
+import webbrowser
+
 
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
-from concurrent.futures import ThreadPoolExecutor
-from time import time
-
-from pathlib import Path
-
-import requests
 from colorama import Fore, Style, init
-
+from concurrent.futures import ThreadPoolExecutor
+from load_proxies import load_proxies_from_csv, check_proxy_list
+from pathlib import Path
+from playsound import playsound
 from requests_futures.sessions import FuturesSession
 from torrequest import TorRequest
-from load_proxies import load_proxies_from_csv, check_proxy_list
 
-from playsound import playsound
 
 if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, '')
 
 init(autoreset=True)
-    
+
 print ("""
   ___|                          
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m1.1\033[31m_rus\033[0m\n
+                         _|     \033[37mv1.\033[34m1.2\033[31m_rus\033[0m\n
 """)
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n" + 
 " python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n" + 
-" открыть 'results/user.txt/.html/.csv' \033[37m#открыть сохранённые результаты поиска\033[0m\n")
+" открыть 'snoop/results/*/user.[txt.html.csv]' \033[37m#изучить сохранённые результаты поиска\033[0m\n")
 
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.1.1_rus Ветка GNU/Linux"
+__version__ = "1.1.2_rus Ветка GNU/Linux"
 
 date = datetime.datetime.today()
 
 dirresults = Path.cwd()
+
+timestart = time.time()
 
 global proxy_list
 
@@ -64,10 +64,10 @@ class ElapsedFuturesSession(FuturesSession):
     """
 
     def request(self, method, url, hooks={}, *args, **kwargs):
-        start = time()
+        start = time.time()
 
         def timing(r, *args, **kwargs):
-            elapsed_sec = time() - start
+            elapsed_sec = time.time() - start
             r.elapsed = round(elapsed_sec * 1000)
 
         try:
@@ -270,12 +270,12 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
                 url_probe = url_probe.format(username)
 
 #Если нужен только статус кода, не загружать код страницы.
-            if net_info["errorType"] == 'status_code':
+            if net_info["errоrTypе"] == 'status_code':
                 request_method = session.head
             else:
                 request_method = session.get
 
-            if net_info["errorType"] == "response_url":
+            if net_info["errоrTypе"] == "response_url":
 # Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
 # Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
                 allow_redirects = False
@@ -323,7 +323,7 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
             continue
 
 # Получить ожидаемый тип ошибки.
-        error_type = net_info["errorType"]
+        error_type = net_info["errоrTypе"]
 
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
         http_status = "?"
@@ -425,7 +425,7 @@ def timeout_check(value):
 
 # Обновление Snoop.
 def update_snoop():
-    upd = str(input("""Вы действительно хотите: 
+    upd = str(input("""Вы действительно хотите:
                     __             _  
    ._  _| _._|_ _  (_ ._  _  _ ._   ) 
 |_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
@@ -441,7 +441,7 @@ def update_snoop():
 
 # Запрос лицензии.
 def main():
-    
+
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
 
@@ -466,20 +466,20 @@ def main():
                 
                 
 # Назначение опций Snoop.
-    parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter, 
-                            description=f"{module_name} (Version {__version__})", 
-                            epilog=donate 
+    parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
+                            description=f"{module_name} (Version {__version__})",
+                            epilog=donate
                             )
-    parser.add_argument("--donate Y", 
+    parser.add_argument("--donate Y",
                         action="store_true", dest="donation",
                         help="Пожертвовать на развитие Snoop project-а"
                         )
-    parser.add_argument("--sort Y", 
+    parser.add_argument("--sort Y",
                         action="store_true", dest="sort",
                         help="Обновление/сортировка черного и белого списков (.json) сайтов БД Snoop"
-                        )                        
+                        )
     parser.add_argument("--version", "-V",
-                        action="version",  version=(version_snoop),  
+                        action="version",  version=(version_snoop),
                         help="Вывод на дисплей: версий Snoop, Python; Сублицензии"
                         )
     parser.add_argument("--verbose", "-v", "-d", "--debug",
@@ -539,23 +539,23 @@ def main():
                         help="""✓Монохромный терминал, не использовать цвета в url\n
                                 ✓Отключить звук\n
                                 ✓Запретить открытие web browser-a"""
-                        )                        
+                        )
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
                         action="store",
                         help="Никнейм разыскиваемого пользователя, поддерживается несколько имён"
                         )
-    parser.add_argument("--list all", 
+    parser.add_argument("--list all",
                         action="store_true", dest="listing",
                         help="Вывод на дисплей БД (БС+ЧС) поддерживаемых сайтов"
-                        )                        
+                        )
     parser.add_argument("--update Y",
-                        action="store_true", dest="update", 
+                        action="store_true", dest="update",
                         help="Обновить Snoop"
                         )            
 
     args = parser.parse_args()
-    
+
 # Опция сортировки.
     if args.sort:
         if sys.platform == 'win32':
@@ -563,24 +563,24 @@ def main():
         else:
             subprocess.run(["python3", "site_list.py"])
         exit(0)
-    
+
     if args.listing:
         listall = []
         with open('sites.md', "r", encoding="utf8") as listyes:
             for site in listyes.readlines():
-                patch = (site.split(']')[0]).replace("[", "  ") 
+                patch = (site.split(']')[0]).replace("[", "  ")
                 listall.append(patch)
-            print(Fore.GREEN + "++Белый список++", *listall, sep = "\n")    
+            print(Fore.GREEN + "++Белый список++", *listall, sep = "\n")
 
     if args.listing:
-        listall_bad = []                
+        listall_bad = []
         with open('bad_site.md', "r", encoding="utf8") as listbad:
             for site_bad in listbad.readlines():
-                patch_bad = (site_bad.split(']')[0]).replace("[", "  ") 
+                patch_bad = (site_bad.split(']')[0]).replace("[", "  ")
                 listall_bad.append(patch_bad)
-            print(Fore.RED + "\n\n--Чёрный список--", *listall_bad, sep = "\n")                    
-        sys.exit(0)                                        
-        
+            print(Fore.RED + "\n\n--Чёрный список--", *listall_bad, sep = "\n")
+        sys.exit(0)
+
 # Опция донат.
     if args.donation:
         print(donate)
@@ -591,7 +591,7 @@ def main():
 # Завершение обновления Snoop.
     if args.update:
         print("=======================")
-        update_snoop() 
+        update_snoop()
         print("=======================\nВыход")
         sys.exit(0)
     
@@ -717,9 +717,9 @@ def main():
             file = open(os.path.join(args.folderoutput,
                                      username + ".txt"), "w", encoding="utf-8")
         else:
-            file = open("results/" + username + ".txt", "w", encoding="utf-8")
+            file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
             try:
-                file = open("results/" + username + ".txt", "w", encoding="utf-8")
+                file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
             except (SyntaxError, ValueError):
                 pass
 # Попытаться объявить случайный 'proxy_list' в качестве прокси запроса.
@@ -747,49 +747,52 @@ def main():
             if dictionary.get("exists") == "yes":
                 exists_counter += 1
                 file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
-        file.write("\n" f"Запрашиваемый объект: <")
-        file.write(username)
-        file.write(f"> найден: {exists_counter} раз(а)")
-        file.write("\n" f"Обновлено: ")      
-        file.write(date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс."))   
+        file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а)")
+        file.write("\n" f"Обновлено: " + time.ctime())      
         print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
-       
+
 
 #Запись в html.
-        file = open("results/" + username + ".html", "w", encoding="utf-8")
+        timefinish = time.time() - timestart
+        file = open("results/html/" + username + ".html", "w", encoding="utf-8")
 
-        file.write("<h3>"+"Snoop Project"+"</h3>" + "Объект" + " " + 
-        "<b>" + (username) + "</b>" + " " + "найден на нижеперечисленных" + "<b> " + str(exists_counter) + "</b> ресурсах: " + "<br><ol>")
+        try:
+            file = open("results/html/" + username + ".html", "w", encoding="utf-8")
+        except (SyntaxError, ValueError):
+            pass
+        file.write("<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")    
+        file.write("<h3>" + "Snoop Project" + "</h3>" + "Объект" + " " + 
+        "<b>" + (username) + "</b>" + " " + "найден на нижеперечисленных" + "<b> " + str(exists_counter) + 
+        "</b> ресурсах: " + "<br><ol>")
         for website_name in results:
             dictionary = results[website_name]
             if dictionary.get("exists") == "yes":
-                exists_counter += 1
+                exists_counter += 0
                 file.write("<li>" + "<a href='" + dictionary ["url_user"] + "'>"+ (website_name)+"</a>" + "</li>")
-        file.write(f"</ol> Запрашиваемый объект: <")
-        file.write(username)
-        file.write(f"> найден: <b>{exists_counter/2}</b> раз(а).")
-        file.write("<br> Обновлено: ")      
-        file.write(date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.") + "<br>")  
-        file.write("<br><a href='https://github.com/snooppr/snoop'>Snoop/Исходный код</a>")      
+        file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+        file.write("<br> Затраченное время на создание отчёта: " + "%.0f" % float(timefinish) + " c.")      
+        file.write("<br> Обновлено: " + "<i>" + time.ctime() + "</i>")      
+        file.write("<br><br><a href='https://github.com/snooppr/snoop'>Snoop/Исходный код</a>")      
         file.close()
 
-       
+
         if args.csv == True:
-            print(Fore.WHITE + "├───Положительные результаты поиска сохранены в:", username + ".txt" + 
-            " " + "и", username + ".html")
-            print(Fore.WHITE + "├───Расширенный анализ по поиску:" +
+            print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
+            "~/snoop/results/*/" + str(username) + "[.txt.html]")
+            print(Fore.WHITE + "├───Расширенный анализ:" +
             Fore.RED + "\033[5m <\033[0m" +
             Fore.GREEN + f"{username}" +
             Fore.RED + "\033[5m>\033[0m",           
-            "сохранён в", username + ".csv")
+            "сохранён в ~/snoop/results/csv/" + str(username) + ".csv")
         else:        
-            print(Fore.WHITE + "├───Положительные результаты поиска сохранены в:", username + ".txt" +
-            " " + "и", username + ".html")
+            print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
+            "~/snoop/results/*/" + str(username) + "[.txt.html]")
         file.close()
 
 #Запись в csv.
         if args.csv == True:
-            with open("results/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
+            with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
+                            
                 writer = csv.writer(csv_report)
                 writer.writerow(['Объект',
                                  'Ресурс',
@@ -798,8 +801,7 @@ def main():
                                  'статус',
                                  'статус_кода',
                                  'время/мс'
-                                 ]
-                                )
+                                 ])
                 for site in results:
                     writer.writerow([username,
                                      site,
@@ -808,19 +810,21 @@ def main():
                                      results[site]['exists'],
                                      results[site]['http_status'],
                                      results[site]['response_time_ms']
-                                     ]
-                                    )
-# Открыть/нет браузер с результатами поиска.                                            
+                                     ])
+                writer.writerow("")
+                writer.writerow(['Дата'])
+                writer.writerow([time.ctime()])
+
+# Открыть/нет браузер с результатами поиска.
     if args.no_color==False:
         if exists_counter >= 1:
-            webbrowser.open(str("file://" + str(dirresults) + "/results/" + str(username) + ".html"))
+            webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
 # Музыка.
         playsound('end.wav')
-   
+
 if __name__ == "__main__":
     main()
 
 # Финишный вывод.
-print(Fore.WHITE + "└────╼Дата выполнения этого поискового запроса:", 
-date.strftime("%d/%m/%Yг. в %Hч.%Mм.%Sс.\n"))
-print("\033[37m\033[44m{}".format("Сублицензия: авторская"))
+print(Fore.WHITE + "└────╼Дата выполнения этого поискового запроса:", time.ctime())
+print("\n\033[37m\033[44m{}".format("Сублицензия: авторская"))

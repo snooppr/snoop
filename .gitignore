@@ -1,5 +1,10 @@
 __pycache__
 __pycache__/
 results/*
-results/!test
+results/csv/*
+results/html/*
+results/txt/*
 !results/
+!results/csv/новый файл
+!results/html/новый файл
+!results/txt/новый файл

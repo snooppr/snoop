@@ -1,6 +1,6 @@
 {
   "WebsiteName1": {
-    "errorType": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://1examplesite.ru/member.php?username={}",
     "urlMain": "https://1examplesite.ru",
@@ -8,7 +8,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebsiteName2": {
-    "errorType": "response_url",
+    "errоrTypе": "response_url",
     "errorUrl": "https://2examplesite.ru",
     "rank": 0,
     "url": "https://2examplesite.ru/member.php?u{}",
@@ -18,7 +18,7 @@
   },
   "WebsiteName3": {
     "errorMsg": "Пользователь не найден",
-    "errorType": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://3examplesite.ru/member.php?profile{}/",
     "urlMain": "https://3examplesite.ru",
