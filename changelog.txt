@@ -14,6 +14,19 @@ Forum.ykt;
 Myfitnesspal;
 Politikforum;
 Yummly.
+
+1x;
+Alternativeto;
+Codepen;
+Fark;
+Fotothing;
+Freecodecamp;
+Lightstalking;
+Picsart;
+Publiclab;
+Techdirt;
+Unsplash;
+Votetags.
 ===================================================================================
 v1.1.1_rus
 * Добавлены в БС новые ресурсы:
