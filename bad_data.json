@@ -1,6 +1,6 @@
 {
   "AngelList": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://angel.co/{}",
     "urlMain": "https://angel.co/",
@@ -9,7 +9,7 @@
   },
   "Basecamp": {
     "errorMsg": "The account you were looking for doesn't exist",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://{}.basecamphq.com",
     "urlMain": "https://basecamp.com/",
@@ -18,7 +18,7 @@
   },
   "Bittube": {
     "errorUrl": "https://bittube.tv/error/user",
-    "err\u043erTyp\u0435": "response_url",
+    "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://bittube.tv/profile/{}",
     "urlMain": "https://bittube.tv",
@@ -27,13 +27,13 @@
   },
   "BlackPlanet": {
     "errorMsg": "My Hits",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "http://blackplanet.com/{}",
     "urlMain": "http://blackplanet.com/"
   },
   "Boingboing.net": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://bbs.boingboing.net/u/{}",
     "urlMain": "https://boingboing.net/",
@@ -42,7 +42,7 @@
   },
   "CapFriendly": {
     "errorMsg": "No User Found",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.capfriendly.com/users/{}",
     "urlMain": "https://www.capfriendly.com/",
@@ -50,7 +50,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Codepen": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://codepen.io/{}",
     "urlMain": "https://codepen.io/",
@@ -59,7 +59,7 @@
   },
   "EVE Online": {
     "errorUrl": "https://eveonline.com",
-    "err\u043erTyp\u0435": "response_url",
+    "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://evewho.com/pilot/{}/",
     "urlMain": "https://eveonline.com",
@@ -68,7 +68,7 @@
   },
   "Filmweb": {
     "errorUrl": "https://www.filmweb.pl",
-    "err\u043erTyp\u0435": "response_url",
+    "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.filmweb.pl/user/{}",
     "urlMain": "https://www.filmweb.pl/user/adam",
@@ -76,14 +76,14 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fotolog": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://fotolog.com/{}",
     "urlMain": "https://fotolog.com/"
   },
   "Furaffinity": {
     "errorMsg": "user cannot be found",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.furaffinity.net/user/{}",
     "urlMain": "https://www.furaffinity.net",
@@ -92,7 +92,7 @@
   },
   "Imgtagram": {
     "errorUrl": "https://imgtagram.com/error",
-    "err\u043erTyp\u0435": "response_url",
+    "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://imgtagram.com/u/{}",
     "urlMain": "https://imgtagram.com",
@@ -100,7 +100,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Imgur": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://imgur.com/user/{}",
     "urlMain": "https://imgur.com/",
@@ -108,7 +108,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Khan_Academy": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.khanacademy.org/profile/{}",
     "urlMain": "https://www.khanacademy.org/",
@@ -117,7 +117,7 @@
   },
   "Linkedin.com": {
     "errorMsg": "This profile is not available",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.linkedin.com/in/{}",
     "urlMain": "https://www.linkedin.com/",
@@ -126,7 +126,7 @@
   },
   "Marketplace.trainzauctions": {
     "errorUrl": "https://www.trainzauctions.com/{}",
-    "err\u043erTyp\u0435": "response_url",
+    "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://marketplace.trainzauctions.com/user/profile/{}",
     "urlMain": "https://marketplace.trainzauctions.com/",
@@ -134,7 +134,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mehack": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mehack.org/members/?username={}",
     "urlMain": "https://mehack.org/members",
@@ -143,7 +143,7 @@
   },
   "Mesimger": {
     "errorMsg": "Instagram Web Viewer",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://mesimger.com/username/{}",
     "urlMain": "https://mesimger.com/",
@@ -153,7 +153,7 @@
   },
   "PayPal": {
     "errorUrl": "https://www.paypal.com/paypalme2/404",
-    "err\u043erTyp\u0435": "response_url",
+    "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.paypal.com/paypalme2/{}",
     "urlMain": "https://www.paypal.me/",
@@ -162,7 +162,7 @@
   },
   "Pling": {
     "errorUrl": "https://www.pling.com/",
-    "err\u043erTyp\u0435": "response_url",
+    "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.pling.com/u/{}/",
     "urlMain": "https://www.pling.com/",
@@ -170,16 +170,24 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "PowerShell Gallery": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.powershellgallery.com/profiles/{}",
     "urlMain": "https://www.powershellgallery.com",
     "username_claimed": "powershellteam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Rutube": {
+    "errоrTypе": "status_code",
+    "rank": 0,
+    "url": "https://rutube.ru/video/person/{}/?ordering=-created_ts",
+    "urlMain": "https://rutube.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },  
   "Shockwave": {
     "errorMsg": "Oh no! You just finished all of the games on the internet!",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.shockwave.com/member/profiles/{}.jsp",
     "urlMain": "http://www.shockwave.com/",
@@ -187,7 +195,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Spotify": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://open.spotify.com/user/{}",
     "urlMain": "https://open.spotify.com/",
@@ -195,7 +203,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "StreamMe": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.stream.me/{}",
     "urlMain": "https://www.stream.me/",
@@ -204,7 +212,7 @@
   },
   "Teknik": {
     "errorMsg": "The user does not exist",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://user.teknik.io/{}",
     "urlMain": "https://teknik.io/",
@@ -212,7 +220,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebNode": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://{}.webnode.cz/",
     "urlMain": "https://www.webnode.cz/",
@@ -221,7 +229,7 @@
   },
   "Xss": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
-    "err\u043erTyp\u0435": "message",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://xss.is/members/?username={}",
     "urlMain": "https://xss.is/",
@@ -229,7 +237,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Yougame": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://yougame.biz/{}",
     "urlMain": "https://yougame.biz/",
@@ -237,7 +245,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Zomato": {
-    "err\u043erTyp\u0435": "status_code",
+    "errоrTypе": "status_code",
     "headers": {
       "Accept-Language": "en-US,en;q=0.9"
     },
