@@ -115,23 +115,23 @@ optional arguments:
 ```
 
 Для поиска только одного пользователя::
-```
+```bash
 python3 snoop.py username1
 # Кириллица поддерживается, например,
 python3 snoop.py олеся
 ```
 
 Для поиска одного и более юзеров:
-```
+```bash
 python3 snoop.py username1 username2 username3
 ```
 
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}
 
 Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
-```
+```bash
 python3 snoop.py --update Y 
-#Требуется установка Git.
+# Требуется установка Git.
 ```
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>
