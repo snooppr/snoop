@@ -17,6 +17,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebsiteName3": {
+    "errorMsg2": "None",
     "errorMsg": "Пользователь не найден",
     "errоrTypе": "message",
     "rank": 0,

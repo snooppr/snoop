@@ -1,6 +1,7 @@
 {
   "1x": {
     "errorMsg": "This user does not exist or is not approved yet. Come back later.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://1x.com/member/{}",
@@ -18,6 +19,7 @@
   },
   "3dnews": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://forum.3dnews.ru/member.php?username={}",
@@ -27,6 +29,7 @@
   },
   "4pda": {
     "errorMsg": "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0412\u0430\u0448 \u043f\u043e\u0438\u0441\u043a \u043d\u0435 \u0434\u0430\u043b \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://4pda.ru/forum/index.php?act=search&source=pst&noform=1&username={}",
@@ -36,6 +39,7 @@
   },
   "500px": {
     "errorMsg": "Oops! This page doesn\u2019t exist.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://500px.com/{}",
@@ -85,6 +89,7 @@
   },
   "Advancedcustomfields": {
     "errorMsg": "Sorry, page not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://support.advancedcustomfields.com/forums/users/{}",
@@ -118,6 +123,7 @@
   },
   "Allmylinks": {
     "errorMsg": "Page not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://allmylinks.com/{}",
@@ -127,6 +133,7 @@
   },
   "AllodsRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://allods.mail.ru/forums/member.php?username={}",
@@ -177,6 +184,7 @@
   },
   "Antichat": {
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.antichat.ru/members/?username={}",
@@ -194,6 +202,7 @@
   },
   "Ap-pro": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://ap-pro.ru/index/8-0-{}",
@@ -211,6 +220,7 @@
   },
   "ArcheageRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://aa.mail.ru/forums/member.php?username={}",
@@ -220,6 +230,7 @@
   },
   "Archive.org": {
     "errorMsg": "cannot find account",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://archive.org/details/@{}",
@@ -229,6 +240,7 @@
   },
   "Arhrock": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://arhrock.info/forum/members/?username={}",
@@ -238,6 +250,7 @@
   },
   "Armchairgm": {
     "errorMsg": "does not exist or has never logged in on this",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://armchairgm.fandom.com/wiki/User:{}",
@@ -247,6 +260,7 @@
   },
   "ArmoredRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://aw.mail.ru/forums/member.php?username={}",
@@ -264,6 +278,7 @@
   },
   "AskFM": {
     "errorMsg": "Well, apparently not anymore.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://ask.fm/{}",
@@ -273,6 +288,7 @@
   },
   "Astralinux": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.astralinux.ru/members/?username={}",
@@ -331,6 +347,7 @@
   },
   "BabyRU": {
     "errorMsg": "\u0423\u043f\u0441, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u044b \u0438\u0441\u043a\u0430\u043b\u0438, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.baby.ru/u/{}/",
@@ -381,6 +398,7 @@
   },
   "Beerintheevening": {
     "errorMsg": "User does not exist.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.beerintheevening.com/user_profile.shtml?username={}",
@@ -414,6 +432,7 @@
   },
   "BitCoinForum": {
     "errorMsg": "The user whose profile you are trying to view does not exist.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://bitcoinforum.com/profile/{}",
@@ -432,6 +451,7 @@
   },
   "Boardgamegeek": {
     "errorMsg": "User does not exist.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.boardgamegeek.com/user/{}",
@@ -458,6 +478,7 @@
   },
   "Bukkit": {
     "errorMsg": "The specified member cannot be found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://bukkit.org/members/?username={}",
@@ -533,6 +554,7 @@
   },
   "Cent": {
     "errorMsg": "<title>Cent</title>",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://beta.cent.co/@{}",
@@ -566,7 +588,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Chatujme.cz": {
-    "errorMsg": "Neexistujic\u00ed profil",
+    "errorMsg": "Vámi hledaný uživatelský profil",
+    "errorMsg2": "Str\u00e1nka nebyla nalezena",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://profil.chatujme.cz/{}",
@@ -576,6 +599,7 @@
   },
   "Chess": {
     "errorMsg": "Missing page... somebody made a wrong move.",
+    "errorMsg2": "Server error. Our fault. We will look into it!",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.chess.com/ru/member/{}",
@@ -617,6 +641,7 @@
   },
   "Codechef": {
     "errorMsg": "https://www.codechef.com",
+    "errorMsg2": "None",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.codechef.com/users/{}",
@@ -626,6 +651,7 @@
   },
   "Codementor": {
     "errorMsg": "Adapted from",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.codementor.io/{}",
@@ -635,6 +661,7 @@
   },
   "Coderwall": {
     "errorMsg": "404! Our feels when that url is used",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://coderwall.com/{}",
@@ -652,6 +679,7 @@
   },
   "Coj": {
     "errorMsg": "The resource doesn't exist or is not available",
+    "errorMsg2": "Informe de Error",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://coj.uci.cu/user/useraccount.xhtml?username={}",
@@ -685,6 +713,7 @@
   },
   "Contently": {
     "errorMsg": "We can't find that page!",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -737,6 +766,7 @@
   },
   "CrossfireRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://cfire.mail.ru/forums/member.php?username={}",
@@ -746,6 +776,7 @@
   },
   "Cruisemates": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.cruisemates.com/forum/members/{}.html",
@@ -803,6 +834,7 @@
   },
   "Demonscity": {
     "errorMsg": "\u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://demonscity.combats.com/inf.pl?{}",
@@ -887,6 +919,7 @@
   },
   "Diveforum": {
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://diveforum.spb.ru/profile.php?mode=viewprofile&u={}",
@@ -913,6 +946,7 @@
   },
   "Dribbble": {
     "errorMsg": "Whoops, that page is gone.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -931,6 +965,7 @@
   },
   "Duno": {
     "errorMsg": "this user does not exist",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.duno.com/profile.php?pl={}",
@@ -940,6 +975,7 @@
   },
   "Duolingo": {
     "errorMsg": "{\"users\":[]}",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.duolingo.com/profile/{}",
@@ -958,6 +994,7 @@
   },
   "Easyen": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://easyen.ru/index/8-0-{}",
@@ -975,6 +1012,7 @@
   },
   "Ebay": {
     "errorMsg": "The User ID you entered was not found",
+    "errorMsg2": "\u0412\u0432\u0435\u0434\u0435\u043d\u043d\u044b\u0439 \u043b\u043e\u0433\u0438\u043d \u043d\u0435 \u0431\u044b\u043b \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 \u043b\u043e\u0433\u0438\u043d \u0438 \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0443.",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "en-US,en;q=0.9"
@@ -987,6 +1025,7 @@
   },
   "Ecoustics": {
     "errorMsg": "The profile that you have requested no longer exists.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.ecoustics.com/cgi-bin/bbs/board-profile.pl?action=view_profile&profile={}-users",
@@ -1004,6 +1043,7 @@
   },
   "Ello": {
     "errorMsg": "We couldn't find the page you're looking for",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://ello.co/{}",
@@ -1013,6 +1053,7 @@
   },
   "ElwoRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://elwo.ru/index/8-0-{}",
@@ -1022,6 +1063,7 @@
   },
   "Enot-poloskun": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://enot-poloskun.ru/member.php?username={}",
@@ -1039,6 +1081,7 @@
   },
   "Eva": {
     "errorMsg": "\u041f\u0430\u0441\u043f\u043e\u0440\u0442 -  - \u0415\u0432\u0430.\u0420\u0443",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://eva.ru/passport/{}/profile.htm",
@@ -1100,6 +1143,7 @@
   },
   "Fark": {
     "errorMsg": "Tastes like chicken.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.fark.com/users/{}/",
@@ -1150,6 +1194,7 @@
   },
   "Fishingsib": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.fishingsib.ru/forum/members/?username={}",
@@ -1191,7 +1236,9 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Flightradar24": {
-    "errоrTypе": "status_code",
+    "errorMsg": "Sorry, this page could not be found",
+    "errorMsg2": "<title>myFlightradar24</title>",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://my.flightradar24.com/{}",
     "urlMain": "https://www.flightradar24.com/",
@@ -1225,6 +1272,7 @@
   },
   "Football": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.rusfootball.info/user/{}",
@@ -1234,6 +1282,7 @@
   },
   "Forexdengi": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forexdengi.com/member.php?username={}",
@@ -1251,6 +1300,7 @@
   },
   "Forum.allgaz": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.allgaz.ru/member.php?username={}",
@@ -1260,6 +1310,7 @@
   },
   "Forum.caravelgames": {
     "errorMsg": "Guest",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://forum.caravelgames.com/member.php?Action=viewprofile&username={}",
@@ -1269,6 +1320,7 @@
   },
   "Forum.devushka": {
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://forum.devushka.ru/memberlist.php?username={}",
@@ -1278,6 +1330,7 @@
   },
   "Forum.ixbt": {
     "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.ixbt.com/users.cgi?id=info:{}",
@@ -1287,6 +1340,7 @@
   },
   "Forum.md": {
     "errorMsg": "404 - Not Found",
+    "errorMsg2": "404: Not Found",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.md/ru/users/{}",
@@ -1296,6 +1350,7 @@
   },
   "Forum.mirf": {
     "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.mirf.ru/member.php?username={}",
@@ -1305,6 +1360,7 @@
   },
   "Forum.modnaya": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.modnaya.org/members/{}.html",
@@ -1314,6 +1370,7 @@
   },
   "Forum.scuba": {
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://forum.scuba-divers.ru/memberlist.php?username={}",
@@ -1323,6 +1380,7 @@
   },
   "Forum.sibmama": {
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.sibmama.ru/profile.php?mode=viewprofile&u={}",
@@ -1332,6 +1390,7 @@
   },
   "Forum.tks": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.tks.ru/member.php?username={}",
@@ -1350,6 +1409,7 @@
   },
   "Forum_guns": {
     "errorMsg": "action=https://forum.guns.ru/forummisc/blog/search",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.guns.ru/forummisc/blog/{}",
@@ -1359,6 +1419,7 @@
   },
   "ForumhouseRU": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.forumhouse.ru/members/?username={}",
@@ -1368,6 +1429,7 @@
   },
   "Forums.alliedmods": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forums.alliedmods.net/member.php?username={}",
@@ -1377,6 +1439,7 @@
   },
   "Forums.drom": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forums.drom.ru/member.php?username={}",
@@ -1402,6 +1465,7 @@
   },
   "Forumteam": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forumteam.top/members/?username={}",
@@ -1411,6 +1475,7 @@
   },
   "Forumyuristov": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forumyuristov.ru/members/?username={}",
@@ -1420,6 +1485,7 @@
   },
   "Fotothing": {
     "errorMsg": "The requested file or user was not found.",
+    "errorMsg2": "No user selected.",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.fotothing.com/{}",
@@ -1453,6 +1519,7 @@
   },
   "Funnyjunk": {
     "errorMsg": "The user was not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://funnyjunk.com/user/{}",
@@ -1486,6 +1553,7 @@
   },
   "Gbatemp": {
     "errorMsg": "The specified member cannot be found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://gbatemp.net/members/?username={}",
@@ -1553,6 +1621,7 @@
   },
   "GitLab": {
     "errorMsg": "[]",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://gitlab.com/{}",
@@ -1563,6 +1632,7 @@
   },
   "Gitmemory": {
     "errorMsg": "Oops,404",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.gitmemory.com/{}",
@@ -1572,6 +1642,7 @@
   },
   "Glbyh": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://glbyh.ru/member.php?username={}",
@@ -1581,6 +1652,7 @@
   },
   "Gliger": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.gliger.ru/index/8-0-{}",
@@ -1622,6 +1694,7 @@
   },
   "Gumroad": {
     "errorMsg": "Page not found.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.gumroad.com/{}",
@@ -1663,6 +1736,7 @@
   },
   "HackerNews": {
     "errorMsg": "No such user.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://news.ycombinator.com/user?id={}",
@@ -1672,6 +1746,7 @@
   },
   "HackerOne": {
     "errorMsg": "Page not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://hackerone.com/{}",
@@ -1681,6 +1756,7 @@
   },
   "HackerRank": {
     "errorMsg": "Something went wrong",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://hackerrank.com/{}",
@@ -1698,6 +1774,7 @@
   },
   "House-Mixes.com": {
     "errorMsg": "Profile Not Found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.house-mixes.com/profile/{}",
@@ -1707,6 +1784,7 @@
   },
   "Houzz": {
     "errorMsg": "The page you requested was not found.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://houzz.com/user/{}",
@@ -1724,6 +1802,7 @@
   },
   "Hubski": {
     "errorMsg": "No such user",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://hubski.com/user/{}",
@@ -1733,6 +1812,7 @@
   },
   "Hunting": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.hunting.ru/forum/members/?username={}",
@@ -1742,6 +1822,7 @@
   },
   "IFTTT": {
     "errorMsg": "The requested page or file does not exist",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.ifttt.com/p/{}",
@@ -1776,6 +1857,7 @@
   },
   "Igromania": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://forum.igromania.ru/member.php?username={}",
@@ -1802,6 +1884,7 @@
   },
   "Indog": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.indog.ru/forum/member.php?username={}",
@@ -1820,6 +1903,7 @@
   },
   "Ingvarr.net.ru": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://ingvarr.net.ru/index/8-0-{}",
@@ -1829,6 +1913,7 @@
   },
   "Insanejournal": {
     "errorMsg": "Unknown user",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://{}.insanejournal.com/profile",
@@ -1838,6 +1923,7 @@
   },
   "Instagram": {
     "errorMsg": "The link you followed may be broken",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.instagram.com/{}",
@@ -1847,6 +1933,7 @@
   },
   "Instructables": {
     "errorMsg": "404: We're sorry, things break sometimes",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.instructables.com/member/{}",
@@ -1856,6 +1943,7 @@
   },
   "Interpals": {
     "errorMsg": "The requested user does not exist or is inactive",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.interpals.net/{}",
@@ -1897,6 +1985,7 @@
   },
   "Jeuxvideo": {
     "errorMsg": "Vous \u00eates",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.jeuxvideo.com/profil/{}?mode=infos",
@@ -1939,6 +2028,7 @@
   },
   "Kali_community": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "The Kali Linux Forums database has encountered a problem.",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forums.kali.org/member.php?username={}",
@@ -1972,6 +2062,7 @@
   },
   "Kik": {
     "errorMsg": "The page you requested was not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://ws2.kik.com/user/{}",
@@ -1989,6 +2080,7 @@
   },
   "Kongregate": {
     "errorMsg": "Sorry, no account with that name was found.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -1999,6 +2091,7 @@
   },
   "Kuban.forum24": {
     "errorMsg": "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://kuban.forum24.ru/?32-{}",
@@ -2008,6 +2101,7 @@
   },
   "Kuharka": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "<title>\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438</title>",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.kuharka.ru/members/{}",
@@ -2074,6 +2168,7 @@
   },
   "Letterboxd": {
     "errorMsg": "Sorry, we can\u2019t find the page you\u2019ve requested.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://letterboxd.com/{}",
@@ -2083,6 +2178,7 @@
   },
   "Lichess": {
     "errorMsg": "Page not found!",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://lichess.org/@/{}",
@@ -2118,6 +2214,7 @@
   },
   "LiveLeak": {
     "errorMsg": "channel not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.liveleak.com/c/{}",
@@ -2135,6 +2232,7 @@
   },
   "Lkforum": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.lkforum.ru/member.php?username={}",
@@ -2153,6 +2251,7 @@
   },
   "Lolchess": {
     "errorMsg": "No search results",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://lolchess.gg/profile/na/{}",
@@ -2178,6 +2277,7 @@
   },
   "LostarkRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://la.mail.ru/forums/member.php?username={}",
@@ -2251,6 +2351,7 @@
   },
   "Mbclub": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.mbclub.ru/forum/members/?username={}",
@@ -2260,6 +2361,7 @@
   },
   "Mdregion": {
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.mdregion.ru/forum/memberlist.php?username={}",
@@ -2303,6 +2405,7 @@
   },
   "Metacafe": {
     "errorMsg": "Channel is temporarily not available",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.metacafe.com/channels/{}",
@@ -2312,6 +2415,7 @@
   },
   "Metacritic": {
     "errorMsg": "User not found",
+    "errorMsg2": "<title>404 Page Not Found",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.metacritic.com/user/{}",
@@ -2371,6 +2475,7 @@
   },
   "Moscow.flamp": {
     "errorMsg": "\u041f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u0430\u043a\u0438\u0445 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0434\u0435\u043b\u0430\u044e\u0442",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://moscow.flamp.ru/{}",
@@ -2388,6 +2493,7 @@
   },
   "Music-rock": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://music-rock.ru/member.php?username={}",
@@ -2397,6 +2503,7 @@
   },
   "My.mail.ru_new": {
     "errorMsg": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u041c\u0438\u0440",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://my.mail.ru/mail/{}",
@@ -2406,6 +2513,7 @@
   },
   "My.mail.ru_old": {
     "errorMsg": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u041c\u0438\u0440",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://my.mail.ru/list/{}",
@@ -2455,6 +2563,7 @@
   },
   "NICommunityForum": {
     "errorMsg": "The specified member cannot be found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.native-instruments.com/forum/members?username={}",
@@ -2480,6 +2589,7 @@
   },
   "NameMC": {
     "errorMsg": "Profiles: 0 results",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://namemc.com/profile/{}",
@@ -2489,15 +2599,17 @@
   },
   "NationStates_Nation": {
     "errorMsg": "Was this your nation? It may have ceased to exist due to inactivity, but can rise again!",
+    "errorMsg2": "<title>NationStates | create your own country",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://nationstates.net/nation={}",
     "urlMain": "https://nationstates.net",
-    "username_claimed": "the_holy_principality_of_saint_mark",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewould"
   },
   "NationStates_Region": {
     "errorMsg": "does not exist.",
+    "errorMsg2": "create your own country",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://nationstates.net/region={}",
@@ -2550,6 +2662,7 @@
   },
   "Op.gg": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2562,6 +2675,7 @@
   },
   "Op.ggBR": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2574,6 +2688,7 @@
   },
   "Op.ggEUNE": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2586,6 +2701,7 @@
   },
   "Op.ggEUW": {
     "errorMsg": "LoL Stats, Record Replay, Database, Guide - OP.GG",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://euw.op.gg/summoner/userName={}",
@@ -2595,6 +2711,7 @@
   },
   "Op.ggJP": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2607,6 +2724,7 @@
   },
   "Op.ggLAN": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2619,6 +2737,7 @@
   },
   "Op.ggLAS": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2631,6 +2750,7 @@
   },
   "Op.ggNA": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2643,6 +2763,7 @@
   },
   "Op.ggOCE": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2655,6 +2776,7 @@
   },
   "Op.ggRU": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2667,6 +2789,7 @@
   },
   "Op.ggTR": {
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "headers": {
       "Accept-Language": "ru-RU,ru"
@@ -2679,6 +2802,7 @@
   },
   "OpenCollective": {
     "errorMsg": "Not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://opencollective.com/{}",
@@ -2696,6 +2820,7 @@
   },
   "Opennet": {
     "errorMsg": "\u0418\u043c\u044f \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.opennet.ru/~{}",
@@ -2737,6 +2862,7 @@
   },
   "OurDJTalk": {
     "errorMsg": "The specified member cannot be found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://ourdjtalk.com/members?username={}",
@@ -2789,6 +2915,7 @@
   },
   "Pcgamer": {
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forums.pcgamer.com/members/?username={}",
@@ -2798,6 +2925,7 @@
   },
   "Pedsovet": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://pedsovet.su/index/8-0-{}",
@@ -2816,6 +2944,7 @@
   },
   "PerfectRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://pw.mail.ru/forums/member.php?username={}",
@@ -2833,6 +2962,7 @@
   },
   "Pesiq": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://pesiq.ru/forum/member.php?username={}",
@@ -2850,6 +2980,7 @@
   },
   "PhpRU": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://php.ru/forum/members/?username={}",
@@ -2899,6 +3030,7 @@
   },
   "Planetminecraft": {
     "errorMsg": "Hmm, it seems that you've come across an invalid username",
+    "errorMsg2": "Oops, this page is missing or temporarily down",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.planetminecraft.com/member/{}",
@@ -2940,6 +3072,7 @@
   },
   "Politforums": {
     "errorMsg": "\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0441\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u043e\u043c",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.politforums.net/free/profile.php?showuser={}",
@@ -2949,6 +3082,7 @@
   },
   "Politikforum": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.politikforum.ru/member.php?username={}",
@@ -2966,6 +3100,7 @@
   },
   "Prankru": {
     "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://prankru.net/member.php?username={}",
@@ -2975,6 +3110,7 @@
   },
   "Prizyvnik": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.prizyvnik.info/members/?username={}",
@@ -2984,6 +3120,7 @@
   },
   "ProductHunt": {
     "errorMsg": "Product Hunt is a curation of the best new products",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.producthunt.com/@{}",
@@ -3009,6 +3146,7 @@
   },
   "Programmersforum": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://programmersforum.ru/member.php?username={}",
@@ -3018,6 +3156,7 @@
   },
   "Prokoni": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.prokoni.ru/forum/members/?username={}",
@@ -3035,6 +3174,7 @@
   },
   "Proza": {
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.proza.ru/avtor/{}",
@@ -3127,6 +3267,7 @@
   },
   "Radioskot": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://radioskot.ru/index/8-0-{}",
@@ -3144,6 +3285,7 @@
   },
   "Rajce.net": {
     "errorMsg": "410",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://{}.rajce.idnes.cz/",
@@ -3162,6 +3304,7 @@
   },
   "Rapforce": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.rapforce.net/index/8-0-{}",
@@ -3187,6 +3330,7 @@
   },
   "Rcmir": {
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://{}.rcmir.com/",
@@ -3196,6 +3340,7 @@
   },
   "Realmeye": {
     "errorMsg": "Sorry, but we either:",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.realmeye.com/player/{}",
@@ -3221,6 +3366,7 @@
   },
   "Redsun.tf": {
     "errorMsg": "The specified member cannot be found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.redsun.tf/members/?username={}",
@@ -3230,6 +3376,7 @@
   },
   "Reibert": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://reibert.info/members/?username={}",
@@ -3239,6 +3386,7 @@
   },
   "Repl.it": {
     "errorMsg": "404",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://repl.it/@{}",
@@ -3258,6 +3406,7 @@
   },
   "RevelationRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://rev.mail.ru/forums/member.php?username={}",
@@ -3267,6 +3416,7 @@
   },
   "ReverbNation": {
     "errorMsg": "Sorry, we couldn't find that page",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.reverbnation.com/{}",
@@ -3276,6 +3426,7 @@
   },
   "Roblox": {
     "errorMsg": "Page cannot be found or no longer exists",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.roblox.com/user.aspx?username={}",
@@ -3309,6 +3460,7 @@
   },
   "Rusarmy": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.rusarmy.com/forum/members/?username={}",
@@ -3318,6 +3470,7 @@
   },
   "Rusforum": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.rusforum.com/member.php?username={}",
@@ -3367,6 +3520,7 @@
   },
   "Scribd": {
     "errorMsg": "Page not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.scribd.com/{}",
@@ -3376,6 +3530,7 @@
   },
   "Searchengines": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://searchengines.guru/member.php?username={}",
@@ -3385,6 +3540,7 @@
   },
   "Seatracker": {
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://seatracker.ru/profile.php?mode=viewprofile&u={}",
@@ -3426,6 +3582,7 @@
   },
   "Signal": {
     "errorMsg": "Oops! That page doesn\u2019t exist or is private.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://community.signalusers.org/u/{}",
@@ -3435,6 +3592,7 @@
   },
   "Skodaforum": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.skodaforum.ru/member.php?username={}",
@@ -3517,6 +3675,7 @@
   },
   "Sovserv": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://sovserv.su/member.php?username={}",
@@ -3526,6 +3685,7 @@
   },
   "Soylentnews": {
     "errorMsg": "The user you requested does not exist, no matter how much you wish this might be the case.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://soylentnews.org/~{}",
@@ -3535,6 +3695,7 @@
   },
   "Sparkpeople": {
     "errorMsg": "We couldn't find that user",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.sparkpeople.com/mypage.asp?id={}",
@@ -3544,6 +3705,7 @@
   },
   "Speedrun.com": {
     "errorMsg": "not found.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://speedrun.com/user/{}",
@@ -3585,6 +3747,7 @@
   },
   "SportsTracker": {
     "errorMsg": "\"code\":\"404\"",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.sports-tracker.com/view_profile/{}",
@@ -3603,6 +3766,7 @@
   },
   "Steam": {
     "errorMsg": "The specified profile could not be found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://steamcommunity.com/id/{}",
@@ -3612,6 +3776,7 @@
   },
   "SteamGroup": {
     "errorMsg": "No group could be retrieved for the given URL",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://steamcommunity.com/groups/{}",
@@ -3621,6 +3786,7 @@
   },
   "Steamid": {
     "errorMsg": "SteamID account finder",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://steamid.uk/profile/{}",
@@ -3630,6 +3796,7 @@
   },
   "Stihi": {
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.stihi.ru/avtor/{}",
@@ -3647,6 +3814,7 @@
   },
   "Subeta": {
     "errorMsg": "Invalid user",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://subeta.net/users/{}",
@@ -3672,6 +3840,7 @@
   },
   "Swimming_forum": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://forumswimming.ru/index/8-0-{}",
@@ -3698,6 +3867,7 @@
   },
   "TanksRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://tanks.mail.ru/forum/member.php?username={}",
@@ -3723,11 +3893,12 @@
   },
   "Telegram": {
     "errorMsg": "<meta property=\"twitter:title\" content=\"Telegram: Contact",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://t.me/{}",
     "urlMain": "https://t.me/",
-    "username_claimed": "saman",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Tellonym.me": {
@@ -3740,6 +3911,7 @@
   },
   "The-village": {
     "errorMsg": "The Village: \u043e\u0448\u0438\u0431\u043a\u0430 404, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.the-village.ru/users/{}",
@@ -3749,6 +3921,7 @@
   },
   "Theanswerbank": {
     "errorMsg": "Welcome to the AnswerBank",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.theanswerbank.co.uk/members/{}",
@@ -3782,6 +3955,7 @@
   },
   "TikTok": {
     "errorMsg": "Couldn&#x27;t find this account",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.tiktok.com/@{}",
@@ -3791,6 +3965,7 @@
   },
   "Tinder": {
     "errorMsg": "Looking for Someone?",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.gotinder.com/@{}",
@@ -3816,6 +3991,7 @@
   },
   "Touristlink": {
     "errorMsg": "Members across the World",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.touristlink.com/user/{}",
@@ -3825,6 +4001,7 @@
   },
   "TrackmaniaLadder": {
     "errorMsg": "player unknown or invalid",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://en.tm-ladder.com/{}_rech.php",
@@ -3842,6 +4019,7 @@
   },
   "Trainsim": {
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.trainsim.com/vbts/member.php?username={}",
@@ -3859,6 +4037,7 @@
   },
   "TrashboxRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "404 - \u0424\u0430\u0439\u043b \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://trashbox.ru/users/{}",
@@ -3876,6 +4055,7 @@
   },
   "Travellerspoint": {
     "errorMsg": "Wooops. Sorry!",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.travellerspoint.com/users/{}",
@@ -3885,6 +4065,7 @@
   },
   "Trello": {
     "errorMsg": "model not found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://trello.com/{}",
@@ -3903,6 +4084,7 @@
   },
   "TripAdvisor": {
     "errorMsg": "This page is on vacation\u2026",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://tripadvisor.com/members/{}",
@@ -3932,6 +4114,7 @@
   },
   "Typeracer": {
     "errorMsg": "Profile Not Found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://data.typeracer.com/pit/profile?user={}",
@@ -3941,6 +4124,7 @@
   },
   "Uaksu": {
     "errorMsg": "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://uaksu.forum24.ru/?32-{}",
@@ -3991,6 +4175,7 @@
   },
   "Velomania": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.velomania.ru/member.php?username={}",
@@ -4008,6 +4193,7 @@
   },
   "Vezha": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://vezha.com/members/?username={}",
@@ -4033,6 +4219,7 @@
   },
   "Virgool": {
     "errorMsg": "\u06f4\u06f0\u06f4",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://virgool.io/@{}",
@@ -4042,6 +4229,7 @@
   },
   "VirusTotal": {
     "errorMsg": "not found",
+    "errorMsg2": "The resource could not be found",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.virustotal.com/ui/users/{}/trusted_users",
@@ -4051,6 +4239,7 @@
   },
   "Vkovk": {
     "errorMsg": "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.vkovk.ru/profile-vkontakte.php?user={}",
@@ -4069,6 +4258,7 @@
   },
   "WarfaceRU": {
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://wf.mail.ru/forums/member.php?username={}",
@@ -4086,6 +4276,7 @@
   },
   "Wattpad": {
     "errorMsg": "userError-404",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.wattpad.com/user/{}",
@@ -4103,6 +4294,7 @@
   },
   "Weeartit": {
     "errorMsg": "Oops! You've landed on a moving target!",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://weheartit.com/{}",
@@ -4120,6 +4312,7 @@
   },
   "Wikidot": {
     "errorMsg": "User does not exist.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.wikidot.com/user:info/{}",
@@ -4129,6 +4322,7 @@
   },
   "Wikipedia": {
     "errorMsg": "is not registered",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.wikipedia.org/wiki/User:{}",
@@ -4146,6 +4340,7 @@
   },
   "Wittyprofiles": {
     "errorMsg": "It looks like you are looking for something that isn't here.",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://www.wittyprofiles.com/author/{}",
@@ -4190,6 +4385,7 @@
   },
   "X-xack": {
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://x-xack.ru/members/?username={}",
@@ -4199,6 +4395,7 @@
   },
   "YandexMarket": {
     "errorMsg": "\u0422\u0443\u0442 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://market.yandex.ru/user/{}/achievements",
@@ -4208,6 +4405,7 @@
   },
   "YouNow": {
     "errorMsg": "No users found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.younow.com/{}/",
@@ -4226,6 +4424,7 @@
   },
   "YouTube": {
     "errorMsg": "Not Found",
+    "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.youtube.com/{}",

@@ -326,6 +326,7 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
         http_status = "?"
         response_text = ""
+#        error_type = "message"
 
 # Получить future и убедиться, что оно закончено.
         future = net_info["request_future"]
@@ -345,17 +346,22 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
             response_text = r.text.encode(r.encoding)
         except:
             pass
-
+#Ответы message (разные локации)
         if error_type == "message":
-            error = net_info.get("errorMsg")
-# Проверяет, есть ли сообщение об ошибке в HTML.
-            if not error in r.text:
-                print_found(social_network, url, response_time, verbose, color)
-                exists = "yes"
-            else:
+            error = net_info.get("errorMsg") 
+            error2 = net_info.get("errorMsg2")
+            if error2 in r.text:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
                 exists = "no"
+            elif error in r.text:
+                if not print_found_only:
+                    print_not_found(social_network, response_time, verbose, color)
+                exists = "no"
+                
+            else:
+               print_found(social_network, url, response_time, verbose, color)
+               exists = "yes"
 
         elif error_type == "status_code":
 # Проверяет, является ли код состояния ответа 2..
