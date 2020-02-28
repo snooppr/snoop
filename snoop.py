@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
 
 import csv  
-import datetime
 import json
 import locale
 import os
@@ -46,7 +45,6 @@ print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справк�
 module_name = "Snoop: поиск никнейма по всем фронтам!"
 __version__ = "1.1.2_rus Ветка GNU/Linux"
 
-date = datetime.datetime.today()
 
 dirresults = Path.cwd()
 

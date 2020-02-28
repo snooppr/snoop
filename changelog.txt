@@ -5,6 +5,18 @@ v1.1.2_rus
 * Результаты поиска отсортированы по расширению.
 
 * Добавлены в БС новые ресурсы:
+Angara;
+Cruisemates;
+Forumyuristov;
+Gapyear;
+Lonelyplanet;
+Metacafe;
+Schlock;
+Tkgr;
+Touristlink;
+Travelblog;
+Videosift;
+Wolpy.
 
 Allrecipes;
 Armchairgm;
@@ -28,6 +40,7 @@ Techdirt;
 Unsplash;
 Votetags.
 ===================================================================================
+
 v1.1.1_rus
 * Добавлены в БС новые ресурсы:
 
@@ -78,7 +91,7 @@ Sovserv;
 Subeta;
 Theanswerbank;
 Thechive;
-The-village.
+The-village;
 Wittyprofiles.
 ===================================================================================
 
