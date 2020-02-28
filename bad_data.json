@@ -7,6 +7,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Autolada": {
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://www.autolada.ru/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://www.autolada.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Basecamp": {
     "errorMsg": "The account you were looking for doesn't exist",
     "errоrTypе": "message",
@@ -50,7 +59,8 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Codepen": {
-    "errоrTypе": "status_code",
+    "errorMsg": "404 Error - CodePen",
+    "errоrTypе": "message",
     "rank": 0,
     "url": "https://codepen.io/{}",
     "urlMain": "https://codepen.io/",
@@ -160,6 +170,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noneownsthisusername"
   },
+  "Playerup": {
+    "errorMsg": "Page Not Found",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://www.playerup.com/{}",
+    "urlMain": "https://www.playerup.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Pling": {
     "errorUrl": "https://www.pling.com/",
     "errоrTypе": "response_url",
@@ -177,14 +196,6 @@
     "username_claimed": "powershellteam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Rutube": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://rutube.ru/video/person/{}/?ordering=-created_ts",
-    "urlMain": "https://rutube.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },  
   "Shockwave": {
     "errorMsg": "Oh no! You just finished all of the games on the internet!",
     "errоrTypе": "message",

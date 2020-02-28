@@ -8,9 +8,12 @@ v1.1.2_rus
 Angara;
 Cruisemates;
 Forumyuristov;
+Forum.allgaz;
 Gapyear;
 Lonelyplanet;
+Mbclub;
 Metacafe;
+Skodaforum;
 Schlock;
 Tkgr;
 Touristlink;

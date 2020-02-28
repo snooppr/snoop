@@ -633,15 +633,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Codepen": {
-    "errorMsg": "404 (Page Not Found)",
-    "errоrTypе": "message",
-    "rank": 0,
-    "url": "https://codepen.io/{}",
-    "urlMain": "https://codepen.io/Mamboleoo",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Coderwall": {
     "errorMsg": "404! Our feels when that url is used",
     "errоrTypе": "message",
@@ -1257,6 +1248,15 @@
     "urlMain": "https://fortnitetracker.com/challenges",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Forum.allgaz": {
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://forum.allgaz.ru/member.php?username={}",
+    "urlMain": "https://forum.allgaz.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.caravelgames": {
     "errorMsg": "Guest",
@@ -2249,6 +2249,15 @@
     "username_claimed": "TheKinrar",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Mbclub": {
+    "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://www.mbclub.ru/forum/members/?username={}",
+    "urlMain": "https://www.mbclub.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Mdregion": {
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
     "errоrTypе": "message",
@@ -2905,15 +2914,6 @@
     "username_claimed": "Facebook",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Playerup": {
-    "errorMsg": "Page Not Found",
-    "errоrTypе": "message",
-    "rank": 0,
-    "url": "https://www.playerup.com/{}",
-    "urlMain": "https://www.playerup.com/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Plug.DJ": {
     "errоrTypе": "status_code",
     "rank": 0,
@@ -3431,6 +3431,15 @@
     "url": "https://community.signalusers.org/u/{}",
     "urlMain": "https://community.signalusers.org",
     "username_claimed": "jlund",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Skodaforum": {
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "http://www.skodaforum.ru/member.php?username={}",
+    "urlMain": "http://www.skodaforum.ru",
+    "username_claimed": "rivera",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Skyrock": {
