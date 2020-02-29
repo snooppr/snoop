@@ -17,8 +17,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WebsiteName3": {
-    "errorMsg2": "None",
     "errorMsg": "Пользователь не найден",
+    "errorMsg2": "None",    
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://3examplesite.ru/member.php?profile{}/",
