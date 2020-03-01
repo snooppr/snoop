@@ -443,9 +443,9 @@ def update_snoop():
             print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
             os.system("./update.sh")
 
-# Запрос лицензии.
-def main():
 
+def main():
+# Запрос лицензии.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
 
@@ -706,9 +706,12 @@ def main():
             print(
                 f"Ошибка: желаемые сайты не найдены: {', '.join(site_missing)}.")
             sys.exit(1)
+# Флаг БС
+    with open("data.json", "r", encoding="utf8") as flag:
+        BS = json.load(flag)
+        flagBS = len(BS)
 
-
-#Запись в txt.
+# Запись в txt.
     for username in args.username:
         print()
         
@@ -751,12 +754,13 @@ def main():
             if dictionary.get("exists") == "yes":
                 exists_counter += 1
                 file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
-        file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а)")
-        file.write("\n" f"Обновлено: " + time.ctime())      
+        file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
+        file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
+        file.write("\n" f"Обновлено: " + time.ctime() + ".")      
         print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
 
 
-#Запись в html.
+# Запись в html.
         timefinish = time.time() - timestart
         file = open("results/html/" + username + ".html", "w", encoding="utf-8")
 
@@ -767,15 +771,16 @@ def main():
         file.write("<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")    
         file.write("<h3>" + "Snoop Project" + "</h3>" + "Объект" + " " + 
         "<b>" + (username) + "</b>" + " " + "найден на нижеперечисленных" + "<b> " + str(exists_counter) + 
-        "</b> ресурсах: " + "<br><ol>")
+        "</b> ресурсах:  " + "<br><ol>")
         for website_name in results:
             dictionary = results[website_name]
             if dictionary.get("exists") == "yes":
                 exists_counter += 0
                 file.write("<li>" + "<a href='" + dictionary ["url_user"] + "'>"+ (website_name)+"</a>" + "</li>")
         file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-        file.write("<br> Затраченное время на создание отчёта: " + "%.0f" % float(timefinish) + " c.")      
-        file.write("<br> Обновлено: " + "<i>" + time.ctime() + "</i>")      
+        file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.")      
+        file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.")      
+        file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>")      
         file.write("<br><br><a href='https://github.com/snooppr/snoop'>Snoop/Исходный код</a>")      
         file.close()
 
@@ -793,7 +798,7 @@ def main():
             "~/snoop/results/*/" + str(username) + "[.txt.html]")
         file.close()
 
-#Запись в csv.
+# Запись в csv.
         if args.csv == True:
             with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
                             
@@ -804,7 +809,7 @@ def main():
                                  'url_user',
                                  'статус',
                                  'статус_кода',
-                                 'время/мс'
+                                 'время/мс',
                                  ])
                 for site in results:
                     writer.writerow([username,
@@ -815,7 +820,12 @@ def main():
                                      results[site]['http_status'],
                                      results[site]['response_time_ms']
                                      ])
-                writer.writerow("")
+                writer.writerow(['«---------------------------------------',
+                                 '--------', '----------------------------------',
+                                 '--------------------------------------------------',
+                                 '-------------', '-----------------', '--------------»'])
+                writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
+                writer.writerow('')
                 writer.writerow(['Дата'])
                 writer.writerow([time.ctime()])
 
