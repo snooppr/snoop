@@ -479,10 +479,6 @@ def update_snoop():
             os.system("./update.sh")
     
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
 def main():
 # Запрос лицензии.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
@@ -750,7 +746,6 @@ def main():
     with open("data.json", "r", encoding="utf8") as flag:
         BS = json.load(flag)
         flagBS = len(BS)
-<<<<<<< HEAD
 
 # Сортировка по странам
     if args.country:
@@ -760,8 +755,6 @@ def main():
         for site in country_sites:
             site_data[site] = site_country.get(site)
     
-=======
->>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
 
 # Запись в txt.
     for username in args.username:
@@ -820,25 +813,17 @@ def main():
             file = open("results/html/" + username + ".html", "w", encoding="utf-8")
         except (SyntaxError, ValueError):
             pass
-<<<<<<< HEAD
         file.write("<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
         file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
         <button onclick="sortList()">Сортировать по странам</button><br><br>\n""")
         file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
         "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
-=======
-        file.write("<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")    
-        file.write("<h3>" + "Snoop Project" + "</h3>" + "Объект" + " " + 
-        "<b>" + (username) + "</b>" + " " + "найден на нижеперечисленных" + "<b> " + str(exists_counter) + 
-        "</b> ресурсах:  " + "<br><ol>")
->>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
         for website_name in results:
             dictionary = results[website_name]
             if dictionary.get("exists") == "yes":
                 exists_counter += 0
                 file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
         file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-<<<<<<< HEAD
         file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
         file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
         file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>\n")
@@ -866,12 +851,6 @@ function sortList() {
   }
 }
 </script>""")                        
-=======
-        file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.")      
-        file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.")      
-        file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>")      
-        file.write("<br><br><a href='https://github.com/snooppr/snoop'>Snoop/Исходный код</a>")      
->>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
         file.close()
 
 #+CSV вывод на печать информации
