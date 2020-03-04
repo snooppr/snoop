@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+#Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
 
 import csv  
 import json
@@ -12,7 +13,6 @@ import subprocess
 import sys
 import time
 import webbrowser
-
 
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from colorama import Fore, Style, init
@@ -34,7 +34,7 @@ print ("""
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m1.2\033[31m_rus\033[0m\n
+                         _|     \033[37mv1.\033[34m1.3\033[31m_rus\033[0m\n
 """)
 
 print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n" + 
@@ -43,7 +43,7 @@ print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справк�
 
 
 module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.1.2_rus Ветка GNU/Linux"
+__version__ = "1.1.3_rus Ветка GNU/Linux"
 
 
 dirresults = Path.cwd()
@@ -51,6 +51,7 @@ dirresults = Path.cwd()
 timestart = time.time()
 
 global proxy_list
+
 
 proxy_list = []
 
@@ -106,11 +107,20 @@ def print_error(err, errstr, var, verbose=False, color=True):
 def format_response_time(response_time, verbose):
     return " [{} ms]".format(response_time) if verbose else ""
 
+#Вывод на печать, если указан флаг '--country'
+def print_found_country(social_network, url, countryA, response_time=False, verbose=False, color=True):
+    if color:
+        print(countryA, (Style.BRIGHT +
+            format_response_time(response_time, verbose) +
+            Fore.GREEN + f" {social_network}:"), url)
+    else:
+        print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
 
-def print_found(social_network, url, response_time, verbose=False, color=True):
+#Вывод на печать по умолчанию
+def print_found(social_network, url, response_time=False, verbose=False, color=True):
     if color:
         print((Style.BRIGHT + Fore.WHITE + "[" +
-            Fore.GREEN + "+" +
+            Fore.GREEN + "+" + 
             Fore.WHITE + "]" +
             format_response_time(response_time, verbose) +
             Fore.GREEN + f" {social_network}:"), url)
@@ -172,7 +182,7 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
     return None, "", -1
 
 
-def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
+def snoop(username, site_data, verbose=False, country=False, tor=False, unique_tor=False,
              proxy=None, print_found_only=False, timeout=None, color=True):
 
     """Snoop Аналитика.
@@ -182,21 +192,27 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
     Аргументы:
     username               -- Разыскиваемый никнейм.
     site_data              -- Snoop БД поддерживваемых сайтов 
-    verbose                -- Подробная вербализация
+    verbose/debug          -- Подробная вербализация
     tor                    -- Служба Tor
     unique_tor             -- Опция Tor: новая цепочка при поиске для каждого сайта
     proxy                  -- Указание своего proxy
-    timeoutout                -- Ограничение времени на ожидание ответа сайта
+    timeoutout             -- Ограничение времени на ожидание ответа от сайта
     color                  -- Монохромный/раскрашиваемый терминал
+    country                -- Страны
+    sort                   -- Сортировка по алфавиту внутри баз данных: (data.json; bad_data.json; sites.md; bad_site.md) 
+    listing                -- Вывод на печать БС и ЧС
+    update                 -- Обновление ПО Snoop
+    donation               -- Финансовая поддержка Snoop
 
     Возвращаемые значения:
     Словарь, содержащий результаты из отчета. Ключом словаря является название
-    сайта из БД, и значение другого словаря со следующими ключами::
+    сайта из БД .json, значением — вложенный словарь со следующими ключами::
+        flagcountry:               Флаг государства (расположение страны/локация).
         url_main:                  URL основного сайта.
         url_user:                  URL ведущий на пользователя (если такой аккаунт найден).
         exists/статус:             Указание результатов теста на наличие аккаунта.
         http_status/статус кода:   HTTP status code ответа сайта.
-        response_text:    Текст, который вернулся запрос-ответ от сайта (при ошибке соединения может отсутствовать)
+        response_text:             Текст, который вернулся запрос-ответ от сайта (при ошибке соединения может отсутствовать).
     """
 
     print_info("разыскиваем:", username, color)
@@ -224,14 +240,19 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 # Результаты анализа всех сайтов.
     results_total = {}
 
-# Создание futures на все запросы. Это позволит распараллетить запросы.
-    for social_network, net_info in site_data.items():
 
+# Создание futures на все запросы. Это позволит распараллетить запросы.
+#    global countryA
+    for social_network, net_info in site_data.items():
+#        print([iz for iz in site_data]) #Тест вывода ключей
+#        print(social_network)
         # Результаты анализа конкретного сайта.
         results_site = {}
 
-# Запись URL основного сайта.
+# Запись URL основного сайта и флага страные (сопоставление с data.json)
+        results_site['flagcountry'] = net_info.get("country")
         results_site['url_main'] = net_info.get("urlMain")
+
 
 # Пользовательский user-agent браузера, некоторые сайты от этого зависят напрямую.
 # Временно поставил самый популярный, чтобы не думали, что запросы идут от ботов.
@@ -267,7 +288,7 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 # Существует специальный URL (обычно о нем мы не догадываемся) для проверки существования отдельно юзера.
                 url_probe = url_probe.format(username)
 
-#Если нужен только статус кода, не загружать код страницы.
+# Если нужен только статус кода, не загружать код страницы.
             if net_info["errоrTypе"] == 'status_code':
                 request_method = session.head
             else:
@@ -308,6 +329,8 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 
 # Открыть файл, содержащий ссылки на аккаунт.
 # Основная логика: если текущие запросов, сделайте их. Если многопоточные запросы, дождаться ответов.
+
+# print(results_site) # Проверка записи на успех.
     for social_network, net_info in site_data.items():
 
 # Получить результаты снова.
@@ -315,7 +338,9 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 
 # Получить другую информацию сайта снова.
         url = results_site.get("url_user")
+        countryA = results_site.get("flagcountry")
         exists = results_site.get("exists")
+
         if exists is not None:
 # Мы уже определили, что пользователь не существует здесь.
             continue
@@ -326,7 +351,6 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
         http_status = "?"
         response_text = ""
-#        error_type = "message"
 
 # Получить future и убедиться, что оно закончено.
         future = net_info["request_future"]
@@ -346,7 +370,10 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
             response_text = r.text.encode(r.encoding)
         except:
             pass
-#Ответы message (разные локации)
+
+# Ответы message (разные локации).
+        if "message" == "errorMsg":
+            print("errorMsg")
         if error_type == "message":
             error = net_info.get("errorMsg") 
             error2 = net_info.get("errorMsg2")
@@ -360,13 +387,19 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
                 exists = "no"
                 
             else:
-               print_found(social_network, url, response_time, verbose, color)
-               exists = "yes"
+                if country==True:
+                    print_found_country(social_network, url, countryA, response_time, verbose, color)
+                else:
+                    print_found(social_network, url, response_time, verbose, color)    
+                exists = "yes"
 
         elif error_type == "status_code":
 # Проверяет, является ли код состояния ответа 2..
             if not r.status_code >= 300 or r.status_code < 200:
-                print_found(social_network, url, response_time, verbose, color)
+                if country==True:
+                    print_found_country(social_network, url, countryA, response_time, verbose, color)
+                else:    
+                    print_found(social_network, url, response_time, verbose, color)
                 exists = "yes"
             else:
                 if not print_found_only:
@@ -380,8 +413,10 @@ def snoop(username, site_data, verbose=False, tor=False, unique_tor=False,
 # Вместо этого мы обеспечим, чтобы статус кода указывал, что запрос был успешным (тоесть не 404 или перенаправлен.
         
             if 200 <= r.status_code < 300:
-                #
-                print_found(social_network, url, response_time, verbose, color)
+                if country==True:
+                    print_found_country(social_network, url, countryA, response_time, verbose, color)
+                else:
+                    print_found(social_network, url, response_time, verbose, color)
                 exists = "yes"
             else:
                 if not print_found_only:
@@ -442,8 +477,12 @@ def update_snoop():
         else:
             print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
             os.system("./update.sh")
+    
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
 def main():
 # Запрос лицензии.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
@@ -454,10 +493,6 @@ def main():
                      f"Python:  {platform.python_version()}\n\n" + \
                      f"\033[37m{cop}\033[0m\n"
 
-
-    with open('sites.md', 'r', encoding="utf8") as support:
-        sup = support.read()
-    sup_color = f"\033[37m{sup}\033[0m"
 
 # Пожертование.
     donate = ("""
@@ -479,7 +514,7 @@ def main():
                         help="Пожертвовать на развитие Snoop project-а"
                         )
     parser.add_argument("--sort Y",
-                        action="store_true", dest="sort",
+                        action="store_true", dest="sort", default=False,
                         help="Обновление/сортировка черного и белого списков (.json) сайтов БД Snoop"
                         )
     parser.add_argument("--version", "-V",
@@ -542,7 +577,8 @@ def main():
                         action="store_true", dest="no_color", default=False,
                         help="""✓Монохромный терминал, не использовать цвета в url\n
                                 ✓Отключить звук\n
-                                ✓Запретить открытие web browser-a"""
+                                ✓Запретить открытие web browser-а\n
+                                ✓Отключить вывод флагов стран"""
                         )
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
@@ -553,12 +589,17 @@ def main():
                         action="store_true", dest="listing",
                         help="Вывод на дисплей БД (БС+ЧС) поддерживаемых сайтов"
                         )
+    parser.add_argument("--country", "-c",
+                        action="store_true", dest="country", default=False,
+                        help="Сортировка 'вывода на печать/запись в html' результатов по странам, а не по алфавиту"
+                        )                        
     parser.add_argument("--update Y",
                         action="store_true", dest="update",
                         help="Обновить Snoop"
-                        )            
+                        )   
 
     args = parser.parse_args()
+    
 
 # Опция сортировки.
     if args.sort:
@@ -576,7 +617,6 @@ def main():
                 listall.append(patch)
             print(Fore.GREEN + "++Белый список++", *listall, sep = "\n")
 
-    if args.listing:
         listall_bad = []
         with open('bad_site.md', "r", encoding="utf8") as listbad:
             for site_bad in listbad.readlines():
@@ -710,6 +750,18 @@ def main():
     with open("data.json", "r", encoding="utf8") as flag:
         BS = json.load(flag)
         flagBS = len(BS)
+<<<<<<< HEAD
+
+# Сортировка по странам
+    if args.country:
+        site_country = dict(site_data)
+        country_sites = sorted(site_data, key=lambda k: ("country" not in k, site_data[k].get("country", sys.maxsize)))
+        site_data = {}
+        for site in country_sites:
+            site_data[site] = site_country.get(site)
+    
+=======
+>>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
 
 # Запись в txt.
     for username in args.username:
@@ -739,6 +791,7 @@ def main():
 
         results = snoop(username,
                            site_data,
+                           country=args.country,
                            verbose=args.verbose,
                            tor=args.tor,
                            unique_tor=args.unique_tor,
@@ -763,28 +816,65 @@ def main():
 # Запись в html.
         timefinish = time.time() - timestart
         file = open("results/html/" + username + ".html", "w", encoding="utf-8")
-
         try:
             file = open("results/html/" + username + ".html", "w", encoding="utf-8")
         except (SyntaxError, ValueError):
             pass
+<<<<<<< HEAD
+        file.write("<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
+        file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
+        <button onclick="sortList()">Сортировать по странам</button><br><br>\n""")
+        file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
+        "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
+=======
         file.write("<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")    
         file.write("<h3>" + "Snoop Project" + "</h3>" + "Объект" + " " + 
         "<b>" + (username) + "</b>" + " " + "найден на нижеперечисленных" + "<b> " + str(exists_counter) + 
         "</b> ресурсах:  " + "<br><ol>")
+>>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
         for website_name in results:
             dictionary = results[website_name]
             if dictionary.get("exists") == "yes":
                 exists_counter += 0
-                file.write("<li>" + "<a href='" + dictionary ["url_user"] + "'>"+ (website_name)+"</a>" + "</li>")
+                file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
         file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+<<<<<<< HEAD
+        file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
+        file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
+        file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>\n")
+        file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")      
+        file.write("""
+<script>
+function sortList() {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById('id777');
+  switching = true;
+  while (switching) {
+    switching = false;
+    b = list.getElementsByTagName("LI");
+    for (i = 0; i < (b.length - 1); i++) {
+      shouldSwitch = false;
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+</script>""")                        
+=======
         file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.")      
         file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.")      
         file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>")      
         file.write("<br><br><a href='https://github.com/snooppr/snoop'>Snoop/Исходный код</a>")      
+>>>>>>> 6f6a8f52194ba4305afd4131d9055a632fb9706a
         file.close()
 
-
+#+CSV вывод на печать информации
         if args.csv == True:
             print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
             "~/snoop/results/*/" + str(username) + "[.txt.html]")
@@ -829,7 +919,7 @@ def main():
                 writer.writerow(['Дата'])
                 writer.writerow([time.ctime()])
 
-# Открыть/нет браузер с результатами поиска.
+# Открывать/нет браузер с результатами поиска.
     if args.no_color==False:
         if exists_counter >= 1:
             webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))

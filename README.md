@@ -1,7 +1,7 @@
 Ветка Snoop master (GNU/Linux)
 =============================
 
-## Snoop Project один из самых заточенных OSINT-инструментов по СНГ локации
+## Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
@@ -10,7 +10,7 @@ Snoop Project — это форк Sherlock Project-a и он разыскива�
 Различия смотри
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
-**В базе 504 сайта, база расширяется**
+**В базе 506 сайтов, база расширяется**
 
 ## Установка
 
@@ -48,7 +48,7 @@ usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose]
                 [--unique-tor] [--proxy PROXY_URL] [--proxy_list PROXY_LIST]
                 [--check_proxies CHECK_PROXY] [--csv] [--json JSON_FILE]
                 [--site SITE_NAME] [--timeout --time 9] [--print-found]
-                [--no-func] [--list all] [--update Y]
+                [--no-func] [--list all] [--country] [--update Y]
                 USERNAMES [USERNAMES ...]
 
 
@@ -109,8 +109,10 @@ optional arguments:
   --no-func, -n         ✓Монохромный терминал, не использовать цвета в url
                         ✓Отключить звук
                         ✓Запретить открытие web browser-a
-                        Отключить звук  
+                        Отключить звук
   --list all            Вывод на дисплей БД (БС+ЧС) поддерживаемых сайтов
+  --country, -c         Сортировка 'вывода на печать/запись в html' результатов
+                        по странам, а не по алфавиту  
   --update Y            Обновить Snoop
 ```
 
@@ -119,6 +121,9 @@ optional arguments:
 python3 snoop.py username1
 # Кириллица поддерживается, например,
 python3 snoop.py олеся
+
+# Примечание: на OS Windows запускать
+python snoop.py username1
 ```
 
 Для поиска одного и более юзеров:

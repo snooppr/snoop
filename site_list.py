@@ -50,20 +50,21 @@ with open("bad_site.md", "w", encoding="utf8") as bad_site:
 
     for social_network_bad in data1:
         url_main_bad = data1.get(social_network_bad).get("urlMain")
+        country_bad = data1.get(social_network_bad).get("country")        
         data1.get(social_network_bad)["rank"] = 0
         if args.rank:
             th1 = threading.Thread(target=get_rank, args=(url_main_bad, data1.get(social_network_bad)))
         else:
             th1 = None
-        pool.append((social_network_bad, url_main_bad, th1))
+        pool.append((country_bad, social_network_bad, url_main_bad, th1))
         if args.rank:
             th1.start()
 
     index0 = 1
-    for social_network_bad, url_main_bad, th1 in pool:
+    for country_bad, social_network_bad, url_main_bad, th1 in pool:
         if args.rank:
             th1.join()
-        bad_site.write(f'{index0}. [{social_network_bad}]({url_main_bad})\n')            
+        bad_site.write(f'{index0}. {country_bad} [{social_network_bad}]({url_main_bad})\n')            
         sys.stdout.write("\r{0}".format(f"Обновлено, всего — {data_length1} сайта(ов) в чёрном списке"))
         sys.stdout.flush()
         index0 = index0 + 1
@@ -85,20 +86,21 @@ with open("sites.md", "w", encoding="utf8") as site_file:
 
     for social_network in data:
         url_main = data.get(social_network).get("urlMain")
+        country = data.get(social_network).get("country")
         data.get(social_network)["rank"] = 0
         if args.rank:
             th = threading.Thread(target=get_rank, args=(url_main, data.get(social_network)))
         else:
             th = None
-        pool1.append((social_network, url_main, th))
+        pool1.append((country, social_network, url_main, th))
         if args.rank:
             th.start()
 
     index = 1
-    for social_network, url_main, th in pool1:
+    for country, social_network, url_main, th in pool1:
         if args.rank:
             th.join()
-        site_file.write(f'{index}. [{social_network}]({url_main})\n')
+        site_file.write(f'{index}. {country} [{social_network}]({url_main})\n')
         sys.stdout.write("\r{0}".format(f"Обновлено, всего — {data_length} поддерживаемых сайта(ов)"))
         sys.stdout.flush()
         index = index + 1

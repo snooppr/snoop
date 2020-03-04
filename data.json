@@ -1,15 +1,28 @@
 {
+  "11x2": {
+    "country": "\ud83c\udfc1",
+    "errorMsg": "Runtime Error",
+    "errorMsg2": "The resource cannot be found",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://11x2.com/user/score/{}",
+    "urlMain": "https://11x2.com",
+    "username_claimed": "hazelamy",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "1x": {
+    "country": "\ud83c\uddf8\ud83c\uddea",
     "errorMsg": "This user does not exist or is not approved yet. Come back later.",
     "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://1x.com/member/{}",
-    "urlMain": "https://1x.com/member/blue",
+    "urlMain": "https://1x.com",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "2Dimensions": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://2Dimensions.com/a/{}",
@@ -18,6 +31,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "3dnews": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -28,6 +42,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "4pda": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0412\u0430\u0448 \u043f\u043e\u0438\u0441\u043a \u043d\u0435 \u0434\u0430\u043b \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -38,6 +53,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "500px": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Oops! This page doesn\u2019t exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -48,6 +64,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "7Cups": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.7cups.com/@{}",
@@ -56,6 +73,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "9GAG": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://9gag.com/u/{}",
@@ -64,6 +82,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "About.me": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://about.me/{}",
@@ -72,6 +91,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Academia.edu": {
+    "country": "\ud83c\uddee\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://independent.academia.edu/{}",
@@ -80,6 +100,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "AdobeForums": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forums.adobe.com/people/{}",
@@ -88,6 +109,7 @@
     "username_unclaimed": "noonewouldeverusethis77777"
   },
   "Advancedcustomfields": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errorMsg": "Sorry, page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -98,6 +120,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Advego": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://advego.com/profile/{}/author/",
@@ -106,6 +129,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Akniga": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://akniga.org/profile/{}",
@@ -114,6 +138,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Alik.cz": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.alik.cz/u/{}",
@@ -122,6 +147,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Allmylinks": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -131,7 +157,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "AllodsRU": {
+  "Allods": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -142,6 +169,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Allrecipes": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.allrecipes.com/cook/{}",
@@ -150,6 +178,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Alltrails": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://alltrails.com/members",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -159,6 +188,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Alternativeto": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://alternativeto.net/user/{}",
@@ -167,6 +197,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Angara": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://angara.net/user/{}",
@@ -175,6 +206,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Anobii": {
+    "country": "\ud83c\uddee\ud83c\uddf9",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.anobii.com/{}/profile",
@@ -183,6 +215,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Antichat": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -193,6 +226,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Antipunk": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://antipunk.com/users/{}",
@@ -201,6 +235,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ap-pro": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -211,6 +246,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Aptoide": {
+    "country": "\ud83c\uddf5\ud83c\uddf9",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://{}.en.aptoide.com/",
@@ -219,6 +255,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ArcheageRU": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -229,6 +266,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Archive.org": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "cannot find account",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -239,6 +277,7 @@
     "username_unclaimed": "noonewould"
   },
   "Arhrock": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -249,6 +288,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Armchairgm": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "does not exist or has never logged in on this",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -259,6 +299,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ArmoredRU": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -269,6 +310,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Asciinema": {
+    "country": "\ud83c\uddf5\ud83c\uddf1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://asciinema.org/~{}",
@@ -277,6 +319,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "AskFM": {
+    "country": "\ud83c\uddf1\ud83c\uddfb",
     "errorMsg": "Well, apparently not anymore.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -287,6 +330,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Astralinux": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -297,6 +341,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Audiojungle": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://audiojungle.net/user/{}",
@@ -305,6 +350,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "AuthorSTREAM": {
+    "country": "\ud83c\uddee\ud83c\uddf3",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://www.authorstream.com/{}/",
@@ -313,6 +359,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Autokadabra": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://autokadabra.ru/users/{}",
@@ -321,6 +368,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Autolada": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "None",
     "errorMsg2": "<title> :: A",
     "errоrTypе": "message",
@@ -331,6 +379,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Avizo": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errorUrl": "https://www.avizo.cz/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -340,6 +389,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "B17": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.b17.ru/{}",
@@ -347,7 +397,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "BLIP.fm": {
+  "BLIPfm": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://blip.fm/{}",
@@ -355,7 +406,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "BabyRU": {
+  "Baby": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043f\u0441, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u044b \u0438\u0441\u043a\u0430\u043b\u0438, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -365,7 +417,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
-  "BabyblogRU": {
+  "Babyblog": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.babyblog.ru/user/info/{}",
@@ -374,6 +427,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Badoo": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://badoo.com/profile/{}",
@@ -382,6 +436,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Bandcamp": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.bandcamp.com/{}",
@@ -390,6 +445,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Barnacl": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://barnacl.es/u/{}",
@@ -398,6 +454,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Bazar.cz": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errorUrl": "https://www.bazar.cz/error404.aspx",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -407,6 +464,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Beerintheevening": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errorMsg": "User does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -417,6 +475,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Behance": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.behance.net/{}",
@@ -425,6 +484,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Bikepost": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://bikepost.ru/profile/{}",
@@ -433,6 +493,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "BitBucket": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://bitbucket.org/{}/",
@@ -441,6 +502,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "BitCoinForum": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "The user whose profile you are trying to view does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -451,6 +513,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Blogger": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -460,6 +523,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Boardgamegeek": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "User does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -470,6 +534,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "BodyBuilding": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://bodyspace.bodybuilding.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -479,6 +544,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Bookcrossing": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.bookcrossing.com/mybookshelf/{}/",
@@ -487,6 +553,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Bukkit": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -497,6 +564,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Buymeacoffee": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.buymeacoffee.com/{}",
@@ -505,6 +573,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "BuzzFeed": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://buzzfeed.com/{}",
@@ -513,6 +582,7 @@
     "username_unclaimed": "xgtrq"
   },
   "CNET": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.cnet.com/profiles/{}/",
@@ -521,6 +591,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Canva": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errorUrl": "https://www.canva.com/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -530,6 +601,7 @@
     "username_unclaimed": "xgtrq"
   },
   "Carbonmade": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://carbonmade.com/fourohfour?domain={}.carbonmade.com",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -539,6 +611,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Career.habr": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://career.habr.com/{}",
@@ -547,6 +620,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "CashMe": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://cash.me/${}",
@@ -555,6 +629,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ccmixter": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://ccmixter.org/people/{}/profile",
@@ -563,6 +638,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Cent": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "<title>Cent</title>",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -573,6 +649,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Championat": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.championat.com/user/{}",
@@ -581,6 +658,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Chan4chan": {
+    "country": "\ud83c\udded\ud83c\uddfa",
     "errorUrl": "http://chan4chan.com/login/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -589,15 +667,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Chaossocial": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://chaos.social/@{}",
-    "urlMain": "https://chaos.social/",
-    "username_claimed": "rixx",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Chatujme.cz": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errorMsg": "V\u00e1mi hledan\u00fd u\u017eivatelsk\u00fd profil",
     "errorMsg2": "Str\u00e1nka nebyla nalezena",
     "errоrTypе": "message",
@@ -608,6 +679,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Chess": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Missing page... somebody made a wrong move.",
     "errorMsg2": "Server error. Our fault. We will look into it!",
     "errоrTypе": "message",
@@ -618,6 +690,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Cloob": {
+    "country": "\ud83c\uddee\ud83c\uddf7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.cloob.com/name/{}",
@@ -626,6 +699,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "CloudflareCommunity": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://community.cloudflare.com/u/{}",
@@ -634,6 +708,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Clozemaster": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.clozemaster.com/players/{}",
@@ -642,6 +717,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Codecademy": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.codecademy.com/profiles/{}",
@@ -650,6 +726,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Codechef": {
+    "country": "\ud83c\uddee\ud83c\uddf3",
     "errorMsg": "https://www.codechef.com",
     "errorMsg2": "None",
     "errоrTypе": "response_url",
@@ -660,6 +737,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Codementor": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Adapted from",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -670,6 +748,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Coderwall": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "404! Our feels when that url is used",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -680,6 +759,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Codewars": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.codewars.com/users/{}",
@@ -688,6 +768,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Coj": {
+    "country": "\ud83c\udde8\ud83c\uddfa",
     "errorMsg": "The resource doesn't exist or is not available",
     "errorMsg2": "Informe de Error",
     "errоrTypе": "message",
@@ -698,6 +779,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ColourLovers": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.colourlovers.com/lover/{}",
@@ -706,6 +788,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Comicvine.gamespot": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://comicvine.gamespot.com/profile/{}",
@@ -714,6 +797,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Connosr": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.connosr.com/@{}",
@@ -722,6 +806,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Contently": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "We can't find that page!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -733,6 +818,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Coroflot": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.coroflot.com/{}",
@@ -741,6 +827,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Couchsurfing": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.couchsurfing.com/people/{}",
@@ -749,6 +836,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Cracked": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://www.cracked.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -758,6 +846,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "CreativeMarket": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://www.creativemarket.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -767,6 +856,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Crevado": {
+    "country": "\ud83c\uddee\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://{}.crevado.com",
@@ -774,7 +864,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "CrossfireRU": {
+  "Crossfire": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -785,6 +876,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Cruisemates": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -795,6 +887,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Crunchyroll": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.crunchyroll.com/user/{}",
@@ -802,7 +895,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "D3RU": {
+  "D3": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://d3.ru/user/{}/posts",
@@ -811,6 +905,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "DailyMotion": {
+    "country": "\ud83c\uddeb\ud83c\uddf7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.dailymotion.com/{}",
@@ -819,6 +914,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Dailykos": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.dailykos.com/user/{}",
@@ -827,6 +923,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Dasauge": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://dasauge.co.uk/-{}",
@@ -834,7 +931,8 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "DatingRU": {
+  "Dating": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://dating.ru/{}",
@@ -843,16 +941,18 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Demonscity": {
+    "country": "\ud83c\uddf5\ud83c\udde6",
     "errorMsg": "\u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "http://demonscity.combats.com/inf.pl?{}",
-    "urlMain": "http://demonscity.combats.com/inf.pl?adam",
+    "urlMain": "http://demonscity.combats.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Designspiration": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.designspiration.net/{}/",
@@ -861,6 +961,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Dev.to": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -870,6 +971,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "DevRant": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://devrant.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -879,6 +981,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "DeviantART": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -888,6 +991,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Discogs": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.discogs.com/user/{}",
@@ -896,6 +1000,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Discuss.Elastic.co": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://discuss.elastic.co/u/{}",
@@ -904,6 +1009,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Discuss.python": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://discuss.python.org/u/{}/summary",
@@ -912,6 +1018,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Discussions.apple": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://discussions.apple.com/profile/{}",
@@ -920,6 +1027,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Disqus": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://disqus.com/{}",
@@ -928,6 +1036,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Diveforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -938,6 +1047,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "DockerHub": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://hub.docker.com/u/{}/",
@@ -947,6 +1057,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Dou": {
+    "country": "\ud83c\uddfa\ud83c\udde6",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://dou.ua/users/{}",
@@ -955,6 +1066,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Dribbble": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Whoops, that page is gone.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -966,6 +1078,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Drive2": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.drive2.ru/users/{}",
@@ -974,6 +1087,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Duno": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "this user does not exist",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -984,6 +1098,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Duolingo": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "{\"users\":[]}",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -995,6 +1110,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "EGPU": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://egpu.io/forums/profile/{}/",
@@ -1003,6 +1119,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Easyen": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1013,6 +1130,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ebaumsworld": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.ebaumsworld.com/user/profile/{}",
@@ -1021,6 +1139,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ebay": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "The User ID you entered was not found",
     "errorMsg2": "\u0412\u0432\u0435\u0434\u0435\u043d\u043d\u044b\u0439 \u043b\u043e\u0433\u0438\u043d \u043d\u0435 \u0431\u044b\u043b \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 \u043b\u043e\u0433\u0438\u043d \u0438 \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0443.",
     "errоrTypе": "message",
@@ -1034,6 +1153,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ecoustics": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "The profile that you have requested no longer exists.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1044,6 +1164,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Eintracht": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://community.eintracht.de/fans/{}",
@@ -1052,6 +1173,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ello": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "We couldn't find the page you're looking for",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1061,7 +1183,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "ElwoRU": {
+  "Elwo": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1072,6 +1195,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Enot-poloskun": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1082,6 +1206,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "EtsyShop": {
+    "country": "\ud83c\uddee\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.etsy.com/shop/{}",
@@ -1090,6 +1215,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Eva": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u0430\u0441\u043f\u043e\u0440\u0442 -  - \u0415\u0432\u0430.\u0420\u0443",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1100,6 +1226,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "EyeEm": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errorUrl": "https://www.eyeem.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1109,6 +1236,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "F3.cool": {
+    "country": "\ud83c\uddf1\ud83c\uddfb",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://f3.cool/{}/",
@@ -1117,6 +1245,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Facebook": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z0-9\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
@@ -1126,6 +1255,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Facenama": {
+    "country": "\ud83c\uddee\ud83c\uddf3",
     "errorUrl": "https://facenama.com/404.html",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1135,6 +1265,7 @@
     "username_unclaimed": "noonewouldeverusethis77"
   },
   "Fandom": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.fandom.com/u/{}",
@@ -1143,6 +1274,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fanpop": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "http://www.fanpop.com",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1152,6 +1284,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fark": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Tastes like chicken.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1162,15 +1295,17 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fatsecret": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errorUrl": "https://www.fatsecret.com/{}",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.fatsecret.com/member/{}",
-    "urlMain": "https://www.fatsecret.com/member/adam",
+    "urlMain": "https://www.fatsecret.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fedoraproject": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://ask.fedoraproject.org/u/{}",
@@ -1179,6 +1314,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fegatch": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://www.fegatch.com/users/{}/artworks/",
@@ -1187,6 +1323,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ficwad": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://ficwad.com/a/{}/favorites/authors",
@@ -1195,6 +1332,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Filmogs": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.filmo.gs/users/{}",
@@ -1202,7 +1340,19 @@
     "username_claimed": "cupparober",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Filmwatch": {
+    "country": "\ud83c\udfc1",
+    "errorMsg": "Runtime Error",
+    "errorMsg2": "The resource cannot be found",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://filmwatch.com/user/score/{}",
+    "urlMain": "https://filmwatch.com",
+    "username_claimed": "hazelamy",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Fishingsib": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1213,6 +1363,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fiverr": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errorUrl": "https://www.fiverr.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1222,6 +1373,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Fixya": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.fixya.com/users/{}",
@@ -1230,6 +1382,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fl": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.fl.ru/users/{}",
@@ -1238,6 +1391,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Flickr": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.flickr.com/people/{}",
@@ -1246,6 +1400,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Flightradar24": {
+    "country": "\ud83c\uddf8\ud83c\uddea",
     "errorMsg": "Sorry, this page could not be found",
     "errorMsg2": "<title>myFlightradar24</title>",
     "errоrTypе": "message",
@@ -1256,6 +1411,7 @@
     "username_unclaimed": "xgtrq"
   },
   "Flipboard": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^([a-zA-Z0-9_]){1,15}$",
@@ -1265,6 +1421,7 @@
     "username_unclaimed": "noonewould"
   },
   "Fluther": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.fluther.com/users/{}",
@@ -1273,6 +1430,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Folloart": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://folloart.com/{}",
@@ -1281,6 +1439,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Football": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1291,6 +1450,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forexdengi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1301,14 +1461,16 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "FortniteTracker": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://fortnitetracker.com/profile/all/{}",
-    "urlMain": "https://fortnitetracker.com/challenges",
+    "urlMain": "https://fortnitetracker.com",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Forum.allgaz": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1319,6 +1481,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.caravelgames": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "Guest",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1329,6 +1492,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.devushka": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1339,6 +1503,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.ixbt": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1349,6 +1514,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.md": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "404 - Not Found",
     "errorMsg2": "404: Not Found",
     "errоrTypе": "message",
@@ -1359,6 +1525,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.mirf": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1369,6 +1536,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.modnaya": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1379,6 +1547,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.scuba": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1389,6 +1558,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.sibmama": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1398,7 +1568,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forum.sublimetext": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "errоrTypе": "status_code",
+    "rank": 0,
+    "url": "https://forum.sublimetext.com/u/{}",
+    "urlMain": "https://forum.sublimetext.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
   "Forum.tks": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1409,16 +1589,29 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.wotanks": {
+    "country": "\ud83c\udde7\ud83c\uddfe",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://forum.wotanks.com/member.php/?username={}",
-    "urlMain": "https://forum.wotanks.com/member.php/?username=adam",
+    "urlMain": "https://forum.wotanks.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum.xda": {
+    "country": "\ud83c\udf0e",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://forum.xda-developers.com/member.php?username={}",
+    "urlMain": "https://forum.xda-developers.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.ykt": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorUrl": "https://forum.ykt.ru/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1428,6 +1621,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum_guns": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "action=https://forum.guns.ru/forummisc/blog/search",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1437,7 +1631,8 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "ForumhouseRU": {
+  "Forumhouse": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1448,6 +1643,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forumprosport": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errоrTypе": "message",
@@ -1458,6 +1654,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forums.alliedmods": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "This user has not registered and therefore does not have a profile to view",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1468,6 +1665,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forums.drom": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1478,6 +1676,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forums.envato": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forums.envato.com/u/{}/summary",
@@ -1486,6 +1685,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forums.sourceruns": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forums.sourceruns.org/u/{}/summary",
@@ -1494,6 +1694,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forumteam": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1504,6 +1705,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forumyuristov": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1514,6 +1716,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fotothing": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errorMsg": "The requested file or user was not found.",
     "errorMsg2": "No user selected.",
     "errоrTypе": "message",
@@ -1524,6 +1727,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Foursquare": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://ru.foursquare.com/{}",
@@ -1532,6 +1736,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Freecodecamp": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.freecodecamp.org/forum/u/{}/summary",
@@ -1540,6 +1745,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Freelance.habr": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://freelance.habr.com/freelancers/{}",
@@ -1548,6 +1754,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Funnyjunk": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "The user was not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1557,15 +1764,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "GDProfiles": {
+  "Gamefaqs": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
-    "url": "https://gdprofiles.com/{}",
-    "urlMain": "https://gdprofiles.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis"
+    "url": "https://gamefaqs.gamespot.com/community/{}",
+    "urlMain": "https://gamefaqs.gamespot.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gamespot": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.gamespot.com/profile/{}/",
@@ -1574,6 +1783,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Gapyear": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.gapyear.com/members/{}",
@@ -1582,6 +1792,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gbatemp": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1591,7 +1802,17 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Gdprofiles": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "errоrTypе": "status_code",
+    "rank": 0,
+    "url": "https://gdprofiles.com/{}",
+    "urlMain": "https://gdprofiles.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
   "Geocaching": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.geocaching.com/profile/?u={}",
@@ -1600,6 +1821,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gfycat": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://gfycat.com/@{}",
@@ -1608,14 +1830,16 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Giantbomb": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.giantbomb.com/profile/{}",
-    "urlMain": "https://www.giantbomb.com/profile/adam/",
+    "urlMain": "https://www.giantbomb.com",
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gigbucks": {
+    "country": "\ud83c\udfc1",
     "errorUrl": "https://gigbucks.com",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1625,6 +1849,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Giphy": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://giphy.com/{}",
@@ -1633,6 +1858,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "GipsysTeam": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://site.gipsyteam.ru/profile/{}",
@@ -1641,6 +1867,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "GitHub": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
@@ -1650,6 +1877,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "GitLab": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "[]",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1661,6 +1889,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gitmemory": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "Oops,404",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1671,6 +1900,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Glbyh": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1681,6 +1911,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gliger": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1691,6 +1922,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Golangbridge": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forum.golangbridge.org/u/{}/summary",
@@ -1699,6 +1931,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "GoodReads": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.goodreads.com/{}",
@@ -1706,7 +1939,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Google_play": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "rank": 0,
+    "url": "https://play.google.com/store/apps/developer?id={}",
+    "urlMain": "https://play.google.com/store",
+    "username_claimed": "Facebook",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Gpodder.net": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://gpodder.net/user/{}",
@@ -1715,6 +1958,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gravatar": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://en.gravatar.com/{}",
@@ -1723,6 +1967,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Gumroad": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Page not found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1733,6 +1978,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "GunsAndAmmo": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forums.gunsandammo.com/profile/{}",
@@ -1740,7 +1986,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "GuruShots": {
+  "Gurushots": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://gurushots.com/{}/photos",
@@ -1749,6 +1996,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Habr": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://habr.com/ru/users/{}",
@@ -1757,6 +2005,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "HackTheBox": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forum.hackthebox.eu/profile/{}",
@@ -1765,6 +2014,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "HackerNews": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "No such user.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1775,6 +2025,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "HackerOne": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1785,6 +2036,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "HackerRank": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "Something went wrong",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1795,6 +2047,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Hackster": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.hackster.io/{}",
@@ -1803,16 +2056,18 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "House-Mixes.com": {
+    "country": "\ud83c\uddea\ud83c\uddfa",
     "errorMsg": "Profile Not Found",
     "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.house-mixes.com/profile/{}",
-    "urlMain": "https://www.house-mixes.com/",
+    "urlMain": "https://www.house-mixes.com",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Houzz": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "The page you requested was not found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1823,6 +2078,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "HubPages": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://hubpages.com/@{}",
@@ -1831,6 +2087,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Hubski": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "No such user",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1841,6 +2098,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Hunting": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1851,6 +2109,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "IFTTT": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "The requested page or file does not exist",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1861,6 +2120,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "IMGSRC.RU": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorUrl": "https://imgsrc.ru/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1870,6 +2130,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Icheckmovies": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.icheckmovies.com/profiles/{}",
@@ -1878,6 +2139,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ieoc": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://ieoc.com/profile/{}",
@@ -1886,6 +2148,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Igromania": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1896,6 +2159,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ImageShack": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://imageshack.us/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1905,6 +2169,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ImgUp.cz": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://imgup.cz/{}",
@@ -1913,6 +2178,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Indog": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1923,6 +2189,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Influenster": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://www.influenster.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -1932,6 +2199,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Infrance": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errоrTypе": "message",
@@ -1942,6 +2210,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ingvarr.net.ru": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1952,6 +2221,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Insanejournal": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Unknown user",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1962,6 +2232,7 @@
     "username_unclaimed": "dlyr6cd"
   },
   "Instagram": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "The link you followed may be broken",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1972,6 +2243,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Instructables": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "404: We're sorry, things break sometimes",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1982,6 +2254,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Interbasket": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
     "errоrTypе": "message",
@@ -1992,6 +2265,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Interpals": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "The requested user does not exist or is inactive",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2002,6 +2276,7 @@
     "username_unclaimed": "noneownsthisusername"
   },
   "Investing.com": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.investing.com/traders/{}",
@@ -2010,6 +2285,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Irecommend": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://irecommend.ru/users/{}",
@@ -2018,6 +2294,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Issuu": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://issuu.com/{}",
@@ -2026,6 +2303,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Italia": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://italia-ru.com/users/{}",
@@ -2034,6 +2312,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Itch.io": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://{}.itch.io/",
@@ -2042,6 +2321,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Jeuxvideo": {
+    "country": "\ud83c\uddeb\ud83c\uddf7",
     "errorMsg": "Vous \u00eates",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2052,6 +2332,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Jigidi": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.jigidi.com/user/{}",
@@ -2059,16 +2340,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Jimdo": {
-    "errоrTypе": "status_code",
-    "noPeriod": "True",
-    "rank": 0,
-    "url": "https://{}.jimdosite.com",
-    "urlMain": "https://jimdosite.com/",
-    "username_claimed": "jenny",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Kaggle": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.kaggle.com/{}",
@@ -2077,6 +2350,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kali.org.ru": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://kali.org.ru/profile/{}",
@@ -2085,6 +2359,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kali_community": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "The Kali Linux Forums database has encountered a problem.",
     "errоrTypе": "message",
@@ -2095,6 +2370,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "KanoWorld": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://api.kano.me/progress/user/{}",
@@ -2103,6 +2379,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Keybase": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://keybase.io/{}",
@@ -2111,6 +2388,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kharkovforum": {
+    "country": "\ud83c\uddfa\ud83c\udde6",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.kharkovforum.com/member.php?username={}",
@@ -2119,16 +2397,18 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kik": {
+    "country": "\ud83c\udde8\ud83c\udde6",
     "errorMsg": "The page you requested was not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://ws2.kik.com/user/{}",
-    "urlMain": "http://kik.me/",
+    "urlMain": "https://www.kik.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Knowem": {
+    "country": "\ud83c\udde8\ud83c\udde6",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://knowem.com/{}",
@@ -2137,6 +2417,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kongregate": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Sorry, no account with that name was found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2148,6 +2429,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kuban.forum24": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2158,6 +2440,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kuharka": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "<title>\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438</title>",
     "errоrTypе": "message",
@@ -2168,6 +2451,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kwork": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://kwork.ru/user/{}",
@@ -2176,6 +2460,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "LOR": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.linux.org.ru/people/{}/profile",
@@ -2184,6 +2469,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Labpentestit": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorUrl": "https://lab.pentestit.ru/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -2193,6 +2479,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Last.fm": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://last.fm/user/{}",
@@ -2201,6 +2488,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Launchpad": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://launchpad.net/~{}",
@@ -2209,6 +2497,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Leasehackr": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forum.leasehackr.com/u/{}/summary/",
@@ -2217,6 +2506,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "LeetCode": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://leetcode.com/{}",
@@ -2225,6 +2515,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Letterboxd": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Sorry, we can\u2019t find the page you\u2019ve requested.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2234,7 +2525,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Lib.reviews": {
+    "country": "\ud83c\udfc1",
+    "errоrTypе": "status_code",
+    "rank": 0,
+    "url": "https://lib.reviews/user/{}",
+    "urlMain": "https://lib.reviews",
+    "username_claimed": "pat",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Lichess": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Page not found!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2245,6 +2546,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Life-dom2": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d.",
     "errоrTypе": "message",
@@ -2255,6 +2557,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Lightstalking": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://lightstalking.us/members/{}",
@@ -2263,6 +2566,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Listal": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errorUrl": "https://listal.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -2272,6 +2576,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "LiveJournal": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -2281,6 +2586,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "LiveLeak": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errorMsg": "channel not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2291,6 +2597,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Livelib": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.livelib.ru/reader/{}",
@@ -2299,6 +2606,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Lkforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2309,6 +2617,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Lobsters": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "[A-Za-z0-9][A-Za-z0-9_-]{0,24}",
@@ -2318,6 +2627,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Lolchess": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "No search results",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2328,6 +2638,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Lonelyplanet": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.lonelyplanet.com/profile/{}",
@@ -2336,6 +2647,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Lookbook": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://lookbook.nu/{}",
@@ -2343,7 +2655,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "LostarkRU": {
+  "Lostark": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2354,6 +2667,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mama": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mama.ru/members/{}",
@@ -2362,6 +2676,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mamochki": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mamochki.by/{}",
@@ -2370,6 +2685,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mamuli": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mamuli.club/profile/{}",
@@ -2378,6 +2694,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mastodon": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mstdn.io/@{}",
@@ -2386,6 +2703,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mastodon.cloud": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mastodon.cloud/@{}",
@@ -2394,6 +2712,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mastodon.social": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mastodon.social/@{}",
@@ -2402,6 +2721,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mastodon.technology": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mastodon.technology/@{}",
@@ -2410,6 +2730,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mastodon.xyz": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mastodon.xyz/@{}",
@@ -2418,6 +2739,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mbclub": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2428,6 +2750,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mdregion": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2438,6 +2761,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Medium": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://medium.com/@{}",
@@ -2445,16 +2769,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "MeetMe": {
-    "errorUrl": "https://www.meetme.com/",
-    "errоrTypе": "response_url",
-    "rank": 0,
-    "url": "https://www.meetme.com/{}",
-    "urlMain": "https://www.meetme.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Memrise": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errorUrl": "https://www.memrise.com/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -2464,6 +2780,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Meta.discourse": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://meta.discourse.org/u/{}",
@@ -2472,6 +2789,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Metacafe": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Channel is temporarily not available",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2482,6 +2800,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Metacritic": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "User not found",
     "errorMsg2": "<title>404 Page Not Found",
     "errоrTypе": "message",
@@ -2492,6 +2811,7 @@
     "username_unclaimed": "noneownsthisusername"
   },
   "Miped": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://miped.ru/user/{}",
@@ -2500,6 +2820,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "MixCloud": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.mixcloud.com/{}/",
@@ -2509,6 +2830,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mixer.com": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mixer.com/{}",
@@ -2518,6 +2840,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mixupload": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://mixupload.com/{}",
@@ -2526,6 +2849,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Moddb": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.moddb.com/members/{}",
@@ -2534,6 +2858,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Moikrug": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://moikrug.ru/{}",
@@ -2542,6 +2867,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Moscow.flamp": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u0430\u043a\u0438\u0445 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0434\u0435\u043b\u0430\u044e\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2551,15 +2877,8 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Mstdn.io": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://mstdn.io/@{}",
-    "urlMain": "https://mstdn.io/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Music-rock": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2570,6 +2889,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "My.mail.ru_new": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u041c\u0438\u0440",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2580,6 +2900,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "My.mail.ru_old": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u041c\u0438\u0440",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2590,6 +2911,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "MyAnimeList": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://myanimelist.net/profile/{}",
@@ -2598,6 +2920,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Myfitnesspal": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.myfitnesspal.com/user/idanshina/profile/{}",
@@ -2606,6 +2929,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Myminifactory": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.myminifactory.com/users/{}",
@@ -2614,6 +2938,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Myspace": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://myspace.com/{}",
@@ -2622,6 +2947,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "N4g": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://n4g.com/user/home/{}",
@@ -2630,6 +2956,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "NICommunityForum": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2639,23 +2966,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
-  "NPM": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://www.npmjs.com/~{}",
-    "urlMain": "https://www.npmjs.com/",
-    "username_claimed": "kennethsweezy",
-    "username_unclaimed": "noonewould"
-  },
-  "NPM-Package": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://www.npmjs.com/package/{}",
-    "urlMain": "https://www.npmjs.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "NameMC": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Profiles: 0 results",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2666,6 +2978,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "NationStates_Nation": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Was this your nation? It may have ceased to exist due to inactivity, but can rise again!",
     "errorMsg2": "<title>NationStates | create your own country",
     "errоrTypе": "message",
@@ -2676,6 +2989,7 @@
     "username_unclaimed": "noonewould"
   },
   "NationStates_Region": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "does not exist.",
     "errorMsg2": "create your own country",
     "errоrTypе": "message",
@@ -2686,6 +3000,7 @@
     "username_unclaimed": "noonewould"
   },
   "Newgrounds": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -2695,6 +3010,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Nightbot": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://nightbot.tv/t/{}/commands",
@@ -2704,6 +3020,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "NnRU": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://{}.www.nn.ru/",
@@ -2712,6 +3029,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Notabug.org": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://notabug.org/{}",
@@ -2721,6 +3039,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Note": {
+    "country": "\ud83c\uddef\ud83c\uddf5",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://note.com/{}",
@@ -2728,7 +3047,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Npmjs": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "rank": 0,
+    "url": "https://www.npmjs.com/package/{}",
+    "urlMain": "https://www.npmjs.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "OK": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_.-]*$",
@@ -2738,6 +3067,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.gg": {
+    "country": "\ud83c\uddf0\ud83c\uddf7",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2751,6 +3081,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggBR": {
+    "country": "\ud83c\udde7\ud83c\uddf7",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2764,6 +3095,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggEUNE": {
+    "country": "\ud83c\uddea\ud83c\uddfa",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2777,6 +3109,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggEUW": {
+    "country": "\ud83c\uddea\ud83c\uddfa",
     "errorMsg": "LoL Stats, Record Replay, Database, Guide - OP.GG",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2787,6 +3120,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggJP": {
+    "country": "\ud83c\uddef\ud83c\uddf5",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2800,6 +3134,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggLAN": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2813,6 +3148,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggLAS": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2826,6 +3162,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggNA": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2839,6 +3176,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggOCE": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2852,6 +3190,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggRU": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2865,6 +3204,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Op.ggTR": {
+    "country": "\ud83c\uddf9\ud83c\uddf7",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2878,6 +3218,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "OpenCollective": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2888,6 +3229,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "OpenStreetMap": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.openstreetmap.org/user/{}",
@@ -2896,6 +3238,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Opennet": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0418\u043c\u044f \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2906,6 +3249,7 @@
     "username_unclaimed": "noneownsthisusername"
   },
   "Opensource": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://opensource.com/users/{}",
@@ -2914,6 +3258,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Oracle": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://community.oracle.com/people/{}",
@@ -2922,6 +3267,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Osu!": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://osu.ppy.sh/users/{}",
@@ -2930,6 +3276,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Otzovik": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://otzovik.com/profile/{}",
@@ -2938,6 +3285,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "OurDJTalk": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2948,6 +3296,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "PCPartPicker": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://pcpartpicker.com/user/{}",
@@ -2956,6 +3305,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "PSNProfiles.com": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errorUrl": "https://psnprofiles.com/?psnId={}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -2965,6 +3315,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Packagist": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errorUrl": "https://packagist.org/search/?q={}&reason=vendor_not_found",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -2974,6 +3325,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pastebin": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://pastebin.com/index",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -2983,6 +3335,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Patreon": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.patreon.com/{}",
@@ -2991,6 +3344,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pcgamer": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3001,6 +3355,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pedsovet": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3011,6 +3366,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "People.ign": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://people.ign.com/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -3020,6 +3376,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Peopleandcountries": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "None",
     "errorMsg2": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
     "errоrTypе": "message",
@@ -3029,7 +3386,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "PerfectRU": {
+  "Perfect": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3040,6 +3398,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Periscope": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.periscope.tv/{}/",
@@ -3048,6 +3407,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pesiq": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3058,6 +3418,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Photobucket": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://photobucket.com/user/{}/library",
@@ -3065,7 +3426,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "PhpRU": {
+  "Php": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3076,6 +3438,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Picsart": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://picsart.com/u/{}",
@@ -3084,6 +3447,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pihole": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://discourse.pi-hole.net/u/{}/summary",
@@ -3092,6 +3456,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pikabu": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://pikabu.ru/@{}",
@@ -3100,6 +3465,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pinkbike": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.pinkbike.com/u/{}/",
@@ -3108,6 +3474,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pinterest": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.pinterest.com/{}/",
@@ -3116,6 +3483,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Planetminecraft": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Hmm, it seems that you've come across an invalid username",
     "errorMsg2": "Oops, this page is missing or temporarily down",
     "errоrTypе": "message",
@@ -3125,15 +3493,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "PlayStore": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://play.google.com/store/apps/developer?id={}",
-    "urlMain": "https://play.google.com/store",
-    "username_claimed": "Facebook",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Plug.DJ": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://plug.dj/@/{}",
@@ -3141,7 +3502,8 @@
     "username_claimed": "plug-dj-rock",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Pokemon_Showdown": {
+  "PokemonShowdown": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://pokemonshowdown.com/users/{}",
@@ -3150,6 +3512,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pokerstrategy": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://www.pokerstrategy.net/user/{}/profile/",
@@ -3158,6 +3521,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Politforums": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0441\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u043e\u043c",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3168,6 +3532,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Politikforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3178,6 +3543,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Polygon": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.polygon.com/users/{}",
@@ -3186,6 +3552,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Prankru": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3196,6 +3563,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Prizyvnik": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3206,6 +3574,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ProductHunt": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Product Hunt is a curation of the best new products",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3216,6 +3585,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Professionali": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://professionali.ru/~{}",
@@ -3224,6 +3594,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Profiles.tigweb": {
+    "country": "\ud83c\udde8\ud83c\udde6",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://profiles.tigweb.org/{}",
@@ -3232,6 +3603,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Programmersforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3242,6 +3614,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Prokoni": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3252,6 +3625,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "PromoDJ": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://promodj.com/{}",
@@ -3260,6 +3634,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Proza": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
     "errоrTypе": "message",
@@ -3270,6 +3645,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Psychologies": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://www.psychologies.ru/personal/{}",
@@ -3278,31 +3654,26 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Publiclab": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://publiclab.org/profile/",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://publiclab.org/profile/{}/",
-    "urlMain": "https://publiclab.org/profile/adam",
+    "urlMain": "https://publiclab.org",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Pvpru": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://pvpru.com/board/member.php?username={}&tab=aboutme#aboutme",
-    "urlMain": "https://pvpru.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Pyha": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://pyha.ru/users/{}",
-    "urlMain": "https://pyha.ru/users/Sinkler/",
+    "urlMain": "https://pyha.ru/",
     "username_claimed": "Sinkler",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pypi": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://pypi.org/user/{}",
@@ -3311,6 +3682,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Python.su": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://python.su/forum/user/{}",
@@ -3319,6 +3691,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Qbn": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.qbn.com/{}",
@@ -3327,6 +3700,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Quibblo": {
+    "country": "\ud83c\udfc1",
     "errorUrl": "https://www.quibblo.com/not_found",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -3336,6 +3710,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Quora": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorUrl": "https://www.quora.com/profile/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -3345,6 +3720,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Radio_echo_msk": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://echo.msk.ru/users/{}",
@@ -3353,6 +3729,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Radioskot": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3363,6 +3740,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Raidforums": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://raidforums.com/User-{}",
@@ -3370,7 +3748,8 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Rajce.net": {
+  "Rajce": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errorMsg": "410",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3381,6 +3760,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "RamblerDating": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorUrl": "https://dating.rambler.ru/page/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -3390,6 +3770,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rapforce": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3400,6 +3781,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rasa": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forum.rasa.com/u/{}/summary",
@@ -3408,6 +3790,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rateyourmusic": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://rateyourmusic.com/~{}",
@@ -3416,6 +3799,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rcmir": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3426,6 +3810,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Realmeye": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "Sorry, but we either:",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3436,6 +3821,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Redbubble": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.redbubble.com/people/{}",
@@ -3444,6 +3830,7 @@
     "username_unclaimed": "noonewouldeverusethis77777"
   },
   "Reddit": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.reddit.com/user/{}",
@@ -3452,6 +3839,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Redsun.tf": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3462,6 +3850,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Reibert": {
+    "country": "\ud83c\uddfa\ud83c\udde6",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3472,6 +3861,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Repl.it": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "404",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3482,6 +3872,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ResearchGate": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://www.researchgate.net/directory/profiles",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -3491,7 +3882,8 @@
     "username_claimed": "John_Smith",
     "username_unclaimed": "noonewould_everusethis7"
   },
-  "RevelationRU": {
+  "Revelation": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3502,6 +3894,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ReverbNation": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Sorry, we couldn't find that page",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3512,6 +3905,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Roblox": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Page cannot be found or no longer exists",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3521,7 +3915,19 @@
     "username_claimed": "bluewolfekiller",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Rpggeek": {
+    "country": "\ud83c\udf0e",
+    "errorMsg": "None",
+    "errorMsg2": "Error: User does not exist.",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://rpggeek.com/user/{}",
+    "urlMain": "https://rpggeek.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "RubyGems": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://rubygems.org/profiles/{}",
@@ -3530,6 +3936,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Runitonce": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.runitonce.com/users/{}",
@@ -3538,6 +3945,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Runnersworld": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forums.runnersworld.co.uk/profile/{}",
@@ -3546,6 +3954,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rusarmy": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3556,6 +3965,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rusforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3566,6 +3976,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Russian.fi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
     "errоrTypе": "message",
@@ -3575,7 +3986,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "SatsisRU": {
+  "Satsis": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://satsis.info/user/{}",
@@ -3584,6 +3996,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Sbazar.cz": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.sbazar.cz/{}",
@@ -3592,14 +4005,16 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Sbnation": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.sbnation.com/users/{}",
-    "urlMain": "https://www.sbnation.com/users/",
+    "urlMain": "https://www.sbnation.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Schlock": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://schlock.ru/author/{}",
@@ -3608,6 +4023,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Scratch": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://scratch.mit.edu/users/{}",
@@ -3616,6 +4032,7 @@
     "username_unclaimed": "noonewould"
   },
   "Scribd": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3626,6 +4043,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Searchengines": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3636,6 +4054,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Seatracker": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3646,6 +4065,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Segmentfault": {
+    "country": "\ud83c\udded\ud83c\uddf0",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://segmentfault.com/u/{}",
@@ -3654,6 +4074,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "ShitpostBot5000": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.shitpostbot.com/user/{}",
@@ -3662,6 +4083,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Shophelp": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://shophelp.ru/profile/{}",
@@ -3670,6 +4092,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Showme": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.showme.com/{}",
@@ -3678,6 +4101,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Signal": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Oops! That page doesn\u2019t exist or is private.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3688,6 +4112,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Skodaforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3698,6 +4123,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Skyrock": {
+    "country": "\ud83c\uddeb\ud83c\uddf7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://{}.skyrock.com/",
@@ -3705,7 +4131,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Skyscanner": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "rank": 0,
+    "url": "https://www.trip.skyscanner.com/user/{}",
+    "urlMain": "https://www.trip.skyscanner.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Slack": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -3715,6 +4151,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "SlideShare": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://slideshare.net/{}",
@@ -3723,6 +4160,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Smashcast": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.smashcast.tv/api/media/live/{}",
@@ -3731,6 +4169,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Smule": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.smule.com/{}",
@@ -3739,6 +4178,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Social.librem": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://social.librem.one/@{}",
@@ -3746,7 +4186,8 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Social.tchncs.de": {
+  "Social.tchncs": {
+    "country": "\ud83c\udde9\ud83c\uddea",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://social.tchncs.de/@{}",
@@ -3755,6 +4196,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "SoundCloud": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://soundcloud.com/{}",
@@ -3763,6 +4205,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "SourceForge": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://sourceforge.net/u/{}",
@@ -3771,6 +4214,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Sovserv": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3781,6 +4225,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Soylentnews": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "The user you requested does not exist, no matter how much you wish this might be the case.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3791,6 +4236,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Sparkpeople": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "We couldn't find that user",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3801,6 +4247,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Speedrun.com": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "not found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3811,6 +4258,7 @@
     "username_unclaimed": "noonewould"
   },
   "Spletnik": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://spletnik.ru/user/{}",
@@ -3819,6 +4267,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Splits.io": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://splits.io/users/{}",
@@ -3827,6 +4276,7 @@
     "username_unclaimed": "noonewould"
   },
   "Sporcle": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.sporcle.com/user/{}/people",
@@ -3834,7 +4284,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "SportsRU": {
+  "Sports": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.sports.ru/profile/{}/",
@@ -3843,6 +4294,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "SportsTracker": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "\"code\":\"404\"",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3854,6 +4306,7 @@
     "username_unclaimed": "noonewouldeveruse"
   },
   "Star_Citizen": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://robertsspaceindustries.com/citizens/{}",
@@ -3862,6 +4315,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Steam": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "The specified profile could not be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3872,6 +4326,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "SteamGroup": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "No group could be retrieved for the given URL",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3882,6 +4337,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Steamid": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "SteamID account finder",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3892,6 +4348,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Stihi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
     "errоrTypе": "message",
@@ -3902,6 +4359,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Studwork": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://studwork.org/info/{}",
@@ -3910,6 +4368,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Subeta": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Invalid user",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3919,15 +4378,8 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "SublimeForum": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://forum.sublimetext.com/u/{}",
-    "urlMain": "https://forum.sublimetext.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis"
-  },
   "Svidbook": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.svidbook.ru/user/{}",
@@ -3936,6 +4388,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Swimming_forum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3946,6 +4399,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "T-MobileSupport": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://support.t-mobile.com/people/{}",
@@ -3954,6 +4408,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "TamTam": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://tamtam.chat/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -3962,7 +4417,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "TanksRU": {
+  "Tanks": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3973,6 +4429,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Taringa": {
+    "country": "\ud83c\udde6\ud83c\uddf7",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.taringa.net/{}",
@@ -3981,6 +4438,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Techdirt": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.techdirt.com/user/{}",
@@ -3989,6 +4447,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Telegram": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "<meta property=\"twitter:title\" content=\"Telegram: Contact",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3999,6 +4458,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Tellonym.me": {
+    "country": "\ud83c\udde9\ud83c\uddea ",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://tellonym.me/{}",
@@ -4007,6 +4467,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "The-village": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "The Village: \u043e\u0448\u0438\u0431\u043a\u0430 404, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4017,6 +4478,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Theanswerbank": {
+    "country": "\ud83c\uddec\ud83c\udde7",
     "errorMsg": "Welcome to the AnswerBank",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4027,6 +4489,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Thechive": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://i.thechive.com/{}",
@@ -4035,6 +4498,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Theodysseyonline": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.theodysseyonline.com/user/@{}",
@@ -4043,6 +4507,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Thingiverse": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.thingiverse.com/{}/about",
@@ -4051,6 +4516,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "TikTok": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Couldn&#x27;t find this account",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4061,6 +4527,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Tinder": {
+    "country": "\ud83c\uddee\ud83c\uddea",
     "errorMsg": "Looking for Someone?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4071,6 +4538,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Tkgr": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://tkgr.ru/forum/member/{}",
@@ -4079,6 +4547,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Toster": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.toster.ru/user/{}/answers",
@@ -4087,6 +4556,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Touristlink": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Members across the World",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4097,6 +4567,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "TrackmaniaLadder": {
+    "country": "\ud83c\uddeb\ud83c\uddf7",
     "errorMsg": "player unknown or invalid",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4107,6 +4578,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "TradingView": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.tradingview.com/u/{}/",
@@ -4115,6 +4587,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Trainsim": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4125,6 +4598,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Trakt": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.trakt.tv/users/{}",
@@ -4132,7 +4606,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "TrashboxRU": {
+  "Trashbox": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "404 - \u0424\u0430\u0439\u043b \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errоrTypе": "message",
@@ -4143,6 +4618,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Travelblog": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.travelblog.org/Bloggers/{}",
@@ -4151,6 +4627,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Travellerspoint": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Wooops. Sorry!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4161,6 +4638,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Trello": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "model not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4171,15 +4649,8 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Trip": {
-    "errоrTypе": "status_code",
-    "rank": 0,
-    "url": "https://www.trip.skyscanner.com/user/{}",
-    "urlMain": "https://www.trip.skyscanner.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "TripAdvisor": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "This page is on vacation\u2026",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4190,6 +4661,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Twitch": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.twitch.tv/{}",
@@ -4199,6 +4671,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Twitter": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "headers": {
       "User-Agent": ""
@@ -4210,6 +4683,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Typeracer": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Profile Not Found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4220,6 +4694,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Uaksu": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4230,6 +4705,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Uid": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://uid.me/{}",
@@ -4238,6 +4714,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ultimate-Guitar": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://ultimate-guitar.com/u/{}",
@@ -4246,6 +4723,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Unsplash": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://unsplash.com/@{}/likes",
@@ -4254,6 +4732,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "VK": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://www.quora.com/profile/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -4263,6 +4742,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "VSCO": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://vsco.co/{}",
@@ -4271,6 +4751,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Velomania": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4281,6 +4762,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Venmo": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://venmo.com/{}",
@@ -4289,6 +4771,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Vezha": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4298,7 +4781,19 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Videogamegeek": {
+    "country": "\ud83c\udf0e",
+    "errorMsg": "None",
+    "errorMsg2": "Error: User does not exist.",
+    "errоrTypе": "message",
+    "rank": 0,
+    "url": "https://videogamegeek.com/user/{}",
+    "urlMain": "https://videogamegeek.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Videosift": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://videosift.com/member/{}",
@@ -4307,6 +4802,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Vimeo": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://vimeo.com/{}",
@@ -4315,6 +4811,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Virgool": {
+    "country": "\ud83c\uddee\ud83c\uddf7",
     "errorMsg": "\u06f4\u06f0\u06f4",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4325,6 +4822,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "VirusTotal": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "not found",
     "errorMsg2": "The resource could not be found",
     "errоrTypе": "message",
@@ -4335,6 +4833,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Vkovk": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4345,6 +4844,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Votetags": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://www.votetags.info/",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -4353,7 +4853,8 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "WarfaceRU": {
+  "Warface": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4364,6 +4865,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Warriorforum": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.warriorforum.com/members/{}.html",
@@ -4372,6 +4874,7 @@
     "username_unclaimed": "noonewouldeverusethis77777"
   },
   "Wattpad": {
+    "country": "\ud83c\udde8\ud83c\udde6",
     "errorMsg": "userError-404",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4382,6 +4885,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Waveapps": {
+    "country": "\ud83c\udde8\ud83c\udde6",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://community.waveapps.com/profile/{}",
@@ -4390,6 +4894,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Weeartit": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "Oops! You've landed on a moving target!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4400,6 +4905,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Whonix": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://forums.whonix.org/u/{}",
@@ -4408,6 +4914,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Wikidot": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "User does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4418,6 +4925,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Wikipedia": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "is not registered",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4428,6 +4936,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Windy": {
+    "country": "\ud83c\udde8\ud83c\uddff",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://community.windy.com/user/{}",
@@ -4436,6 +4945,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Wittyprofiles": {
+    "country": "\ud83c\udfc1",
     "errorMsg": "It looks like you are looking for something that isn't here.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4446,6 +4956,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Wix": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://{}.wix.com",
@@ -4454,6 +4965,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Wolpy": {
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "http://wolpy.com/{}/profile",
@@ -4462,6 +4974,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WordPress": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "wordpress.com/typo/?subdomain=",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -4472,6 +4985,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "WordPressOrg": {
+    "country": "\ud83c\udf0e",
     "errorUrl": "https://wordpress.org",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -4481,6 +4995,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "X-xack": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4491,6 +5006,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "YandexMarket": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "\u0422\u0443\u0442 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4501,6 +5017,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "YouNow": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errorMsg": "No users found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4512,6 +5029,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "YouPic": {
+    "country": "\ud83c\udfc1",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://youpic.com/photographer/{}/",
@@ -4520,6 +5038,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "YouTube": {
+    "country": "\ud83c\udf0e",
     "errorMsg": "Not Found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4530,6 +5049,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Yummly": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.yummly.com/profile/{}",
@@ -4538,12 +5058,23 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Zhihu": {
+    "country": "\ud83c\udde8\ud83c\uddf3",
     "errorUrl": "https://www.zhihu.com/people/{}",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.zhihu.com/people/{}",
     "urlMain": "https://www.zhihu.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "freepo": {
+    "country": "\ud83c\udfc1",
+    "errorUrl": "https://freepo.st/freepost.cgi/login",
+    "errоrTypе": "response_url",
+    "rank": 0,
+    "url": "https://freepo.st/freepost.cgi/user/public/{}",
+    "urlMain": "https://freepo.st",
+    "username_claimed": "robocop",
     "username_unclaimed": "noonewouldeverusethis7"
   }
 }
