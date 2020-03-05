@@ -6,7 +6,6 @@ import json
 import locale
 import os
 import platform
-import random
 import re
 import requests
 import subprocess
@@ -17,11 +16,9 @@ import webbrowser
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from colorama import Fore, Style, init
 from concurrent.futures import ThreadPoolExecutor
-from load_proxies import load_proxies_from_csv, check_proxy_list
 from pathlib import Path
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
-from torrequest import TorRequest
 
 
 if sys.platform == 'win32':
@@ -45,15 +42,8 @@ print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справк�
 module_name = "Snoop: поиск никнейма по всем фронтам!"
 __version__ = "1.1.3_rus Ветка GNU/Linux"
 
-
 dirresults = Path.cwd()
-
 timestart = time.time()
-
-global proxy_list
-
-
-proxy_list = []
 
 class ElapsedFuturesSession(FuturesSession):
     """
@@ -151,9 +141,6 @@ def print_invalid(social_network, msg, color=True):
 
 
 def get_response(request_future, error_type, social_network, verbose=False, retry_no=None, color=True):
-
-    
-    global proxy_list
     
     try:
         rsp = request_future.result()
@@ -162,17 +149,6 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
     except requests.exceptions.HTTPError as errh:
         print_error(errh, "HTTP Error:", social_network, verbose, color)
 
-# Сбой с прокси, дубль попытка.
-    except requests.exceptions.ProxyError as errp:
-        if retry_no>0 and len(proxy_list)>0:
-# Выбор нового прокси.
-            new_proxy = random.choice(proxy_list)
-            new_proxy = f'{new_proxy.protocol}://{new_proxy.ip}:{new_proxy.port}'
-            print(f'Retrying with {new_proxy}')
-            request_future.proxy = {'http':new_proxy,'https':new_proxy}
-            get_response(request_future,error_type, social_network, verbose,retry_no=retry_no-1, color=color)
-        else:
-            print_error(errp, "Proxy error:", social_network, verbose, color)
     except requests.exceptions.ConnectionError as errc:
         print_error(errc, "Ошибка соединения:", social_network, verbose, color)
     except requests.exceptions.Timeout as errt:
@@ -182,8 +158,7 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
     return None, "", -1
 
 
-def snoop(username, site_data, verbose=False, country=False, tor=False, unique_tor=False,
-             proxy=None, print_found_only=False, timeout=None, color=True):
+def snoop(username, site_data, verbose=False, country=False, print_found_only=False, timeout=None, color=True):
 
     """Snoop Аналитика.
 
@@ -193,9 +168,6 @@ def snoop(username, site_data, verbose=False, country=False, tor=False, unique_t
     username               -- Разыскиваемый никнейм.
     site_data              -- Snoop БД поддерживваемых сайтов 
     verbose/debug          -- Подробная вербализация
-    tor                    -- Служба Tor
-    unique_tor             -- Опция Tor: новая цепочка при поиске для каждого сайта
-    proxy                  -- Указание своего proxy
     timeoutout             -- Ограничение времени на ожидание ответа от сайта
     color                  -- Монохромный/раскрашиваемый терминал
     country                -- Страны
@@ -218,14 +190,8 @@ def snoop(username, site_data, verbose=False, country=False, tor=False, unique_t
     print_info("разыскиваем:", username, color)
 
 # Создать сеанс на основе методологии запроса.
-    if tor or unique_tor:
-# Requests Tor.
-        underlying_request = TorRequest()
-        underlying_session = underlying_request.session
-    else:
-# Normal requests.
-        underlying_session = requests.session()
-        underlying_request = requests.Request()
+    underlying_session = requests.session()
+    underlying_request = requests.Request()
 
 # Рабочий лимит 20+
     if len(site_data) >= 20:
@@ -271,7 +237,7 @@ def snoop(username, site_data, verbose=False, country=False, tor=False, unique_t
             if not print_found_only:
                 print_invalid(social_network, "Недопустимый формат имени для данного сайта", color)
 
-            results_site["exists"] = "illegal"
+            results_site["exists"] = "прочерк"
             results_site["url_user"] = ""
             results_site['http_status'] = ""
             results_site['response_text'] = ""
@@ -303,26 +269,14 @@ def snoop(username, site_data, verbose=False, country=False, tor=False, unique_t
 # Окончательным результатом запроса будет то, что доступно.
                 allow_redirects = True
 
-# запуск запрос в новом потоке, не блокирует основной поток.
-            if proxy != None:
-                proxies = {"http": proxy, "https": proxy}
-                future = request_method(url=url_probe, headers=headers,
-                                        proxies=proxies,
-                                        allow_redirects=allow_redirects,
-                                        timeout=timeout
-                                        )
-            else:
-                future = request_method(url=url_probe, headers=headers,
-                                        allow_redirects=allow_redirects,
-                                        timeout=timeout
-                                        )
+
+            future = request_method(url=url_probe, headers=headers,
+                                    allow_redirects=allow_redirects,
+                                    timeout=timeout
+                                    )
 
 # Сохранить future in data для последующего доступа.
             net_info["request_future"] = future
-
-# Сброс идентифкатора Tor (при необходимости).
-            if unique_tor:
-                underlying_request.reset_identity()
 
 # Добавлять результаты этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
@@ -380,18 +334,18 @@ def snoop(username, site_data, verbose=False, country=False, tor=False, unique_t
             if error2 in r.text:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
-                exists = "no"
+                exists = "увы"
             elif error in r.text:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
-                exists = "no"
+                exists = "увы"
                 
             else:
                 if country==True:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
                 else:
                     print_found(social_network, url, response_time, verbose, color)    
-                exists = "yes"
+                exists = "найден!"
 
         elif error_type == "status_code":
 # Проверяет, является ли код состояния ответа 2..
@@ -400,11 +354,11 @@ def snoop(username, site_data, verbose=False, country=False, tor=False, unique_t
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
                 else:    
                     print_found(social_network, url, response_time, verbose, color)
-                exists = "yes"
+                exists = "найден!"
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
-                exists = "no"
+                exists = "увы"
 
         elif error_type == "response_url":
 
@@ -417,16 +371,16 @@ def snoop(username, site_data, verbose=False, country=False, tor=False, unique_t
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
                 else:
                     print_found(social_network, url, response_time, verbose, color)
-                exists = "yes"
+                exists = "найден!"
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
-                exists = "no"
+                exists = "увы"
 
         elif error_type == "":
             if not print_found_only:
                 print_invalid(social_network, "*Пропуск", color)
-            exists = "error"
+            exists = "блок"
 
 # Сохранить сущ.флаг.
         results_site['exists'] = exists
@@ -485,7 +439,7 @@ def main():
         cop = copyright.read()
 
     version_snoop = f"%(prog)s: {__version__}\n" +  \
-                     f"{requests.__description__}:  {requests.__version__}\n" + \
+                     f"OS: {platform.platform(aliased=True, terse=0)}\n" + \
                      f"Python:  {platform.python_version()}\n\n" + \
                      f"\033[37m{cop}\033[0m\n"
 
@@ -511,70 +465,49 @@ def main():
                         )
     parser.add_argument("--sort Y",
                         action="store_true", dest="sort", default=False,
-                        help="Обновление/сортировка черного и белого списков (.json) сайтов БД Snoop"
+                        help="Обновление/сортировка черного и белого списков (.json) сайтов БД Snoop.\n"
+                             "Если вы не разработчик, не используйте эту опцию"
                         )
-    parser.add_argument("--version", "-V",
+    parser.add_argument("--version", "--about", "-V",
                         action="version",  version=(version_snoop),
-                        help="Вывод на дисплей: версий Snoop, Python; Сублицензии"
+                        help="Вывод на печать версий: Snoop; Python и Лицензии"
                         )
-    parser.add_argument("--verbose", "-v", "-d", "--debug",
+    parser.add_argument("--verbose", "-v",
                         action="store_true",  dest="verbose", default=False,
-                        help="Вывод на дисплей отладочной информации и подробная её вербализация"
-                        )
-    parser.add_argument("--folderoutput", "-fo", dest="folderoutput",
-                        help="Указать каталог отличный от стандартного, куда будут сохранены результаты поиска при разовом поиске нескольких имён"
-                        )
-    parser.add_argument("--output", "-o", dest="output",
-                        help="Указать отличный от стандартного файл с сохранением результатов. По умолчанию файл для сохранения результатов — переменное username.txt"
-                        )
-    parser.add_argument("--tor", "-t",
-                        action="store_true", dest="tor", default=False,
-                        help="Делать запросы через Tor-службу; требуется чтобы Tor был установлен по системному стандартному пути и не модифицирован torrc")
-    parser.add_argument("--unique-tor", "-u",
-                        action="store_true", dest="unique_tor", default=False,
-                        help="Делать запросы через Tor-службу с новой цепочкой Tor после каждого запроса; увеличивает время выполнения; требуется чтобы Tor был установлен по системному стандартному пути")
-    parser.add_argument("--proxy", "-p", metavar='PROXY_URL',
-                        action="store", dest="proxy", default=None,
-                        help="Делать запросы через прокси, например, socks5://127.0.0.1:9070"
-                        )
-    parser.add_argument("--proxy_list", "-pl", metavar='PROXY_LIST',
-                        action="store", dest="proxy_list", default=None,
-                        help="Поиск 'username' через случайный прокси, указать file.csv с прокси"
-                        )
-    parser.add_argument("--check_proxies", "-cp", metavar='CHECK_PROXY',
-                        action="store", dest="check_prox", default=None,
-                        help="Связка с параметром '--proxy_list'. "
-                             "Скрипт проверяет рабочие ли предоставленные прокси из file.csv, являются ли они анонимными. "
-                             "Установите '0' для безлимитного количества успешно-проверенных прокси, установите > '1' для ограничения"
+                        help="Во время поиска 'username' выводить на печать подробную вербализацию"
                         )
     parser.add_argument("--csv",
                         action="store_true",  dest="csv", default=False,
-                        help="Сохранить файл в формате (nickname.CSV) с расширенным анализом"
+                        help="По завершению поиска 'username' сохранить файл в формате таблицы 'username.CSV' с расширенным анализом"
                         )
-    parser.add_argument("--json", "-j", metavar="JSON_FILE",
-                        dest="json_file", default="data.json",
-                        help="Указать для поиска 'username' другую БД сайтов в формате file.json"              )                        
-    parser.add_argument("--site",
-                        action="append", metavar='SITE_NAME',
+    parser.add_argument("--json", "-j",
+                        dest="json_file", default="data.json", metavar='',
+                        help="""Указать для поиска 'username' другую БД в формате 'json',
+                              например, 'example_data.json'. Если у вас нет такой БД, не используйте эту опцию"""
+                        )
+    parser.add_argument("--site", "-s",
+                        action="append", metavar='', 
                         dest="site_list",  default=None, 
-                        help="Указать имя сайта из БД (data.json). Ограничение поиска 'username' до одного ресурса"
+                        help="Указать имя сайта из БС '--list all'. Поиск 'username' на одном указанном ресурсе"
                         )
-    parser.add_argument("--timeout",
-                        action="store", metavar='--time 9',
+    parser.add_argument("--time", "-t 9",
+                        action="store", metavar='',
                         dest="timeout", type=timeout_check, default=None,
-                        help="Выделение макс.времени на ожидание ответа от сервера\n"
-                             "Влияет на продолжительность поиска. Оптимальное значение при хорошем интернет соединении и нескольких 'упавших' сайтов = 9с."
+                        help="Установить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
+                             "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
+                             "Оптимальное значение при хорошем интернет соединении и нескольких 'упавших' сайтов = 9с.\n"
+                             "Вкл. эту опцию необходимо практически всегда, чтобы избежать длительных зависаний"
                         )
-    parser.add_argument("--print-found", 
+    parser.add_argument("--found-print", "-f", 
                         action="store_true", dest="print_found_only", default=False,
                         help="Выводить на печать только найденные аккаунты"
                         )
     parser.add_argument("--no-func", "-n",
-                        action="store_true", dest="no_color", default=False,
+                        action="store_true", dest="no_func", default=False,
                         help="""✓Монохромный терминал, не использовать цвета в url\n
                                 ✓Отключить звук\n
                                 ✓Запретить открытие web browser-а\n
-                                ✓Отключить вывод флагов стран"""
+                                ✓Отключить вывод на печать для флагов стран"""
                         )
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
@@ -583,7 +516,7 @@ def main():
                         )
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
-                        help="Вывод на дисплей БД (БС+ЧС) поддерживаемых сайтов"
+                        help="Вывод на печать БД (БС+ЧС) поддерживаемых сайтов"
                         )
     parser.add_argument("--country", "-c",
                         action="store_true", dest="country", default=False,
@@ -636,54 +569,6 @@ def main():
         sys.exit(0)
     
 # Проверка остальных аргументов.
-# Проверка регулярных выражений TODO на args.proxy.
-    if args.tor and (args.proxy != None or args.proxy_list != None):
-        raise Exception("Tor и Proxy не могут быть запущены одновременно.")
-
-# Проверка аргументов прокси.
-# Не обязательно генерировать ошибку, так как мы могли бы объединить один прокси с теми, которые были сгенерированы из .csv,
-# но в настоящее время это кажется излишне сложным.
-    if args.proxy != None and args.proxy_list != None:
-        raise Exception("Один прокси не может использоваться вместе со списком прокси.")
-
-# Делать подсказку.
-    if args.proxy != None:
-        print("Using the proxy: " + args.proxy)
-
-    global proxy_list
-
-    if args.proxy_list != None:
-        print_info("Loading proxies from", args.proxy_list, not args.color)
-
-        proxy_list = load_proxies_from_csv(args.proxy_list)
-
-# Анонимность? Должны ли проки проверяться на анонимность.
-    if args.check_prox != None and args.proxy_list != None:
-        try:
-            limit = int(args.check_prox)
-            if limit == 0:
-                proxy_list = check_proxy_list(proxy_list)
-            elif limit > 0:
-                proxy_list = check_proxy_list(proxy_list, limit)
-            else:
-                raise ValueError
-        except ValueError:
-            raise Exception("Parameter --check_proxies/-cp must be a positive integer.")
-
-    if args.tor or args.unique_tor:
-        print(Fore.RED + "Внимание запущена экспериментальная функция!'Snoop попытается работать через луковую сеть Tor'.\n\
-Ваши запросы могут посылаться НЕ анонимно!\n\
-Также многие сайты могут блокировать выходные_ноды_Tor, что приведёт к 'ошибкам соединения' на этих сайтах.")
-
-# Проверка, введены ли оба метода вывода в качестве ввода.
-    if args.output is not None and args.folderoutput is not None:
-        print("Вы можете использовать только один метода выхода.")
-        sys.exit(1)
-
-# Проверка правильность вывода одного из имен username.
-    if args.output is not None and len(args.username) != 1:
-        print("Вы можете использовать данный флаг только с одним username")
-        sys.exit(1)
 
     response_json_online = None
     site_data_all = None
@@ -700,7 +585,7 @@ def main():
         try:
             site_data_all = response_json_online.json()
         except ValueError:
-            print("Invalid JSON website!")
+            print("Invalid JSON/website!")
             sys.exit(1)
             pass
 
@@ -760,44 +645,25 @@ def main():
     for username in args.username:
         print()
         
-        if args.output:
-            file = open(args.output, "w", encoding="utf-8")
-        elif args.folderoutput:  
-# В случае, если мы обрабатываем несколько имен пользователей в целевой папке. Если папка не существует, сначала создать её.
-            if not os.path.isdir(args.folderoutput):
-                os.mkdir(args.folderoutput)
-            file = open(os.path.join(args.folderoutput,
-                                     username + ".txt"), "w", encoding="utf-8")
-        else:
-            file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-            try:
-                file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-            except (SyntaxError, ValueError):
-                pass
-# Попытаться объявить случайный 'proxy_list' в качестве прокси запроса.
-# Если мы не можем получить доступ к списку или он пуст, мы используем 'args.proxy' в качестве прокси.
+        file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
         try:
-            random_proxy = random.choice(proxy_list)
-            proxy = f'{random_proxy.protocol}://{random_proxy.ip}:{random_proxy.port}'
-        except (NameError, IndexError):
-            proxy = args.proxy
+            file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
+        except (SyntaxError, ValueError):
+            pass
 
         results = snoop(username,
                            site_data,
                            country=args.country,
                            verbose=args.verbose,
-                           tor=args.tor,
-                           unique_tor=args.unique_tor,
-                           proxy=args.proxy,
                            print_found_only=args.print_found_only,
                            timeout=args.timeout,
-                           color=not args.no_color)
+                           color=not args.no_func)
 
         exists_counter = 0
         file.write("Адрес | ресурс" + "\n\n")
         for website_name in results:
             dictionary = results[website_name]
-            if dictionary.get("exists") == "yes":
+            if dictionary.get("exists") == "найден!":
                 exists_counter += 1
                 file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
         file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
@@ -813,14 +679,14 @@ def main():
             file = open("results/html/" + username + ".html", "w", encoding="utf-8")
         except (SyntaxError, ValueError):
             pass
-        file.write("<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
+        file.write("<!DOCTYPE html>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
         file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
-        <button onclick="sortList()">Сортировать по странам</button><br><br>\n""")
+        <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
         file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
         "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
         for website_name in results:
             dictionary = results[website_name]
-            if dictionary.get("exists") == "yes":
+            if dictionary.get("exists") == "найден!":
                 exists_counter += 0
                 file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
         file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
@@ -874,8 +740,8 @@ function sortList() {
                 writer = csv.writer(csv_report)
                 writer.writerow(['Объект',
                                  'Ресурс',
-                                 'url_main',
-                                 'url_user',
+                                 'url',
+                                 'url_username',
                                  'статус',
                                  'статус_кода',
                                  'время/мс',
@@ -899,7 +765,7 @@ function sortList() {
                 writer.writerow([time.ctime()])
 
 # Открывать/нет браузер с результатами поиска.
-    if args.no_color==False:
+    if args.no_func==False:
         if exists_counter >= 1:
             webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
 # Музыка.
@@ -910,4 +776,4 @@ if __name__ == "__main__":
 
 # Финишный вывод.
 print(Fore.WHITE + "└────╼Дата выполнения этого поискового запроса:", time.ctime())
-print("\n\033[37m\033[44m{}".format("Сублицензия: авторская"))
+print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))

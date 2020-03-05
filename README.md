@@ -5,9 +5,10 @@
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
-Snoop Project — это форк Sherlock Project-a и он разыскивает никнеймы в публичных данных.
+Snoop Project разыскивает никнеймы в публичных данных. Это самое сильное ПО с учётом
+СНГ локации.
 
-Различия смотри
+Историю смотри
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
 **В базе 506 сайтов, база расширяется**
@@ -43,16 +44,12 @@ Project Snoop работает на OS GNU/Linux & OS Windows & OS Android/Termu
 ```bash
 $ python3 snoop.py --help
 
-usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose]
-                [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--tor]
-                [--unique-tor] [--proxy PROXY_URL] [--proxy_list PROXY_LIST]
-                [--check_proxies CHECK_PROXY] [--csv] [--json JSON_FILE]
-                [--site SITE_NAME] [--timeout --time 9] [--print-found]
-                [--no-func] [--list all] [--country] [--update Y]
+usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose] [--csv]
+                [--json] [--site] [--time] [--found-print] [--no-func]
+                [--list all] [--country] [--update Y]
                 USERNAMES [USERNAMES ...]
 
-
-Snoop: поиск никнейма по всем фронтам! (Version 1.0.0_rus)
+Snoop: поиск никнейма по всем фронтам! (Version 1.1.3_rus Ветка GNU/Linux)
 
 positional arguments:
   USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
@@ -62,79 +59,61 @@ optional arguments:
   -h, --help            show this help message and exit
   --donate Y            Пожертвовать на развитие Snoop project-а
   --sort Y              Обновление/сортировка черного и белого списков (.json)
-                        сайтов БД Snoop
-  --version, -V         Вывод на дисплей: версий Snoop, Python; Сублицензии
-  --verbose, -v, -d, --debug
-                        Вывод на дисплей отладочной информации и подробная её
-                        вербализация
-  --folderoutput FOLDEROUTPUT, -fo FOLDEROUTPUT
-                        Указать каталог отличный от стандартного, куда будут
-                        сохранены результаты поиска при разовом поиске
-                        нескольких имён
-  --output OUTPUT, -o OUTPUT
-                        Указать отличный от стандартного файл с сохранением
-                        результатов. По умолчанию файл для сохранения
-                        результатов — переменное username.txt
-  --tor, -t             Делать запросы через Tor-службу; требуется чтобы Tor
-                        был установлен по системному стандартному пути и не
-                        модифицирован torrc
-  --unique-tor, -u      Делать запросы через Tor-службу с новой цепочкой Tor
-                        после каждого запроса; увеличивает время выполнения;
-                        требуется чтобы Tor был установлен по системному
-                        стандартному пути
-  --proxy PROXY_URL, -p PROXY_URL
-                        Делать запросы через прокси, например,
-                        socks5://127.0.0.1:9070
-  --proxy_list PROXY_LIST, -pl PROXY_LIST
-                        Поиск 'username' через случайный прокси, указать
-                        file.csv с прокси
-  --check_proxies CHECK_PROXY, -cp CHECK_PROXY
-                        Связка с параметром '--proxy_list'. Скрипт проверяет
-                        рабочие ли предоставленные прокси из file.csv,
-                        являются ли они анонимными. Установите '0' для
-                        безлимитного количества успешно-проверенных прокси,
-                        установите > '1' для ограничения
-  --csv                 Сохранить файл в формате (nickname.CSV) с расширенным
-                        анализом
-  --json JSON_FILE, -j JSON_FILE
-                        Указать для поиска 'username' другую БД сайтов в
-                        формате file.json
-  --site SITE_NAME      Указать имя сайта из БД (data.json). Ограничение
-                        поиска 'username' до одного ресурса
-  --timeout --time 9    Выделение макс.времени на ожидание ответа от сервера
-                        Влияет на продолжительность поиска. Оптимальное
+                        сайтов БД Snoop. Если вы не разработчик, не
+                        используйте эту опцию
+  --version, --about, -V
+                        Вывод на печать версий: Snoop; Python и Лицензии
+  --verbose, -v         Во время поиска 'username' выводить на печать
+                        подробную вербализацию
+  --csv                 По завершению поиска 'username' сохранить файл в
+                        формате таблицы 'username.CSV' с расширенным анализом
+  --json , -j           Указать для поиска 'username' другую БД в формате
+                        'json', например, 'example_data.json'. Если у вас нет
+                        такой БД, не используйте эту опцию
+  --site , -s           Указать имя сайта из БС '--list all'. Поиск 'username'
+                        на одном указанном ресурсе
+  --time , -t 9         Установить выделение макс.времени на ожидание ответа
+                        от сервера (секунды). Влияет на продолжительность
+                        поиска. Влияет на 'Timeout ошибки:'Оптимальное
                         значение при хорошем интернет соединении и нескольких
-                        'упавших' сайтов = 9с.
-  --print-found         Выводить на печать только найденные аккаунты
+                        'упавших' сайтов = 9с. Вкл. эту опцию необходимо
+                        практически всегда, чтобы избежать длительных
+                        зависаний
+  --found-print, -f     Выводить на печать только найденные аккаунты
   --no-func, -n         ✓Монохромный терминал, не использовать цвета в url
-                        ✓Отключить звук
-                        ✓Запретить открытие web browser-a
-  --list all            Вывод на дисплей БД (БС+ЧС) поддерживаемых сайтов
-  --country, -c         Сортировка 'вывода на печать/запись в html' результатов
-                        по странам, а не по алфавиту  
+                        ✓Отключить звук ✓Запретить открытие web browser-а
+                        ✓Отключить вывод на печать для флагов стран
+  --list all            Вывод на печать БД (БС+ЧС) поддерживаемых сайтов
+  --country, -c         Сортировка 'вывода на печать/запись в html'
+                        результатов по странам, а не по алфавиту
   --update Y            Обновить Snoop
 ```
 
 Для поиска только одного пользователя::
 ```bash
-python3 snoop.py username1
+$ python3 snoop.py username1
 # Кириллица поддерживается, например,
-python3 snoop.py олеся
+$ python3 snoop.py олеся
 
 # Примечание: на OS Windows запускать
-python snoop.py username1
+$ python snoop.py username1
+# или дождаться в ближайшее время (март 2020г.) выхода "snoop.exe".
 ```
 
 Для поиска одного и более юзеров:
 ```bash
-python3 snoop.py username1 username2 username3
+$ python3 snoop.py username1 username2 username3
+# 'ctrl-c/z' — прервать поиск 
 ```
 
-Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}
+Найденные учётные записи будут храниться в 
+```bash
+~/snoop/results/*/username.{txt.csv.html}
+```
 
 Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
 ```bash
-python3 snoop.py --update Y 
+$ python3 snoop.py --update Y 
 # Требуется установка Git.
 ```
 
@@ -172,3 +151,6 @@ $ sudo nano /etc/ssl/openssl.cnf
 [CipherString = DEFAULT@SECLEVEL=1]
 ```
 https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1
+
+**Лицензия Snoop Project** 
+https://github.com/snooppr/snoop/blob/master/COPYRIGHT

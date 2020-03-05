@@ -115,7 +115,7 @@
 114. 🏁 [EGPU](https://egpu.io/)
 115. 🇷🇺 [Easyen](https://easyen.ru/)
 116. 🇺🇸 [Ebaumsworld](https://www.ebaumsworld.com/)
-117. 🇺🇸 [Ebay](https://www.ebay.com/)
+117. 🌎 [Ebay](https://www.ebay.com/)
 118. 🇺🇸 [Ecoustics](https://www.ecoustics.com/)
 119. 🇩🇪 [Eintracht](https://eintracht.de)
 120. 🌎 [Ello](https://ello.co/)
