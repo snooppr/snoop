@@ -152,5 +152,5 @@ $ sudo nano /etc/ssl/openssl.cnf
 ```
 https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1
 
-**Лицензия Snoop Project** 
+**Лицензия Snoop Project:** 
 https://github.com/snooppr/snoop/blob/master/COPYRIGHT
