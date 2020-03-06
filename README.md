@@ -11,7 +11,7 @@ Snoop Project разыскивает никнеймы в публичных да
 Историю смотри
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
-**В базе 506 сайтов, база расширяется**
+**В базе** [506 сайтов сайтов](https://github.com/snooppr/snoop/blob/termux/sites.md "database"), **база расширяется**
 
 ## Установка
 
@@ -61,8 +61,7 @@ optional arguments:
   --sort Y              Обновление/сортировка черного и белого списков (.json)
                         сайтов БД Snoop. Если вы не разработчик, не
                         используйте эту опцию
-  --version, --about, -V
-                        Вывод на печать версий: Snoop; Python и Лицензии
+  --version, --about,-V Вывод на печать версий: Snoop; Python и Лицензии
   --verbose, -v         Во время поиска 'username' выводить на печать
                         подробную вербализацию
   --csv                 По завершению поиска 'username' сохранить файл в
@@ -89,32 +88,33 @@ optional arguments:
   --update Y            Обновить Snoop
 ```
 
-Для поиска только одного пользователя::
+**Примеры**
 ```bash
+# Для поиска только одного пользователя:
 $ python3 snoop.py username1
-# Кириллица поддерживается, например,
+# Или, например, кириллица поддерживается:
 $ python3 snoop.py олеся
 
-# Примечание: на OS Windows запускать
-$ python snoop.py username1
-# или дождаться в ближайшее время (март 2020г.) выхода "snoop.exe".
+# Для поиска одного и более юзеров:
+$ python3 snoop.py username1 username2 username3 username4
+
+# Поиск одного username; сортировка вывода результатов по странам;
+# избежание зависаний на сайтах (чаще зависит от вашего ip-адреса);
+# выводить на печать только найденные аккаунты; дополнить отчёт csv файлом:
+$ python3 snoop.py -с -t 9 -f --csv username1
+
+# 'ctrl-c/z' — прервать поиск
 ```
 
-Для поиска одного и более юзеров:
-```bash
-$ python3 snoop.py username1 username2 username3
-# 'ctrl-c/z' — прервать поиск 
-```
+Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.
 
-Найденные учётные записи будут храниться в 
-```bash
-~/snoop/results/*/username.{txt.csv.html}
-```
+Если вы желаете анализировать результаты Html/CSV, то скопируйте результаты поиска из домашней папки Termux в Download, например, с помощью Total Commander.  
+Откройте файл(ы) с помощью любого web-browser/office (на Android "обычно/root" нет упрощенного доступа программ к домашней папке Termux и пд.).
 
-Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
 ```bash
-$ python3 snoop.py --update Y 
-# Требуется установка Git.
+# Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
+$ python3 snoop.py --update Y
+[^1]: Требуется установка и лёгкая "настройка" Git.
 ```
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>
@@ -152,5 +152,4 @@ $ sudo nano /etc/ssl/openssl.cnf
 ```
 https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1
 
-**Лицензия Snoop Project:** 
-https://github.com/snooppr/snoop/blob/master/COPYRIGHT
+**Лицензия Snoop Project:** https://github.com/snooppr/snoop/blob/master/COPYRIGHT

@@ -12,6 +12,8 @@ v1.1.3_rus
 
 * Добавлены в БС новые ресурсы:
 11x2;
+Armorgames;
+Blackhatprotools;
 Filmwatch;
 Forum.xda;
 freepo;
