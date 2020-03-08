@@ -11,6 +11,15 @@ Snoop Project разыскивает никнеймы в публичных да
 Историю смотри
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
+| Платформа | Поддержка|
+| --------- |:----------:|
+| GNU/Linux |✅|
+| Windows 7/10 (32/64) |✅|
+| Android/Termux/Andrax |✅|
+| macOS |🚫|
+| IOS |🚫|
+
+
 **В базе** [506 сайтов](https://github.com/snooppr/snoop/blob/termux/sites.md "database"), **база расширяется**
 
 ## Установка
