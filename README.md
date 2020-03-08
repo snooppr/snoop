@@ -11,7 +11,7 @@ Snoop Project разыскивает никнеймы в публичных да
 Историю смотри
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
-**В базе** [506 сайтов сайтов](https://github.com/snooppr/snoop/blob/termux/sites.md "database"), **база расширяется**
+**В базе** [506 сайтов](https://github.com/snooppr/snoop/blob/termux/sites.md "database"), **база расширяется**
 
 ## Установка
 
