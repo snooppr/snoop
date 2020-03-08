@@ -46,8 +46,6 @@ $ pip3 install module
 Смотри ветку Termux
 https://github.com/snooppr/snoop/tree/termux
 
-Project Snoop работает на OS GNU/Linux & OS Windows & OS Android/Termux.
-
 ## Использование
 
 ```bash
@@ -157,9 +155,7 @@ $ sudo nano /etc/ssl/openssl.cnf
 
 # Изменить в самом низу файла строки:
 [CipherString = DEFAULT@SECLEVEL=2]
-
 на
-
 [CipherString = DEFAULT@SECLEVEL=1]
 ```
 https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1
