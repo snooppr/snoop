@@ -159,7 +159,7 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
     return None, "", -1
 
 
-def snoop(username, site_data, verbose=False, country=False, print_found_only=False, timeout=None, color=True):
+def snoop(username, site_data, verbose=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
 
     """Snoop Аналитика.
 
@@ -515,6 +515,10 @@ def main():
                         action="store",
                         help="Никнейм разыскиваемого пользователя, поддерживается несколько имён"
                         )
+    parser.add_argument("--userload", "-u", metavar='',
+                        action="store", dest="user", default=False,
+                        help="Указать файл со списком user-ов. Пример, 'python3 snoop.py -u ~/file.txt start'"
+                        )                        
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
                         help="Вывод на печать БД (БС+ЧС) поддерживаемых сайтов"
@@ -536,6 +540,21 @@ def main():
         sortirovka.sorts()
         exit(0)
 
+# Опция указания списка разыскиваемых пользователей
+    if args.user:
+        userlist = []
+        patchuserlist = ("{}".format(args.user))        
+        with open(patchuserlist, "r", encoding="utf8") as u1:
+            try:
+                for lineuserlist in u1.readlines():
+                    lineuserlist.strip()
+                    userlist.append(lineuserlist)
+                userlist=[line.rstrip() for line in userlist]
+            except:
+                print("Не могу прочитать! Пожалуйста, укажите текстовый файл.")
+        print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)                
+
+# Опция list all
     if args.listing:
         listall = []
         with open('sites.md', "r", encoding="utf8") as listyes:
@@ -637,130 +656,252 @@ def main():
         site_data = {}
         for site in country_sites:
             site_data[site] = site_country.get(site)
-    
 
-# Запись в txt.
-    for username in args.username:
-        print()
-        
-        file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-        try:
+# Крутим список юзеров    
+    if args.user:
+        for username in userlist:
             file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-        except (SyntaxError, ValueError):
-            pass
+            try:
+                file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
+            except (SyntaxError, ValueError):
+                pass
 
-        results = snoop(username,
-                           site_data,
-                           country=args.country,
-                           verbose=args.verbose,
-                           print_found_only=args.print_found_only,
-                           timeout=args.timeout,
-                           color=not args.no_func)
+            results = snoop(username,
+                               site_data,
+                               country=args.country,
+                               verbose=args.verbose,
+                               print_found_only=args.print_found_only,
+                               timeout=args.timeout,
+                               color=not args.no_func)
 
-        exists_counter = 0
-        file.write("Адрес | ресурс" + "\n\n")
-        for website_name in results:
-            dictionary = results[website_name]
-            if dictionary.get("exists") == "найден!":
-                exists_counter += 1
-                file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
-        file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-        file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
-        file.write("\n" f"Обновлено: " + time.ctime() + ".")      
-        print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
+            exists_counter = 0
+            file.write("Адрес | ресурс" + "\n\n")
+            for website_name in results:
+                dictionary = results[website_name]
+                if dictionary.get("exists") == "найден!":
+                    exists_counter += 1
+                    file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
+            file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
+            file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
+            file.write("\n" f"Обновлено: " + time.ctime() + ".")      
+            print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
 
-
-# Запись в html.
-        timefinish = time.time() - timestart
-        file = open("results/html/" + username + ".html", "w", encoding="utf-8")
-        try:
+    # Запись в html.
+            timefinish = time.time() - timestart
             file = open("results/html/" + username + ".html", "w", encoding="utf-8")
-        except (SyntaxError, ValueError):
-            pass
-        file.write("<!DOCTYPE html>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
-        file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
-        <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
-        file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
-        "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
-        for website_name in results:
-            dictionary = results[website_name]
-            if dictionary.get("exists") == "найден!":
-                exists_counter += 0
-                file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
-        file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-        file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
-        file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
-        file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>\n")
-        file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")      
-        file.write("""
-<script>
-function sortList() {
-  var list, i, switching, b, shouldSwitch;
-  list = document.getElementById('id777');
-  switching = true;
-  while (switching) {
-    switching = false;
-    b = list.getElementsByTagName("LI");
-    for (i = 0; i < (b.length - 1); i++) {
-      shouldSwitch = false;
-      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-        shouldSwitch = true;
-        break;
+            try:
+                file = open("results/html/" + username + ".html", "w", encoding="utf-8")
+            except (SyntaxError, ValueError):
+                pass
+            file.write("<!DOCTYPE html>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
+            file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
+            <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
+            file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
+            "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
+            for website_name in results:
+                dictionary = results[website_name]
+                if dictionary.get("exists") == "найден!":
+                    exists_counter += 0
+                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
+            file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+            file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
+            file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
+            file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>\n")
+            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")      
+            file.write("""
+    <script>
+    function sortList() {
+      var list, i, switching, b, shouldSwitch;
+      list = document.getElementById('id777');
+      switching = true;
+      while (switching) {
+        switching = false;
+        b = list.getElementsByTagName("LI");
+        for (i = 0; i < (b.length - 1); i++) {
+          shouldSwitch = false;
+          if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          b[i].parentNode.insertBefore(b[i + 1], b[i]);
+          switching = true;
+        }
       }
     }
-    if (shouldSwitch) {
-      b[i].parentNode.insertBefore(b[i + 1], b[i]);
-      switching = true;
-    }
-  }
-}
-</script>""")                        
-        file.close()
+    </script>""")                        
+            file.close()
 
-#+CSV вывод на печать информации
-        if args.csv == True:
-            print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
-            "~/snoop/results/*/" + str(username) + "[.txt.html]")
-            print(Fore.WHITE + "├───Расширенный анализ:" +
-            Fore.RED + "\033[5m <\033[0m" +
-            Fore.GREEN + f"{username}" +
-            Fore.RED + "\033[5m>\033[0m",           
-            "сохранён в ~/snoop/results/csv/" + str(username) + ".csv")
-        else:        
-            print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
-            "~/snoop/results/*/" + str(username) + "[.txt.html]")
-        file.close()
+    #+CSV вывод на печать информации
+            if args.csv == True:
+                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
+                "~/snoop/results/*/" + str(username) + "[.txt.html]")
+                print(Fore.WHITE + "├───Расширенный анализ:" +
+                Fore.RED + "\033[5m <\033[0m" +
+                Fore.GREEN + f"{username}" +
+                Fore.RED + "\033[5m>\033[0m",           
+                "сохранён в ~/snoop/results/csv/" + str(username) + ".csv")
+            else:        
+                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
+                "~/snoop/results/*/" + str(username) + "[.txt.html]")
+            file.close()
 
-# Запись в csv.
-        if args.csv == True:
-            with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                            
-                writer = csv.writer(csv_report)
-                writer.writerow(['Объект',
-                                 'Ресурс',
-                                 'url',
-                                 'url_username',
-                                 'статус',
-                                 'статус_кода',
-                                 'время/мс',
-                                 ])
-                for site in results:
-                    writer.writerow([username,
-                                     site,
-                                     results[site]['url_main'],
-                                     results[site]['url_user'],
-                                     results[site]['exists'],
-                                     results[site]['http_status'],
-                                     results[site]['response_time_ms']
+    # Запись в csv.
+            if args.csv == True:
+                with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
+                                
+                    writer = csv.writer(csv_report)
+                    writer.writerow(['Объект',
+                                     'Ресурс',
+                                     'url',
+                                     'url_username',
+                                     'статус',
+                                     'статус_кода',
+                                     'время/мс',
                                      ])
-                writer.writerow(['«---------------------------------------',
-                                 '--------', '----------------------------------',
-                                 '--------------------------------------------------',
-                                 '-------------', '-----------------', '--------------»'])
-                writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
-                writer.writerow('')
-                writer.writerow(['Дата'])
-                writer.writerow([time.ctime()])
+                    for site in results:
+                        writer.writerow([username,
+                                         site,
+                                         results[site]['url_main'],
+                                         results[site]['url_user'],
+                                         results[site]['exists'],
+                                         results[site]['http_status'],
+                                         results[site]['response_time_ms']
+                                         ])
+                    writer.writerow(['«---------------------------------------',
+                                     '--------', '----------------------------------',
+                                     '--------------------------------------------------',
+                                     '-------------', '-----------------', '--------------»'])
+                    writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
+                    writer.writerow('')
+                    writer.writerow(['Дата'])
+                    writer.writerow([time.ctime()])
+
+# Поиск по умолчанию (без опции -u)
+    else:
+        for username in args.username:
+            print()
+            
+            file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
+            try:
+                file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
+            except (SyntaxError, ValueError):
+                pass
+
+            results = snoop(username,
+                               site_data,
+                               country=args.country,
+                               user=args.user,
+                               verbose=args.verbose,
+                               print_found_only=args.print_found_only,
+                               timeout=args.timeout,
+                               color=not args.no_func)
+
+            exists_counter = 0
+            file.write("Адрес | ресурс" + "\n\n")
+            for website_name in results:
+                dictionary = results[website_name]
+                if dictionary.get("exists") == "найден!":
+                    exists_counter += 1
+                    file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
+            file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
+            file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
+            file.write("\n" f"Обновлено: " + time.ctime() + ".")      
+            print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
+
+
+    # Запись в html.
+            timefinish = time.time() - timestart
+            file = open("results/html/" + username + ".html", "w", encoding="utf-8")
+            try:
+                file = open("results/html/" + username + ".html", "w", encoding="utf-8")
+            except (SyntaxError, ValueError):
+                pass
+            file.write("<!DOCTYPE html>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
+            file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
+            <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
+            file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
+            "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
+            for website_name in results:
+                dictionary = results[website_name]
+                if dictionary.get("exists") == "найден!":
+                    exists_counter += 0
+                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
+            file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+            file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
+            file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
+            file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>\n")
+            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")      
+            file.write("""
+    <script>
+    function sortList() {
+      var list, i, switching, b, shouldSwitch;
+      list = document.getElementById('id777');
+      switching = true;
+      while (switching) {
+        switching = false;
+        b = list.getElementsByTagName("LI");
+        for (i = 0; i < (b.length - 1); i++) {
+          shouldSwitch = false;
+          if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          b[i].parentNode.insertBefore(b[i + 1], b[i]);
+          switching = true;
+        }
+      }
+    }
+    </script>""")                        
+            file.close()
+
+    #+CSV вывод на печать информации
+            if args.csv == True:
+                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
+                "~/snoop/results/*/" + str(username) + "[.txt.html]")
+                print(Fore.WHITE + "├───Расширенный анализ:" +
+                Fore.RED + "\033[5m <\033[0m" +
+                Fore.GREEN + f"{username}" +
+                Fore.RED + "\033[5m>\033[0m",           
+                "сохранён в ~/snoop/results/csv/" + str(username) + ".csv")
+            else:        
+                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
+                "~/snoop/results/*/" + str(username) + "[.txt.html]")
+            file.close()
+
+    # Запись в csv.
+            if args.csv == True:
+                with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
+                                
+                    writer = csv.writer(csv_report)
+                    writer.writerow(['Объект',
+                                     'Ресурс',
+                                     'url',
+                                     'url_username',
+                                     'статус',
+                                     'статус_кода',
+                                     'время/мс',
+                                     ])
+                    for site in results:
+                        writer.writerow([username,
+                                         site,
+                                         results[site]['url_main'],
+                                         results[site]['url_user'],
+                                         results[site]['exists'],
+                                         results[site]['http_status'],
+                                         results[site]['response_time_ms']
+                                         ])
+                    writer.writerow(['«---------------------------------------',
+                                     '--------', '----------------------------------',
+                                     '--------------------------------------------------',
+                                     '-------------', '-----------------', '--------------»'])
+                    writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
+                    writer.writerow('')
+                    writer.writerow(['Дата'])
+                    writer.writerow([time.ctime()])
 
 # Открывать/нет браузер с результатами поиска.
     if args.no_func==False:
