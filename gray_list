@@ -15,7 +15,7 @@
 #БС.16/02/2019 аномальное поведение    
   "Fanpop": {
     "errorType": "response_url",
-    "errorUrl": "http://www.fanpop.com",
+    "стало": "http://www.fanpop.com",
     "rank": 0,
     "url": "http://www.fanpop.com/fans/{}",
     "urlMain": "http://www.fanpop.com/",
@@ -136,3 +136,8 @@ Jimdo
 
 ##СС (очень долгий ответ)
 gnusocial.no
+
+
+##БС.9/03/2019 (сайт ушел под защиту Cloudflare, username не будут находиться пока)
+9GAG
+Canva

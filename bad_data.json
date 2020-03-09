@@ -21,13 +21,13 @@
   },
   "Bittube": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://bittube.tv/error/user",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://bittube.tv/profile/{}",
     "urlMain": "https://bittube.tv",
     "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "\u0441\u0442\u0430\u043b\u043e": "https://bittube.tv/error/user"
   },
   "BlackPlanet": {
     "country": "\ud83c\udff4",
@@ -71,32 +71,32 @@
   },
   "EVE Online": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://eveonline.com",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://evewho.com/pilot/{}/",
     "urlMain": "https://eveonline.com",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "\u0441\u0442\u0430\u043b\u043e": "https://eveonline.com"
   },
   "Fanpop": {
     "country": "\ud83c\udff4",
-    "errorUrl": "http://www.fanpop.com",
     "errоrTypе": "response_url",
     "url": "http://www.fanpop.com/fans/{}",
     "urlMain": "http://www.fanpop.com/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "\u0441\u0442\u0430\u043b\u043e": "http://www.fanpop.com"
   },
   "Filmweb": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://www.filmweb.pl",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.filmweb.pl/user/{}",
     "urlMain": "https://www.filmweb.pl/user/adam",
     "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "\u0441\u0442\u0430\u043b\u043e": "https://www.filmweb.pl"
   },
   "Fotolog": {
     "country": "\ud83c\udff4",
@@ -118,13 +118,13 @@
   },
   "Imgtagram": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://imgtagram.com/error",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://imgtagram.com/u/{}",
     "urlMain": "https://imgtagram.com",
     "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "\u0441\u0442\u0430\u043b\u043e": "https://imgtagram.com/error"
   },
   "Imgur": {
     "country": "\ud83c\udff4",
@@ -167,23 +167,23 @@
   },
   "Marketplace.trainzauctions": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://www.trainzauctions.com/{}",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://marketplace.trainzauctions.com/user/profile/{}",
     "urlMain": "https://marketplace.trainzauctions.com/",
     "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "\u0441\u0442\u0430\u043b\u043e": "https://www.trainzauctions.com/{}"
   },
   "MeetMe": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://www.meetme.com/",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.meetme.com/{}",
     "urlMain": "https://www.meetme.com/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "username_unclaimed": "noonewouldeverusethis7",
+    "\u0441\u0442\u0430\u043b\u043e": "https://www.meetme.com/"
   },
   "Mehack": {
     "country": "\ud83c\udff4",
@@ -208,13 +208,13 @@
   },
   "PayPal": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://www.paypal.com/paypalme2/404",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.paypal.com/paypalme2/{}",
     "urlMain": "https://www.paypal.me/",
     "username_claimed": "blue",
-    "username_unclaimed": "noneownsthisusername"
+    "username_unclaimed": "noneownsthisusername",
+    "\u0441\u0442\u0430\u043b\u043e": "https://www.paypal.com/paypalme2/404"
   },
   "Playerup": {
     "country": "\ud83c\udff4",
@@ -229,13 +229,13 @@
   },
   "Pling": {
     "country": "\ud83c\udff4",
-    "errorUrl": "https://www.pling.com/",
     "errоrTypе": "response_url",
     "rank": 0,
     "url": "https://www.pling.com/u/{}/",
     "urlMain": "https://www.pling.com/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis"
+    "username_unclaimed": "noonewouldeverusethis",
+    "\u0441\u0442\u0430\u043b\u043e": "https://www.pling.com/"
   },
   "PowerShell Gallery": {
     "country": "\ud83c\udff4",

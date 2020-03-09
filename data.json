@@ -944,7 +944,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Disqus": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
     "url": "https://disqus.com/{}",
     "urlMain": "https://disqus.com/",
@@ -3397,7 +3397,7 @@
   "Rajce": {
     "country": "\ud83c\udde8\ud83c\uddff",
     "errorMsg": "410",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>Uživatel neexistuje",
     "errоrTypе": "message",
     "url": "https://{}.rajce.idnes.cz/",
     "urlMain": "https://www.rajce.idnes.cz/",
@@ -3596,7 +3596,7 @@
     "errоrTypе": "message",
     "url": "https://www.rusforum.com/member.php?username={}",
     "urlMain": "https://www.rusforum.com/",
-    "username_claimed": "blue",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Russian.fi": {

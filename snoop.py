@@ -781,7 +781,6 @@ def main():
 # Поиск по умолчанию (без опции -u)
     else:
         for username in args.username:
-            print()
             
             file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
             try:
