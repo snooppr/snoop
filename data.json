@@ -115,6 +115,14 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Airliners": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://www.airliners.net/user/{}/profile/photos",
+    "urlMain": "https://www.airliners.net/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Akniga": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
@@ -218,6 +226,14 @@
     "url": "https://ap-pro.ru/index/8-0-{}",
     "urlMain": "https://ap-pro.ru/",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "AppleDeveloper": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://forums.developer.apple.com/people/{}",
+    "urlMain": "https://forums.developer.apple.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Aptoide": {
@@ -911,6 +927,22 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Digitalocean": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://www.digitalocean.com/community/users/{}",
+    "urlMain": "https://www.digitalocean.com/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Digitalspy": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "errоrTypе": "status_code",
+    "url": "https://forums.digitalspy.com/profile/discussions/{}",
+    "urlMain": "https://forums.digitalspy.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Discogs": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
@@ -997,6 +1029,16 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Dslreports": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "errorMsg": "alert:",
+    "errorMsg2": "Cannot find that user",
+    "errоrTypе": "message",
+    "url": "https://www.dslreports.com/profile/{}",
+    "urlMain": "https://www.dslreports.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Duno": {
     "country": "\ud83c\udfc1",
     "errorMsg": "this user does not exist",
@@ -1073,6 +1115,26 @@
     "url": "https://community.eintracht.de/fans/{}",
     "urlMain": "https://eintracht.de",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Eksisozluk": {
+    "country": "\ud83c\uddf9\ud83c\uddf7",
+    "errorMsg": "isimli bir yazar kayd\u0131 mevcut de\u011fil",
+    "errorMsg2": "ek\u015fi s\u00f6zl\u00fck - kutsal bilgi kayna\u011f\u0131",
+    "errоrTypе": "message",
+    "url": "https://eksisozluk.com/biri/{}",
+    "urlMain": "https://eksisozluk.com/biri/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Elakiri": {
+    "country": "\ud83c\uddf1\ud83c\uddf0",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://www.elakiri.com/forum/member.php?username={}",
+    "urlMain": "http://www.elakiri.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Ello": {
@@ -1528,6 +1590,14 @@
     "username_claimed": "zigro",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forums.opera": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://forums.opera.com/user/{}",
+    "urlMain": "https://forums.opera.com/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forums.sourceruns": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
@@ -1831,6 +1901,14 @@
     "urlMain": "https://forum.hackthebox.eu/",
     "username_claimed": "angar",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Hackenproof": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://hackenproof.com/{}",
+    "urlMain": "https://hackenproof.com/arbin",
+    "username_claimed": "arbin",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "HackerNews": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -2719,6 +2797,14 @@
     "username_claimed": "the_west_pacific",
     "username_unclaimed": "noonewould"
   },
+  "NetworkInformatica": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://network.informatica.com/people/{}",
+    "urlMain": "https://network.informatica.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Newgrounds": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
@@ -3217,6 +3303,14 @@
     "username_claimed": "swiftstickler",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Pornhub": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://rt.pornhub.com/users/{}",
+    "urlMain": "https://rt.pornhub.com",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Prankru": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
@@ -3397,7 +3491,7 @@
   "Rajce": {
     "country": "\ud83c\udde8\ud83c\uddff",
     "errorMsg": "410",
-    "errorMsg2": "<title>Uživatel neexistuje",
+    "errorMsg2": "<title>U\u017eivatel neexistuje",
     "errоrTypе": "message",
     "url": "https://{}.rajce.idnes.cz/",
     "urlMain": "https://www.rajce.idnes.cz/",
@@ -4524,6 +4618,14 @@
     "url": "https://x-xack.ru/members/?username={}",
     "urlMain": "https://x-xack.ru/",
     "username_claimed": "zzzq",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "YandexBugbounty": {
+    "country": "\ud83c\udf0e",
+    "errоrTypе": "status_code",
+    "url": "https://yandex.ru/bugbounty/researchers/{}/",
+    "urlMain": "https://yandex.ru",
+    "username_claimed": "pyrk1",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "YandexMarket": {

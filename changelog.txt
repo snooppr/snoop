@@ -1,4 +1,20 @@
 ##Snoop Project 
+v1.1.4_rus
+* Добавлены в БС новые ресурсы:
+Airliners;
+AppleDeveloper;
+Digitalocean;
+Digitalspy;
+Dslreports;
+Eksisozluk;
+Elakiri;
+Forums.opera;
+Hackenproof;
+NetworkInformatica;
+Pornhub;
+YandexBugbounty.
+===================================================================================
+
 v1.1.3_rus
 * В html теперь доступна сортировка результатов: — по странам.
 (Сортировка по умолчанию: — по алфавиту имён сайтов. 
