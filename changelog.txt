@@ -1,6 +1,8 @@
 ##Snoop Project 
+
 v1.1.4_rus
 * Добавлены в БС новые ресурсы:
+1337x;
 Airliners;
 AppleDeveloper;
 Digitalocean;
@@ -8,10 +10,26 @@ Digitalspy;
 Dslreports;
 Eksisozluk;
 Elakiri;
+Forum.hiveos;
+Forum.hr;
 Forums.opera;
+Forums.tomshardware;
+Gaiaonline;
 Hackenproof;
+Hotcopper;
+Kaskus;
+Krstarica;
+Mactalk;
+Nairaland;
+Namepros;
 NetworkInformatica;
+Niketalk;
+Pbnation;
 Pornhub;
+Slashdot;
+Suomi24;
+Thestudentroom;
+Totseans;
 YandexBugbounty.
 ===================================================================================
 
@@ -42,6 +60,7 @@ Videogamegeek.
 * Почищена БД от дубликатов.
 (В БД > 500 сайтов!!!).
 ===================================================================================
+
 v1.1.2_rus
 * Улучшена навигация по работе с html.
 
@@ -255,6 +274,7 @@ $ pip3 install playsound
 
 * В ЧС добавлен сайт с медленным ответом (Zomato). 
 ===================================================================================
+
 v1.0.5_rus
 * Добавлены в БС новые ресурсы:
 Advego;

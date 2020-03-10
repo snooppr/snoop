@@ -9,6 +9,16 @@
     "username_claimed": "hazelamy",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "1337x": {
+    "country": "\ud83c\udfc1",
+    "errorMsg": "Error something went wrong",
+    "errorMsg2": "Bad Username.",
+    "errоrTypе": "message",
+    "url": "https://1337x.to/user/{}/",
+    "urlMain": "https://1337x.to",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "1x": {
     "country": "\ud83c\uddf8\ud83c\uddea",
     "errorMsg": "This user does not exist or is not approved yet. Come back later.",
@@ -1425,6 +1435,24 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forum.hiveos": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "errоrTypе": "status_code",
+    "url": "https://forum.hiveos.farm/u/{}/summary",
+    "urlMain": "https://forum.hiveos.farm",
+    "username_claimed": "halogenius",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum.hr": {
+    "country": "\ud83c\udded\ud83c\uddf7",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://www.forum.hr/member.php?username={}",
+    "urlMain": "http://www.forum.hr",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forum.ixbt": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
@@ -1606,6 +1634,16 @@
     "username_claimed": "cubedude",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forums.tomshardware": {
+    "country": "\ud83c\udfc1",
+    "errorMsg": "Notable members",
+    "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
+    "errоrTypе": "message",
+    "url": "https://forums.tomshardware.com/members/?username={}",
+    "urlMain": "https://forums.tomshardware.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forumteam": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
@@ -1676,6 +1714,16 @@
     "errоrTypе": "message",
     "url": "https://funnyjunk.com/user/{}",
     "urlMain": "https://funnyjunk.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Gaiaonline": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "errorMsg": "No user ID specified or user does not exist!",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.gaiaonline.com/profiles/{}",
+    "urlMain": "https://www.gaiaonline.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -1946,6 +1994,16 @@
     "url": "https://www.hackster.io/{}",
     "urlMain": "https://www.hackster.io",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Hotcopper": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
+    "errorMsg": "title>HotCopper",
+    "errorMsg2": "The following error occurred",
+    "errоrTypе": "message",
+    "url": "https://hotcopper.com.au/search/search?type=post&users={}",
+    "urlMain": "https://hotcopper.com.au",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "House-Mixes.com": {
@@ -2239,6 +2297,14 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Kaskus": {
+    "country": "\ud83c\uddee\ud83c\udde9",
+    "errоrTypе": "status_code",
+    "url": "https://www.kaskus.co.id/@{}",
+    "urlMain": "https://www.kaskus.co.id",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Keybase": {
     "country": "\ud83c\udf0e",
     "errоrTypе": "status_code",
@@ -2282,6 +2348,16 @@
     "url": "https://www.kongregate.com/accounts/{}",
     "urlMain": "https://www.kongregate.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Krstarica": {
+    "country": "\ud83c\udf0e",
+    "errorMsg": "Tra\u017eeni \u010dlan nije prona\u0111en. Molimo unesite puno ime \u010dlana i poku\u0161ajte ponovo.",
+    "errorMsg2": "title>Zna\u010dajni \u010dlanovi",
+    "errоrTypе": "message",
+    "url": "https://forum.krstarica.com/members/?username={}",
+    "urlMain": "https://forum.krstarica.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Kuban.forum24": {
@@ -2496,6 +2572,16 @@
     "url": "https://la.mail.ru/forums/member.php?username={}",
     "urlMain": "https://la.mail.ru",
     "username_claimed": "wizard",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Mactalk": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
+    "errorMsg": "None",
+    "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
+    "errоrTypе": "message",
+    "url": "http://www.mactalk.com.au/member.php?username={}",
+    "urlMain": "http://www.mactalk.com.au/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mama": {
@@ -2767,6 +2853,14 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Nairaland": {
+    "country": "\ud83c\uddf3\ud83c\uddec",
+    "errоrTypе": "status_code",
+    "url": "https://www.nairaland.com/{}",
+    "urlMain": "https://www.nairaland.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "NameMC": {
     "country": "\ud83c\udf0e",
     "errorMsg": "Profiles: 0 results",
@@ -2775,6 +2869,16 @@
     "url": "https://namemc.com/profile/{}",
     "urlMain": "https://namemc.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Namepros": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "errorMsg": "None",
+    "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
+    "errоrTypе": "message",
+    "url": "https://www.namepros.com/members/?username={}",
+    "urlMain": "https://www.namepros.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "NationStates_Nation": {
@@ -2821,6 +2925,16 @@
     "urlMain": "https://nightbot.tv/",
     "urlProbe": "https://api.nightbot.tv/1/channels/t/{}",
     "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Niketalk": {
+    "country": "\ud83c\udf0e",
+    "errorMsg": "None",
+    "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
+    "errоrTypе": "message",
+    "url": "https://niketalk.com/members/?username={}",
+    "urlMain": "https://niketalk.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "NnRU": {
@@ -3114,6 +3228,16 @@
     "url": "https://www.patreon.com/{}",
     "urlMain": "https://www.patreon.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Pbnation": {
+    "country": "\ud83c\udde8\ud83c\udde6",
+    "errorMsg": "None",
+    "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
+    "errоrTypе": "message",
+    "url": "https://www.pbnation.com/member.php?username={}",
+    "urlMain": "https://www.pbnation.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pcgamer": {
@@ -3850,6 +3974,16 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Slashdot": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "errorMsg": "          - Slashdot User",
+    "errorMsg2": "The user you requested does not exist, no matter how much you wish this might be the case.",
+    "errоrTypе": "message",
+    "url": "https://slashdot.org/~{}",
+    "urlMain": "https://slashdot.org",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "SlideShare": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
@@ -4055,6 +4189,14 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Suomi24": {
+    "country": "\ud83c\uddeb\ud83c\uddee",
+    "errоrTypе": "status_code",
+    "url": "https://www.suomi24.fi/profiili/{}",
+    "urlMain": "https://www.suomi24.fi",
+    "username_claimed": "Kilgore",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Svidbook": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
@@ -4170,6 +4312,16 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Thestudentroom": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "errorMsg": "None",
+    "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
+    "errоrTypе": "message",
+    "url": "https://www.thestudentroom.co.uk/member.php?username={}",
+    "urlMain": "https://www.thestudentroom.co.uk",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Thingiverse": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
@@ -4212,6 +4364,14 @@
     "url": "https://www.toster.ru/user/{}/answers",
     "urlMain": "https://www.toster.ru/",
     "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Totseans": {
+    "country": "\ud83c\udfc1",
+    "errоrTypе": "status_code",
+    "url": "http://www.totseans.com/bbs/profile/{}",
+    "urlMain": "http://www.totseans.com/bbs/profile/Vizier",
+    "username_claimed": "Vizier",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Touristlink": {

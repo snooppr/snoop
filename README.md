@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS |🚫|
 
 
-**В базе** [519 сайтов](https://github.com/snooppr/snoop/blob/termux/sites.md "database"), **база расширяется**
+**В базе** [536 сайтов](https://github.com/snooppr/snoop/blob/termux/sites.md "database"), **база расширяется**
 
 ## Установка
 
