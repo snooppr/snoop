@@ -555,22 +555,95 @@ def main():
         print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)                
 
 # Опция list all
+# Сортируем по алфавиту
     if args.listing:
-        listall = []
-        with open('sites.md', "r", encoding="utf8") as listyes:
-            for site in listyes.readlines():
-                patch = (site.split(']')[0]).replace("[", "  ")
-                listall.append(patch)
-            print(Fore.GREEN + "++Белый список++", *listall, sep = "\n")
+        sortY = str(input("Сортировать БС Snoop по странам или по имени сайта ?\nпо странам — \033[36m'1'\033[0m по имени — \033[36m'2'\033[0m\n"))
+        
+        if sortY == "2":
+            print("========================\nOk, сортируем по алфавиту:\n")
+            listall = []
+            with open('sites.md', "r", encoding="utf8") as listyes:
+                for site in listyes.readlines():
+                    patch = (site.split(']')[0]).replace("[", " ")
+                    listall.append(patch)
+                print(Fore.GREEN + "++Белый список++", *listall[1:], sep = "\n")
 
-        listall_bad = []
-        with open('bad_site.md', "r", encoding="utf8") as listbad:
-            for site_bad in listbad.readlines():
-                patch_bad = (site_bad.split(']')[0]).replace("[", "  ")
-                listall_bad.append(patch_bad)
-            print(Fore.RED + "\n\n--Чёрный список--", *listall_bad, sep = "\n")
-        sys.exit(0)
+            listallsortFlag = []
+            with open('sites.md', "r", encoding="utf8") as listyes:
+                for site in listyes.readlines():
+                    patch = (site.split('[')[0]).replace(" ", "")
+                    patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                    listallsortFlag.append(patch1)
+                    goba = sorted(listallsortFlag)
 
+            listall_bad = []
+            with open('bad_site.md', "r", encoding="utf8") as listbad:
+                for site_bad in listbad.readlines():
+                    patch_bad = (site_bad.split(']')[0]).replace("[", " ")
+                    listall_bad.append(patch_bad)
+            print("================\n")
+            print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
+            print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
+            print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
+            print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
+            print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
+            print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
+            print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
+            print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
+            print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
+            print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
+            print("...")
+            sys.exit(0)
+
+# Сортируем по странам       
+        elif sortY == "1":
+            print("========================\nOk, сортируем по странам:\n")
+            listall = []
+            with open('sites.md', "r", encoding="utf8") as listyes: 
+                for site in listyes.readlines():
+                    patch = (site.split(']')[0]).replace("[", " ")
+                    patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                    listall.append(patch1)
+                    sortlistall = sorted(listall)
+                print(Fore.GREEN + "++Белый список++")                    
+               
+                narezka=sortlistall[1:]
+                for i, numerlist in enumerate(narezka):
+                    fd=(i + 1)
+                    print(f"{fd}.{numerlist}")
+               
+            listallsortFlag = []
+            with open('sites.md', "r", encoding="utf8") as listyes:
+                for site in listyes.readlines():
+                    patch = (site.split('[')[0]).replace(" ", "")
+                    patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                    listallsortFlag.append(patch1)                
+                    goba = sorted(listallsortFlag)
+         
+            listall_bad = []
+            with open('bad_site.md', "r", encoding="utf8") as listbad:
+                for site_bad in listbad.readlines():
+                    patch_bad = (site_bad.split(']')[0]).replace("[", " ")
+                    listall_bad.append(patch_bad)
+                print(Fore.RED + "\n--Чёрный список--", *listall_bad[1:], sep = "\n")
+            print("================\n")
+            print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
+            print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
+            print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
+            print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
+            print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
+            print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
+            print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
+            print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
+            print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
+            print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
+            print("...")
+            sys.exit(0)
+
+                                    
+        else:    
+            print(Style.BRIGHT + Fore.RED +"Извините, но вы не выбрали действие\nвыход")
+            sys.exit(0)            
 # Опция донат.
     if args.donation:
         print(donate)
