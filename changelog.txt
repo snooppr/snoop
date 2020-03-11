@@ -8,6 +8,7 @@ v1.1.4_rus
 Airliners;
 AppleDeveloper;
 Bibsonomy;
+Cplusplus;
 Digitalocean;
 Digitalspy;
 Dreamwidth;
@@ -20,6 +21,7 @@ Forum.hr;
 Forum.itvdn;
 Forum.popjustice;
 Forums.opera;
+Forum.ruboard;
 Forums.tomshardware;
 Gaiaonline;
 Gays;
@@ -45,11 +47,16 @@ Pbnation;
 Pinboard;
 Plurk;
 Pornhub;
+Redorchestra;
+Ruby-forum;
+Shutterstock;
 Slashdot;
+Software.informer;
 Spaces;
 Suomi24;
 Thestudentroom;
 Totseans;
+W7forums;
 YandexBugbounty.
 ===================================================================================
 
