@@ -5,8 +5,7 @@
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
-Snoop Project разыскивает никнеймы в публичных данных. Это самое сильное ПО с учётом
-СНГ локации.
+Snoop Project разыскивает никнеймы в публичных данных. Это самое сильное ПО с учётом СНГ локации.
 
 Историю смотри
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
@@ -20,7 +19,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS |🚫|
 
 
-**В базе** [552 сайта](https://github.com/snooppr/snoop/blob/termux/sites.md "database"), **база расширяется**
+**В базе** [552 сайта](https://github.com/snooppr/snoop/blob/master/sites.md "database"), **база расширяется**
 
 ## Установка
 
