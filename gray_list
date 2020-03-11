@@ -141,3 +141,17 @@ gnusocial.no
 ##БС.9/03/2019 (сайт ушел под защиту Cloudflare, username не будут находиться пока)
 9GAG
 Canva
+
+
+##СС.11/03/2019 (api)
+  "SportsTracker": {
+    "country": "\ud83c\udf0e",
+    "errorMsg": "\"code\":\"404\"",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.sports-tracker.com/view_profile/{}",
+    "urlMain": "https://www.sports-tracker.com/",
+    "urlProbe": "https://www.sports-tracker.com/apiserver/v1/user/name/{}",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeveruse"
+  },

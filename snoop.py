@@ -715,7 +715,7 @@ def main():
 
         if site_missing:
             print(
-                f"Ошибка: желаемые сайты не найдены: {', '.join(site_missing)}.")
+                f"Ошибка: желаемый сайт не найден в базе Snoop: {', '.join(site_missing)}.")
             sys.exit(1)
 # Флаг БС
     with open("data.json", "r", encoding="utf8") as flag:
