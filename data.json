@@ -3336,6 +3336,14 @@
     "username_claimed": "psr",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Partyflock": {
+    "country": "\ud83c\uddf3\ud83c\uddf1",
+    "errоrTypе": "status_code",
+    "url": "https://partyflock.nl/user/{}",
+    "urlMain": "https://partyflock.nl",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Pastebin": {
     "country": "\ud83c\udf0e",
     "errorUrl": "https://pastebin.com/index",
@@ -4198,6 +4206,14 @@
     "errоrTypе": "message",
     "url": "https://soylentnews.org/~{}",
     "urlMain": "https://soylentnews.org",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Spaces": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "errоrTypе": "status_code",
+    "url": "https://spaces.im/mysite/index/{}/",
+    "urlMain": "https://spaces.im",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
