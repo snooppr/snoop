@@ -2,7 +2,6 @@
   "WebsiteName1": {
     "country": "🌎",
     "errоrTypе": "status_code",
-    "rank": 0,
     "url": "https://1examplesite.ru/member.php?username={}",
     "urlMain": "https://1examplesite.ru",
     "username_claimed": "username",
@@ -11,8 +10,7 @@
   "WebsiteName2": {
     "country": "🇷🇺",
     "errоrTypе": "response_url",
-    "стало": "https://2examplesite.ru",
-    "rank": 0,
+    "errorUrl": "https://2examplesite.ru",
     "url": "https://2examplesite.ru/member.php?u{}",
     "urlMain": "https://2examplesite.ru",
     "username_claimed": "username",
@@ -23,7 +21,6 @@
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",    
     "errоrTypе": "message",
-    "rank": 0,
     "url": "https://3examplesite.ru/member.php?profile{}",
     "urlMain": "https://3examplesite.ru",
     "urlProbe": "https://api.3examplesite.ru?ui/ver/",
