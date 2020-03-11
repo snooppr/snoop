@@ -24,7 +24,7 @@
     "url": "https://3examplesite.ru/member.php?profile{}",
     "urlMain": "https://3examplesite.ru",
     "urlProbe": "https://api.3examplesite.ru?ui/ver/",
-    "username_claimed": "adam",
+    "username_claimed": "username",
     "username_unclaimed": "noonewouldeverusethis7"
   }     
 }
