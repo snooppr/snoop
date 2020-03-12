@@ -27,24 +27,26 @@ if sys.platform == 'win32':
 
 init(autoreset=True)
 
-print ("""
+print ("""\033[36m
   ___|                          
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|     \033[37mv1.\033[34m1.4\033[31m_rus\033[0m\n
+                         _|    \033[0m \033[37mv1.\033[34;1m1.5\033[31;1m_rus\033[0m
 """)
 
-print ("#Пример:\n cd ~/snoop\n python3 snoop.py -h \033[37m#справка по всем функциям ПО\033[0m\n" + 
-" python3 snoop.py --time 9 user \033[37m#поиск user-a, ожидание ответа от сайта ≤ 9с.\033[0m\n" + 
-" открыть 'snoop/results/*/user.[txt.html.csv]' \033[37m#изучить сохранённые результаты поиска\033[0m\n")
+print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
+print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
+print (Fore.CYAN + " python3 snoop.py -h" + Style.RESET_ALL, "#справка по функциям ПО")
+print (Fore.CYAN + " python3 snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a\n")
 
 
-module_name = "Snoop: поиск никнейма по всем фронтам!"
-__version__ = "1.1.4_rus Ветка GNU/Linux"
+module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
+__version__ = "1.1.5_rus Ветка Snoop Desktop"
 
 dirresults = os.getcwd()
 timestart = time.time()
+time_data = time.localtime()
 
 class ElapsedFuturesSession(FuturesSession):
     """
@@ -83,13 +85,14 @@ def print_info(title, info, color=True):
     else:
         print(f"[*] {title} {info}:")
 
+censor=0
 def print_error(err, errstr, var, verbose=False, color=True):
     if color:
-        print(Style.BRIGHT + Fore.WHITE + "[" +
-            Fore.RED + "-" +
-            Fore.WHITE + "]" +
-            Fore.RED + f" {errstr}" +
-            Fore.YELLOW + f" {err if verbose else var}")
+        print(Fore.CYAN + "[" +
+            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
+            Fore.CYAN + "]" +
+            Style.BRIGHT + Fore.RED + f" {errstr}" +
+            Style.BRIGHT + Fore.YELLOW + f" {err if verbose else var}")
         playsound('err.wav')
     else:
         print(f"[-] {errstr} {err if verbose else var}")
@@ -110,33 +113,33 @@ def print_found_country(social_network, url, countryA, response_time=False, verb
 # Вывод на печать по умолчанию
 def print_found(social_network, url, response_time=False, verbose=False, color=True):
     if color:
-        print((Style.BRIGHT + Fore.WHITE + "[" +
-            Fore.GREEN + "+" + 
-            Fore.WHITE + "]" +
+        print((Fore.CYAN + "[" +
+            Style.BRIGHT + Fore.GREEN + "+" + Style.RESET_ALL +
+            Fore.CYAN + "]" +
             format_response_time(response_time, verbose) +
-            Fore.GREEN + f" {social_network}:"), url)
+            Style.BRIGHT + Fore.GREEN + f" {social_network}:"), url)
     else:
         print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
 
 def print_not_found(social_network, response_time, verbose=False, color=True):
     if color:
-        print((Style.BRIGHT + Fore.WHITE + "[" +
-            Fore.RED + "-" +
-            Fore.WHITE + "]" +
+        print((Fore.CYAN + "[" +
+            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
+            Fore.CYAN + "]" +
             format_response_time(response_time, verbose) +
-            Fore.GREEN + f" {social_network}:" +
-            Fore.YELLOW + " Увы!"))
+            Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
+            Style.BRIGHT + Fore.YELLOW + " Увы!"))
     else:
         print(f"[-]{format_response_time(response_time, verbose)} {social_network}: Увы!")
 
 def print_invalid(social_network, msg, color=True):
     """Ошибка вывода результата"""
     if color:
-        print((Style.BRIGHT + Fore.WHITE + "[" +
-            Fore.RED + "-" +
-            Fore.WHITE + "]" +
-            Fore.GREEN + f" {social_network}:" +
-            Fore.YELLOW + f" {msg}"))
+        print((Fore.CYAN + "[" +
+            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
+            Fore.CYAN + "]" +
+            Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
+            Style.BRIGHT + Fore.YELLOW + f" {msg}"))
     else:
         print(f"[-] {social_network} {msg}")
 
@@ -151,7 +154,11 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
         print_error(errh, "HTTP Error:", social_network, verbose, color)
 
     except requests.exceptions.ConnectionError as errc:
-        print_error(errc, "Ошибка соединения:", social_network, verbose, color)
+        def gebb():
+            global censor
+            censor +=1
+            print_error(errc, "Ошибка соединения:", social_network, verbose, color)
+        gebb()            
     except requests.exceptions.Timeout as errt:
         print_error(errt, "Timeout ошибка:", social_network, verbose, color)
     except requests.exceptions.RequestException as err:
@@ -412,9 +419,9 @@ def timeout_check(value):
     try:
         timeout = float(value)
     except:
-        raise ArgumentTypeError(f"Timeout '{value}' must be a number.")
+        raise ArgumentTypeError(f"Timeout '{value}' Err, укажите время в 'секундах'.")
     if timeout <= 0:
-        raise ArgumentTypeError(f"Timeout '{value}' must be greater than 0.0s.")
+        raise ArgumentTypeError(f"Timeout '{value}' Err, укажите время > 0 c.")
     return timeout
 
 # Обновление Snoop.
@@ -471,7 +478,7 @@ def main():
                         )
     parser.add_argument("--version", "--about", "-V",
                         action="version",  version=(version_snoop),
-                        help="Вывод на печать версий: Snoop; Python и Лицензии"
+                        help="Вывод на печать версий: OS; Snoop; Python и Лицензии"
                         )
     parser.add_argument("--verbose", "-v",
                         action="store_true",  dest="verbose", default=False,
@@ -496,8 +503,9 @@ def main():
                         dest="timeout", type=timeout_check, default=None,
                         help="Установить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
-                             "Оптимальное значение при хорошем интернет соединении и нескольких 'упавших' сайтов = 9с.\n"
-                             "Вкл. эту опцию необходимо практически всегда, чтобы избежать длительных зависаний"
+                             "Оптимальное значение при хорошем интернет соединении = 9с.\n"
+                             "\033[31;1mВкл. эту опцию необходимо практически всегда\033[0m, \
+                              чтобы избежать длительных зависаний при Internet Censorship"
                         )
     parser.add_argument("--found-print", "-f", 
                         action="store_true", dest="print_found_only", default=False,
@@ -552,7 +560,7 @@ def main():
                 userlist=[line.rstrip() for line in userlist]
             except:
                 print("Не могу прочитать! Пожалуйста, укажите текстовый файл.")
-        print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)                
+        print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)
 
 # Опция list all
 # Сортируем по алфавиту
@@ -715,7 +723,8 @@ def main():
 
         if site_missing:
             print(
-                f"Ошибка: желаемый сайт не найден в базе Snoop: {', '.join(site_missing)}.")
+                f"Ошибка: желаемый сайт не найден в базе Snoop: {', '.join(site_missing)}\n"
+                "Или вы пропустили знак '-' в опции '--csv'")
             sys.exit(1)
 # Флаг БС
     with open("data.json", "r", encoding="utf8") as flag:
@@ -730,9 +739,11 @@ def main():
         for site in country_sites:
             site_data[site] = site_country.get(site)
 
-# Крутим список юзеров    
+# Крутим список юзеров  
     if args.user:
+        kef_user=0
         for username in userlist:
+            kef_user +=1
             file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
             try:
                 file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
@@ -756,8 +767,8 @@ def main():
                     file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
             file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
-            file.write("\n" f"Обновлено: " + time.ctime() + ".")      
-            print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
+            file.write("\n" f"Обновлено: " + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".")      
+            print(Fore.CYAN + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
 
     # Запись в html.
             timefinish = time.time() - timestart
@@ -779,8 +790,8 @@ def main():
             file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>\n")
-            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")      
+            file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
+            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")
             file.write("""
     <script>
     function sortList() {
@@ -803,36 +814,44 @@ def main():
         }
       }
     }
-    </script>""")                        
+    </script>""")
             file.close()
 
     #+CSV вывод на печать информации
             if args.csv == True:
-                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
-                "~/snoop/results/*/" + str(username) + "[.txt.html]")
-                print(Fore.WHITE + "├───Расширенный анализ:" +
-                Fore.RED + "\033[5m <\033[0m" +
-                Fore.GREEN + f"{username}" +
-                Fore.RED + "\033[5m>\033[0m",           
-                "сохранён в ~/snoop/results/csv/" + str(username) + ".csv")
+                print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
+                "results/*/" + str(username) + "*")
+                print(Fore.CYAN + "├──Расширенный анализ сохранён в: " + Style.RESET_ALL + "results/csv/" + str(username) + ".csv")
             else:        
-                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
-                "~/snoop/results/*/" + str(username) + "[.txt.html]")
+                print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
+                "results/*/" + str(username) + "*]")
             file.close()
 
     # Запись в csv.
             if args.csv == True:
                 with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                                
-                    writer = csv.writer(csv_report)
-                    writer.writerow(['Объект',
-                                     'Ресурс',
-                                     'url',
-                                     'url_username',
-                                     'статус',
-                                     'статус_кода',
-                                     'время/мс',
-                                     ])
+                    if censor >= 9:
+                        writer = csv.writer(csv_report)
+                        writer.writerow(['Объект',
+                                         'Ресурс',
+                                         'Url',
+                                         'Url_username',
+                                         'Статус',
+                                         'Статус_кода',
+                                         'Время/мс',
+                                         'Внимание!_Поиск_проходил_при_слабом_интернет_соединении_или_Internet-Censorship. '
+                                         'Результаты_могут_быть_неполные.'
+                                         ])
+                    else:
+                        writer = csv.writer(csv_report)
+                        writer.writerow(['Объект',
+                                         'Ресурс',
+                                         'Url',
+                                         'Url_username',
+                                         'Статус',
+                                         'Статус_кода',
+                                         'Время/мс',
+                                         ])
                     for site in results:
                         writer.writerow([username,
                                          site,
@@ -849,7 +868,18 @@ def main():
                     writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
                     writer.writerow('')
                     writer.writerow(['Дата'])
-                    writer.writerow([time.ctime()])
+                    writer.writerow([time.strftime("%m/%d/%Y_%H:%M:%S", time_data)])
+                    file.close()
+
+# Финишный вывод.
+        if censor >= 9 * int(kef_user):
+            print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", 
+                              "*используйте VPN")
+            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
+        else:
+            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
 
 # Поиск по умолчанию (без опции -u)
     else:
@@ -879,8 +909,8 @@ def main():
                     file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
             file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
-            file.write("\n" f"Обновлено: " + time.ctime() + ".")      
-            print(Fore.WHITE + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
+            file.write("\n" f"Обновлено: " + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".")
+            print(Fore.CYAN + "├─Результаты поиска:", "всего найдено —", exists_counter, "url")
 
 
     # Запись в html.
@@ -903,8 +933,8 @@ def main():
             file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file.write("<br> Обновлено: " + "<i>" + time.ctime() + ".</i>\n")
-            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")      
+            file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
+            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")
             file.write("""
     <script>
     function sortList() {
@@ -927,36 +957,44 @@ def main():
         }
       }
     }
-    </script>""")                        
+    </script>""")
             file.close()
 
     #+CSV вывод на печать информации
             if args.csv == True:
-                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
-                "~/snoop/results/*/" + str(username) + "[.txt.html]")
-                print(Fore.WHITE + "├───Расширенный анализ:" +
-                Fore.RED + "\033[5m <\033[0m" +
-                Fore.GREEN + f"{username}" +
-                Fore.RED + "\033[5m>\033[0m",           
-                "сохранён в ~/snoop/results/csv/" + str(username) + ".csv")
-            else:        
-                print(Fore.WHITE + "├───Положительные результаты сохранены в: " + Style.RESET_ALL +
-                "~/snoop/results/*/" + str(username) + "[.txt.html]")
+                print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
+                "results/*/" + str(username) + "[*]")
+                print(Fore.CYAN + "├──Расширенный анализ сохранён в: " + Style.RESET_ALL + "results/csv/" + str(username) + ".csv")
+            else:
+                print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
+                "results/*/" + str(username) + "[*]")
             file.close()
 
     # Запись в csv.
             if args.csv == True:
                 with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                                
-                    writer = csv.writer(csv_report)
-                    writer.writerow(['Объект',
-                                     'Ресурс',
-                                     'url',
-                                     'url_username',
-                                     'статус',
-                                     'статус_кода',
-                                     'время/мс',
-                                     ])
+                    if censor >= 9:            
+                        writer = csv.writer(csv_report)
+                        writer.writerow(['Объект',
+                                         'Ресурс',
+                                         'Url',
+                                         'Url_username',
+                                         'Статус',
+                                         'Статус_кода',
+                                         'Время/мс',
+                                         'Внимание!_Поиск_проходил_при_слабом_интернет_соединении_или_Internet-Censorship. '
+                                         'Результаты_могут_быть_неполные.'
+                                         ])
+                    else:
+                        writer = csv.writer(csv_report)
+                        writer.writerow(['Объект',
+                                         'Ресурс',
+                                         'Url',
+                                         'Url_username',
+                                         'Статус',
+                                         'Статус_кода',
+                                         'Время/мс'
+                                         ])
                     for site in results:
                         writer.writerow([username,
                                          site,
@@ -973,7 +1011,18 @@ def main():
                     writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
                     writer.writerow('')
                     writer.writerow(['Дата'])
-                    writer.writerow([time.ctime()])
+                    writer.writerow([time.strftime("%m/%d/%Y_%H:%M:%S", time_data)])
+                    file.close()
+
+# Финишный вывод.
+        if censor >= 9:
+            print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", "*используйте VPN")
+            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
+        else:
+            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
+
 
 # Открывать/нет браузер с результатами поиска.
     if args.no_func==False:
@@ -984,7 +1033,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Финишный вывод.
-print(Fore.WHITE + "└────╼Дата выполнения этого поискового запроса:", time.ctime())
-print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))

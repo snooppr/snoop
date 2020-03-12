@@ -979,6 +979,14 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Discourse.pi-hole": {
+    "country": "\ud83c\udfc1",
+    "errоrTypе": "status_code",
+    "url": "https://discourse.pi-hole.net/u/{}/summary",
+    "urlMain": "https://discourse.pi-hole.net",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Discuss.Elastic.co": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "errоrTypе": "status_code",
@@ -1584,6 +1592,14 @@
     "urlMain": "https://forum.sublimetext.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Forum.swiftbook": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "errоrTypе": "status_code",
+    "url": "https://forum.swiftbook.ru/u/{}/summary",
+    "urlMain": "https://forum.swiftbook.ru",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum.tks": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -3484,14 +3500,6 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Pihole": {
-    "country": "\ud83c\udfc1",
-    "errоrTypе": "status_code",
-    "url": "https://discourse.pi-hole.net/u/{}/summary",
-    "urlMain": "https://discourse.pi-hole.net",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Pikabu": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "errоrTypе": "status_code",
@@ -4830,7 +4838,7 @@
   "Vkovk": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "errorMsg": "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>\u0414\u043e\u0441\u0442\u0443\u043f \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d",
     "errоrTypе": "message",
     "url": "http://www.vkovk.ru/profile-vkontakte.php?user={}",
     "urlMain": "http://www.vkovk.ru/",
@@ -5055,14 +5063,6 @@
     "url": "https://www.zhihu.com/people/{}",
     "urlMain": "https://www.zhihu.com/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "forum.swiftbook": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "errоrTypе": "status_code",
-    "url": "https://forum.swiftbook.ru/u/{}/summary",
-    "urlMain": "https://forum.swiftbook.ru",
-    "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   }
 }
