@@ -830,7 +830,7 @@ def main():
     # Запись в csv.
             if args.csv == True:
                 with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                    if censor >= 9:
+                    if censor >= 9 * kef_user:
                         writer = csv.writer(csv_report)
                         writer.writerow(['Объект',
                                          'Ресурс',
