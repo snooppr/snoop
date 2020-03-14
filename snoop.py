@@ -419,19 +419,28 @@ def timeout_check(value):
     try:
         timeout = float(value)
     except:
-        raise ArgumentTypeError(f"Timeout '{value}' Err, укажите время в 'секундах'.")
+        raise ArgumentTypeError(f"\033[36mTimeout '{value}' Err, укажите время в 'секундах'. \033[0m")
     if timeout <= 0:
-        raise ArgumentTypeError(f"Timeout '{value}' Err, укажите время > 0 c.")
+        raise ArgumentTypeError(f"\033[36mTimeout '{value}' Err, укажите время > 0 c. \033[0m")
     return timeout
 
 # Обновление Snoop.
 def update_snoop():
-    upd = str(input("""Вы действительно хотите:
+    if sys.platform == 'win32':
+        upd = str(input("""Вы действительно хотите:
                     __             _  
    ._  _| _._|_ _  (_ ._  _  _ ._   ) 
 |_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
    |                           |    
 нажмите 'y' """))
+    else:
+        upd = str(input("""\033[36mВы действительно хотите:
+                    __             _  
+   ._  _| _._|_ _  (_ ._  _  _ ._   ) 
+|_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
+   |                           |    
+нажмите\033[0m 'y' """))
+
     if upd == "y":
         if sys.platform == 'win32':
             print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS Windows")
@@ -446,19 +455,19 @@ def main():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
 
-    version_snoop = f"%(prog)s: {__version__}\n" +  \
-                     f"OS: {platform.platform(aliased=True, terse=0)}\n" + \
-                     f"Python: {platform.python_version()}\n\n" + \
+    version_snoop = f"\033[36m%(prog)s: {__version__}\033[36m\n" +  \
+                     f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
+                     f"\033[36mPython: {platform.python_version()}\033[36m\n\n" + \
                      f"\033[37m{cop}\033[0m\n"
 
 
 # Пожертование.
     donate = ("""
-╭donate:
-├──BTC_BHC: \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m
-├──Яндекс.Деньги: \033[37m4100111364257544\033[0m  
-└──PayPal: \033[37msnoopproject@protonmail.com\033[0m    
-\nИсходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m """)
+\033[36m╭donate:\033[0m
+\033[36m├──BTC_BHC:\033[0m \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m
+\033[36m├──Яндекс.Деньги:\033[0m \033[37m4100111364257544\033[0m  
+\033[36m└──PayPal:\033[0m \033[37msnoopproject@protonmail.com\033[0m    
+\n\033[36mИсходный код:\033[0m \033[37mhttps://github.com/snooppr/snoop\033[0m """)
               
                 
                 
@@ -467,7 +476,7 @@ def main():
                             description=f"{module_name} (Version {__version__})",
                             epilog=donate
                             )
-    parser.add_argument("--donate Y",
+    parser.add_argument("--donate Y", "-d Y",
                         action="store_true", dest="donation",
                         help="Пожертвовать на развитие Snoop project-а"
                         )
@@ -541,7 +550,7 @@ def main():
                         )   
 
     args = parser.parse_args()
-    
+
 
 # Опция сортировки
     if args.sort:
@@ -559,14 +568,18 @@ def main():
                     userlist.append(lineuserlist)
                 userlist=[line.rstrip() for line in userlist]
             except:
-                print("Не могу прочитать! Пожалуйста, укажите текстовый файл.")
+                print("\033[36mНе могу прочитать! Пожалуйста, укажите текстовый файл.\033[0m")
+                exit(0)
         print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)
 
 # Опция list all
 # Сортируем по алфавиту
     if args.listing:
-        sortY = str(input("Сортировать БС Snoop по странам или по имени сайта ?\nпо странам — \033[36m'1'\033[0m по имени — \033[36m'2'\033[0m\n"))
-        
+        if sys.platform == 'win32':
+            sortY = str(input("Сортировать БС Snoop по странам или по имени сайта ?\nпо странам — 1 по имени — 2\n"))
+        else:       
+            sortY = str(input("\033[36mСортировать БС Snoop по странам или по имени сайта ?\nпо странам —\033[0m 1 \033[36mпо имени —\033[0m 2\n"))
+
         if sortY == "2":
             print("========================\nOk, сортируем по алфавиту:\n")
             listall = []
@@ -589,83 +602,114 @@ def main():
                 for site_bad in listbad.readlines():
                     patch_bad = (site_bad.split(']')[0]).replace("[", " ")
                     listall_bad.append(patch_bad)
-            print("================\n")
-            print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
-            print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
-            print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
-            print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
-            print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
-            print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
-            print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
-            print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
-            print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
-            print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
-            print("...")
-            sys.exit(0)
 
-# Сортируем по странам       
+            if sys.platform == 'win32':
+                print("================\n")
+                print("Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
+                print("RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
+                print("US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
+                print("Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
+                print("GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
+                print("DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
+                print("AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
+                print("CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
+                print("CN =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
+                print("IR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
+                print("...")
+                sys.exit(0)
+            else:
+                print("================\n")
+                print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
+                print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
+                print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
+                print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
+                print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
+                print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
+                print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
+                print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
+                print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
+                print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
+                print("...")
+                sys.exit(0)
+
+# Сортируем по странам
         elif sortY == "1":
             print("========================\nOk, сортируем по странам:\n")
             listall = []
-            with open('sites.md', "r", encoding="utf8") as listyes: 
+            with open('sites.md', "r", encoding="utf8") as listyes:
                 for site in listyes.readlines():
                     patch = (site.split(']')[0]).replace("[", " ")
                     patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
                     listall.append(patch1)
                     sortlistall = sorted(listall)
-                print(Fore.GREEN + "++Белый список++")                    
-               
+                print(Fore.GREEN + "++Белый список++")
+
                 narezka=sortlistall[1:]
                 for i, numerlist in enumerate(narezka):
                     fd=(i + 1)
                     print(f"{fd}.{numerlist}")
-               
+
             listallsortFlag = []
             with open('sites.md', "r", encoding="utf8") as listyes:
                 for site in listyes.readlines():
                     patch = (site.split('[')[0]).replace(" ", "")
                     patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                    listallsortFlag.append(patch1)                
+                    listallsortFlag.append(patch1)
                     goba = sorted(listallsortFlag)
-         
+
             listall_bad = []
             with open('bad_site.md', "r", encoding="utf8") as listbad:
                 for site_bad in listbad.readlines():
                     patch_bad = (site_bad.split(']')[0]).replace("[", " ")
                     listall_bad.append(patch_bad)
                 print(Fore.RED + "\n--Чёрный список--", *listall_bad[1:], sep = "\n")
-            print("================\n")
-            print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
-            print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
-            print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
-            print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
-            print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
-            print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
-            print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
-            print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
-            print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
-            print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
-            print("...")
-            sys.exit(0)
 
-                                    
-        else:    
-            print(Style.BRIGHT + Fore.RED +"Извините, но вы не выбрали действие\nвыход")
-            sys.exit(0)            
+            if sys.platform == 'win32':
+                print("================\n")
+                print("Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
+                print("RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
+                print("US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
+                print("Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
+                print("GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
+                print("DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
+                print("AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
+                print("CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
+                print("CN =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
+                print("IR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
+                print("...")
+                sys.exit(0)
+            else:
+                print("================\n")
+                print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
+                print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
+                print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
+                print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
+                print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
+                print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
+                print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
+                print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
+                print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
+                print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
+                print("...")
+                sys.exit(0)
+
+        else:
+            print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
+            sys.exit(0)
 # Опция донат.
     if args.donation:
         print(donate)
         webbrowser.open("https://yasobe.ru/na/snoop_project")
-        print("Выход")
+        print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit(0)
 
 # Завершение обновления Snoop.
     if args.update:
-        print("=======================")
+        print("\033[36m=======================\033[0m")
         update_snoop()
-        print("=======================\nВыход")
+        print("\033[36m=======================\n", Style.BRIGHT + Fore.RED +"\nВыход")
         sys.exit(0)
-    
+
 # Проверка остальных опций.
 
     response_json_online = None
@@ -683,7 +727,7 @@ def main():
         try:
             site_data_all = response_json_online.json()
         except ValueError:
-            print("Invalid JSON/website!")
+            print("\033[36mInvalid JSON/website!\033[0m")
             sys.exit(1)
             pass
 
@@ -693,16 +737,16 @@ def main():
     if site_data_all is None:
 # Проверьте, существует ли файл, иначе выход.
         if not os.path.exists(data_file_path):
-            print("JSON file не существует.")
+            print("\033[36mJSON file не существует.\033[0m")
             print(
-                "Вы не добавили .json файл или убедитесь, что сделали запрос http:// или https://...")
+                "\033[36mВы не добавили .json файл или убедитесь, что сделали запрос http:// или https://...\033[0m")
             sys.exit(1)
         else:
             raw = open(data_file_path, "r", encoding="utf-8")
             try:
                 site_data_all = json.load(raw)
             except:
-                print("Invalid загружаемый JSON file.")
+                print("\033[36mInvalid загружаемый JSON file.\033[0m")
 
     if args.site_list is None:
 # Не желательно смотреть на подмножество сайтов.
@@ -723,8 +767,8 @@ def main():
 
         if site_missing:
             print(
-                f"Ошибка: желаемый сайт не найден в базе Snoop: {', '.join(site_missing)}\n"
-                "Или вы пропустили знак '-' в опции '--csv'")
+                f"\033[36mОшибка: желаемый сайт не найден в базе Snoop: {', '.join(site_missing)}\n"
+                "Или вы пропустили знак '-' в опции '--csv' \033[0m")
             sys.exit(1)
 # Флаг БС
     with open("data.json", "r", encoding="utf8") as flag:

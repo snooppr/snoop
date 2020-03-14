@@ -164,4 +164,7 @@ $ sudo nano /etc/ssl/openssl.cnf
 ```
 https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1
 
+#Отпечаток публичного ключа:	076DB9A00B583FFB606964322F1154A0203EAE9D
+
 **Лицензия Snoop Project:** https://github.com/snooppr/snoop/blob/master/COPYRIGHT
+
