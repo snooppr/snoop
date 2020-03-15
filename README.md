@@ -87,12 +87,12 @@ optional arguments:
   --found-print, -f     Выводить на печать только найденные аккаунты
   --no-func, -n         ✓Монохромный терминал, не использовать цвета в url
                         ✓Отключить звук ✓Запретить открытие web browser-а
-                        ✓Отключить вывод на печать для флагов стран
+                        ✓Отключить вывод на печать флагов стран
   --userload , -u       Указать файл со списком user-ов. Пример, 'python3
                         snoop.py -u ~/file.txt start'
   --list all            Вывод на печать БД (БС+ЧС) поддерживаемых сайтов
-  --country, -c         Сортировка 'вывода на печать/запись в html'
-                        результатов по странам, а не по алфавиту
+  --country, -c         Сортировка 'вывод на печать/запись в html'
+                        результат по странам, а не по алфавиту
   --update Y            Обновить Snoop
 ```
 
@@ -117,11 +117,8 @@ $ python3 snoop.py -с -t 9 -f --csv -u ~/file.txt start
 
 # 'ctrl-c/z' — прервать поиск
 ```
-
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.
 
-Если вы желаете анализировать результаты Html/CSV, то скопируйте результаты поиска из домашней папки Termux в Download, например, с помощью Total Commander.  
-Откройте файл(ы) с помощью любого web-browser/office (на Android "обычно/root" нет упрощенного доступа программ к домашней папке Termux и пд.).
 
 ```bash
 # Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
@@ -167,4 +164,3 @@ https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1
 **Отпечаток публичного ключа:**	076DB9A00B583FFB606964322F1154A0203EAE9D
 
 **Лицензия Snoop Project:** https://github.com/snooppr/snoop/blob/master/COPYRIGHT
-

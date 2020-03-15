@@ -47,6 +47,7 @@ __version__ = "1.1.5_rus Ветка Snoop Desktop"
 dirresults = os.getcwd()
 timestart = time.time()
 time_data = time.localtime()
+censor = 0
 
 class ElapsedFuturesSession(FuturesSession):
     """
@@ -85,7 +86,7 @@ def print_info(title, info, color=True):
     else:
         print(f"[*] {title} {info}:")
 
-censor=0
+
 def print_error(err, errstr, var, verbose=False, color=True):
     if color:
         print(Fore.CYAN + "[" +
@@ -101,25 +102,23 @@ def print_error(err, errstr, var, verbose=False, color=True):
 def format_response_time(response_time, verbose):
     return " [{} ms]".format(response_time) if verbose else ""
 
-# Вывод на печать, если указан флаг '--country'
-def print_found_country(social_network, url, countryA, response_time=False, verbose=False, color=True):
-    if color:
-        print(countryA, (Style.BRIGHT +
-            format_response_time(response_time, verbose) +
-            Fore.GREEN + f" {social_network}:"), url)
-    else:
-        print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
-
-# Вывод на печать по умолчанию
-def print_found(social_network, url, response_time=False, verbose=False, color=True):
-    if color:
-        print((Fore.CYAN + "[" +
-            Style.BRIGHT + Fore.GREEN + "+" + Style.RESET_ALL +
-            Fore.CYAN + "]" +
-            format_response_time(response_time, verbose) +
-            Style.BRIGHT + Fore.GREEN + f" {social_network}:"), url)
-    else:
-        print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
+# Вывод на печать на разных платформах.
+if sys.platform == 'win32':
+    def print_found_country(social_network, url, countryB, response_time=False, verbose=False, color=True):
+        if color:
+            print(Style.BRIGHT + Fore.CYAN + f" {countryB}" + 
+                format_response_time(response_time, verbose) +
+                Fore.GREEN + f" {social_network}:", url)
+        else:
+            print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
+else:            
+    def print_found_country(social_network, url, countryA, response_time=False, verbose=False, color=True):
+        if color:
+            print(countryA, (Style.BRIGHT +
+                format_response_time(response_time, verbose) +
+                Fore.GREEN + f" {social_network}:"), url)
+        else:
+            print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
 
 def print_not_found(social_network, response_time, verbose=False, color=True):
     if color:
@@ -225,6 +224,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 
 # Запись URL основного сайта и флага страные (сопоставление с data.json)
         results_site['flagcountry'] = net_info.get("country")
+        results_site['flagcountryklas'] = net_info.get("country_klas")
         results_site['url_main'] = net_info.get("urlMain")
 
 
@@ -301,6 +301,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Получить другую информацию сайта снова.
         url = results_site.get("url_user")
         countryA = results_site.get("flagcountry")
+        countryB = results_site.get("flagcountryklas")        
         exists = results_site.get("exists")
 
         if exists is not None:
@@ -349,19 +350,19 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 exists = "увы"
                 
             else:
-                if country==True:
-                    print_found_country(social_network, url, countryA, response_time, verbose, color)
+                if sys.platform == 'win32':
+                    print_found_country(social_network, url, countryB, response_time, verbose, color)
                 else:
-                    print_found(social_network, url, response_time, verbose, color)    
+                    print_found_country(social_network, url, countryA, response_time, verbose, color)
                 exists = "найден!"
 
         elif error_type == "status_code":
 # Проверяет, является ли код состояния ответа 2..
             if not r.status_code >= 300 or r.status_code < 200:
-                if country==True:
+                if sys.platform == 'win32':
+                    print_found_country(social_network, url, countryB, response_time, verbose, color)
+                else:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
-                else:    
-                    print_found(social_network, url, response_time, verbose, color)
                 exists = "найден!"
             else:
                 if not print_found_only:
@@ -375,10 +376,10 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Вместо этого мы обеспечим, чтобы статус кода указывал, что запрос был успешным (тоесть не 404 или перенаправлен.
         
             if 200 <= r.status_code < 300:
-                if country==True:
-                    print_found_country(social_network, url, countryA, response_time, verbose, color)
+                if sys.platform == 'win32':
+                    print_found_country(social_network, url, countryB, response_time, verbose, color)
                 else:
-                    print_found(social_network, url, response_time, verbose, color)
+                    print_found_country(social_network, url, countryA, response_time, verbose, color)
                 exists = "найден!"
             else:
                 if not print_found_only:
@@ -573,124 +574,168 @@ def main():
         print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)
 
 # Опция list all
-# Сортируем по алфавиту
+# Сортируем по алфавиту (2!)
+#Сортировка для ОС Win
     if args.listing:
         if sys.platform == 'win32':
             sortY = str(input("Сортировать БС Snoop по странам или по имени сайта ?\nпо странам — 1 по имени — 2\n"))
         else:       
-            sortY = str(input("\033[36mСортировать БС Snoop по странам или по имени сайта ?\nпо странам —\033[0m 1 \033[36mпо имени —\033[0m 2\n"))
+            sortY = str(input("\033[36mСортировать БС Snoop по странам или по имени сайта ?\n" + \
+            "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2\n"))
 
         if sortY == "2":
-            print("========================\nOk, сортируем по алфавиту:\n")
-            listall = []
-            with open('sites.md', "r", encoding="utf8") as listyes:
-                for site in listyes.readlines():
-                    patch = (site.split(']')[0]).replace("[", " ")
-                    listall.append(patch)
-                print(Fore.GREEN + "++Белый список++", *listall[1:], sep = "\n")
-
-            listallsortFlag = []
-            with open('sites.md', "r", encoding="utf8") as listyes:
-                for site in listyes.readlines():
-                    patch = (site.split('[')[0]).replace(" ", "")
-                    patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                    listallsortFlag.append(patch1)
-                    goba = sorted(listallsortFlag)
-
-            listall_bad = []
-            with open('bad_site.md', "r", encoding="utf8") as listbad:
-                for site_bad in listbad.readlines():
-                    patch_bad = (site_bad.split(']')[0]).replace("[", " ")
-                    listall_bad.append(patch_bad)
-
             if sys.platform == 'win32':
-                print("================\n")
-                print("Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
-                print("RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
-                print("US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
-                print("Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
-                print("GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
-                print("DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
-                print("AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
-                print("CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
-                print("CN =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
-                print("IR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
-                print("...")
-                sys.exit(0)
+                with open("data.json", "r", encoding="utf8") as contry:
+                    datajson = json.load(contry)
+                    i = 0
+                    for con in datajson:
+                        aaa = datajson.get(con).get("country_klas")
+                        i += 1
+                        print(f"{i}.", Fore.CYAN + f"{aaa}  {con}")
+#Общий результат БС Win                        
+                listallsortFlag = []
+                with open('sites.md', "r", encoding="utf8") as listyes:
+                    for site in listyes.readlines():
+                        patch = (site.split('[')[0]).replace(" ", "")
+                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                        listallsortFlag.append(patch1)
+                        goba = sorted(listallsortFlag)
+                    print("================\n")
+                    print(Fore.CYAN + "Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "CN =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "IR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "...")
+                    sys.exit(0)
+#Сортировка для ОС GNU   
             else:
+                print("========================\nOk, сортируем по алфавиту:\n")
+                listall = []
+                with open('sites.md', "r", encoding="utf8") as listyes:
+                    for site in listyes.readlines():
+                        patch = (site.split(']')[0]).replace("[", " ")
+                        listall.append(patch)
+#                    print(Fore.GREEN + "++Белый список++", *listall[1:], sep = "\n")
+                    narezka=listall[1:]
+                    for zzz in (narezka):
+                        print(Fore.CYAN + str(zzz))
+
+                listallsortFlag = []
+                with open('sites.md', "r", encoding="utf8") as listyes:
+                    for site in listyes.readlines():
+                        patch = (site.split('[')[0]).replace(" ", "")
+                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                        listallsortFlag.append(patch1)
+                        goba = sorted(listallsortFlag)
+
+                listall_bad = []
+                with open('bad_site.md', "r", encoding="utf8") as listbad:
+                    for site_bad in listbad.readlines():
+                        patch_bad = (site_bad.split(']')[0]).replace("[", " ")
+                        listall_bad.append(patch_bad)
+                    print(Fore.RED + "\n--Чёрный список--", *listall_bad[1:], sep = "\n")
+
                 print("================\n")
-                print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
-                print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
-                print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
-                print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
-                print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
-                print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
-                print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
-                print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
-                print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
-                print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
-                print("...")
+                print(Fore.CYAN + "🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "...")
                 sys.exit(0)
 
-# Сортируем по странам
+# Сортируем по странам (1!)
+#Сортировка для ОС Win
         elif sortY == "1":
-            print("========================\nOk, сортируем по странам:\n")
-            listall = []
-            with open('sites.md', "r", encoding="utf8") as listyes:
-                for site in listyes.readlines():
-                    patch = (site.split(']')[0]).replace("[", " ")
-                    patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                    listall.append(patch1)
-                    sortlistall = sorted(listall)
-                print(Fore.GREEN + "++Белый список++")
-
-                narezka=sortlistall[1:]
-                for i, numerlist in enumerate(narezka):
-                    fd=(i + 1)
-                    print(f"{fd}.{numerlist}")
-
-            listallsortFlag = []
-            with open('sites.md', "r", encoding="utf8") as listyes:
-                for site in listyes.readlines():
-                    patch = (site.split('[')[0]).replace(" ", "")
-                    patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
-                    listallsortFlag.append(patch1)
-                    goba = sorted(listallsortFlag)
-
-            listall_bad = []
-            with open('bad_site.md', "r", encoding="utf8") as listbad:
-                for site_bad in listbad.readlines():
-                    patch_bad = (site_bad.split(']')[0]).replace("[", " ")
-                    listall_bad.append(patch_bad)
-                print(Fore.RED + "\n--Чёрный список--", *listall_bad[1:], sep = "\n")
-
             if sys.platform == 'win32':
-                print("================\n")
-                print("Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
-                print("RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
-                print("US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
-                print("Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
-                print("GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
-                print("DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
-                print("AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
-                print("CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
-                print("CN =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
-                print("IR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
-                print("...")
-                sys.exit(0)
+                listwindows = []
+                with open("data.json", "r", encoding="utf8") as contry:
+                    datajson = json.load(contry)
+                    for con in datajson:
+                        aaa = (datajson.get(con).get("country_klas"))
+                        listwindows.append(f"{aaa}  {con}\n")
+                    sort_spisok=sorted(listwindows)
+                    print("========================\nOk, сортируем по странам:\n")
+                    print(Fore.GREEN + "++Белый список++")
+                    for i, numerlist in enumerate(sort_spisok):
+                        fd=(i + 1)
+                        print(f"{fd}.", Fore.CYAN + f"{numerlist}",end = '')
+#Общий результат БС Win
+                listallsortFlag = []
+                with open('sites.md', "r", encoding="utf8") as listyes:
+                    for site in listyes.readlines():
+                        patch = (site.split('[')[0]).replace(" ", "")
+                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                        listallsortFlag.append(patch1)
+                        goba = sorted(listallsortFlag)
+                    print("================\n")
+                    print(Fore.CYAN + "Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "Kb =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "GB =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "DE =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "AU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "CZ =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "CN =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "IR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                    print(Fore.CYAN + "...")
+                    sys.exit(0)
+#Сортировка для ОС GNU
             else:
+                print("========================\nOk, сортируем по странам:\n")
+                listall = []
+                with open('sites.md', "r", encoding="utf8") as listyes:
+                    for site in listyes.readlines():
+                        patch = (site.split(']')[0]).replace("[", " ")
+                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                        listall.append(patch1)
+                        sortlistall = sorted(listall)
+                    print(Fore.GREEN + "++Белый список++")
+
+                    narezka=sortlistall[1:]
+                    for i, numerlist in enumerate(narezka):
+                        fd=(i + 1)
+                        print(Fore.CYAN + str(fd) + str(numerlist))
+
+                listallsortFlag = []
+                with open('sites.md', "r", encoding="utf8") as listyes:
+                    for site in listyes.readlines():
+                        patch = (site.split('[')[0]).replace(" ", "")
+                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                        listallsortFlag.append(patch1)
+                        goba = sorted(listallsortFlag)
+
+                listall_bad = []
+                with open('bad_site.md', "r", encoding="utf8") as listbad:
+                    for site_bad in listbad.readlines():
+                        patch_bad = (site_bad.split(']')[0]).replace("[", " ")
+                        listall_bad.append(patch_bad)
+                    print(Fore.RED + "\n--Чёрный список--", *listall_bad[1:], sep = "\n")
+
                 print("================\n")
-                print("🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", "сайт(а/ов)!")
-                print("🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", "сайт(а/ов)!")
-                print("🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", "сайт(а/ов)!")
-                print("🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", "сайт(а/ов)!")
-                print("🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", "сайт(а/ов)!")
-                print("🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", "сайт(а/ов)!")
-                print("🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", "сайт(а/ов)!")
-                print("🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", "сайт(а/ов)!")
-                print("🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", "сайт(а/ов)!")
-                print("🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", "сайт(а/ов)!")
-                print("...")
+                print(Fore.CYAN + "🌎 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇷🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇺🇸 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🏁 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🏁 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇬🇧 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇬🇧 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇩🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇩🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇦🇺 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇦🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇨🇿 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇿 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇨🇦 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇨🇦 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "🇮🇪 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇮🇪 ')}", Fore.CYAN + "сайт(а/ов)!")
+                print(Fore.CYAN + "...")
                 sys.exit(0)
 
         else:

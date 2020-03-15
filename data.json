@@ -1,6 +1,7 @@
 {
   "11x2": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Runtime Error",
     "errorMsg2": "The resource cannot be found",
     "errоrTypе": "message",
@@ -11,6 +12,7 @@
   },
   "1337x": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Error something went wrong",
     "errorMsg2": "Bad Username.",
     "errоrTypе": "message",
@@ -21,6 +23,7 @@
   },
   "1x": {
     "country": "\ud83c\uddf8\ud83c\uddea",
+    "country_klas": "SE",
     "errorMsg": "This user does not exist or is not approved yet. Come back later.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -31,6 +34,7 @@
   },
   "2Dimensions": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://2Dimensions.com/a/{}",
     "urlMain": "https://2Dimensions.com/",
@@ -39,6 +43,7 @@
   },
   "3dnews": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -49,6 +54,7 @@
   },
   "4pda": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0412\u0430\u0448 \u043f\u043e\u0438\u0441\u043a \u043d\u0435 \u0434\u0430\u043b \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -59,6 +65,7 @@
   },
   "500px": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Oops! This page doesn\u2019t exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -69,6 +76,7 @@
   },
   "7Cups": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.7cups.com/@{}",
     "urlMain": "https://www.7cups.com/",
@@ -77,6 +85,7 @@
   },
   "9GAG": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://9gag.com/u/{}",
     "urlMain": "https://9gag.com/",
@@ -85,6 +94,7 @@
   },
   "About.me": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://about.me/{}",
     "urlMain": "https://about.me/",
@@ -93,6 +103,7 @@
   },
   "Academia.edu": {
     "country": "\ud83c\uddee\ud83c\uddea",
+    "country_klas": "IE",
     "errоrTypе": "status_code",
     "url": "https://independent.academia.edu/{}",
     "urlMain": "https://www.academia.edu/",
@@ -101,6 +112,7 @@
   },
   "AdobeForums": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://forums.adobe.com/people/{}",
     "urlMain": "https://forums.adobe.com/",
@@ -109,6 +121,7 @@
   },
   "Advancedcustomfields": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errorMsg": "Sorry, page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -119,6 +132,7 @@
   },
   "Advego": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://advego.com/profile/{}/author/",
     "urlMain": "https://advego.com/",
@@ -127,6 +141,7 @@
   },
   "Airliners": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.airliners.net/user/{}/profile/photos",
     "urlMain": "https://www.airliners.net/",
@@ -135,6 +150,7 @@
   },
   "Akniga": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://akniga.org/profile/{}",
     "urlMain": "https://akniga.org/",
@@ -143,6 +159,7 @@
   },
   "Alik.cz": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errоrTypе": "status_code",
     "url": "https://www.alik.cz/u/{}",
     "urlMain": "https://www.alik.cz/",
@@ -151,6 +168,7 @@
   },
   "Allmylinks": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -161,6 +179,7 @@
   },
   "Allods": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -171,6 +190,7 @@
   },
   "Allrecipes": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.allrecipes.com/cook/{}",
     "urlMain": "https://www.allrecipes.com/",
@@ -179,6 +199,7 @@
   },
   "Alltrails": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://alltrails.com/members",
     "errоrTypе": "response_url",
     "url": "https://www.alltrails.com/members/{}",
@@ -188,6 +209,7 @@
   },
   "Alternativeto": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://alternativeto.net/user/{}",
     "urlMain": "https://alternativeto.net/",
@@ -196,6 +218,7 @@
   },
   "Angara": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://angara.net/user/{}",
     "urlMain": "https://angara.net",
@@ -204,6 +227,7 @@
   },
   "Anobii": {
     "country": "\ud83c\uddee\ud83c\uddf9",
+    "country_klas": "IT",
     "errоrTypе": "response_url",
     "url": "https://www.anobii.com/{}/profile",
     "urlMain": "https://www.anobii.com/",
@@ -212,6 +236,7 @@
   },
   "Antichat": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -222,6 +247,7 @@
   },
   "Antipunk": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://antipunk.com/users/{}",
     "urlMain": "https://antipunk.com/",
@@ -230,6 +256,7 @@
   },
   "Ap-pro": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -240,6 +267,7 @@
   },
   "AppleDeveloper": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://forums.developer.apple.com/people/{}",
     "urlMain": "https://forums.developer.apple.com",
@@ -248,6 +276,7 @@
   },
   "Aptoide": {
     "country": "\ud83c\uddf5\ud83c\uddf9",
+    "country_klas": "PT",
     "errоrTypе": "status_code",
     "url": "https://{}.en.aptoide.com/",
     "urlMain": "https://en.aptoide.com/",
@@ -256,6 +285,7 @@
   },
   "ArcheageRU": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -266,6 +296,7 @@
   },
   "Archive.org": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "cannot find account",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -276,6 +307,7 @@
   },
   "Arhrock": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -286,6 +318,7 @@
   },
   "Armchairgm": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "does not exist or has never logged in on this",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -296,6 +329,7 @@
   },
   "ArmoredRU": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -306,6 +340,7 @@
   },
   "Armorgames": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://armorgames.com/{}",
     "errоrTypе": "response_url",
     "rank": 0,
@@ -316,6 +351,7 @@
   },
   "Asciinema": {
     "country": "\ud83c\uddf5\ud83c\uddf1",
+    "country_klas": "PL",
     "errоrTypе": "status_code",
     "url": "https://asciinema.org/~{}",
     "urlMain": "https://asciinema.org",
@@ -324,6 +360,7 @@
   },
   "AskFM": {
     "country": "\ud83c\uddf1\ud83c\uddfb",
+    "country_klas": "LV",
     "errorMsg": "Well, apparently not anymore.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -334,6 +371,7 @@
   },
   "Astralinux": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -344,6 +382,7 @@
   },
   "Audiojungle": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errоrTypе": "status_code",
     "url": "https://audiojungle.net/user/{}",
     "urlMain": "https://audiojungle.net/",
@@ -352,6 +391,7 @@
   },
   "AuthorSTREAM": {
     "country": "\ud83c\uddee\ud83c\uddf3",
+    "country_klas": "IN",
     "errоrTypе": "status_code",
     "url": "http://www.authorstream.com/{}/",
     "urlMain": "http://www.authorstream.com/",
@@ -360,6 +400,7 @@
   },
   "Autokadabra": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://autokadabra.ru/users/{}",
     "urlMain": "http://autokadabra.ru/",
@@ -368,6 +409,7 @@
   },
   "Autolada": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "None",
     "errorMsg2": "<title> :: A",
     "errоrTypе": "message",
@@ -378,6 +420,7 @@
   },
   "Avizo": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errorUrl": "https://www.avizo.cz/",
     "errоrTypе": "response_url",
     "url": "https://www.avizo.cz/{}/",
@@ -387,6 +430,7 @@
   },
   "B17": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.b17.ru/{}",
     "urlMain": "https://www.b17.ru/",
@@ -395,6 +439,7 @@
   },
   "BLIPfm": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://blip.fm/{}",
     "urlMain": "https://blip.fm/",
@@ -403,6 +448,7 @@
   },
   "Baby": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043f\u0441, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u044b \u0438\u0441\u043a\u0430\u043b\u0438, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -413,6 +459,7 @@
   },
   "Babyblog": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.babyblog.ru/user/info/{}",
     "urlMain": "https://www.babyblog.ru/",
@@ -421,6 +468,7 @@
   },
   "Badoo": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://badoo.com/profile/{}",
     "urlMain": "https://badoo.com/",
@@ -429,6 +477,7 @@
   },
   "Bandcamp": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.bandcamp.com/{}",
     "urlMain": "https://www.bandcamp.com/",
@@ -437,6 +486,7 @@
   },
   "Barnacl": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://barnacl.es/u/{}",
     "urlMain": "https://barnacl.es/u/alexsam",
@@ -445,6 +495,7 @@
   },
   "Bazar.cz": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errorUrl": "https://www.bazar.cz/error404.aspx",
     "errоrTypе": "response_url",
     "url": "https://www.bazar.cz/{}/",
@@ -453,7 +504,8 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Beerintheevening": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorMsg": "User does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -464,6 +516,7 @@
   },
   "Behance": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.behance.net/{}",
     "urlMain": "https://www.behance.net/",
@@ -472,6 +525,7 @@
   },
   "Bibsonomy": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.bibsonomy.org/user/{}",
     "urlMain": "https://www.bibsonomy.org",
@@ -480,6 +534,7 @@
   },
   "Bikepost": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://bikepost.ru/profile/{}",
     "urlMain": "https://bikepost.ru",
@@ -488,6 +543,7 @@
   },
   "BitBucket": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://bitbucket.org/{}/",
     "urlMain": "https://bitbucket.org/",
@@ -496,6 +552,7 @@
   },
   "BitCoinForum": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The user whose profile you are trying to view does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -506,6 +563,7 @@
   },
   "Blackhatprotools": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -517,6 +575,7 @@
   },
   "Blogger": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "url": "https://{}.blogspot.com",
@@ -526,6 +585,7 @@
   },
   "Boardgamegeek": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "User does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -536,6 +596,7 @@
   },
   "BodyBuilding": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://bodyspace.bodybuilding.com/",
     "errоrTypе": "response_url",
     "url": "https://bodyspace.bodybuilding.com/{}",
@@ -545,6 +606,7 @@
   },
   "Bookcrossing": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.bookcrossing.com/mybookshelf/{}/",
     "urlMain": "https://www.bookcrossing.com/",
@@ -553,6 +615,7 @@
   },
   "Bukkit": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -563,6 +626,7 @@
   },
   "Buymeacoffee": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.buymeacoffee.com/{}",
     "urlMain": "https://www.buymeacoffee.com",
@@ -571,6 +635,7 @@
   },
   "BuzzFeed": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://buzzfeed.com/{}",
     "urlMain": "https://buzzfeed.com/",
@@ -579,6 +644,7 @@
   },
   "CNET": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "rank": 0,
     "url": "https://www.cnet.com/profiles/{}/",
@@ -588,6 +654,7 @@
   },
   "Canva": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errorUrl": "https://www.canva.com/{}",
     "errоrTypе": "response_url",
     "url": "https://www.canva.com/{}",
@@ -597,6 +664,7 @@
   },
   "Carbonmade": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://carbonmade.com/fourohfour?domain={}.carbonmade.com",
     "errоrTypе": "response_url",
     "url": "https://{}.carbonmade.com",
@@ -606,6 +674,7 @@
   },
   "Career.habr": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://career.habr.com/{}",
     "urlMain": "https://career.habr.com/",
@@ -614,6 +683,7 @@
   },
   "CashMe": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://cash.me/${}",
     "urlMain": "https://cash.me/",
@@ -622,6 +692,7 @@
   },
   "Ccmixter": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "http://ccmixter.org/people/{}/profile",
     "urlMain": "http://ccmixter.org/",
@@ -630,6 +701,7 @@
   },
   "Cent": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "<title>Cent</title>",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -640,6 +712,7 @@
   },
   "Championat": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.championat.com/user/{}",
     "urlMain": "https://www.championat.com/",
@@ -648,6 +721,7 @@
   },
   "Chan4chan": {
     "country": "\ud83c\udded\ud83c\uddfa",
+    "country_klas": "HU",
     "errorUrl": "http://chan4chan.com/login/{}",
     "errоrTypе": "response_url",
     "url": "http://chan4chan.com/profile/{}",
@@ -657,6 +731,7 @@
   },
   "Chatujme.cz": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errorMsg": "V\u00e1mi hledan\u00fd u\u017eivatelsk\u00fd profil",
     "errorMsg2": "Str\u00e1nka nebyla nalezena",
     "errоrTypе": "message",
@@ -667,6 +742,7 @@
   },
   "Chess": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Missing page... somebody made a wrong move.",
     "errorMsg2": "Server error. Our fault. We will look into it!",
     "errоrTypе": "message",
@@ -677,6 +753,7 @@
   },
   "Cloob": {
     "country": "\ud83c\uddee\ud83c\uddf7",
+    "country_klas": "IR",
     "errоrTypе": "status_code",
     "url": "https://www.cloob.com/name/{}",
     "urlMain": "https://www.cloob.com/",
@@ -685,6 +762,7 @@
   },
   "CloudflareCommunity": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://community.cloudflare.com/u/{}",
     "urlMain": "https://community.cloudflare.com/",
@@ -693,6 +771,7 @@
   },
   "Clozemaster": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.clozemaster.com/players/{}",
     "urlMain": "https://www.clozemaster.com",
@@ -701,6 +780,7 @@
   },
   "Codecademy": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.codecademy.com/profiles/{}",
     "urlMain": "https://www.codecademy.com/",
@@ -709,6 +789,7 @@
   },
   "Codechef": {
     "country": "\ud83c\uddee\ud83c\uddf3",
+    "country_klas": "IN",
     "errorMsg": "https://www.codechef.com",
     "errorMsg2": "None",
     "errоrTypе": "response_url",
@@ -719,6 +800,7 @@
   },
   "Codementor": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Adapted from",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -729,6 +811,7 @@
   },
   "Coderwall": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "404! Our feels when that url is used",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -739,6 +822,7 @@
   },
   "Codewars": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.codewars.com/users/{}",
     "urlMain": "https://www.codewars.com",
@@ -747,6 +831,7 @@
   },
   "Coj": {
     "country": "\ud83c\udde8\ud83c\uddfa",
+    "country_klas": "CU",
     "errorMsg": "The resource doesn't exist or is not available",
     "errorMsg2": "Informe de Error",
     "errоrTypе": "message",
@@ -757,6 +842,7 @@
   },
   "ColourLovers": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.colourlovers.com/lover/{}",
     "urlMain": "https://www.colourlovers.com/",
@@ -765,6 +851,7 @@
   },
   "Comicvine.gamespot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://comicvine.gamespot.com/profile/{}",
     "urlMain": "https://comicvine.gamespot.com/",
@@ -772,7 +859,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Connosr": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://www.connosr.com/@{}",
     "urlMain": "https://www.connosr.com/",
@@ -781,6 +869,7 @@
   },
   "Contently": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "We can't find that page!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -792,6 +881,7 @@
   },
   "Coroflot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.coroflot.com/{}",
     "urlMain": "https://coroflot.com/",
@@ -800,6 +890,7 @@
   },
   "Couchsurfing": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.couchsurfing.com/people/{}",
     "urlMain": "https://www.couchsurfing.com/",
@@ -808,6 +899,7 @@
   },
   "Cplusplus": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "404 Page Not Found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -818,6 +910,7 @@
   },
   "Cracked": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://www.cracked.com/",
     "errоrTypе": "response_url",
     "url": "https://www.cracked.com/members/{}/",
@@ -827,6 +920,7 @@
   },
   "CreativeMarket": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://www.creativemarket.com/",
     "errоrTypе": "response_url",
     "url": "https://creativemarket.com/users/{}",
@@ -836,6 +930,7 @@
   },
   "Crevado": {
     "country": "\ud83c\uddee\ud83c\uddea",
+    "country_klas": "IE",
     "errоrTypе": "status_code",
     "url": "https://{}.crevado.com",
     "urlMain": "https://crevado.com/",
@@ -844,6 +939,7 @@
   },
   "Crossfire": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -854,6 +950,7 @@
   },
   "Cruisemates": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -864,6 +961,7 @@
   },
   "Crunchyroll": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.crunchyroll.com/user/{}",
     "urlMain": "https://www.crunchyroll.com/",
@@ -872,6 +970,7 @@
   },
   "D3": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://d3.ru/user/{}/posts",
     "urlMain": "https://d3.ru/",
@@ -880,6 +979,7 @@
   },
   "DailyMotion": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "FR",
     "errоrTypе": "status_code",
     "url": "https://www.dailymotion.com/{}",
     "urlMain": "https://www.dailymotion.com/",
@@ -888,6 +988,7 @@
   },
   "Dailykos": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.dailykos.com/user/{}",
     "urlMain": "https://www.dailykos.com",
@@ -896,6 +997,7 @@
   },
   "Dasauge": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://dasauge.co.uk/-{}",
     "urlMain": "https://dasauge.co.uk",
@@ -904,6 +1006,7 @@
   },
   "Dating": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://dating.ru/{}",
     "urlMain": "http://dating.ru",
@@ -912,6 +1015,7 @@
   },
   "Demonscity": {
     "country": "\ud83c\uddf5\ud83c\udde6",
+    "country_klas": "PA",
     "errorMsg": "\u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -922,6 +1026,7 @@
   },
   "Designspiration": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.designspiration.net/{}/",
     "urlMain": "https://www.designspiration.net/",
@@ -930,6 +1035,7 @@
   },
   "Dev.to": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "url": "https://dev.to/{}",
@@ -939,6 +1045,7 @@
   },
   "DevRant": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://devrant.com/",
     "errоrTypе": "response_url",
     "url": "https://devrant.com/users/{}",
@@ -948,6 +1055,7 @@
   },
   "DeviantART": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "url": "https://{}.deviantart.com",
@@ -957,6 +1065,7 @@
   },
   "Digitalocean": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.digitalocean.com/community/users/{}",
     "urlMain": "https://www.digitalocean.com/",
@@ -964,7 +1073,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Digitalspy": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://forums.digitalspy.com/profile/discussions/{}",
     "urlMain": "https://forums.digitalspy.com/",
@@ -973,6 +1083,7 @@
   },
   "Discogs": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.discogs.com/user/{}",
     "urlMain": "https://www.discogs.com/",
@@ -981,6 +1092,7 @@
   },
   "Discourse.pi-hole": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://discourse.pi-hole.net/u/{}/summary",
     "urlMain": "https://discourse.pi-hole.net",
@@ -989,6 +1101,7 @@
   },
   "Discuss.Elastic.co": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://discuss.elastic.co/u/{}",
     "urlMain": "https://discuss.elastic.co/",
@@ -997,6 +1110,7 @@
   },
   "Discuss.python": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://discuss.python.org/u/{}/summary",
     "urlMain": "https://discuss.python.org/",
@@ -1005,6 +1119,7 @@
   },
   "Discussions.apple": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://discussions.apple.com/profile/{}",
     "urlMain": "https://discussions.apple.com/",
@@ -1013,6 +1128,7 @@
   },
   "Disqus": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://disqus.com/{}",
     "urlMain": "https://disqus.com/",
@@ -1021,6 +1137,7 @@
   },
   "Diveforum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1031,6 +1148,7 @@
   },
   "DockerHub": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://hub.docker.com/u/{}/",
     "urlMain": "https://hub.docker.com/",
@@ -1040,6 +1158,7 @@
   },
   "Dou": {
     "country": "\ud83c\uddfa\ud83c\udde6",
+    "country_klas": "UK",
     "errоrTypе": "status_code",
     "url": "https://dou.ua/users/{}",
     "urlMain": "https://dou.ua/",
@@ -1048,6 +1167,7 @@
   },
   "Dreamwidth": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "None",
     "errorMsg2": "isn't currently registered.",
     "errоrTypе": "message",
@@ -1058,6 +1178,7 @@
   },
   "Dribbble": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Whoops, that page is gone.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1069,6 +1190,7 @@
   },
   "Drive2": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.drive2.ru/users/{}",
     "urlMain": "https://www.drive2.ru/",
@@ -1077,6 +1199,7 @@
   },
   "Dslreports": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "alert:",
     "errorMsg2": "Cannot find that user",
     "errоrTypе": "message",
@@ -1087,6 +1210,7 @@
   },
   "Duno": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "this user does not exist",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1097,6 +1221,7 @@
   },
   "Duolingo": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "{\"users\":[]}",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1108,6 +1233,7 @@
   },
   "EGPU": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://egpu.io/forums/profile/{}/",
     "urlMain": "https://egpu.io/",
@@ -1116,6 +1242,7 @@
   },
   "Easyen": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1126,6 +1253,7 @@
   },
   "Ebaumsworld": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.ebaumsworld.com/user/profile/{}",
     "urlMain": "https://www.ebaumsworld.com/",
@@ -1134,6 +1262,7 @@
   },
   "Ebay": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The User ID you entered was not found",
     "errorMsg2": "\u0412\u0432\u0435\u0434\u0435\u043d\u043d\u044b\u0439 \u043b\u043e\u0433\u0438\u043d \u043d\u0435 \u0431\u044b\u043b \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 \u043b\u043e\u0433\u0438\u043d \u0438 \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0443.",
     "errоrTypе": "message",
@@ -1147,6 +1276,7 @@
   },
   "Ecoustics": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "The profile that you have requested no longer exists.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1157,6 +1287,7 @@
   },
   "Eintracht": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://community.eintracht.de/fans/{}",
     "urlMain": "https://eintracht.de",
@@ -1165,6 +1296,7 @@
   },
   "Eksisozluk": {
     "country": "\ud83c\uddf9\ud83c\uddf7",
+    "country_klas": "TR",
     "errorMsg": "isimli bir yazar kayd\u0131 mevcut de\u011fil",
     "errorMsg2": "ek\u015fi s\u00f6zl\u00fck - kutsal bilgi kayna\u011f\u0131",
     "errоrTypе": "message",
@@ -1175,6 +1307,7 @@
   },
   "Elakiri": {
     "country": "\ud83c\uddf1\ud83c\uddf0",
+    "country_klas": "LK",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1185,6 +1318,7 @@
   },
   "Ello": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "We couldn't find the page you're looking for",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1195,6 +1329,7 @@
   },
   "Elwo": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1205,6 +1340,7 @@
   },
   "Enot-poloskun": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1215,6 +1351,7 @@
   },
   "EtsyShop": {
     "country": "\ud83c\uddee\ud83c\uddea",
+    "country_klas": "IE",
     "errоrTypе": "status_code",
     "url": "https://www.etsy.com/shop/{}",
     "urlMain": "https://www.etsy.com/",
@@ -1223,6 +1360,7 @@
   },
   "Eva": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u0430\u0441\u043f\u043e\u0440\u0442 -  - \u0415\u0432\u0430.\u0420\u0443",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1233,6 +1371,7 @@
   },
   "EyeEm": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errorUrl": "https://www.eyeem.com/",
     "errоrTypе": "response_url",
     "url": "https://www.eyeem.com/u/{}",
@@ -1242,6 +1381,7 @@
   },
   "F3.cool": {
     "country": "\ud83c\uddf1\ud83c\uddfb",
+    "country_klas": "LV",
     "errоrTypе": "status_code",
     "url": "https://f3.cool/{}/",
     "urlMain": "https://f3.cool/",
@@ -1250,6 +1390,7 @@
   },
   "Facebook": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z0-9\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
     "url": "https://www.facebook.com/{}",
@@ -1259,6 +1400,7 @@
   },
   "Facenama": {
     "country": "\ud83c\uddee\ud83c\uddf3",
+    "country_klas": "IN",
     "errorUrl": "https://facenama.com/404.html",
     "errоrTypе": "response_url",
     "url": "https://facenama.com/{}",
@@ -1268,6 +1410,7 @@
   },
   "Fandom": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.fandom.com/u/{}",
     "urlMain": "https://www.fandom.com/",
@@ -1276,6 +1419,7 @@
   },
   "Fark": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Tastes like chicken.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1286,6 +1430,7 @@
   },
   "Fatsecret": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errorUrl": "https://www.fatsecret.com/{}",
     "errоrTypе": "response_url",
     "url": "https://www.fatsecret.com/member/{}",
@@ -1295,6 +1440,7 @@
   },
   "Fedoraproject": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://ask.fedoraproject.org/u/{}",
     "urlMain": "https://ask.fedoraproject.org/",
@@ -1303,6 +1449,7 @@
   },
   "Fegatch": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://www.fegatch.com/users/{}/artworks/",
     "urlMain": "http://www.fegatch.com/",
@@ -1311,6 +1458,7 @@
   },
   "Ficwad": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://ficwad.com/a/{}/favorites/authors",
     "urlMain": "https://ficwad.com/",
@@ -1319,6 +1467,7 @@
   },
   "Filmogs": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.filmo.gs/users/{}",
     "urlMain": "https://www.filmo.gs/",
@@ -1327,6 +1476,7 @@
   },
   "Filmow": {
     "country": "\ud83c\uddf5\ud83c\uddf9",
+    "country_klas": "PT",
     "errоrTypе": "status_code",
     "url": "https://filmow.com/usuario/{}",
     "urlMain": "https://filmow.com/",
@@ -1335,6 +1485,7 @@
   },
   "Filmwatch": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Runtime Error",
     "errorMsg2": "The resource cannot be found",
     "errоrTypе": "message",
@@ -1345,6 +1496,7 @@
   },
   "Fishingsib": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1355,6 +1507,7 @@
   },
   "Fiverr": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errorUrl": "https://www.fiverr.com/",
     "errоrTypе": "response_url",
     "url": "https://www.fiverr.com/{}",
@@ -1364,6 +1517,7 @@
   },
   "Fixya": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.fixya.com/users/{}",
     "urlMain": "https://www.fixya.com",
@@ -1372,6 +1526,7 @@
   },
   "Fl": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.fl.ru/users/{}",
     "urlMain": "https://www.fl.ru/",
@@ -1380,6 +1535,7 @@
   },
   "Flickr": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.flickr.com/people/{}",
     "urlMain": "https://www.flickr.com/",
@@ -1388,6 +1544,7 @@
   },
   "Flightradar24": {
     "country": "\ud83c\uddf8\ud83c\uddea",
+    "country_klas": "SE",
     "errorMsg": "Sorry, this page could not be found",
     "errorMsg2": "<title>myFlightradar24</title>",
     "errоrTypе": "message",
@@ -1398,6 +1555,7 @@
   },
   "Flipboard": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "regexCheck": "^([a-zA-Z0-9_]){1,15}$",
     "url": "https://flipboard.com/@{}",
@@ -1407,6 +1565,7 @@
   },
   "Fluther": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.fluther.com/users/{}",
     "urlMain": "https://www.fluther.com/",
@@ -1415,6 +1574,7 @@
   },
   "Folloart": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://folloart.com/{}",
     "urlMain": "https://folloart.com/",
@@ -1423,6 +1583,7 @@
   },
   "Football": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1433,6 +1594,7 @@
   },
   "Forexdengi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1443,6 +1605,7 @@
   },
   "FortniteTracker": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://fortnitetracker.com/profile/all/{}",
     "urlMain": "https://fortnitetracker.com",
@@ -1451,6 +1614,7 @@
   },
   "Forum.allgaz": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1461,6 +1625,7 @@
   },
   "Forum.caravelgames": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Guest",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1471,6 +1636,7 @@
   },
   "Forum.devushka": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1481,6 +1647,7 @@
   },
   "Forum.hiveos": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://forum.hiveos.farm/u/{}/summary",
     "urlMain": "https://forum.hiveos.farm",
@@ -1489,6 +1656,7 @@
   },
   "Forum.hr": {
     "country": "\ud83c\udded\ud83c\uddf7",
+    "country_klas": "HR",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1499,6 +1667,7 @@
   },
   "Forum.itvdn": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://forum.itvdn.com/u/{}",
     "urlMain": "https://forum.itvdn.com",
@@ -1507,6 +1676,7 @@
   },
   "Forum.ixbt": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1517,6 +1687,7 @@
   },
   "Forum.md": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "404 - Not Found",
     "errorMsg2": "404: Not Found",
     "errоrTypе": "message",
@@ -1527,6 +1698,7 @@
   },
   "Forum.mirf": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1537,6 +1709,7 @@
   },
   "Forum.modnaya": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1547,6 +1720,7 @@
   },
   "Forum.popjustice": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1557,6 +1731,7 @@
   },
   "Forum.ruboard": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1567,6 +1742,7 @@
   },
   "Forum.scuba": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1577,6 +1753,7 @@
   },
   "Forum.sibmama": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1587,6 +1764,7 @@
   },
   "Forum.sublimetext": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://forum.sublimetext.com/u/{}",
     "urlMain": "https://forum.sublimetext.com/",
@@ -1595,6 +1773,7 @@
   },
   "Forum.swiftbook": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://forum.swiftbook.ru/u/{}/summary",
     "urlMain": "https://forum.swiftbook.ru",
@@ -1603,6 +1782,7 @@
   },
   "Forum.tks": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1613,6 +1793,7 @@
   },
   "Forum.wotanks": {
     "country": "\ud83c\udde7\ud83c\uddfe",
+    "country_klas": "BY",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errоrTypе": "message",
@@ -1623,6 +1804,7 @@
   },
   "Forum.xda": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1633,6 +1815,7 @@
   },
   "Forum.ykt": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorUrl": "https://forum.ykt.ru/{}",
     "errоrTypе": "response_url",
     "url": "https://forum.ykt.ru/viewprofile.jsp?forum_id=11&user={}",
@@ -1642,6 +1825,7 @@
   },
   "Forum_guns": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "action=https://forum.guns.ru/forummisc/blog/search",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1652,6 +1836,7 @@
   },
   "Forumhouse": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1662,6 +1847,7 @@
   },
   "Forumprosport": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errоrTypе": "message",
@@ -1672,6 +1858,7 @@
   },
   "Forums.alliedmods": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "This user has not registered and therefore does not have a profile to view",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1682,6 +1869,7 @@
   },
   "Forums.drom": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1692,6 +1880,7 @@
   },
   "Forums.envato": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errоrTypе": "status_code",
     "url": "https://forums.envato.com/u/{}/summary",
     "urlMain": "https://forums.envato.com/",
@@ -1700,6 +1889,7 @@
   },
   "Forums.opera": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://forums.opera.com/user/{}",
     "urlMain": "https://forums.opera.com/",
@@ -1708,6 +1898,7 @@
   },
   "Forums.sourceruns": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://forums.sourceruns.org/u/{}/summary",
     "urlMain": "https://forums.sourceruns.org/",
@@ -1716,6 +1907,7 @@
   },
   "Forums.tomshardware": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Notable members",
     "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
     "errоrTypе": "message",
@@ -1726,6 +1918,7 @@
   },
   "Forumteam": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1736,6 +1929,7 @@
   },
   "Forumyuristov": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1745,7 +1939,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fotothing": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorMsg": "The requested file or user was not found.",
     "errorMsg2": "No user selected.",
     "errоrTypе": "message",
@@ -1756,6 +1951,7 @@
   },
   "Foursquare": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://ru.foursquare.com/{}",
     "urlMain": "https://ru.foursquare.com/",
@@ -1764,6 +1960,7 @@
   },
   "Freecodecamp": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.freecodecamp.org/forum/u/{}/summary",
     "urlMain": "https://www.freecodecamp.org/forum/",
@@ -1772,6 +1969,7 @@
   },
   "Freelance.habr": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://freelance.habr.com/freelancers/{}",
     "urlMain": "https://freelance.habr.com/",
@@ -1780,6 +1978,7 @@
   },
   "Freepo": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorUrl": "https://freepo.st/freepost.cgi/login",
     "errоrTypе": "response_url",
     "url": "https://freepo.st/freepost.cgi/user/public/{}",
@@ -1789,6 +1988,7 @@
   },
   "Funnyjunk": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "The user was not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1799,6 +1999,7 @@
   },
   "Gaiaonline": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "No user ID specified or user does not exist!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1809,6 +2010,7 @@
   },
   "Gamefaqs": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://gamefaqs.gamespot.com/community/{}",
     "urlMain": "https://gamefaqs.gamespot.com",
@@ -1817,6 +2019,7 @@
   },
   "Gamespot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.gamespot.com/profile/{}/",
     "urlMain": "https://www.gamespot.com/",
@@ -1824,7 +2027,8 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Gapyear": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://www.gapyear.com/members/{}",
     "urlMain": "https://www.gapyear.com",
@@ -1833,6 +2037,7 @@
   },
   "Gays": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.gays.com/p/{}/",
     "urlMain": "https://www.gays.com",
@@ -1841,6 +2046,7 @@
   },
   "Gbatemp": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1851,6 +2057,7 @@
   },
   "Gdprofiles": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://gdprofiles.com/{}",
     "urlMain": "https://gdprofiles.com/",
@@ -1859,6 +2066,7 @@
   },
   "Gentlemint": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://gentlemint.com/users/{}",
     "urlMain": "https://gentlemint.com",
@@ -1867,6 +2075,7 @@
   },
   "Geocaching": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.geocaching.com/profile/?u={}",
     "urlMain": "https://www.geocaching.com/",
@@ -1875,6 +2084,7 @@
   },
   "Gfycat": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://gfycat.com/@{}",
     "urlMain": "https://gfycat.com/",
@@ -1883,6 +2093,7 @@
   },
   "Giantbomb": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.giantbomb.com/profile/{}",
     "urlMain": "https://www.giantbomb.com",
@@ -1891,6 +2102,7 @@
   },
   "Gigbucks": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorUrl": "https://gigbucks.com",
     "errоrTypе": "response_url",
     "url": "https://gigbucks.com/user/{}",
@@ -1900,6 +2112,7 @@
   },
   "Giphy": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://giphy.com/{}",
     "urlMain": "https://giphy.com/",
@@ -1908,6 +2121,7 @@
   },
   "GipsysTeam": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://site.gipsyteam.ru/profile/{}",
     "urlMain": "https://site.gipsyteam.ru/",
@@ -1916,6 +2130,7 @@
   },
   "GitHub": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$",
     "url": "https://www.github.com/{}",
@@ -1925,6 +2140,7 @@
   },
   "GitLab": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "[]",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1936,6 +2152,7 @@
   },
   "Gitmemory": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Oops,404",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1946,6 +2163,7 @@
   },
   "Glbyh": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1956,6 +2174,7 @@
   },
   "Gliger": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -1966,6 +2185,7 @@
   },
   "Golangbridge": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://forum.golangbridge.org/u/{}/summary",
     "urlMain": "https://forum.golangbridge.org/",
@@ -1974,6 +2194,7 @@
   },
   "GoodReads": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.goodreads.com/{}",
     "urlMain": "https://www.goodreads.com/",
@@ -1982,6 +2203,7 @@
   },
   "Google_play": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://play.google.com/store/apps/developer?id={}",
     "urlMain": "https://play.google.com/store",
@@ -1990,6 +2212,7 @@
   },
   "Govloop": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.govloop.com/members/{}",
     "urlMain": "https://www.govloop.com",
@@ -1998,6 +2221,7 @@
   },
   "Gpodder.net": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://gpodder.net/user/{}",
     "urlMain": "https://gpodder.net/",
@@ -2006,6 +2230,7 @@
   },
   "Gravatar": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "http://en.gravatar.com/{}",
     "urlMain": "http://en.gravatar.com/",
@@ -2014,6 +2239,7 @@
   },
   "Gumroad": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Page not found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2024,6 +2250,7 @@
   },
   "GunsAndAmmo": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://forums.gunsandammo.com/profile/{}",
     "urlMain": "https://gunsandammo.com/",
@@ -2032,6 +2259,7 @@
   },
   "Gurushots": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://gurushots.com/{}/photos",
     "urlMain": "https://gurushots.com/",
@@ -2040,6 +2268,7 @@
   },
   "Habr": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://habr.com/ru/users/{}",
     "urlMain": "https://habr.com/",
@@ -2048,6 +2277,7 @@
   },
   "HackTheBox": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://forum.hackthebox.eu/profile/{}",
     "urlMain": "https://forum.hackthebox.eu/",
@@ -2056,6 +2286,7 @@
   },
   "Hackenproof": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://hackenproof.com/{}",
     "urlMain": "https://hackenproof.com/arbin",
@@ -2064,6 +2295,7 @@
   },
   "HackerNews": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "No such user.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2074,6 +2306,7 @@
   },
   "HackerOne": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2084,6 +2317,7 @@
   },
   "HackerRank": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Something went wrong",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2094,6 +2328,7 @@
   },
   "Hackster": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.hackster.io/{}",
     "urlMain": "https://www.hackster.io",
@@ -2102,6 +2337,7 @@
   },
   "Hotcopper": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errorMsg": "title>HotCopper",
     "errorMsg2": "The following error occurred",
     "errоrTypе": "message",
@@ -2112,6 +2348,7 @@
   },
   "House-Mixes.com": {
     "country": "\ud83c\uddea\ud83c\uddfa",
+    "country_klas": "EU",
     "errorMsg": "Profile Not Found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2122,6 +2359,7 @@
   },
   "Houzz": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "The page you requested was not found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2132,6 +2370,7 @@
   },
   "Hr": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.hr.com/en/app/profile/{}",
     "urlMain": "https://www.hr.com",
@@ -2140,6 +2379,7 @@
   },
   "HubPages": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://hubpages.com/@{}",
     "urlMain": "https://hubpages.com/",
@@ -2148,6 +2388,7 @@
   },
   "Hubski": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "No such user",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2158,6 +2399,7 @@
   },
   "Hunting": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2168,6 +2410,7 @@
   },
   "IFTTT": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "The requested page or file does not exist",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2178,6 +2421,7 @@
   },
   "IMGSRC.RU": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorUrl": "https://imgsrc.ru/",
     "errоrTypе": "response_url",
     "url": "https://imgsrc.ru/main/user.php?user={}",
@@ -2187,6 +2431,7 @@
   },
   "Icheckmovies": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://www.icheckmovies.com/profiles/{}",
     "urlMain": "https://www.icheckmovies.com/",
@@ -2195,6 +2440,7 @@
   },
   "Ieoc": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://ieoc.com/profile/{}",
     "urlMain": "https://ieoc.com/",
@@ -2203,6 +2449,7 @@
   },
   "Igromania": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2213,6 +2460,7 @@
   },
   "ImageShack": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://imageshack.us/",
     "errоrTypе": "response_url",
     "url": "https://imageshack.us/user/{}",
@@ -2222,6 +2470,7 @@
   },
   "ImgUp.cz": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errоrTypе": "status_code",
     "url": "https://imgup.cz/{}",
     "urlMain": "https://imgup.cz/",
@@ -2230,6 +2479,7 @@
   },
   "Indog": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2240,6 +2490,7 @@
   },
   "Influenster": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://www.influenster.com/",
     "errоrTypе": "response_url",
     "url": "https://www.influenster.com/{}",
@@ -2249,6 +2500,7 @@
   },
   "Infrance": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errоrTypе": "message",
@@ -2259,6 +2511,7 @@
   },
   "Ingvarr.net.ru": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2269,6 +2522,7 @@
   },
   "Insanejournal": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "is not currently registered.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2279,6 +2533,7 @@
   },
   "Instagram": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The link you followed may be broken",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2289,6 +2544,7 @@
   },
   "Instructables": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "404: We're sorry, things break sometimes",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2299,6 +2555,7 @@
   },
   "Interbasket": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
     "errоrTypе": "message",
@@ -2309,6 +2566,7 @@
   },
   "Interpals": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The requested user does not exist or is inactive",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2319,6 +2577,7 @@
   },
   "Investing.com": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.investing.com/traders/{}",
     "urlMain": "https://www.investing.com/",
@@ -2327,6 +2586,7 @@
   },
   "Irc-galleria": {
     "country": "\ud83c\uddeb\ud83c\uddee",
+    "country_klas": "FI",
     "errorMsg": "None",
     "errorMsg2": "Ei hakutuloksia",
     "errоrTypе": "message",
@@ -2337,6 +2597,7 @@
   },
   "Irecommend": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://irecommend.ru/users/{}",
     "urlMain": "https://irecommend.ru/",
@@ -2345,6 +2606,7 @@
   },
   "Issuu": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://issuu.com/{}",
     "urlMain": "https://issuu.com/",
@@ -2353,6 +2615,7 @@
   },
   "Italia": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://italia-ru.com/users/{}",
     "urlMain": "http://italia-ru.com/",
@@ -2361,6 +2624,7 @@
   },
   "Itch.io": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://{}.itch.io/",
     "urlMain": "https://itch.io/",
@@ -2369,6 +2633,7 @@
   },
   "Jeuxvideo": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "FR",
     "errorMsg": "Vous \u00eates",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2379,6 +2644,7 @@
   },
   "Jigidi": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.jigidi.com/user/{}",
     "urlMain": "https://www.jigidi.com/",
@@ -2387,6 +2653,7 @@
   },
   "Kaggle": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.kaggle.com/{}",
     "urlMain": "https://www.kaggle.com/",
@@ -2395,6 +2662,7 @@
   },
   "Kali.org.ru": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://kali.org.ru/profile/{}",
     "urlMain": "https://kali.org.ru",
@@ -2403,6 +2671,7 @@
   },
   "Kali_community": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "The Kali Linux Forums database has encountered a problem.",
     "errоrTypе": "message",
@@ -2413,6 +2682,7 @@
   },
   "KanoWorld": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://api.kano.me/progress/user/{}",
     "urlMain": "https://world.kano.me/",
@@ -2421,6 +2691,7 @@
   },
   "Kaskus": {
     "country": "\ud83c\uddee\ud83c\udde9",
+    "country_klas": "ID",
     "errоrTypе": "status_code",
     "url": "https://www.kaskus.co.id/@{}",
     "urlMain": "https://www.kaskus.co.id",
@@ -2429,6 +2700,7 @@
   },
   "Keybase": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://keybase.io/{}",
     "urlMain": "https://keybase.io/",
@@ -2437,6 +2709,7 @@
   },
   "Kharkovforum": {
     "country": "\ud83c\uddfa\ud83c\udde6",
+    "country_klas": "UK",
     "errоrTypе": "status_code",
     "url": "https://www.kharkovforum.com/member.php?username={}",
     "urlMain": "https://www.kharkovforum.com/",
@@ -2445,6 +2718,7 @@
   },
   "Kik": {
     "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
     "errorMsg": "The page you requested was not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2455,6 +2729,7 @@
   },
   "Kinja": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://kinja.com/{}",
     "urlMain": "https://kinja.com",
@@ -2463,6 +2738,7 @@
   },
   "Knowem": {
     "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
     "errоrTypе": "status_code",
     "url": "https://knowem.com/{}",
     "urlMain": "https://knowem.com/",
@@ -2471,6 +2747,7 @@
   },
   "Kongregate": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Sorry, no account with that name was found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2482,6 +2759,7 @@
   },
   "Krstarica": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Tra\u017eeni \u010dlan nije prona\u0111en. Molimo unesite puno ime \u010dlana i poku\u0161ajte ponovo.",
     "errorMsg2": "title>Zna\u010dajni \u010dlanovi",
     "errоrTypе": "message",
@@ -2492,6 +2770,7 @@
   },
   "Kuban.forum24": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2502,6 +2781,7 @@
   },
   "Kuharka": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "<title>\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438</title>",
     "errоrTypе": "message",
@@ -2512,6 +2792,7 @@
   },
   "Kwork": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://kwork.ru/user/{}",
     "urlMain": "https://www.kwork.ru/",
@@ -2520,6 +2801,7 @@
   },
   "LOR": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.linux.org.ru/people/{}/profile",
     "urlMain": "https://linux.org.ru/",
@@ -2528,6 +2810,7 @@
   },
   "Labpentestit": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorUrl": "https://lab.pentestit.ru/{}",
     "errоrTypе": "response_url",
     "url": "https://lab.pentestit.ru/profile/{}",
@@ -2537,6 +2820,7 @@
   },
   "Last.fm": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://last.fm/user/{}",
     "urlMain": "https://last.fm/",
@@ -2544,7 +2828,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Launchpad": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://launchpad.net/~{}",
     "urlMain": "https://launchpad.net/",
@@ -2553,6 +2838,7 @@
   },
   "Leasehackr": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://forum.leasehackr.com/u/{}/summary/",
     "urlMain": "https://forum.leasehackr.com/",
@@ -2561,6 +2847,7 @@
   },
   "LeetCode": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://leetcode.com/{}",
     "urlMain": "https://leetcode.com/",
@@ -2569,6 +2856,7 @@
   },
   "Letterboxd": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Sorry, we can\u2019t find the page you\u2019ve requested.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2579,6 +2867,7 @@
   },
   "Lib.reviews": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://lib.reviews/user/{}",
     "urlMain": "https://lib.reviews",
@@ -2587,6 +2876,7 @@
   },
   "Librarything": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "<p>Error: This user doesn't exist</p>",
     "errorMsg2": "Error: This user doesn't exist",
     "errоrTypе": "message",
@@ -2597,6 +2887,7 @@
   },
   "Lichess": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Page not found!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2607,6 +2898,7 @@
   },
   "Life-dom2": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "None",
     "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d.",
     "errоrTypе": "message",
@@ -2617,6 +2909,7 @@
   },
   "Lightstalking": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://lightstalking.us/members/{}",
     "urlMain": "https://lightstalking.us/",
@@ -2624,7 +2917,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Listal": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorUrl": "https://listal.com/",
     "errоrTypе": "response_url",
     "url": "https://{}.listal.com/",
@@ -2634,6 +2928,7 @@
   },
   "Listography": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "No such user.",
     "errorMsg2": "<title>listography: error",
     "errоrTypе": "message",
@@ -2644,6 +2939,7 @@
   },
   "LiveJournal": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "url": "https://{}.livejournal.com",
@@ -2652,7 +2948,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "LiveLeak": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorMsg": "channel not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2663,6 +2960,7 @@
   },
   "Livelib": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.livelib.ru/reader/{}",
     "urlMain": "https://www.livelib.ru/",
@@ -2671,6 +2969,7 @@
   },
   "Lkforum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2681,6 +2980,7 @@
   },
   "Lobsters": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "regexCheck": "[A-Za-z0-9][A-Za-z0-9_-]{0,24}",
     "url": "https://lobste.rs/u/{}",
@@ -2690,6 +2990,7 @@
   },
   "Lolchess": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "No search results",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2700,6 +3001,7 @@
   },
   "Lonelyplanet": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.lonelyplanet.com/profile/{}",
     "urlMain": "https://www.lonelyplanet.com",
@@ -2708,6 +3010,7 @@
   },
   "Lookbook": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://lookbook.nu/{}",
     "urlMain": "https://lookbook.nu/",
@@ -2716,6 +3019,7 @@
   },
   "Lostark": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2726,6 +3030,7 @@
   },
   "Mactalk": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
     "errоrTypе": "message",
@@ -2736,6 +3041,7 @@
   },
   "Mama": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://mama.ru/members/{}",
     "urlMain": "https://mama.ru",
@@ -2744,6 +3050,7 @@
   },
   "Mamochki": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://mamochki.by/{}",
     "urlMain": "https://mamochki.by/",
@@ -2752,6 +3059,7 @@
   },
   "Mamuli": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://mamuli.club/profile/{}",
     "urlMain": "https://mamuli.club/",
@@ -2760,6 +3068,7 @@
   },
   "Mastodon": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://mstdn.io/@{}",
     "urlMain": "https://mstdn.io/",
@@ -2768,6 +3077,7 @@
   },
   "Mastodon.cloud": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://mastodon.cloud/@{}",
     "urlMain": "https://mastodon.cloud/",
@@ -2776,6 +3086,7 @@
   },
   "Mastodon.social": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://mastodon.social/@{}",
     "urlMain": "https://chaos.social/",
@@ -2784,6 +3095,7 @@
   },
   "Mastodon.technology": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://mastodon.technology/@{}",
     "urlMain": "https://mastodon.xyz/",
@@ -2792,6 +3104,7 @@
   },
   "Mastodon.xyz": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://mastodon.xyz/@{}",
     "urlMain": "https://mastodon.xyz/",
@@ -2800,6 +3113,7 @@
   },
   "Mbclub": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2810,6 +3124,7 @@
   },
   "Mdregion": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2820,6 +3135,7 @@
   },
   "Medium": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://medium.com/@{}",
     "urlMain": "https://medium.com/",
@@ -2827,7 +3143,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Memrise": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorUrl": "https://www.memrise.com/",
     "errоrTypе": "response_url",
     "url": "https://www.memrise.com/user/{}/",
@@ -2837,6 +3154,7 @@
   },
   "Meta.discourse": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://meta.discourse.org/u/{}",
     "urlMain": "https://meta.discourse.org/",
@@ -2845,6 +3163,7 @@
   },
   "Metacafe": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Channel is temporarily not available",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2855,6 +3174,7 @@
   },
   "Metacritic": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "User not found",
     "errorMsg2": "<title>404 Page Not Found",
     "errоrTypе": "message",
@@ -2865,6 +3185,7 @@
   },
   "Miped": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://miped.ru/user/{}",
     "urlMain": "https://miped.ru",
@@ -2872,7 +3193,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "MixCloud": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://www.mixcloud.com/{}/",
     "urlMain": "https://www.mixcloud.com/",
@@ -2882,6 +3204,7 @@
   },
   "Mixer.com": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://mixer.com/{}",
     "urlMain": "https://mixer.com/",
@@ -2891,6 +3214,7 @@
   },
   "Mixupload": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://mixupload.com/{}",
     "urlMain": "https://mixupload.com/",
@@ -2899,6 +3223,7 @@
   },
   "Moddb": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errоrTypе": "status_code",
     "url": "https://www.moddb.com/members/{}",
     "urlMain": "https://www.moddb.com/",
@@ -2907,6 +3232,7 @@
   },
   "Moikrug": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://moikrug.ru/{}",
     "urlMain": "https://moikrug.ru/",
@@ -2915,6 +3241,7 @@
   },
   "Moscow.flamp": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u0440\u0435\u043a\u0440\u0430\u0441\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u0430\u043a\u0438\u0445 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0434\u0435\u043b\u0430\u044e\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2925,6 +3252,7 @@
   },
   "Mouthshut": {
     "country": "\ud83c\uddee\ud83c\uddf3",
+    "country_klas": "IN",
     "errorUrl": "https://www.mouthshut.com/error.php",
     "errоrTypе": "response_url",
     "url": "https://www.mouthshut.com/{}",
@@ -2934,6 +3262,7 @@
   },
   "Music-rock": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2944,6 +3273,7 @@
   },
   "My.mail.ru_new": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u041c\u0438\u0440",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2954,6 +3284,7 @@
   },
   "My.mail.ru_old": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u0442\u044c \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u041c\u0438\u0440",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -2964,6 +3295,7 @@
   },
   "MyAnimeList": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://myanimelist.net/profile/{}",
     "urlMain": "https://myanimelist.net/",
@@ -2972,6 +3304,7 @@
   },
   "Myfitnesspal": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.myfitnesspal.com/user/idanshina/profile/{}",
     "urlMain": "https://www.myfitnesspal.com/",
@@ -2980,6 +3313,7 @@
   },
   "Myminifactory": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://www.myminifactory.com/users/{}",
     "urlMain": "https://www.myminifactory.com/",
@@ -2988,6 +3322,7 @@
   },
   "Myspace": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://myspace.com/{}",
     "urlMain": "https://myspace.com/",
@@ -2996,6 +3331,7 @@
   },
   "N4g": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://n4g.com/user/home/{}",
     "urlMain": "https://n4g.com/",
@@ -3004,6 +3340,7 @@
   },
   "NICommunityForum": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3014,6 +3351,7 @@
   },
   "Nairaland": {
     "country": "\ud83c\uddf3\ud83c\uddec",
+    "country_klas": "NG",
     "errоrTypе": "status_code",
     "url": "https://www.nairaland.com/{}",
     "urlMain": "https://www.nairaland.com",
@@ -3022,6 +3360,7 @@
   },
   "NameMC": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Profiles: 0 results",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3032,6 +3371,7 @@
   },
   "Namepros": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "None",
     "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
     "errоrTypе": "message",
@@ -3042,6 +3382,7 @@
   },
   "NationStates_Nation": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Was this your nation? It may have ceased to exist due to inactivity, but can rise again!",
     "errorMsg2": "<title>NationStates | create your own country",
     "errоrTypе": "message",
@@ -3052,6 +3393,7 @@
   },
   "NationStates_Region": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "does not exist.",
     "errorMsg2": "create your own country",
     "errоrTypе": "message",
@@ -3062,6 +3404,7 @@
   },
   "NetworkInformatica": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://network.informatica.com/people/{}",
     "urlMain": "https://network.informatica.com",
@@ -3070,6 +3413,7 @@
   },
   "Newgrounds": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "url": "https://{}.newgrounds.com",
@@ -3079,6 +3423,7 @@
   },
   "Nightbot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://nightbot.tv/t/{}/commands",
     "urlMain": "https://nightbot.tv/",
@@ -3088,6 +3433,7 @@
   },
   "Niketalk": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "None",
     "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
     "errоrTypе": "message",
@@ -3098,6 +3444,7 @@
   },
   "NnRU": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://{}.www.nn.ru/",
     "urlMain": "https://www.nn.ru/",
@@ -3106,6 +3453,7 @@
   },
   "Notabug.org": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://notabug.org/{}",
     "urlMain": "https://notabug.org/",
@@ -3115,6 +3463,7 @@
   },
   "Note": {
     "country": "\ud83c\uddef\ud83c\uddf5",
+    "country_klas": "JP",
     "errоrTypе": "status_code",
     "url": "https://note.com/{}",
     "urlMain": "https://note.com/",
@@ -3123,6 +3472,7 @@
   },
   "Npmjs": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.npmjs.com/package/{}",
     "urlMain": "https://www.npmjs.com/",
@@ -3131,6 +3481,7 @@
   },
   "OK": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_.-]*$",
     "url": "https://ok.ru/{}",
@@ -3140,6 +3491,7 @@
   },
   "Op.gg": {
     "country": "\ud83c\uddf0\ud83c\uddf7",
+    "country_klas": "KR",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3153,6 +3505,7 @@
   },
   "Op.ggBR": {
     "country": "\ud83c\udde7\ud83c\uddf7",
+    "country_klas": "BR",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3166,6 +3519,7 @@
   },
   "Op.ggEUNE": {
     "country": "\ud83c\uddea\ud83c\uddfa",
+    "country_klas": "EU",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3179,6 +3533,7 @@
   },
   "Op.ggEUW": {
     "country": "\ud83c\uddea\ud83c\uddfa",
+    "country_klas": "EU",
     "errorMsg": "LoL Stats, Record Replay, Database, Guide - OP.GG",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3189,6 +3544,7 @@
   },
   "Op.ggJP": {
     "country": "\ud83c\uddef\ud83c\uddf5",
+    "country_klas": "JP",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3202,6 +3558,7 @@
   },
   "Op.ggLAN": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3215,6 +3572,7 @@
   },
   "Op.ggLAS": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3228,6 +3586,7 @@
   },
   "Op.ggNA": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3241,6 +3600,7 @@
   },
   "Op.ggOCE": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3254,6 +3614,7 @@
   },
   "Op.ggRU": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3267,6 +3628,7 @@
   },
   "Op.ggTR": {
     "country": "\ud83c\uddf9\ud83c\uddf7",
+    "country_klas": "TR",
     "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3280,6 +3642,7 @@
   },
   "OpenCollective": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://opencollective.com/{}",
     "urlMain": "https://opencollective.com/",
@@ -3288,6 +3651,7 @@
   },
   "OpenStreetMap": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.openstreetmap.org/user/{}",
     "urlMain": "https://www.openstreetmap.org/",
@@ -3296,6 +3660,7 @@
   },
   "Opennet": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0418\u043c\u044f \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3306,6 +3671,7 @@
   },
   "Opensource": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://opensource.com/users/{}",
     "urlMain": "https://opensource.com/",
@@ -3314,6 +3680,7 @@
   },
   "Oracle": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://community.oracle.com/people/{}",
     "urlMain": "https://community.oracle.com",
@@ -3321,7 +3688,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Osu!": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://osu.ppy.sh/users/{}",
     "urlMain": "https://osu.ppy.sh/",
@@ -3330,6 +3698,7 @@
   },
   "Otzovik": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://otzovik.com/profile/{}",
     "urlMain": "https://otzovik.com/",
@@ -3338,6 +3707,7 @@
   },
   "OurDJTalk": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3348,6 +3718,7 @@
   },
   "PCPartPicker": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://pcpartpicker.com/user/{}",
     "urlMain": "https://pcpartpicker.com",
@@ -3355,7 +3726,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "PSNProfiles.com": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorUrl": "https://psnprofiles.com/?psnId={}",
     "errоrTypе": "response_url",
     "url": "https://psnprofiles.com/{}",
@@ -3365,6 +3737,7 @@
   },
   "Packagist": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errorUrl": "https://packagist.org/search/?q={}&reason=vendor_not_found",
     "errоrTypе": "response_url",
     "url": "https://packagist.org/packages/{}/",
@@ -3374,6 +3747,7 @@
   },
   "Partyflock": {
     "country": "\ud83c\uddf3\ud83c\uddf1",
+    "country_klas": "NL",
     "errоrTypе": "status_code",
     "url": "https://partyflock.nl/user/{}",
     "urlMain": "https://partyflock.nl",
@@ -3382,6 +3756,7 @@
   },
   "Pastebin": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://pastebin.com/index",
     "errоrTypе": "response_url",
     "url": "https://pastebin.com/u/{}",
@@ -3391,6 +3766,7 @@
   },
   "Patreon": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.patreon.com/{}",
     "urlMain": "https://www.patreon.com/",
@@ -3399,6 +3775,7 @@
   },
   "Pbnation": {
     "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
     "errоrTypе": "message",
@@ -3409,6 +3786,7 @@
   },
   "Pcgamer": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3419,6 +3797,7 @@
   },
   "Pedsovet": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3429,6 +3808,7 @@
   },
   "People.ign": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://people.ign.com/{}",
     "errоrTypе": "response_url",
     "url": "https://people.ign.com/{}",
@@ -3438,6 +3818,7 @@
   },
   "Peopleandcountries": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "None",
     "errorMsg2": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
     "errоrTypе": "message",
@@ -3448,6 +3829,7 @@
   },
   "Perfect": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3458,6 +3840,7 @@
   },
   "Periscope": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.periscope.tv/{}/",
     "urlMain": "https://www.periscope.tv/",
@@ -3466,6 +3849,7 @@
   },
   "Pesiq": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3476,6 +3860,7 @@
   },
   "Photobucket": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://photobucket.com/user/{}/library",
     "urlMain": "https://photobucket.com/",
@@ -3484,6 +3869,7 @@
   },
   "Php": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3494,6 +3880,7 @@
   },
   "Picsart": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://picsart.com/u/{}",
     "urlMain": "https://picsart.com/",
@@ -3502,6 +3889,7 @@
   },
   "Pikabu": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://pikabu.ru/@{}",
     "urlMain": "https://pikabu.ru/",
@@ -3510,6 +3898,7 @@
   },
   "Pinboard": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "http://pinboard.in/u:{}",
     "urlMain": "http://pinboard.in",
@@ -3518,6 +3907,7 @@
   },
   "Pinkbike": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.pinkbike.com/u/{}/",
     "urlMain": "https://www.pinkbike.com/",
@@ -3526,6 +3916,7 @@
   },
   "Pinterest": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.pinterest.com/{}/",
     "urlMain": "https://www.pinterest.com/",
@@ -3534,6 +3925,7 @@
   },
   "Planetminecraft": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Hmm, it seems that you've come across an invalid username",
     "errorMsg2": "Oops, this page is missing or temporarily down",
     "errоrTypе": "message",
@@ -3544,6 +3936,7 @@
   },
   "Plug.DJ": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://plug.dj/@/{}",
     "urlMain": "https://plug.dj/",
@@ -3552,6 +3945,7 @@
   },
   "Plurk": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "None",
     "errorMsg2": "<title>User Not Found! - Plurk",
     "errоrTypе": "message",
@@ -3562,6 +3956,7 @@
   },
   "PokemonShowdown": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://pokemonshowdown.com/users/{}",
     "urlMain": "https://pokemonshowdown.com",
@@ -3570,6 +3965,7 @@
   },
   "Pokerstrategy": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://www.pokerstrategy.net/user/{}/profile/",
     "urlMain": "http://www.pokerstrategy.net",
@@ -3578,6 +3974,7 @@
   },
   "Politforums": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0441\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u043e\u043c",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3588,6 +3985,7 @@
   },
   "Politikforum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3598,6 +3996,7 @@
   },
   "Polygon": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.polygon.com/users/{}",
     "urlMain": "https://www.polygon.com/",
@@ -3606,6 +4005,7 @@
   },
   "Pornhub": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://rt.pornhub.com/users/{}",
     "urlMain": "https://rt.pornhub.com",
@@ -3614,6 +4014,7 @@
   },
   "Prankru": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3624,6 +4025,7 @@
   },
   "Prizyvnik": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3634,6 +4036,7 @@
   },
   "ProductHunt": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Product Hunt is a curation of the best new products",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3644,6 +4047,7 @@
   },
   "Professionali": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://professionali.ru/~{}",
     "urlMain": "https://professionali.ru",
@@ -3652,6 +4056,7 @@
   },
   "Profiles.tigweb": {
     "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
     "errоrTypе": "status_code",
     "url": "https://profiles.tigweb.org/{}",
     "urlMain": "https://profiles.tigweb.org",
@@ -3660,6 +4065,7 @@
   },
   "Programmersforum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3670,6 +4076,7 @@
   },
   "Prokoni": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3680,6 +4087,7 @@
   },
   "PromoDJ": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://promodj.com/{}",
     "urlMain": "http://promodj.com/",
@@ -3688,6 +4096,7 @@
   },
   "Proza": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
     "errоrTypе": "message",
@@ -3698,6 +4107,7 @@
   },
   "Psychologies": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://www.psychologies.ru/personal/{}",
     "urlMain": "http://www.psychologies.ru",
@@ -3706,6 +4116,7 @@
   },
   "Publiclab": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://publiclab.org/profile/",
     "errоrTypе": "response_url",
     "url": "https://publiclab.org/profile/{}/",
@@ -3715,6 +4126,7 @@
   },
   "Pyha": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://pyha.ru/users/{}",
     "urlMain": "https://pyha.ru/",
@@ -3723,6 +4135,7 @@
   },
   "Pypi": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://pypi.org/user/{}",
     "urlMain": "https://pypi.org/",
@@ -3731,6 +4144,7 @@
   },
   "Python.su": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://python.su/forum/user/{}",
     "urlMain": "https://python.su/",
@@ -3739,6 +4153,7 @@
   },
   "Qbn": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://www.qbn.com/{}",
     "urlMain": "https://www.qbn.com/",
@@ -3747,6 +4162,7 @@
   },
   "Quibblo": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorUrl": "https://www.quibblo.com/not_found",
     "errоrTypе": "response_url",
     "url": "https://www.quibblo.com/user/{}",
@@ -3756,6 +4172,7 @@
   },
   "Quora": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorUrl": "https://www.quora.com/profile/{}",
     "errоrTypе": "response_url",
     "url": "https://www.quora.com/profile/{}",
@@ -3765,6 +4182,7 @@
   },
   "Radio_echo_msk": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://echo.msk.ru/users/{}",
     "urlMain": "https://echo.msk.ru/",
@@ -3773,6 +4191,7 @@
   },
   "Radioskot": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3783,6 +4202,7 @@
   },
   "Raidforums": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://raidforums.com/User-{}",
     "urlMain": "https://raidforums.com/",
@@ -3791,6 +4211,7 @@
   },
   "Rajce": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errorMsg": "410",
     "errorMsg2": "<title>U\u017eivatel neexistuje",
     "errоrTypе": "message",
@@ -3801,6 +4222,7 @@
   },
   "RamblerDating": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorUrl": "https://dating.rambler.ru/page/{}",
     "errоrTypе": "response_url",
     "url": "https://dating.rambler.ru/page/{}",
@@ -3810,6 +4232,7 @@
   },
   "Rapforce": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3820,6 +4243,7 @@
   },
   "Rasa": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://forum.rasa.com/u/{}/summary",
     "urlMain": "https://forum.rasa.com",
@@ -3828,6 +4252,7 @@
   },
   "Rateyourmusic": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://rateyourmusic.com/~{}",
     "urlMain": "https://rateyourmusic.com/",
@@ -3836,6 +4261,7 @@
   },
   "Rcmir": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3846,6 +4272,7 @@
   },
   "Realmeye": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "Sorry, but we either:",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3856,6 +4283,7 @@
   },
   "Redbubble": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errоrTypе": "status_code",
     "url": "https://www.redbubble.com/people/{}",
     "urlMain": "https://www.redbubble.com/",
@@ -3864,6 +4292,7 @@
   },
   "Reddit": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.reddit.com/user/{}",
     "urlMain": "https://www.reddit.com/",
@@ -3872,6 +4301,7 @@
   },
   "Redorchestra": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3882,6 +4312,7 @@
   },
   "Redsun.tf": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "The specified member cannot be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3892,6 +4323,7 @@
   },
   "Reibert": {
     "country": "\ud83c\uddfa\ud83c\udde6",
+    "country_klas": "UK",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3902,6 +4334,7 @@
   },
   "Repl.it": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "404",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3912,6 +4345,7 @@
   },
   "ResearchGate": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://www.researchgate.net/directory/profiles",
     "errоrTypе": "response_url",
     "regexCheck": "\\w+_\\w+",
@@ -3922,6 +4356,7 @@
   },
   "Revelation": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3932,6 +4367,7 @@
   },
   "ReverbNation": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Sorry, we couldn't find that page",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3942,6 +4378,7 @@
   },
   "Roblox": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Page cannot be found or no longer exists",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3952,6 +4389,7 @@
   },
   "Rpggeek": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "None",
     "errorMsg2": "Error: User does not exist.",
     "errоrTypе": "message",
@@ -3962,6 +4400,7 @@
   },
   "Ruby-forum": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://www.ruby-forum.com/u/{}/summary",
     "urlMain": "https://www.ruby-forum.com/",
@@ -3970,6 +4409,7 @@
   },
   "RubyGems": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://rubygems.org/profiles/{}",
     "urlMain": "https://rubygems.org/",
@@ -3978,6 +4418,7 @@
   },
   "Runitonce": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.runitonce.com/users/{}",
     "urlMain": "https://www.runitonce.com/",
@@ -3985,7 +4426,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Runnersworld": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://forums.runnersworld.co.uk/profile/{}",
     "urlMain": "https://forums.runnersworld.co.uk/",
@@ -3994,6 +4436,7 @@
   },
   "Rusarmy": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4004,6 +4447,7 @@
   },
   "Rusforum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4014,6 +4458,7 @@
   },
   "Russian.fi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
     "errоrTypе": "message",
@@ -4024,6 +4469,7 @@
   },
   "Satsis": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://satsis.info/user/{}",
     "urlMain": "https://satsis.info/",
@@ -4032,6 +4478,7 @@
   },
   "Sbazar.cz": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errоrTypе": "status_code",
     "url": "https://www.sbazar.cz/{}",
     "urlMain": "https://www.sbazar.cz/",
@@ -4040,6 +4487,7 @@
   },
   "Sbnation": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.sbnation.com/users/{}",
     "urlMain": "https://www.sbnation.com",
@@ -4048,6 +4496,7 @@
   },
   "Schlock": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://schlock.ru/author/{}",
     "urlMain": "https://schlock.ru/",
@@ -4056,6 +4505,7 @@
   },
   "Scratch": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://scratch.mit.edu/users/{}",
     "urlMain": "https://scratch.mit.edu/",
@@ -4064,6 +4514,7 @@
   },
   "Scribd": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Page not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4074,6 +4525,7 @@
   },
   "Searchengines": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4084,6 +4536,7 @@
   },
   "Seatracker": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4094,6 +4547,7 @@
   },
   "Segmentfault": {
     "country": "\ud83c\udded\ud83c\uddf0",
+    "country_klas": "TN",
     "errоrTypе": "status_code",
     "url": "https://segmentfault.com/u/{}",
     "urlMain": "https://segmentfault.com/",
@@ -4102,6 +4556,7 @@
   },
   "ShitpostBot5000": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://www.shitpostbot.com/user/{}",
     "urlMain": "https://www.shitpostbot.com/",
@@ -4110,6 +4565,7 @@
   },
   "Shophelp": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://shophelp.ru/profile/{}",
     "urlMain": "https://shophelp.ru/",
@@ -4118,6 +4574,7 @@
   },
   "Showme": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.showme.com/{}",
     "urlMain": "https://www.showme.com",
@@ -4126,6 +4583,7 @@
   },
   "Shutterstock": {
     "country": "\ud83c\uddeb\ud83c\uddee",
+    "country_klas": "FI",
     "errorMsg": "T\u00e4m\u00e4p\u00e4 yll\u00e4tt\u00e4v\u00e4\u00e4...",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4136,6 +4594,7 @@
   },
   "Signal": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Oops! That page doesn\u2019t exist or is private.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4146,6 +4605,7 @@
   },
   "Skodaforum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4156,6 +4616,7 @@
   },
   "Skyrock": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "FR",
     "errоrTypе": "status_code",
     "url": "https://{}.skyrock.com/",
     "urlMain": "https://skyrock.com/",
@@ -4164,6 +4625,7 @@
   },
   "Skyscanner": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.trip.skyscanner.com/user/{}",
     "urlMain": "https://www.trip.skyscanner.com/",
@@ -4172,6 +4634,7 @@
   },
   "Slack": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
     "url": "https://{}.slack.com",
@@ -4181,6 +4644,7 @@
   },
   "Slashdot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "          - Slashdot User",
     "errorMsg2": "The user you requested does not exist, no matter how much you wish this might be the case.",
     "errоrTypе": "message",
@@ -4191,6 +4655,7 @@
   },
   "SlideShare": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://slideshare.net/{}",
     "urlMain": "https://slideshare.net/",
@@ -4199,6 +4664,7 @@
   },
   "Smashcast": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.smashcast.tv/api/media/live/{}",
     "urlMain": "https://www.smashcast.tv/",
@@ -4207,6 +4673,7 @@
   },
   "Smule": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.smule.com/{}",
     "urlMain": "https://www.smule.com/",
@@ -4215,6 +4682,7 @@
   },
   "Social.librem": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://social.librem.one/@{}",
     "urlMain": "https://social.librem.one",
@@ -4223,6 +4691,7 @@
   },
   "Social.tchncs": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://social.tchncs.de/@{}",
     "urlMain": "https://social.tchncs.de/",
@@ -4231,6 +4700,7 @@
   },
   "Software.informer": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://users.software.com",
     "errоrTypе": "response_url",
     "url": "https://users.software.informer.com/{}/",
@@ -4240,6 +4710,7 @@
   },
   "SoundCloud": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://soundcloud.com/{}",
     "urlMain": "https://soundcloud.com/",
@@ -4248,6 +4719,7 @@
   },
   "SourceForge": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://sourceforge.net/u/{}",
     "urlMain": "https://sourceforge.net/",
@@ -4256,6 +4728,7 @@
   },
   "Sovserv": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4266,6 +4739,7 @@
   },
   "Soylentnews": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "The user you requested does not exist, no matter how much you wish this might be the case.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4276,6 +4750,7 @@
   },
   "Spaces": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://spaces.im/mysite/index/{}/",
     "urlMain": "https://spaces.im",
@@ -4284,6 +4759,7 @@
   },
   "Sparkpeople": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "We couldn't find that user",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4294,6 +4770,7 @@
   },
   "Speedrun.com": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "not found.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4304,6 +4781,7 @@
   },
   "Spletnik": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://spletnik.ru/user/{}",
     "urlMain": "https://spletnik.ru/",
@@ -4312,6 +4790,7 @@
   },
   "Splits.io": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://splits.io/users/{}",
     "urlMain": "https://splits.io",
@@ -4320,6 +4799,7 @@
   },
   "Sporcle": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.sporcle.com/user/{}/people",
     "urlMain": "https://www.sporcle.com/",
@@ -4328,6 +4808,7 @@
   },
   "Sports": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.sports.ru/profile/{}/",
     "urlMain": "https://www.sports.ru/",
@@ -4336,6 +4817,7 @@
   },
   "Star_Citizen": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://robertsspaceindustries.com/citizens/{}",
     "urlMain": "https://robertsspaceindustries.com/",
@@ -4344,6 +4826,7 @@
   },
   "Steam": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "The specified profile could not be found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4354,6 +4837,7 @@
   },
   "SteamGroup": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "No group could be retrieved for the given URL",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4364,6 +4848,7 @@
   },
   "Steamid": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "SteamID account finder",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4374,6 +4859,7 @@
   },
   "Stihi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
     "errоrTypе": "message",
@@ -4384,6 +4870,7 @@
   },
   "Studwork": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://studwork.org/info/{}",
     "urlMain": "https://studwork.org/",
@@ -4392,6 +4879,7 @@
   },
   "Subeta": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Invalid user",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4402,6 +4890,7 @@
   },
   "Suomi24": {
     "country": "\ud83c\uddeb\ud83c\uddee",
+    "country_klas": "FI",
     "errоrTypе": "status_code",
     "url": "https://www.suomi24.fi/profiili/{}",
     "urlMain": "https://www.suomi24.fi",
@@ -4410,6 +4899,7 @@
   },
   "Svidbook": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.svidbook.ru/user/{}",
     "urlMain": "https://www.svidbook.ru/",
@@ -4418,6 +4908,7 @@
   },
   "Swimming_forum": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4428,6 +4919,7 @@
   },
   "T-MobileSupport": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://support.t-mobile.com/people/{}",
     "urlMain": "https://support.t-mobile.com",
@@ -4436,6 +4928,7 @@
   },
   "TamTam": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://tamtam.chat/",
     "errоrTypе": "response_url",
     "url": "https://tamtam.chat/{}",
@@ -4445,6 +4938,7 @@
   },
   "Tanks": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4455,6 +4949,7 @@
   },
   "Taringa": {
     "country": "\ud83c\udde6\ud83c\uddf7",
+    "country_klas": "AR",
     "errоrTypе": "status_code",
     "url": "https://www.taringa.net/{}",
     "urlMain": "https://taringa.net/",
@@ -4463,6 +4958,7 @@
   },
   "Techdirt": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.techdirt.com/user/{}",
     "urlMain": "https://www.techdirt.com/",
@@ -4471,6 +4967,7 @@
   },
   "Telegram": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "<meta property=\"twitter:title\" content=\"Telegram: Contact",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4481,6 +4978,7 @@
   },
   "Tellonym.me": {
     "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://tellonym.me/{}",
     "urlMain": "https://tellonym.me/",
@@ -4489,6 +4987,7 @@
   },
   "The-village": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "The Village: \u043e\u0448\u0438\u0431\u043a\u0430 404, \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4498,7 +4997,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Theanswerbank": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorMsg": "Welcome to the AnswerBank",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4509,6 +5009,7 @@
   },
   "Thechive": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://i.thechive.com/{}",
     "urlMain": "https://i.thechive.com/",
@@ -4517,6 +5018,7 @@
   },
   "Theodysseyonline": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.theodysseyonline.com/user/@{}",
     "urlMain": "https://www.theodysseyonline.com",
@@ -4524,7 +5026,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Thestudentroom": {
-    "country": "\ud83c\uddec\ud83c\udde7",
+    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "GB",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
     "errоrTypе": "message",
@@ -4535,6 +5038,7 @@
   },
   "Thingiverse": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.thingiverse.com/{}/about",
     "urlMain": "https://www.thingiverse.com/",
@@ -4543,6 +5047,7 @@
   },
   "TikTok": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Couldn&#x27;t find this account",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4553,6 +5058,7 @@
   },
   "Tinder": {
     "country": "\ud83c\uddee\ud83c\uddea",
+    "country_klas": "IE",
     "errorMsg": "Looking for Someone?",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4563,6 +5069,7 @@
   },
   "Tkgr": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://tkgr.ru/forum/member/{}",
     "urlMain": "http://tkgr.ru/",
@@ -4571,6 +5078,7 @@
   },
   "Toster": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "https://www.toster.ru/user/{}/answers",
     "urlMain": "https://www.toster.ru/",
@@ -4579,6 +5087,7 @@
   },
   "Totseans": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "http://www.totseans.com/bbs/profile/{}",
     "urlMain": "http://www.totseans.com/bbs/profile/Vizier",
@@ -4587,6 +5096,7 @@
   },
   "Touristlink": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Members across the World",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4597,6 +5107,7 @@
   },
   "TrackmaniaLadder": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country_klas": "FR",
     "errorMsg": "player unknown or invalid",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4607,6 +5118,7 @@
   },
   "TradingView": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.tradingview.com/u/{}/",
     "urlMain": "https://www.tradingview.com/",
@@ -4615,6 +5127,7 @@
   },
   "Trainsim": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4625,6 +5138,7 @@
   },
   "Trakt": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.trakt.tv/users/{}",
     "urlMain": "https://www.trakt.tv/",
@@ -4633,6 +5147,7 @@
   },
   "Trashbox": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "404 - \u0424\u0430\u0439\u043b \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errоrTypе": "message",
@@ -4643,6 +5158,7 @@
   },
   "Travelblog": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.travelblog.org/Bloggers/{}",
     "urlMain": "https://www.travelblog.org",
@@ -4651,6 +5167,7 @@
   },
   "Travellerspoint": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Wooops. Sorry!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4661,6 +5178,7 @@
   },
   "Trello": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "model not found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4672,6 +5190,7 @@
   },
   "TripAdvisor": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "This page is on vacation\u2026",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4682,6 +5201,7 @@
   },
   "Twitch": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://www.twitch.tv/{}",
     "urlMain": "https://www.twitch.tv/",
@@ -4691,6 +5211,7 @@
   },
   "Twitter": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "headers": {
       "User-Agent": ""
@@ -4702,6 +5223,7 @@
   },
   "Typeracer": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Profile Not Found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4712,6 +5234,7 @@
   },
   "Uaksu": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4722,6 +5245,7 @@
   },
   "Uid": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errоrTypе": "status_code",
     "url": "http://uid.me/{}",
     "urlMain": "https://uid.me/",
@@ -4730,6 +5254,7 @@
   },
   "Ultimate-Guitar": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://ultimate-guitar.com/u/{}",
     "urlMain": "https://ultimate-guitar.com/",
@@ -4738,6 +5263,7 @@
   },
   "Unsplash": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://unsplash.com/@{}/likes",
     "urlMain": "https://unsplash.com/",
@@ -4746,6 +5272,7 @@
   },
   "VK": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://www.quora.com/profile/{}",
     "errоrTypе": "response_url",
     "url": "https://vk.com/{}",
@@ -4755,6 +5282,7 @@
   },
   "VSCO": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://vsco.co/{}",
     "urlMain": "https://vsco.co/",
@@ -4763,6 +5291,7 @@
   },
   "Velomania": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4773,6 +5302,7 @@
   },
   "Venmo": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://venmo.com/{}",
     "urlMain": "https://venmo.com/",
@@ -4781,6 +5311,7 @@
   },
   "Vezha": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4791,6 +5322,7 @@
   },
   "Videogamegeek": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "None",
     "errorMsg2": "Error: User does not exist.",
     "errоrTypе": "message",
@@ -4801,6 +5333,7 @@
   },
   "Videosift": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://videosift.com/member/{}",
     "urlMain": "https://videosift.com",
@@ -4809,6 +5342,7 @@
   },
   "Vimeo": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://vimeo.com/{}",
     "urlMain": "https://vimeo.com/",
@@ -4817,6 +5351,7 @@
   },
   "Virgool": {
     "country": "\ud83c\uddee\ud83c\uddf7",
+    "country_klas": "IR",
     "errorMsg": "\u06f4\u06f0\u06f4",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4827,6 +5362,7 @@
   },
   "VirusTotal": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "not found",
     "errorMsg2": "The resource could not be found",
     "errоrTypе": "message",
@@ -4837,6 +5373,7 @@
   },
   "Vkovk": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442!",
     "errorMsg2": "<title>\u0414\u043e\u0441\u0442\u0443\u043f \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d",
     "errоrTypе": "message",
@@ -4847,6 +5384,7 @@
   },
   "Votetags": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://www.votetags.info/",
     "errоrTypе": "response_url",
     "url": "https://www.votetags.info/author/{}/",
@@ -4856,6 +5394,7 @@
   },
   "W7forums": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4866,6 +5405,7 @@
   },
   "Warface": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4876,6 +5416,7 @@
   },
   "Warriorforum": {
     "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
     "errоrTypе": "status_code",
     "url": "https://www.warriorforum.com/members/{}.html",
     "urlMain": "https://www.warriorforum.com/",
@@ -4884,6 +5425,7 @@
   },
   "Wattpad": {
     "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
     "errorMsg": "userError-404",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4894,6 +5436,7 @@
   },
   "Waveapps": {
     "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
     "errоrTypе": "status_code",
     "url": "https://community.waveapps.com/profile/{}",
     "urlMain": "https://community.waveapps.com",
@@ -4902,6 +5445,7 @@
   },
   "Weeartit": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "Oops! You've landed on a moving target!",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4912,6 +5456,7 @@
   },
   "Whonix": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://forums.whonix.org/u/{}",
     "urlMain": "https://forums.whonix.org/",
@@ -4920,6 +5465,7 @@
   },
   "Wikidot": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "User does not exist.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4930,6 +5476,7 @@
   },
   "Wikipedia": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "is not registered",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4940,6 +5487,7 @@
   },
   "Windy": {
     "country": "\ud83c\udde8\ud83c\uddff",
+    "country_klas": "CZ",
     "errоrTypе": "status_code",
     "url": "https://community.windy.com/user/{}",
     "urlMain": "https://windy.com/",
@@ -4948,6 +5496,7 @@
   },
   "Wittyprofiles": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errorMsg": "It looks like you are looking for something that isn't here.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -4958,6 +5507,7 @@
   },
   "Wix": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://{}.wix.com",
     "urlMain": "https://wix.com/",
@@ -4966,6 +5516,7 @@
   },
   "Wolpy": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "http://wolpy.com/{}/profile",
     "urlMain": "http://wolpy.com",
@@ -4974,6 +5525,7 @@
   },
   "WordPress": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "wordpress.com/typo/?subdomain=",
     "errоrTypе": "response_url",
     "regexCheck": "^[a-zA-Z][a-zA-Z0-9_-]*$",
@@ -4984,6 +5536,7 @@
   },
   "WordPressOrg": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorUrl": "https://wordpress.org",
     "errоrTypе": "response_url",
     "url": "https://profiles.wordpress.org/{}/",
@@ -4993,6 +5546,7 @@
   },
   "X-xack": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -5003,6 +5557,7 @@
   },
   "YandexBugbounty": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://yandex.ru/bugbounty/researchers/{}/",
     "urlMain": "https://yandex.ru",
@@ -5011,6 +5566,7 @@
   },
   "YandexMarket": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "\u0422\u0443\u0442 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -5021,6 +5577,7 @@
   },
   "YouNow": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errorMsg": "No users found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -5032,6 +5589,7 @@
   },
   "YouPic": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://youpic.com/photographer/{}/",
     "urlMain": "https://youpic.com/",
@@ -5040,6 +5598,7 @@
   },
   "YouTube": {
     "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errorMsg": "Not Found",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -5050,6 +5609,7 @@
   },
   "Yummly": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
     "errоrTypе": "status_code",
     "url": "https://www.yummly.com/profile/{}",
     "urlMain": "https://www.yummly.com",
@@ -5058,6 +5618,7 @@
   },
   "Zhihu": {
     "country": "\ud83c\udde8\ud83c\uddf3",
+    "country_klas": "CN",
     "errorUrl": "https://www.zhihu.com/people/{}",
     "errоrTypе": "response_url",
     "url": "https://www.zhihu.com/people/{}",
