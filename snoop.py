@@ -49,6 +49,25 @@ timestart = time.time()
 time_data = time.localtime()
 censor = 0
 
+#Создание директорий результатов
+try:
+    os.makedirs(str(dirresults + "/results"))
+except:
+    pass
+try:    
+    os.mkdir(str(dirresults + "/results/html"))
+except:        
+    pass
+try:    
+    os.mkdir(str(dirresults + "/results/txt"))
+except:            
+    pass
+try:    
+    os.mkdir(str(dirresults + "/results/csv"))
+except:            
+    pass
+
+
 class ElapsedFuturesSession(FuturesSession):
     """
     Расширяет 'FutureSession' для добавления метрики времени ответа к каждому запросу.
