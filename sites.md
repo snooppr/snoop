@@ -259,7 +259,7 @@
 258. 🌎 [Interpals](https://www.interpals.net/)
 259. 🌎 [Investing.com](https://www.investing.com/)
 260. 🇫🇮 [Irc-galleria](https://irc-galleria.net)
-261. 🇺🇸 [Irecommend](https://irecommend.ru/)
+261. 🇷🇺 [Irecommend](https://irecommend.ru/)
 262. 🇺🇸 [Issuu](https://issuu.com/)
 263. 🇷🇺 [Italia](http://italia-ru.com/)
 264. 🇺🇸 [Itch.io](https://itch.io/)
