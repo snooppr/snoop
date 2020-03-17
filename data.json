@@ -504,7 +504,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Beerintheevening": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorMsg": "User does not exist.",
     "errorMsg2": "None",
@@ -859,7 +859,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Connosr": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://www.connosr.com/@{}",
@@ -1073,7 +1073,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Digitalspy": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://forums.digitalspy.com/profile/discussions/{}",
@@ -1947,7 +1947,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Fotothing": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorMsg": "The requested file or user was not found.",
     "errorMsg2": "No user selected.",
@@ -2035,7 +2035,7 @@
     "username_unclaimed": "noonewouldeverusethis"
   },
   "Gapyear": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://www.gapyear.com/members/{}",
@@ -2836,7 +2836,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Launchpad": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://launchpad.net/~{}",
@@ -2925,7 +2925,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Listal": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorUrl": "https://listal.com/",
     "errоrTypе": "response_url",
@@ -2956,7 +2956,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "LiveLeak": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorMsg": "channel not found",
     "errorMsg2": "None",
@@ -3151,7 +3151,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Memrise": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorUrl": "https://www.memrise.com/",
     "errоrTypе": "response_url",
@@ -3201,7 +3201,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "MixCloud": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://www.mixcloud.com/{}/",
@@ -3696,7 +3696,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Osu!": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://osu.ppy.sh/users/{}",
@@ -3734,7 +3734,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "PSNProfiles.com": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorUrl": "https://psnprofiles.com/?psnId={}",
     "errоrTypе": "response_url",
@@ -4434,7 +4434,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Runnersworld": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errоrTypе": "status_code",
     "url": "https://forums.runnersworld.co.uk/profile/{}",
@@ -5005,7 +5005,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Theanswerbank": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorMsg": "Welcome to the AnswerBank",
     "errorMsg2": "None",
@@ -5034,7 +5034,7 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Thestudentroom": {
-    "country": "\ud83c\uddeb\ud83c\uddf7",
+    "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
     "errorMsg": "None",
     "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
