@@ -67,7 +67,7 @@ try:
 except:            
     pass
 
-
+################################################################################
 class ElapsedFuturesSession(FuturesSession):
     """
     Расширяет 'FutureSession' для добавления метрики времени ответа к каждому запросу.
@@ -575,7 +575,7 @@ def main():
 # Опция сортировки
     if args.sort:
         sortirovka.sorts()
-        exit(0)
+        sys.exit(0)
 
 # Опция указания списка разыскиваемых пользователей
     if args.user:
@@ -589,7 +589,7 @@ def main():
                 userlist=[line.rstrip() for line in userlist]
             except:
                 print("\033[36mНе могу прочитать! Пожалуйста, укажите текстовый файл.\033[0m")
-                exit(0)
+                sys.exit(0)
         print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)
 
 # Опция list all

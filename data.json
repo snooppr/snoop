@@ -1685,6 +1685,14 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forum.juce": {
+    "country": "\ud83c\udfc1",
+    "errоrTypе": "status_code",
+    "url": "https://forum.juce.com/u/{}",
+    "urlMain": "https://forum.juce.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forum.md": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
