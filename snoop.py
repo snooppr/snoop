@@ -489,12 +489,15 @@ def main():
 \033[36m└──PayPal:\033[0m \033[37msnoopproject@protonmail.com\033[0m    
 \n\033[36mИсходный код:\033[0m \033[37mhttps://github.com/snooppr/snoop\033[0m """)
               
-                
+# Флаг БС
+    with open("data.json", "r", encoding="utf8") as flag:
+        BS = json.load(flag)
+        flagBS = len(BS)                
                 
 # Назначение опций Snoop.
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
                             description=f"{module_name} (Version {__version__})",
-                            epilog=donate
+                            epilog=(f"\033[36mSnoop поддержка: \033[36;1m{flagBS}\033[0m \033[36mWebsites!!!\033[0m\n\n{donate} ")
                             )
     parser.add_argument("--donate Y", "-d Y",
                         action="store_true", dest="donation",
@@ -588,7 +591,10 @@ def main():
                     userlist.append(lineuserlist)
                 userlist=[line.rstrip() for line in userlist]
             except:
-                print("\033[36mНе могу прочитать! Пожалуйста, укажите текстовый файл.\033[0m")
+                print("\033[31;1mНе могу найти_прочитать!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
+                print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
+                print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
+                print("\033[36mИли удалите из словаря нечитаемые символы, в т.ч. и кириллицу.")
                 sys.exit(0)
         print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)
 
@@ -834,10 +840,7 @@ def main():
                 f"\033[36mОшибка: желаемый сайт не найден в базе Snoop: {', '.join(site_missing)}\n"
                 "Или вы пропустили знак '-' в опции '--csv' \033[0m")
             sys.exit(1)
-# Флаг БС
-    with open("data.json", "r", encoding="utf8") as flag:
-        BS = json.load(flag)
-        flagBS = len(BS)
+
 
 # Сортировка по странам
     if args.country:
