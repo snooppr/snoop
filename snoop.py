@@ -610,6 +610,8 @@ def main():
 
         if sortY == "2":
             if sys.platform == 'win32':
+                print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
+                print(Fore.GREEN + "++Белый список++")
                 with open("data.json", "r", encoding="utf8") as contry:
                     datajson = json.load(contry)
                     i = 0
@@ -625,7 +627,7 @@ def main():
                         patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
                         listallsortFlag.append(patch1)
                         goba = sorted(listallsortFlag)
-                    print("================\n")
+                    print(Fore.CYAN + "================\n")
                     print(Fore.CYAN + "Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
@@ -640,13 +642,14 @@ def main():
                     sys.exit(0)
 #Сортировка для ОС GNU   
             else:
-                print("========================\nOk, сортируем по алфавиту:\n")
+                print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
+                print(Fore.GREEN + "++Белый список++")                
                 listall = []
                 with open('sites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split(']')[0]).replace("[", " ")
                         listall.append(patch)
-#                    print(Fore.GREEN + "++Белый список++", *listall[1:], sep = "\n")
+
                     narezka=listall[1:]
                     for zzz in (narezka):
                         print(Fore.CYAN + str(zzz))
@@ -691,7 +694,7 @@ def main():
                         aaa = (datajson.get(con).get("country_klas"))
                         listwindows.append(f"{aaa}  {con}\n")
                     sort_spisok=sorted(listwindows)
-                    print("========================\nOk, сортируем по странам:\n")
+                    print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
                     print(Fore.GREEN + "++Белый список++")
                     for i, numerlist in enumerate(sort_spisok):
                         fd=(i + 1)
@@ -704,7 +707,7 @@ def main():
                         patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
                         listallsortFlag.append(patch1)
                         goba = sorted(listallsortFlag)
-                    print("================\n")
+                    print(Fore.CYAN + "================\n")
                     print(Fore.CYAN + "Wr =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🌎 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "RU =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇷🇺 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "US =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇺🇸 ')}", Fore.CYAN + "сайт(а/ов)!")
@@ -719,7 +722,7 @@ def main():
                     sys.exit(0)
 #Сортировка для ОС GNU
             else:
-                print("========================\nOk, сортируем по странам:\n")
+                print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
                 listall = []
                 with open('sites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
