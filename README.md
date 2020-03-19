@@ -45,6 +45,10 @@ $ pip3 install module
 Смотри ветку Termux
 https://github.com/snooppr/snoop/tree/termux
 
+## Работа Snoop на OS Windows
+snoop.exe
+https://github.com/snooppr/snoop/releases
+
 ## Использование
 
 ```bash

@@ -1740,6 +1740,7 @@
   },
   "Forum_juce": {
     "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
     "errоrTypе": "status_code",
     "url": "https://forum.juce.com/u/{}",
     "urlMain": "https://forum.juce.com",
@@ -1915,7 +1916,7 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forums.serebii": {
+  "Forums_serebii": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
     "errorMsg": "<title>Notable Members",
