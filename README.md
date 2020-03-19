@@ -11,7 +11,7 @@ Snoop Project разыскивает никнеймы в публичных да
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
 | Платформа             | Поддержка |
-|-----------------------|-----------|
+|-----------------------|:---------:|
 | GNU/Linux             |     ✅    |
 | Windows 7/10 (32/64)  |     ✅    |
 | Android/Termux/Andrax |     ✅    |
