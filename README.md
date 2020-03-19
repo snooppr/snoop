@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS                   |     🚫    |
 
 
-**В базе** [562 Websites](https://github.com/snooppr/snoop/blob/master/sites.md "database"), **база расширяется**
+**В базе** [577 Websites!!!](https://github.com/snooppr/snoop/blob/master/sites.md "database"), **база расширяется**
 
 ## Установка
 

@@ -32,7 +32,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.\033[34;1m1.5\033[31;1m_rus\033[0m
+                         _|    \033[0m \033[37mv1.\033[34;1m1.6\033[31;1m_rus\033[0m
 """)
 
 print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
@@ -42,7 +42,7 @@ print (Fore.CYAN + " python3 snoop.py -t 9 username" + Style.RESET_ALL, "#пои
 
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.1.5_rus Ветка Snoop Desktop"
+__version__ = "1.1.6_rus Ветка Snoop Desktop"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -727,7 +727,7 @@ def main():
                 with open('sites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split(']')[0]).replace("[", " ")
-                        patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
+                        patch1 = str(patch.split('.')[1:]).replace("[", "").replace("]", " ").replace("'", "")
                         listall.append(patch1)
                         sortlistall = sorted(listall)
                     print(Fore.GREEN + "++Белый список++")

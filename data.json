@@ -369,6 +369,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Askvoprosy": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title></title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://askvoprosy.com/polzovateli/{}",
+    "urlMain": "https://askvoprosy.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Astralinux": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -381,8 +392,8 @@
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Audiojungle": {
-    "country": "\ud83c\udde6\ud83c\uddfa",
-    "country_klas": "AU",
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
     "errоrTypе": "status_code",
     "url": "https://audiojungle.net/user/{}",
     "urlMain": "https://audiojungle.net/",
@@ -710,6 +721,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Cfd-online": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "noindex,follow",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.cfd-online.com/Forums/members/{}.html",
+    "urlMain": "https://www.cfd-online.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Championat": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -785,6 +807,15 @@
     "url": "https://www.codecademy.com/profiles/{}",
     "urlMain": "https://www.codecademy.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Codecanyon": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://codecanyon.net/user/{}",
+    "urlMain": "https://codecanyon.net",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Codechef": {
@@ -1051,6 +1082,17 @@
     "url": "https://devrant.com/users/{}",
     "urlMain": "https://devrant.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Dev_swift": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "404 Not Found",
+    "errorMsg2": "Login</title",
+    "errоrTypе": "message",
+    "url": "https://dev.swift-project.org/p/{}",
+    "urlMain": "https://dev.swift-project.org/",
+    "username_claimed": "rdiehl",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "DeviantART": {
@@ -1612,7 +1654,7 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
-  "Forum.allgaz": {
+  "Forum_allgaz": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
@@ -1623,7 +1665,7 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forum.caravelgames": {
+  "Forum_caravelgames": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
     "errorMsg": "Guest",
@@ -1634,7 +1676,7 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forum.devushka": {
+  "Forum_devushka": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
@@ -1643,192 +1685,6 @@
     "url": "http://forum.devushka.ru/memberlist.php?username={}",
     "urlMain": "http://forum.devushka.ru/",
     "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.hiveos": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
-    "country_klas": "US",
-    "errоrTypе": "status_code",
-    "url": "https://forum.hiveos.farm/u/{}/summary",
-    "urlMain": "https://forum.hiveos.farm",
-    "username_claimed": "halogenius",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.hr": {
-    "country": "\ud83c\udded\ud83c\uddf7",
-    "country_klas": "HR",
-    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "http://www.forum.hr/member.php?username={}",
-    "urlMain": "http://www.forum.hr",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.itvdn": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errоrTypе": "status_code",
-    "url": "https://forum.itvdn.com/u/{}",
-    "urlMain": "https://forum.itvdn.com",
-    "username_claimed": "pizzaro",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.ixbt": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.ixbt.com/users.cgi?id=info:{}",
-    "urlMain": "https://forum.ixbt.com",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.juce": {
-    "country": "\ud83c\udfc1",
-    "errоrTypе": "status_code",
-    "url": "https://forum.juce.com/u/{}",
-    "urlMain": "https://forum.juce.com",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.md": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "404 - Not Found",
-    "errorMsg2": "404: Not Found",
-    "errоrTypе": "message",
-    "url": "https://forum.md/ru/users/{}",
-    "urlMain": "https://forum.md/ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.mirf": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.mirf.ru/member.php?username={}",
-    "urlMain": "https://forum.mirf.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.modnaya": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.modnaya.org/members/{}.html",
-    "urlMain": "https://forum.modnaya.org/",
-    "username_claimed": "werta",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.popjustice": {
-    "country": "\ud83c\udf0e",
-    "country_klas": "Wr",
-    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.popjustice.com/members/?username={}",
-    "urlMain": "https://forum.popjustice.com",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.ruboard": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.ruboard.ru/member.php/?username={}",
-    "urlMain": "https://forum.ruboard.ru",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.scuba": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "http://forum.scuba-divers.ru/memberlist.php?username={}",
-    "urlMain": "http://forum.scuba-divers.ru/",
-    "username_claimed": "bubonic",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.sibmama": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.sibmama.ru/profile.php?mode=viewprofile&u={}",
-    "urlMain": "https://forum.sibmama.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.sublimetext": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
-    "country_klas": "US",
-    "errоrTypе": "status_code",
-    "url": "https://forum.sublimetext.com/u/{}",
-    "urlMain": "https://forum.sublimetext.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis"
-  },
-  "Forum.swiftbook": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errоrTypе": "status_code",
-    "url": "https://forum.swiftbook.ru/u/{}/summary",
-    "urlMain": "https://forum.swiftbook.ru",
-    "username_claimed": "green",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.tks": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.tks.ru/member.php?username={}",
-    "urlMain": "https://forum.tks.ru/",
-    "username_claimed": "red",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.wotanks": {
-    "country": "\ud83c\udde7\ud83c\uddfe",
-    "country_klas": "BY",
-    "errorMsg": "None",
-    "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errоrTypе": "message",
-    "url": "https://forum.wotanks.com/member.php/?username={}",
-    "urlMain": "https://forum.wotanks.com",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.xda": {
-    "country": "\ud83c\udf0e",
-    "country_klas": "Wr",
-    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://forum.xda-developers.com/member.php?username={}",
-    "urlMain": "https://forum.xda-developers.com",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Forum.ykt": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorUrl": "https://forum.ykt.ru/{}",
-    "errоrTypе": "response_url",
-    "url": "https://forum.ykt.ru/viewprofile.jsp?forum_id=11&user={}",
-    "urlMain": "https://forum.ykt.ru",
-    "username_claimed": "NINJA",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum_guns": {
@@ -1840,6 +1696,201 @@
     "url": "https://forum.guns.ru/forummisc/blog/{}",
     "urlMain": "https://forum.guns.ru/",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_hiveos": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://forum.hiveos.farm/u/{}/summary",
+    "urlMain": "https://forum.hiveos.farm",
+    "username_claimed": "halogenius",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_hr": {
+    "country": "\ud83c\udded\ud83c\uddf7",
+    "country_klas": "HR",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://www.forum.hr/member.php?username={}",
+    "urlMain": "http://www.forum.hr",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_itvdn": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://forum.itvdn.com/u/{}",
+    "urlMain": "https://forum.itvdn.com",
+    "username_claimed": "pizzaro",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_ixbt": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.ixbt.com/users.cgi?id=info:{}",
+    "urlMain": "https://forum.ixbt.com",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_juce": {
+    "country": "\ud83c\udfc1",
+    "errоrTypе": "status_code",
+    "url": "https://forum.juce.com/u/{}",
+    "urlMain": "https://forum.juce.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_md": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "404 - Not Found",
+    "errorMsg2": "404: Not Found",
+    "errоrTypе": "message",
+    "url": "https://forum.md/ru/users/{}",
+    "urlMain": "https://forum.md/ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_mirf": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.mirf.ru/member.php?username={}",
+    "urlMain": "https://forum.mirf.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_modnaya": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.modnaya.org/members/{}.html",
+    "urlMain": "https://forum.modnaya.org/",
+    "username_claimed": "werta",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_muffingroup": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://forum.muffingroup.com/betheme/profile/{}",
+    "urlMain": "https://forum.muffingroup.com",
+    "username_claimed": "charlie27",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_popjustice": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.popjustice.com/members/?username={}",
+    "urlMain": "https://forum.popjustice.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_ruboard": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.ruboard.ru/member.php/?username={}",
+    "urlMain": "https://forum.ruboard.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_scuba": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://forum.scuba-divers.ru/memberlist.php?username={}",
+    "urlMain": "http://forum.scuba-divers.ru/",
+    "username_claimed": "bubonic",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_sibmama": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.sibmama.ru/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://forum.sibmama.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_sublimetext": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://forum.sublimetext.com/u/{}",
+    "urlMain": "https://forum.sublimetext.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Forum_swiftbook": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://forum.swiftbook.ru/u/{}/summary",
+    "urlMain": "https://forum.swiftbook.ru",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_tks": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.tks.ru/member.php?username={}",
+    "urlMain": "https://forum.tks.ru/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_wotanks": {
+    "country": "\ud83c\udde7\ud83c\uddfe",
+    "country_klas": "BY",
+    "errorMsg": "None",
+    "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errоrTypе": "message",
+    "url": "https://forum.wotanks.com/member.php/?username={}",
+    "urlMain": "https://forum.wotanks.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_xda": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.xda-developers.com/member.php?username={}",
+    "urlMain": "https://forum.xda-developers.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_ykt": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://forum.ykt.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "https://forum.ykt.ru/viewprofile.jsp?forum_id=11&user={}",
+    "urlMain": "https://forum.ykt.ru",
+    "username_claimed": "NINJA",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forumhouse": {
@@ -1864,7 +1915,18 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forums.alliedmods": {
+  "Forums.serebii": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<title>Notable Members",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forums.serebii.net/members/?username={}",
+    "urlMain": "https://forums.serebii.net",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums_alliedmods": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
     "errorMsg": "This user has not registered and therefore does not have a profile to view",
@@ -1875,7 +1937,7 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forums.drom": {
+  "Forums_drom": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
@@ -1886,7 +1948,7 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forums.envato": {
+  "Forums_envato": {
     "country": "\ud83c\udde6\ud83c\uddfa",
     "country_klas": "AU",
     "errоrTypе": "status_code",
@@ -1895,7 +1957,7 @@
     "username_claimed": "zigro",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forums.opera": {
+  "Forums_opera": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
     "errоrTypе": "status_code",
@@ -1904,7 +1966,7 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forums.sourceruns": {
+  "Forums_sourceruns": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
     "errоrTypе": "status_code",
@@ -1913,7 +1975,7 @@
     "username_claimed": "cubedude",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Forums.tomshardware": {
+  "Forums_tomshardware": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
     "errorMsg": "Notable members",
@@ -1966,6 +2028,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Fredmiranda": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "<b>View Profile for",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.fredmiranda.com/forum/viewprofile.php?Action=viewprofile&username={}",
+    "urlMain": "view-source:https://www.fredmiranda.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Freecodecamp": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -1981,6 +2054,15 @@
     "errоrTypе": "status_code",
     "url": "https://freelance.habr.com/freelancers/{}",
     "urlMain": "https://freelance.habr.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Freelancer": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.freelancer.com/u/{}",
+    "urlMain": "https://www.freelancer.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -2236,6 +2318,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Gramho": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://gramho.com/explore-hashtag/{}",
+    "urlMain": "https://gramho.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Gravatar": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -2341,6 +2432,15 @@
     "url": "https://www.hackster.io/{}",
     "urlMain": "https://www.hackster.io",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Hoobly": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.hoobly.com/u/{}",
+    "urlMain": "https://www.hoobly.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Hotcopper": {
@@ -2904,6 +3004,16 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Liebe69": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errorUrl": "https://www.liebe69.de/home.php",
+    "errоrTypе": "response_url",
+    "url": "https://www.liebe69.de/profile-preview.php?username={}",
+    "urlMain": "https://www.liebe69.de",
+    "username_claimed": "klaus",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Life-dom2": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3245,6 +3355,17 @@
     "url": "https://moikrug.ru/{}",
     "urlMain": "https://moikrug.ru/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Monkingme": {
+    "country": "\ud83c\uddea\ud83c\uddf8",
+    "country_klas": "ES",
+    "errorMsg": "<h1>Not Found</h1>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.monkingme.com/artist/{}",
+    "urlMain": "https://www.monkingme.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Moscow.flamp": {
@@ -3779,6 +3900,17 @@
     "url": "https://www.patreon.com/{}",
     "urlMain": "https://www.patreon.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Pbase": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "Unknown Artist</title>",
+    "errorMsg2": "Forbidden</title>",
+    "errоrTypе": "message",
+    "url": "https://pbase.com/{}/profile",
+    "urlMain": "https://pbase.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Pbnation": {
@@ -4406,6 +4538,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Rrforums": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
+    "errorMsg": "Profile Does Not Exist",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://au.rrforums.net/cgi-bin/forum/board-profile.pl?action=view_profile&profile={}-users",
+    "urlMain": "http://au.rrforums.net/",
+    "username_claimed": "guyslp",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Ruby-forum": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -5021,6 +5164,15 @@
     "errоrTypе": "status_code",
     "url": "https://i.thechive.com/{}",
     "urlMain": "https://i.thechive.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Themeforest": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://themeforest.net/user/{}",
+    "urlMain": "https://themeforest.net",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },

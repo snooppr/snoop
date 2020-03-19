@@ -1,4 +1,20 @@
 ##Snoop Project 
+v1.1.6_rus
+
+* Добавлены в БС новые ресурсы:
+B4x;
+Cfd-online;
+Codecanyon;
+Forum_muffingroup;
+Forums.serebii;
+Fredmiranda;
+Gramho;
+Hoobly;
+Liebe69;
+Pbase;
+Rrforums;
+Themeforest.
+===================================================================================
 v1.1.5_rus
 * Обновлён информативный вывод с учётом Internet Censorship.
 
