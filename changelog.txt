@@ -1,19 +1,44 @@
 ##Snoop Project 
 v1.1.6_rus
+(В БД  600 сайтов!!!).
 
 * Добавлены в БС новые ресурсы:
 B4x;
+BleachFandom;
+Blog_7ya;
 Cfd-online;
+Chevrolet-cruze-club;
 Codecanyon;
+Devtribe;
+Forum_artinvestment;
+Forum_flin;
 Forum_muffingroup;
-Forums.serebii;
+ForumOszone;
+Forum_reverse4you;
+Forums_goha;
+Forums_serebii;
+Forums_universaldashboard;
 Fredmiranda;
+Furry-fandom;
 Gramho;
+Hdseason;
 Hoobly;
+Illustrators;
+Infosecinstitute;
+Ispdn;
 Liebe69;
+Lovemakeup;
 Pbase;
+Pgpru;
+Picuki;
+Planetaexcel;
 Rrforums;
-Themeforest.
+SakhalinNname;
+Smart_lab;
+Themeforest;
+Uchportal;
+Uvelir;
+Ya-uchitel.
 ===================================================================================
 v1.1.5_rus
 * Обновлён информативный вывод с учётом Internet Censorship.
