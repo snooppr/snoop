@@ -3,12 +3,14 @@ v1.1.6_rus
 (В БД  > 600 сайтов!!!).
 
 * Добавлены в БС новые ресурсы:
+Aqa;
 B4x;
 BleachFandom;
 Blog_7ya;
 Cfd-online;
 Cheezburger;
 Chevrolet-cruze-club;
+Club_cnews;
 Codecanyon;
 Destructoid;
 Devtribe;
@@ -38,6 +40,7 @@ Lovemakeup;
 Mix;
 Mixlr;
 Muckrack;
+Mywed;
 Mybuilder;
 Mylot;
 Netvibes;
