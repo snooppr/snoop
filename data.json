@@ -587,7 +587,7 @@
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>403 Forbidden",
     "errоrTypе": "message",
     "rank": 0,
     "url": "https://www.blackhatprotools.info/member.php?username={}",
