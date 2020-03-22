@@ -181,3 +181,26 @@ Canva
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },  
+
+##CС.11/03/2019 (Долгий ответ от сайта ~7c)  
+  "Tf2items": {
+    "country": "🏁",
+    "country_klas": "Kb",    
+    "errоrTypе": "response_url",
+    "errorUrl": "https://www.udemy.com",
+    "url": "http://www.tf2items.com/id/{}/",
+    "urlMain": "http://www.tf2items.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },  
+  
+##CС.11/03/2019 (вешает намертво)    
+  "Cardomain": {
+    "country": "🏁",
+    "country_klas": "Kb",    
+    "errоrTypе": "status_code",
+    "url": "http://www.cardomain.com/member/{}/",
+    "urlMain": "http://www.cardomain.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },  
