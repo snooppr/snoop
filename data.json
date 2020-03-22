@@ -734,15 +734,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "CashMe": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
-    "country_klas": "US",
-    "errоrTypе": "status_code",
-    "url": "https://cash.me/${}",
-    "urlMain": "https://cash.me/",
-    "username_claimed": "Jenny",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Ccmixter": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
