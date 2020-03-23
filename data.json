@@ -1043,6 +1043,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Cracked_to": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://cracked.to/{}",
+    "urlMain": "https://cracked.to/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "CreativeMarket": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -1452,6 +1461,15 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Edocr": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://www.edocr.com/user/{}/",
+    "urlMain": "https://www.edocr.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Eintracht": {
     "country": "\ud83c\udde9\ud83c\uddea",
     "country_klas": "DE",
@@ -1541,6 +1559,16 @@
     "url": "https://www.etsy.com/people/{}",
     "urlMain": "https://www.etsy.com",
     "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "EuroFootball": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://www.euro-football.ru",
+    "errоrTypе": "response_url",
+    "url": "https://www.euro-football.ru/user/{}",
+    "urlMain": "https://www.euro-football.ru",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Eva": {
@@ -1766,17 +1794,6 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Football": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://www.rusfootball.info/user/{}",
-    "urlMain": "https://www.rusfootball.info/",
-    "username_claimed": "vvn21",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Forexdengi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -1841,6 +1858,15 @@
     "url": "http://forum.devushka.ru/memberlist.php?username={}",
     "urlMain": "http://forum.devushka.ru/",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_djangoproject": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://forum.djangoproject.com/u/{}/summary",
+    "urlMain": "https://forum.djangoproject.co",
+    "username_claimed": "mikhail349",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum_flin": {
@@ -1963,6 +1989,15 @@
     "url": "https://forum.muffingroup.com/betheme/profile/{}",
     "urlMain": "https://forum.muffingroup.com",
     "username_claimed": "charlie27",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_openframeworks": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://forum.openframeworks.cc/u/{}/summary",
+    "urlMain": "https://forum.openframeworks.cc",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum_popjustice": {
@@ -3097,6 +3132,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Jetpunk": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "404 File Not Found",
+    "errorMsg2": "title>404 File Not Found",
+    "errоrTypе": "message",
+    "url": "https://www.jetpunk.com/users/{}",
+    "urlMain": "https://www.jetpunk.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Jeuxvideo": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
     "country_klas": "FR",
@@ -4110,6 +4156,15 @@
     "username_claimed": "ok",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Omoimot": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://omoimot.ru/users/{}",
+    "urlMain": "https://omoimot.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Op_gg": {
     "country": "\ud83c\uddf0\ud83c\uddf7",
     "country_klas": "KR",
@@ -4573,6 +4628,27 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Play_md": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorUrl": "https://play.md",
+    "errоrTypе": "response_url",
+    "url": "https://play.md/profile/{}",
+    "urlMain": "https://play.md",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Playstationtrophies": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "title>Access denied | www.playstationtrophies.org used Cloudflare to restrict access</title",
+    "errоrTypе": "message",
+    "url": "https://www.playstationtrophies.org/forum/members/{}.html",
+    "urlMain": "https://www.playstationtrophies.org",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "PlugDJ": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -4659,6 +4735,16 @@
     "errоrTypе": "message",
     "url": "https://prankru.net/member.php?username={}",
     "urlMain": "https://prankru.net/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Pregame": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorUrl": "https://pregame.com/{}",
+    "errоrTypе": "response_url",
+    "url": "https://pregame.com/members/{}",
+    "urlMain": "https://pregame.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -5101,6 +5187,17 @@
     "url": "https://forums.runnersworld.co.uk/profile/{}",
     "urlMain": "https://forums.runnersworld.co.uk/",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "RusFootball": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.rusfootball.info/user/{}",
+    "urlMain": "https://www.rusfootball.info/",
+    "username_claimed": "vvn21",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Rusarmy": {
@@ -5970,6 +6067,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Trueachievements": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.trueachievements.com/gamer/{}",
+    "urlMain": "https://www.trueachievements.com",
+    "username_claimed": "metallicafan459",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Twitch": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -6400,6 +6506,24 @@
     "url": "https://profiles.wordpress.org/{}/",
     "urlMain": "https://wordpress.org/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Wot-game": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://wot-game.com/user/{}/",
+    "urlMain": "https://wot-game.com",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Wowhead": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.wowhead.com/user={}",
+    "urlMain": "https://www.wowhead.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "X-xack": {
