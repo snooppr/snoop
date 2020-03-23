@@ -1,9 +1,12 @@
 ##Snoop Project 
 v1.1.6_rus
-(В БД  > 600 сайтов!!!).
+(В БД  > 650 сайтов!!!).
 
 * Добавлены в БС новые ресурсы:
+4cheat;
+Androidforums;
 Aqa;
+Archlinux;
 B4x;
 BleachFandom;
 Blog_7ya;
@@ -14,18 +17,24 @@ Club_cnews;
 Codecanyon;
 Destructoid;
 Devtribe;
+Droidforums;
 Eporner;
 EtsyUser;
 Forum_artinvestment;
 Forum_flin;
+Forum_linuxfoundation;
 Forum_muffingroup;
 ForumOszone;
 Forum_reverse4you;
+Forums_gentoo;
 Forums_goha;
 Forums_serebii;
 Forums_universaldashboard;
+Forum_ubuntu;
+Forum_vingrad;
 Fredmiranda;
 Freesound;
+Fullhub;
 Furiffic;
 Furry-fandom;
 Geekgrade;
@@ -34,16 +43,23 @@ Hdseason;
 Hoobly;
 Illustrators;
 Infosecinstitute;
+Iphoneforums;
 Ispdn;
 Liebe69;
+Linuxfr;
+Linuxmint;
+Linuxmint_info;
+Linux_org;
 Lovemakeup;
+Miningclub;
 Mix;
 Mixlr;
 Muckrack;
-Mywed;
 Mybuilder;
 Mylot;
+Mywed;
 Netvibes;
+Nixp;
 Pbase;
 Pgpru;
 Picuki;
@@ -52,11 +68,13 @@ Redtube;
 Rrforums;
 SakhalinNname;
 Seoclerks;
+Serveradmin;
 Slides;
 Smart_lab;
 Smashrun;
 Smugmug;
 Speakerdeck;
+Spiceworks;
 S_T_Microsoft;
 Storycorps;
 Themeforest;
