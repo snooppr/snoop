@@ -45,8 +45,8 @@ $ pip3 install module
 Смотри ветку Termux
 https://github.com/snooppr/snoop/tree/termux
 
-## Работа Snoop на OS Windows
-snoop.exe
+## Работа Snoop на OS Windows and GNU/Linux
+snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
 
 ## Использование
