@@ -206,7 +206,7 @@ Canva
   },  
   
   
-##CС.11/03/2019 (разнообразный поиск от зависимости ip)
+##CС.22/03/2019 (разнообразный поиск от зависимости ip)
   "CashMe": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -216,3 +216,16 @@ Canva
     "username_claimed": "Jenny",
     "username_unclaimed": "noonewouldeverusethis7"
   },  
+  
+##CС.24/03/2019 (ушел под защиту CF)  
+    "Elakiri": {
+    "country": "\ud83c\uddf1\ud83c\uddf0",
+    "country_klas": "LK",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>ElaKiri Community</title>",
+    "errоrTypе": "message",
+    "url": "http://www.elakiri.com/forum/member.php?username={}",
+    "urlMain": "http://www.elakiri.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
