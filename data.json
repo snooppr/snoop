@@ -1323,7 +1323,7 @@
   },
   "Dou": {
     "country": "\ud83c\uddfa\ud83c\udde6",
-    "country_klas": "UK",
+    "country_klas": "UA",
     "errоrTypе": "status_code",
     "url": "https://dou.ua/users/{}",
     "urlMain": "https://dou.ua/",
@@ -2138,7 +2138,7 @@
   },
   "Forumodua": {
     "country": "\ud83c\uddfa\ud83c\udde6",
-    "country_klas": "UK",
+    "country_klas": "UA",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -3221,7 +3221,7 @@
   },
   "Kharkovforum": {
     "country": "\ud83c\uddfa\ud83c\udde6",
-    "country_klas": "UK",
+    "country_klas": "UA",
     "errоrTypе": "status_code",
     "url": "https://www.kharkovforum.com/member.php?username={}",
     "urlMain": "https://www.kharkovforum.com/",
@@ -5067,7 +5067,7 @@
   },
   "Reibert": {
     "country": "\ud83c\uddfa\ud83c\udde6",
-    "country_klas": "UK",
+    "country_klas": "UA",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
     "errorMsg2": "None",
     "errоrTypе": "message",
@@ -5679,11 +5679,11 @@
   "SportsTracker": {
     "country": "\ud83c\udf0e",
     "errorMsg": "\"code\":\"404\"",
-    "errorMsg2": "None",
+    "errorMsg2": "Not found",
     "errоrTypе": "message",
     "url": "https://www.sports-tracker.com/view_profile/{}",
     "urlMain": "https://www.sports-tracker.com/",
-    "urlProbe": "https://www.sports-tracker.com/apiserver/v1/user/name/{}",
+    "urlProbe": "https://api.sports-tracker.com/apiserver/v1/user/name/{}",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeveruse"
   },
@@ -5696,7 +5696,7 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Steam": {
+  "Steamcommunity": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
     "errorMsg": "The specified profile could not be found",

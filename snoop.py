@@ -818,6 +818,8 @@ def main():
             raw = open(data_file_path, "r", encoding="utf-8")
             try:
                 site_data_all = json.load(raw)
+                print(Fore.CYAN + f"Загрузка альтернативной базы JSON: " + 
+                Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + Style.RESET_ALL + Fore.CYAN + " Websites")
             except:
                 print("\033[36mInvalid загружаемый JSON file.\033[0m")
 
