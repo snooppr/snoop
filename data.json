@@ -358,6 +358,15 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Ariva": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errоrTypе": "status_code",
+    "url": "https://www.ariva.de/profil/{}",
+    "urlMain": "https://www.ariva.de/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Armchairgm": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -391,6 +400,17 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Arsenal-mania": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "country_klas": "GB",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://arsenal-mania.com/forum/members/?username={}",
+    "urlMain": "https://arsenal-mania.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Asciinema": {
     "country": "\ud83c\uddf5\ud83c\uddf1",
     "country_klas": "PL",
@@ -419,6 +439,17 @@
     "errоrTypе": "message",
     "url": "https://askvoprosy.com/polzovateli/{}",
     "urlMain": "https://askvoprosy.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Astraclub": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://astraclub.ru/members/?username={}",
+    "urlMain": "http://astraclub.ru",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -582,6 +613,17 @@
     "errоrTypе": "status_code",
     "url": "https://www.bibsonomy.org/user/{}",
     "urlMain": "https://www.bibsonomy.org",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Bigsoccer": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.bigsoccer.com/members/?username={}",
+    "urlMain": "https://www.bigsoccer.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -1246,6 +1288,15 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Dinsk": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://dinsk.su/user/{}",
+    "urlMain": "https://dinsk.su",
+    "username_claimed": "dinsk",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Discogs": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -1475,8 +1526,8 @@
     "country_klas": "DE",
     "errоrTypе": "status_code",
     "url": "https://community.eintracht.de/fans/{}",
-    "urlMain": "https://eintracht.de",
-    "username_claimed": "blue",
+    "urlMain": "https://community.eintracht.de",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Eksisozluk": {
@@ -1640,6 +1691,37 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Fcdin": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://fcdin.com/forum/memberlist.php?username={}",
+    "urlMain": "http://fcdin.com",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Fclmnews": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://fclmnews.ru/user/{}",
+    "urlMain": "https://fclmnews.ru",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Fcrubin": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.fcrubin.ru/forum/member.php?username={}",
+    "urlMain": "https://www.fcrubin.ru",
+    "username_claimed": "flet",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Fedoraproject": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -1774,6 +1856,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Flyertalk": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.flyertalk.com/forum/members/{}.html",
+    "urlMain": "https://www.flyertalk.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Folloart": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -1856,6 +1949,17 @@
     "url": "https://forum.djangoproject.com/u/{}/summary",
     "urlMain": "https://forum.djangoproject.co",
     "username_claimed": "mikhail349",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_fanat1k": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "Kb",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.fanat1k.ru/member.php?username={}",
+    "urlMain": "https://forum.fanat1k.ru",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum_flin": {
@@ -2158,6 +2262,17 @@
     "username_claimed": "green",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forums-bluemoon-mcfc": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forums.bluemoon-mcfc.co.uk/members/?username={}",
+    "urlMain": "https://forums.bluemoon-mcfc.co.uk",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forums_alliedmods": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -2211,6 +2326,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forums_liverpoolfc": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forums.liverpoolfc.com/members/?username={}",
+    "urlMain": "https://forums.liverpoolfc.com",
+    "username_claimed": "jannno",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forums_opera": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -2218,6 +2344,17 @@
     "url": "https://forums.opera.com/user/{}",
     "urlMain": "https://forums.opera.com/",
     "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums_overclockers": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forums.overclockers.ru/memberlist.php?username={}",
+    "urlMain": "https://forums.overclockers.ru",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forums_serebii": {
@@ -2780,6 +2917,15 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Hctorpedo": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "http://hctorpedo.ru/user/{}",
+    "urlMain": "http://hctorpedo.ru",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Hdseason": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3160,6 +3306,17 @@
     "errоrTypе": "status_code",
     "url": "https://www.jigidi.com/user/{}",
     "urlMain": "https://www.jigidi.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Juventuz": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.juventuz.com/members/?username={}",
+    "urlMain": "https://www.juventuz.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -3635,6 +3792,15 @@
     "url": "https://mamuli.club/profile/{}",
     "urlMain": "https://mamuli.club/",
     "username_claimed": "Milypa",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Manutd": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://manutd.one/user/{}",
+    "urlMain": "https://manutd.one",
+    "username_claimed": "Becks",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mastodon": {
@@ -4924,6 +5090,16 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Radiomed": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://radiomed.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "https://radiomed.ru/users/{}",
+    "urlMain": "https://radiomed.ru",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Radioskot": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -5024,6 +5200,17 @@
     "urlMain": "https://www.redbubble.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis77777"
+  },
+  "Redcafe": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.redcafe.net/members/?username={}",
+    "urlMain": "https://www.redcafe.net",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Reddit": {
     "country": "\ud83c\udf0e",
@@ -5696,17 +5883,6 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Steamcommunity": {
-    "country": "\ud83c\udf0e",
-    "country_klas": "Wr",
-    "errorMsg": "The specified profile could not be found",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://steamcommunity.com/id/{}",
-    "urlMain": "https://steamcommunity.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "SteamGroup": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -5714,6 +5890,17 @@
     "errorMsg2": "None",
     "errоrTypе": "message",
     "url": "https://steamcommunity.com/groups/{}",
+    "urlMain": "https://steamcommunity.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Steamcommunity": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "The specified profile could not be found",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://steamcommunity.com/id/{}",
     "urlMain": "https://steamcommunity.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
@@ -5894,6 +6081,17 @@
     "errоrTypе": "status_code",
     "url": "https://i.thechive.com/{}",
     "urlMain": "https://i.thechive.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Thelion": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "We are sorry but the following error has occurred.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://www.thelion.com/bin/profile.cgi?c=s&ru_name={}",
+    "urlMain": "http://www.thelion.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -6645,6 +6843,17 @@
     "url": "https://www.yummly.com/profile/{}",
     "urlMain": "https://www.yummly.com",
     "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Zenitbol": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://zenitbol.ru/index/8-0-{}",
+    "urlMain": "http://zenitbol.ru/",
+    "username_claimed": "vera",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Zhihu": {
