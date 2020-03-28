@@ -35,11 +35,18 @@ _____/ _|  _|\___/ \___/  .__/
                          _|    \033[0m \033[37mv1.\033[34;1m1.7\033[31;1m_rus\033[0m
 """)
 
-print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
-print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
-print (Fore.CYAN + " python3 snoop.py -h" + Style.RESET_ALL, "#справка по функциям ПО")
-print (Fore.CYAN + " python3 snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a")
-print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
+if sys.platform == 'win32':
+	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
+	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)	
+	print (Fore.CYAN + " python snoop.py -h" + Style.RESET_ALL, "#справка 'как начать'")
+	print (Fore.CYAN + " python snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + "============================================\n" + Style.RESET_ALL)
+else:
+	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
+	print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
+	print (Fore.CYAN + " python3 snoop.py -h" + Style.RESET_ALL, "#справка по функциям ПО")
+	print (Fore.CYAN + " python3 snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
 __version__ = "1.1.7_rus Ветка Snoop Desktop"
@@ -558,7 +565,8 @@ def main():
                         )
     parser.add_argument("--userload", "-u", metavar='',
                         action="store", dest="user", default=False,
-                        help="Указать файл со списком user-ов. Пример, 'python3 snoop.py -u ~/file.txt start'"
+                        help="Указать файл со списком user-ов. Пример_Linux: 'python3 snoop.py -u ~/list.txt start'\n"
+                             "Пример для Windows: 'python snoop.py -u c:\snoop\list.txt start'"
                         )                        
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
@@ -825,22 +833,6 @@ def main():
     response_json_online = None
     site_data_all = None
 
-# Попробовать загрузить JSON с веб-сайта.
-    try:
-        response_json_online = requests.get(url=args.json_file)
-    except requests.exceptions.MissingSchema:  # В случае если Shema неверная (не может быть на сайте).
-        pass
-
-# Проверка на соответствие ответа.
-    if response_json_online is not None and response_json_online.status_code == 200:
-# Поскольку мы получили данные с веб-сайта, попробовать загрузить json и выйти, если синтаксический анализ завершился ошибкой.
-        try:
-            site_data_all = response_json_online.json()
-        except ValueError:
-            print("\033[36mInvalid JSON/website!\033[0m")
-            sys.exit(1)
-            pass
-
     data_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), args.json_file)
     altjson = ("{}".format(args.json_file))
 # Этого не будет, если в запросе отсутствовала Shema.
@@ -976,11 +968,11 @@ def main():
     #+CSV вывод на печать информации
             if args.csv == True:
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
-                "results/*/" + str(username) + "*")
+                "results/*/" + str(username) + ".*")
                 print(Fore.CYAN + "├──Расширенный анализ сохранён в: " + Style.RESET_ALL + "results/csv/" + str(username) + ".csv")
             else:        
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
-                "results/*/" + str(username) + "*]")
+                "results/*/" + str(username) + ".*")
             file.close()
 
     # Запись в csv.
@@ -1127,11 +1119,11 @@ def main():
     #+CSV вывод на печать информации
             if args.csv == True:
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
-                "results/*/" + str(username) + "[*]")
+                "results/*/" + str(username) + ".*")
                 print(Fore.CYAN + "├──Расширенный анализ сохранён в: " + Style.RESET_ALL + "results/csv/" + str(username) + ".csv")
             else:
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
-                "results/*/" + str(username) + "[*]")
+                "results/*/" + str(username) + ".*")
             file.close()
 
     # Запись в csv.
