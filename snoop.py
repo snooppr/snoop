@@ -32,17 +32,17 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.\033[34;1m1.6\033[31;1m_rus\033[0m
+                         _|    \033[0m \033[37mv1.\033[34;1m1.7\033[31;1m_rus\033[0m
 """)
 
 print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
 print (Fore.CYAN + " python3 snoop.py -h" + Style.RESET_ALL, "#справка по функциям ПО")
-print (Fore.CYAN + " python3 snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a\n")
-
+print (Fore.CYAN + " python3 snoop.py -t 9 username" + Style.RESET_ALL, "#поиск user-a")
+print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.1.6_rus Ветка Snoop Desktop"
+__version__ = "1.1.7_rus Ветка Snoop Desktop"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -435,9 +435,10 @@ def timeout_check(value):
     Примечание:  Возникает исключение в случае, если время ожидания...
     """
     from argparse import ArgumentTypeError
-
+    
     try:
-        timeout = float(value)
+        global timeout
+        timeout = int(value)
     except:
         raise ArgumentTypeError(f"\033[36mTimeout '{value}' Err, укажите время в 'секундах'. \033[0m")
     if timeout <= 0:
@@ -574,29 +575,43 @@ def main():
 
     args = parser.parse_args()
 
+    if args.csv:
+        print(Fore.CYAN + "[+] активирована опция '--csv': «будет создан дополнительный подробный отчёт»")
+
+    if args.no_func:
+        print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер»")
+
+    if args.timeout:
+        print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта <= {timeout}sec.»")
+
+    if args.verbose:
+        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
+
+# Сортировка по странам
+    if args.country:
+        patchjson = ("{}".format(args.json_file))
+        raw = open(patchjson, "r", encoding="utf-8")
+        jsonjson = json.load(raw)        
+        print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
+        site_country = dict(jsonjson)
+        country_sites = sorted(jsonjson, key=lambda k: ("country" not in k, jsonjson[k].get("country", sys.maxsize)))
+        s = {}
+        for site in country_sites:
+            s[site] = site_country.get(site)
+
+# Информативный вывод -f
+    if args.print_found_only:
+        print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
+
+    if args.site_list:
+        print(Fore.CYAN + "[+] активирована опция '-s': «будет произведён поиск user-a на 1-м выбранном website»\n"
+        "    допустимо использовать опцию '-s' несколько раз\n"
+        "    опция '-s' несовместима с опцией '-с'")        
 
 # Опция сортировки
     if args.sort:
         sortirovka.sorts()
         sys.exit(0)
-
-# Опция указания списка разыскиваемых пользователей
-    if args.user:
-        userlist = []
-        patchuserlist = ("{}".format(args.user))        
-        with open(patchuserlist, "r", encoding="utf8") as u1:
-            try:
-                for lineuserlist in u1.readlines():
-                    lineuserlist.strip()
-                    userlist.append(lineuserlist)
-                userlist=[line.rstrip() for line in userlist]
-            except:
-                print("\033[31;1mНе могу найти_прочитать!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
-                print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
-                print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
-                print("\033[36mИли удалите из словаря нечитаемые символы, в т.ч. и кириллицу.")
-                sys.exit(0)
-        print(Fore.CYAN + "Будем искать:" + f" {userlist[:3]}" + " и других...\n" + Style.RESET_ALL)
 
 # Опция list all
 # Сортируем по алфавиту (2!)
@@ -776,6 +791,28 @@ def main():
         print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit(0)
 
+
+
+# Опция указания списка разыскиваемых пользователей
+    if args.user:
+        userlist = []
+        patchuserlist = ("{}".format(args.user))
+        userfile=patchuserlist.split('/')[-1]
+        with open(patchuserlist, "r", encoding="utf8") as u1:
+            try:
+                for lineuserlist in u1.readlines():
+                    lineuserlist.strip()
+                    userlist.append(lineuserlist)
+                userlist=[line.rstrip() for line in userlist]
+            except:
+                print("\033[31;1mНе могу найти_прочитать!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
+                print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
+                print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
+                print("\033[36mИли удалите из словаря нечитаемые символы, в т.ч. и кириллицу.")
+                sys.exit(0)
+        print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
+        print(Fore.CYAN + "    Будем искать:" + f" {userlist[:3]}" + " и других..." + Style.RESET_ALL)
+
 # Завершение обновления Snoop.
     if args.update:
         print("\033[36m=======================\033[0m")
@@ -804,22 +841,22 @@ def main():
             sys.exit(1)
             pass
 
-    data_file_path = os.path.join(os.path.dirname(
-        os.path.realpath(__file__)), args.json_file)
+    data_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), args.json_file)
+    altjson = ("{}".format(args.json_file))
 # Этого не будет, если в запросе отсутствовала Shema.
     if site_data_all is None:
 # Проверьте, существует ли файл, иначе выход.
         if not os.path.exists(data_file_path):
             print("\033[36mJSON file не существует.\033[0m")
             print(
-                "\033[36mВы не добавили .json файл или убедитесь, что сделали запрос http:// или https://...\033[0m")
+                "\033[36mВы не добавили .json файл\033[0m")
             sys.exit(1)
         else:
             raw = open(data_file_path, "r", encoding="utf-8")
             try:
                 site_data_all = json.load(raw)
-                print(Fore.CYAN + f"Загрузка базы JSON: " + 
-                Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + Style.RESET_ALL + Fore.CYAN + " Websites")
+                print(Fore.CYAN + f"\nзагружена база: {altjson}:: " + 
+                Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + "_Websites" + Style.RESET_ALL)
             except:
                 print("\033[36mInvalid загружаемый JSON file.\033[0m")
 
@@ -829,7 +866,7 @@ def main():
     else:
 # Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
 
-# Убедится, что сайты поддерживаются, создать сокращенную базу данных сайта.
+# Убедиться, что сайты поддерживаются, создать сокращенную базу данных сайта.
         site_data = {}
         site_missing = []
         for site in args.site_list:
@@ -842,18 +879,10 @@ def main():
 
         if site_missing:
             print(
-                f"\033[36mОшибка: желаемый сайт не найден в базе Snoop: {', '.join(site_missing)}\n"
+                f"\033[36mОшибка: желаемый сайт не найден в базе Snoop:: {', '.join(site_missing)}\n"
                 "Или вы пропустили знак '-' в опции '--csv' \033[0m")
             sys.exit(1)
 
-
-# Сортировка по странам
-    if args.country:
-        site_country = dict(site_data)
-        country_sites = sorted(site_data, key=lambda k: ("country" not in k, site_data[k].get("country", sys.maxsize)))
-        site_data = {}
-        for site in country_sites:
-            site_data[site] = site_country.get(site)
 
 # Крутим список юзеров  
     if args.user:
@@ -866,9 +895,20 @@ def main():
             except (SyntaxError, ValueError):
                 pass
 
-            results = snoop(username,
+            try:
+                results = snoop(username,
+                               s,
+                               country=args.country,
+                               user=args.user,
+                               verbose=args.verbose,
+                               print_found_only=args.print_found_only,
+                               timeout=args.timeout,
+                               color=not args.no_func)
+            except:
+                results = snoop(username,
                                site_data,
                                country=args.country,
+                               user=args.user,
                                verbose=args.verbose,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
@@ -1006,16 +1046,24 @@ def main():
                 file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
             except (SyntaxError, ValueError):
                 pass
-
-            results = snoop(username,
-                               site_data,
+            try:
+                results = snoop(username,
+                               s,
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
                                color=not args.no_func)
-
+            except:
+                results = snoop(username,
+                               site_data,
+                               country=args.country,
+                               user=args.user,
+                               verbose=args.verbose,
+                               print_found_only=args.print_found_only,
+                               timeout=args.timeout,
+                               color=not args.no_func)                
             exists_counter = 0
             file.write("Адрес | ресурс" + "\n\n")
             for website_name in results:
