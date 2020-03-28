@@ -1,6 +1,22 @@
 ##Snoop Project 
 v1.1.7_rus
 * Обновлён информативный вывод.
+
+* Добавлены в БС новые ресурсы:
+1xforum;
+4gameforum;
+Allhockey;
+Boxing;
+Forums_ea;
+Forums_eagle;
+Forums_operationsports;
+Forums_prosportsdaily;
+Hockeyforum;
+Nhl;
+Rcforum;
+Rugby-forum;
+Space_dublikat;
+Thesimsresource.
 ===================================================================================
 
 v1.1.6_rus

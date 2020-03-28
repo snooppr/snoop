@@ -32,6 +32,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "1xforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://1xforum.com/member.php?username={}",
+    "urlMain": "https://1xforum.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "2Dimensions": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -61,6 +72,17 @@
     "url": "https://4cheat.ru/member.php?username={}",
     "urlMain": "https://4cheat.ru",
     "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "4gameforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u044d\u0442\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d.",
+    "errоrTypе": "message",
+    "url": "https://4gameforum.com/members/?username={}",
+    "urlMain": "https://4gameforum.com",
+    "username_claimed": "persty",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "4pda": {
@@ -176,6 +198,17 @@
     "urlMain": "https://www.alik.cz/",
     "username_claimed": "julian",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Allhockey": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "None",
+    "errorMsg2": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c",
+    "errоrTypе": "message",
+    "url": "https://allhockey.ru/forum/memberlist.php?username={}",
+    "urlMain": "https://allhockey.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Allmylinks": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -738,6 +771,17 @@
     "urlMain": "https://www.bookcrossing.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
+  },
+  "Boxing": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://boxing.ru/forum/member.php?username={}",
+    "urlMain": "http://boxing.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Bukkit": {
     "country": "\ud83c\udf0e",
@@ -2295,6 +2339,26 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forums_ea": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://forums.ea.com/en/nhl/profile/discussions/{}",
+    "urlMain": "https://forums.ea.com",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums_eagle": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forums.eagle.ru/member.php?username={}",
+    "urlMain": "https://forums.eagle.ru",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forums_envato": {
     "country": "\ud83c\udde6\ud83c\uddfa",
     "country_klas": "AU",
@@ -2346,6 +2410,15 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forums_operationsports": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://forums.operationsports.com/{}",
+    "urlMain": "https://forums.operationsports.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forums_overclockers": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2354,6 +2427,17 @@
     "errоrTypе": "message",
     "url": "https://forums.overclockers.ru/memberlist.php?username={}",
     "urlMain": "https://forums.overclockers.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums_prosportsdaily": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forums.prosportsdaily.com/member.php?username={}",
+    "urlMain": "https://forums.prosportsdaily.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -2446,7 +2530,7 @@
     "errorMsg2": "None",
     "errоrTypе": "message",
     "url": "https://www.fredmiranda.com/forum/viewprofile.php?Action=viewprofile&username={}",
-    "urlMain": "view-source:https://www.fredmiranda.com",
+    "urlMain": "https://www.fredmiranda.com",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -2935,6 +3019,17 @@
     "url": "http://www.hdseason.ru/index/8-0-{}",
     "urlMain": "http://www.hdseason.ru/",
     "username_claimed": "perlindm",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Hockeyforum": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "None",
+    "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
+    "errоrTypе": "message",
+    "url": "https://www.hockeyforum.com/members/?username={}",
+    "urlMain": "https://www.hockeyforum.com",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Hoobly": {
@@ -4245,6 +4340,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Nhl": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "\u041f\u0440\u043e\u0444\u0438\u043b\u044c \u044d\u0442\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d.",
+    "errоrTypе": "message",
+    "url": "https://nhl.ru/talks/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://nhl.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Nightbot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -5170,6 +5276,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Rcforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://www.rcforum.ru/member.php?username={}",
+    "urlMain": "http://www.rcforum.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Rcmir": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -5356,6 +5473,15 @@
     "url": "https://rubygems.org/profiles/{}",
     "urlMain": "https://rubygems.org/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Rugby-forum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "http://rugby-forum.ru/polzovateli/{}/",
+    "urlMain": "http://rugby-forum.ru",
+    "username_claimed": "bold",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Runitonce": {
@@ -5778,6 +5904,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Space_dublikat": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "None",
+    "errorMsg2": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errоrTypе": "message",
+    "url": "https://space.dublikat.shop/members/?username={}",
+    "urlMain": "https://space.dublikat.shop/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Spaces": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -6110,6 +6247,15 @@
     "errоrTypе": "status_code",
     "url": "https://www.theodysseyonline.com/user/@{}",
     "urlMain": "https://www.theodysseyonline.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Thesimsresource": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.thesimsresource.com/members/{}/",
+    "urlMain": "https://www.thesimsresource.com/",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
