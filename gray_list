@@ -229,3 +229,28 @@ Canva
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  
+  
+##CС.29/03/2019 ((92) HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1))    
+  "Stihi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
+    "errоrTypе": "message",
+    "url": "https://www.stihi.ru/avtor/{}",
+    "urlMain": "https://www.stihi.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Proza": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
+    "errоrTypе": "message",
+    "url": "https://www.proza.ru/avtor/{}",
+    "urlMain": "https://www.proza.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },    

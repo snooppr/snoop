@@ -7,16 +7,21 @@ v1.1.7_rus
 4gameforum;
 Allhockey;
 Boxing;
+Forum_dklab;
 Forums_ea;
 Forums_eagle;
 Forums_operationsports;
 Forums_prosportsdaily;
+Forumvancouver;
 Hockeyforum;
 Nhl;
 Rcforum;
+Rovlpj;
 Rugby-forum;
+Skyscrapercity;
 Space_dublikat;
-Thesimsresource.
+Thesimsresource;
+Wirednewyork.
 ===================================================================================
 
 v1.1.6_rus
