@@ -28,7 +28,6 @@ https://github.com/snooppr/snoop/tree/termux
 ## Работа Snoop на OS Windows and GNU/Linux
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 ## Установка
 **Примечание**: Требуемая версия python 3.6 и выше.

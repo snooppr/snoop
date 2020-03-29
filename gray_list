@@ -231,7 +231,7 @@ Canva
   },
   
   
-##CС.29/03/2019 ((92) HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1))    
+##CС.29/03/2019 ((92) HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1)/x-firewall-protection: True)    
   "Stihi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
