@@ -21,8 +21,16 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
 **В базе** [7️⃣0️⃣0️⃣ Websites!!!](https://github.com/snooppr/snoop/blob/master/sites.md "database"), **база расширяется**
 
-## Установка
+## Работа Snoop на Android-е
+Смотри ветку Termux
+https://github.com/snooppr/snoop/tree/termux
 
+## Работа Snoop на OS Windows and GNU/Linux
+snoop.exe and snoop
+https://github.com/snooppr/snoop/releases
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+## Установка
 **Примечание**: Требуемая версия python 3.6 и выше.
 
 ```bash
@@ -41,16 +49,8 @@ $ python3 -m pip install -r requirements.txt
 # Либо установить все зависимости из 'requirements.txt' в ручную через
 $ pip3 install module
 ```
-## Работа Snoop на Android-е
-Смотри ветку Termux
-https://github.com/snooppr/snoop/tree/termux
-
-## Работа Snoop на OS Windows and GNU/Linux
-snoop.exe and snoop
-https://github.com/snooppr/snoop/releases
 
 ## Использование
-
 ```bash
 $ python3 snoop.py --help
 
@@ -183,3 +183,5 @@ $ sudo nano /etc/ssl/openssl.cnf
 **Отпечаток публичного ключа:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")
 
 **Лицензия Snoop Project:** https://github.com/snooppr/snoop/blob/master/COPYRIGHT
+
+## SNOOP PROJECT (OSINT) СУЩЕСТВУЕТ И РАЗВИВАЕТСЯ ТОЛЬКО НА GITHUB. НИ К TELEGRAM (BOT), НИ К WEB/ONLINE SNOOP НЕ ИМЕЕТ НИКАКОГО ОТНОШЕНИЯ 

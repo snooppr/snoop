@@ -489,7 +489,7 @@ def main():
                      f"\033[37m{cop}\033[0m\n"
 
 
-# Пожертование.
+# Пожертвование.
     donate = ("""
 \033[36m╭donate:\033[0m
 \033[36m├──BTC_BHC:\033[0m \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m
