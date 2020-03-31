@@ -1,4 +1,15 @@
 {
+  "0k_clan": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://0k.clan.su/index/8-0-{}",
+    "urlMain": "http://0k.clan.su",
+    "username_claimed": "eruzz",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "11x2": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -50,6 +61,17 @@
     "url": "https://2Dimensions.com/a/{}",
     "urlMain": "https://2Dimensions.com/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "33bru": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://{}.33bru.com/",
+    "urlMain": "http://33bru.com/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "3dnews": {
@@ -265,7 +287,7 @@
     "country_klas": "US",
     "errorMsg": "This page could not be found.",
     "errorMsg2": "None",
-    "errоrTypе": "message",    
+    "errоrTypе": "message",
     "url": "https://alternativeto.net/user/{}",
     "urlMain": "https://alternativeto.net/",
     "username_claimed": "adam",
@@ -1199,6 +1221,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Cyberclock": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://cyberclock.cc/forum/member.php?username={}",
+    "urlMain": "https://cyberclock.cc",
+    "username_claimed": "Lich",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "D3": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2050,6 +2083,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forum_gitarizm": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.gitarizm.ru/member.php?username={}",
+    "urlMain": "https://forum.gitarizm.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forum_gorod": {
     "country": "\ud83c\uddfa\ud83c\udde6",
     "country_klas": "UA",
@@ -2172,6 +2216,15 @@
     "username_claimed": "charlie27",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Forum_navi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "Ru",
+    "errоrTypе": "status_code",
+    "url": "http://forum.navi.gg/profile/{}",
+    "urlMain": "http://forum.navi.gg/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Forum_openframeworks": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -2250,6 +2303,17 @@
     "url": "https://forum.swiftbook.ru/u/{}/summary",
     "urlMain": "https://forum.swiftbook.ru",
     "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forum_theprodigy": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c, \u0447\u0435\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0432\u044b \u043f\u044b\u0442\u0430\u0435\u0442\u0435\u0441\u044c \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum.theprodigy.ru/index.php?board=13;action=viewprofile;user={}",
+    "urlMain": "https://forum.theprodigy.ru/",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forum_tks": {
@@ -2370,6 +2434,15 @@
     "url": "https://forums.alliedmods.net/member.php?username={}",
     "urlMain": "https://forums.alliedmods.net/",
     "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Forums_battlefield": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://forums.battlefield.com/en-us/profile/{}",
+    "urlMain": "https://forums.battlefield.com",
+    "username_claimed": "NLBartmaN",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Forums_drom": {
@@ -2881,6 +2954,15 @@
     "errоrTypе": "message",
     "url": "http://www.gliger.ru/index/8-0-{}",
     "urlMain": "http://www.gliger.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Gog": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.gog.com/u/{}",
+    "urlMain": "https://www.gog.com/",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
@@ -4059,6 +4141,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Megane2": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://megane2.ru/forum/members/?username={}",
+    "urlMain": "http://megane2.ru/",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Memrise": {
     "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
@@ -4730,6 +4823,17 @@
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Oper": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435\u0442 \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.oper.ru/visitors/info.php?t={}",
+    "urlMain": "https://www.oper.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Oracle": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -4746,6 +4850,17 @@
     "url": "https://osu.ppy.sh/users/{}",
     "urlMain": "https://osu.ppy.sh/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Otstrel": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://otstrel.ru/forum/members/{}.html",
+    "urlMain": "http://otstrel.ru/",
+    "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Otzovik": {
@@ -5404,6 +5519,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Rasslabyxa": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://www.rasslabyxa.ru/index/8-0-{}",
+    "urlMain": "http://www.rasslabyxa.ru",
+    "username_claimed": "green",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Rateyourmusic": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -5831,6 +5957,15 @@
     "username_claimed": "albedo",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Shazoo": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "Ru",
+    "errоrTypе": "status_code",
+    "url": "https://shazoo.ru/users/{}",
+    "urlMain": "https://shazoo.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "ShitpostBot5000": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -6170,6 +6305,17 @@
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeveruse"
   },
+  "Stalker-zone": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://stalker-zone.info/index/8-0-{}",
+    "urlMain": "http://stalker-zone.info",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Star_Citizen": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -6347,6 +6493,28 @@
     "url": "https://tellonym.me/{}",
     "urlMain": "https://tellonym.me/",
     "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Terminator": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://terminator-scc.net.ru/index/8-0-{}",
+    "urlMain": "http://terminator-scc.net.ru",
+    "username_claimed": "red",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Terminatorium": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://terminatorium.borda.ru/?32-{}",
+    "urlMain": "https://terminatorium.borda.ru/",
+    "username_claimed": "tengu",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "The-village": {
@@ -6590,6 +6758,26 @@
     "username_claimed": "metallicafan459",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Truesteamachievements": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "Ru",
+    "errоrTypе": "status_code",
+    "url": "https://truesteamachievements.com/gamer/{}",
+    "urlMain": "https://truesteamachievements.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Tv-games": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://tv-games.ru/forum/member.php?username={}",
+    "urlMain": "http://tv-games.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Twitch": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -6632,6 +6820,17 @@
     "url": "https://uaksu.forum24.ru/?32-{}",
     "urlMain": "https://uaksu.forum24.ru/",
     "username_claimed": "nikita",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Ubisoft": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forums-ru.ubisoft.com/member.php/?username={}",
+    "urlMain": "https://forums-ru.ubisoft.com/",
+    "username_claimed": "MrNardred",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Uchportal": {
@@ -6880,6 +7079,17 @@
     "url": "https://wf.mail.ru/forums/member.php?username={}",
     "urlMain": "https://wf.mail.ru",
     "username_claimed": "wizard",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Warhammergames": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://warhammergames.ru/index/8-0-{}",
+    "urlMain": "https://warhammergames.ru/",
+    "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "Warriorforum": {
