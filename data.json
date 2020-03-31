@@ -2811,7 +2811,7 @@
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
     "errorMsg": "The specified member cannot be found",
-    "errorMsg2": "None",
+    "errorMsg2": "Your IP address has been banned",
     "errоrTypе": "message",
     "url": "https://gbatemp.net/members/?username={}",
     "urlMain": "https://gbatemp.net/",
