@@ -233,8 +233,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         max_workers=len(site_data)
 
 # Создать многопоточный сеанс для всех запросов.
-    session = ElapsedFuturesSession(max_workers=max_workers,
-                                    session=underlying_session)
+    session = ElapsedFuturesSession(max_workers=max_workers, session=underlying_session)
 
 # Результаты анализа всех сайтов.
     results_total = {}
