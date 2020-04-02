@@ -3646,6 +3646,15 @@
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Kinooh": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://kinooh.ru/user/{}/",
+    "urlMain": "https://kinooh.ru",
+    "username_claimed": "zoll",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Knowem": {
     "country": "\ud83c\udde8\ud83c\udde6",
     "country_klas": "CA",
