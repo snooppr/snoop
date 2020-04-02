@@ -183,6 +183,6 @@ $ sudo nano /etc/ssl/openssl.cnf
 
 **Лицензия Snoop Project:** https://github.com/snooppr/snoop/blob/master/COPYRIGHT
 
-## SNOOP PROJECT (OSINT) СУЩЕСТВУЕТ И РАЗВИВАЕТСЯ ТОЛЬКО НА GITHUB. НИ К TELEGRAM (BOT), НИ К WEB/ONLINE SNOOP НЕ ИМЕЕТ НИКАКОГО ОТНОШЕНИЯ.
+## SNOOP PROJECT (OSINT) СУЩЕСТВУЕТ И РАЗВИВАЕТСЯ ТОЛЬКО НА GITHUB. НИ К TELEGRAM, НИ К WEB/ONLINE SNOOP НЕ ИМЕЕТ НИКАКОГО ОТНОШЕНИЯ.
 
 ## В СВЯЗИ СО СЛОЖИВШЕЙСЯ СИТУАЦИЕЙ В МИРЕ (САМОИЗОЛЯЦИЯ ГРАЖДАН ИЗ ЗА ЭПИДЕМИИ) СИЛЬНО ВЫРОСЛА НАГРУЗКА НА СЕТИ. SNOOP В ДАННЫЙ ПЕРИОД МОЖЕТ РАБОТАТЬ КРАЙНЕ МЕДЛЕННО.
