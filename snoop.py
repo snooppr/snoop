@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-#Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
+# Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 
 import certifi
 import csv
@@ -56,7 +56,7 @@ timestart = time.time()
 time_data = time.localtime()
 censor = 0
 
-#Создание директорий результатов
+# Создание директорий результатов
 try:
     os.makedirs(str(dirresults + "/results"))
 except:
@@ -73,6 +73,7 @@ try:
     os.mkdir(str(dirresults + "/results/csv"))
 except:            
     pass
+
 
 ################################################################################
 class ElapsedFuturesSession(FuturesSession):
@@ -91,7 +92,7 @@ class ElapsedFuturesSession(FuturesSession):
 
         try:
             if isinstance(hooks['response'], (list, tuple)):
-# должен быть первым, поэтому мы не рассчитываем время выполнения других hooks.
+                # должен быть первым, поэтому мы не рассчитываем время выполнения других hooks.
                 hooks['response'].insert(0, timing)
             else:
                 hooks['response'] = [timing, hooks['response']]
@@ -128,6 +129,7 @@ def print_error(err, errstr, var, verbose=False, color=True):
 def format_response_time(response_time, verbose):
     return " [{} ms]".format(response_time) if verbose else ""
 
+
 # Вывод на печать на разных платформах.
 if sys.platform == 'win32':
     def print_found_country(social_network, url, countryB, response_time=False, verbose=False, color=True):
@@ -146,6 +148,7 @@ else:
         else:
             print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
 
+
 def print_not_found(social_network, response_time, verbose=False, color=True):
     if color:
         print((Fore.CYAN + "[" +
@@ -156,6 +159,7 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
             Style.BRIGHT + Fore.YELLOW + " Увы!"))
     else:
         print(f"[-]{format_response_time(response_time, verbose)} {social_network}: Увы!")
+
 
 def print_invalid(social_network, msg, color=True):
     """Ошибка вывода результата"""
@@ -242,8 +246,8 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Создание futures на все запросы. Это позволит распараллетить запросы.
 #    global countryA
     for social_network, net_info in site_data.items():
-#        print([iz for iz in site_data]) #Тест вывода ключей
-#        print(social_network)
+        # print([iz for iz in site_data]) #Тест вывода ключей
+        # print(social_network)
         # Результаты анализа конкретного сайта.
         results_site = {}
 
@@ -260,13 +264,13 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         }
 
         if "headers" in net_info:
-# Переопределить / добавить любые дополнительные заголовки, необходимые для данного сайта.
+            # Переопределить / добавить любые дополнительные заголовки, необходимые для данного сайта.
             headers.update(net_info["headers"])
 
 # Не делать запрос, если имя пользователя не подходит для сайта.
         regex_check = net_info.get("regexCheck")
         if regex_check and re.search(regex_check, username) is None:
-# Не нужно делать проверку на сайте: если это имя пользователя не допускается.
+            # Не нужно делать проверку на сайте: если это имя пользователя не допускается.
             if not print_found_only:
                 print_invalid(social_network, "Недопустимый формат имени для данного сайта", color)
 
@@ -276,12 +280,12 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
             results_site['response_text'] = ""
             results_site['response_time_ms'] = ""
         else:
-# URL пользователя на сайте (если он существует).
+            # URL пользователя на сайте (если он существует).
             url = net_info["url"].format(username)
             results_site["url_user"] = url
             url_probe = net_info.get("urlProbe")
             if url_probe is None:
-# URL-адрес — является обычным, который видят люди в Интернете.
+                # URL-адрес — является обычным, который видят люди в Интернете.
                 url_probe = url
             else:
 # Существует специальный URL (обычно о нем мы не догадываемся) для проверки существования отдельно юзера.
@@ -294,14 +298,13 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 request_method = session.get
 
             if net_info["errоrTypе"] == "response_url":
-# Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
-# Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
+                # Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
+                # Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
                 allow_redirects = False
             else:
-# Разрешить любой редирект, который хочет сделать сайт.
-# Окончательным результатом запроса будет то, что доступно.
+                # Разрешить любой редирект, который хочет сделать сайт.
+                # Окончательным результатом запроса будет то, что доступно.
                 allow_redirects = True
-
 
             future = request_method(url=url_probe, headers=headers,
                                     allow_redirects=allow_redirects,
@@ -320,7 +323,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # print(results_site) # Проверка записи на успех.
     for social_network, net_info in site_data.items():
 
-# Получить результаты снова.
+        # Получить результаты снова.
         results_site = results_total.get(social_network)
 
 # Получить другую информацию сайта снова.
@@ -330,7 +333,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         exists = results_site.get("exists")
 
         if exists is not None:
-# Мы уже определили, что пользователь не существует здесь.
+            # Мы уже определили, что пользователь не существует здесь.
             continue
 
 # Получить ожидаемый тип ошибки.
@@ -382,7 +385,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 exists = "найден!"
 
         elif error_type == "status_code":
-# Проверяет, является ли код состояния ответа 2..
+            # Проверяет, является ли код состояния ответа 2..
             if not r.status_code >= 300 or r.status_code < 200:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
@@ -451,6 +454,7 @@ def timeout_check(value):
         raise ArgumentTypeError(f"\033[36mTimeout '{value}' Err, укажите время > 0 c. \033[0m")
     return timeout
 
+
 # Обновление Snoop.
 def update_snoop():
     if sys.platform == 'win32':
@@ -478,7 +482,7 @@ def update_snoop():
 
 
 def main():
-# Запрос лицензии.
+    # Запрос лицензии.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
 
@@ -622,7 +626,7 @@ def main():
 
 # Опция list all
 # Сортируем по алфавиту (2!)
-#Сортировка для ОС Win
+# Сортировка для ОС Win
     if args.listing:
         if sys.platform == 'win32':
             sortY = str(input("Сортировать БС Snoop по странам или по имени сайта ?\nпо странам — 1 по имени — 2\n"))
@@ -641,7 +645,7 @@ def main():
                         aaa = datajson.get(con).get("country_klas")
                         i += 1
                         print(f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-#Общий результат БС Win                        
+# Общий результат БС Win
                 listallsortFlag = []
                 with open('sites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
@@ -662,7 +666,7 @@ def main():
                     print(Fore.CYAN + "FR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "...")
                     sys.exit(0)
-#Сортировка для ОС GNU   
+# Сортировка для ОС GNU
             else:
                 print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
                 print(Fore.GREEN + "++Белый список++")                
@@ -706,7 +710,7 @@ def main():
                 sys.exit(0)
 
 # Сортируем по странам (1!)
-#Сортировка для ОС Win
+# Сортировка для ОС Win
         elif sortY == "1":
             if sys.platform == 'win32':
                 listwindows = []
@@ -721,7 +725,7 @@ def main():
                     for i, numerlist in enumerate(sort_spisok):
                         fd=(i + 1)
                         print(f"{fd}.", Fore.CYAN + f"{numerlist}",end = '')
-#Общий результат БС Win
+# Общий результат БС Win
                 listallsortFlag = []
                 with open('sites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
@@ -742,7 +746,7 @@ def main():
                     print(Fore.CYAN + "FR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "...")
                     sys.exit(0)
-#Сортировка для ОС GNU
+# Сортировка для ОС GNU
             else:
                 print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
                 listall = []
@@ -799,7 +803,6 @@ def main():
         sys.exit(0)
 
 
-
 # Опция указания списка разыскиваемых пользователей
     if args.user:
         userlist = []
@@ -836,7 +839,7 @@ def main():
     altjson = ("{}".format(args.json_file))
 # Этого не будет, если в запросе отсутствовала Shema.
     if site_data_all is None:
-# Проверьте, существует ли файл, иначе выход.
+        # Проверьте, существует ли файл, иначе выход.
         if not os.path.exists(data_file_path):
             print("\033[36mJSON file не существует.\033[0m")
             print(
@@ -852,12 +855,12 @@ def main():
                 print("\033[36mInvalid загружаемый JSON file.\033[0m")
 
     if args.site_list is None:
-# Не желательно смотреть на подмножество сайтов.
+        # Не желательно смотреть на подмножество сайтов.
         site_data = site_data_all
     else:
-# Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
+        # Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
 
-# Убедиться, что сайты поддерживаются, создать сокращенную базу данных сайта.
+        # Убедиться, что сайты поддерживаются, создать сокращенную базу данных сайта.
         site_data = {}
         site_missing = []
         for site in args.site_list:
@@ -865,7 +868,7 @@ def main():
                 if site.lower() == existing_site.lower():
                     site_data[existing_site] = site_data_all[existing_site]
             if not site_data:
-# Создать список сайтов, которые не поддерживаются для будущего сообщения об ошибке.
+                # Создать список сайтов, которые не поддерживаются для будущего сообщения об ошибке.
                 site_missing.append(f"'{site}'")
 
         if site_missing:
@@ -964,7 +967,7 @@ def main():
     </script>""")
             file.close()
 
-    #+CSV вывод на печать информации
+    # +CSV вывод на печать информации
             if args.csv == True:
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
                 "results/*/" + str(username) + ".*")
@@ -1068,7 +1071,6 @@ def main():
             file.write("\n" f"Обновлено: " + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".")
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
 
-
     # Запись в html.
             file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             try:
@@ -1115,7 +1117,7 @@ def main():
     </script>""")
             file.close()
 
-    #+CSV вывод на печать информации
+        # +CSV вывод на печать информации
             if args.csv == True:
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
                 "results/*/" + str(username) + ".*")
@@ -1185,6 +1187,7 @@ def main():
             webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
 # Музыка.
         playsound('end.wav')
+
 
 if __name__ == "__main__":
     main()
