@@ -944,9 +944,11 @@ def main():
                     file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ 
                     (website_name) + "</a>" + "</li>\n")
             flag_str=str(cnt)
-            flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
-
-            file.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+            try:            
+                flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
+                file.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+            except:
+                pass
             file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")

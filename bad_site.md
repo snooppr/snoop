@@ -1,4 +1,4 @@
-## Snoop БД Неподдерживаемых сайтов (список), всего — 35 сайт(ов)!
+## Snoop БД Неподдерживаемых сайтов (список), всего — 34 сайт(ов)!
 1. 🇺🇸 [9GAG](https://9gag.com/)
 2. 🏴 [AngelList](https://angel.co/)
 3. 🏴 [Basecamp](https://basecamp.com/)
@@ -33,4 +33,3 @@
 32. 🏴 [WebNode](https://www.webnode.cz/)
 33. 🏴 [Xss](https://xss.is/)
 34. 🏴 [Yougame](https://yougame.biz/)
-35. 🏴 [Zomato](https://www.zomato.com/)

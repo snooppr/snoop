@@ -1,4 +1,4 @@
-## Snoop БД поддерживаемых сайтов (список), всего — 748 сайт(ов)!
+## Snoop БД поддерживаемых сайтов (список), всего — 749 сайт(ов)!
 1. 🇷🇺 [0k_clan](http://0k.clan.su)
 2. 🏁 [11x2](https://11x2.com)
 3. 🏁 [1337x](https://1337x.to)
@@ -747,3 +747,4 @@
 746. 🇺🇸 [Yummly](https://www.yummly.com)
 747. 🇷🇺 [Zenitbol](http://zenitbol.ru/)
 748. 🇨🇳 [Zhihu](https://www.zhihu.com/)
+749. 🌎 [Zomato](https://www.zomato.com)
