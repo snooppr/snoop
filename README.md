@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | Android/Termux/Andrax |     ✅    |
 | macOS                 |     🚫    |
 | IOS                   |     🚫    |
-
+| WSL                   |     🚫    |
 
 **В базе** [7️⃣5️⃣2️⃣ Websites!!!](https://github.com/snooppr/snoop/blob/master/sites.md "database"), **база расширяется**
 
