@@ -16,6 +16,7 @@ import time
 import webbrowser
 
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
+from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ThreadPoolExecutor
 from playsound import playsound
@@ -589,7 +590,7 @@ def main():
         print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер»")
 
     if args.timeout:
-        print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта <= {timeout}sec.»")
+        print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
 
     if args.verbose:
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
@@ -929,12 +930,24 @@ def main():
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
             file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
+            
+            cnt = Counter()
             for website_name in results:
                 dictionary = results[website_name]
+                flag_sum=dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
+                    li = []
+                    li.append(flag_sum)
                     exists_counter += 0
-                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
-            file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+                    for word in li:
+                        cnt[word] += 1
+                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ 
+                    (website_name) + "</a>" + "</li>\n")
+            flag_str=str(cnt)
+            flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
+
+            file.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+            file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
@@ -1080,12 +1093,24 @@ def main():
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
             file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
+            
+            cnt = Counter()
             for website_name in results:
                 dictionary = results[website_name]
+                flag_sum=dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
+                    li = []
+                    li.append(flag_sum)
                     exists_counter += 0
-                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ (website_name) + "</a>" + "</li>\n")
-            file.write("</ol>Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+                    for word in li:
+                        cnt[word] += 1
+                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ 
+                    (website_name) + "</a>" + "</li>\n")
+            flag_str=str(cnt)
+            flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
+
+            file.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+            file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
