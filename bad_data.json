@@ -1,4 +1,15 @@
 {
+  "9GAG": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "<title>9GAG - 404 Nothing here</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://9gag.com/u/{}",
+    "urlMain": "https://9gag.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "AngelList": {
     "country": "\ud83c\udff4",
     "errоrTypе": "status_code",

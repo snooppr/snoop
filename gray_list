@@ -271,3 +271,15 @@ Canva
 
 ##CС.02/04/2019 ((35) error:1425F102:SSL routines:ssl)        
 https://derevnyaonline.ru/user/coolkrictina  
+
+##CС.03/04/2019 (сломал сам себя, думаю временно)        
+  "Canva": {
+    "country": "\ud83c\udde6\ud83c\uddfa",
+    "country_klas": "AU",
+    "errorUrl": "https://www.canva.com/{}",
+    "errоrTypе": "response_url",
+    "url": "https://www.canva.com/{}",
+    "urlMain": "https://www.canva.com/",
+    "username_claimed": "jenny",
+    "username_unclaimed": "xgtrq"
+  },
