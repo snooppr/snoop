@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-#Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
+# Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
 
 import certifi
 import csv
@@ -57,7 +57,7 @@ timestart = time.time()
 time_data = time.localtime()
 censor = 0
 
-#Создание директорий результатов
+# Создание директорий результатов.
 try:
     os.makedirs(str(dirresults + "/results"))
 except:
@@ -239,16 +239,14 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Результаты анализа всех сайтов.
     results_total = {}
 
-
 # Создание futures на все запросы. Это позволит распараллетить запросы.
-#    global countryA
     for social_network, net_info in site_data.items():
-#        print([iz for iz in site_data]) #Тест вывода ключей
-#        print(social_network)
-        # Результаты анализа конкретного сайта.
+#        print([iz for iz in site_data]) #Тест вывода ключей (названия сайтов)
+#        print(social_network) #(названия сайтов, строки)
+# Результаты анализа конкретного сайта.
         results_site = {}
 
-# Запись URL основного сайта и флага страные (сопоставление с data.json)
+# Запись URL основного сайта и флага страные (сопоставление с data.json).
         results_site['flagcountry'] = net_info.get("country")
         results_site['flagcountryklas'] = net_info.get("country_klas")
         results_site['url_main'] = net_info.get("urlMain")
@@ -497,7 +495,7 @@ def main():
 \033[36m└──PayPal:\033[0m \033[37msnoopproject@protonmail.com\033[0m    
 \n\033[36mИсходный код:\033[0m \033[37mhttps://github.com/snooppr/snoop\033[0m """)
               
-# Флаг БС
+# Флаг БС.
     with open("data.json", "r", encoding="utf8") as flag:
         BS = json.load(flag)
         flagBS = len(BS)                
@@ -595,7 +593,7 @@ def main():
     if args.verbose:
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
 
-# Сортировка по странам
+# Сортировка по странам.
     if args.country:
         patchjson = ("{}".format(args.json_file))
         raw = open(patchjson, "r", encoding="utf-8")
@@ -607,7 +605,7 @@ def main():
         for site in country_sites:
             s[site] = site_country.get(site)
 
-# Информативный вывод -f
+# Информативный вывод '-f'.
     if args.print_found_only:
         print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
 
@@ -616,17 +614,13 @@ def main():
         "    допустимо использовать опцию '-s' несколько раз\n"
         "    опция '-s' несовместима с опцией '-с'")        
 
-# Опция сортировки
+# Опция сортировки.
     if args.sort:
         sortirovka.sorts()
         sys.exit(0)
 
-# Опция list all
-
-
-
-
-# Общий вывод стран (3!)
+# Опция '--list all'.
+# Общий вывод стран (3!).
     if args.listing:
         if sys.platform == 'win32':
             sortY = str(input("Сортировать БС Snoop по странам или по имени сайта ?\nпо странам — 1 по имени — 2 all — 3\n"))
@@ -652,11 +646,17 @@ def main():
                     flag_str_sum0 = (flag_str0.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
                 except:
                     pass
-                print(Style.BRIGHT + Fore.GREEN + flag_str_sum0)
+                if sys.platform == 'win32':
+                    print(Style.BRIGHT + Fore.GREEN + flag_str_sum0 + Style.BRIGHT + Fore.CYAN + 
+                    "\n\n+++All_" + str(len(datajson0)) + "_Websites+++")
+                else:
+                    print(Style.BRIGHT + Fore.GREEN + flag_str_sum0 + Style.BRIGHT + Fore.CYAN + 
+                    "\n\n⚡️All_" + str(len(datajson0)) + "_Websites⚡️")
+                
                 sys.exit(0)
 
-# Сортируем по алфавиту (2!)
-#Сортировка для ОС Win
+# Сортируем по алфавиту (2!).
+# Сортировка для ОС Win.
         elif sortY == "2":
             if sys.platform == 'win32':
                 print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
@@ -668,7 +668,7 @@ def main():
                         aaa = datajson.get(con).get("country_klas")
                         i += 1
                         print(f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-#Общий результат БС Win                        
+# Общий результат БС Win.
                 listallsortFlag = []
                 with open('sites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
@@ -689,7 +689,7 @@ def main():
                     print(Fore.CYAN + "FR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "...")
                     sys.exit(0)
-#Сортировка для ОС GNU   
+# Сортировка для ОС GNU.
             else:
                 print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
                 print(Fore.GREEN + "++Белый список++")                
@@ -732,8 +732,8 @@ def main():
                 print(Fore.CYAN + "...")
                 sys.exit(0)
 
-# Сортируем по странам (1!)
-#Сортировка для ОС Win
+# Сортируем по странам (1!).
+# Сортировка для ОС Win.
         elif sortY == "1":
             if sys.platform == 'win32':
                 listwindows = []
@@ -748,7 +748,7 @@ def main():
                     for i, numerlist in enumerate(sort_spisok):
                         fd=(i + 1)
                         print(f"{fd}.", Fore.CYAN + f"{numerlist}",end = '')
-#Общий результат БС Win
+# Общий результат БС Win.
                 listallsortFlag = []
                 with open('sites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
@@ -769,7 +769,7 @@ def main():
                     print(Fore.CYAN + "FR =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
                     print(Fore.CYAN + "...")
                     sys.exit(0)
-#Сортировка для ОС GNU
+# Сортировка для ОС GNU.
             else:
                 print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
                 listall = []
@@ -818,7 +818,7 @@ def main():
         else:
             print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
             sys.exit(0)
-# Опция донат.
+# Опция донат '-d y'.
     if args.donation:
         print(donate)
         webbrowser.open("https://yasobe.ru/na/snoop_project")
@@ -827,7 +827,7 @@ def main():
 
 
 
-# Опция указания списка разыскиваемых пользователей
+# Опция указания списка разыскиваемых пользователей '-u'.
     if args.user:
         userlist = []
         patchuserlist = ("{}".format(args.user))
@@ -902,7 +902,7 @@ def main():
             sys.exit(1)
 
 
-# Крутим список юзеров  
+# Крутим список юзеров.
     if args.user:
         kef_user=0
         for username in userlist:
@@ -1005,7 +1005,7 @@ def main():
     </script>""")
             file.close()
 
-    #+CSV вывод на печать информации
+    # +CSV вывод на печать информации.
             if args.csv == True:
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
                 "results/*/" + str(username) + ".*")
@@ -1059,7 +1059,7 @@ def main():
                     writer.writerow([time.strftime("%m/%d/%Y_%H:%M:%S", time_data)])
                     file.close()
 
-# Финишный вывод.
+    # Финишный вывод.
         if censor >= 9 * int(kef_user):
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", 
@@ -1069,7 +1069,7 @@ def main():
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
 
-# Поиск по умолчанию (без опции -u)
+# Поиск по умолчанию (без опции '-u').
     else:
         for username in args.username:
             
@@ -1095,7 +1095,7 @@ def main():
                                verbose=args.verbose,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
-                               color=not args.no_func)                
+                               color=not args.no_func)
             exists_counter = 0
             file.write("Адрес | ресурс" + "\n\n")
             for website_name in results:
@@ -1170,7 +1170,7 @@ def main():
     </script>""")
             file.close()
 
-    #+CSV вывод на печать информации
+    # +CSV вывод на печать информации.
             if args.csv == True:
                 print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL +
                 "results/*/" + str(username) + ".*")
@@ -1224,7 +1224,7 @@ def main():
                     writer.writerow([time.strftime("%m/%d/%Y_%H:%M:%S", time_data)])
                     file.close()
 
-# Финишный вывод.
+    # Финишный вывод.
         if censor >= 9:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", "*используйте VPN")
