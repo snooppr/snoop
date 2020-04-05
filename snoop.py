@@ -194,35 +194,22 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
 
 def snoop(username, site_data, verbose=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
 
-    """Snoop Аналитика.
-
-    Snoop ищет никнеймы на различных интернет-ресурсах.
-
-    Аргументы:
-    username               -- Разыскиваемый никнейм.
-    site_data              -- Snoop БД поддерживваемых сайтов 
-    verbose/debug          -- Подробная вербализация
-    timeoutout             -- Ограничение времени на ожидание ответа от сайта
-    color                  -- Монохромный/раскрашиваемый терминал
-    country                -- Страны
-    sort                   -- Сортировка по алфавиту внутри баз данных: (data.json; bad_data.json; sites.md; bad_site.md) 
-    listing                -- Вывод на печать БС и ЧС
-    update                 -- Обновление ПО Snoop
-    donation               -- Финансовая поддержка Snoop
-
-    Возвращаемые значения:
-    Словарь, содержащий результаты из отчета. Ключом словаря является название
-    сайта из БД .json, значением — вложенный словарь со следующими ключами::
-        flagcountry:               Флаг государства (расположение страны/локация).
-        url_main:                  URL основного сайта.
-        url_user:                  URL ведущий на пользователя (если такой аккаунт найден).
-        exists/статус:             Указание результатов теста на наличие аккаунта.
-        http_status/статус кода:   HTTP status code ответа сайта.
-        response_text:             Текст, который вернулся запрос-ответ от сайта (при ошибке соединения может отсутствовать).
-    """
-
     print_info("разыскиваем:", username, color)
-
+    
+# Предотвращение DDoS из-за невалидных логинов: номеров телефонов.   
+    ernumber=['79', '89', "38", "37"]
+    if any(ernumber in username[0:2] for ernumber in ernumber):
+        if len(username) >= 10 and len(username) <= 13:
+            if username.isdigit() == True:
+                print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
+                sys.exit(0)
+    elif username[0] == "+":
+        print (Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся со знака '+', практически всегда невалидный...")
+        sys.exit(0)
+    elif username[0] == "9" and len(username) == 10 and username.isdigit() == True:
+        print (Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
+        sys.exit(0)
+        
 # Создать сеанс на основе методологии запроса.
     underlying_session = requests.session()
     underlying_request = requests.Request()
@@ -426,7 +413,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Добавьление результатов этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
     return results_total
-
+    
 
 def timeout_check(value):
     """Проверка: время ожидания ответа сайта.
@@ -901,7 +888,6 @@ def main():
                 "Или вы пропустили знак '-' в опции '--csv' \033[0m")
             sys.exit(1)
 
-
 # Крутим список юзеров.
     if args.user:
         kef_user=0
@@ -1071,6 +1057,10 @@ def main():
 
 # Поиск по умолчанию (без опции '-u').
     else:
+    
+
+
+    
         for username in args.username:
             
             file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")

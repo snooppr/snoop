@@ -6047,7 +6047,6 @@
     "country_klas": "Wr",
     "errorUrl": "https://www.researchgate.net/directory/profiles",
     "errоrTypе": "response_url",
-    "regexCheck": "\\w+_\\w+",
     "url": "https://www.researchgate.net/profile/{}",
     "urlMain": "https://www.researchgate.net/",
     "username_claimed": "John_Smith",
