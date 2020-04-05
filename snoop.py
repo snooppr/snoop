@@ -1057,10 +1057,6 @@ def main():
 
 # Поиск по умолчанию (без опции '-u').
     else:
-    
-
-
-    
         for username in args.username:
             
             file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
