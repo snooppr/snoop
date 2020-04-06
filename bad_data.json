@@ -1,6 +1,6 @@
 {
   "9GAG": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country": "\ud83c\udff4",
     "country_klas": "US",
     "errorMsg": "<title>9GAG - 404 Nothing here</title>",
     "errorMsg2": "None",
@@ -294,6 +294,17 @@
     "urlMain": "https://xss.is/",
     "username_claimed": "boss",
     "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "YandexMarket": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Wr",
+    "errorMsg": "\u0422\u0443\u0442 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://market.yandex.ru/user/{}/achievements",
+    "urlMain": "https://market.yandex.ru/",
+    "username_claimed": "blue",
+    "username_unclaimed": "nousermengirl1945"
   },
   "Yougame": {
     "country": "\ud83c\udff4",
