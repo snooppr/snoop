@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-**В базе** [7️⃣9️⃣5️⃣ Websites⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/sites.md "database")
+**В базе** [7️⃣9️⃣5️⃣ Websites⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "database")
 
 ## Работа Snoop на Android-е
 Смотри ветку Termux
