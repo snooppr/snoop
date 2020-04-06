@@ -4,7 +4,7 @@
     "country_klas": "US",
     "errorMsg": "<title>9GAG - 404 Nothing here</title>",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://9gag.com/u/{}",
     "urlMain": "https://9gag.com/",
     "username_claimed": "blue",
@@ -12,7 +12,7 @@
   },
   "AngelList": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://angel.co/{}",
     "urlMain": "https://angel.co/",
     "username_claimed": "blue",
@@ -22,7 +22,7 @@
     "country": "\ud83c\udff4",
     "errorMsg": "The account you were looking for doesn't exist",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://{}.basecamphq.com",
     "urlMain": "https://basecamp.com/",
     "username_claimed": "blue",
@@ -30,7 +30,7 @@
   },
   "Bittube": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://bittube.tv/profile/{}",
     "urlMain": "https://bittube.tv",
     "username_claimed": "adam",
@@ -41,33 +41,61 @@
     "country": "\ud83c\udff4",
     "errorMsg": "My Hits",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "http://blackplanet.com/{}",
     "urlMain": "http://blackplanet.com/"
   },
   "Boingboing.net": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://bbs.boingboing.net/u/{}",
     "urlMain": "https://boingboing.net/",
     "username_claimed": "admin",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Canva": {
+    "country": "\ud83c\udff4",
+    "country_klas": "AU",
+    "errorUrl": "https://www.canva.com/{}",
+    "err\u043erTyp\u0435": "response_url",
+    "url": "https://www.canva.com/{}",
+    "urlMain": "https://www.canva.com/",
+    "username_claimed": "jenny",
+    "username_unclaimed": "xgtrq"
+  },
   "CapFriendly": {
     "country": "\ud83c\udff4",
     "errorMsg": "No User Found",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://www.capfriendly.com/users/{}",
     "urlMain": "https://www.capfriendly.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis"
   },
+  "Cardomain": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Kb",
+    "err\u043erTyp\u0435": "status_code",
+    "url": "http://www.cardomain.com/member/{}/",
+    "urlMain": "http://www.cardomain.com",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "CashMe": {
+    "country": "\ud83c\udff4",
+    "country_klas": "US",
+    "err\u043erTyp\u0435": "status_code",
+    "url": "https://cash.me/${}",
+    "urlMain": "https://cash.me/",
+    "username_claimed": "Jenny",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Codepen": {
     "country": "\ud83c\udff4",
     "errorMsg": "404 Error - CodePen",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://codepen.io/{}",
     "urlMain": "https://codepen.io/",
     "username_claimed": "blue",
@@ -75,34 +103,56 @@
   },
   "EVE Online": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://evewho.com/pilot/{}/",
     "urlMain": "https://eveonline.com",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7",
     "\u0441\u0442\u0430\u043b\u043e": "https://eveonline.com"
   },
+  "Elakiri": {
+    "country": "\ud83c\udff4",
+    "country_klas": "LK",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>ElaKiri Community</title>",
+    "err\u043erTyp\u0435": "message",
+    "url": "http://www.elakiri.com/forum/member.php?username={}",
+    "urlMain": "http://www.elakiri.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Fanpop": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "errorUrl": "https://www.fanpop.com/",
+    "err\u043erTyp\u0435": "response_url",
     "url": "http://www.fanpop.com/fans/{}",
     "urlMain": "http://www.fanpop.com/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7",
-    "\u0441\u0442\u0430\u043b\u043e": "http://www.fanpop.com"
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Filmweb": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://www.filmweb.pl/user/{}",
     "urlMain": "https://www.filmweb.pl/user/adam",
     "username_claimed": "adam",
     "username_unclaimed": "noonewouldeverusethis7",
     "\u0441\u0442\u0430\u043b\u043e": "https://www.filmweb.pl"
   },
+  "Forum_vingrad": {
+    "country": "\ud83c\udff4",
+    "country_klas": "RU",
+    "errorMsg": "title>\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0424\u043e\u0440\u0443\u043c\u0430 - \u0424\u043e\u0440\u0443\u043c \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442\u043e\u0432",
+    "errorMsg2": "\u041d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u0434\u043d\u043e\u0433\u043e \u0438\u0437 \u0444\u0430\u0439\u043b\u043e\u0432 \u0424\u043e\u0440\u0443\u043c\u0430",
+    "err\u043erTyp\u0435": "message",
+    "url": "https://forum.vingrad.ru/users/{}",
+    "urlMain": "https://forum.vingrad.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Fotolog": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://fotolog.com/{}",
     "urlMain": "https://fotolog.com/"
   },
@@ -110,7 +160,7 @@
     "country": "\ud83c\udff4",
     "errorMsg": "user cannot be found",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://www.furaffinity.net/user/{}",
     "urlMain": "https://www.furaffinity.net",
     "username_claimed": "blue",
@@ -118,33 +168,23 @@
   },
   "Imgtagram": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://imgtagram.com/u/{}",
     "urlMain": "https://imgtagram.com",
     "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7",
-    "\u0441\u0442\u0430\u043b\u043e": "https://imgtagram.com/error"
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Imgur": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://imgur.com/user/{}",
     "urlMain": "https://imgur.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
-  "Jimdo": {
-    "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
-    "noPeriod": "True",
-    "url": "https://{}.jimdosite.com",
-    "urlMain": "https://jimdosite.com/",
-    "username_claimed": "jenny",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
   "Khan_Academy": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://www.khanacademy.org/profile/{}",
     "urlMain": "https://www.khanacademy.org/",
     "username_claimed": "blue",
@@ -154,7 +194,7 @@
     "country": "\ud83c\udff4",
     "errorMsg": "This profile is not available",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://www.linkedin.com/in/{}",
     "urlMain": "https://www.linkedin.com/",
     "username_claimed": "alex",
@@ -162,7 +202,7 @@
   },
   "Marketplace.trainzauctions": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://marketplace.trainzauctions.com/user/profile/{}",
     "urlMain": "https://marketplace.trainzauctions.com/",
     "username_claimed": "adam",
@@ -171,16 +211,15 @@
   },
   "MeetMe": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://www.meetme.com/{}",
     "urlMain": "https://www.meetme.com/",
     "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7",
-    "\u0441\u0442\u0430\u043b\u043e": "https://www.meetme.com/"
+    "username_unclaimed": "noonewouldeverusethis7"
   },
   "Mehack": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://mehack.org/members/?username={}",
     "urlMain": "https://mehack.org/members",
     "username_claimed": "adam",
@@ -190,7 +229,7 @@
     "country": "\ud83c\udff4",
     "errorMsg": "Instagram Web Viewer",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://mesimger.com/username/{}",
     "urlMain": "https://mesimger.com/",
     "urlProbe": "https://mesimger.com/",
@@ -199,18 +238,37 @@
   },
   "PayPal": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://www.paypal.com/paypalme2/{}",
     "urlMain": "https://www.paypal.me/",
     "username_claimed": "blue",
     "username_unclaimed": "noneownsthisusername",
     "\u0441\u0442\u0430\u043b\u043e": "https://www.paypal.com/paypalme2/404"
   },
+  "Pexels": {
+    "country": "\ud83c\udff4",
+    "err\u043erTyp\u0435": "status_code",
+    "headers": {
+      "User-Agent": ""
+    },
+    "url": "https://www.pexels.com/@{}",
+    "urlMain": "https://www.pexels.com/",
+    "username_claimed": "bruno",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "Pixabay": {
+    "country": "\ud83c\udff4",
+    "err\u043erTyp\u0435": "status_code",
+    "url": "https://pixabay.com/en/users/{}",
+    "urlMain": "https://pixabay.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Playerup": {
     "country": "\ud83c\udff4",
     "errorMsg": "Page Not Found",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://www.playerup.com/{}",
     "urlMain": "https://www.playerup.com/",
     "username_claimed": "adam",
@@ -218,7 +276,7 @@
   },
   "Pling": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "response_url",
+    "err\u043erTyp\u0435": "response_url",
     "url": "https://www.pling.com/u/{}/",
     "urlMain": "https://www.pling.com/",
     "username_claimed": "blue",
@@ -227,15 +285,26 @@
   },
   "PowerShell Gallery": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://www.powershellgallery.com/profiles/{}",
     "urlMain": "https://www.powershellgallery.com",
     "username_claimed": "powershellteam",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Proza": {
+    "country": "\ud83c\udff4",
+    "country_klas": "RU",
+    "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
+    "err\u043erTyp\u0435": "message",
+    "url": "https://www.proza.ru/avtor/{}",
+    "urlMain": "https://www.proza.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "Pvpru": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://pvpru.com/board/member.php?username={}&tab=aboutme#aboutme",
     "urlMain": "https://pvpru.com/",
     "username_claimed": "blue",
@@ -245,7 +314,7 @@
     "country": "\ud83c\udff4",
     "errorMsg": "Oh no! You just finished all of the games on the internet!",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "http://www.shockwave.com/member/profiles/{}.jsp",
     "urlMain": "http://www.shockwave.com/",
     "username_claimed": "blue",
@@ -253,15 +322,35 @@
   },
   "Spotify": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://open.spotify.com/user/{}",
     "urlMain": "https://open.spotify.com/",
     "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Stapico": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Wr",
+    "err\u043erTyp\u0435": "status_code",
+    "url": "https://stapico.ru/{}",
+    "urlMain": "https://stapico.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "nousermengirl1945"
+  },
+  "Stihi": {
+    "country": "\ud83c\udff4",
+    "country_klas": "RU",
+    "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
+    "err\u043erTyp\u0435": "message",
+    "url": "https://www.stihi.ru/avtor/{}",
+    "urlMain": "https://www.stihi.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "StreamMe": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://www.stream.me/{}",
     "urlMain": "https://www.stream.me/",
     "username_claimed": "blue",
@@ -271,15 +360,25 @@
     "country": "\ud83c\udff4",
     "errorMsg": "The user does not exist",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://user.teknik.io/{}",
     "urlMain": "https://teknik.io/",
     "username_claimed": "red",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "Tf2items": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Kb",
+    "errorUrl": "https://www.udemy.com",
+    "err\u043erTyp\u0435": "response_url",
+    "url": "http://www.tf2items.com/id/{}/",
+    "urlMain": "http://www.tf2items.com",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "WebNode": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://{}.webnode.cz/",
     "urlMain": "https://www.webnode.cz/",
     "username_claimed": "radkabalcarova",
@@ -289,10 +388,19 @@
     "country": "\ud83c\udff4",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://xss.is/members/?username={}",
     "urlMain": "https://xss.is/",
     "username_claimed": "boss",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
+  "YandexCollection": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Wr",
+    "err\u043erTyp\u0435": "status_code",
+    "url": "https://yandex.ru/collections/user/{}/",
+    "urlMain": "https://yandex.ru/collections/",
+    "username_claimed": "blue",
     "username_unclaimed": "noonewouldeverusethis7"
   },
   "YandexMarket": {
@@ -300,7 +408,7 @@
     "country_klas": "Wr",
     "errorMsg": "\u0422\u0443\u0442 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435\u0442",
     "errorMsg2": "None",
-    "errоrTypе": "message",
+    "err\u043erTyp\u0435": "message",
     "url": "https://market.yandex.ru/user/{}/achievements",
     "urlMain": "https://market.yandex.ru/",
     "username_claimed": "blue",
@@ -308,7 +416,8 @@
   },
   "Yougame": {
     "country": "\ud83c\udff4",
-    "errоrTypе": "status_code",
+    "country_klas": "Wr",
+    "err\u043erTyp\u0435": "status_code",
     "url": "https://yougame.biz/{}",
     "urlMain": "https://yougame.biz/",
     "username_claimed": "dredd",

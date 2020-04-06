@@ -1,309 +1,102 @@
 ##Серый список
-##Проверить аномальные сайты, которые можно спасти.
-##Легенда текущий статус сайта: БС — сайт в белом списке; СС — сайт в сером списке; ЧС — сайт в чёрном списке. 
+##Проверить аномальные сайты, которые можно восстановить.
+##Легенда: текущий статус сайта:: БС — сайт в белом списке; СС — сайт в сером списке; ЧС — сайт в чёрном списке.
 
-#БС.16/02/2019 Частенько даёт на верном username "Увы"
-  "Etsy": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://www.etsy.com/shop/{}",
-    "urlMain": "https://www.etsy.com/",
-    "username_claimed": "JennyKrafts",
-    "username_unclaimed": "noonewouldeverusethis7"
-    
-    
-#БС.16/02/2019 аномальное поведение    
-  "Fanpop": {
-    "errorType": "response_url",
-    "стало": "http://www.fanpop.com",
-    "rank": 0,
-    "url": "http://www.fanpop.com/fans/{}",
-    "urlMain": "http://www.fanpop.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"    
-    
+#ЧС.16/02/2019 (аномальное поведение, хитрый редирект)
+    "Fanpop"
 
-#CС.16/02/2019 Статус 403("errorType": "status_code" — не находит ники; errorMsg — положительные срабатывания)    
-  "Pixabay": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://pixabay.com/en/users/{}",
-    "urlMain": "https://pixabay.com/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
+#ЧС.16/02/2019 Статус 403("errorType": "status_code" — не находит ники; errorMsg — положительные срабатывания)
+    "Pixabay"
 
+#ЧС.16/02/2019 Статус 403 ("errorType": "status_code" — не находит ники; errorMsg — положительные срабатывания)
+    "Pexels"
 
-#CС.16/02/2019 Статус 403 ("errorType": "status_code" — не находит ники; errorMsg — положительные срабатывания)
-  "Pexels": {
-    "errorType": "status_code",
-    "rank": 0,
-    "headers": {
-    "User-Agent": ""
-    },
-    "url": "https://www.pexels.com/@{}",
-    "urlMain": "https://www.pexels.com/",
-    "username_claimed": "bruno",
-    "username_unclaimed": "noonewouldeverusethis7"
+##ЧС.17/02/2019 (Ложное срабатывание, находит несуществующие username, ответ верный при badusername, редирект на captcha)
+    "YandexCollection"
 
-
-##СС.17/02/2019 (Ложное срабатывание, находит несуществующие username, ответ верный при badusername, срабатвает, возможно captcha)
-  "YandexCollection": {
-    "errorType": "status_code",
-    "rank": 0,
-    "url": "https://yandex.ru/collections/user/{}/",
-    "urlMain": "https://yandex.ru/collections/",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-
-
-##ЧС.18/02/2019 (Долгий ответ от сайта, ступорит Snoop)
-  "Zomato": {
-    "errorType": "status_code",
-    "headers": {
-      "Accept-Language": "en-US,en;q=0.9"
-    },
-    "rank": 0,
-    "url": "https://www.zomato.com/pl/{}/foodjourney",
-    "urlMain": "https://www.zomato.com/",
-    "username_claimed": "deepigoyal",
-    "username_unclaimed": "noonewouldeverusethis7"
-
+##ЧС.18/02/2019 (Долгий ответ от сайта, ступорит Snoop) | исправлено! ##БС
+    "Zomato"
 
 ##СС.20/02/2019 (лежат сервера: [Singapore Indonesia Philippines Taiwan Vietnam Thailand])
-  "Op.ggSG": {
-    "errorMsg": "LoL Stats, Record Replay, Database, Guide - OP.GG",
-    "errorType": "message",
-    "rank": 0,
-    "url": "https://sg.op.gg/summoner/userName={}",
-    "urlMain": "https://sg.op.gg/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
+    "Op.ggSG":
     
 ##СС.20/02/2019 (response)
-imgtagram
-
+    "imgtagram"
 
 ##СС.21/02/2019 (проблема с сертификатом)
-https://forumkinopoisk.ru/member.php?username=adam
+    "https://forumkinopoisk.ru/member.php?username=adam"
 
+##ЧС.21/02/2019 (Проверка браузера не проходит)
+    "Yougame"
+    "Mehack"
 
-##ЧС.21/02/2019 (Проверка браузера)
-Yougame
-Mehack
-
-
-##ЧС.23/02/2019 (no)
-Filmweb
-Mesimger
-Marketplace.trainzauctions
-Furaffinity (проверка браузера)
-
+##ЧС.23/02/2019 (Проверка браузера не проходит)
+    "Filmweb"
+    "Mesimger"
+    "Marketplace.trainzauctions"
+    "Furaffinity"
 
 ##ЧС.24/02/2019 (требуется регистрация на ресурсах)
-Boingboing.net
-Spotify
+    "Boingboing.net"
+    "Spotify"
 
+##СС.24/02/2019
+    "http://www.folkd.com/user/Bastian" (медленный ответ) | исправлено! ##БС
 
-##СС.25/02/2019 ((60) SSL certificate problem:)
-  "Forumkinopoisk": {
-    "errorMsg": "Пользователь не зарегистрирован и не имеет профиля для просмотра.",
-    "errorType": "message",
-    "rank": 0,
-    "url": "https://forumkinopoisk.ru/member.php?username={}",
-    "urlMain": "https://forumkinopoisk.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-      
-http://www.folkd.com/user/X (медленный ответ)
-        
+##ЧС.25/02/2019 (сайт часто открывается закрывается для публики, что ведет к ложным ошибкам)
+    "xss.is"
 
-##ЧС.25/02/2019 (сайт часто открывается закрывается для публики)
-xss.is    
- 
+##СС.27/02/2019 (проблема с сертификатом)
+    "https://www.bandlab.com/"
+    "https://www.empowher.com/"
 
-##СС.27/02/2019 
-https://www.bandlab.com/
-https://www.empowher.com/ ((60) SSL certificate problem:)
-
-
-##СС.29/02/2019 
-https://www.virtualireland.ru/ ((35) SSL problem:)
-
+##СС.29/02/2019
+    "https://www.virtualireland.ru/" (проблема с сертификатом)
 
 ##ЧС.4/03/2019 (сайты не доступны)
-MeetMe
-Jimdo
+    "MeetMe"
+    "Jimdo" | исправлено! ##БС
 
-##СС (очень долгий ответ)
-gnusocial.no
+##СС 4/03/2019 (очень долгий ответ)
+    "gnusocial.no" | исправлено! ##БС
 
+##СС.9/03/2019 (сайты ушли под защиту Cloudflare)
+    "9GAG"
+    "Canva"
 
-##БС.9/03/2019 (сайт ушел под защиту Cloudflare, username не будут находиться пока)
-9GAG
-Canva
+##СС.11/03/2019 (прикрыли api)
+    "SportsTracker" | исправлено! ##БС
+  
+##CС.11/03/2019 (изменили ответ, ложные результаты)
+    "FortniteTracker" | исправлено! ##БС
 
+##ЧС.11/03/2019 (Долгий ответ от сайта ~7-10c)
+    "Tf2items"
 
-##БС.11/03/2019 (api)
-  "SportsTracker": {
-    "country": "\ud83c\udf0e",
-    "errorMsg": "\"code\":\"404\"",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
-    "url": "https://www.sports-tracker.com/view_profile/{}",
-    "urlMain": "https://www.sports-tracker.com/",
-    "urlProbe": "https://www.sports-tracker.com/apiserver/v1/user/name/{}",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeveruse"
-  },
-  
-##CС.11/03/2019 (изменили ответ, ложные результаты)  
-  "FortniteTracker": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
-    "country_klas": "US",
-    "err\u043erTyp\u0435": "status_code",
-    "url": "https://fortnitetracker.com/profile/all/{}",
-    "urlMain": "https://fortnitetracker.com",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis"
-  },  
-  
-  "Op_ggJP": {
-    "country": "\ud83c\uddef\ud83c\uddf5",
-    "country_klas": "JP",
-    "errorMsg": "\u0412\u044b \u0432\u044b\u0431\u0440\u0430\u043b\u0438 \u0432\u0435\u0440\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440?",
-    "errorMsg2": "None",
-    "err\u043erTyp\u0435": "message",
-    "headers": {
-      "Accept-Language": "ru-RU,ru"
-    },
-    "url": "https://jp.op.gg/summoner/userName={}",
-    "urlMain": "https://jp.op.gg/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },  
+##ЧС.11/03/2019 (вешает намертво)
+    "Cardomain"
 
-##CС.11/03/2019 (Долгий ответ от сайта ~7c)  
-  "Tf2items": {
-    "country": "🏁",
-    "country_klas": "Kb",    
-    "errоrTypе": "response_url",
-    "errorUrl": "https://www.udemy.com",
-    "url": "http://www.tf2items.com/id/{}/",
-    "urlMain": "http://www.tf2items.com",
-    "username_claimed": "blue",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },  
-  
-##CС.11/03/2019 (вешает намертво)    
-  "Cardomain": {
-    "country": "🏁",
-    "country_klas": "Kb",    
-    "errоrTypе": "status_code",
-    "url": "http://www.cardomain.com/member/{}/",
-    "urlMain": "http://www.cardomain.com",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },  
-  
-  
-##CС.22/03/2019 (разнообразный поиск от зависимости ip)
-  "CashMe": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
-    "country_klas": "US",
-    "errоrTypе": "status_code",
-    "url": "https://cash.me/${}",
-    "urlMain": "https://cash.me/",
-    "username_claimed": "Jenny",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },  
-  
-##CС.24/03/2019 (ушел под защиту CF)  
-    "Elakiri": {
-    "country": "\ud83c\uddf1\ud83c\uddf0",
-    "country_klas": "LK",
-    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
-    "errorMsg2": "<title>ElaKiri Community</title>",
-    "errоrTypе": "message",
-    "url": "http://www.elakiri.com/forum/member.php?username={}",
-    "urlMain": "http://www.elakiri.com/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  
-  
-##CС.29/03/2019 ((92) HTTP/2 stream 0 was not closed cleanly: PROTOCOL_ERROR (err 1)/x-firewall-protection: True)    
-  "Stihi": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
-    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
-    "errоrTypе": "message",
-    "url": "https://www.stihi.ru/avtor/{}",
-    "urlMain": "https://www.stihi.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },
-  "Proza": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u0410\u0432\u0442\u043e\u0440 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
-    "errorMsg2": "\u041f\u043e\u0438\u0441\u043a \u0430\u0432\u0442\u043e\u0440\u043e\u0432",
-    "errоrTypе": "message",
-    "url": "https://www.proza.ru/avtor/{}",
-    "urlMain": "https://www.proza.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },    
-  
-  
-##CС.31/03/2019 (сломал сам себя, думаю временно)      
-  "Forum_vingrad": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "title>\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u0424\u043e\u0440\u0443\u043c\u0430 - \u0424\u043e\u0440\u0443\u043c \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442\u043e\u0432",
-    "errorMsg2": "\u041d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u0434\u043d\u043e\u0433\u043e \u0438\u0437 \u0444\u0430\u0439\u043b\u043e\u0432 \u0424\u043e\u0440\u0443\u043c\u0430",
-    "errоrTypе": "message",
-    "url": "https://forum.vingrad.ru/users/{}",
-    "urlMain": "https://forum.vingrad.ru",
-    "username_claimed": "adam",
-    "username_unclaimed": "noonewouldeverusethis7"
-  },  
+##ЧС.22/03/2019 (разнообразные результаты от зависимости ip)
+    "CashMe"
 
-##CС.02/04/2019 ((35) error:1425F102:SSL routines:ssl)        
-https://derevnyaonline.ru/user/coolkrictina  
+##ЧС.24/03/2019 (ушел под защиту CF)
+    "Elakiri"
 
-##CС.03/04/2019 (сломал сам себя, думаю временно)        
-  "Canva": {
-    "country": "\ud83c\udde6\ud83c\uddfa",
-    "country_klas": "AU",
-    "errorUrl": "https://www.canva.com/{}",
-    "errоrTypе": "response_url",
-    "url": "https://www.canva.com/{}",
-    "urlMain": "https://www.canva.com/",
-    "username_claimed": "jenny",
-    "username_unclaimed": "xgtrq"
-  },
-  
-##ЧС.06/04/2019 (намеренно захэшировали имена юзеров)          
-YandexMarket  
+##ЧС.29/03/2019 (Включил x-firewall-protection: True)
+    "Stihi"
+    "Proza"
 
-  "Stapico": {
-    "country": "🌎",
-    "country_klas": "Wr",    
-    "errоrTypе": "status_code",
-    "url": "https://stapico.ru/{}",
-    "urlMain": "https://stapico.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "nousermengirl1945"
-  },
-  
-##СС.06/04/2019 (медленный ответ ~10c)            
-  "Stapico": {
-    "country": "🌎",
-    "country_klas": "Wr",    
-    "errоrTypе": "status_code",
-    "url": "https://stapico.ru/{}",
-    "urlMain": "https://stapico.ru/",
-    "username_claimed": "adam",
-    "username_unclaimed": "nousermengirl1945"
-  },  
+##ЧС.31/03/2019 (сайт сломал сам себя, думаю временно)
+    "Forum_vingrad"
+
+##CС.02/04/2019 (проблема с сертификатом)
+    "https://derevnyaonline.ru/user/coolkrictina"
+
+##ЧС.03/04/2019 (сайт сломал сам себя, думаю временно)
+    "Canva"
+
+##ЧС.06/04/2019 (намеренно захэшировали имена юзеров)
+    "YandexMarket"
+
+##ЧС 6/03/2019 (очень долгий ответ)
+    "Stapico"

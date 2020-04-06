@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
-"""Сортировка БД
-"""
+"cортировка БД"
 
 import json
 import sys
@@ -43,7 +42,7 @@ def sorts():
     with open("data.json", "r", encoding="utf8") as data_file:
         data = json.load(data_file)
 
-    with open("sites.md", "w", encoding="utf8") as site_file:
+    with open("websites.md", "w", encoding="utf8") as site_file:
         data_length = len(data)
         site_file.write(f'## Snoop БД поддерживаемых сайтов (список), всего — {data_length} сайт(ов)!\n')
 

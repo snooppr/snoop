@@ -9,7 +9,7 @@ import os
 import platform
 import re
 import requests
-import sortirovka
+import sorting
 import subprocess
 import sys
 import time
@@ -564,7 +564,7 @@ def main():
                         )                        
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
-                        help="Вывод на печать БД (БС+ЧС) поддерживаемых сайтов"
+                        help="Вывести на печать информацию о базе данных Snoop"
                         )
     parser.add_argument("--country", "-c",
                         action="store_true", dest="country", default=False,
@@ -612,7 +612,7 @@ def main():
 
 # Опция сортировки.
     if args.sort:
-        sortirovka.sorts()
+        sorting.sorts()
         sys.exit(0)
 
 # Опция '--list all'.
@@ -666,7 +666,7 @@ def main():
                         print(f"{i}.", Fore.CYAN + f"{aaa}  {con}")
 # Общий результат БС Win.
                 listallsortFlag = []
-                with open('sites.md', "r", encoding="utf8") as listyes:
+                with open('websites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split('[')[0]).replace(" ", "")
                         patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
@@ -690,7 +690,7 @@ def main():
                 print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
                 print(Fore.GREEN + "++Белый список++")                
                 listall = []
-                with open('sites.md', "r", encoding="utf8") as listyes:
+                with open('websites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split(']')[0]).replace("[", " ")
                         listall.append(patch)
@@ -700,7 +700,7 @@ def main():
                         print(Fore.CYAN + str(zzz))
 
                 listallsortFlag = []
-                with open('sites.md', "r", encoding="utf8") as listyes:
+                with open('websites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split('[')[0]).replace(" ", "")
                         patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
@@ -746,7 +746,7 @@ def main():
                         print(f"{fd}.", Fore.CYAN + f"{numerlist}",end = '')
 # Общий результат БС Win.
                 listallsortFlag = []
-                with open('sites.md', "r", encoding="utf8") as listyes:
+                with open('websites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split('[')[0]).replace(" ", "")
                         patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
@@ -769,7 +769,7 @@ def main():
             else:
                 print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
                 listall = []
-                with open('sites.md', "r", encoding="utf8") as listyes:
+                with open('websites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split(']')[0]).replace("[", " ")
                         patch1 = str(patch.split('.')[1:]).replace("[", "").replace("]", " ").replace("'", "")
@@ -783,7 +783,7 @@ def main():
                         print(Fore.CYAN + str(fd) + str(numerlist))
 
                 listallsortFlag = []
-                with open('sites.md', "r", encoding="utf8") as listyes:
+                with open('websites.md', "r", encoding="utf8") as listyes:
                     for site in listyes.readlines():
                         patch = (site.split('[')[0]).replace(" ", "")
                         patch1 = str(patch.split('.')[1:2]).replace("[", "").replace("]", " ").replace("'", "")
