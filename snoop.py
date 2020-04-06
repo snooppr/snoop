@@ -194,9 +194,16 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
 
 def snoop(username, site_data, verbose=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
 
-    print_info("разыскиваем:", username, color)
-    
-# Предотвращение DDoS из-за невалидных логинов: номеров телефонов.   
+# Предотвращение DDoS из-за невалидных логинов: номеров телефонов.
+    ermail=[]
+    with open('domainlist.txt') as err:
+        for line in err.readlines():
+            errdata=line[:-1]
+            ermail.append(errdata)
+    if any(ermail in username for ermail in ermail):
+        print(Style.BRIGHT + Fore.RED + "\nE-mail адрес будет обрезан до валидного состояния")
+        username = username.rsplit(sep='@', maxsplit=1)[0]
+
     ernumber=['79', '89', "38", "37"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
         if len(username) >= 10 and len(username) <= 13:
@@ -209,7 +216,9 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
     elif username[0] == "9" and len(username) == 10 and username.isdigit() == True:
         print (Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
         sys.exit(0)
-        
+
+# Печать первой инфостроки.
+    print_info("разыскиваем:", username, color)
 # Создать сеанс на основе методологии запроса.
     underlying_session = requests.session()
     underlying_request = requests.Request()
