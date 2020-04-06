@@ -585,6 +585,17 @@
     "username_claimed": "dem",
     "username_unclaimed": "nousermengirl1945"
   },
+  "Au.ru": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title>\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d</title",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://au.ru/user/{}/",
+    "urlMain": "https://au.ru",
+    "username_claimed": "adam",
+    "username_unclaimed": "nousermengirl1945"
+  },
   "Audiojungle": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -3990,6 +4001,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "nousermengirl1945"
   },
+  "Krovatka": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0439 \u0441\u0438\u043c\u0432\u043e\u043b \u0432 cname",
+    "errorMsg2": "\u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d",
+    "errоrTypе": "message",
+    "url": "http://krovatka.ru/people/pp0.cgi?ch=20&cn={}",
+    "urlMain": "http://krovatka.ru/",
+    "username_claimed": "adam",
+    "username_unclaimed": "nousermengirl1945"
+  },
   "Krstarica": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -4350,6 +4372,17 @@
     "username_claimed": "Tompob",
     "username_unclaimed": "nousermengirl1945"
   },
+  "Macosx": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<title>Notable members | Mac Support</title>",
+    "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
+    "errоrTypе": "message",
+    "url": "https://macosx.com/members/?username={}",
+    "urlMain": "https://macosx.com/",
+    "username_claimed": "adam",
+    "username_unclaimed": "nousermengirl1945"
+  },
   "Mactalk": {
     "country": "\ud83c\udde6\ud83c\uddfa",
     "country_klas": "AU",
@@ -4563,6 +4596,15 @@
     "url": "http://www.microchip.su/member.php?username={}",
     "urlMain": "http://www.microchip.su",
     "username_claimed": "nightavenger",
+    "username_unclaimed": "nousermengirl1945"
+  },
+  "Minecraft-statistic": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://minecraft-statistic.net/ru/player/{}.html",
+    "urlMain": "https://minecraft-statistic.net",
+    "username_claimed": "valeryamits",
     "username_unclaimed": "nousermengirl1945"
   },
   "Miningclub": {
@@ -4892,6 +4934,16 @@
     "urlMain": "https://nationstates.net",
     "username_claimed": "the_west_pacific",
     "username_unclaimed": "noonewould"
+  },
+  "Nekto": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://nekto.me/{}",
+    "errоrTypе": "response_url",
+    "url": "https://nekto.me/{}/",
+    "urlMain": "https://nekto.me",
+    "username_claimed": "green",
+    "username_unclaimed": "nousermengirl1945"
   },
   "Netvibes": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
@@ -5574,6 +5626,15 @@
     "url": "https://www.plurk.com/{}",
     "urlMain": "https://www.plurk.com/",
     "username_claimed": "adam",
+    "username_unclaimed": "nousermengirl1945"
+  },
+  "Poembook": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://poembook.ru/{}",
+    "urlMain": "https://poembook.ru",
+    "username_claimed": "valeryamits",
     "username_unclaimed": "nousermengirl1945"
   },
   "PokemonShowdown": {
@@ -6922,7 +6983,7 @@
     "errоrTypе": "message",
     "url": "https://t.me/{}",
     "urlMain": "https://t.me/",
-    "username_claimed": "adam",
+    "username_claimed": "Klaus",
     "username_unclaimed": "nousermengirl1945"
   },
   "Tellonym": {
@@ -7470,6 +7531,17 @@
     "username_claimed": "adam",
     "username_unclaimed": "nousermengirl1945"
   },
+  "Vlmi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "<title>\u0423\u043f\u0441! \u041c\u044b \u0441\u0442\u043e\u043b\u043a\u043d\u0443\u043b\u0438\u0441\u044c \u0441 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u043c\u0438 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430\u043c\u0438. | VLMI \u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c, \u043e\u0431\u043c\u0435\u043d \u043f\u0440\u0438\u0432\u0430\u0442\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0435\u0439</title>",
+    "errorMsg2": "<title>\u041f\u043e\u043b\u0435\u0437\u043d\u044b\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 | VLMI \u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c, \u043e\u0431\u043c\u0435\u043d \u043f\u0440\u0438\u0432\u0430\u0442\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0435\u0439</title>",
+    "errоrTypе": "message",
+    "url": "https://vlmi.biz/members/?username={}",
+    "urlMain": "https://vlmi.biz",
+    "username_claimed": "mixa",
+    "username_unclaimed": "nousermengirl1945"
+  },
   "Voices": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -7798,6 +7870,15 @@
     "url": "https://yandex.ru/bugbounty/researchers/{}/",
     "urlMain": "https://yandex.ru/bugbounty/",
     "username_claimed": "pyrk1",
+    "username_unclaimed": "nousermengirl1945"
+  },
+  "YandexMusic": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://music.yandex.ru/users/{}/tracks",
+    "urlMain": "https://music.yandex.ru",
+    "username_claimed": "boss",
     "username_unclaimed": "nousermengirl1945"
   },
   "YouNow": {
