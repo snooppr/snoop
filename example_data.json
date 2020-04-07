@@ -1,32 +1,33 @@
 {
-  "Amirite": {
-    "country": "🇬🇧",
-    "country_klas": "GB",    
+  "WebsiteName1": {
+    "country": "🌎",
+    "country_klas": "Wr",    
     "errоrTypе": "status_code",
-    "url": "https://www.amirite.com/user/{}",
-    "urlMain": "https://www.amirite.com",
-    "username_claimed": "red",
+    "url": "https://1examplesite.ru/member.php?username={}",
+    "urlMain": "https://1examplesite.ru",
+    "username_claimed": "username",
     "username_unclaimed": "nousermengirl1945"
   },
-  "Archiveofourown": {
-    "country": "🇺🇸",
-    "country_klas": "US",    
+  "WebsiteName2": {
+    "country": "🇷🇺",
+    "country_klas": "RU",    
     "errоrTypе": "response_url",
-    "errorUrl": "https://archiveofourown.org/{}",
-    "url": "https://archiveofourown.org/users/{}",
-    "urlMain": "https://archiveofourown.org",
-    "username_claimed": "adam",
+    "errorUrl": "https://2examplesite.ru",
+    "url": "https://2examplesite.ru/member.php?u{}",
+    "urlMain": "https://2examplesite.ru",
+    "username_claimed": "username",
     "username_unclaimed": "nousermengirl1945"
   },
-  "Mobypicture": {
-    "country": "\ud83c\uddf3\ud83c\uddf1",
-    "country_klas": "NL",    
-    "errorMsg": "User not found",
+  "WebsiteName3": {
+    "country": "🇦🇷🇦🇺🇧🇷🇧🇾🇨🇦🇨🇳🇨🇺🇨🇿🇩🇪🇪🇺🇫🇮🇫🇷🇬🇧🇭🇰🇭🇷🇭🇺🇮🇩🇮🇪🇮🇳🇮🇷🇮🇹🇯🇵🇰🇷🇱🇰🇱🇻🇳🇬🇳🇱🇵🇦🇵🇱🇵🇹🇷🇺🇸🇪🇹🇷🇺🇦🇺🇸🌎🏁🏴",
+    "country_klas": "Kb",    
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
     "errorMsg2": "None",    
     "errоrTypе": "message",
-    "url": "http://www.mobypicture.com/user/{}",
-    "urlMain": "http://www.mobypicture.com",
-    "username_claimed": "green",
+    "url": "https://3examplesite.ru/member.php?profile{}",
+    "urlMain": "https://3examplesite.ru",
+    "urlProbe": "https://api.3examplesite.ru?ui/ver/",
+    "username_claimed": "username",
     "username_unclaimed": "nousermengirl1945"
   }     
 }
