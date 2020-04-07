@@ -33,7 +33,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.\033[34;1m1.7\033[31;1m_rus\033[0m
+                         _|    \033[0m \033[37mv1.\033[34;1m1.8\033[31;1m_rus\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -50,7 +50,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.1.7_rus Ветка Snoop Desktop"
+__version__ = "1.1.8_rus Ветка Snoop Desktop"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -814,14 +814,13 @@ def main():
         else:
             print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
             sys.exit(0)
+
 # Опция донат '-d y'.
     if args.donation:
         print(donate)
         webbrowser.open("https://yasobe.ru/na/snoop_project")
         print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit(0)
-
-
 
 # Опция указания списка разыскиваемых пользователей '-u'.
     if args.user:
@@ -851,7 +850,6 @@ def main():
         sys.exit(0)
 
 # Проверка остальных опций.
-
     response_json_online = None
     site_data_all = None
 
@@ -1104,7 +1102,6 @@ def main():
             file.write("\n" f"Обновлено: " + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".")
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
 
-
     # Запись в html.
             file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             try:
@@ -1227,7 +1224,6 @@ def main():
         else:
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
-
 
 # Открывать/нет браузер с результатами поиска.
     if args.no_func==False:
