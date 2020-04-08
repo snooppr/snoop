@@ -193,7 +193,7 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
 
 
 def snoop(username, site_data, verbose=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
-
+    username = re.sub(" ", "%20", username)
 # Предотвращение DDoS из-за невалидных логинов: номеров телефонов.
     ermail=[]
     with open('domainlist.txt') as err:
@@ -218,7 +218,11 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         sys.exit(0)
 
 # Печать первой инфостроки.
-    print_info("разыскиваем:", username, color)
+    if '%20' in username:
+        usernameA = re.sub("%20", " ", username)
+        print_info("разыскиваем:", usernameA, color)
+    else:
+        print_info("разыскиваем:", username, color)
 # Создать сеанс на основе методологии запроса.
     underlying_session = requests.session()
     underlying_request = requests.Request()
@@ -247,7 +251,6 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         results_site['flagcountryklas'] = net_info.get("country_klas")
         results_site['url_main'] = net_info.get("urlMain")
 
-
 # Пользовательский user-agent браузера, некоторые сайты от этого зависят напрямую.
 # Временно поставил самый популярный, чтобы не думали, что запросы идут от ботов.
         headers = {
@@ -259,11 +262,11 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
             headers.update(net_info["headers"])
 
 # Не делать запрос, если имя пользователя не подходит для сайта.
-        regex_check = net_info.get("regexCheck")
-        if regex_check and re.search(regex_check, username) is None:
+        exclusionYES = net_info.get("exclusion")
+        if exclusionYES and re.search(exclusionYES, username):
 # Не нужно делать проверку на сайте: если это имя пользователя не допускается.
             if not print_found_only:
-                print_invalid(social_network, "Недопустимый формат имени для данного сайта", color)
+                print_invalid(social_network, f"Недопустимый формат имени для данного сайта", color)
 
             results_site["exists"] = "прочерк"
             results_site["url_user"] = ""
@@ -321,9 +324,8 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Получить другую информацию сайта снова.
         url = results_site.get("url_user")
         countryA = results_site.get("flagcountry")
-        countryB = results_site.get("flagcountryklas")        
+        countryB = results_site.get("flagcountryklas")
         exists = results_site.get("exists")
-
         if exists is not None:
 # Мы уже определили, что пользователь не существует здесь.
             continue
@@ -332,7 +334,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         error_type = net_info["errоrTypе"]
 
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
-        http_status = "?"
+        http_status = "*???"
         response_text = ""
 
 # Получить future и убедиться, что оно закончено.
@@ -341,12 +343,12 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                                                     error_type=error_type,
                                                     social_network=social_network,
                                                     verbose=verbose,
-                                                    retry_no=3,
+                                                    retry_no=3, 
                                                     color=color)
 
 # Попытка получить информацию запроса.
         try:
-            http_status = r.status_code
+            http_status =  r.status_code
         except:
             pass
         try:
@@ -354,9 +356,8 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         except:
             pass
 
+# Проверка, 4 метода; #1.
 # Ответы message (разные локации).
-        if "message" == "errorMsg":
-            print("errorMsg")
         if error_type == "message":
             error = net_info.get("errorMsg") 
             error2 = net_info.get("errorMsg2")
@@ -368,7 +369,6 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
                 exists = "увы"
-                
             else:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
@@ -376,8 +376,24 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
                 exists = "найден!"
 
-        elif error_type == "status_code":
+# Проверка, 4 метода; #2.
+# Проверка username при статусе 301 и 302.
+        elif error_type == "redirection":
+            rr = requests.get(url, allow_redirects=False)
+            if rr.status_code == 301:
+                if sys.platform == 'win32':
+                    print_found_country(social_network, url, countryB, response_time, verbose, color)
+                else:
+                    print_found_country(social_network, url, countryA, response_time, verbose, color)
+                exists = "найден!"
+            else:
+                if not print_found_only:
+                    print_not_found(social_network, response_time, verbose, color)
+                exists = "увы"
+
+# Проверка, 4 метода; #3.
 # Проверяет, является ли код состояния ответа 2..
+        elif error_type == "status_code":
             if not r.status_code >= 300 or r.status_code < 200:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
@@ -389,12 +405,13 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                     print_not_found(social_network, response_time, verbose, color)
                 exists = "увы"
 
-        elif error_type == "response_url":
-
+# Проверка, 4 метода; #4
 # Для этого метода обнаружения мы отключили перенаправление.
 # Таким образом, нет необходимости проверять URL-адрес ответа: он всегда будет соответствовать запросу. 
 # Вместо этого мы обеспечим, чтобы статус кода указывал, что запрос был успешным (тоесть не 404 или перенаправлен.
-        
+
+        elif error_type == "response_url":
+
             if 200 <= r.status_code < 300:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
