@@ -78,7 +78,7 @@
     "exclusion": "\\W",
     "url": "https://www.capfriendly.com/users/{}",
     "urlMain": "https://www.capfriendly.com/",
-    "usernameOFF": "noonewouldeverusethis",
+    "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
   "Cardomain": {
@@ -310,7 +310,7 @@
     "exclusion": "\\W",
     "url": "https://www.pling.com/u/{}/",
     "urlMain": "https://www.pling.com/",
-    "usernameOFF": "noonewouldeverusethis",
+    "usernameOFF": "nousermengirl1945",
     "usernameON": "blue",
     "\u0441\u0442\u0430\u043b\u043e": "https://www.pling.com/"
   },
@@ -352,7 +352,7 @@
     "exclusion": "\\W",
     "url": "http://www.shockwave.com/member/profiles/{}.jsp",
     "urlMain": "http://www.shockwave.com/",
-    "usernameOFF": "noonewouldeverusethis",
+    "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
   "Spotify": {
