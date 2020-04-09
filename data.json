@@ -711,6 +711,17 @@
     "usernameOFF": "noonewouldeverusethis",
     "usernameON": "blue"
   },
+  "Backdoor_sdslabs": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "No such user exists",
+    "errorMsg2": "404 - Not Found",
+    "errоrTypе": "message",
+    "url": "https://backdoor.sdslabs.co/users/{}",
+    "urlMain": "https://backdoor.sdslabs.co",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Badoo": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -1392,6 +1403,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Defendtheweb": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorUrl": "https://defendtheweb.net/{}",
+    "errоrTypе": "response_url",
+    "url": "https://defendtheweb.net/profile/{}",
+    "urlMain": "https://defendtheweb.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "username"
+  },
   "Demonscity": {
     "country": "\ud83c\uddf5\ud83c\udde6",
     "country_klas": "PA",
@@ -1794,6 +1815,15 @@
     "errоrTypе": "status_code",
     "url": "https://www.eporner.com/profile/{}/",
     "urlMain": "https://www.eporner.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Ethicalhacker": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.ethicalhacker.net/members/{}/",
+    "urlMain": "https://www.ethicalhacker.net",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -3038,7 +3068,7 @@
     "country_klas": "DE",
     "errorUrl": "https://friendfinder.com/{}",
     "errоrTypе": "response_url",
-    "exclusion": "\\W",    
+    "exclusion": "\\W",
     "url": "https://friendfinder.com/profile/{}",
     "urlMain": "https://friendfinder.com",
     "usernameOFF": "nousermengirl1945",
@@ -3528,6 +3558,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Hackthissite": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "Cannot Retrieve Information For The Specified Username",
+    "errorMsg2": "<title>Hack This Site!</title>",
+    "errоrTypе": "message",
+    "url": "https://www.hackthissite.org/user/view/{}",
+    "urlMain": "https://www.hackthissite.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Hctorpedo": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3548,6 +3589,16 @@
     "urlMain": "http://www.hdseason.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "perlindm"
+  },
+  "Hellboundhackers": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorUrl": "https://www.hellboundhackers.org/{}",
+    "errоrTypе": "response_url",
+    "url": "https://www.hellboundhackers.org/user/{}.html",
+    "urlMain": "https://www.hellboundhackers.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Hockeyforum": {
     "country": "\ud83c\udf0e",
@@ -6324,6 +6375,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "bluewolfekiller"
   },
+  "Root-me": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.root-me.org/{}",
+    "urlMain": "https://www.root-me.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Rovlpj": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -6867,7 +6927,7 @@
   "Space_dublikat": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
-    "errorMsg": "None",
+    "errorMsg": "<title>Attention Required! | Cloudflare</title>",
     "errorMsg2": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errоrTypе": "message",
     "exclusion": "\\W",
@@ -7022,7 +7082,7 @@
     "errorMsg": "SteamID account finder",
     "errorMsg2": "None",
     "errоrTypе": "message",
-    "exclusion": "\\W",    
+    "exclusion": "\\W",
     "url": "https://steamid.uk/profile/{}",
     "urlMain": "https://steamid.uk/",
     "usernameOFF": "nousermengirl1945",
@@ -7409,6 +7469,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Travis": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://travis-ci.community/u/{}/summary",
+    "urlMain": "https://travis-ci.community/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "montana"
+  },
   "Trello": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -7776,6 +7845,17 @@
     "urlMain": "https://www.votetags.info/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "W3challs": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<title>404 Page not found \u2013 W3Challs Hacking Challenges</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://w3challs.com/profile/{}",
+    "urlMain": "https://w3challs.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "W7forums": {
     "country": "\ud83c\udfc1",
