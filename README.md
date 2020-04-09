@@ -32,7 +32,7 @@ https://github.com/snooppr/snoop/releases
 ## Установка
 **Примечание**: Требуемая версия python 3.6 и выше.
 
-```bash
+```
 # Клонировать репозиторий
 $ git clone https://github.com/snooppr/snoop
 
@@ -50,7 +50,7 @@ $ pip3 install module
 ```
 
 ## Использование
-```bash
+```
 $ python3 snoop.py --help
 
 usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose] [--csv]
@@ -100,14 +100,13 @@ optional arguments:
 ```
 
 **Примеры**
-```bash
+```
 # Для поиска только одного пользователя:
 $ python3 snoop.py username1
 # Или, например, кириллица поддерживается:
 $ python3 snoop.py олеся
 # Для поиска имени, содержащего пробел:
 $ python3 snoop.py "ivan ivanov"
-# (ожидаемые ложные результаты поиска для 'ника с пробелом' < 1%).
 
 # Запуск на OS Windows:
 $ python snoop.py username1
@@ -126,7 +125,7 @@ $ python3 snoop.py -с -t 9 -f --csv -u ~/file.txt start
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.
 
 
-```bash
+```
 # Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
 $ python3 snoop.py --update Y
 [^1]: Требуется установка и лёгкая "настройка" Git.
@@ -174,7 +173,7 @@ $ python3 snoop.py --update Y
 
 7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с некоторыми дистрибутивами GNU/Linux  
 Решение
-```bash
+```
 $ sudo nano /etc/ssl/openssl.cnf
 
 # Изменить в самом низу файла строки:
