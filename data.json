@@ -5910,6 +5910,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Pr0gramm": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errоrTypе": "status_code",
+    "url": "https://pr0gramm.com/api/profile/info?name={}",
+    "urlMain": "https://pr0gramm.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Prankru": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
