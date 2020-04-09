@@ -107,7 +107,7 @@ $ python3 snoop.py username1
 $ python3 snoop.py олеся
 # Для поиска имени, содержащего пробел:
 $ python3 snoop.py "ivan ivanov"
-# (ожидаемые ложные результаты поиска для 'ника с пробелом' ~1,25%).
+# (ожидаемые ложные результаты поиска для 'ника с пробелом' < 1%).
 
 # Запуск на OS Windows:
 $ python snoop.py username1
