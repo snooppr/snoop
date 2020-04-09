@@ -752,7 +752,7 @@
 751. 🇺🇸 [Typeracer](https://typeracer.com)
 752. 🇷🇺 [Uaksu](https://uaksu.forum24.ru/)
 753. 🌎 [Ubisoft](https://forums-ru.ubisoft.com/)
-754. 🇷🇺 [Uchportal](http://www.hdseason.ru/)
+754. 🇷🇺 [Uchportal](https://www.uchportal.ru)
 755. 🌎 [Udemy](https://www.udemy.com)
 756. 🇷🇺 [Uid](https://uid.me/)
 757. 🌎 [Ultimate-Guitar](https://ultimate-guitar.com/)
