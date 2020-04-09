@@ -15,6 +15,7 @@ import sys
 import time
 import webbrowser
 
+from argparse import ArgumentTypeError
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from collections import Counter
 from colorama import Fore, Style, init
@@ -83,6 +84,7 @@ class ElapsedFuturesSession(FuturesSession):
     https://github.com/ross/requests-futures#working-in-the-background
     """
 
+
     def request(self, method, url, hooks={}, *args, **kwargs):
         start = time.time()
 
@@ -147,6 +149,7 @@ else:
         else:
             print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
 
+
 def print_not_found(social_network, response_time, verbose=False, color=True):
     if color:
         print((Fore.CYAN + "[" +
@@ -157,6 +160,7 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
             Style.BRIGHT + Fore.YELLOW + " Увы!"))
     else:
         print(f"[-]{format_response_time(response_time, verbose)} {social_network}: Увы!")
+
 
 def print_invalid(social_network, msg, color=True):
     """Ошибка вывода результата"""
@@ -171,7 +175,6 @@ def print_invalid(social_network, msg, color=True):
 
 
 def get_response(request_future, error_type, social_network, verbose=False, retry_no=None, color=True):
-    
     try:
         rsp = request_future.result()
         if rsp.status_code:
@@ -194,6 +197,7 @@ def get_response(request_future, error_type, social_network, verbose=False, retr
 
 def snoop(username, site_data, verbose=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
     username = re.sub(" ", "%20", username)
+
 # Предотвращение DDoS из-за невалидных логинов: номеров телефонов.
     ermail=[]
     with open('domainlist.txt') as err:
@@ -223,16 +227,19 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         print_info("разыскиваем:", usernameA, color)
     else:
         print_info("разыскиваем:", username, color)
+
 # Создать сеанс на основе методологии запроса.
     underlying_session = requests.session()
     underlying_request = requests.Request()
 
 # Рабочий лимит 20+
-    if len(site_data) >= 20:
-        max_workers=20
-    else:
-        max_workers=len(site_data)
-
+    try:
+        if len(site_data) >= 20:
+            max_workers=20
+        else:
+            max_workers=len(site_data)
+    except:
+        sys.exit(0)
 # Создать многопоточный сеанс для всех запросов.
     session = ElapsedFuturesSession(max_workers=max_workers, session=underlying_session)
 
@@ -330,7 +337,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Мы уже определили, что пользователь не существует здесь.
             continue
 
-# Получить ожидаемый тип ошибки.
+# Получить ожидаемый тип данных 4 методов.
         error_type = net_info["errоrTypе"]
 
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
@@ -406,10 +413,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 exists = "увы"
 
 # Проверка, 4 метода; #4
-# Для этого метода обнаружения мы отключили перенаправление.
-# Таким образом, нет необходимости проверять URL-адрес ответа: он всегда будет соответствовать запросу. 
-# Вместо этого мы обеспечим, чтобы статус кода указывал, что запрос был успешным (тоесть не 404 или перенаправлен.
-
+# Перенаправление.
         elif error_type == "response_url":
 
             if 200 <= r.status_code < 300:
@@ -423,7 +427,8 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                     print_not_found(social_network, response_time, verbose, color)
                 exists = "увы"
 
-        elif error_type == "":
+# Если все 4 метода не сработали, например, из-за ошибки доступа.
+        else:
             if not print_found_only:
                 print_invalid(social_network, "*Пропуск", color)
             exists = "блок"
@@ -439,29 +444,19 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Добавьление результатов этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
     return results_total
-    
 
+
+# Опция '-t'.
 def timeout_check(value):
-    """Проверка: время ожидания ответа сайта.
-
-    Проверка опцией "--timeoutout" на достоверность.
-
-    Аргумент - указание в секундах.
-
-    Возвращаемое значение - число в секундах, которое используется для timeoutout-а.
-
-    Примечание:  Возникает исключение в случае, если время ожидания...
-    """
-    from argparse import ArgumentTypeError
-    
     try:
         global timeout
         timeout = int(value)
     except:
-        raise ArgumentTypeError(f"\033[36mTimeout '{value}' Err, укажите время в 'секундах'. \033[0m")
+        raise ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'. \033[0m")
     if timeout <= 0:
-        raise ArgumentTypeError(f"\033[36mTimeout '{value}' Err, укажите время > 0 c. \033[0m")
+        raise ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время > 0sec. \033[0m")
     return timeout
+
 
 # Обновление Snoop.
 def update_snoop():
@@ -489,7 +484,9 @@ def update_snoop():
             os.system("./update.sh")
 
 
+# ОСНОВА.
 def main():
+
 # Запрос лицензии.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
@@ -498,7 +495,6 @@ def main():
                      f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
                      f"\033[36mPython: {platform.python_version()}\033[36m\n\n" + \
                      f"\033[37m{cop}\033[0m\n"
-
 
 # Пожертвование.
     donate = ("""
@@ -665,7 +661,6 @@ def main():
                 else:
                     print(Style.BRIGHT + Fore.GREEN + flag_str_sum0 + Style.BRIGHT + Fore.CYAN + 
                     "\n\n⚡️All_" + str(len(datajson0)) + "_Websites⚡️")
-                
                 sys.exit(0)
 
 # Сортируем по алфавиту (2!).
@@ -827,7 +822,7 @@ def main():
                 print(Fore.CYAN + "🇫🇷 =", Style.BRIGHT + Fore.GREEN + f"{goba.count('🇫🇷 ')}", Fore.CYAN + "сайт(а/ов)!")
                 print(Fore.CYAN + "...")
                 sys.exit(0)
-
+# Действие не выбрано.
         else:
             print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
             sys.exit(0)
@@ -839,7 +834,7 @@ def main():
         print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit(0)
 
-# Опция указания списка разыскиваемых пользователей '-u'.
+# Опция указания файла-списка разыскиваемых пользователей '-u'.
     if args.user:
         userlist = []
         patchuserlist = ("{}".format(args.user))
@@ -872,14 +867,14 @@ def main():
 
     data_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), args.json_file)
     altjson = ("{}".format(args.json_file))
-# Этого не будет, если в запросе отсутствовала Shema.
+
+# Работа с JSON.
     if site_data_all is None:
-# Проверьте, существует ли файл, иначе выход.
+# Проверить, существует ли альтернативная база данных, иначе выход.
         if not os.path.exists(data_file_path):
-            print("\033[36mJSON file не существует.\033[0m")
-            print(
-                "\033[36mВы не добавили .json файл\033[0m")
-            sys.exit(1)
+            print("\033[31;1mJSON file не существует.\033[0m")
+            print("\033[31;1mВы не добавили '.json'_файл.\033[0m")
+            sys.exit(0)
         else:
             raw = open(data_file_path, "r", encoding="utf-8")
             try:
@@ -887,14 +882,15 @@ def main():
                 print(Fore.CYAN + f"\nзагружена база: {altjson.split('/')[-1]}:: " + 
                 Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + "_Websites" + Style.RESET_ALL)
             except:
-                print("\033[36mInvalid загружаемый JSON file.\033[0m")
+                print("\033[31;1mInvalid загружаемый JSON file.\033[0m")
 
     if args.site_list is None:
 # Не желательно смотреть на подмножество сайтов.
         site_data = site_data_all
     else:
-# Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
 
+# Опция '-s'.
+# Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
 # Убедиться, что сайты поддерживаются, создать сокращенную базу данных сайта.
         site_data = {}
         site_missing = []
@@ -903,15 +899,17 @@ def main():
                 if site.lower() == existing_site.lower():
                     site_data[existing_site] = site_data_all[existing_site]
             if not site_data:
-# Создать список сайтов, которые не поддерживаются для будущего сообщения об ошибке.
+
+# Создать список сайтов, которые не поддерживаются, для будущего сообщения об ошибке.
                 site_missing.append(f"'{site}'")
 
         if site_missing:
             print(
-                f"\033[36mОшибка: желаемый сайт не найден в базе Snoop:: {', '.join(site_missing)}\n"
+                f"\033[31;1mОшибка:\033[0m \033[36mжелаемый сайт не найден в базе Snoop:: {', '.join(site_missing)}\n"
                 "Или вы пропустили знак '-' в опции '--csv' \033[0m")
-            sys.exit(1)
+            sys.exit(0)
 
+# Запуск с опцией '-u' (получаем 'username' из файла).
 # Крутим список юзеров.
     if args.user:
         kef_user=0

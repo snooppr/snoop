@@ -142,9 +142,7 @@
   "500px": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
-    "errorMsg": "Oops! This page doesn\u2019t exist.",
-    "errorMsg2": "None",
-    "errоrTypе": "message",
+    "errоrTypе": "status_code",
     "url": "https://500px.com/{}",
     "urlMain": "https://500px.com/",
     "usernameOFF": "nousermengirl1945",
@@ -1577,6 +1575,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Dogster": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "http://dogster.ru/users/{}/",
+    "urlMain": "http://dogster.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Dou": {
     "country": "\ud83c\uddfa\ud83c\udde6",
     "country_klas": "UA",
@@ -2210,6 +2217,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "green"
   },
+  "Forum_cxem_net": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0432\u043e\u0437\u043d\u0438\u043a\u043b\u0430 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430",
+    "errorMsg2": "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0440\u0430\u0441\u0448\u0438\u0440\u0438\u0442\u044c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438 \u043f\u043e\u0438\u0441\u043a\u0430.",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://forum.cxem.net/index.php?/search/&q={}&quick=1&type=core_members",
+    "urlMain": "https://forum.cxem.net/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Forum_devushka": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2373,6 +2392,17 @@
     "urlMain": "https://forum.linuxfoundation.org",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "chap92"
+  },
+  "Forum_mau": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "<title>CATS-\u0444\u043e\u0440\u0443\u043c :: </title>",
+    "errоrTypе": "message",
+    "url": "https://forum.mau.ru/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://forum.mau.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "curl"
   },
   "Forum_md": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -2564,7 +2594,7 @@
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c, \u0447\u0435\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0432\u044b \u043f\u044b\u0442\u0430\u0435\u0442\u0435\u0441\u044c \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c, \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442.",
     "errorMsg2": "None",
     "errоrTypе": "message",
-    "url": "https://forum.theprodigy.ru/index.php?board=13;action=viewprofile;user={}",
+    "url": "https://forum.theprodigy.ru/index.php?board=13&action=viewprofile&user={}",
     "urlMain": "https://forum.theprodigy.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
@@ -2573,7 +2603,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errorMsg2": "None",
+    "errorMsg2": "<head><title>403 Forbidden</title></head>",
     "errоrTypе": "message",
     "url": "https://forum.tks.ru/member.php?username={}",
     "urlMain": "https://forum.tks.ru/",
@@ -3008,6 +3038,7 @@
     "country_klas": "DE",
     "errorUrl": "https://friendfinder.com/{}",
     "errоrTypе": "response_url",
+    "exclusion": "\\W",    
     "url": "https://friendfinder.com/profile/{}",
     "urlMain": "https://friendfinder.com",
     "usernameOFF": "nousermengirl1945",
@@ -3892,6 +3923,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Jer_forum24": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0437\u0430\u0431\u0430\u043d\u0435\u043d \u0438\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://jer.forum24.ru/?32-{}",
+    "urlMain": "http://jer.forum24.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "aga"
+  },
   "Jetpunk": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -4765,6 +4807,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Mobile-files": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "<title>Mobile-Files</title>",
+    "errоrTypе": "message",
+    "url": "https://www.mobile-files.com/forum/member.php?username={}",
+    "urlMain": "https://www.mobile-files.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Mobypicture": {
     "country": "\ud83c\uddf3\ud83c\uddf1",
     "country_klas": "NL",
@@ -4860,7 +4913,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru: \u041c\u0438\u0440 \u043d\u0435 \u0441\u043e\u0437\u0434\u0430\u043d</title>",
-    "errorMsg2": "<title>Мой Мир@Mail.Ru</title>",
+    "errorMsg2": "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>",
     "errоrTypе": "message",
     "url": "https://my.mail.ru/mail/{}/",
     "urlMain": "https://my.mail.ru/",
@@ -4871,7 +4924,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru: \u041c\u0438\u0440 \u043d\u0435 \u0441\u043e\u0437\u0434\u0430\u043d</title>",
-    "errorMsg2": "<title>Мой Мир@Mail.Ru</title>",
+    "errorMsg2": "<title>\u041c\u043e\u0439 \u041c\u0438\u0440@Mail.Ru</title>",
     "errоrTypе": "message",
     "url": "https://my.mail.ru/list/{}/",
     "urlMain": "https://my.mail.ru/",
@@ -5669,6 +5722,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Pitomec": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://www.pitomec.ru/{}",
+    "urlMain": "https://www.pitomec.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Planetaexcel": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -5831,6 +5893,18 @@
     "urlMain": "https://www.prizyvnik.info",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Pro-cats": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "<title>CATS-\u0444\u043e\u0440\u0443\u043c :: </title>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "http://pro-cats.ru/index/8-0-{}",
+    "urlMain": "http://pro-cats.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "parrots"
   },
   "ProductHunt": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -6796,6 +6870,7 @@
     "errorMsg": "None",
     "errorMsg2": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
     "errоrTypе": "message",
+    "exclusion": "\\W",
     "url": "https://space.dublikat.shop/members/?username={}",
     "urlMain": "https://space.dublikat.shop/",
     "usernameOFF": "nousermengirl1945",
@@ -6947,6 +7022,7 @@
     "errorMsg": "SteamID account finder",
     "errorMsg2": "None",
     "errоrTypе": "message",
+    "exclusion": "\\W",    
     "url": "https://steamid.uk/profile/{}",
     "urlMain": "https://steamid.uk/",
     "usernameOFF": "nousermengirl1945",
@@ -7488,6 +7564,17 @@
     "urlMain": "https://ultimate-guitar.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Unlockers": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+    "errorMsg2": "<title>\u0424\u043e\u0440\u0443\u043c\u044b Unlockers.ru - \u0434\u043b\u044f \u043b\u044e\u0431\u0438\u0442\u0435\u043b\u0435\u0439 \u0438 \u043f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u043e\u0432 \u043f\u043e \u0440\u0435\u043c\u043e\u043d\u0442\u0443 \u0441\u043e\u0442\u043e\u0432\u044b\u0445</title>",
+    "errоrTypе": "message",
+    "url": "http://www.unlockers.ru/members/?username={}",
+    "urlMain": "http://www.unlockers.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Unsplash": {
     "country": "\ud83c\udf0e",
