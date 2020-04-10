@@ -384,10 +384,10 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 exists = "найден!"
 
 # Проверка, 4 метода; #2.
-# Проверка username при статусе 301 и 302.
+# Проверка username при статусе 301 и 302 (перенаправление и соль).
         elif error_type == "redirection":
             rr = requests.get(url, allow_redirects=False)
-            if rr.status_code == 301:
+            if rr.status_code == 301 or rr.status_code == 303:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
                 else:

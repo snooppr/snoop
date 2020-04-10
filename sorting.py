@@ -17,8 +17,6 @@ def sorts():
         data_length1 = len(data1)
         bad_site.write(f'## Snoop БД Неподдерживаемых сайтов (список), всего — {data_length1} сайт(ов)!\n')
 
-
-
         for social_network_bad in data1:
             url_main_bad = data1.get(social_network_bad).get("urlMain")
             country_bad = data1.get(social_network_bad).get("country")        
