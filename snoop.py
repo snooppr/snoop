@@ -959,9 +959,13 @@ def main():
                 file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             except (SyntaxError, ValueError):
                 pass
-            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../images/public.png) no-repeat 20% 0%; }\
-            \n</style>\n</head>\n<body>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
-            file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
+            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
+            no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
+            <div id='particles-js'></div>\n\
+            <div id='report'>\n\n\
+            <h1><a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
+            file.write("""\t\t\t<h3>Snoop Project</h3>
+            <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
             file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
@@ -988,7 +992,7 @@ def main():
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
-            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")
+            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
             file.write("""
     <script>
     function sortList() {
@@ -1012,8 +1016,12 @@ def main():
       }
     }
     </script>
+
+<script src="../../web/particles.js"></script>
+<script src="../../web/app.js"></script>
+
 </body>
-</html>""")    
+</html>""")
             file.close()
 
     # +CSV вывод на печать информации.
@@ -1126,9 +1134,13 @@ def main():
                 file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             except (SyntaxError, ValueError):
                 pass
-            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../images/public.png) no-repeat 20% 0%; }\
-            \n</style>\n</head>\n<body>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
-            file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
+            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
+            no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
+            <div id='particles-js'></div>\n\
+            <div id='report'>\n\n\
+            <h1><a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
+            file.write("""\t\t\t<h3>Snoop Project</h3>
+            <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
             file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
@@ -1155,7 +1167,7 @@ def main():
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
-            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n")
+            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
             file.write("""
     <script>
     function sortList() {
@@ -1179,6 +1191,10 @@ def main():
       }
     }
     </script>
+
+<script src="../../web/particles.js"></script>
+<script src="../../web/app.js"></script>
+
 </body>
 </html>""")
             file.close()

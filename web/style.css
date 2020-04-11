@@ -1,0 +1,22 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+}
+
+#report {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    width: 50%;
+}
+    
+    
