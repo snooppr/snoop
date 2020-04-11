@@ -959,7 +959,7 @@ def main():
                 file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             except (SyntaxError, ValueError):
                 pass
-            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../public.png) no-repeat 20% 0%; }\
+            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../images/public.png) no-repeat 20% 0%; }\
             \n</style>\n</head>\n<body>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
             file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
@@ -1126,7 +1126,7 @@ def main():
                 file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             except (SyntaxError, ValueError):
                 pass
-            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../public.png) no-repeat 20% 0%; }\
+            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../images/public.png) no-repeat 20% 0%; }\
             \n</style>\n</head>\n<body>\n\n<h1>" + "<a href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>")
             file.write("""<h3>Snoop Project</h3> <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
