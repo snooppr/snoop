@@ -950,7 +950,7 @@ def main():
                     file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
             file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
-            file.write("\n" f"Обновлено: " + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".")      
+            file.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")      
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
 
     # Запись в html.
@@ -991,7 +991,7 @@ def main():
             file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
+            file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i>\n")
             file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
             file.write("""
     <script>
@@ -1075,17 +1075,17 @@ def main():
                     writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
                     writer.writerow('')
                     writer.writerow(['Дата'])
-                    writer.writerow([time.strftime("%m/%d/%Y_%H:%M:%S", time_data)])
+                    writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
                     file.close()
 
     # Финишный вывод.
         if censor >= 9 * int(kef_user):
-            print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", 
                               "*используйте VPN")
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
         else:
-            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
 
 # Поиск по умолчанию (без опции '-u').
@@ -1125,7 +1125,7 @@ def main():
                     file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
             file.write("\n" f"База Snoop: " + str(flagBS) + " Websites.")
-            file.write("\n" f"Обновлено: " + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".")
+            file.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
 
     # Запись в html.
@@ -1166,7 +1166,7 @@ def main():
             file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file.write("<br> Обновлено: " + "<i>" + time.strftime("%m/%d/%Y_%H:%M:%S", time_data) + ".</i>\n")
+            file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i>\n")
             file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
             file.write("""
     <script>
@@ -1250,16 +1250,16 @@ def main():
                     writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
                     writer.writerow('')
                     writer.writerow(['Дата'])
-                    writer.writerow([time.strftime("%m/%d/%Y_%H:%M:%S", time_data)])
+                    writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
                     file.close()
 
     # Финишный вывод.
         if censor >= 9:
-            print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", "*используйте VPN")
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
         else:
-            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%m/%d/%Y_%H:%M:%S", time_data))
+            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
 
 # Открывать/нет браузер с результатами поиска.
