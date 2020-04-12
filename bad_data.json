@@ -11,6 +11,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "AdobeForums": {
+    "country": "\ud83c\udff4",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://forums.adobe.com/people/{}",
+    "urlMain": "https://forums.adobe.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "jack"
+  },
   "AngelList": {
     "country": "\ud83c\udff4",
     "errоrTypе": "status_code",
@@ -394,18 +403,6 @@
     "urlMain": "https://www.stream.me/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
-  },
-  "Subeta": {
-    "country": "\ud83c\udff4",
-    "country_klas": "US",
-    "errorMsg": "Invalid user",
-    "errorMsg2": "<title>Offline for Maintenance</title>",
-    "errоrTypе": "message",
-    "exclusion": "\\W",
-    "url": "https://subeta.net/users/{}",
-    "urlMain": "https://subeta.net/",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "green"
   },
   "Teknik": {
     "country": "\ud83c\udff4",

@@ -195,15 +195,6 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
-  "AdobeForums": {
-    "country": "\ud83c\uddfa\ud83c\uddf8",
-    "country_klas": "US",
-    "errоrTypе": "status_code",
-    "url": "https://forums.adobe.com/people/{}",
-    "urlMain": "https://forums.adobe.com/",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "jack"
-  },
   "Advancedcustomfields": {
     "country": "\ud83c\udde6\ud83c\uddfa",
     "country_klas": "AU",
@@ -344,6 +335,15 @@
     "urlMain": "http://www.anapakurort.info",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Anarcho-punk": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.anarcho-punk.net/members/?username={}",
+    "urlMain": "https://www.anarcho-punk.net/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "blue"
   },
   "Androidforums": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -1270,6 +1270,16 @@
     "errоrTypе": "status_code",
     "url": "https://comicvine.gamespot.com/profile/{}",
     "urlMain": "https://comicvine.gamespot.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Community_progress": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorUrl": "https://secure.progress.com/{}",
+    "errоrTypе": "response_url",
+    "url": "https://community.progress.com/members/{}",
+    "urlMain": "https://community.progress.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -2247,6 +2257,28 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Forum-renault": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://forum-renault.ru/forum/memberlist.php?username={}",
+    "urlMain": "https://forum-renault.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "ForumEvaveda": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "http://forum.evaveda.com/memberlist.php?username={}",
+    "urlMain": "http://forum.evaveda.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "leisan"
+  },
   "ForumOszone": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2728,6 +2760,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "211"
   },
+  "Forum_waypoint": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://forum.waypoint.vice.com/u/{}/summary",
+    "urlMain": "https://forum.waypoint.vice.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Forum_wotanks": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2845,6 +2886,15 @@
     "urlMain": "https://forums.battlefield.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "NLBartmaN"
+  },
+  "Forums_catholic": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://forums.catholic.com/u/{}/summary",
+    "urlMain": "https://forums.catholic.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "blue"
   },
   "Forums_drom": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -3007,6 +3057,15 @@
     "urlMain": "https://forums.universaldashboard.io/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Forumsmotri": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://forumsmotri.club/user/{}/",
+    "urlMain": "https://forumsmotri.club",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Forumteam": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -3221,6 +3280,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Garagepunk": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.garagepunk.com/profile/{}",
+    "urlMain": "https://www.garagepunk.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Gays": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -3258,6 +3326,15 @@
     "errоrTypе": "message",
     "url": "http://www.geekgrade.com/geeksheet/{}/",
     "urlMain": "http://www.geekgrade.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Genius": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://genius.com/{}",
+    "urlMain": "https://genius.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -4807,7 +4884,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>\u0412\u044b\u0434\u0430\u044e\u0449\u0438\u0435\u0441\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 | \u0424\u043e\u0440\u0443\u043c \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0435\u0432 Renault Megane</title>",
     "errоrTypе": "message",
     "url": "http://megane2.ru/forum/members/?username={}",
     "urlMain": "http://megane2.ru/",
@@ -4848,8 +4925,9 @@
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
     "errorMsg": "User not found",
-    "errorMsg2": "<title>404 Page Not Found",
+    "errorMsg2": "<title>Sign up to get your own profile - Metacritic</title>",
     "errоrTypе": "message",
+    "exclusion": "\\W",
     "url": "https://www.metacritic.com/user/{}",
     "urlMain": "https://www.metacritic.com/",
     "usernameOFF": "nousermengirl1945",
@@ -5363,6 +5441,18 @@
     "urlMain": "https://ok.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "ok"
+  },
+  "Oilcareer": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "http://www.oilcareer.ru/index/8-0-{}",
+    "urlMain": "http://www.oilcareer.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Omoimot": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -6324,6 +6414,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Rap-royalty": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>Rap-Royalty.Com - The Best Hip Hop & Rap Forum</title>",
+    "errоrTypе": "message",
+    "url": "http://www.rap-royalty.com/forum/member.php?username={}",
+    "urlMain": "http://www.rap-royalty.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Rapforce": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -6333,6 +6434,15 @@
     "exclusion": "\\W",
     "url": "http://www.rapforce.net/index/8-0-{}",
     "urlMain": "http://www.rapforce.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Rappad": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.rappad.co/users/{}",
+    "urlMain": "https://www.rappad.co",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -6470,6 +6580,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "green"
   },
+  "Renaultfanclub": {
+    "country": "\ud83c\uddf9\ud83c\uddf7",
+    "country_klas": "TR",
+    "errorMsg": "Bu \u00dcye kay\u0131tl\u0131 \u00dcyemiz de\u011fildir. Bu sebebten dolay\u0131 \u00dcyeye ait Profil g\u00f6sterilemiyor.",
+    "errorMsg2": "<title>Renault Fan Club | RFC |",
+    "errоrTypе": "message",
+    "url": "http://www.renaultfanclub.com/member.php?username={}",
+    "urlMain": "http://www.renaultfanclub.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "mashar"
+  },
   "ReplIT": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -6508,6 +6629,17 @@
     "urlMain": "https://www.reverbnation.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Rngf": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "<title>\u041d\u0435\u0444\u0442\u044c \u0438 \u0433\u0430\u0437 - \u0420\u043e\u0441\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u043d\u0435\u0444\u0442\u0435\u0433\u0430\u0437\u043e\u0432\u044b\u0439 \u0444\u043e\u0440\u0443\u043c : </title>",
+    "errоrTypе": "message",
+    "url": "http://www.rngf.ru/profile.php?mode=viewprofile&u={}",
+    "urlMain": "http://www.rngf.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "green"
   },
   "Roblox": {
     "country": "\ud83c\udf0e",
@@ -6666,6 +6798,17 @@
     "errоrTypе": "message",
     "url": "http://www.russian.fi/forum/member.php?username={}",
     "urlMain": "http://www.russian.fi/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Rutracker": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "<title> rutracker.org</title>",
+    "errоrTypе": "message",
+    "url": "https://rutracker.org/forum/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://rutracker.org/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -7301,6 +7444,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "tmm22"
   },
+  "Subeta": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "Invalid user",
+    "errorMsg2": "<title>Offline for Maintenance</title>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://subeta.net/users/{}",
+    "urlMain": "https://subeta.net/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "green"
+  },
   "Suomi24": {
     "country": "\ud83c\uddeb\ud83c\uddee",
     "country_klas": "FI",
@@ -7483,6 +7638,17 @@
     "errоrTypе": "status_code",
     "url": "https://i.thechive.com/{}",
     "urlMain": "https://i.thechive.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Thedaftclub": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>The Daft Club - Daft Punk Fansite</title>",
+    "errоrTypе": "message",
+    "url": "https://www.thedaftclub.com/forum/member.php/?username={}",
+    "urlMain": "https://www.thedaftclub.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -8154,6 +8320,17 @@
     "urlMain": "https://forums.whonix.org/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Whyislam": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.whyislam.to/forum/memberlist.php?username={}",
+    "urlMain": "https://www.whyislam.to/forum/memberlist.php?username=adam",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Wikidot": {
     "country": "\ud83c\udf0e",
