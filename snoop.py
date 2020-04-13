@@ -303,7 +303,8 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         countryA = results_site.get("flagcountry")
         countryB = results_site.get("flagcountryklas")
         exists = results_site.get("exists")
-
+        if exists is not None:
+            continue
 # Получить ожидаемый тип данных 4 методов.
         error_type = net_info["errоrTypе"]
 
