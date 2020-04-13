@@ -78,31 +78,10 @@ except:
 
 ################################################################################
 class ElapsedFuturesSession(FuturesSession):
-    """
-    Расширяет 'FutureSession' для добавления метрики времени ответа к каждому запросу.
-
-    https://github.com/ross/requests-futures#working-in-the-background
-    """
-
-
-    def request(self, method, url, hooks={}, *args, **kwargs):
-        start = time.time()
-
-        def timing(r, *args, **kwargs):
-            elapsed_sec = time.time() - start
-            r.elapsed = round(elapsed_sec * 1000)
-
-        try:
-            if isinstance(hooks['response'], (list, tuple)):
-# должен быть первым, поэтому мы не рассчитываем время выполнения других hooks.
-                hooks['response'].insert(0, timing)
-            else:
-                hooks['response'] = [timing, hooks['response']]
-        except KeyError:
-            hooks['response'] = timing
-
-        return super(ElapsedFuturesSession, self).request(method, url, hooks=hooks, *args, **kwargs)
-
+    """test_metrica"""
+    def request(self, method, url, *args, **kwargs):
+        """test"""
+        return super(ElapsedFuturesSession, self).request(method, url, *args, **kwargs)
 
 def print_info(title, info, color=True):
     if color:
@@ -128,26 +107,21 @@ def print_error(err, errstr, var, verbose=False, color=True):
         print(f"[-] {errstr} {err if verbose else var}")
 
 
-def format_response_time(response_time, verbose):
-    return " [{} ms]".format(response_time) if verbose else ""
-
 # Вывод на печать на разных платформах.
 if sys.platform == 'win32':
     def print_found_country(social_network, url, countryB, response_time=False, verbose=False, color=True):
         if color:
             print(Style.BRIGHT + Fore.CYAN + f" {countryB}" + 
-                format_response_time(response_time, verbose) +
                 Fore.GREEN + f" {social_network}:", url)
         else:
-            print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
+            print(f"[+] {social_network}: {url}")
 else:            
     def print_found_country(social_network, url, countryA, response_time=False, verbose=False, color=True):
         if color:
             print(countryA, (Style.BRIGHT +
-                format_response_time(response_time, verbose) +
                 Fore.GREEN + f" {social_network}:"), url)
         else:
-            print(f"[+]{format_response_time(response_time, verbose)} {social_network}: {url}")
+            print(f"[+] {social_network}: {url}")
 
 
 def print_not_found(social_network, response_time, verbose=False, color=True):
@@ -155,11 +129,10 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
         print((Fore.CYAN + "[" +
             Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
             Fore.CYAN + "]" +
-            format_response_time(response_time, verbose) +
             Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
             Style.BRIGHT + Fore.YELLOW + " Увы!"))
     else:
-        print(f"[-]{format_response_time(response_time, verbose)} {social_network}: Увы!")
+        print(f"[-] {social_network}: Увы!")
 
 
 def print_invalid(social_network, msg, color=True):
@@ -289,7 +262,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # URL-адрес — является обычным, который видят люди в Интернете.
                 url_probe = url
             else:
-# Существует специальный URL (обычно о нем мы не догадываемся) для проверки существования отдельно юзера.
+# Существует специальный URL (обычно о нем мы не догадываемся/api) для проверки существования отдельно юзера.
                 url_probe = url_probe.format(username)
 
 # Если нужен только статус кода, не загружать код страницы.
@@ -307,11 +280,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Окончательным результатом запроса будет то, что доступно.
                 allow_redirects = True
 
-
-            future = request_method(url=url_probe, headers=headers,
-                                    allow_redirects=allow_redirects,
-                                    timeout=timeout
-                                    )
+            future = request_method(url=url_probe, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
 # Сохранить future in data для последующего доступа.
             net_info["request_future"] = future
@@ -323,6 +292,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Основная логика: если текущие запросов, сделайте их. Если многопоточные запросы, дождаться ответов.
 
 # print(results_site) # Проверка записи на успех.
+    li_time = []
     for social_network, net_info in site_data.items():
 
 # Получить результаты снова.
@@ -333,9 +303,6 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         countryA = results_site.get("flagcountry")
         countryB = results_site.get("flagcountryklas")
         exists = results_site.get("exists")
-        if exists is not None:
-# Мы уже определили, что пользователь не существует здесь.
-            continue
 
 # Получить ожидаемый тип данных 4 методов.
         error_type = net_info["errоrTypе"]
@@ -433,13 +400,69 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 print_invalid(social_network, "*Пропуск", color)
             exists = "блок"
 
+# Считать тайминги приближенно.
+        ello = float(time.time() - timestart)
+        li_time.append(ello)
+        dif_time = list()
+
+# Считать тайминги с высокой точностью.
+        try:
+            time_site = str(response_time).rsplit(sep=':', maxsplit=1)[1]
+            time_site=round(float(time_site)*1000)
+        except:
+            time_site = str("-")
+
+        for i in (li_time[-2:-1]):
+            i
+            for i1 in (li_time[-1:]):
+                i1
+            dif = (i1-i)
+            dif_time.append(dif)
+
+# Опция '-v'.
+            if verbose == True:
+                if color == False:
+                    if print_found_only == True:
+                        if exists == "найден!" or exists == "блок":
+                            print(f"├───[{time_site} ms ответ]" + \
+                            f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                    else:
+                        print(f"├───[{time_site} ms ответ]" + \
+                        f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                if color == True:
+                    if print_found_only == True:
+                        if exists == "найден!" or exists == "блок":
+                            if dif > 5:
+                                print(Style.BRIGHT + Fore.RED + f"├───[{time_site} ms ответ]"
+                                f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                            else:
+                                print(Fore.CYAN + f"├───[{time_site} ms ответ]" + \
+                                f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                    else:
+                        if dif > 5:
+                            print(Style.BRIGHT + Fore.RED + f"├───[{time_site} ms ответ]" + \
+                            f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                        else:
+                            print(Fore.CYAN + f"├───[{time_site} ms ответ]" + \
+                            f"───────────────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+
+# Служебная информация для CSV.
+        response_time_site_ms = 0
+        for response_time_site_ms in dif_time:
+            response_time_site_ms
+
 # Сохранить сущ.флаг.
         results_site['exists'] = exists
 
 # Сохранить результаты из запроса.
         results_site['http_status'] = http_status
         results_site['response_text'] = response_text
-        results_site['response_time_ms'] = response_time
+        results_site['check_time_ms'] = time_site
+        results_site['response_time_ms'] = round(float(ello*1000))
+        if response_time_site_ms*1000 < 250:
+            results_site['response_time_site_ms'] = "нет"
+        else:
+            results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 
 # Добавьление результатов этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
@@ -1056,8 +1079,10 @@ def main():
                                          'Url',
                                          'Url_username',
                                          'Статус',
-                                         'Статус_кода',
-                                         'Время/мс',
+                                         'Статус_http',
+                                         'Общее_замедление/мс',
+                                         'Отклик/мс',
+                                         'Общее_время/мс'
                                          ])
                     for site in results:
                         writer.writerow([username,
@@ -1066,12 +1091,15 @@ def main():
                                          results[site]['url_user'],
                                          results[site]['exists'],
                                          results[site]['http_status'],
+                                         results[site]['response_time_site_ms'],
+                                         results[site]['check_time_ms'],
                                          results[site]['response_time_ms']
                                          ])
                     writer.writerow(['«---------------------------------------',
                                      '--------', '----------------------------------',
-                                     '--------------------------------------------------',
-                                     '-------------', '-----------------', '--------------»'])
+                                     '--------------------------------------------------------',
+                                     '-------------', '-----------------', '--------------------------------', 
+                                     '-------------', '-----------------------»'])
                     writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
                     writer.writerow('')
                     writer.writerow(['Дата'])
@@ -1231,8 +1259,10 @@ def main():
                                          'Url',
                                          'Url_username',
                                          'Статус',
-                                         'Статус_кода',
-                                         'Время/мс'
+                                         'Статус_http',
+                                         'Общее_замедление/мс',
+                                         'Отклик/мс',
+                                         'Общее_время/мс'
                                          ])
                     for site in results:
                         writer.writerow([username,
@@ -1241,12 +1271,15 @@ def main():
                                          results[site]['url_user'],
                                          results[site]['exists'],
                                          results[site]['http_status'],
+                                         results[site]['response_time_site_ms'],
+                                         results[site]['check_time_ms'],
                                          results[site]['response_time_ms']
                                          ])
                     writer.writerow(['«---------------------------------------',
                                      '--------', '----------------------------------',
-                                     '--------------------------------------------------',
-                                     '-------------', '-----------------', '--------------»'])
+                                     '--------------------------------------------------------',
+                                     '-------------', '-----------------', '--------------------------------',
+                                     '-------------', '-----------------------»'])
                     writer.writerow(['База_Snoop=' + str(flagBS) + '_Websites'])
                     writer.writerow('')
                     writer.writerow(['Дата'])
