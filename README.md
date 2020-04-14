@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-**В базе** [8️⃣5️⃣9️⃣ Websites⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")
+**В базе** [8️⃣7️⃣0️⃣ Websites⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")
 
 ## Работа Snoop на Android-е
 Смотри ветку Termux
@@ -120,9 +120,9 @@ $ python3 snoop.py -с -t 9 -f --csv -u ~/file.txt start
 
 # 'ctrl-c/z' — прервать поиск
 ```
-Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.
+Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
 
-
+Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.
 ```
 # Обновляйте Snoop для поддержки ПО и БД в актуальном состоянии:
 $ python3 snoop.py --update Y

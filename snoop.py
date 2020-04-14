@@ -253,6 +253,8 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
             results_site['http_status'] = ""
             results_site['response_text'] = ""
             results_site['response_time_ms'] = ""
+            results_site['check_time_ms'] = ""
+            results_site['response_time_site_ms'] = ""
         else:
 # URL пользователя на сайте (если он существует).
             url = net_info["url"].format(username)
@@ -305,6 +307,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         exists = results_site.get("exists")
         if exists is not None:
             continue
+
 # Получить ожидаемый тип данных 4 методов.
         error_type = net_info["errоrTypе"]
 
@@ -404,7 +407,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 # Считать тайминги приближенно.
         ello = float(time.time() - timestart)
         li_time.append(ello)
-        dif_time = list()
+        dif_time = []
 
 # Считать тайминги с высокой точностью.
         try:
@@ -465,7 +468,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         else:
             results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 
-# Добавьление результатов этого сайта в окончательный словарь со всеми другими результатами.
+# Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
     return results_total
 
@@ -1053,7 +1056,8 @@ def main():
 
     # Запись в csv.
             with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                if censor >= 9 * kef_user:
+                usernamsCSV = re.sub(" ", "_", username)
+                if censor >= 9 * int(kef_user):
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
@@ -1080,7 +1084,7 @@ def main():
                                      'Общее_время/мс'
                                      ])
                 for site in results:
-                    writer.writerow([username,
+                    writer.writerow([usernamsCSV,
                                      site,
                                      results[site]['url_main'],
                                      results[site]['url_user'],
@@ -1237,6 +1241,8 @@ def main():
 
     # Запись в csv.
             with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
+                usernamCSV = re.sub(" ", "_", username)
+
                 if censor >= 9:            
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
@@ -1264,7 +1270,7 @@ def main():
                                      'Общее_время/мс'
                                      ])
                 for site in results:
-                    writer.writerow([username,
+                    writer.writerow([usernamCSV,
                                      site,
                                      results[site]['url_main'],
                                      results[site]['url_user'],
