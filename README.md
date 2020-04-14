@@ -53,9 +53,9 @@ $ pip3 install module
 ```
 $ python3 snoop.py --help
 
-usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose] [--csv]
-                [--json] [--site] [--time] [--found-print] [--no-func]
-                [--userload] [--list all] [--country] [--update Y]
+usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose] [--json]
+                [--site] [--time] [--found-print] [--no-func] [--userload]
+                [--list all] [--country] [--update Y]
                 USERNAMES [USERNAMES ...]
 
 Snoop: поиск никнейма по всем фронтам! (Version 1.1.5_rus Ветка Snoop Desktop)
@@ -73,8 +73,6 @@ optional arguments:
   --version, --about,-V Вывод на печать версий: OS; Snoop; Python и Лицензии
   --verbose, -v         Во время поиска 'username' выводить на печать
                         подробную вербализацию
-  --csv                 По завершению поиска 'username' сохранить файл в
-                        формате таблицы 'username.CSV' с расширенным анализом
   --json , -j           Указать для поиска 'username' другую БД в формате
                         'json', например, 'example_data.json'. Если у вас нет
                         такой БД, не используйте эту опцию
