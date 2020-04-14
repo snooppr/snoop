@@ -5518,6 +5518,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Nxp": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "| NXP Community</title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://community.nxp.com/people/{}",
+    "urlMain": "https://community.nxp.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "OK": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
