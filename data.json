@@ -97,6 +97,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "3dtoday": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://3dtoday.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "https://3dtoday.ru/blogs/{}",
+    "urlMain": "https://3dtoday.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "4cheat": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -195,11 +205,20 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Acomics": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://acomics.ru/-{}",
+    "urlMain": "https://acomics.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Garage"
+  },
   "Advancedcustomfields": {
     "country": "\ud83c\udde6\ud83c\uddfa",
     "country_klas": "AU",
     "errorMsg": "Sorry, page not found",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>Robot Challenge Screen</title>",
     "errоrTypе": "message",
     "url": "https://support.advancedcustomfields.com/forums/users/{}",
     "urlMain": "https://support.advancedcustomfields.com/",
@@ -252,6 +271,15 @@
     "urlMain": "https://www.alik.cz/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "julian"
+  },
+  "All-mods": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://all-mods.ru/author/{}/",
+    "urlMain": "https://all-mods.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Allhockey": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -563,6 +591,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Sofidark"
   },
+  "Artstation": {
+    "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
+    "errоrTypе": "status_code",
+    "url": "https://www.artstation.com/{}",
+    "urlMain": "https://www.artstation.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Asciinema": {
     "country": "\ud83c\uddf5\ud83c\uddf1",
     "country_klas": "PL",
@@ -867,6 +904,15 @@
     "errоrTypе": "message",
     "url": "https://www.blackhatprotools.info/member.php?username={}",
     "urlMain": "https://www.blackhatprotools.info",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Blast": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://www.blast.hk/members/?username={}",
+    "urlMain": "https://www.blast.hk",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -1541,6 +1587,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Desu": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://desu.me/members/?username={}",
+    "urlMain": "https://desu.me",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "username"
+  },
   "Detstrana": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2053,6 +2108,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Faqusha": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://faqusha.ru/profile/{}/",
+    "urlMain": "https://faqusha.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "typhoon"
+  },
   "Fark": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -2403,7 +2467,7 @@
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errorMsg": "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
-    "errorMsg2": "None",
+    "errorMsg2": "<title>General Error</title>",
     "errоrTypе": "message",
     "url": "http://forum.devushka.ru/memberlist.php?username={}",
     "urlMain": "http://forum.devushka.ru/",
@@ -3420,6 +3484,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Geodesist": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://geodesist.ru/members/?username={}",
+    "urlMain": "https://geodesist.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "German242": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3439,6 +3512,15 @@
     "urlMain": "https://gfycat.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Test"
+  },
+  "Gg-izi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://gg-izi.ru/user/{}",
+    "urlMain": "https://gg-izi.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "nimses"
   },
   "Giantbomb": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -3776,6 +3858,15 @@
     "urlMain": "https://www.hackthissite.org",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Hairmaniac": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://www.hairmaniac.ru/profile/{}/",
+    "urlMain": "https://www.hairmaniac.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "irina"
   },
   "Hctorpedo": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -4528,6 +4619,15 @@
     "urlMain": "https://leetcode.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Lenov": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://lenov.ru/user/{}",
+    "urlMain": "https://lenov.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Letterboxd": {
     "country": "\ud83c\udf0e",
@@ -5560,6 +5660,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Oncoforum": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://www.oncoforum.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "https://www.oncoforum.ru/blog/blogs/{}/",
+    "urlMain": "https://www.oncoforum.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "admin13"
+  },
   "Op_gg": {
     "country": "\ud83c\uddf0\ud83c\uddf7",
     "country_klas": "KR",
@@ -6297,6 +6407,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "parrots"
   },
+  "Prodaman": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://prodaman.ru/{}",
+    "errоrTypе": "response_url",
+    "url": "https://prodaman.ru/{}",
+    "urlMain": "https://prodaman.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Natastraik"
+  },
   "ProductHunt": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -6441,6 +6561,16 @@
     "urlMain": "https://www.qbn.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Qna_center": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorUrl": "https://qna.center",
+    "errоrTypе": "response_url",
+    "url": "https://qna.center/user/{}",
+    "urlMain": "https://qna.center",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "username"
   },
   "Quake-champions": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -7604,6 +7734,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "irina"
   },
+  "Sysadmins": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "Could not obtain user posts information",
+    "errorMsg2": "<title></title>",
+    "errоrTypе": "message",
+    "url": "https://sysadmins.ru/member{}.html",
+    "urlMain": "https://sysadmins.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Sythe": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -7989,6 +8130,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Tripster": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://tripster.ru/{}/",
+    "urlMain": "https://tripster.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Trueachievements": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -8189,6 +8339,15 @@
     "urlMain": "https://vsco.co/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Vamber": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://vamber.ru/author/{}/",
+    "urlMain": "https://vamber.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "irina"
   },
   "Velomania": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
