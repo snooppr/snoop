@@ -250,11 +250,13 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
 
             results_site["exists"] = "прочерк"
             results_site["url_user"] = ""
+            results_site['countryCSV'] = ""
             results_site['http_status'] = ""
             results_site['response_text'] = ""
-            results_site['response_time_ms'] = ""
             results_site['check_time_ms'] = ""
+            results_site['response_time_ms'] = ""
             results_site['response_time_site_ms'] = ""
+
         else:
 # URL пользователя на сайте (если он существует).
             url = net_info["url"].format(username)
@@ -355,7 +357,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
                 exists = "найден!"
 
 # Проверка, 4 метода; #2.
-# Проверка username при статусе 301 и 302 (перенаправление и соль).
+# Проверка username при статусе 301 и 303 (перенаправление и соль).
         elif error_type == "redirection":
             rr = requests.get(url, allow_redirects=False)
             if rr.status_code == 301 or rr.status_code == 303:
@@ -459,6 +461,7 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
         results_site['exists'] = exists
 
 # Сохранить результаты из запроса.
+        results_site['countryCSV'] = countryB
         results_site['http_status'] = http_status
         results_site['response_text'] = response_text
         results_site['check_time_ms'] = time_site
@@ -467,7 +470,6 @@ def snoop(username, site_data, verbose=False, user=False, country=False, print_f
             results_site['response_time_site_ms'] = "нет"
         else:
             results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
-
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
     return results_total
@@ -604,7 +606,7 @@ def main():
                         )
     parser.add_argument("--country", "-c",
                         action="store_true", dest="country", default=False,
-                        help="Сортировка 'вывода на печать/запись в html' результатов по странам, а не по алфавиту"
+                        help="Сортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
                         )                        
     parser.add_argument("--update Y",
                         action="store_true", dest="update",
@@ -1061,6 +1063,7 @@ def main():
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
+                                     'Стана',
                                      'Url',
                                      'Url_username',
                                      'Статус',
@@ -1075,6 +1078,7 @@ def main():
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
+                                     'Стана',
                                      'Url',
                                      'Url_username',
                                      'Статус',
@@ -1086,6 +1090,7 @@ def main():
                 for site in results:
                     writer.writerow([usernamsCSV,
                                      site,
+                                     results[site]['countryCSV'],
                                      results[site]['url_main'],
                                      results[site]['url_user'],
                                      results[site]['exists'],
@@ -1095,7 +1100,7 @@ def main():
                                      results[site]['response_time_ms']
                                      ])
                 writer.writerow(['«---------------------------------------',
-                                 '--------', '----------------------------------',
+                                 '--------','----', '----------------------------------',
                                  '--------------------------------------------------------',
                                  '-------------', '-----------------', '--------------------------------', 
                                  '-------------', '-----------------------»'])
@@ -1247,6 +1252,7 @@ def main():
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
+                                     'Стана',
                                      'Url',
                                      'Url_username',
                                      'Статус',
@@ -1261,6 +1267,7 @@ def main():
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
+                                     'Стана',
                                      'Url',
                                      'Url_username',
                                      'Статус',
@@ -1272,6 +1279,7 @@ def main():
                 for site in results:
                     writer.writerow([usernamCSV,
                                      site,
+                                     results[site]['countryCSV'],
                                      results[site]['url_main'],
                                      results[site]['url_user'],
                                      results[site]['exists'],
@@ -1281,7 +1289,7 @@ def main():
                                      results[site]['response_time_ms']
                                      ])
                 writer.writerow(['«---------------------------------------',
-                                 '--------', '----------------------------------',
+                                 '--------','----', '----------------------------------',
                                  '--------------------------------------------------------',
                                  '-------------', '-----------------', '--------------------------------',
                                  '-------------', '-----------------------»'])
