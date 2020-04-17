@@ -12,10 +12,10 @@
     "Pexels"
 
 ##ЧС.17/02/2020 (Ложное срабатывание, находит несуществующие username, ответ верный при badusername, редирект на captcha)
-    "YandexCollection"
+    "YandexCollection" 1 исправлено! ##БС
 
-##ЧС.18/02/2020 (Долгий ответ от сайта, ступорит Snoop) 1 исправлено! ##БС
-    "Zomato"
+##ЧС.18/02/2020 (Долгий ответ от сайта, ступорит Snoop) 
+    "Zomato" 1 исправлено! ##БС
 
 ##СС.20/02/2020 (лежат сервера: [Singapore Indonesia Philippines Taiwan Vietnam Thailand])
     "Op.ggSG":
@@ -40,8 +40,8 @@
     "Boingboing.net"
     "Spotify"
 
-##СС.24/02/2020
-    "http://www.folkd.com/user/Bastian" (медленный ответ) 1 исправлено! ##БС
+##СС.24/02/2020 (медленный ответ) 
+    "http://www.folkd.com/user/Bastian" 1 исправлено! ##БС
 
 ##ЧС.25/02/2020 (сайт часто открывается закрывается для публики, что ведет к ложным ошибкам)
     "xss.is" 1 исправлено! ##БС
@@ -50,8 +50,8 @@
     "https://www.bandlab.com/"
     "https://www.empowher.com/"
 
-##СС.29/02/2020
-    "https://www.virtualireland.ru/" (проблема с сертификатом)
+##СС.29/02/2020 (проблема с сертификатом)
+    "https://www.virtualireland.ru/"
 
 ##ЧС.4/03/2020 (сайты не доступны)
     "MeetMe"
@@ -80,7 +80,7 @@
     "CashMe"
 
 ##ЧС.24/03/2020 (ушел под защиту CF)
-    "Elakiri"
+    "Elakiri" 1 исправлено! ##БС
 
 ##ЧС.29/03/2020 (Включил x-firewall-protection: True)
     "Stihi" 1 исправлено! ##БС
@@ -111,10 +111,10 @@
     "https://erboh.com/forum/member.php?username=Mashit"
 
 ##СС.14/04/2020 (Долгий ответ от сайта)
-    "http://www.soloby.ru/user/sweto"
+    "http://www.soloby.ru/user/sweto" 1 исправлено! ##БС
 
 ##СС.14/04/2020 (Долгий ответ от сайта)
-    "https://school-school.ru/user/ky6uk"
+    "https://school-school.ru/user/ky6uk" 1 исправлено! ##БС
 
 ##СС.15/04/2020 ((52) Empty reply from server)
     "https://fion.ru/green/"

@@ -1946,6 +1946,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Elakiri": {
+    "country": "\ud83c\uddf1\ud83c\uddf0",
+    "country_klas": "LK",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>ElaKiri Community</title>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "http://www.elakiri.com/forum/member.php?username={}",
+    "urlMain": "http://www.elakiri.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Ello": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -7182,6 +7194,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "School-school": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "exclusion": "\\W",
+    "url": "https://school-school.ru/user/{}",
+    "urlMain": "https://school-school.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "nunny_zn"
+  },
   "Scratch": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -7495,6 +7517,17 @@
     "urlMain": "https://solaris-club.net",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Soloby": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u0430",
+    "errorMsg2": "<title>\u0423\u043d\u0438\u0432\u0435\u0440 soloBY</title>",
+    "errоrTypе": "message",
+    "url": "http://www.soloby.ru/user/{}",
+    "urlMain": "http://www.soloby.ru/user/adam",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "username"
   },
   "Soobshestva": {
     "country": "\ud83c\uddf7\ud83c\uddfa",

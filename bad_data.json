@@ -151,18 +151,6 @@
     "usernameON": "blue",
     "\u0441\u0442\u0430\u043b\u043e": "https://eveonline.com"
   },
-  "Elakiri": {
-    "country": "\ud83c\udff4",
-    "country_klas": "LK",
-    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
-    "errorMsg2": "<title>ElaKiri Community</title>",
-    "errоrTypе": "message",
-    "exclusion": "\\W",
-    "url": "http://www.elakiri.com/forum/member.php?username={}",
-    "urlMain": "http://www.elakiri.com/",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "adam"
-  },
   "Fanpop": {
     "country": "\ud83c\udff4",
     "errorUrl": "https://www.fanpop.com/",
