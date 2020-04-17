@@ -1074,6 +1074,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Nikita55"
   },
+  "Ccm": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://ccm.net/profile/user/{}",
+    "urlMain": "https://ccm.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Ccmixter": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -1320,6 +1329,15 @@
     "errоrTypе": "response_url",
     "url": "https://community.progress.com/members/{}",
     "urlMain": "https://community.progress.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Computerbase": {
+    "country": "\ud83c\udde9\ud83c\uddea",
+    "country_klas": "DE",
+    "errоrTypе": "redirection",
+    "url": "https://www.computerbase.de/forum/members/?username={}",
+    "urlMain": "https://www.computerbase.de/forum/members/?username=bumbklaatt",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -2618,6 +2636,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "chap92"
   },
+  "Forum_macplanete": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "exclusion": "\\W",
+    "url": "https://forum.macplanete.com/members/?username={}",
+    "urlMain": "https://forum.macplanete.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "pascal971"
+  },
   "Forum_mau": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2783,6 +2811,15 @@
     "urlMain": "https://forum.sexabout.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "kamena"
+  },
+  "Forum_shiftdelete": {
+    "country": "\ud83c\uddf9\ud83c\uddf7",
+    "country_klas": "TR",
+    "errоrTypе": "redirection",
+    "url": "https://forum.shiftdelete.net/uyeler/?username={}",
+    "urlMain": "https://forum.shiftdelete.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Forum_sibmama": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -4869,16 +4906,43 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Tompob"
   },
+  "Mac-help": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.mac-help.com/members/?username={}",
+    "urlMain": "https://www.mac-help.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "newsbot"
+  },
+  "Maccentre": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://maccentre.ru/board/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://maccentre.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "username"
+  },
   "Macosx": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
-    "errorMsg": "<title>Notable members | Mac Support</title>",
-    "errorMsg2": "The specified member cannot be found. Please enter a member's entire name.",
-    "errоrTypе": "message",
+    "errоrTypе": "redirection",
     "url": "https://macosx.com/members/?username={}",
-    "urlMain": "https://macosx.com/",
+    "urlMain": "https://macosx.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Macqa": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://macqa.ru/member/{}/",
+    "urlMain": "https://macqa.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "vika"
   },
   "Mactalk": {
     "country": "\ud83c\udde6\ud83c\uddfa",
@@ -6857,6 +6921,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Rmmedia": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+    "errorMsg2": "<title>\u041f\u043e\u043b\u0435\u0437\u043d\u044b\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 | Rmmedia.ru</title>",
+    "errоrTypе": "message",
+    "url": "https://rmmedia.ru/members/?username={}",
+    "urlMain": "https://rmmedia.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Rngf": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -7817,6 +7892,15 @@
     "urlMain": "https://www.techdirt.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Techrepublic": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.techrepublic.com/members/profile/{}/",
+    "urlMain": "https://www.techrepublic.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Kentertainments75"
   },
   "Telegram": {
     "country": "\ud83c\udf0e",
