@@ -40,6 +40,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Bbiz_club": {
+    "country": "\ud83c\udff4",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://bbiz.club/members/?username={}",
+    "urlMain": "https://bbiz.club",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Bittube": {
     "country": "\ud83c\udff4",
     "errоrTypе": "response_url",
@@ -89,6 +98,17 @@
     "urlMain": "https://www.capfriendly.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Carder": {
+    "country": "\ud83c\udff4",
+    "country_klas": "RU",
+    "errorMsg": "<title>Carding Forum - Carder site - Carders forum</title>",
+    "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
+    "errоrTypе": "message",
+    "url": "https://carder.one/member.php?username={}",
+    "urlMain": "https://carder.one",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Cardomain": {
     "country": "\ud83c\udff4",
@@ -210,6 +230,17 @@
     "urlMain": "https://imgur.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Interbasket": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Wr",
+    "errorMsg": "None",
+    "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
+    "errоrTypе": "message",
+    "url": "https://www.interbasket.net/forums/member.php?username={}",
+    "urlMain": "https://www.interbasket.net/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Khan_Academy": {
     "country": "\ud83c\udff4",
