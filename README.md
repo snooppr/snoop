@@ -5,9 +5,9 @@
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
-Snoop Project выслеживает никнеймы в публичных данных. Это самое сильное ПО с учётом СНГ локации.
+Snoop Project tracks nicknames in public data. This is the most powerful software taking into account the CIS location.
 
-Историю смотри
+History
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
 | Платформа             | Поддержка |
@@ -21,15 +21,15 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 
 **В базе** [8️⃣9️⃣9️⃣ Websites⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")
 
-## Работа Snoop на Android-е
+## Snoop for Android
 Смотри ветку Termux
 https://github.com/snooppr/snoop/tree/termux
 
-## Работа Snoop на OS Windows and GNU/Linux
+## Snoop for OS Windows and GNU/Linux
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
 
-## Установка
+## Installation
 **Примечание**: Требуемая версия python 3.7 и выше.
 
 ```
@@ -49,7 +49,7 @@ $ python3 -m pip install -r requirements.txt
 $ pip3 install module
 ```
 
-## Использование
+## Using
 ```
 $ python3 snoop.py --help
 
@@ -97,7 +97,7 @@ optional arguments:
   --update Y            Обновить Snoop
 ```
 
-**Примеры**
+**Example**
 ```
 # Для поиска только одного пользователя:
 $ python3 snoop.py username1
