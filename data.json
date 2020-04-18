@@ -234,6 +234,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Affiliatefix": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.affiliatefix.com/members/?username={}",
+    "urlMain": "https://www.affiliatefix.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Airliners": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -895,6 +904,15 @@
     "errоrTypе": "message",
     "url": "https://www.blackhatprotools.info/member.php?username={}",
     "urlMain": "https://www.blackhatprotools.info",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Blackhatworld": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "country_klas": "GB",
+    "errоrTypе": "redirection",
+    "url": "https://www.blackhatworld.com/members/?username={}",
+    "urlMain": "https://www.blackhatworld.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -1684,6 +1702,15 @@
     "urlMain": "https://www.digitalocean.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Digitalpoint": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.digitalpoint.com/members/?username={}",
+    "urlMain": "https://www.digitalpoint.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Digitalspy": {
     "country": "\ud83c\uddec\ud83c\udde7",
