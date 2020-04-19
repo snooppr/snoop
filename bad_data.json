@@ -230,6 +230,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Investing": {
+    "country": "\ud83c\udff4",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.investing.com/traders/{}",
+    "urlMain": "https://www.investing.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "jenny"
+  },
   "Khan_Academy": {
     "country": "\ud83c\udff4",
     "errоrTypе": "status_code",
