@@ -1901,6 +1901,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "E621": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "<title></title>",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://e621.net/users/{}",
+    "urlMain": "https://e621.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "EGPU": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -2376,7 +2387,7 @@
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
     "errorMsg": "This user has not registered and therefore does not have a profile to view.",
-    "errorMsg2": "None",
+    "errorMsg2": "Sorry. The administrator has banned your IP address. To contact the administrator click here",
     "errоrTypе": "message",
     "url": "https://www.flyertalk.com/forum/members/{}.html",
     "urlMain": "https://www.flyertalk.com",
@@ -3405,6 +3416,15 @@
     "urlMain": "https://funnyjunk.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Funnyordie": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.funnyordie.com/users/{}",
+    "urlMain": "https://www.funnyordie.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Marja_Berggren"
   },
   "Furiffic": {
     "country": "\ud83c\udfc1",
@@ -4877,6 +4897,18 @@
     "urlMain": "https://www.liveinternet.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Livejasmin": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": ":[]",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.livejasmin.com/en/girls/#!chat/{}",
+    "urlMain": "https://www.livejasmin.com/",
+    "urlProbe": "https://www.livejasmin.com/en/flash/get-performer-details/{}",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "CherrySoubi"
   },
   "Livelib": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -6370,6 +6402,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Playlists": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "SORRY WE CAN'T FIND THAT PAGE",
+    "errorMsg2": "<title>Discover Spotify Playlists at Playlists.net</title>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://playlists.net/members/{}",
+    "urlMain": "https://playlists.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Playstationtrophies": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -6419,7 +6463,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
-  "Pokerstrategy": {
+  "PokerstrategyCOM": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.pokerstrategy.com/user/{}/profile/",
+    "urlMain": "https://www.pokerstrategy.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "PokerstrategyNET": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
     "errоrTypе": "status_code",
@@ -7363,6 +7416,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "fedor"
   },
+  "Setlist": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.setlist.fm/user/{}",
+    "urlMain": "https://www.setlist.fm",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Sevastopol_world": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -7635,6 +7697,17 @@
     "urlMain": "https://soundcloud.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Soup": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "Blog not found",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://{}.soup.io/rss",
+    "urlMain": "https://soup.io",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "SourceForge": {
     "country": "\ud83c\udf0e",
@@ -8109,6 +8182,17 @@
     "urlMain": "https://www.thedaftclub.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Theguardian": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "<title>public profile | Identity | The Guardian</title>",
+    "errorMsg2": "No comments found for user",
+    "errоrTypе": "message",
+    "url": "https://profile.theguardian.com/user/{}",
+    "urlMain": "https://theguardian.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "frogprincess"
   },
   "Thelion": {
     "country": "\ud83c\udf0e",
@@ -8783,6 +8867,15 @@
     "errоrTypе": "status_code",
     "url": "https://community.waveapps.com/profile/{}",
     "urlMain": "https://community.waveapps.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Weasyl": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.weasyl.com/~{}",
+    "urlMain": "https://www.weasyl.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
