@@ -353,6 +353,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Amazfitwatchfaces": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "<title></title>",
+    "errorMsg2": "No members found for this search criterion.",
+    "errоrTypе": "message",
+    "url": "https://amazfitwatchfaces.com/forum/memberlist.php?username={}",
+    "urlMain": "https://amazfitwatchfaces.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Amirite": {
     "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
@@ -815,6 +826,18 @@
     "urlMain": "https://www.bazar.cz/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "pianina"
+  },
+  "Bbs.huami": {
+    "country": "\ud83c\udde8\ud83c\uddf3",
+    "country_klas": "CN",
+    "errorMsg": "<title>\u63d0\u793a\u4fe1\u606f -  huami\u8bba\u575b -  Powered by Discuz!</title>",
+    "errorMsg2": "\u62b1\u6b49\uff0c\u60a8\u6307\u5b9a\u7684\u7528\u6237\u7a7a\u95f4\u4e0d\u5b58\u5728",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "https://bbs.huami.com/home.php?username={}",
+    "urlMain": "https://bbs.huami.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Bdoforumtr": {
     "country": "\ud83c\uddf9\ud83c\uddf7",
@@ -2596,6 +2619,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "symmachus"
   },
+  "Forum_garminych": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0442\u0430\u043a\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+    "errorMsg2": "<title>forum.garminych.ru :: </title>",
+    "errоrTypе": "message",
+    "url": "http://forum.garminych.ru/profile.php?mode=viewprofile&u={}",
+    "urlMain": "http://forum.garminych.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Corado"
+  },
   "Forum_gitarizm": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3543,6 +3577,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Geekdoing": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "exclusion": "\\W",
+    "url": "https://geekdoing.com/members/?username={}",
+    "urlMain": "https://geekdoing.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Geekgrade": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -3819,6 +3863,17 @@
     "urlMain": "https://gpodder.net/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Gps-data-team": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "<title></title>",
+    "errorMsg2": "Sorry, but that user does not exist.",
+    "errоrTypе": "message",
+    "url": "https://www.gps-data-team.com/pda-gps-navigation/profile.php?mode=viewprofile&u={}",
+    "urlMain": "https://www.gps-data-team.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Gramho": {
     "country": "\ud83c\udf0e",
@@ -5007,7 +5062,7 @@
     "url": "https://maccentre.ru/board/profile.php?mode=viewprofile&u={}",
     "urlMain": "https://maccentre.ru",
     "usernameOFF": "nousermengirl1945",
-    "usernameON": "username"
+    "usernameON": "adam"
   },
   "Macosx": {
     "country": "\ud83c\udfc1",
@@ -5764,6 +5819,15 @@
     "urlMain": "https://www.npmjs.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Nuvi_Garmin": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://nuvi.ru/forum/user/{}/",
+    "urlMain": "https://nuvi.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "VitaliyK"
   },
   "Nxp": {
     "country": "\ud83c\udf0e",
@@ -7669,7 +7733,7 @@
     "url": "http://www.soloby.ru/user/{}",
     "urlMain": "http://www.soloby.ru/user/adam",
     "usernameOFF": "nousermengirl1945",
-    "usernameON": "username"
+    "usernameON": "red"
   },
   "Soobshestva": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -7967,6 +8031,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Kilgore"
   },
+  "Suunto_Movescount": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "http://www.movescount.com/ru/members/{}",
+    "urlMain": "http://www.movescount.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Svidbook": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -8262,6 +8335,15 @@
     "urlMain": "http://tkgr.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "siber"
+  },
+  "Tomtom": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://discussions.tomtom.com/en/profile/{}",
+    "urlMain": "https://discussions.tomtom.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Toster": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
