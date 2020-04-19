@@ -2,6 +2,7 @@
 =============================
 
 ## Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов.
+Special services, detectives and OSINT professionals are welcome.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
