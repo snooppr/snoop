@@ -75,6 +75,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "2d-3d": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://www.2d-3d.ru/user/{}/",
+    "urlMain": "https://www.2d-3d.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "33bru": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -83,6 +92,24 @@
     "errоrTypе": "message",
     "url": "http://{}.33bru.com/",
     "urlMain": "http://33bru.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "3dcadforums": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.3dcadforums.com/members/?username={}",
+    "urlMain": "https://www.3dcadforums.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "3ddd": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "status_code",
+    "url": "https://3ddd.ru/users/{}",
+    "urlMain": "https://3ddd.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -827,7 +854,7 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "pianina"
   },
-  "Bbs.huami": {
+  "Bbs_huami": {
     "country": "\ud83c\udde8\ud83c\uddf3",
     "country_klas": "CN",
     "errorMsg": "<title>\u63d0\u793a\u4fe1\u606f -  huami\u8bba\u575b -  Powered by Discuz!</title>",
@@ -1068,6 +1095,17 @@
     "urlMain": "https://www.cnet.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Caduser": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e \u0432\u0430\u0448\u0435\u043c\u0443 \u0437\u0430\u043f\u0440\u043e\u0441\u0443 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://www.caduser.ru/forum/userlist.php?username={}",
+    "urlMain": "https://www.caduser.ru/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adamas"
   },
   "Carbonmade": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -7443,6 +7481,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Secret_kompas3d": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "http://secret.kompas3d.su/index/8-0-{}",
+    "urlMain": "http://secret.kompas3d.su/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "irina"
+  },
   "Segmentfault": {
     "country": "\ud83c\udded\ud83c\uddf0",
     "country_klas": "TN",
@@ -8705,6 +8755,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "irina"
   },
+  "Vegascreativesoftware": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "Whatever you're looking for.",
+    "errorMsg2": "<title>VEGAS Community | vegascreativesoftware.info",
+    "errоrTypе": "message",
+    "url": "https://www.vegascreativesoftware.info/us/users/profile/{}/",
+    "urlMain": "https://www.vegascreativesoftware.info",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Velomania": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -9006,6 +9067,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Zanuda_petro"
   },
+  "Winamp": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorMsg": "<title>Winamp & Shoutcast Forums</title>",
+    "errorMsg2": "This user has not registered and therefore does not have a profile to view.",
+    "errоrTypе": "message",
+    "url": "http://forums.winamp.com/member.php?username={}",
+    "urlMain": "http://forums.winamp.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
+  },
   "Windy": {
     "country": "\ud83c\udde8\ud83c\uddff",
     "country_klas": "CZ",
@@ -9229,6 +9301,17 @@
     "urlMain": "https://music.yandex.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "boss"
+  },
+  "Yapisal": {
+    "country": "\ud83c\uddf9\ud83c\uddf7",
+    "country_klas": "TR",
+    "errorMsg": "Bu \u00dcye kay\u0131tl\u0131 \u00dcyemiz de\u011fildir. Bu sebebten dolay\u0131 \u00dcyeye ait Profil g\u00f6sterilemiyor.",
+    "errorMsg2": "<title>\u0130n\u015faat Forumu-  Yap\u0131sal.Net</title>",
+    "errоrTypе": "message",
+    "url": "https://forum.yapisal.net/member.php?username={}",
+    "urlMain": "https://forum.yapisal.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "YouNow": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
