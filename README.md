@@ -6,7 +6,8 @@ Special services, detectives and OSINT professionals are welcome.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
-Snoop Project tracks nicknames in public data. This is the most powerful software taking into account the CIS location.
+Snoop Project tracks nicknames in public data.  
+- [X] This is the most powerful software taking into account the CIS location.
 
 History
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
