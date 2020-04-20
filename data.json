@@ -1755,6 +1755,16 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Dieselpunks": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorUrl": "http://www.dieselpunks.org/{}",
+    "errоrTypе": "response_url",
+    "url": "http://www.dieselpunks.org/profile/{}",
+    "urlMain": "http://www.dieselpunks.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Digitalocean": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -2561,6 +2571,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Forum_beyond3d": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "<title>Notable Members | Beyond3D Forum</title>",
+    "errоrTypе": "message",
+    "url": "https://forum.beyond3d.com/members/?username={}",
+    "urlMain": "https://forum.beyond3d.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Forum_caravelgames": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -2921,6 +2942,15 @@
     "errоrTypе": "message",
     "url": "https://forum.ruboard.ru/member.php/?username={}",
     "urlMain": "https://forum.ruboard.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Forum_rudtp": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://forum.rudtp.ru/members/?username={}",
+    "urlMain": "https://forum.rudtp.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -4058,6 +4088,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "irina"
   },
+  "Hardforum": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://hardforum.com/members/?username={}",
+    "urlMain": "https://hardforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Hctorpedo": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -4088,6 +4127,15 @@
     "urlMain": "https://www.hellboundhackers.org",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Hitmanforum": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.hitmanforum.com/u/{}/summary",
+    "urlMain": "https://www.hitmanforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "pushdagger"
   },
   "Hockeyforum": {
     "country": "\ud83c\udf0e",
@@ -5509,6 +5557,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Msofficeforums": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>Microsoft Office Forums</title>",
+    "errоrTypе": "message",
+    "url": "https://www.msofficeforums.com/member.php?username={}",
+    "urlMain": "https://www.msofficeforums.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Muckrack": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -5742,6 +5801,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "green"
   },
+  "Neoseeker": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://www.neoseeker.com/members/{}/",
+    "urlMain": "https://www.neoseeker.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Nesiditsa": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -5887,6 +5955,15 @@
     "urlMain": "https://ok.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "ok"
+  },
+  "Office-forums": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "redirection",
+    "url": "https://www.office-forums.com/members/?username={}",
+    "urlMain": "https://www.office-forums.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Oilcareer": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -6873,6 +6950,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "bruner"
   },
+  "Quartertothree": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://forum.quartertothree.com/u/{}/summary",
+    "urlMain": "https://forum.quartertothree.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "rei"
+  },
   "Quibblo": {
     "country": "\ud83c\udfc1",
     "country_klas": "Kb",
@@ -7240,6 +7326,17 @@
     "urlMain": "https://rpggeek.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Rpgwatch": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>RPGWatch Forums</title>",
+    "errоrTypе": "message",
+    "url": "https://www.rpgwatch.com/forums/member.php?username={}",
+    "urlMain": "https://www.rpgwatch.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "blue"
   },
   "Rrforums": {
     "country": "\ud83c\udde6\ud83c\uddfa",
@@ -7629,6 +7726,15 @@
     "urlMain": "http://www.skodaforum.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "rivera"
+  },
+  "Skyrimforums": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://skyrimforums.org/sf/members/?username={}",
+    "urlMain": "https://skyrimforums.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Skyrock": {
     "country": "\ud83c\uddeb\ud83c\uddf7",
@@ -8199,6 +8305,15 @@
     "errоrTypе": "status_code",
     "url": "https://www.techdirt.com/user/{}",
     "urlMain": "https://www.techdirt.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Techpowerup": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "redirection",
+    "url": "https://www.techpowerup.com/forums/members/?username={}",
+    "urlMain": "https://www.techpowerup.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
