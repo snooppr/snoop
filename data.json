@@ -481,6 +481,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
   },
+  "Antique-bottles": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.antique-bottles.net/members/?username={}",
+    "urlMain": "https://www.antique-bottles.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Ap-pro": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -851,6 +860,17 @@
     "errоrTypе": "status_code",
     "url": "https://barnacl.es/u/{}",
     "urlMain": "https://barnacl.es/u/alexsam",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Bayoushooter": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>BayouShooter.com Forums - Louisiana Gun Talk</title>",
+    "errоrTypе": "message",
+    "url": "https://www.bayoushooter.com/forums/member.php?username={}",
+    "urlMain": "https://www.bayoushooter.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -1859,6 +1879,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "dustin"
   },
+  "Discussfastpitch": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.discussfastpitch.com/members/?username={}",
+    "urlMain": "https://www.discussfastpitch.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "DiscussionsApple": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -2396,6 +2425,15 @@
     "urlMain": "https://filmwatch.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "hazelamy"
+  },
+  "Firearmstalk": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.firearmstalk.com/members/?username={}",
+    "urlMain": "https://www.firearmstalk.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Fishingsib": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -3297,6 +3335,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Forums_gunboards": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>Gunboard's Forums</title>",
+    "errоrTypе": "message",
+    "url": "https://forums.gunboards.com/member.php?username={}",
+    "urlMain": "https://forums.gunboards.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Forums_liverpoolfc": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -3991,6 +4040,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Gulfcoastgunforum": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://gulfcoastgunforum.com/members/?username={}",
+    "urlMain": "https://gulfcoastgunforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Gumroad": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -4001,6 +4059,17 @@
     "urlMain": "https://www.gumroad.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Gunandgame": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "<title>Notable Members | Gun and Game - The Friendliest Gun Discussion Forum Online</title>",
+    "errоrTypе": "message",
+    "url": "https://www.gunandgame.com/members/?username={}",
+    "urlMain": "https://www.gunandgame.co",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "GunsAndAmmo": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -4117,6 +4186,17 @@
     "urlMain": "https://www.hairmaniac.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "irina"
+  },
+  "Handgunforum": {
+    "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "<title>Notable members | Handgun Forum</title>",
+    "errоrTypе": "message",
+    "url": "https://www.handgunforum.net/xf/members/?username={}",
+    "urlMain": "https://www.handgunforum.net",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Hardforum": {
     "country": "\ud83c\udfc1",
@@ -4250,7 +4330,7 @@
   "Hsx": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
-    "errorMsg": "The profile for the trader you requested could not be found. Please check the username and try again!",
+    "errorMsg": "Thank you for your interest in the Hollywood Stock Exchange (HSX)",
     "errorMsg2": "<title>Hollywood Stock Exchange.  Trade movies, stars and more. | HSX.com</title>",
     "errоrTypе": "message",
     "url": "https://www.hsx.com/profile/?uname={}",
@@ -4417,6 +4497,17 @@
     "errоrTypе": "message",
     "url": "https://www.infrance.su/forum/member.php?username={}",
     "urlMain": "https://www.infrance.su/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Ingunowners": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>INGunOwners</title>",
+    "errоrTypе": "message",
+    "url": "https://www.ingunowners.com/forums/members/{}.html",
+    "urlMain": "https://www.ingunowners.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -4719,6 +4810,18 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Kino-tv": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
+    "errorMsg2": "<title>Movie-Forums</title>",
+    "errоrTypе": "message",
+    "exclusion": "\\W",
+    "url": "http://www.kino-tv-forum.ru/index/8-0-{}",
+    "urlMain": "http://www.kino-tv-forum.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "emal"
+  },
   "Kinooh": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -4957,17 +5060,6 @@
     "urlMain": "https://www.liebe69.de",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "klaus"
-  },
-  "Life-dom2": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "None",
-    "errorMsg2": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d.",
-    "errоrTypе": "message",
-    "url": "https://life-dom2.su/user/{}",
-    "urlMain": "https://life-dom2.su",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "adam"
   },
   "Lightstalking": {
     "country": "\ud83c\udfc1",
@@ -5382,6 +5474,17 @@
     "urlMain": "https://www.mdregion.ru/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "Nadka"
+  },
+  "Mdshooters": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>Maryland Shooters</title>",
+    "errоrTypе": "message",
+    "url": "https://www.mdshooters.com/member.php?username={}",
+    "urlMain": "https://www.mdshooters.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Medium": {
     "country": "\ud83c\udf0e",
@@ -5884,6 +5987,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "the_west_pacific"
   },
+  "Nationalgunforum": {
+    "country": "\ud83c\udde8\ud83c\udde6",
+    "country_klas": "CA",
+    "errоrTypе": "redirection",
+    "url": "https://www.nationalgunforum.com/members/?username={}",
+    "urlMain": "https://www.nationalgunforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Nekto": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -5993,6 +6105,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Northwestfirearms": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.northwestfirearms.com/members/?username={}",
+    "urlMain": "https://www.northwestfirearms.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Notabug": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -6037,6 +6158,15 @@
     "errоrTypе": "message",
     "url": "https://community.nxp.com/people/{}",
     "urlMain": "https://community.nxp.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Nygunforum": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://nygunforum.com/members/?username={}",
+    "urlMain": "https://nygunforum.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -8464,6 +8594,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "tengu"
   },
+  "Texasguntalk": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.texasguntalk.com/members/?username={}",
+    "urlMain": "https://www.texasguntalk.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "The-village": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -8505,6 +8644,17 @@
     "urlMain": "https://www.thedaftclub.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Thefirearmsforum": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "The specified member cannot be found. Please enter a member's entire name.",
+    "errorMsg2": "<title>Notable Members | The Firearms Forum - The Buying, Selling or Trading Firearm Forum</title>",
+    "errоrTypе": "message",
+    "url": "https://www.thefirearmsforum.com/members/?username={}",
+    "urlMain": "https://www.thefirearmsforum.com/members/?username=willieb",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "willieb"
   },
   "Theguardian": {
     "country": "\ud83c\udf0e",
@@ -9607,17 +9757,5 @@
     "urlMain": "https://www.zomato.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
-  },
-  "kino-tv": {
-    "country": "\ud83c\uddf7\ud83c\uddfa",
-    "country_klas": "RU",
-    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d",
-    "errorMsg2": "<title>Movie-Forums</title>",
-    "errоrTypе": "message",
-    "exclusion": "\\W",
-    "url": "http://www.kino-tv-forum.ru/index/8-0-{}",
-    "urlMain": "http://www.kino-tv-forum.ru",
-    "usernameOFF": "nousermengirl1945",
-    "usernameON": "emal"
   }
 }
