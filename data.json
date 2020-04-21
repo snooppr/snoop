@@ -907,6 +907,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Bdoutdoors": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.bdoutdoors.com/forums/members/?username={}",
+    "urlMain": "https://www.bdoutdoors.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Beerintheevening": {
     "country": "\ud83c\uddec\ud83c\udde7",
     "country_klas": "GB",
@@ -2860,6 +2869,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "pascal971"
   },
+  "Forum_maidenfans": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://forum.maidenfans.com/members/?username={}",
+    "urlMain": "https://forum.maidenfans.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Forum_mau": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -4379,6 +4397,26 @@
     "urlMain": "https://www.hunting.ru/forum/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Huntingnet": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>HuntingNet.com Forums</title>",
+    "errоrTypе": "message",
+    "url": "https://www.huntingnet.com/forum/members/{}.html",
+    "urlMain": "https://www.huntingnet.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "username"
+  },
+  "Hunttalk": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.hunttalk.com/members/?username={}",
+    "urlMain": "https://www.hunttalk.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "IFTTT": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -8655,6 +8693,17 @@
     "urlMain": "https://www.thefirearmsforum.com/members/?username=willieb",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "willieb"
+  },
+  "Theflyfishingforum": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>The North American Fly Fishing Forum</title>",
+    "errоrTypе": "message",
+    "url": "https://www.theflyfishingforum.com/forums/members/{}.html",
+    "urlMain": "https://www.theflyfishingforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Theguardian": {
     "country": "\ud83c\udf0e",
