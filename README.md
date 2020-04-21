@@ -6,7 +6,8 @@
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
-Snoop Project tracks nicknames in public data. Special services, detectives and OSINT professionals are welcome.
+Snoop project is developed without taking into account the opinions of the NSA and their friends,  
+that is, it is available to the average user.
 
 History
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
