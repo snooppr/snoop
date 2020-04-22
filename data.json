@@ -936,6 +936,24 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Bestfantasybooks": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "http://bestfantasybooks.com/forums/members/?username={}",
+    "urlMain": "http://bestfantasybooks.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "tofulovefrog"
+  },
+  "Bethepro": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://bethepro.com/members/{}/",
+    "urlMain": "https://bethepro.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Bibsonomy": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -1088,6 +1106,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Bookandreader": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.bookandreader.com/members/?username={}",
+    "urlMain": "https://www.bookandreader.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "brazilla"
+  },
   "Bookcrossing": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -1193,6 +1220,17 @@
     "urlMain": "https://career.habr.com/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Cbr": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>CBR Community</title>",
+    "errоrTypе": "message",
+    "url": "https://community.cbr.com/member.php?username={}",
+    "urlMain": "https://community.cbr.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Ccdi": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -1512,6 +1550,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "jordanteicher"
   },
+  "Coolminiornot": {
+    "country": "\ud83c\uddf8\ud83c\uddec",
+    "country_klas": "SG",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>CoolMiniOrNot Forums</title>",
+    "errоrTypе": "message",
+    "url": "http://www.coolminiornot.com/forums/member.php?username={}",
+    "urlMain": "http://www.coolminiornot.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Coroflot": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -1674,6 +1723,16 @@
     "urlMain": "http://dating.ru",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Davesgarden": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorUrl": "https://davesgarden.com/{}",
+    "errоrTypе": "response_url",
+    "url": "https://davesgarden.com/members/{}",
+    "urlMain": "https://davesgarden.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Turbosaurus"
   },
   "Dcpg": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -2704,6 +2763,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Forum_drawmixpaint": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "status_code",
+    "url": "https://forum.drawmixpaint.com/profile/{}",
+    "urlMain": "https://forum.drawmixpaint.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Forum_dwg": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -2950,6 +3018,15 @@
     "urlMain": "http://forum.novoros.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Forum_online-knigi": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://forum.online-knigi.com/members/?username={}",
+    "urlMain": "https://forum.online-knigi.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "brazilla"
   },
   "Forum_openframeworks": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -3704,6 +3781,34 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Garden": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errorUrl": "https://garden.org/{}",
+    "errоrTypе": "response_url",
+    "url": "https://garden.org/users/profile/{}/",
+    "urlMain": "https://garden.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Turbosaurus"
+  },
+  "Gardening-forums": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.gardening-forums.com/members/?username={}",
+    "urlMain": "https://www.gardening-forums.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Gardenstew": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.gardenstew.com/members/?username={}",
+    "urlMain": "https://www.gardenstew.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Gays": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -4324,6 +4429,15 @@
     "urlMain": "https://www.house-mixes.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
+  },
+  "Houserepairtalk": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.houserepairtalk.com/members/?username={}",
+    "urlMain": "https://www.houserepairtalk.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "red"
   },
   "Houzz": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -6513,6 +6627,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "psr"
   },
+  "Painters-online": {
+    "country": "\ud83c\uddec\ud83c\udde7",
+    "country_klas": "GB",
+    "errоrTypе": "status_code",
+    "url": "https://www.painters-online.co.uk/artists/{}/",
+    "urlMain": "https://www.painters-online.co.uk",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "alanbickley"
+  },
   "Pandia": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -6953,6 +7076,17 @@
     "urlMain": "https://rt.pornhub.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Portraitartistforum": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>Portrait Artist Forum</title>",
+    "errоrTypе": "message",
+    "url": "http://www.portraitartistforum.com/member.php?username={}",
+    "urlMain": "http://www.portraitartistforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Sam%20Savage"
   },
   "Postila": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -8683,6 +8817,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
+  "Thefastlaneforum": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://www.thefastlaneforum.com/community/members/?username={}",
+    "urlMain": "https://www.thefastlaneforum.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Thefirearmsforum": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
     "country_klas": "US",
@@ -8764,6 +8907,15 @@
     "urlMain": "https://www.thestudentroom.co.uk",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Theverge": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "status_code",
+    "url": "https://www.theverge.com/users/{}",
+    "urlMain": "https://www.theverge.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "Patlex"
   },
   "Thingiverse": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
@@ -8968,6 +9120,17 @@
     "errоrTypе": "status_code",
     "url": "https://truesteamachievements.com/gamer/{}",
     "urlMain": "https://truesteamachievements.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Truthbook": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errorMsg": "No members found for this search criterion.",
+    "errorMsg2": "None",
+    "errоrTypе": "message",
+    "url": "https://truthbook.com/forum/memberlist.php?username={}",
+    "urlMain": "https://truthbook.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
