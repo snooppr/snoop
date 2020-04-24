@@ -34,7 +34,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.\033[34;1m1.8\033[31;1m_rus\033[0m
+                         _|    \033[0m \033[37mv1.\033[34;1m1.9\033[31;1m_rus\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -51,7 +51,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-__version__ = "1.1.8_rus Ветка Snoop Desktop"
+__version__ = "1.1.9_rus Ветка Snoop Desktop"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -1012,7 +1012,7 @@ def main():
                     exists_counter += 0
                     for word in li:
                         cnt[word] += 1
-                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ 
+                    file.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
                     (website_name) + "</a>" + "</li>\n")
             flag_str=str(cnt)
             try:            
@@ -1024,7 +1024,7 @@ def main():
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i>\n")
-            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
+            file.write("<br><br><a target='_blank' href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
             file.write("""
     <script>
     function sortList() {
@@ -1051,6 +1051,15 @@ def main():
 
 <script src="../../web/particles.js"></script>
 <script src="../../web/app.js"></script>
+
+<audio controls="controls" autoplay="autoplay" loop="loop">
+<source src="../../web/Megapolis (remix).mp3" type="audio/mpeg">
+</audio>
+
+<br>
+<audio controls="controls" loop="loop">
+<source src="../../web/for snoop in cyberpunk.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>""")
@@ -1200,7 +1209,7 @@ def main():
                     exists_counter += 0
                     for word in li:
                         cnt[word] += 1
-                    file.write("<li>" + dictionary["flagcountry"]+ "<a href='" + dictionary ["url_user"] + "'>"+ 
+                    file.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
                     (website_name) + "</a>" + "</li>\n")
             flag_str=str(cnt)
             try:            
@@ -1212,7 +1221,7 @@ def main():
             file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
             file.write("<br> База Snoop: <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i>\n")
-            file.write("<br><br><a href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
+            file.write("<br><br><a target='_blank' href='https://github.com/snooppr/snoop'>🌎Snoop/Исходный код</a>\n</div>\n")
             file.write("""
     <script>
     function sortList() {
@@ -1239,6 +1248,15 @@ def main():
 
 <script src="../../web/particles.js"></script>
 <script src="../../web/app.js"></script>
+
+<audio controls="controls" autoplay="autoplay" loop="loop">
+<source src="../../web/Megapolis (remix).mp3" type="audio/mpeg">
+</audio>
+
+<br>
+<audio controls="controls" loop="loop">
+<source src="../../web/for snoop in cyberpunk.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>""")
