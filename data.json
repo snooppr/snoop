@@ -1830,6 +1830,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Darksploit": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errоrTypе": "redirection",
+    "url": "https://darksploit.su/members/?username={}",
+    "urlMain": "https://darksploit.su/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "sitting33"
+  },
   "Dasauge": {
     "country": "\ud83c\udde9\ud83c\uddea",
     "country_klas": "DE",
@@ -5184,7 +5193,9 @@
   "Kosmetista": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
-    "errоrTypе": "status_code",
+    "errorMsg": "<title>\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435</title>",
+    "errorMsg2": "\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0442\u0430\u043a\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043d\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442.",
+    "errоrTypе": "message",
     "url": "https://kosmetista.ru/profile/{}/",
     "urlMain": "https://kosmetista.ru",
     "usernameOFF": "nousermengirl1945",
@@ -6285,7 +6296,7 @@
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
     "errorMsg": "Profiles: 0 results",
-    "errorMsg2": "None",
+    "errorMsg2": "DDoS protection by",
     "errоrTypе": "message",
     "url": "https://namemc.com/profile/{}",
     "urlMain": "https://namemc.com/",
@@ -7500,10 +7511,8 @@
   "Pvpru": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
-    "errorMsg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "errorMsg2": "<title>pvpru</title>",
-    "errоrTypе": "message",
-    "url": "https://pvpru.com/board/member.php?username={}",
+    "errоrTypе": "status_code",
+    "url": "https://kosmetista.ru/profile/{}",
     "urlMain": "https://pvpru.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"

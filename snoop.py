@@ -1068,7 +1068,7 @@ def main():
     # Запись в csv.
             with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
                 usernamsCSV = re.sub(" ", "_", username)
-                if censor >= 9 * int(kef_user):
+                if censor >= 10 * int(kef_user):
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
@@ -1120,7 +1120,7 @@ def main():
                 file.close()
 
     # Финишный вывод.
-        if censor >= 9 * int(kef_user):
+        if censor >= 10 * int(kef_user):
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", 
                               "*используйте VPN")
@@ -1266,7 +1266,7 @@ def main():
             with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
                 usernamCSV = re.sub(" ", "_", username)
 
-                if censor >= 9:            
+                if censor >= 10:            
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
@@ -1318,7 +1318,7 @@ def main():
                 file.close()
 
     # Финишный вывод.
-        if censor >= 9:
+        if censor >= 10:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Cлабое соединение или Internet Censorship:", "*используйте VPN")
             print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
