@@ -2873,6 +2873,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "green"
   },
+  "Forum_corsair": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errorMsg": "This user has not registered and therefore does not have a profile to view.",
+    "errorMsg2": "<title>The Corsair User Forums</title>",
+    "errоrTypе": "message",
+    "url": "https://forum.corsair.com/v3/member.php?username={}",
+    "urlMain": "https://forum.corsair.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Forum_cxem_net": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -3158,6 +3169,15 @@
     "urlMain": "http://forum.navi.gg/",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "red"
+  },
+  "Forum_notebookreview": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "http://forum.notebookreview.com/members/?username={}",
+    "urlMain": "http://forum.notebookreview.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
   },
   "Forum_novoros": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
@@ -8530,6 +8550,15 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Snbforums": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.snbforums.com/members/?username={}",
+    "urlMain": "https://www.snbforums.com",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
   "Social_librem": {
     "country": "\ud83c\udf0e",
     "country_klas": "Wr",
@@ -8961,6 +8990,15 @@
     "errоrTypе": "status_code",
     "url": "https://tabun.everypony.ru/profile/{}/",
     "urlMain": "https://tabun.everypony.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "TalkDrugabuse": {
+    "country": "\ud83c\uddfa\ud83c\uddf8",
+    "country_klas": "US",
+    "errоrTypе": "redirection",
+    "url": "https://talk.drugabuse.com/members/?username={}",
+    "urlMain": "https://talk.drugabuse.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
@@ -9910,6 +9948,15 @@
     "urlMain": "https://www.weasyl.com",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
+  },
+  "Weforum": {
+    "country": "\ud83c\udf0e",
+    "country_klas": "Wr",
+    "errоrTypе": "status_code",
+    "url": "https://www.weforum.org/people/{}",
+    "urlMain": "https://www.weforum.org",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam-leismark"
   },
   "Weheartit": {
     "country": "\ud83c\uddfa\ud83c\uddf8",
