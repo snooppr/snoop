@@ -1297,6 +1297,17 @@
     "usernameOFF": "nousermengirl1945",
     "usernameON": "blue"
   },
+  "Cad": {
+    "country": "\ud83c\uddf7\ud83c\uddfa",
+    "country_klas": "RU",
+    "errorMsg": "\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d \u043a\u043e\u0434 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f.",
+    "errorMsg2": "<title>\u0424\u043e\u0440\u0443\u043c</title>",
+    "errоrTypе": "message",
+    "url": "https://cad.ru/ru/forum/index.php?PAGE_NAME=profile_view&UID={}",
+    "urlMain": "https://cad.ru",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "pipaev"
+  },
   "Caduser": {
     "country": "\ud83c\uddf7\ud83c\uddfa",
     "country_klas": "RU",
@@ -4887,6 +4898,15 @@
     "errоrTypе": "status_code",
     "url": "https://www.instructables.com/member/{}/",
     "urlMain": "https://www.instructables.com/",
+    "usernameOFF": "nousermengirl1945",
+    "usernameON": "adam"
+  },
+  "Interfaith": {
+    "country": "\ud83c\udfc1",
+    "country_klas": "Kb",
+    "errоrTypе": "redirection",
+    "url": "https://www.interfaith.org/community/members/?username={}",
+    "urlMain": "https://www.interfaith.org/community/members/?username=Aupmanyav",
     "usernameOFF": "nousermengirl1945",
     "usernameON": "adam"
   },
