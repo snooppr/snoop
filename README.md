@@ -60,7 +60,7 @@ usage: snoop.py [-h] [--donate Y] [--sort Y] [--version] [--verbose] [--json]
                 [--list all] [--country] [--update Y]
                 USERNAMES [USERNAMES ...]
 
-Snoop: поиск никнейма по всем фронтам! (Version 1.1.8_rus Ветка Snoop Desktop)
+Snoop: поиск никнейма по всем фронтам! (Version 1.1.9_rus Ветка Snoop Desktop)
 
 positional arguments:
   USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
