@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  snoop:
+    build: .
+    volumes:
+      - ${PWD}/results:/app/results
+      - ${PWD}/inputs:/app/inputs
+

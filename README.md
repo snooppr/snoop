@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | GNU/Linux             |     ✅    |
 | Windows 7/10 (32/64)  |     ✅    |
 | Android/Termux/Andrax |     ✅    |
-| macOS                 |     🚫    |
+| macOS (Docker)        |     ✅    |
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
@@ -31,7 +31,24 @@ https://github.com/snooppr/snoop/tree/termux
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases
 
-## Installation
+
+## Using in docker
+
+```bash
+# Клонировать репозиторий
+$ git clone https://github.com/snooppr/snoop
+
+# Войти в рабочий каталог
+$ cd ~/snoop
+
+# Запустить docker-compose 
+$ docker-compose run --rm snoop <опции>
+```
+
+В директории `results` (если не указана иная) появятся результаты работы, в директорию `inputs` можно класть файлы с входными данными. Директория `results` примонтирована в `/app/results` внутри контейнера, директория `inputs` в `/app/inputs`. Исполняемый файл запущен в директории `/app/` внутри контейнера, соотвественно `inputs` и `results`  - это путь к директориям относитьльно исполняемого файла.
+
+
+## Native installation
 **Примечание**: Требуемая версия python 3.7 и выше.
 
 ```

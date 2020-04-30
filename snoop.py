@@ -23,6 +23,15 @@ from concurrent.futures import ThreadPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
 
+try:
+    import gi
+    PYGOBJECT_AVAILABLE = True
+except ModuleNotFoundError:
+    PYGOBJECT_AVAILABLE = False
+
+def playsound_pygobject(sound, block = True):
+    if PYGOBJECT_AVAILABLE:
+        playsound(sound, block)
 
 if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, '')
@@ -102,7 +111,7 @@ def print_error(err, errstr, var, verbose=False, color=True):
             Fore.CYAN + "]" +
             Style.BRIGHT + Fore.RED + f" {errstr}" +
             Style.BRIGHT + Fore.YELLOW + f" {err if verbose else var}")
-        playsound('err.wav')
+        playsound_pygobject('err.wav')
     else:
         print(f"[-] {errstr} {err if verbose else var}")
 
@@ -1331,7 +1340,7 @@ def main():
         if exists_counter >= 1:
             webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
 # Музыка.
-        playsound('end.wav')
+        playsound_pygobject('end.wav')
 
 if __name__ == "__main__":
     main()
