@@ -1,19 +1,29 @@
-The MIT License
+﻿Snoop Project Лицензионное соглашение
 
 Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
-разработчик, который модифицировал проект. 
+Все права защищены.
 
-Данная лицензия разрешает, безвозмездно, лицам, получившим копию 
+Данная лицензия разрешает, лицам, получившим копию 
 данного программного обеспечения и сопутствующей документации 
 (в дальнейшем именуемыми "Программное Обеспечение"), 
-использовать Программное Обеспечение без ограничений, 
-включая неограниченное право на использование,
-копирование, изменение, объединение, публикацию, распространение, 
-сублицензирование и/или продажу копий Программного Обеспечения,
-также как и лицам, которым предоставляется данное Программное Обеспечение, 
-при соблюдении следующих условий:
+использовать Программное Обеспечение, включая ограниченное право на 
+использование, копирование и модификацию: — только для личного пользования.
+Использование, изменение, объединение, публикация, распространение, 
+сублицензирование и/или продажа копий Программного Обеспечения не для личного
+использования или с использованием служебного положения без письменного
+согласия автора запрещена.
 
-Вышеупомянутый Copyright и данные условия должны быть включены во все 
+Snoop Project Demo Version — это версия имеет ограниченный набор функций и
+урезанную базу данных поиска по сравнению с Full Version более чем в 19 раз.
+КАК ПОЛУЧИТЬ 'SNOOP FULL VERSION' СМОТРИТЕ (Команда):
+python3 snoop.py --donate y
+
+Двоичный код Программного Обеспечения (не исходная форма) может лицензироваться
+по аналогичной или измененной форме предоставляемой лицензии.
+Настоящая лицензия может быть изменена в новых версиях Программного Обеспечения
+без какого-либо уведомления пользователей Программного Обеспечения.
+
+Весь текст лицензии относится и должен быть включён во все 
 копии или значимые части данного Программного Обеспечения.
 
 ДАННОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», 
@@ -26,22 +36,50 @@ Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 ПРИЧИНОЙ ИЛИ СВЯЗАННЫМ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ ИЛИ ИСПОЛЬЗОВАНИЕМ 
 ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ ИЛИ ИНЫМИ ДЕЙСТВИЯМИ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ.
 
-Этот файл включает в себя работу, на которую распространяются следующие
-авторские права и уведомление о разрешении:
+Программное Обеспечение включает в себя части работ, на которые
+распространяются следующие авторские права и уведомления о разрешении.
+================================================================================
 
-MIT License
+Soundtracks composed specifically for the Snoop Project:
 
+Copyright (c) Zed badley
+Megapolis (remix).mp3
+
+Copyright (c) Metelkin Viktor
+for snoop in cyberpunk.mp3
+================================================================================
+
+Copyright © 2001-2020 Python Software Foundation; All Rights Reserved
+
+PSF is making Python 3.8.2 available to Licensee on an "AS IS" basis.
+PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED.  BY WAY OF
+EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND DISCLAIMS ANY REPRESENTATION OR
+WARRANTY OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE
+USE OF PYTHON 3.8.2 WILL NOT INFRINGE ANY THIRD PARTY RIGHTS.
+
+PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON 3.8.2
+FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS A RESULT OF
+MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON 3.8.2, OR ANY DERIVATIVE
+THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.
+================================================================================
+
+The main idea and part of the code for this Software is
 Copyright (c) 2019 Sherlock Project
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software uses Beautiful Soup library, which is
+Copyright (c) 2004-2019 Leonard Richardson
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Beautiful Soup incorporates code from the html5lib library, which is
+Copyright (c) 2006-2013 James Graham and other contributors
+
+Beautiful Soup depends on the soupsieve library, which is 
+Copyright (c) 2018 Isaac Muse
+
+This software uses playsound library, which is
+Copyright (c) 2016 Taylor Marks <taylor@marksfam.com>
+
+This software uses Rich library, which is
+Copyright 2020 Will McGugan
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -50,3 +88,107 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+================================================================================
+
+This software uses particles library, which is
+Copyright (c) 2015, Vincent Garreau
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the "Software"), to deal in 
+the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER 
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+================================================================================
+
+This software uses colorama library, which is
+Copyright (c) 2010 Jonathan Hartley All rights reserved.
+
+This software uses lxml library, which is
+Copyright (c) 2004 Infrae. All rights reserved.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+================================================================================
+
+This software uses The ElementTree / XML Toys Library is
+Copyright (c) 1999-2003 by Secret Labs AB
+Copyright (c) 1999-2003 by Fredrik Lundh
+
+SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO
+THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS.  IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+================================================================================
+
+This software uses certifi library https://pypi.org/project/certifi/#files 
+which is
+Copyright Kenneth Reitz
+
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file,
+You can obtain one at
+https://mozilla.org/MPL/2.0/.
+================================================================================
+
+This software uses requests library, which is
+Copyright 2019 Kenneth Reitz
+
+This software uses Asynchronous Python HTTP Requests for Humans using Futures, 
+which is 
+Copyright 2013 Ross McFarland
+
+This software uses speedtest-cli library, which is
+Copyright 2013 Matt Martz
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+================================================================================
+
+This software uses (XML syntax), which is
+Copyright © ISO/IEC 2015 
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR
+OTHER DEALINGS IN THE SCHEMA.
+================================================================================
+
+Stylesheet for extracting Schematron information from a RELAX-NG schema. Based 
+on the stylesheet for extracting Schematron information from W3C XML Schema.
+Created by Eddie Robertsson 2002/06/01
+2009/12/10 hj: changed Schematron namespace to ISO URI (Holger Joukl)
+================================================================================

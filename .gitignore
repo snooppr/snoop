@@ -1,0 +1,12 @@
+test.py
+__pycache__
+__pycache__/
+results/*
+results/csv/*
+results/html/*
+results/txt/*
+results/save reports/*
+!results/
+!results/csv/новый файл
+!results/html/новый файл
+!results/txt/новый файл
