@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | Android/Termux/Andrax |     ✅    |
 | macOS                 |     ❗️    |
 | IOS                   |     🚫    |
-| WSL                   |     🚫    |
+| WSL                   |     ❗️    |
 
 [Snoop Full version database 1.1k_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
