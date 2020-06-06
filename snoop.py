@@ -679,7 +679,7 @@ Snoop Demo Version
                             description=f"{module_name} (Version {version})",
                             epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1100+\033[0m \033[36mWebsites!!!\033[0m\n\n")
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1100+\033[0m \033[36mWebsites!!!\033[0m\n English version, see release\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
@@ -809,9 +809,9 @@ Snoop Demo Version
         from rich.table import Table
 
         if sys.platform == 'win32':
-            sortY = str(input("Сортировать БС Snoop по странам, по имени сайта или обобщенно ?\nпо странам — 1 по имени — 2 all — 3\n"))
+            sortY = str(input("Сортировать БД Snoop по странам, по имени сайта или обобщенно ?\nпо странам — 1 по имени — 2 all — 3\n"))
         else:
-            sortY = str(input("\033[36mСортировать БС Snoop по странам, по имени сайта или обобщенно ?\n" + \
+            sortY = str(input("\033[36mСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
             "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n" + \
             "\033[36mВыберите действие...\033[0m\n"))
 # Общий вывод стран (3!).
@@ -1213,7 +1213,7 @@ Snoop Demo Version
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
-                                     'Стана',
+                                     'Страна',
                                      'Url',
                                      'Url_username',
                                      'Статус',
@@ -1228,7 +1228,7 @@ Snoop Demo Version
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
-                                     'Стана',
+                                     'Страна',
                                      'Url',
                                      'Url_username',
                                      'Статус',
@@ -1419,7 +1419,7 @@ Snoop Demo Version
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
-                                     'Стана',
+                                     'Страна',
                                      'Url',
                                      'Url_username',
                                      'Статус',
@@ -1434,7 +1434,7 @@ Snoop Demo Version
                     writer = csv.writer(csv_report)
                     writer.writerow(['Объект',
                                      'Ресурс',
-                                     'Стана',
+                                     'Страна',
                                      'Url',
                                      'Url_username',
                                      'Статус',
