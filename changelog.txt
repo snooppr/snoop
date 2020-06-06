@@ -1,5 +1,8 @@
 ##Snoop Project
 v1.2.1_rus
+* English versions added.
+(EN Snoop for GNU/Linux and EN Snoop for Windows).
+
 * Добавлены в БД новые ресурсы.
 (В БД Snoop Full version > 1.1k websites!!!).
 
