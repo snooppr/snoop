@@ -28,7 +28,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases  
 
-............................................................................
+............................................................................  
 **Самостоятельная сборка ПО из исходно кода**  
 **Self-build software from source**
 
