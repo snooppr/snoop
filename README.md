@@ -26,7 +26,11 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 ## Snoop for OS Windows and GNU/Linux  
 **Release**  
 snoop.exe and snoop
-https://github.com/snooppr/snoop/releases
+https://github.com/snooppr/snoop/releases  
+
+............................................................................
+**Самостоятельная сборка ПО из исходно кода**  
+**Self-build software from source**
 
 **Native Installation**  
 Примечание: Требуемая версия python 3.7 и выше.
