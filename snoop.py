@@ -661,9 +661,9 @@ Snoop Demo Version
 └──PayPal: \033[37msnoopproject@protonmail.com\033[0m                                        ||
                                                                               ||
 Если вас заинтересовала Snoop Demo Version, Вы можете получить                ||
-\033[36mSnoop Full Version\033[0m, поддержав развитие проекта 20$ = 1200р.                   ||
+\033[36mSnoop Full Version\033[0m, поддержав развитие проекта 15$ = 900р.                    ||
 При пожертвовании в сообщении укажите информацию в таком порядке:             ||
-    '\033[36mПожертвование: 20$ ваш e-mail\033[0m'                                           ||
+    '\033[36mПожертвование: 15$ ваш e-mail\033[0m'                                           ||
     "\033[36mFull Version for Windows", или "Full Version for Linux\033[0m"                  ||
 В ближайшее время на почту придёт ссылка на скачивание Snoop Full Version.    ||
                                                                               ||
