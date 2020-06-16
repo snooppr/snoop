@@ -428,25 +428,12 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 
 # Сохранение отчетов опция (-S)
         def sreports():
-            codingWin = "charset=windows"
-            codingWin2 = "charset=\"windows"
             try:
                 os.makedirs(str(dirresults + f"/results/save reports/{username}"))
             except:
                 pass
-            if codingWin in r.text or codingWin2 in r.text:
-                try:
-                    with open(f"results/save reports/{username}/{social_network}.html", 'w',
-                    encoding="cp1251") as rep:
-                        rep.write(r.text)
-                except:
-                    with open(f"results/save reports/{username}/{social_network}.html", 'w',
-                    encoding="utf-8") as rep:
-                        rep.write(r.text)
-            else:
-                with open(f"results/save reports/{username}/{social_network}.html", 'w',
-                encoding="utf-8") as rep:
-                    rep.write(r.text)
+            with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
+                rep.write(r.text)
 
 # Проверка, 4 методов; #1.
 # Ответы message (разные локации).
