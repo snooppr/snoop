@@ -22,6 +22,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ThreadPoolExecutor
+#from concurrent.futures import ProcessPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
 try:
@@ -126,10 +127,22 @@ except:
 
 ################################################################################
 class ElapsedFuturesSession(FuturesSession):
-    """test_metrica"""
-    def request(self, method, url, *args, **kwargs):
+    """API: https://pypi.org/project/requests-futures/"""
+    def request(self, method, url, hooks={}, *args, **kwargs):
         """test"""
-        return super(ElapsedFuturesSession, self).request(method, url, *args, **kwargs)
+        start = time.time()
+
+        def timing(r, *args, **kwargs):
+            r.elapsed = time.time() - start
+
+        try:
+            if isinstance(hooks['response'], (list, tuple)):
+                hooks['response'].insert(0, timing)
+            else:
+                hooks['response'] = [timing, hooks['response']]
+        except KeyError:
+            hooks['response'] = timing
+        return super(ElapsedFuturesSession, self).request(method, url, hooks=hooks, *args, **kwargs)
 
 def print_info(title, info, color=True):
     if color:
@@ -208,7 +221,7 @@ def print_invalid2(mes, social_network, message, color=True):
     else:
         print(f"[-] {social_network} {message}")
 
-def get_response(request_future, error_type, social_network, verbose=False, retry_no=None, color=True):
+def get_response(request_future, error_type, social_network, verbose=False, color=True):
     try:
         rsp = request_future.result()
         if rsp.status_code:
@@ -268,9 +281,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
     else:
         print_info("разыскиваем:", username, color)
 
-# Создать сеанс на основе методологии запроса.
-    underlying_session = requests.session()
-    underlying_request = requests.Request()
+# Создать сеанс на основе методологии future запроса.
 
 # Рабочий лимит 20+
     try:
@@ -281,7 +292,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
     except:
         sys.exit(0)
 # Создать многопоточный сеанс для всех запросов.
-    session = ElapsedFuturesSession(max_workers=max_workers, session=underlying_session)
+    session = ElapsedFuturesSession(max_workers=max_workers, session=requests.Session())
 
 # Результаты анализа всех сайтов.
     results_total = {}
@@ -341,18 +352,13 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Существует специальный URL (обычно о нем мы не догадываемся/api) для проверки существования отдельно юзера.
                 url_probe = url_probe.format(username)
 
-# Если нужен только статус кода, не загружать код страницы.
-            if reports:
+# Если нужен только статус кода, не загружать тело страницы.
+            if reports == True or net_info["errorTypе"] == 'message':
                 request_method = session.get
             else:
-                try:
-                    if net_info["errorTypе"] == 'status_code' or net_info["errorTypе"] == "redirection":
-                        request_method = session.head
-                    else:
-                        request_method = session.get
-                except:
-                    sys.exit(0)
-            if net_info["errorTypе"] == "response_url":
+                request_method = session.head
+
+            if net_info["errorTypе"] == "response_url" or net_info["errorTypе"] == "redirection":
 # Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
 # Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
                 allow_redirects = False
@@ -366,7 +372,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Сохранить future in data для последующего доступа.
             net_info["request_future"] = future
 
-# Добавлять результаты этого сайта в окончательный словарь со всеми другими результатами.
+# Добавлять имя сайта 'results_total[social_network]' в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
 
 # Открыть файл, содержащий ссылки на аккаунт.
@@ -386,7 +392,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
         else:
             progress1 = Progress(auto_refresh=False)
 
-    for social_network, net_info in progress1.track(site_data.items(),description=""):
+    for social_network, net_info in progress1.track(site_data.items(), description=""):
         if color:
             progress1.refresh()
 # Получить результаты снова.
@@ -413,7 +419,6 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                                                     error_type=error_type,
                                                     social_network=social_network,
                                                     verbose=verbose,
-                                                    retry_no=3, 
                                                     color=color)
 
 # Попытка получить информацию запроса.
@@ -432,14 +437,36 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                 os.makedirs(str(dirresults + f"/results/save reports/{username}"))
             except:
                 pass
-            with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
-                rep.write(r.text)
+# Сохранять отчеты для метода: redirection.
+            if error_type == "redirection":
+                try:
+                    param = request_method(url_probe, allow_redirects=True, headers=headers, timeout=timeout)
+                    response = param.result()
+                    with open(f"results/save reports/{username}/{social_network}.html", 
+                    'w', encoding=r.encoding) as repre:
+                        repre.write(response.text)
+                except requests.exceptions.ConnectionError:
+                    time.sleep(1)
+                    try:
+                        param = request_method(url_probe, allow_redirects=True, headers=headers, timeout=timeout)
+                        response = param.result()
+                        with open(f"results/save reports/{username}/{social_network}.html", 
+                        'w', encoding=r.encoding) as repre:
+                            repre.write(response.text)
+                    except:
+                        pass
+# Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
+            else:
+                with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
+                    rep.write(r.text)
+
 
 # Проверка, 4 методов; #1.
 # Ответы message (разные локации).
         if error_type == "message":
             error = net_info.get("errorMsg") 
             error2 = net_info.get("errorMsg2")
+#            print(r.text) #проверка ответа (+- '-S')
             if error2 in r.text:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
@@ -460,16 +487,15 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Проверка, 4 методов; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
         elif error_type == "redirection":
-            rr = requests.get(url, allow_redirects=False)
-            if rr.status_code == 301 or rr.status_code == 303:
-#                print(r.text) #проверка ответа (+- '-S')
+#            print(r.text) #проверка ответа (+- '-S')
+            if r.status_code == 301 or r.status_code == 303:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
                 else:
                     print_found_country(social_network, url, countryA, response_time, verbose, color)
+                exists = "найден!"
                 if reports:
                     sreports()
-                exists = "найден!"
             else:
                 if not print_found_only:
                     print_not_found(social_network, response_time, verbose, color)
@@ -478,6 +504,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Проверка, 4 методов; #3.
 # Проверяет, является ли код состояния ответа 2..
         elif error_type == "status_code":
+#            print(r.text) #проверка ответа (+- '-S')
             if not r.status_code >= 300 or r.status_code < 200:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
@@ -494,7 +521,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Проверка, 4 методов; #4
 # Перенаправление.
         elif error_type == "response_url":
-
+#            print(r.text) #проверка ответа (+- '-S')
             if 200 <= r.status_code < 300:
                 if sys.platform == 'win32':
                     print_found_country(social_network, url, countryB, response_time, verbose, color)
