@@ -223,22 +223,22 @@ def print_invalid2(mes, social_network, message, color=True):
 
 def get_response(request_future, error_type, social_network, verbose=False, color=True):
     try:
-        rsp = request_future.result()
-        if rsp.status_code:
-            return rsp, error_type, rsp.elapsed
-    except requests.exceptions.HTTPError as errh:
-        print_error(errh, "HTTP Error:", social_network, verbose, color)
+        res = request_future.result()
+        if res.status_code:
+            return res, error_type, res.elapsed
+    except requests.exceptions.HTTPError as err1:
+        print_error(err1, "HTTP Error:", social_network, verbose, color)
 
-    except requests.exceptions.ConnectionError as errc:
+    except requests.exceptions.ConnectionError as err2:
         def gebb():
             global censor
             censor +=1
-            print_error(errc, "Ошибка соединения:", social_network, verbose, color)
+            print_error(err2, "Ошибка соединения:", social_network, verbose, color)
         gebb()            
-    except requests.exceptions.Timeout as errt:
-        print_error(errt, "Timeout ошибка:", social_network, verbose, color)
-    except requests.exceptions.RequestException as err:
-        print_error(err, "Ошибка раскладки клавиатуры/*символов", social_network, verbose, color)
+    except requests.exceptions.Timeout as err3:
+        print_error(err3, "Timeout ошибка:", social_network, verbose, color)
+    except requests.exceptions.RequestException as err4:
+        print_error(err4, "Ошибка раскладки клавиатуры/*символов", social_network, verbose, color)
     return None, "", -1
 
 def snoop(username, site_data, verbose=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
@@ -281,16 +281,12 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
     else:
         print_info("разыскиваем:", username, color)
 
-# Создать сеанс на основе методологии future запроса.
-
-# Рабочий лимит 20+
+# Создать многопоточные сеансы.
+# Рабочий лимит.
     try:
-        if len(site_data) >= 50:
-            max_workers=18
-        else:
-            max_workers=len(site_data)
+        max_workers=18
     except:
-        sys.exit(0)
+        max_workers=10
 # Создать многопоточный сеанс для всех запросов.
     session = ElapsedFuturesSession(max_workers=max_workers, session=requests.Session())
 
@@ -344,13 +340,13 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # URL пользователя на сайте (если он существует).
             url = net_info["url"].format(username)
             results_site["url_user"] = url
-            url_probe = net_info.get("urlProbe")
-            if url_probe is None:
+            url_API = net_info.get("urlProbe")
+            if url_API is None:
 # URL-адрес — является обычным, который видят люди в Интернете.
-                url_probe = url
+                url_API = url
             else:
 # Существует специальный URL (обычно о нем мы не догадываемся/api) для проверки существования отдельно юзера.
-                url_probe = url_probe.format(username)
+                url_API = url_API.format(username)
 
 # Если нужен только статус кода, не загружать тело страницы.
             if reports == True or net_info["errorTypе"] == 'message':
@@ -367,7 +363,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Окончательным результатом запроса будет то, что доступно.
                 allow_redirects = True
 
-            future = request_method(url=url_probe, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
+            future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
 # Сохранить future in data для последующего доступа.
             net_info["request_future"] = future
@@ -440,7 +436,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Сохранять отчеты для метода: redirection.
             if error_type == "redirection":
                 try:
-                    param = request_method(url_probe, allow_redirects=True, headers=headers, timeout=timeout)
+                    param = request_method(url_API, allow_redirects=True, headers=headers, timeout=timeout)
                     response = param.result()
                     with open(f"results/save reports/{username}/{social_network}.html", 
                     'w', encoding=r.encoding) as repre:
@@ -448,7 +444,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                 except requests.exceptions.ConnectionError:
                     time.sleep(1)
                     try:
-                        param = request_method(url_probe, allow_redirects=True, headers=headers, timeout=timeout)
+                        param = request_method(url_API, allow_redirects=True, headers=headers, timeout=timeout)
                         response = param.result()
                         with open(f"results/save reports/{username}/{social_network}.html", 
                         'w', encoding=r.encoding) as repre:
@@ -652,7 +648,7 @@ def update_snoop():
 
 
 # ОСНОВА.
-def main():
+def run():
 
 # Запрос лицензии.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
@@ -854,7 +850,7 @@ Snoop Demo Version
             table.add_row(flag_str_sum0, str(len(datajson0)))
             console = Console()
             console.print(table)
-# Вывод для full Version
+# Вывод для full Version.
             datajson00 = kkk()
             cnt00 = Counter()
             li00 = []
@@ -961,7 +957,7 @@ Snoop Demo Version
                     i += 1
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
                     print(Fore.CYAN + "================") 
-# Сортировка для ОС GNU Demo Version..
+# Сортировка для ОС GNU Demo Version.
             else:
                 listlinux = []
                 datajson = fff()
@@ -1021,9 +1017,7 @@ Snoop Demo Version
         sys.exit(0)
 
 # Проверка остальных опций.
-    response_json_online = None
     site_data_all = None
-
     baseput = ("{}".format(args.json_file))
 #    print(baseput) #проверка пути базы
 
@@ -1501,4 +1495,4 @@ Snoop Demo Version
             pass
 
 if __name__ == "__main__":
-    main()
+    run()
