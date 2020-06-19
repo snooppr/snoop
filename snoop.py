@@ -349,7 +349,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                 url_API = url_API.format(username)
 
 # Если нужен только статус кода, не загружать тело страницы.
-            if reports == True or net_info["errorTypе"] == 'message':
+            if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
                 request_method = session.get
             else:
                 request_method = session.head
