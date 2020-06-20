@@ -127,22 +127,11 @@ except:
 
 ################################################################################
 class ElapsedFuturesSession(FuturesSession):
-    """API: https://pypi.org/project/requests-futures/"""
-    def request(self, method, url, hooks={}, *args, **kwargs):
+    """test_metrica: API:: https://pypi.org/project/requests-futures/"""
+    def request(self, method, url, *args, **kwargs):
         """test"""
-        start = time.time()
+        return super(ElapsedFuturesSession, self).request(method, url, *args, **kwargs)
 
-        def timing(r, *args, **kwargs):
-            r.elapsed = time.time() - start
-
-        try:
-            if isinstance(hooks['response'], (list, tuple)):
-                hooks['response'].insert(0, timing)
-            else:
-                hooks['response'] = [timing, hooks['response']]
-        except KeyError:
-            hooks['response'] = timing
-        return super(ElapsedFuturesSession, self).request(method, url, hooks=hooks, *args, **kwargs)
 
 def print_info(title, info, color=True):
     if color:
@@ -283,12 +272,9 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 
 # Создать многопоточные сеансы.
 # Рабочий лимит.
-    try:
-        max_workers=18
-    except:
-        max_workers=10
 # Создать многопоточный сеанс для всех запросов.
-    session = ElapsedFuturesSession(max_workers=max_workers, session=requests.Session())
+
+    session = ElapsedFuturesSession(max_workers=18, session=requests.Session())
 
 # Результаты анализа всех сайтов.
     results_total = {}
