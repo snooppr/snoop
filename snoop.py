@@ -22,7 +22,6 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ThreadPoolExecutor
-#from concurrent.futures import ProcessPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
 try:
@@ -42,7 +41,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.1\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.1D\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -59,7 +58,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.1_rus Snoop (source demo)"
+version = "1.2.1D_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -275,6 +274,8 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Создать многопоточный сеанс для всех запросов.
 
     session = ElapsedFuturesSession(max_workers=18, session=requests.Session())
+    session2 = FuturesSession()
+
 
 # Результаты анализа всех сайтов.
     results_total = {}
@@ -422,17 +423,17 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Сохранять отчеты для метода: redirection.
             if error_type == "redirection":
                 try:
-                    param = request_method(url_API, allow_redirects=True, headers=headers, timeout=timeout)
-                    response = param.result()
-                    with open(f"results/save reports/{username}/{social_network}.html", 
+                    future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
+                    response = future2.result()
+                    with open(f"results/save reports/{username}/{social_network}.html",
                     'w', encoding=r.encoding) as repre:
                         repre.write(response.text)
                 except requests.exceptions.ConnectionError:
                     time.sleep(1)
                     try:
-                        param = request_method(url_API, allow_redirects=True, headers=headers, timeout=timeout)
-                        response = param.result()
-                        with open(f"results/save reports/{username}/{social_network}.html", 
+                        future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=timeout)
+                        response = future2.result()
+                        with open(f"results/save reports/{username}/{social_network}.html",
                         'w', encoding=r.encoding) as repre:
                             repre.write(response.text)
                     except:
@@ -659,14 +660,14 @@ Snoop Demo Version
 Если вас заинтересовала Snoop Demo Version, Вы можете получить                ||
 \033[36mSnoop Full Version\033[0m, поддержав развитие проекта 15$ = 900р.                    ||
 При пожертвовании в сообщении укажите информацию в таком порядке:             ||
-    '\033[36mПожертвование: 15$ ваш e-mail\033[0m'                                           ||
-    "\033[36mFull Version for Windows", или "Full Version for Linux\033[0m"                  ||
+    '\033[36mПожертвование на развитие Snoop Project: 15$ ваш e-mail\033[0m'                 ||
+    '\033[36mFull Version for Windows", или "Full Version for Linux\033[0m'                  ||
 В ближайшее время на почту придёт ссылка на скачивание Snoop Full Version.    ||
                                                                               ||
 Если Snoop требуется вам для служебных или образовательных задач,             ||
 напишите письмо на e-mail разработчика в свободной форме.                     ||
 \033[36msnoopproject@protonmail.com\033[0m                                                   ||
-===============================================================================
+==============================================================================||
 Исходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                                ||""")
 
                 
@@ -965,7 +966,7 @@ Snoop Demo Version
 # Опция донат '-d y'.
     if args.donation:
         print(donate)
-        print("                                                                              ||\n",
+        print("==============================================================================||\n",
               Fore.CYAN + f"Ограничения Demo Version: {flagBS} Websites (Database Snoop сокращена в > 19 раз); ||\n"
               f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
               f"Snoop Full Version: 1100+ Websites; поддержка и обновление Database Snoop.    ||\n"
