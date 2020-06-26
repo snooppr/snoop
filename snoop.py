@@ -1065,34 +1065,17 @@ Snoop Demo Version
         kef_user=0
         for username in userlist:
             kef_user +=1
-            file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-            try:
-                file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-            except (SyntaxError, ValueError):
-                pass
-
-            try:
-                if args.country ==True:
-                    results = snoop(username,
-                                   sortC,
-                                   country=args.country,
-                                   user=args.user,
-                                   verbose=args.verbose,
-                                   reports=args.reports,
-                                   print_found_only=args.print_found_only,
-                                   timeout=args.timeout,
-                                   color=not args.no_func)
-                else:
-                    results = snoop(username,
-                                   site_data,
-                                   country=args.country,
-                                   user=args.user,
-                                   verbose=args.verbose,
-                                   reports=args.reports,
-                                   print_found_only=args.print_found_only,
-                                   timeout=args.timeout,
-                                   color=not args.no_func)
-            except:
+            if args.country ==True:
+                results = snoop(username,
+                               sortC,
+                               country=args.country,
+                               user=args.user,
+                               verbose=args.verbose,
+                               reports=args.reports,
+                               print_found_only=args.print_found_only,
+                               timeout=args.timeout,
+                               color=not args.no_func)
+            else:
                 results = snoop(username,
                                site_data,
                                country=args.country,
@@ -1104,34 +1087,41 @@ Snoop Demo Version
                                color=not args.no_func)
 
             exists_counter = 0
-            file.write("Адрес | ресурс" + "\n\n")
+            try:
+                file_txt = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
+#                raise Exception("")
+            except:
+                file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
+                "w", encoding="utf-8")            
+            file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in results:
                 timefinish = time.time() - timestart            
                 dictionary = results[website_name]
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
-                    file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
-            file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-            file.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
-            file.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")      
+                    file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
+            file_txt.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
+            file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
+            file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
+            file_txt.close()
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
             print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
 
     # Запись в html.
-            file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             try:
-                file = open("results/html/" + username + ".html", "w", encoding="utf-8")
-            except (SyntaxError, ValueError):
-                pass
-            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
+                file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
+#                raise Exception("")
+            except:
+                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html", "w", encoding="utf-8")
+            file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
             <div id='particles-js'></div>\n\
             <div id='report'>\n\n\
             <h1><a class='GL' href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
-            file.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
+            file_html.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
             <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
-            file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
+            file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
             
             cnt = Counter()
@@ -1144,19 +1134,19 @@ Snoop Demo Version
                     exists_counter += 0
                     for word in li:
                         cnt[word] += 1
-                    file.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
+                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
                     (website_name) + "</a>" + "</li>\n")
             flag_str=str(cnt)
             try:            
                 flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
-                file.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+                file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
             except:
                 pass
-            file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-            file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
-            file.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
-            file.write("""
+            file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+            file_html.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
+            file_html.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
+            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
+            file_html.write("""
     <script>
     function sortList() {
       var list, i, switching, b, shouldSwitch;
@@ -1200,61 +1190,65 @@ Snoop Demo Version
 
 </body>
 </html>""")
-            file.close()
+            file_html.close()
 
     # Запись в csv.
-            with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                usernamsCSV = re.sub(" ", "_", username)
-                if censor >= 11 * int(kef_user):
-                    writer = csv.writer(csv_report)
-                    writer.writerow(['Объект',
-                                     'Ресурс',
-                                     'Страна',
-                                     'Url',
-                                     'Url_username',
-                                     'Статус',
-                                     'Статус_http',
-                                     'Общее_замедление/мс',
-                                     'Отклик/мс',
-                                     'Общее_время/мс',
-                                     'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
-                                     'Результаты_могут_быть_неполные.'
-                                     ])
-                else:
-                    writer = csv.writer(csv_report)
-                    writer.writerow(['Объект',
-                                     'Ресурс',
-                                     'Страна',
-                                     'Url',
-                                     'Url_username',
-                                     'Статус',
-                                     'Статус_http',
-                                     'Общее_замедление/мс',
-                                     'Отклик/мс',
-                                     'Общее_время/мс'
-                                     ])
-                for site in results:
-                    writer.writerow([usernamsCSV,
-                                     site,
-                                     results[site]['countryCSV'],
-                                     results[site]['url_main'],
-                                     results[site]['url_user'],
-                                     results[site]['exists'],
-                                     results[site]['http_status'],
-                                     results[site]['response_time_site_ms'],
-                                     results[site]['check_time_ms'],
-                                     results[site]['response_time_ms']
-                                     ])
-                writer.writerow(['«---------------------------------------',
-                                 '--------','----', '----------------------------------',
-                                 '--------------------------------------------------------',
-                                 '-------------', '-----------------', '--------------------------------', 
-                                 '-------------', '-----------------------»'])
-                writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
-                writer.writerow('')
-                writer.writerow(['Дата'])
-                writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
-                file.close()
+            try:
+                file_csv = open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8")
+#                raise Exception("")
+            except:
+                file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
+            usernamsCSV = re.sub(" ", "_", username)
+            if censor >= 11 * int(kef_user):
+                writer = csv.writer(file_csv)
+                writer.writerow(['Объект',
+                                 'Ресурс',
+                                 'Страна',
+                                 'Url',
+                                 'Url_username',
+                                 'Статус',
+                                 'Статус_http',
+                                 'Общее_замедление/мс',
+                                 'Отклик/мс',
+                                 'Общее_время/мс',
+                                 'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
+                                 'Результаты_могут_быть_неполные.'
+                                 ])
+            else:
+                writer = csv.writer(file_csv)
+                writer.writerow(['Объект',
+                                 'Ресурс',
+                                 'Страна',
+                                 'Url',
+                                 'Url_username',
+                                 'Статус',
+                                 'Статус_http',
+                                 'Общее_замедление/мс',
+                                 'Отклик/мс',
+                                 'Общее_время/мс'
+                                 ])
+            for site in results:
+                writer.writerow([usernamsCSV,
+                                 site,
+                                 results[site]['countryCSV'],
+                                 results[site]['url_main'],
+                                 results[site]['url_user'],
+                                 results[site]['exists'],
+                                 results[site]['http_status'],
+                                 results[site]['response_time_site_ms'],
+                                 results[site]['check_time_ms'],
+                                 results[site]['response_time_ms']
+                                 ])
+            writer.writerow(['«---------------------------------------',
+                             '--------','----', '----------------------------------',
+                             '--------------------------------------------------------',
+                             '-------------', '-----------------', '--------------------------------', 
+                             '-------------', '-----------------------»'])
+            writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
+            writer.writerow('')
+            writer.writerow(['Дата'])
+            writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
+            file_csv.close()
 
     # Финишный вывод.
         if censor >= 11 * int(kef_user):
@@ -1269,35 +1263,17 @@ Snoop Demo Version
 # Поиск по умолчанию (без опции '-u').
     else:
         for username in args.username:
-            
-            file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-            try:
-                file = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-            except (SyntaxError, ValueError):
-                pass
-
-            try:
-                if args.country ==True:
-                    results = snoop(username,
-                                   sortC,
-                                   country=args.country,
-                                   user=args.user,
-                                   verbose=args.verbose,
-                                   reports=args.reports,
-                                   print_found_only=args.print_found_only,
-                                   timeout=args.timeout,
-                                   color=not args.no_func)
-                else:
-                    results = snoop(username,
-                                   site_data,
-                                   country=args.country,
-                                   user=args.user,
-                                   verbose=args.verbose,
-                                   reports=args.reports,
-                                   print_found_only=args.print_found_only,
-                                   timeout=args.timeout,
-                                   color=not args.no_func)
-            except:
+            if args.country == True:
+                results = snoop(username,
+                               sortC,
+                               country=args.country,
+                               user=args.user,
+                               verbose=args.verbose,
+                               reports=args.reports,
+                               print_found_only=args.print_found_only,
+                               timeout=args.timeout,
+                               color=not args.no_func)
+            else:
                 results = snoop(username,
                                site_data,
                                country=args.country,
@@ -1307,36 +1283,45 @@ Snoop Demo Version
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
                                color=not args.no_func)
+
             exists_counter = 0
-            file.write("Адрес | ресурс" + "\n\n")
+            try:
+                file_txt = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
+#                raise Exception("")
+            except:
+                file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
+                "w", encoding="utf-8")            
+            file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in results:
                 timefinish = time.time() - timestart            
                 dictionary = results[website_name]
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
-                    file.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
-            file.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-            file.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
-            file.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
+                    file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
+            file_txt.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
+            file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
+            file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
+            file_txt.close()
+            
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
             print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
 
 
     # Запись в html.
-            file = open("results/html/" + username + ".html", "w", encoding="utf-8")
             try:
-                file = open("results/html/" + username + ".html", "w", encoding="utf-8")
-            except (SyntaxError, ValueError):
-                pass
-            file.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
+                file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
+#                raise Exception("")
+            except:
+                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html", "w", encoding="utf-8")
+            file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
             <div id='particles-js'></div>\n\
             <div id='report'>\n\n\
             <h1><a class='GL' href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
-            file.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
+            file_html.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
             <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
-            file.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
+            file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
             
             cnt = Counter()
@@ -1349,19 +1334,19 @@ Snoop Demo Version
                     exists_counter += 0
                     for word in li:
                         cnt[word] += 1
-                    file.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
+                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
                     (website_name) + "</a>" + "</li>\n")
             flag_str=str(cnt)
             try:            
                 flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
-                file.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+                file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
             except:
                 pass
-            file.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-            file.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
-            file.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
-            file.write("""
+            file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+            file_html.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
+            file_html.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
+            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
+            file_html.write("""
     <script>
     function sortList() {
       var list, i, switching, b, shouldSwitch;
@@ -1405,62 +1390,66 @@ Snoop Demo Version
 
 </body>
 </html>""")
-            file.close()
+            file_html.close()
 
     # Запись в csv.
-            with open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8") as csv_report:
-                usernamCSV = re.sub(" ", "_", username)
+            try:
+                file_csv = open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8")
+#                raise Exception("")
+            except:
+                file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
+            usernamCSV = re.sub(" ", "_", username)
 
-                if censor >= 11:            
-                    writer = csv.writer(csv_report)
-                    writer.writerow(['Объект',
-                                     'Ресурс',
-                                     'Страна',
-                                     'Url',
-                                     'Url_username',
-                                     'Статус',
-                                     'Статус_http',
-                                     'Общее_замедление/мс',
-                                     'Отклик/мс',
-                                     'Общее_время/мс',
-                                     'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
-                                     'Результаты_могут_быть_неполные.'
-                                     ])
-                else:
-                    writer = csv.writer(csv_report)
-                    writer.writerow(['Объект',
-                                     'Ресурс',
-                                     'Страна',
-                                     'Url',
-                                     'Url_username',
-                                     'Статус',
-                                     'Статус_http',
-                                     'Общее_замедление/мс',
-                                     'Отклик/мс',
-                                     'Общее_время/мс'
-                                     ])
-                for site in results:
-                    writer.writerow([usernamCSV,
-                                     site,
-                                     results[site]['countryCSV'],
-                                     results[site]['url_main'],
-                                     results[site]['url_user'],
-                                     results[site]['exists'],
-                                     results[site]['http_status'],
-                                     results[site]['response_time_site_ms'],
-                                     results[site]['check_time_ms'],
-                                     results[site]['response_time_ms']
-                                     ])
-                writer.writerow(['«---------------------------------------',
-                                 '--------','----', '----------------------------------',
-                                 '--------------------------------------------------------',
-                                 '-------------', '-----------------', '--------------------------------',
-                                 '-------------', '-----------------------»'])
-                writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
-                writer.writerow('')
-                writer.writerow(['Дата'])
-                writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
-                file.close()
+            if censor >= 11:            
+                writer = csv.writer(file_csv)
+                writer.writerow(['Объект',
+                                 'Ресурс',
+                                 'Страна',
+                                 'Url',
+                                 'Url_username',
+                                 'Статус',
+                                 'Статус_http',
+                                 'Общее_замедление/мс',
+                                 'Отклик/мс',
+                                 'Общее_время/мс',
+                                 'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
+                                 'Результаты_могут_быть_неполные.'
+                                 ])
+            else:
+                writer = csv.writer(file_csv)
+                writer.writerow(['Объект',
+                                 'Ресурс',
+                                 'Страна',
+                                 'Url',
+                                 'Url_username',
+                                 'Статус',
+                                 'Статус_http',
+                                 'Общее_замедление/мс',
+                                 'Отклик/мс',
+                                 'Общее_время/мс'
+                                 ])
+            for site in results:
+                writer.writerow([usernamCSV,
+                                 site,
+                                 results[site]['countryCSV'],
+                                 results[site]['url_main'],
+                                 results[site]['url_user'],
+                                 results[site]['exists'],
+                                 results[site]['http_status'],
+                                 results[site]['response_time_site_ms'],
+                                 results[site]['check_time_ms'],
+                                 results[site]['response_time_ms']
+                                 ])
+            writer.writerow(['«---------------------------------------',
+                             '--------','----', '----------------------------------',
+                             '--------------------------------------------------------',
+                             '-------------', '-----------------', '--------------------------------',
+                             '-------------', '-----------------------»'])
+            writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
+            writer.writerow('')
+            writer.writerow(['Дата'])
+            writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
+            file_csv.close()
 
     # Финишный вывод.
         if censor >= 11:
@@ -1474,7 +1463,12 @@ Snoop Demo Version
 # Открывать/нет браузер с результатами поиска.
     if args.no_func==False:
         if exists_counter >= 1:
-            webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
+            try:
+                webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
+#                raise Exception("")
+            except:
+                webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + "username" + \
+                time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html"))
 # Музыка.
         try:
             playsound('end.wav')
