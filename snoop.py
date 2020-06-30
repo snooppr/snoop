@@ -778,11 +778,10 @@ Snoop Demo Version
         patchjson = ("{}".format(args.json_file))
         jsonjson = fff()
         print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
-        site_country = dict(jsonjson)
         country_sites = sorted(jsonjson, key=lambda k: ("country" not in k, jsonjson[k].get("country", sys.maxsize)))
         sortC = {}
         for site in country_sites:
-            sortC[site] = site_country.get(site)
+            sortC[site] = jsonjson.get(site)
 
 # Опция '-f'.
     if args.print_found_only:
