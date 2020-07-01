@@ -93,10 +93,10 @@ $ python3 snoop.py --help
 usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
                 [--web-base] [--site] [--time-out] [--found-print] [--no-func]
                 [--userload] [--list all] [--country] [--save-report]
-                [--update y]
+                [--normal] [--update y]
                 USERNAMES [USERNAMES ...]
 
-Snoop: поиск никнейма по всем фронтам! (Version 1.2.1_rus Snoop Full)
+Snoop: поиск никнейма по всем фронтам! (Version :: Сборка 1.2.2_rus Snoop Full for GNU/Linux)
 
 positional arguments:
   USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
@@ -135,6 +135,10 @@ optional arguments:
                         странам, а не по алфавиту
   --save-report, -S     Сохранять найденные странички пользователей в
                         локальные файлы
+  --normal, -N          Сменить режим SNOOPnina > нормальный режим
+                        По_умолчанию вкл_режим SNOOPnina: ускорение поиска
+                        ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое'
+                        соединение на сбойных ресурсах
   --update y            Обновить исходный код Snoop
 ```
 
@@ -158,10 +162,12 @@ $ python3 snoop.py username1 username2 username3 username4
 # Поиск множества юзеров — сортировка вывода результатов по странам;
 # избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от вашего ip-адреса);
 # выводить на печать только найденные аккаунты; сохранять странички найденных
-# аккаунтов локально; указать файл со списком разыскиваемых аккаунтов:
-$ python3 snoop.py -с -t 13 -f -S -u ~/file.txt start
+# аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
+# подключиться для поиска к расширяемой и обновляемой web-base Snoop:
+$ python3 snoop.py -с -t 6 -f -S -u ~/file.txt -w start
 
-# 'ctrl-c/z' — прервать поиск
+# 'ctrl-c/z' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
+$ kill $(ps aux | grep python | awk '{print $2}') #лекарство для разгрузки ОЗУ от прерываний.
 ```
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
 Для доступа браузера к результатам поиска на платформе Android требуются рут права.  
