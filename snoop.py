@@ -22,6 +22,7 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
 try:
@@ -41,7 +42,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.1D\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.2\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -58,12 +59,13 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.1D_rus Snoop (source demo)"
+version = "1.2.2_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
 time_data = time.localtime()
-censor = 0
+censors = 0
+recensor = 0
 
 def fff():
     try:
@@ -150,13 +152,13 @@ def print_error(err, errstr, var, verbose=False, color=True):
             Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
             Fore.CYAN + "]" +
             Style.BRIGHT + Fore.RED + f" {errstr}" +
-            Style.BRIGHT + Fore.YELLOW + f" {err if verbose else var}")
+            Style.BRIGHT + Fore.YELLOW + f" {var}" + f" {err if verbose else ''}")
         try:
             playsound('err.wav')
         except:
             pass
     else:
-        print(f"[-] {errstr} {err if verbose else var}")
+        print(f"[-] {errstr} {var} {err if verbose else ''}")
 
 
 # Вывод на печать на разных платформах.
@@ -216,20 +218,17 @@ def get_response(request_future, error_type, social_network, verbose=False, colo
             return res, error_type, res.elapsed
     except requests.exceptions.HTTPError as err1:
         print_error(err1, "HTTP Error:", social_network, verbose, color)
-
     except requests.exceptions.ConnectionError as err2:
-        def gebb():
-            global censor
-            censor +=1
-            print_error(err2, "Ошибка соединения:", social_network, verbose, color)
-        gebb()            
+        global censors
+        censors +=1
+        print_error(err2, "Ошибка соединения:", social_network, verbose, color)
     except requests.exceptions.Timeout as err3:
         print_error(err3, "Timeout ошибка:", social_network, verbose, color)
     except requests.exceptions.RequestException as err4:
-        print_error(err4, "Ошибка раскладки клавиатуры/*символов", social_network, verbose, color)
+        print_error(err4, "Непредвиденная ошибка", social_network, verbose, color)
     return None, "", -1
 
-def snoop(username, site_data, verbose=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
+def snoop(username, site_data, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
     username = re.sub(" ", "%20", username)
 
 # Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
@@ -269,13 +268,11 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
     else:
         print_info("разыскиваем:", username, color)
 
-# Создать многопоточные сеансы.
-# Рабочий лимит.
-# Создать многопоточный сеанс для всех запросов.
-
-    session = ElapsedFuturesSession(max_workers=18, session=requests.Session())
-    session2 = FuturesSession()
-
+# Создать много_поточный/процессный сеанс для всех запросов.
+    session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=18), session=requests.Session())
+    session = FuturesSession(executor=ProcessPoolExecutor(max_workers=30))
+    session2 = FuturesSession(max_workers=10, session=requests.Session())
+    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=15))
 
 # Результаты анализа всех сайтов.
     results_total = {}
@@ -325,6 +322,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 
         else:
 # URL пользователя на сайте (если он существует).
+#            global url
             url = net_info["url"].format(username)
             results_site["url_user"] = url
             url_API = net_info.get("urlProbe")
@@ -336,10 +334,16 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                 url_API = url_API.format(username)
 
 # Если нужен только статус кода, не загружать тело страницы.
-            if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
-                request_method = session.get
+            if norm == False:
+                if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
+                    request_method = session.get
+                else:
+                    request_method = session.head
             else:
-                request_method = session.head
+                if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
+                    request_method = session0.get
+                else:
+                    request_method = session0.head
 
             if net_info["errorTypе"] == "response_url" or net_info["errorTypе"] == "redirection":
 # Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
@@ -350,7 +354,8 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
 # Окончательным результатом запроса будет то, что доступно.
                 allow_redirects = True
 
-            future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
+            future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects,
+            timeout=timeout)
 
 # Сохранить future in data для последующего доступа.
             net_info["request_future"] = future
@@ -403,10 +408,33 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
                                                     social_network=social_network,
                                                     verbose=verbose,
                                                     color=color)
+        if norm == False:
+            A1 = str(future)
+            if r is None and 'raised ConnectionError' in A1:
+                for _ in range(3):
+                    global recensor
+                    recensor += 1
+                    if color:
+                        progress1.refresh()
+                        print(Fore.GREEN + "повторное соединение" + Style.RESET_ALL)
+                    else:
+                        print("повторное соединение")
+                    head1 = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}
+                    time.sleep(0.2)
+                    progress1.refresh() if color == True else ''
+                    future1 = session3.get(url=url, headers=head1, allow_redirects=allow_redirects,
+                    timeout=3)
+                    r, error_type, response_time = get_response(request_future=future1,
+                                                                error_type=net_info.get("errorTypе"),
+                                                                social_network=social_network,
+                                                                verbose=verbose,
+                                                                color=color)
+                    if r is not None:
+                        break
 
 # Попытка получить информацию запроса.
         try:
-            http_status =  r.status_code
+            http_status = r.status_code
         except:
             pass
         try:
@@ -593,6 +621,7 @@ def snoop(username, site_data, verbose=False, reports=False, user=False, country
             results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
+
     return results_total
 
 
@@ -746,6 +775,13 @@ Snoop Demo Version
                         action="store_true", dest="reports", default=False,
                         help="Сохранять найденные странички пользователей в локальные файлы"
                         )
+    parser.add_argument("--normal", "-N",
+                        action="store_true", dest="norm", default=True,
+                        help="""Сменить режим SNOOPnina > нормальный режим
+                                По_умолчанию (для Full Version) вкл_режим SNOOPnina: ускорение поиска ~25pct,
+                                экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
+                                В Demo Version режим SNOOPnina деактивирован"""
+                        )
     parser.add_argument("--update y",
                         action="store_true", dest="update",
                         help="Обновить Snoop"
@@ -755,6 +791,11 @@ Snoop Demo Version
 
    
 # Информативный вывод:
+    if args.norm == False:
+        sys.exit(0)
+        print(Fore.CYAN + "[+] активирована опция '--': «режим SNOOPninja»")
+    else:
+        print(Fore.CYAN + "[+] активирована опция '-N': «обычный режим поиска»")
 # Опция  '-w'.
     if args.web:
         print(Fore.CYAN + "[+] активирована опция '-w': «подключение к внешней web_database»")
@@ -1198,6 +1239,7 @@ Snoop Demo Version
             except:
                 file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
             usernamsCSV = re.sub(" ", "_", username)
+            censor = int(censors - recensor)
             if censor >= 11 * int(kef_user):
                 writer = csv.writer(file_csv)
                 writer.writerow(['Объект',
@@ -1269,6 +1311,7 @@ Snoop Demo Version
                                user=args.user,
                                verbose=args.verbose,
                                reports=args.reports,
+                               norm=args.norm,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
                                color=not args.no_func)
@@ -1278,6 +1321,7 @@ Snoop Demo Version
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
+                               norm=args.norm,
                                reports=args.reports,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
@@ -1398,7 +1442,7 @@ Snoop Demo Version
             except:
                 file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
-
+            censor = int(censors - recensor)
             if censor >= 11:            
                 writer = csv.writer(file_csv)
                 writer.writerow(['Объект',
