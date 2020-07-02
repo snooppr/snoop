@@ -1152,7 +1152,8 @@ Snoop Demo Version
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
 #                raise Exception("")
             except:
-                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html", "w", encoding="utf-8")
+                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", 
+                time_data) + ".html", "w", encoding="utf-8")
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
             <div id='particles-js'></div>\n\
@@ -1355,7 +1356,8 @@ Snoop Demo Version
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
 #                raise Exception("")
             except:
-                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html", "w", encoding="utf-8")
+                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S",
+                time_data) + ".html", "w", encoding="utf-8")
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
             <div id='particles-js'></div>\n\
