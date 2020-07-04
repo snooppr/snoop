@@ -248,5 +248,3 @@ $ sudo nano /etc/ssl/openssl.cnf
 [Документация](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)
 
 **SNOOP PROJECT (OSINT) СУЩЕСТВУЕТ И РАЗВИВАЕТСЯ ТОЛЬКО НА GITHUB. НИ К TELEGRAM, НИ К WEB/ONLINE SNOOP НЕ ИМЕЕТ НИКАКОГО ОТНОШЕНИЯ.**
-
-**В СВЯЗИ СО СЛОЖИВШЕЙСЯ СИТУАЦИЕЙ В МИРЕ (САМОИЗОЛЯЦИЯ ГРАЖДАН ИЗ ЗА ЭПИДЕМИИ) СИЛЬНО ВЫРОСЛА НАГРУЗКА НА СЕТИ. SNOOP В ДАННЫЙ ПЕРИОД МОЖЕТ РАБОТАТЬ МЕДЛЕННО.**
