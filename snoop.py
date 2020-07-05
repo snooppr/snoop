@@ -21,8 +21,10 @@ from argparse import ArgumentTypeError
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from collections import Counter
 from colorama import Fore, Style, init
-from concurrent.futures import ThreadPoolExecutor
-from concurrent.futures import ProcessPoolExecutor
+if sys.platform == 'win32':
+    from concurrent.futures import ThreadPoolExecutor
+else:
+    from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
 try:
@@ -270,9 +272,12 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 # Создать много_поточный/процессный сеанс для всех запросов.
     session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=18), session=requests.Session())
-    session = FuturesSession(executor=ProcessPoolExecutor(max_workers=30))
+    if not sys.platform == 'win32':
+        session = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=requests.Session())
+    else:
+        session = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=18), session=requests.Session())
     session2 = FuturesSession(max_workers=10, session=requests.Session())
-    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=15))
+    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=2), session=requests.Session())
 
 # Результаты анализа всех сайтов.
     results_total = {}
@@ -423,7 +428,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                     time.sleep(0.2)
                     progress1.refresh() if color == True else ''
                     future1 = session3.get(url=url, headers=head1, allow_redirects=allow_redirects,
-                    timeout=3)
+                    timeout=1.5)
                     r, error_type, response_time = get_response(request_future=future1,
                                                                 error_type=net_info.get("errorTypе"),
                                                                 social_network=social_network,
@@ -833,9 +838,9 @@ Snoop Demo Version
     if args.site_list:
         print(Fore.CYAN + "[+] активирована опция '-s': «будет произведён поиск user-a на 1-м выбранном website»\n"
         "    допустимо использовать опцию '-s' несколько раз\n"
-        "    опция '-s' несовместима с опцией '-с'")        
+        "    опция '-s' несовместима с опциями:: '-с'; '-w'")        
 
-# Опция '-v'
+# Опция '-v'.
     if args.verbose:
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
         networktest.nettest()
