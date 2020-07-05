@@ -66,7 +66,7 @@
 65. 🏁 [Antiquers](https://www.antiquers.com)
 66. 🇷🇺 [Ap-pro](https://ap-pro.ru/)
 67. 🏁 [Appearoo](http://appearoo.com)
-68. 🌎 [AppleDeveloper](https://forums.developer.apple.com)
+68. 🌎 [AppleDeveloper](https://developer.apple.com)
 69. 🇵🇹 [Aptoide](https://en.aptoide.com/)
 70. 🇷🇺 [Aqa](https://www.aqa.ru/)
 71. 🇷🇺 [ArcheageRU](https://aa.mail.ru)
