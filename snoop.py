@@ -277,7 +277,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
     else:
         session = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=18), session=requests.Session())
     session2 = FuturesSession(max_workers=10, session=requests.Session())
-    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=2), session=requests.Session())
+    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=4), session=requests.Session())
 
 # Результаты анализа всех сайтов.
     results_total = {}
@@ -783,9 +783,11 @@ Snoop Demo Version
                         )
     parser.add_argument("--normal", "-N",
                         action="store_true", dest="norm", default=True,
-                        help="""Сменить режим SNOOPnina > нормальный режим
-                                По_умолчанию (для Full Version) вкл_режим SNOOPnina: ускорение поиска ~25pct,
-                                экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
+                        help="""Переключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
+                                По_умолчанию (GNU/Linux) вкл 'режим SNOOPninja': ускорение поиска ~25pct, экономия ОЗУ ~50pct,
+                                повторное 'гибкое' соединение на сбойных ресурсах. 
+                                \033[31;1mРежим SNOOPninja эффективен только для Snoop for GNU/Linux\033[0m.
+                                По_умолчанию (Windows) вкл 'нормальный режим'. 
                                 В Demo Version режим SNOOPnina деактивирован"""
                         )
     parser.add_argument("--update y",
@@ -801,7 +803,7 @@ Snoop Demo Version
         sys.exit(0)
         print(Fore.CYAN + "[+] активирована опция '--': «режим SNOOPninja»")
     else:
-        print(Fore.CYAN + "[+] активирована опция '-N': «обычный режим поиска»")
+        pass
 # Опция  '-w'.
     if args.web:
         print(Fore.CYAN + "[+] активирована опция '-w': «подключение к внешней web_database»")
