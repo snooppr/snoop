@@ -741,8 +741,8 @@ Snoop Demo Version
                         dest="timeout", type=timeout_check, default=5,
                         help="Установить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
-                             "\033[31;1mВкл. эту опцию необходимо практически всегда при медленном \
-                             интернет соединении\033[0m, чтобы избежать длительных зависаний \
+                             "Вкл. эту опцию необходимо при медленном \
+                             интернет соединении, чтобы избежать длительных зависаний \
                              при неполадках в сети (по умолчанию значение выставлено 5с)" 
                         )
     parser.add_argument("--found-print", "-f", 
@@ -798,6 +798,10 @@ Snoop Demo Version
 
    
 # Информативный вывод:
+    if args.site_list is not None and args.country == True:
+        print(Style.BRIGHT + Fore.RED + "[опция '-s'] несовместима с [опцией '-с']")
+        sys.exit(0)
+# Опция режима SNOOPnina > < нормальный режим
     if args.norm == False:
         sys.exit(0)
         print(Fore.CYAN + "[+] активирована опция '--': «режим SNOOPninja»")
@@ -839,7 +843,7 @@ Snoop Demo Version
     if args.site_list:
         print(Fore.CYAN + "[+] активирована опция '-s': «будет произведён поиск user-a на 1-м выбранном website»\n"
         "    допустимо использовать опцию '-s' несколько раз\n"
-        "    опция '-s' несовместима с опциями:: '-с'; '-w'")        
+        "    [опция '-s'] несовместима с [опцией '-с']")
 
 # Опция '-v'.
     if args.verbose:
@@ -1076,7 +1080,7 @@ Snoop Demo Version
 
 # Опция '-w'
     if args.web:
-        print("\n\033[37m\033[44m{}".format("Функция действует только для пользователей Full version..."))
+        print("\n\033[37m\033[44m{}".format("Функция '-w' действует только для пользователей Full version..."))
         print(donate)
         print("\033[31mВыход\033[0m")
         webbrowser.open("https://yasobe.ru/na/snoop_project")
