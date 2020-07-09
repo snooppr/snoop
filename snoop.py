@@ -675,9 +675,10 @@ def run():
         cop = copyright.read()
 
     version_snoop = f"\033[37m{cop}\033[0m\n" + \
-                     f"\033[36m%(prog)s: {version}\033[36m\n" +  \
-                     f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
-                     f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
+                    f"\033[36mSnoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}\033[36m\n" + \
+                    f"\033[36m%(prog)s: {version}\033[36m\n" +  \
+                    f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
+                    f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
                      
 
 
@@ -709,7 +710,7 @@ Snoop Demo Version
                             description=f"{module_name} (Version {version})",
                             epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1100+\033[0m \033[36mWebsites!!!\033[0m\n English version, see release\n\n")
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1200+\033[0m \033[36mWebsites!!!\033[0m\n English version, see release\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
@@ -783,11 +784,13 @@ Snoop Demo Version
     parser.add_argument("--normal", "-N",
                         action="store_true", dest="norm", default=True,
                         help="""Переключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
-                                По_умолчанию (GNU/Linux) вкл 'режим SNOOPninja': ускорение поиска ~25pct, экономия ОЗУ ~50pct,
+                                По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja': 
+                                ускорение поиска ~25pct, экономия ОЗУ ~50pct,
                                 повторное 'гибкое' соединение на сбойных ресурсах. 
-                                \033[31;1mРежим SNOOPninja эффективен только для Snoop for GNU/Linux\033[0m.
+                                \033[31;1mРежим SNOOPninja эффективен только для 
+                                Snoop for GNU/Linux Full Version\033[0m.
                                 По_умолчанию (Windows) вкл 'нормальный режим'. 
-                                В Demo Version режим SNOOPnina деактивирован"""
+                                В Demo Version переключатель режимов деактивирован."""
                         )
     parser.add_argument("--update y",
                         action="store_true", dest="update",
@@ -1020,7 +1023,7 @@ Snoop Demo Version
         print("==============================================================================||\n",
               Fore.CYAN + f"Ограничения Demo Version: {flagBS} Websites (Database Snoop сокращена в > 19 раз); ||\n"
               f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
-              f"Snoop Full Version: 1100+ Websites; поддержка и обновление Database Snoop.    ||\n"
+              f"Snoop Full Version: 1200+ Websites; поддержка и обновление Database Snoop.    ||\n"
 	      	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
               f"===============================================================================\n")
         webbrowser.open("https://yasobe.ru/na/snoop_project")
@@ -1123,6 +1126,7 @@ Snoop Demo Version
                                user=args.user,
                                verbose=args.verbose,
                                reports=args.reports,
+                               norm=args.norm,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
                                color=not args.no_func)
@@ -1133,6 +1137,7 @@ Snoop Demo Version
                                user=args.user,
                                verbose=args.verbose,
                                reports=args.reports,
+                               norm=args.norm,
                                print_found_only=args.print_found_only,
                                timeout=args.timeout,
                                color=not args.no_func)
