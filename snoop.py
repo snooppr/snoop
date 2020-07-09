@@ -2,7 +2,6 @@
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
 
 import base64
-import certifi
 import csv
 import json
 import locale
@@ -271,12 +270,12 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         print_info("разыскиваем:", username, color)
 
 # Создать много_поточный/процессный сеанс для всех запросов.
-    session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=18), session=requests.Session())
+    session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=requests.Session())
     if not sys.platform == 'win32':
         session = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=requests.Session())
     else:
-        session = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=18), session=requests.Session())
-    session2 = FuturesSession(max_workers=10, session=requests.Session())
+        session = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=requests.Session())
+    session2 = FuturesSession(max_workers=4, session=requests.Session())
     session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=4), session=requests.Session())
 
 # Результаты анализа всех сайтов.
