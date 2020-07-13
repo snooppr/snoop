@@ -729,7 +729,7 @@ Snoop Demo Version
                         help="Указать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
                         )
     parser.add_argument("--web-base", "-w",
-                        action="store_true", dest="web",
+                        action="store_true", dest="web", default=False,
                         help="Подключиться для поиска 'username' к обновляемой web_БД (Online)"
                         )
     parser.add_argument("--site", "-s",
