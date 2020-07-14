@@ -87,6 +87,7 @@ $ git config --global user.name "username"
 $ pkg install coreutils
 ```
 ## Using
+English version of Snoop see release.
 ```
 $ python3 snoop.py --help
 
