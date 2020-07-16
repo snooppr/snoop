@@ -779,7 +779,7 @@ Snoop Demo Version
                         action="store_true", dest="country", default=False,
                         help="Сортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
                         )
-    parser.add_argument("--save-report", "-S",
+    parser.add_argument("--save-page", "-S",
                         action="store_true", dest="reports", default=False,
                         help="Сохранять найденные странички пользователей в локальные файлы"
                         )
