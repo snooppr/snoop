@@ -93,8 +93,8 @@ $ python3 snoop.py --help
 
 usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
                 [--web-base] [--site] [--time-out] [--found-print] [--no-func]
-                [--userload] [--list all] [--country] [--save-report]
-                [--normal] [--update y]
+                [--userload] [--list all] [--country] [--save-page] [--normal]
+                [--update y]
                 USERNAMES [USERNAMES ...]
 
 Snoop: поиск никнейма по всем фронтам! (Version :: Сборка 1.2.2_rus Snoop Full for GNU/Linux)
