@@ -26,6 +26,7 @@ else:
     from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
+from requests import session
 try:
     from rich.progress import (BarColumn, Progress,TimeRemainingColumn)
 except ModuleNotFoundError:
@@ -270,13 +271,14 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         print_info("разыскиваем:", username, color)
 
 # Создать много_поточный/процессный сеанс для всех запросов.
-    session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=requests.Session())
+    my_session = session()
+    session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     if not sys.platform == 'win32':
-        session = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=requests.Session())
+        session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=my_session)
     else:
-        session = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=requests.Session())
-    session2 = FuturesSession(max_workers=4, session=requests.Session())
-    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=4), session=requests.Session())
+        session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
+    session2 = FuturesSession(max_workers=4, session=my_session)
+    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=4), session=my_session)
 
 # Результаты анализа всех сайтов.
     results_total = {}
@@ -340,9 +342,9 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Если нужен только статус кода, не загружать тело страницы.
             if norm == False:
                 if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
-                    request_method = session.get
+                    request_method = session1.get
                 else:
-                    request_method = session.head
+                    request_method = session1.head
             else:
                 if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
                     request_method = session0.get
