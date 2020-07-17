@@ -26,7 +26,6 @@ else:
     from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
-from requests import session
 try:
     from rich.progress import (BarColumn, Progress,TimeRemainingColumn)
 except ModuleNotFoundError:
@@ -44,7 +43,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.2\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.3\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -61,7 +60,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.2_rus Snoop (source demo)"
+version = "1.2.3_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -230,7 +229,7 @@ def get_response(request_future, error_type, social_network, verbose=False, colo
         print_error(err4, "Непредвиденная ошибка", social_network, verbose, color)
     return None, "", -1
 
-def snoop(username, site_data, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True):
+def snoop(username, site_data, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True, cert=False):
     username = re.sub(" ", "%20", username)
 
 # Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
@@ -271,7 +270,11 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         print_info("разыскиваем:", username, color)
 
 # Создать много_поточный/процессный сеанс для всех запросов.
-    my_session = session()
+    requests.packages.urllib3.disable_warnings() #блокировка предупреждений об сертификате.
+    my_session = requests.Session()
+    if cert == False:
+        my_session.verify = False
+        requests.packages.urllib3.disable_warnings()
     session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     if not sys.platform == 'win32':
         session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=my_session)
@@ -783,6 +786,12 @@ Snoop Demo Version
                         action="store_true", dest="reports", default=False,
                         help="Сохранять найденные странички пользователей в локальные файлы"
                         )
+    parser.add_argument("--cert-on", "-C", default=False,
+                        action="store_true", dest="cert",
+                        help="""Вкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
+                        на серверах отключена, что даёт меньше ошибок и больше положительных результатов
+                        при поиске username"""
+                        )
     parser.add_argument("--normal", "-N",
                         action="store_true", dest="norm", default=True,
                         help="""Переключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
@@ -803,6 +812,8 @@ Snoop Demo Version
 
    
 # Информативный вывод:
+    if args.cert:
+        print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах»")
     if args.site_list is not None and args.country == True:
         print(Style.BRIGHT + Fore.RED + "[опция '-s'] несовместима с [опцией '-с']")
         sys.exit(0)
@@ -1127,6 +1138,7 @@ Snoop Demo Version
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
+                               cert=args.cert,
                                reports=args.reports,
                                norm=args.norm,
                                print_found_only=args.print_found_only,
@@ -1138,6 +1150,7 @@ Snoop Demo Version
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
+                               cert=args.cert,
                                reports=args.reports,
                                norm=args.norm,
                                print_found_only=args.print_found_only,
@@ -1329,6 +1342,7 @@ Snoop Demo Version
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
+                               cert=args.cert,
                                reports=args.reports,
                                norm=args.norm,
                                print_found_only=args.print_found_only,
@@ -1340,6 +1354,7 @@ Snoop Demo Version
                                country=args.country,
                                user=args.user,
                                verbose=args.verbose,
+                               cert=args.cert,
                                norm=args.norm,
                                reports=args.reports,
                                print_found_only=args.print_found_only,

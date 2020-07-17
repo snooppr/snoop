@@ -93,11 +93,11 @@ $ python3 snoop.py --help
 
 usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
                 [--web-base] [--site] [--time-out] [--found-print] [--no-func]
-                [--userload] [--list all] [--country] [--save-page] [--normal]
-                [--update y]
+                [--userload] [--list all] [--country] [--save-page]
+                [--cert-on] [--normal] [--update y]
                 USERNAMES [USERNAMES ...]
 
-Snoop: поиск никнейма по всем фронтам! (Version :: Сборка 1.2.2_rus Snoop Full for GNU/Linux)
+Snoop: поиск никнейма по всем фронтам! (Version :: Сборка 1.2.3_rus Snoop Full for GNU/Linux)
 
 positional arguments:
   USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
@@ -137,6 +137,10 @@ optional arguments:
                         странам, а не по алфавиту
   --save-page, -S       Сохранять найденные странички пользователей в
                         локальные файлы
+  --cert-on, -C         Вкл проверку сертификатов на серверах. По умолчанию
+                        проверка сертификатов на серверах отключена, что даёт
+                        меньше ошибок и больше положительных результатов при
+                        поиске username
   --normal, -N          Переключатель режимов: SNOOPninja > нормальный режим >
                         SNOOPninja. По_умолчанию (GNU/Linux) вкл 'режим
                         SNOOPninja': ускорение поиска ~25pct, экономия ОЗУ
@@ -203,6 +207,7 @@ $ python3 snoop.py --update y
 |           |Слишком низкое значение опции '-t'                     |    2    |
 |           |недопустимое username                                  |    3    |
 |           |Ошибки: [GipsysTeam; RamblerDating; Mamochki]          |    7    |
+|           |Ошибки: [Virtualireland]                               |    7    |
 | ========= |=======================================================| ======= |
 | Провайдер |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
@@ -237,11 +242,15 @@ $ python3 snoop.py -t 15 username
 6. Не обращать внимание, сайты иногда уходят на ремонтные работы и возвращаются в строй.
 
 7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с некоторыми дистрибутивами GNU/Linux  
-Решение
+Решение:
 ```
 $ sudo nano /etc/ssl/openssl.cnf
 
 # Изменить в самом низу файла строки:
+[MinProtocol = TLSv1.2]
+на
+[MinProtocol = TLSv1]
+
 [CipherString = DEFAULT@SECLEVEL=2]
 на
 [CipherString = DEFAULT@SECLEVEL=1]
