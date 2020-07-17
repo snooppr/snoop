@@ -1,7 +1,7 @@
 ##Snoop Project
 v1.2.3
 * Добавлена опция '--cert-on, -C'.
-(Вкл проверку сертификатов на серверах. По умолчанию проверка сертификатов на 
+(Вкл проверку сертификатов на серверах. По умолчанию проверка сертификатов на
 серверах отключена, что даёт меньше ошибок и больше положительных результатов при
 поиске "username". Пример: website:: 'Forumkinopoisk' с "проблемным" сертификатом).
 
@@ -20,7 +20,7 @@ v1.2.2
 (смена режима:: SNOOPninja > нормальный режим поиска).
 
 * В Snoop Full Version опция '-s' стала совместима с опцией '-w':
-(можно подключиться к обновляемой Snoop web_databse online и произвести поиск на
+(можно подключиться к обновляемой Snoop web_database online и произвести поиск на
 определённом выбранном website с учётом обновления базы Snoop).
 
 * В Snoop Full Version добавлена возможность персональных и глобальных оповещений.
@@ -29,7 +29,7 @@ v1.2.2
 
 * Мелкие исправления:
 (улучшена обработка исключений; правки в информативном выводе; облегчена кодовая база;
-повышена стабильность приложения:: ПО не перезапускается при разрывах соединения; 
+повышена стабильность приложения:: ПО не перезапускается при разрывах соединения;
 сочетание опций '--web-base' и '--country' больше не вызывает конфликтов).
 ===================================================================================
 
@@ -43,7 +43,7 @@ v1.2.1_rus
 * Добавлена опция для Snoop Full version: '--web-base, -w'.
 (Подключиться для поиска 'username' к обновляемой и расширяемой) web_БД (Online).
 
-* Поправлена опция '--save-report, -S'. 
+* Поправлена опция '--save-report, -S'.
 (При выгрузке данных кодировка выбирается автоматически верная.
 Сохранённые некоторые 'проблемные' странички теперь не нужно конвертировать).
 
@@ -72,13 +72,13 @@ v1.2.0_rus
 (Некоторые сайты отдают предпочтения (стабильные ответы) между человеком/роботом).
 
 * Опция '--time', '-t' принимает значение по умолчанию: = 9 секунд.
-(При хорошем интернет соединении этого времени достаточно, при слабом 
+(При хорошем интернет соединении этого времени достаточно, при слабом
 соединении опция '-t' доступна для изменения).
 ===================================================================================
 
 v1.1.9_rus
 * Добавлены в БД новые ресурсы.
-(В БД  > 1k websites!!!).
+(В БД > 1k websites!!!).
 
 * Слиты ветки в одну termux и master.
 
@@ -105,7 +105,7 @@ v1.1.8_rus
 (Результаты 'username.csv' с расширенной метрикой пишутся теперь по умолчанию).
 
 * Добавлены в БД новые ресурсы.
-(В БД  > 800 websites!!!).
+(В БД > 800 websites!!!).
 
 * Утрата нескольких интернет-ресурсов.
 ===================================================================================
@@ -114,187 +114,12 @@ v1.1.7_rus
 * Обновлён информативный вывод.
 
 * Добавлены в БД новые ресурсы:
-0k_clan;
-1xforum;
-33bru;
-4gameforum;
-7dach;
-Allhockey;
-Boxing;
-Cyberclock;
-Forum_amperka;
-Forum_dklab;
-Forum_gitarizm;
-Forum_gorod;
-Forum_navi;
-Forums_battlefield;
-Forums_ea;
-Forums_eagle;
-Forums_operationsports;
-Forums_prosportsdaily;
-Forum_theprodigy;
-Forumvancouver;
-Forum_vegalab;
-Gog;
-Hockeyforum;
-Iphones;
-Ladies;
-Liveinternet;
-Megane2;
-Microcap_forum24;
-Microchip;
-Myjane;
-Nhl;
-Oper;
-Otstrel;
-Pathofexile;
-Pepper;
-Proglib;
-Rasslabyxa;
-Rcforum;
-Rovlpj;
-Rugby-forum;
-Shazoo;
-Skyscrapercity;
-Space_dublikat;
-Stalker-zone;
-Talks;
-Terminator;
-Terminatorium;
-Thesimsresource;
-Truesteamachievements;
-Tv-games;
-Ubisoft;
-Warhammergames;
-Wirednewyork.
 ===================================================================================
 
 v1.1.6_rus
-
-(В БД  > 650 websites!!!).
+(В БД > 650 websites!!!).
 
 * Добавлены в БД новые ресурсы:
-4cheat;
-Androidforums;
-Aqa;
-Archlinux;
-B4x;
-BleachFandom;
-Blog_7ya;
-Cfd-online;
-Cheezburger;
-Chevrolet-cruze-club;
-Club_cnews;
-Codecanyon;
-Cracked_to;
-Destructoid;
-Devtribe;
-Droidforums;
-Edocr;
-Eporner;
-EtsyUser;
-EuroFootball;
-Forum_artinvestment;
-Forum_djangoproject;
-Forum_flin;
-Forum_linuxfoundation;
-Forum_muffingroup;
-Forum_openframeworks;
-ForumOszone;
-Forum_reverse4you;
-Forums_gentoo;
-Forums_goha;
-Forums_serebii;
-Forums_universaldashboard;
-Forum_ubuntu;
-Forum_vingrad;
-Fredmiranda;
-Freesound;
-Fullhub;
-Furiffic;
-Furry-fandom;
-Geekgrade;
-Gramho;
-Hdseason;
-Hoobly;
-Illustrators;
-Infosecinstitute;
-Iphoneforums;
-Ispdn;
-Jetpunk;
-Liebe69;
-Linuxfr;
-Linuxmint;
-Linuxmint_info;
-Linux_org;
-Lovemakeup;
-Miningclub;
-Mix;
-Mixlr;
-Muckrack;
-Mybuilder;
-Mylot;
-Mywed;
-Netvibes;
-Nixp;
-Omoimot;
-Pbase;
-Pgpru;
-Picuki;
-Planetaexcel;
-Playstationtrophies;
-Pregame;
-Redtube;
-Rrforums;
-SakhalinNname;
-Seoclerks;
-Serveradmin;
-Slides;
-Smart_lab;
-Smashrun;
-Smugmug;
-Speakerdeck;
-Spiceworks;
-S_T_Microsoft;
-Storycorps;
-Themeforest;
-Trueachievements;
-Uchportal;
-Udemy;
-Untappd;
-Ustream;
-Uvelir;
-Vivino;
-Wanelo;
-Wishlistr;
-Wot-game;
-Wowhead;
-Xboxgamertag;
-Xhamster;
-Xvideos;
-Ya-uchitel.
-
-Ariva;
-Arsenal-mania;
-Astraclub;
-Bigsoccer;
-Dinsk;
-Eintracht;
-Fcdin;
-Fclmnews;
-Fcrubin;
-Flyertalk;
-Forum_fanat1k;
-Forums-bluemoon-mcfc;
-Forums_liverpoolfc;
-Forums_overclockers;
-Hctorpedo;
-Juventuz;
-Manutd;
-Radiomed;
-Redcafe;
-Thelion;
-Zenitbol.
 ===================================================================================
 
 v1.1.5_rus
@@ -309,65 +134,11 @@ v1.1.4_rus
 * Улучшена визуализация БД Snoop при помощи опции '--list all'.
 
 * Добавлены в БД новые ресурсы:
-1337x;
-Airliners;
-AppleDeveloper;
-Bibsonomy;
-Cplusplus;
-Digitalocean;
-Digitalspy;
-Dreamwidth;
-Dslreports;
-Eksisozluk;
-Elakiri;
-Filmow;
-Forum.hiveos;
-Forum.hr;
-Forum.itvdn;
-Forum.popjustice;
-Forums.opera;
-Forum.ruboard;
-Forums.tomshardware;
-Gaiaonline;
-Gays;
-Gentlemint;
-Govloop;
-Hackenproof;
-Hotcopper;
-Hr;
-Irc-galleria;
-Kaskus;
-Kinja;
-Krstarica;
-Librarything;
-Listography;
-Mactalk;
-Mouthshut;
-Nairaland;
-Namepros;
-NetworkInformatica;
-Niketalk;
-Partyflock;
-Pbnation;
-Pinboard;
-Plurk;
-Pornhub;
-Redorchestra;
-Ruby-forum;
-Shutterstock;
-Slashdot;
-Software.informer;
-Spaces;
-Suomi24;
-Thestudentroom;
-Totseans;
-W7forums;
-YandexBugbounty.
 ===================================================================================
 
 v1.1.3_rus
 * В html теперь доступна сортировка результатов: — по странам.
-(Сортировка по умолчанию: — по алфавиту имён websites. 
+(Сортировка по умолчанию: — по алфавиту имён websites.
 Высокая визуализация результатов поиска; визуализация БД по опции '--list all').
 
 * Добавлены новые опции: '--country; -с' и '--userload; -u'.
@@ -375,19 +146,9 @@ v1.1.3_rus
 Результаты сортируются по странам, а не по алфавиту websites и сохраняются в html).
 (--userload; -u' — указать файл.txt с именами разыскиваемых пользователей).
 
-* Изменены/отредактированы основные опции. 
+* Изменены/отредактированы основные опции.
 
 * Добавлены в БД новые ресурсы:
-11x2;
-Armorgames;
-Blackhatprotools;
-Filmwatch;
-Forum.xda;
-freepo;
-Gamefaqs;
-Lib.reviews;
-Rpggeek;
-Videogamegeek.
 
 * Почищена БД от дубликатов.
 (В БД > 500 websites!!!).
@@ -402,103 +163,6 @@ v1.1.2_rus
 * Результаты поиска отсортированы по расширению.
 
 * Добавлены в БД новые ресурсы:
-1x;
-Allrecipes;
-Alternativeto;
-Angara;
-Armchairgm;
-Autolada;
-Codepen;
-Cruisemates;
-Fark;
-Fatsecret;
-Forum.allgaz;
-Forum.modnaya;
-Forumprosport;
-Forum.wotanks;
-Forum.ykt;
-Forumyuristov;
-Fotothing;
-Freecodecamp;
-Gapyear;
-Infrance;
-Interbasket;
-Italia;
-Life-dom2;
-Lightstalking;
-Lonelyplanet;
-Mbclub;
-Metacafe;
-Myfitnesspal;
-Peopleandcountries;
-Picsart;
-Politikforum;
-Publiclab;
-Russian.fi;
-Schlock;
-Skodaforum;
-Techdirt;
-Tkgr;
-Touristlink;
-Travelblog;
-Unsplash;
-Videosift;
-Votetags
-Wolpy;
-Yummly.
-===================================================================================
-
-v1.1.1_rus
-* Добавлены в БД новые ресурсы:
-Advancedcustomfields;
-Astralinux;
-Barnacl;
-Boardgamegeek;
-Bukkit;
-Comicvine.gamespot;
-Connosr;
-Dasauge;
-Discuss.python;
-Dou;
-Duno;
-Ebaumsworld;
-Eva;
-Fluther;
-Forexdengi;
-Forum.mirf;
-Forums.alliedmods;
-Funnyjunk;
-Gbatemp;
-Giantbomb;
-Gigbucks;
-Golangbridge;
-Influenster;
-Jigidi;
-Knowem;
-Kuharka;
-Listal;
-Lookbook;
-Miped;
-Moddb;
-N4g;
-People.ign;
-Planetminecraft;
-Playerup;
-Prankru;
-Profiles.tigweb;
-Programmersforum;
-Pyha;
-Python.su;
-Qbn;
-Rusforum;
-Sbnation;
-Skyrock;
-Sovserv;
-Subeta;
-Theanswerbank;
-Thechive;
-The-village;
-Wittyprofiles.
 ===================================================================================
 
 v1.1.0_rus
@@ -516,113 +180,15 @@ Web browser с результатами поиска открывается по
 (Требуется ПО Git)
 ===================================================================================
 
-v1.0.9_rus
-* Добавлены в БД новые ресурсы:
-Chan4chan;
-Ecoustics;
-Ficwad;
-Forum.caravelgames;
-Ieoc;
-memrise;
-Meta.discourse;
-Quibblo.
-===================================================================================
-
-v1.0.8_rus
-* Добавлены в БД новые ресурсы:
-Antipunk;
-Ap-pro;
-Arhrock;
-B17;
-Diveforum;
-Enot-poloskun;
-Forum.ixbt;
-Forum.scuba;
-Forum.sibmama;
-Forumteam;
-Glbyh;
-Indog;
-Kharkovforum;
-Lkforum;
-Music-rock;
-Pesiq;
-Prokoni;
-Proza;
-Psychologies;
-Rcmir;
-Reibert;
-Searchengines;
-Stihi;
-Studwork;
-Uaksu;
-Vezha;
-X-xack.
-
-Bikepost;
-Ccmixter;
-Demonscity;
-Fishingsib;
-Forum.devushka;
-Forums.envato;
-Gliger;
-Shophelp.
-===================================================================================
-
-v1.0.7_rus
-* Добавлены в БД новые ресурсы:
-Autokadabra;
-Beerintheevening;
-Coj;
-Discussions.apple;
-Folloart;
-Foursquare;
-Gitmemory;
-Mixupload;
-Moscow.flamp;
-Myminifactory;
-Op.gg;
-Op.ggBR;
-Op.ggEune;
-Op.ggJP;
-Op.ggLAN;
-Op.ggLAS;
-Op.ggNA;
-Op.ggOCE;
-Op.ggRU;
-Op.ggTR;
-Pypi;
-Showme;
-Waveapps.
-===================================================================================
-
 v1.0.6_rus
-* Добавлена отдельная ветка Termux (Adroid) для Snoop.
+* Добавлена отдельная ветка Termux (Android) для Snoop.
 
 * В основную ветку master (GNU/Linux) для Snoop добавлен звук.
 $ pip3 install playsound
 
 * Опция '-n' отключает и цвета в терминале и звук (GNU/Linux).
 
-* В ЧС добавлен сайт с медленным ответом (Zomato). 
-===================================================================================
-
-v1.0.5_rus
-* Добавлены в БД новые ресурсы:
-Advego;
-Fegatch;
-Forum.md;
-Forums.drom;
-Forums.sourceruns;
-Kali.org.ru;
-Kuban.forum24;
-Mama;
-Mamochki;
-Mamuli;
-Mdregion;
-Politforums;
-Runitonce;
-Runnersworld;
-Trainsim.
+* В ЧС добавлен сайт с медленным ответом (Zomato).
 ===================================================================================
 
 v1.0.4_rus
@@ -636,7 +202,7 @@ v1.0.2_rus
 ===================================================================================
 
 v1.0.0_rus
-* Обновлена лицензия. 
+* Обновлена лицензия.
 
 * Добавлено огромное кол-во новых websites (в том числе, благодаря манипуляции HTTP-заголовками):
 для сравнения Sherlock на GNU/Kali Linux/Parrot ищет по — 198 сайтам, Snoop ищет по — 337 сайтам.
@@ -652,5 +218,5 @@ v1.0.0_rus
 
 * Убраны из БД некоторые недоступные для Snoop сайты, которые затормаживали работу ПО.
 
-* Обновлён информативный вывод в CLI и в файле сохранения "username.txt". 
+* Обновлён информативный вывод в CLI и в файле сохранения "username.txt".
 ===================================================================================
