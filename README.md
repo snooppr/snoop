@@ -264,5 +264,5 @@ $ sudo nano /etc/ssl/openssl.cnf
 
 **Snoop неидеален: вэб-сайты падают; закрывающие теги отсутсвуют; хостинги вовремя не оплачиваются. Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются.**  
 
-C 15 августа по 12 сентября разработчик Snoop Project в отпуске (Возможно, на письма не будут ответов в этот период).  
+C 15 августа по 12 сентября разработчик Snoop Project в отпуске (Возможно, письма останутся без ответов в этот период).  
 From August 15 to September 12, the developer of the Snoop Project is on vacation (Perhaps, emails will not be answered during this period).
