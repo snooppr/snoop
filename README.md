@@ -263,3 +263,4 @@ $ sudo nano /etc/ssl/openssl.cnf
 [Документация](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)  
 
 **Snoop неидеален: вэб-сайты падают; закрывающие теги отсутсвуют; хостинги вовремя не оплачиваются. Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются.**  
+[Example close/bad websites](https://drive.google.com/file/d/1bZMsdh2wMTM225ZVHBT4a_HHYsBvgpTN/view?usp=sharing)
