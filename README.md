@@ -87,7 +87,7 @@ $ git config --global user.name "username"
 $ pkg install coreutils
 ```
 ## Using
-English version of Snoop see release.
+**English version — of Snoop see release (available 'Snoop EN version').**
 ```
 $ python3 snoop.py --help
 
@@ -191,10 +191,12 @@ $ python3 snoop.py --update y
 [^1]: Требуется установка Git.
 ```
 
+**An example of searching on a PC and on a Phone**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />
 
+**Snoop Local database**
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />
 
 ## Основные ошибки  
