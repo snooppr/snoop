@@ -717,7 +717,7 @@ Snoop Demo Version
                             description=f"{module_name} (Version {version})",
                             epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1200+\033[0m \033[36mWebsites!!!\033[0m\n English version, see release\n\n")
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1300+\033[0m \033[36mWebsites!!!\033[0m\n English version, see release\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
@@ -1038,7 +1038,7 @@ Snoop Demo Version
         print("==============================================================================||\n",
               Fore.CYAN + f"Ограничения Demo Version: {flagBS} Websites (Database Snoop сокращена в > 19 раз); ||\n"
               f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
-              f"Snoop Full Version: 1200+ Websites; поддержка и обновление Database Snoop.    ||\n"
+              f"Snoop Full Version: 1300+ Websites; поддержка и обновление Database Snoop.    ||\n"
 	      	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
               f"===============================================================================\n")
         webbrowser.open("https://yasobe.ru/na/snoop_project")
