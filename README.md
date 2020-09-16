@@ -241,7 +241,7 @@ $ python3 snoop.py -t 15 username
 
 6. Не обращать внимание, сайты иногда уходят на ремонтные работы и возвращаются в строй.
 
-7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с некоторыми дистрибутивами GNU/Linux  
+7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с некоторыми дистрибутивами GNU/Linux.  
 Решение:
 ```
 $ sudo nano /etc/ssl/openssl.cnf
