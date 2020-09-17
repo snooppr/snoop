@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | Android/Termux/Andrax |     ✅    |
 | macOS                 |     ❗️    |
 | IOS                   |     🚫    |
-| WSL                   |     ❗️    |
+| WSL                   |     🚫    |
 
 [Snoop Full version database 1.3k_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
@@ -52,6 +52,7 @@ $ python3 -m pip install -r requirements.txt
 $ pip3 install module
 # Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
 $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
+# На OS Windows использовать cmd или powershell (на выбор по удобству), НО НЕ WSL!
 ```
 ## Snoop for Android
 **Native Installation**  
