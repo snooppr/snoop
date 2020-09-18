@@ -178,11 +178,11 @@ $ python3 snoop.py username1 username2 username3 username4
 $ python3 snoop.py -с -t 6 -f -S -u ~/file.txt -w start
 
 # 'ctrl-c/z' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
-$ kill $(ps aux | grep python | awk '{print $2}') #лекарство для разгрузки ОЗУ при прерываниях.
+$ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство для разгрузки ОЗУ при прерываниях.
 ```
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
 Для доступа браузера к результатам поиска на платформе Android требуются рут права.  
-csv открывать в *office в кодировке utf-8, разделитель 'запятая'.  
+csv открывать в *office в кодировке **utf-8**, разделитель полей **запятая**.  
 
 Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  
 
