@@ -6,6 +6,7 @@ Snoop Project
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
+Is your life slideshow? Ask Snoop
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user.
 
@@ -52,7 +53,7 @@ $ python3 -m pip install -r requirements.txt
 $ pip3 install module
 # Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
 $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
-# На OS Windows использовать cmd или powershell (на выбор по удобству), НО НЕ WSL!
+# На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
 ```
 ## Snoop for Android
 **Native Installation**  
