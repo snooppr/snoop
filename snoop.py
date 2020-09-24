@@ -324,7 +324,6 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             results_site["url_user"] = ""
             results_site['countryCSV'] = ""
             results_site['http_status'] = ""
-            results_site['response_text'] = ""
             results_site['check_time_ms'] = ""
             results_site['response_time_ms'] = ""
             results_site['response_time_site_ms'] = ""
@@ -621,7 +620,6 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Сохранить результаты из запроса.
         results_site['countryCSV'] = countryB
         results_site['http_status'] = http_status
-        results_site['response_text'] = response_text
         results_site['check_time_ms'] = time_site
         results_site['response_time_ms'] = round(float(ello*1000))
         if response_time_site_ms*1000 < 250:

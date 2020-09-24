@@ -5,6 +5,7 @@ results/*
 results/csv/*
 results/html/*
 results/txt/*
+results/domain/*
 results/save reports/*
 !results/
 !results/csv/новый файл

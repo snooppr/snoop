@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
 "Самотестирование сети"
 
 def nettest():
