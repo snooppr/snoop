@@ -277,7 +277,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         requests.packages.urllib3.disable_warnings()
     session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     if not sys.platform == 'win32':
-        if "arm" in platform.platform(aliased=True, terse=0):
+        if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
             session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=13), session=my_session)
         else:
             session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=my_session)
