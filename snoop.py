@@ -43,7 +43,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.3\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.3A\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -60,7 +60,7 @@ else:
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.3_rus Snoop (source demo)"
+version = "1.2.3A_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -277,7 +277,10 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         requests.packages.urllib3.disable_warnings()
     session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     if not sys.platform == 'win32':
-        session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=my_session)
+        if "arm" in platform.platform(aliased=True, terse=0):
+            session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=13), session=my_session)
+        else:
+            session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=my_session)
     else:
         session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     session2 = FuturesSession(max_workers=4, session=my_session)
