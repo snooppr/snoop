@@ -260,6 +260,8 @@ $ sudo nano /etc/ssl/openssl.cnf
 [CipherString = DEFAULT@SECLEVEL=1]
 ```
 
+**Информация для госслужащих:** Snoop Project включен в реестр отечественного ПО. Приказ Минкомсвязи РФ №515 реестровый № 7012.
+
 **Отпечаток публичного ключа:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")
 
 **Лицензия Snoop Project:** https://github.com/snooppr/snoop/blob/master/COPYRIGHT
