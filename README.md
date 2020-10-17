@@ -6,7 +6,7 @@ Snoop Project
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
 
-Is your life slideshow? Ask Snoop  
+Is your life slideshow? Ask Snoop.  
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user.
 
