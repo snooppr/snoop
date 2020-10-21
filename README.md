@@ -270,3 +270,4 @@ $ sudo nano /etc/ssl/openssl.cnf
 
 **Snoop неидеален: вэб-сайты падают; закрывающие теги отсутсвуют; хостинги вовремя не оплачиваются. Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются.**  
 [Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)
+**email:** snoopproject@protonmail.com
