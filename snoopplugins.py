@@ -50,7 +50,6 @@ if not sys.platform == 'win32':
 else:
     session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
 
-dirhome = os.environ['HOME']
 dirresults = os.getcwd()
 
 # Модуль Vgeocoder
@@ -61,7 +60,9 @@ def module2():
 [\033[0m\033[32;1mhelp\033[0m\033[36m] --> Справка\n\
 [\033[0m\033[31;1mq\033[0m\033[36m] --> Выход\n\033[36;1m================================================================\033[0m\n\n")
         else:
-            Vgeo = input("[1] --> Выбрать файл\n[q] --> Выход\n================================================================\n\n")
+            Vgeo = input("[1] --> Выбрать файл\n\
+[help] --> Справка\n\
+[q] --> Выход\n================================================================\n\n")  
 
 # выход
 #    while True:
@@ -157,7 +158,7 @@ Snoop довольно умён: распознаёт координаты че�
 # Модуль GEO/IP
 def module1():
     try:
-        os.makedirs(str(dirhome + "/snoop/results/domain"))
+        os.makedirs(str("results/domain"))
     except:
         pass
 # Домен > IPv4/v6
