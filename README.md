@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases  
 Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,  
-то есть работает на чистой машине с OS Windows или GNU/Linux.
+то есть работает на чистой машине с OS Windows или GNU/Linux.  
 ............................................................................  
 **Самостоятельная сборка ПО из исходно кода**  
 **Self-build software from source**
