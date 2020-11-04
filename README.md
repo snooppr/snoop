@@ -28,7 +28,8 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 **Релиз/Release**  
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases  
-
+Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,  
+то есть работает на чистой машине с OS Windows или GNU/Linux.
 ............................................................................  
 **Самостоятельная сборка ПО из исходно кода**  
 **Self-build software from source**
@@ -108,16 +109,13 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --donate y, -d y      Пожертвовать на развитие Snoop Project-а
-                        (получить/приобрести Snoop Full Version)
-  --version, --about, -V
-                        НАЧАЛО! Вывод на печать версий: OS; Snoop;
+  --version,--about, -V НАЧАЛО! Вывод на печать версий: OS; Snoop;
                         Python и Лицензии
   --verbose, -v         Во время поиска 'username' выводить на печать
                         подробную вербализацию
-  --base , -b           Указать для поиска 'username' другую БД (Локально)/В
-                        demo version функция отключена
+  --base , -b           Указать для поиска 'username' другую БД (Локально)
   --web-base, -w        Подключиться для поиска 'username' к обновляемой
-                        web_БД (Online)/В demo version функция отключена
+                        web_БД (Online)
   --site , -s           Указать имя сайта из БД '--list all'. Поиск 'username'
                         на одном указанном ресурсе
   --time-out , -t 9     Установить выделение макс.времени на ожидание ответа
@@ -150,12 +148,10 @@ optional arguments:
                         ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных
                         ресурсах. Режим SNOOPninja эффективен только
                         для Snoop for GNU/Linux Full Version. По_умолчанию
-                        (Windows) вкл 'нормальный режим'. В Demo Version
-                        переключатель режимов деактивирован.
+                        (Windows) вкл 'нормальный режим'.
   --module y, -m y      OSINT поиск: используя различные плагины Snoop (список
                         плагинов будет пополняться)
-  --update y            Обновить исходный код Snoop/В demo version функция
-                        отключена
+  --update y            Обновить исходный код Snoop
 ```
 
 **Example**
