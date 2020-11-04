@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
 
-import base64
+import shutil
 import csv
 import json
 import locale
@@ -11,10 +11,12 @@ import platform
 import random
 import re
 import requests
+import snoopplugins
 import subprocess
 import sys
 import time
 import webbrowser
+import base64
 
 from argparse import ArgumentTypeError
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
@@ -27,7 +29,7 @@ else:
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
 try:
-    from rich.progress import (BarColumn, Progress,TimeRemainingColumn)
+    from rich.progress import (BarColumn, Progress, TimeRemainingColumn)
 except ModuleNotFoundError:
     print(f"Установить модуль 'rich', в GNU команда:\n" + \
     Style.BRIGHT + Fore.RED + "cd ~/snoop && python3 -m pip install -r requirements.txt" + \
@@ -43,7 +45,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.3A\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.4\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -51,16 +53,18 @@ if sys.platform == 'win32':
 	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)	
 	print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
 	print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
 	print (Fore.CYAN + "============================================\n" + Style.RESET_ALL)
 else:
 	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
 	print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
 	print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+	print (Fore.CYAN + " python3 snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
 	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.3A_rus Snoop (source demo)"
+version = "1.2.4_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -124,6 +128,10 @@ except:
     pass
 try:
     os.makedirs(str(dirresults + "/results/save reports"))
+except:
+    pass
+try:
+    os.makedirs(str(dirresults + "/results/ReverseVgeocoder"))
 except:
     pass
 
@@ -690,24 +698,34 @@ def run():
 
 # Пожертвование.
     donate = ("""
-Snoop Demo Version
+Snoop Demo Version (Публичная оферта)
 ===============================================================================    
-╭donate:                                                                      ||
+╭donate/buy                                                                   ||
 ├──BTC_BHC: \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m                                ||
 ├──Яндекс.Деньги: \033[37m4100111364257544\033[0m                                            ||
-├──Сбербанк карта: \033[37m4274320047338002\033[0m                                           ||
+├──Visa: \033[37m4274320047338002\033[0m                                                     ||
 └──PayPal: \033[37msnoopproject@protonmail.com\033[0m                                        ||
                                                                               ||
 Если вас заинтересовала Snoop Demo Version, Вы можете официально приобрести   ||
-\033[36mSnoop Full Version\033[0m, поддержав развитие проекта 15$ = 900р.                    ||
+\033[36mSnoop Full Version\033[0m, поддержав развитие проекта 15$ или 900р.                  ||
 При пожертвовании/покупке в сообщении укажите информацию в таком порядке:     ||
     '\033[36mПожертвование на развитие Snoop Project: 15$ ваш e-mail\033[0m'                 ||
     '\033[36mFull Version for Windows RU", или "Full Version for Linux RU\033[0m'            ||
     '\033[36mВаш статус: Физ.лицо; ИП; Юр.лицо (если покупка ПО)\033[0m'                     ||
-В ближ. время на почту придёт чек и ссылка на скачивание Snoop Full Version.  ||
+В ближайшее время на email пользователя придёт чек и ссылка для скачивания    ||
+Snoop Full Version готовой сборки то есть исполняемого файла                  ||
+(не исходных кодов), для windows это snoop.exe, для GNU/Linux snoop.          ||
+                                                                              ||
+Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой вы ||
+должны ознакомиться перед покупкой ПО. Лицензия (RU/EN) для Snoop Project в   ||
+исполняемом виде находится в rar-архивах демо версий по ссылке                ||
+https://github.com/snooppr/snoop/releases, а так же лицензия                  ||
+доступна по команде 'snoop -V' или 'snoop.exe -V' у исполняемого файла.       ||
                                                                               ||
 Если Snoop требуется вам для служебных или образовательных задач,             ||
 напишите письмо на e-mail разработчика в свободной форме.                     ||
+Студентам по направлению ИБ/Криминалистика Snoop ПО Full Version может быть   ||
+предоставлено на безвозмездной основе.                                        ||
 \033[36msnoopproject@protonmail.com\033[0m                                                   ||
 ==============================================================================||
 Исходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                                ||""")
@@ -722,7 +740,7 @@ Snoop Demo Version
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
-                        help="Пожертвовать на развитие Snoop Project-а (получить \033[36mSnoop Full Version\033[0m)"
+                        help="Пожертвовать на развитие Snoop Project-а (получить/приобрести \033[36mSnoop Full Version\033[0m)"
                         )
     parser.add_argument("--version", "--about", "-V",
                         action="version",  version=(version_snoop),
@@ -738,7 +756,7 @@ Snoop Demo Version
                         )
     parser.add_argument("--web-base", "-w",
                         action="store_true", dest="web", default=False,
-                        help="Подключиться для поиска 'username' к обновляемой web_БД (Online)"
+                        help="Подключиться для поиска 'username' к обновляемой web_БД (Online)/В demo version функция отключена"
                         )
     parser.add_argument("--site", "-s",
                         action="append", metavar='', 
@@ -806,6 +824,10 @@ Snoop Demo Version
                                 По_умолчанию (Windows) вкл 'нормальный режим'. 
                                 В Demo Version переключатель режимов деактивирован."""
                         )
+    parser.add_argument("--module y", "-m y",
+                        action="store_true", dest="module", default=False,
+                        help="OSINT поиск: используя различные плагины Snoop (список плагинов будет пополняться)"
+                        )
     parser.add_argument("--update y",
                         action="store_true", dest="update",
                         help="Обновить Snoop"
@@ -815,6 +837,79 @@ Snoop Demo Version
 
    
 # Информативный вывод:
+    if args.module:
+        from rich.console import Console
+        from rich.table import Table    
+        print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
+        def module():
+            if sys.platform != 'win32':
+                mod = input(
+"""\n\033[36m╭Выберите поисковый модуль из списка\033[0m
+\033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m
+\033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m
+\033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m
+\033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n"""
+                        )
+            else:
+                mod = input(
+"""Выберите поисковый модуль из списка
+├──[1] --> GEO_IP/domain
+├──[2] --> Reverse Vgeocoder
+├──[help] --> Справка
+└──[q] --> Выход\n"""
+                        )                
+            if mod == 'help':
+                print("""\033[32;1m└──[Справка]\033[0m
+                
+\033[32;1m========================
+| Плагин GEO_IP/domain |
+========================\033[0m \033[32m\n
+1) Реализует онлайн одиночный поиск цели по IP/url/domain и предоставляет статистическую информацию: 
+IPv4/v6; GEO-координаты/ссылку; локация
+    (лёгкий ограниченный поиск).
+
+2) Реализует онлайн поиск цели по массиву данных: и предоставляет статистическую и визуализированную информацию: 
+IPv4/v6; GEO-координаты/ссылки; страны/города; отчеты в CLI/txt/csv форматах; предоставляет визуализированный отчет на картах OSM
+    (умеренный не быстрый поиск: ограничения запросов:: 15к/час; не предоставляет информацию о провайдерах).
+    
+3) Реализует офлайн поиск цели по массиву данных, используя БД: и предоставляет статистическую и визуализированную информацию:
+IPv4/v6; GEO-координаты/ссылки; локации; провайдеры; отчеты в CLI/txt/csv форматах; предоставляет визуализированный отчет на картах OSM
+    (сильный и быстрый поиск).
+    
+Результаты по 1 и 2 методу могут отличаться и быть неполными - зависит от персональных настроек DNS/IPv6 пользователя.
+Массив данных — текстовый файл, который пользователь указывает в качестве цели, и который содержит ip или domain или url (или их комбинации).
+
+\033[32;1m============================
+| Плагин Reverse Vgeocoder |
+============================\033[0m\n
+\033[32mОбратный простенький геокодер для визуализации координат на карте OSM.
+Предназначение — CTF.
+В будущем 'Reverse Vgeocoder' планируется развить до ПРО-уровня.\033[0m """)
+
+                print("\033[36;1m================================================================\033[0m")
+                module()
+            elif mod == '1':
+                table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table.add_column("GEO_IP/domain", style="green")
+                table.add_row('Получение информации об ip/domain/url цели или массиве этих данных')
+                console = Console()
+                console.print(table)            
+                snoopplugins.module1()
+            elif mod == '2':
+                table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table.add_column("Reverse Vgeocoder_v0.1", style="green")
+                table.add_row('Визуализация Географических координат')
+                console = Console()
+                console.print(table)            
+                snoopplugins.module2()
+            elif mod == 'q':
+                print(Style.BRIGHT + Fore.RED + "└──Выход")
+                sys.exit()
+            else:
+                print(Style.BRIGHT + Fore.RED + "└──Неверный выбор\n" + Style.RESET_ALL)
+                module()
+        module()
+        sys.exit(0)
     if args.cert:
         print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах»")
     if args.site_list is not None and args.country == True:
@@ -1370,7 +1465,7 @@ Snoop Demo Version
 #                raise Exception("")
             except:
                 file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
-                "w", encoding="utf-8")            
+                "w", encoding="utf-8")
             file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in results:
                 timefinish = time.time() - timestart            
