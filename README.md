@@ -71,7 +71,7 @@ $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
 $ pip install --upgrade pip
 
 # Клонировать репозиторий
-$ git clone https://github.com/snooppr/snoop
+$ git clone https://github.com/snooppr/snoop -b snoop_termux
 # (Если флешкa FAT (ни ext4), в таком случае,
 # клонировать репозиторий только в ДОМАШНЮЮ директорию Termux)
 
