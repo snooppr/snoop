@@ -100,7 +100,7 @@ usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
                 [--cert-on] [--normal] [--module y] [--update y]
                 USERNAMES [USERNAMES ...]
 
-Snoop: поиск никнейма по всем фронтам! (Version :: Сборка 1.2.4_rus Snoop Demo for GNU/Linux)
+Snoop: поиск никнейма по всем фронтам! (Version :: Сборка 1.2.4_rus Snoop for GNU/Linux)
 
 positional arguments:
   USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
