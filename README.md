@@ -201,11 +201,18 @@ $ python3 snoop.py --update y
 **Snoop Local database**
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />
 
-**One method (offline) from one plugin GEO_IP/domain Snoop**
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />
+## Plugins  
+**Demonstration of one of the methods in the Plugin — GEO_IP/domain**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
 
-**Reports are also available in csv/txt/CLI/maps**
+**Reports are also available in csv/txt/CLI/maps**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
+
+**Demonstration of one of the methods in the Plugin — Yandex_parser**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
+
+**Search report dozen username (Plugin — Yandex_parser)**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
 ## Основные ошибки  
 
