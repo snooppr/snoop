@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
-# Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
+# Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 
-import shutil
 import csv
 import json
 import locale
@@ -11,6 +10,7 @@ import platform
 import random
 import re
 import requests
+import shutil
 import snoopplugins
 import subprocess
 import sys
@@ -28,13 +28,7 @@ else:
     from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
-try:
-    from rich.progress import (BarColumn, Progress, TimeRemainingColumn)
-except ModuleNotFoundError:
-    print(f"Установить модуль 'rich', в GNU команда:\n" + \
-    Style.BRIGHT + Fore.RED + "cd ~/snoop && python3 -m pip install -r requirements.txt" + \
-    Style.RESET_ALL)
-    sys.exit(0)
+from rich.progress import (BarColumn, Progress,TimeRemainingColumn)
 
 if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, '')
@@ -45,26 +39,26 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.4\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.5\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
 	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
-	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)	
+	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)
 	print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
 	print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
 	print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
-	print (Fore.CYAN + "============================================\n" + Style.RESET_ALL)
+	print (Fore.CYAN + "==================================================\n" + Style.RESET_ALL)
 else:
 	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 	print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
 	print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
 	print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
 	print (Fore.CYAN + " python3 snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
-	print (Fore.CYAN + "=============================================\n" + Style.RESET_ALL)
+	print (Fore.CYAN + "===================================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.4_rus Snoop (source demo)"
+version = "1.2.5_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
@@ -75,13 +69,13 @@ recensor = 0
 def fff():
     try:
         with open('BDdemo', "r", encoding="utf8") as z:
-            dd = z.read() 
-            b1 = dd.encode("UTF-8") 
-            d1 = base64.b64decode(b1) 
-            rt1 = d1[::-1] 
+            dd = z.read()
+            b1 = dd.encode("UTF-8")
+            d1 = base64.b64decode(b1)
+            rt1 = d1[::-1]
             d2 = base64.b64decode(rt1)
-            s12 = d2.decode("UTF-8") 
-            bbb1 = json.loads(s12) 
+            s12 = d2.decode("UTF-8")
+            bbb1 = json.loads(s12)
             return bbb1
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
@@ -91,12 +85,12 @@ def kkk():
     try:
         with open('BDflag', "r", encoding="utf8") as z1:
             d11 = z1.read()
-            b11 = d11.encode("UTF-8") 
-            t11 = base64.b64decode(b11) 
-            rt11 = t11[::-1] 
+            b11 = d11.encode("UTF-8")
+            t11 = base64.b64decode(b11)
+            rt11 = t11[::-1]
             d22 = base64.b64decode(rt11)
-            s112 = d22.decode("UTF-8") 
-            ccc1 = json.loads(s112) 
+            s112 = d22.decode("UTF-8")
+            ccc1 = json.loads(s112)
             return ccc1
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
@@ -118,7 +112,7 @@ try:
     os.mkdir(str(dirresults + "/results/html"))
 except:
     pass
-try: 
+try:
     os.mkdir(str(dirresults + "/results/txt"))
 except:
     pass
@@ -132,6 +126,10 @@ except:
     pass
 try:
     os.makedirs(str(dirresults + "/results/ReverseVgeocoder"))
+except:
+    pass
+try:
+    os.makedirs(str(dirresults + "/results/Yandex_parser"))
 except:
     pass
 
@@ -174,11 +172,11 @@ def print_error(err, errstr, var, verbose=False, color=True):
 if sys.platform == 'win32':
     def print_found_country(social_network, url, countryB, response_time=False, verbose=False, color=True):
         if color:
-            print(Style.BRIGHT + Fore.CYAN + f" {countryB}" + 
+            print(Style.BRIGHT + Fore.CYAN + f" {countryB}" +
                 Fore.GREEN + f" {social_network}:", url)
         else:
             print(f"[+] {social_network}: {url}")
-else:            
+else:
     def print_found_country(social_network, url, countryA, response_time=False, verbose=False, color=True):
         if color:
             print(countryA, (Style.BRIGHT +
@@ -494,7 +492,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Проверка, 4 методов; #1.
 # Ответы message (разные локации).
         if error_type == "message":
-            error = net_info.get("errorMsg") 
+            error = net_info.get("errorMsg")
             error2 = net_info.get("errorMsg2")
 #            print(r.text) #проверка ответа (+- '-S')
             if error2 in r.text:
@@ -571,7 +569,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             if not print_found_only and verbose == False:
                 print_invalid("", social_network, "*ПРОПУСК", color)
             elif not print_found_only and verbose == True:
-                print_invalid2("", social_network, "*ПРОПУСК", color)    
+                print_invalid2("", social_network, "*ПРОПУСК", color)
             exists = "блок"
 
 # Считать тайминги приближенно.
@@ -693,13 +691,13 @@ def run():
                     f"\033[36m%(prog)s: {version}\033[36m\n" +  \
                     f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
                     f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
-                     
+
 
 
 # Пожертвование.
     donate = ("""
 Snoop Demo Version (Публичная оферта)
-===============================================================================    
+===============================================================================
 ╭donate/buy                                                                   ||
 ├──BTC_BHC: \033[37m1EXoQj1rd5oi54k9yynVLsR4kG61e4s8g3\033[0m                                ||
 ├──Яндекс.Деньги: \033[37m4100111364257544\033[0m                                            ||
@@ -730,13 +728,13 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
 ==============================================================================||
 Исходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                                ||""")
 
-                
+
 # Назначение опций Snoop.
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
                             description=f"{module_name} (Version {version})",
                             epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1300+\033[0m \033[36mWebsites!!!\033[0m\n English version, see release\n\n")
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1300+\033[0m \033[36mWebsites!!!\033[0m\n \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
@@ -759,8 +757,8 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
                         help="Подключиться для поиска 'username' к обновляемой web_БД (Online)/В demo version функция отключена"
                         )
     parser.add_argument("--site", "-s",
-                        action="append", metavar='', 
-                        dest="site_list",  default=None, 
+                        action="append", metavar='',
+                        dest="site_list",  default=None,
                         help="Указать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе"
                         )
     parser.add_argument("--time-out", "-t 9",
@@ -770,9 +768,9 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
                              "Вкл. эту опцию необходимо при медленном \
                              интернет соединении, чтобы избежать длительных зависаний \
-                             при неполадках в сети (по умолчанию значение выставлено 5с)" 
+                             при неполадках в сети (по умолчанию значение выставлено 5с)"
                         )
-    parser.add_argument("--found-print", "-f", 
+    parser.add_argument("--found-print", "-f",
                         action="store_true", dest="print_found_only", default=False,
                         help="Выводить на печать только найденные аккаунты"
                         )
@@ -794,7 +792,7 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
                         action="store", dest="user", default=False,
                         help="Указать файл со списком user-ов. Пример_Linux: 'python3 snoop.py -u ~/listusers.txt start'\n"
                              "Пример для Windows: 'python snoop.py -u c:\snoop\listusers.txt start'"
-                        )                        
+                        )
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
                         help="Вывести на печать информацию о локальной базе данных Snoop"
@@ -816,12 +814,12 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
     parser.add_argument("--normal", "-N",
                         action="store_true", dest="norm", default=True,
                         help="""Переключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
-                                По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja': 
+                                По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja':
                                 ускорение поиска ~25pct, экономия ОЗУ ~50pct,
-                                повторное 'гибкое' соединение на сбойных ресурсах. 
-                                \033[31;1mРежим SNOOPninja эффективен только для 
+                                повторное 'гибкое' соединение на сбойных ресурсах.
+                                \033[31;1mРежим SNOOPninja эффективен только для
                                 Snoop for GNU/Linux Full Version\033[0m.
-                                По_умолчанию (Windows) вкл 'нормальный режим'. 
+                                По_умолчанию (Windows) вкл 'нормальный режим'.
                                 В Demo Version переключатель режимов деактивирован."""
                         )
     parser.add_argument("--module y", "-m y",
@@ -835,47 +833,49 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
 
     args = parser.parse_args()
 
-   
+
 # Информативный вывод:
     if args.module:
         from rich.console import Console
-        from rich.table import Table    
+        from rich.table import Table
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
         def module():
             if sys.platform != 'win32':
                 mod = input(
-"""\n\033[36m╭Выберите поисковый модуль из списка\033[0m
+"""\n\033[36m╭Выберите плагин из списка\033[0m
 \033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m
 \033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m
+\033[36m├──\033[0m\033[36;1m[3] --> Yandex_parser\033[0m
 \033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m
 \033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n"""
                         )
             else:
                 mod = input(
-"""Выберите поисковый модуль из списка
+"""Выберите плагин из списка
 ├──[1] --> GEO_IP/domain
 ├──[2] --> Reverse Vgeocoder
+├──[3] --> Yandex_parser
 ├──[help] --> Справка
 └──[q] --> Выход\n"""
-                        )                
+                        )
             if mod == 'help':
                 print("""\033[32;1m└──[Справка]\033[0m
-                
+
 \033[32;1m========================
 | Плагин GEO_IP/domain |
 ========================\033[0m \033[32m\n
-1) Реализует онлайн одиночный поиск цели по IP/url/domain и предоставляет статистическую информацию: 
+1) Реализует онлайн одиночный поиск цели по IP/url/domain и предоставляет статистическую информацию:
 IPv4/v6; GEO-координаты/ссылку; локация
     (лёгкий ограниченный поиск).
 
-2) Реализует онлайн поиск цели по массиву данных: и предоставляет статистическую и визуализированную информацию: 
+2) Реализует онлайн поиск цели по массиву данных: и предоставляет статистическую и визуализированную информацию:
 IPv4/v6; GEO-координаты/ссылки; страны/города; отчеты в CLI/txt/csv форматах; предоставляет визуализированный отчет на картах OSM
     (умеренный не быстрый поиск: ограничения запросов:: 15к/час; не предоставляет информацию о провайдерах).
-    
+
 3) Реализует офлайн поиск цели по массиву данных, используя БД: и предоставляет статистическую и визуализированную информацию:
 IPv4/v6; GEO-координаты/ссылки; локации; провайдеры; отчеты в CLI/txt/csv форматах; предоставляет визуализированный отчет на картах OSM
     (сильный и быстрый поиск).
-    
+
 Результаты по 1 и 2 методу могут отличаться и быть неполными - зависит от персональных настроек DNS/IPv6 пользователя.
 Массив данных — текстовый файл, который пользователь указывает в качестве цели, и который содержит ip или domain или url (или их комбинации).
 
@@ -884,24 +884,43 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 ============================\033[0m\n
 \033[32mОбратный простенький геокодер для визуализации координат на карте OSM.
 Предназначение — CTF.
-В будущем 'Reverse Vgeocoder' планируется развить до ПРО-уровня.\033[0m """)
+В будущем 'Reverse Vgeocoder' планируется развить до ПРО-уровня.\033[0m
+
+\033[32;1m========================
+| Плагин Yandex_parser |
+========================\033[0m\n
+\033[32mПлагин позволяет получить информацию о пользователе/пользователях сервисов Яндекс:
+Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Район; Я_Коллекции; Я_Диск; E-mail, Name.
+И связать полученные данные между собой с высокой скоростью и массштабно.
+Предназначение — OSINT.
+
+Плагин разработан на идеи и материалах уязвимости, отчёт был отправлен Яндексу в рамках программы «Охота за ошибками».
+Попал в зал славы, получил финансовое вознаграждение, а Яндекс исправил/перевёл уязвимость в категорию: 'не баг, а фича'.
+Плагин Yandex_parser — работает с публичными данными.\033[0m""")
 
                 print("\033[36;1m================================================================\033[0m")
                 module()
             elif mod == '1':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("GEO_IP/domain", style="green")
+                table.add_column("GEO_IP/domain_v0.1", style="green")
                 table.add_row('Получение информации об ip/domain/url цели или массиве этих данных')
                 console = Console()
-                console.print(table)            
+                console.print(table)
                 snoopplugins.module1()
             elif mod == '2':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
                 table.add_column("Reverse Vgeocoder_v0.1", style="green")
                 table.add_row('Визуализация Географических координат')
                 console = Console()
-                console.print(table)            
+                console.print(table)
                 snoopplugins.module2()
+            elif mod == '3':
+                table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table.add_column("Yandex_parser_v0.1", style="green")
+                table.add_row('Яндекс парсер: Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Район; Я_Коллекции; Я_Диск; E-mail; Name.')
+                console = Console()
+                console.print(table)
+                snoopplugins.module3()
             elif mod == 'q':
                 print(Style.BRIGHT + Fore.RED + "└──Выход")
                 sys.exit()
@@ -910,6 +929,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 module()
         module()
         sys.exit(0)
+
     if args.cert:
         print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах»")
     if args.site_list is not None and args.country == True:
@@ -1046,7 +1066,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     aaa = datajson.get(con).get("country")
                     i += 1
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                    print(Fore.CYAN + "================")        
+                    print(Fore.CYAN + "================")
 # Сортировка для ОС Win Demo Version.
             print(Fore.GREEN + "\n++Белый список Demo Version++")
             datajson = fff()
@@ -1063,7 +1083,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     aaa = datajson.get(con).get("country")
                     i += 1
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                    print(Fore.CYAN + "================")        
+                    print(Fore.CYAN + "================")
             sys.exit(0)
 
 # Сортируем по странам (1!).
@@ -1081,7 +1101,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 for i, numerlist in enumerate(sort_spisok):
                     i += 1
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================") 
+                    print(Fore.CYAN + "================")
 # Сортировка для ОС GNU Full Version.
             else:
                 listlinux = []
@@ -1095,7 +1115,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 for i, numerlist in enumerate(sort_spisok):
                     i += 1
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================") 
+                    print(Fore.CYAN + "================")
 # Сортировка для ОС Win Demo Version.
             if sys.platform == 'win32':
                 listwindows = []
@@ -1108,7 +1128,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 for i, numerlist in enumerate(sort_spisok):
                     i += 1
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================") 
+                    print(Fore.CYAN + "================")
 # Сортировка для ОС GNU Demo Version.
             else:
                 listlinux = []
@@ -1121,7 +1141,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 for i, numerlist in enumerate(sort_spisok):
                     i += 1
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================") 
+                    print(Fore.CYAN + "================")
             sys.exit(0)
 # Действие не выбрано.
         else:
@@ -1187,7 +1207,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         try:
             if args.web == False:
                 site_data_all = a1
-                print(Fore.CYAN + f"\nзагружена локальная база: " + 
+                print(Fore.CYAN + f"\nзагружена локальная база: " +
                 Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + "_Websites" + Style.RESET_ALL)
         except:
             print("\033[31;1mInvalid загружаемая база данных.\033[0m")
@@ -1261,10 +1281,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 #                raise Exception("")
             except:
                 file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
-                "w", encoding="utf-8")            
+                "w", encoding="utf-8")
             file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in results:
-                timefinish = time.time() - timestart            
+                timefinish = time.time() - timestart
                 dictionary = results[website_name]
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
@@ -1281,7 +1301,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
 #                raise Exception("")
             except:
-                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", 
+                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S",
                 time_data) + ".html", "w", encoding="utf-8")
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
@@ -1291,9 +1311,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_html.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
             <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
-            file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
+            file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) +
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
-            
+
             cnt = Counter()
             for website_name in results:
                 dictionary = results[website_name]
@@ -1304,10 +1324,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     exists_counter += 0
                     for word in li:
                         cnt[word] += 1
-                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
+                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+
                     (website_name) + "</a>" + "</li>\n")
             flag_str=str(cnt)
-            try:            
+            try:
                 flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
                 file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
             except:
@@ -1413,7 +1433,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             writer.writerow(['«---------------------------------------',
                              '--------','----', '----------------------------------',
                              '--------------------------------------------------------',
-                             '-------------', '-----------------', '--------------------------------', 
+                             '-------------', '-----------------', '--------------------------------',
                              '-------------', '-----------------------»'])
             writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
             writer.writerow('')
@@ -1424,12 +1444,12 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     # Финишный вывод.
         if censor >= 11 * int(kef_user):
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:", 
+            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:",
                               "*используйте VPN")
-            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
+            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
         else:
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
+            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
 
 # Поиск по умолчанию (без опции '-u').
     else:
@@ -1468,7 +1488,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 "w", encoding="utf-8")
             file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in results:
-                timefinish = time.time() - timestart            
+                timefinish = time.time() - timestart
                 dictionary = results[website_name]
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
@@ -1477,7 +1497,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
             file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             file_txt.close()
-            
+
             print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
             print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
 
@@ -1497,9 +1517,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_html.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
             <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
-            file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + 
+            file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) +
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
-            
+
             cnt = Counter()
             for website_name in results:
                 dictionary = results[website_name]
@@ -1510,10 +1530,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     exists_counter += 0
                     for word in li:
                         cnt[word] += 1
-                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+ 
+                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+
                     (website_name) + "</a>" + "</li>\n")
             flag_str=str(cnt)
-            try:            
+            try:
                 flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
                 file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
             except:
@@ -1576,7 +1596,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
             censor = int(censors - recensor)
-            if censor >= 11:            
+            if censor >= 11:
                 writer = csv.writer(file_csv)
                 writer.writerow(['Объект',
                                  'Ресурс',
@@ -1631,10 +1651,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         if censor >= 11:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:", "*используйте VPN")
-            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
+            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
         else:
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print("\n\033[37m\033[44m{}".format("Лицензия: авторская"))
+            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
 
 # Открывать/нет браузер с результатами поиска.
     if args.no_func==False:
