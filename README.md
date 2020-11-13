@@ -25,6 +25,9 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 [Snoop Full version database 1.3k_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Snoop for OS Windows and GNU/Linux  
+**Snoop Local database**
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
+
 **Релиз/Release**  
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases  
@@ -57,11 +60,11 @@ $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
 ```
 ## Snoop for Android
+search username
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
-search username  
 
+plugins
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
-plugins  
 
 **Native Installation**  
 
@@ -201,12 +204,8 @@ csv открывать в *office в кодировке **utf-8**, раздел�
 $ python3 snoop.py --update y
 [^1]: Требуется установка Git.
 ```
-
 **An example of searching on a PC**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
-
-**Snoop Local database**
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />
 
 ## Plugins  
 **Demonstration of one of the methods in the Plugin — GEO_IP/domain**  
