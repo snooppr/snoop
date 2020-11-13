@@ -57,6 +57,12 @@ $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
 ```
 ## Snoop for Android
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
+search username  
+
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
+plugins  
+
 **Native Installation**  
 
 Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
@@ -100,7 +106,7 @@ usage: snoop.py [-h] [--donate y] [--version] [--verbose] [--base]
                 [--cert-on] [--normal] [--module y] [--update y]
                 USERNAMES [USERNAMES ...]
 
-Snoop: поиск никнейма по всем фронтам! (Version :: Сборка 1.2.4_rus Snoop for GNU/Linux)
+Snoop: поиск никнейма по всем фронтам! (Version :: Source 1.2.5_rus Snoop for GNU/Linux)
 
 positional arguments:
   USERNAMES             Никнейм разыскиваемого пользователя, поддерживается
@@ -180,6 +186,9 @@ $ python3 snoop.py -с -t 6 -f -S -u ~/file.txt -w start
 
 # 'ctrl-c/z' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
 $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство для разгрузки ОЗУ при прерываниях.
+
+# Задействовать плагины Snoop:
+$ python3 snoop.py --module y
 ```
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
 Для доступа браузера к результатам поиска на платформе Android требуются рут права.  
@@ -193,10 +202,8 @@ $ python3 snoop.py --update y
 [^1]: Требуется установка Git.
 ```
 
-**An example of searching on a PC and on a Phone**  
+**An example of searching on a PC**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
-
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />
 
 **Snoop Local database**
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />
