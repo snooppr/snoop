@@ -293,3 +293,5 @@ $ sudo nano /etc/ssl/openssl.cnf
 [Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
 
 **email:** snoopproject@protonmail.com
+
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.png" />
