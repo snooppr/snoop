@@ -66,6 +66,7 @@ time_data = time.localtime()
 censors = 0
 recensor = 0
 
+#для full версий используется просто base32, вы в праве за это поблагодарить/пожертвовать на развитие проекта'python3 snoop.py --donate y'
 def fff():
     try:
         with open('BDdemo', "r", encoding="utf8") as z:
