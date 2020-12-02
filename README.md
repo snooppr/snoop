@@ -117,7 +117,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --donate y, -d y      Пожертвовать на развитие Snoop Project-а
+  --donate y, -d y      Пожертвовать на развитие Snoop. Приобрести full version
   --version,--about, -V НАЧАЛО! Вывод на печать версий: OS; Snoop;
                         Python и Лицензии
   --verbose, -v         Во время поиска 'username' выводить на печать
