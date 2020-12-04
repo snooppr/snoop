@@ -92,7 +92,7 @@ $ python3 -m pip install -r requirements.txt
 
 # Дополнение для устаревших гаджетов (Android 6)
 # Примечание на современных гаджетах пакеты уже предустановлены и настроены
-# добавьте любое 'рандомное' имя и почту [^1]:
+# добавьте любое 'рандомное' имя и почту:
 $ git config --global user.email "you@example.com"
 $ git config --global user.name "username"
 # Установите coreutils
