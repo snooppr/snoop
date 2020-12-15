@@ -1157,7 +1157,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
               f"Snoop Full Version: 1300+ Websites; поддержка и обновление Database Snoop.    ||\n"
 	      	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
               f"===============================================================================\n")
-        webbrowser.open("https://yasobe.ru/na/snoop_project")
+        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
         print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit(0)
 
@@ -1217,7 +1217,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print("\n\033[37m\033[44m{}".format("Функция '-w' действует только для пользователей Full version..."))
         print(donate)
         print("\033[31mВыход\033[0m")
-        webbrowser.open("https://yasobe.ru/na/snoop_project")
+        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
         sys.exit(0)
 
     if args.site_list is None:
@@ -1375,7 +1375,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 <br><br>
 
 <a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">💊 Source Исходный код</span></a>
-<a target='_blank' href='https://yasobe.ru/na/snoop_project' class="DnA"><span class="DnSpan">💊 Donation Пожертвование</span></a>
+<a target='_blank' href='https://sobe.ru/na/snoop_project_2020' class="DnA"><span class="DnSpan">💊 Donation Пожертвование</span></a>
 <br><br><br><br>
 
 </body>
@@ -1581,7 +1581,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 <br><br>
 
 <a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">💊 Source Исходный код</span></a>
-<a target='_blank' href='https://yasobe.ru/na/snoop_project' class="DnA"><span class="DnSpan">💊 Donation Пожертвование</span></a>
+<a target='_blank' href='https://sobe.ru/na/snoop_project_2020' class="DnA"><span class="DnSpan">💊 Donation Пожертвование</span></a>
 <br><br><br><br>
 
 </body>
