@@ -1,4 +1,4 @@
-## Snoop Full Version БД поддерживаемых сайтов (список), всего — 1380 сайт(ов)!
+## Snoop Full Version БД поддерживаемых сайтов (список), всего — 1379 сайт(ов)!
 1. 🇷🇺 [0-3RU](http://0-3.ru)
 2. 🇷🇺 [0k_clan](http://0k.clan.su)
 3. 🏁 [11x2](https://11x2.com)
@@ -1378,4 +1378,3 @@
 1377. 🇷🇺 [Zhyk](https://zhyk.ru)
 1378. 🇷🇺 [Zmey](https://zmey.ru)
 1379. 🌎 [Zomato](https://www.zomato.com)
-1380. 🌎 [Zomato1](https://www.zomato.com)
