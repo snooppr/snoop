@@ -8,7 +8,11 @@ Snoop Project
 
 Is your life slideshow? Ask Snoop.  
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
-that is, it is available to the average user.
+that is, it is available to the average user.  
+
+Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти)  
+в области поиска и обработки публичных данных в сети интернет.  
+По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
 
 History
 https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
@@ -17,12 +21,12 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 |-----------------------|:---------:|
 | GNU/Linux             |     ✅    |
 | Windows 7/10 (32/64)  |     ✅    |
-| Android/Termux/Andrax |     ✅    |
+| Android (Termux)      |     ✅    |
 | macOS                 |     ❗️    |
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-[Snoop Full version database 1383_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop Full version database 1385_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Snoop for OS Windows and GNU/Linux  
 **Snoop Local database**
@@ -132,7 +136,7 @@ optional arguments:
                         поиска. Влияет на 'Timeout ошибки:'Вкл. эту опцию
                         необходимо при медленном интернет соединении, чтобы
                         избежать длительных зависаний при неполадках в сети
-                        (по умолчанию значение выставлено 5с)
+                        (по умолчанию значение выставлено 9с)
   --found-print, -f     Выводить на печать только найденные аккаунты
   --no-func, -n         ✓Монохромный терминал, не использовать цвета в url
                         ✓Отключить звук ✓Запретить открытие web browser-а
