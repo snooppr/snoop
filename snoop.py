@@ -820,7 +820,7 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
                                 \033[31;1mРежим SNOOPninja эффективен только для
                                 Snoop for GNU/Linux Full Version\033[0m.
                                 По_умолчанию (Windows) вкл 'нормальный режим'.
-                                В Demo Version переключатель режимов деактивирован."""
+                                В Demo Version переключатель режимов деактивирован"""
                         )
     parser.add_argument("--module y", "-m y",
                         action="store_true", dest="module", default=False,
