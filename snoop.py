@@ -39,7 +39,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.5\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.6\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
@@ -58,7 +58,7 @@ else:
 	print (Fore.CYAN + "===================================================\n" + Style.RESET_ALL)
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.5_rus Snoop (source demo)"
+version = "1.2.6_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
