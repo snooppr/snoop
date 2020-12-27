@@ -734,7 +734,7 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
                             description=f"{module_name} (Version {version})",
                             epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1300+\033[0m \033[36mWebsites!!!\033[0m\n \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1400+\033[0m \033[36mWebsites!!!\033[0m\n \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
@@ -1154,7 +1154,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print("==============================================================================||\n",
               Fore.CYAN + f"Ограничения Demo Version: {flagBS} Websites (Database Snoop сокращена в > 19 раз); ||\n"
               f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
-              f"Snoop Full Version: 1300+ Websites; поддержка и обновление Database Snoop.    ||\n"
+              f"Snoop Full Version: 1400+ Websites; поддержка и обновление Database Snoop.    ||\n"
 	      	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
               f"===============================================================================\n")
         webbrowser.open("https://sobe.ru/na/snoop_project_2020")
