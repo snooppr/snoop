@@ -851,7 +851,7 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
                         )
             else:
                 mod = input(
-"""Выберите плагин из списка
+"""\nВыберите плагин из списка
 ├──[1] --> GEO_IP/domain
 ├──[2] --> Reverse Vgeocoder
 ├──[3] --> Yandex_parser
