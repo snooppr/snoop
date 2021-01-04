@@ -210,7 +210,9 @@ $ python3 snoop.py --update y #Требуется установка Git.
 **An example of searching on a PC**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
-### Plugins  
+Snoop Project Plugins
+=====================
+
 **Demonstration of one of the methods in the Plugin — [GEO_IP/domain]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
 
