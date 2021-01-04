@@ -210,18 +210,22 @@ $ python3 snoop.py --update y #Требуется установка Git.
 **An example of searching on a PC**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
-## Plugins  
-**Demonstration of one of the methods in the Plugin — GEO_IP/domain**  
+### Plugins  
+**Demonstration of one of the methods in the Plugin — [GEO_IP/domain]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
 
 **Reports are also available in csv/txt/CLI/maps**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
 
-**Demonstration of one of the methods in the Plugin — Yandex_parser**  
+**Demonstration of one of the methods in the Plugin — [Yandex_parser]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
 
 **Search report dozen username (Plugin — Yandex_parser)**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
+
+**Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" />  
+Обработка геокординат идёт быстро (создание .gif утилизировало много процессорного времени).  
 
 ## Основные ошибки  
 
