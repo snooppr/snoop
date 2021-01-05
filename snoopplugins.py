@@ -156,6 +156,7 @@ def module3():
                     console = Console()
                     console.print(table1)
 
+                    otzyv=f"https://reviews.yandex.ru/user/{pub}"
                     market=f"https://market.yandex.ru/user/{pub}/reviews"
                     collections=f"https://yandex.ru/collections/user/{login}/"
                     if Ya == '3':
@@ -166,6 +167,7 @@ def module3():
                     qu=f"https://yandex.ru/q/profile/{pub}/"
                     raion=f"https://local.yandex.ru/users/{pub}/"
 
+                    print("\033[32;1mЯ.Отзывы:\033[0m", otzyv)
                     print("\033[32;1mЯ.Маркет:\033[0m", market)
                     print("\033[32;1mЯ.Картинки:\033[0m", collections)
                     print("\033[32;1mЯ.Музыка:\033[0m", music)
@@ -173,9 +175,9 @@ def module3():
                     print("\033[32;1mЯ.Кью:\033[0m", qu)
                     print("\033[32;1mЯ.Район:\033[0m", raion)
 
-                    yalist=[market, collections, music, dzen, qu, raion]
+                    yalist=[otzyv, market, collections, music, dzen, qu, raion]
 
-                    file_txt.write(f"{login} | {email} | {name}\n{market}\n{collections}\n{music}\n{dzen}\n{qu}\n{raion}\n\n\n",)
+                    file_txt.write(f"{login} | {email} | {name}\n\n{otzyv}\n{market}\n{collections}\n{music}\n{dzen}\n{qu}\n{raion}",)
                     progressYa.refresh()
 
                 for webopen in yalist:
@@ -395,7 +397,7 @@ Snoop довольно умён: распознаёт координаты че�
 """\nВыберите режим геокодирования:
 ├──[1] --> Простой (быстро)
 ├──[2] --> Подробный
-└──[q] --> Выход\n
+└──[q] --> Выход
 ================================================================\n\n""")
 
                         if rGeo == "q":
