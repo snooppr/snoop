@@ -35,10 +35,10 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 **Релиз/Release**  
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases  
-RU: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,  
+**RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,  
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
-EN: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation,  
-that is, it runs on a clean machine with OS Windows or GNU / Linux.  
+**EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3  
+installation, that is, it runs on a clean machine with OS Windows or GNU / Linux.  
 ............................................................................  
 **Самостоятельная сборка ПО из исходно кода**  
 **Self-build software from source**
