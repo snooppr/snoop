@@ -1,11 +1,11 @@
 beautifulsoup4==4.9.1
 certifi>=2020.6.20
-colorama==0.4.3
+colorama==0.4.4
 folium==0.11.0
-lxml==4.5.1
+lxml==4.6.2
 playsound==1.2.2
-requests==2.24.0
+requests==2.25.1
 requests-futures==1.0.0
 rich==1.2.3
-soupsieve==2.0.1
+soupsieve==2.1
 speedtest-cli==2.1.2
