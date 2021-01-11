@@ -76,12 +76,12 @@ plugins
 
 Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
 ```
+# Примечание: установка Snoop на Termux продолжительная по времени
 # Войти в домашнюю папку Termux (т.е. просто открыть Termux)
 $ termux-setup-storage
 $ ls #/data/data/com.termux/files/home # дефолтный/домашний каталог
 
 # Установить python3 и зависимости
-# Примечание: установка продолжительная по времени
 $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
 $ pip install --upgrade pip
 
