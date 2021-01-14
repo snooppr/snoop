@@ -54,7 +54,7 @@ $ git clone https://github.com/snooppr/snoop
 $ cd ~/snoop
 
 # Установить python3 и python3-pip, если они не установлены
-$ apt-get update && apt-get install python3
+$ apt-get update && apt-get install python3 python3-pip
 
 # Установить зависимости 'requirements'
 $ pip install --upgrade pip
