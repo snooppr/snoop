@@ -44,7 +44,7 @@ installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.
 **Self-build software from source**
 
 **Native Installation**  
-Примечание: Требуемая версия python 3.7 и выше.
+Примечание: Требуемая версия python 3.7.
 
 ```
 # Клонировать репозиторий
@@ -229,7 +229,6 @@ Snoop Project Plugins
 
 **Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" />  
-Обработка геокординат идёт быстро (создание .gif утилизировало много процессорного времени).  
 
 ## Основные ошибки  
 
