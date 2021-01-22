@@ -26,13 +26,15 @@ https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-[Snoop Full version database 1400+_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop Full version database 1500_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
-## Snoop for OS Windows and GNU/Linux  
+Snoop for OS Windows and GNU/Linux
+==================================
+
 **Snoop Local database**
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
 
-**Релиз/Release**  
+## Релиз/Release
 snoop.exe and snoop
 https://github.com/snooppr/snoop/releases  
 **RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
@@ -65,7 +67,12 @@ $ pip3 install module
 $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
 ```
-## Snoop for Android
+**An example of searching on a PC**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
+
+Snoop for Android
+=================
+
 search username
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
 
@@ -104,7 +111,27 @@ $ git config --global user.name "username"
 # Установите coreutils
 $ pkg install coreutils
 ```
-## Using
+Snoop Project Plugins
+=====================
+
+**Demonstration of one of the methods in the Plugin — [GEO_IP/domain]**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+
+**Reports are also available in csv/txt/CLI/maps**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
+
+**Demonstration of one of the methods in the Plugin — [Yandex_parser]**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
+
+**Search report dozen username (Plugin — Yandex_parser)**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
+
+**Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" />  
+
+Using
+=====
+
 **English version — of Snoop see release (available 'Snoop EN version').**
 ```
 $ python3 snoop.py --help
@@ -172,32 +199,37 @@ optional arguments:
 **Example**
 ```
 # Для поиска только одного пользователя:
-$ python3 snoop.py username1
+$ python3 snoop.py username1 #Running from source
+$ snoop username1 #Running from release
 # Или, например, кириллица поддерживается:
 $ python3 snoop.py олеся
 # Для поиска имени, содержащего пробел:
-$ python3 snoop.py "ivan ivanov"
-$ python3 snoop.py ivan_ivanov
-$ python3 snoop.py ivan-ivanov
+$ snoop "ivan ivanov" #Running from release
+$ snoop ivan_ivanov #Running from release
+$ snoop ivan-ivanov #Running from release
 
 # Запуск на OS Windows:
-$ python snoop.py username1
-
+$ python snoop.py username1 #Running from source
+$ snoop.exe username1 #Running from release
 # Для поиска одного и более юзеров:
-$ python3 snoop.py username1 username2 username3 username4
+$ snoop.exe username1 username2 username3 username4 #Running from release
 
 # Поиск множества юзеров — сортировка вывода результатов по странам;
 # избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от вашего ip-адреса);
 # выводить на печать только найденные аккаунты; сохранять странички найденных
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop:
-$ python3 snoop.py -с -t 6 -f -S -u ~/file.txt -w start
+$ snoop -с -t 6 -f -S -u ~/file.txt -w start #Running from release
+# проверить базу данных Snoop:
+$ snoop --list all #Running from release
+# распечатать справку по функциям Snoop:
+$ snoop --help #Running from release
+
+# Задействовать плагины Snoop:
+$ snoop --module y #Running from release
 
 # 'ctrl-c/z' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
 $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство для разгрузки ОЗУ при прерываниях.
-
-# Задействовать плагины Snoop:
-$ python3 snoop.py --module y
 ```
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
 Для доступа браузера к результатам поиска на платформе Android требуются рут права.  
@@ -209,26 +241,6 @@ csv открывать в *office в кодировке **utf-8**, раздел�
 # Обновляйте Snoop для тестирования новых функций в ПО:
 $ python3 snoop.py --update y #Требуется установка Git.
 ```
-**An example of searching on a PC**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
-
-Snoop Project Plugins
-=====================
-
-**Demonstration of one of the methods in the Plugin — [GEO_IP/domain]**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
-
-**Reports are also available in csv/txt/CLI/maps**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
-
-**Demonstration of one of the methods in the Plugin — [Yandex_parser]**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
-
-**Search report dozen username (Plugin — Yandex_parser)**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
-
-**Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" />  
 
 ## Основные ошибки  
 
