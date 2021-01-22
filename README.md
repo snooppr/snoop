@@ -14,8 +14,7 @@ Snoop — это исследовательская работа (собстве
 в области поиска и обработки публичных данных в сети интернет.  
 По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
 
-History
-https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt
+[История развития проекта](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
 
 | Платформа             | Поддержка |
 |-----------------------|:---------:|
@@ -35,14 +34,15 @@ Snoop for OS Windows and GNU/Linux
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
 
 ## Релиз/Release
-snoop.exe and snoop
+snoop.exe (for Windows) and snoop (for GNU/Linux)  
 https://github.com/snooppr/snoop/releases  
+
 **RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
 **EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3  
 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
 ............................................................................  
-##Самостоятельная сборка ПО из исходно кода/Self-build software from source
+## Самостоятельная сборка ПО из исходно кода/Self-build software from source
 **Native Installation**  
 Примечание: Требуемая версия python 3.7 либо 3.8.
 
@@ -112,19 +112,19 @@ $ pkg install coreutils
 Snoop Project Plugins
 =====================
 
-**Demonstration of one of the methods in the Plugin — [GEO_IP/domain]**  
+**1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
 
 **Reports are also available in csv/txt/CLI/maps**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
 
-**Demonstration of one of the methods in the Plugin — [Yandex_parser]**  
+**2. Demonstration of one of the methods in the Plugin — [Yandex_parser]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
 
 **Search report dozen username (Plugin — Yandex_parser)**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
-**Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
+**3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" />  
 
 Using
@@ -200,7 +200,7 @@ optional arguments:
 $ python3 snoop.py username1 #Running from source
 $ snoop username1 #Running from release
 # Или, например, кириллица поддерживается:
-$ python3 snoop.py олеся
+$ python3 snoop.py олеся #Running from source
 # Для поиска имени, содержащего пробел:
 $ snoop "ivan ivanov" #Running from release
 $ snoop ivan_ivanov #Running from release
