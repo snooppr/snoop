@@ -42,11 +42,9 @@ https://github.com/snooppr/snoop/releases
 **EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3  
 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
 ............................................................................  
-**Самостоятельная сборка ПО из исходно кода**  
-**Self-build software from source**
-
+##Самостоятельная сборка ПО из исходно кода/Self-build software from source
 **Native Installation**  
-Примечание: Требуемая версия python 3.7.
+Примечание: Требуемая версия python 3.7 либо 3.8.
 
 ```
 # Клонировать репозиторий
