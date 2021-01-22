@@ -14,7 +14,7 @@ Snoop — это исследовательская работа (собстве
 в области поиска и обработки публичных данных в сети интернет.  
 По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
 
-[History/История развития проекта](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
+[История развития проекта/History](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
 
 | Платформа             | Поддержка |
 |-----------------------|:---------:|
