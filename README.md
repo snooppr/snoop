@@ -25,7 +25,7 @@ Snoop — это исследовательская работа (собстве
 | IOS                   |     🚫    |
 | WSL                   |     🚫    |
 
-[Snoop Full version database 1500_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop Full version database 1500+_websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 Snoop for OS Windows and GNU/Linux
 ==================================
@@ -249,8 +249,8 @@ $ python3 snoop.py --update y #Требуется установка Git.
 |           |Недостаточная скорость интернет соединения EDGE / 3G   |    2    |
 |           |Слишком низкое значение опции '-t'                     |    2    |
 |           |недопустимое username                                  |    3    |
-|           |Ошибки: [GipsysTeam; RamblerDating; Mamochki]          |    7    |
-|           |Ошибки: [Virtualireland]                               |    7    |
+|           |Ошибки соединения: [GipsysTeam; RamblerDaing]          |    7    |
+|           |Ошибки соединения: [Virtualireland; Ddo; Mamochki]     |    7    |
 | ========= |=======================================================| ======= |
 | Провайдер |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
@@ -284,7 +284,7 @@ $ python3 snoop.py -t 15 username
 
 6. Не обращать внимание, сайты иногда уходят на ремонтные работы и возвращаются в строй.
 
-7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с некоторыми обновлениями в дистрибутивах GNU/Linux.  
+7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с openssl в некоторых дистрибутивах GNU/Linux.  
 Решение:
 ```
 $ sudo nano /etc/ssl/openssl.cnf
