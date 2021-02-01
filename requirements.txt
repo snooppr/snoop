@@ -6,6 +6,6 @@ lxml==4.6.2
 playsound==1.2.2
 requests==2.25.1
 requests-futures==1.0.0
-rich==1.2.3
+rich==9.10.0
 soupsieve==2.1
 speedtest-cli==2.1.2

@@ -5,18 +5,10 @@
 def nettest():
     from colorama import Fore, Style, init
     import sys
-    try:
-        import speedtest
-    except ModuleNotFoundError:
-        print(f"Установить модуль 'speedtest', в GNU команда:\n" + \
-        Style.BRIGHT + Fore.RED + "cd ~/snoop && python3 -m pip install -r requirements.txt" + \
-        Style.RESET_ALL)
-        sys.exit(0)
+    import speedtest
 
     servers = []
     threads = None
-
-    print("\n\033[36mОжидайте, идёт самотестирование сети...\033[0m\n")
 
     s = speedtest.Speedtest()
     s.get_servers(servers)
