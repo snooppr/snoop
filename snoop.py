@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 
+import base64
 import csv
 import json
 import locale
@@ -16,58 +17,79 @@ import subprocess
 import sys
 import time
 import webbrowser
-import base64
 
 from argparse import ArgumentTypeError
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from collections import Counter
 from colorama import Fore, Style, init
-if sys.platform == 'win32':
-    from concurrent.futures import ThreadPoolExecutor
-else:
-    from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
-from rich.progress import (BarColumn, Progress, TimeRemainingColumn)
+from rich.progress import (track,BarColumn,TimeRemainingColumn,SpinnerColumn,TimeElapsedColumn,Progress)
+from rich.panel import Panel
+from rich.style import Style as STL
+from rich.console import Console
+from rich.table import Table
 
 if sys.platform == 'win32':
     locale.setlocale(locale.LC_ALL, '')
+
 init(autoreset=True)
+console = Console()
 
 print ("""\033[36m
   ___|                          
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.8\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.9\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 if sys.platform == 'win32':
-	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
-	print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)
-	print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
-	print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
-	print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
-	print (Fore.CYAN + "==================================================\n" + Style.RESET_ALL)
+    print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
+    print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)
+    print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
+    print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+    print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
+    console.rule(characters = '=', style="cyan")
+    print("")
 else:
-	print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
-	print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
-	print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
-	print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
-	print (Fore.CYAN + " python3 snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
-	print (Fore.CYAN + "===================================================\n" + Style.RESET_ALL)
+    print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
+    print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
+    print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
+    print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+    print (Fore.CYAN + " python3 snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
+    console.rule(characters = '=', style="cyan")
+    print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.8_rus Snoop (source demo)"
+version = "1.2.9_rus Snoop (source demo)"
 
 dirresults = os.getcwd()
 timestart = time.time()
 time_data = time.localtime()
-censors = 0
+censors = 1
 recensor = 0
+czr=19
 
-#для full версий используется просто base32, вы в праве за это поблагодарить/пожертвовать на развитие проекта'python3 snoop.py --donate y'
-def fff():
+# date +%s конвертер
+e_mail = 'Demo: snoopproject@protonmail.com'
+# лицензия: число/месяц/год:
+ts = (2022, 2, 1, 3, 0, 0, 0, 0, 0) 
+date_up = int(time.mktime(ts)) #дата в секундах с начала эпохи
+up1 = time.gmtime(date_up)
+Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}") #в UTC (-3 часа)
+
+if time.time() > int(date_up):
+    print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии")
+    sys.exit(0)
+else:
+    pass
+
+def ravno():
+    console.rule(characters = '=', style="cyan bold")
+
+def DB():
     try:
         with open('BDdemo', "r", encoding="utf8") as z:
             dd = z.read()
@@ -76,13 +98,13 @@ def fff():
             rt1 = d1[::-1]
             d2 = base64.b64decode(rt1)
             s12 = d2.decode("UTF-8")
-            bbb1 = json.loads(s12)
-            return bbb1
+            trinity = json.loads(s12)
+            return trinity
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
         sys.exit(0)
 
-def kkk():
+def DBflag():
     try:
         with open('BDflag', "r", encoding="utf8") as z1:
             d11 = z1.read()
@@ -91,15 +113,15 @@ def kkk():
             rt11 = t11[::-1]
             d22 = base64.b64decode(rt11)
             s112 = d22.decode("UTF-8")
-            ccc1 = json.loads(s112)
-            return ccc1
+            neo = json.loads(s112)
+            return neo
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
         sys.exit(0)
 
-# Флаг БС
+# Флаг БС.
 def baza():
-    BS = fff()
+    BS = DB()
     flagBS = len(BS)
     return BS
 flagBS = len(baza())
@@ -144,23 +166,16 @@ class ElapsedFuturesSession(FuturesSession):
 
 def print_info(title, info, color=True):
     if color:
-        print(Fore.GREEN + "[" +
-            Fore.YELLOW + "*" +
-            Fore.GREEN + f"] {title}" +
-            Fore.RED + "\033[5m <\033[0m" +
-            Fore.WHITE + f" {info}" +
-            Fore.RED + "\033[5m >\033[0m")
+        print(Fore.GREEN + "[" + Fore.YELLOW + "*" + Fore.GREEN + f"] {title}" + Fore.RED + "\033[5m <\033[0m" + Fore.WHITE + f" {info}" +
+        Fore.RED + "\033[5m >\033[0m")
     else:
         print(f"\n[*] {title} {info}:")
 
 
 def print_error(err, errstr, var, verbose=False, color=True):
     if color:
-        print(Fore.CYAN + "[" +
-            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
-            Fore.CYAN + "]" +
-            Style.BRIGHT + Fore.RED + f" {errstr}" +
-            Style.BRIGHT + Fore.YELLOW + f" {var}" + f" {err if verbose else ''}")
+        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + Style.BRIGHT +
+        Fore.RED + f" {errstr}" + Style.BRIGHT + Fore.YELLOW + f" {var}" + f" {err if verbose else ''}")
         try:
             playsound('err.wav')
         except:
@@ -169,30 +184,26 @@ def print_error(err, errstr, var, verbose=False, color=True):
         print(f"[-] {errstr} {var} {err if verbose else ''}")
 
 
-# Вывод на печать на разных платформах.
+# Вывод на печать на разных платформах, индикация.
 if sys.platform == 'win32':
     def print_found_country(social_network, url, countryB, response_time=False, verbose=False, color=True):
         if color:
-            print(Style.BRIGHT + Fore.CYAN + f" {countryB}" +
-                Fore.GREEN + f" {social_network}:", url)
+            print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {countryB}" + Fore.GREEN + f" {social_network}:", Style.RESET_ALL +
+            Fore.GREEN + f"{url}")
         else:
             print(f"[+] {social_network}: {url}")
 else:
     def print_found_country(social_network, url, countryA, response_time=False, verbose=False, color=True):
         if color:
-            print(countryA, (Style.BRIGHT +
-                Fore.GREEN + f" {social_network}:"), url)
+            print(countryA, (Style.BRIGHT + Fore.GREEN + f" {social_network}:"), Style.RESET_ALL + Fore.GREEN + f"{url}")
         else:
             print(f"[+] {social_network}: {url}")
 
 
 def print_not_found(social_network, response_time, verbose=False, color=True):
     if color:
-        print((Fore.CYAN + "[" +
-            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
-            Fore.CYAN + "]" +
-            Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
-            Style.BRIGHT + Fore.YELLOW + " Увы!"))
+        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
+        Style.BRIGHT + Fore.GREEN + f" {social_network}:" + Style.BRIGHT + Fore.YELLOW + " Увы!")
     else:
         print(f"[-] {social_network}: Увы!")
 
@@ -200,42 +211,79 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
 def print_invalid(mes, social_network, message, color=True):
     """Ошибка вывода результата"""
     if color:
-        print((Fore.RED + "............[" +
-            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
-            Fore.RED + "]" +
-            Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
-            Style.RESET_ALL + Fore.YELLOW + f" {message}"))
+        print(Style.RESET_ALL + Fore.RED + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.RED + "]" +
+        Style.BRIGHT + Fore.GREEN + f" {social_network}:" + Style.RESET_ALL + Fore.YELLOW + f" {message}")
     else:
         print(f"[-] {social_network} {message}")
 
-def print_invalid2(mes, social_network, message, color=True):
-    """Ошибка вывода результата verbose"""
-    if color:
-        print((Fore.RED + ".............[" +
-            Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL +
-            Fore.RED + "]" +
-            Style.BRIGHT + Fore.GREEN + f" {social_network}:" +
-            Style.RESET_ALL + Fore.YELLOW + f" {message}"))
-    else:
-        print(f"[-] {social_network} {message}")
-
-def get_response(request_future, error_type, social_network, verbose=False, color=True):
+# Вернуть результат future for2.
+def get_response(request_future, error_type, social_network, print_found_only=False, verbose=False, color=True):
     try:
         res = request_future.result()
         if res.status_code:
             return res, error_type, res.elapsed
     except requests.exceptions.HTTPError as err1:
-        print_error(err1, "HTTP Error:", social_network, verbose, color)
+        if print_found_only==False:
+            print_error(err1, "HTTP Error:", social_network, verbose, color)
+        else:
+            pass
     except requests.exceptions.ConnectionError as err2:
         global censors
         censors +=1
-        print_error(err2, "Ошибка соединения:", social_network, verbose, color)
+        if print_found_only==False:
+            print_error(err2, "Ошибка соединения:", social_network, verbose, color)
+        else:
+            pass
     except requests.exceptions.Timeout as err3:
-        print_error(err3, "Timeout ошибка:", social_network, verbose, color)
+        if print_found_only==False:
+            print_error(err3, "Timeout ошибка:", social_network, verbose, color)
+        else:
+            pass
     except requests.exceptions.RequestException as err4:
-        print_error(err4, "Непредвиденная ошибка", social_network, verbose, color)
+        if print_found_only==False:
+            print_error(err4, "Непредвиденная ошибка", social_network, verbose, color)
+        else:
+            pass
     return None, "", -1
+# Сохранение отчетов опция (-S).
+def sreports(url, headers,session2,error_type, username,social_network,r):
+    try:
+        os.makedirs(str(dirresults + f"/results/save reports/{username}"))
+    except:
+        pass
+# Сохранять отчеты для метода: redirection.
+    if error_type == "redirection":
+        try:
+            future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
+            response = future2.result()
+            try:
+                with open(f"results/save reports/{username}/{social_network}.html",
+                'w', encoding=r.encoding) as repre:
+                    repre.write(response.text)
+            except:
+                pass
+        except requests.exceptions.ConnectionError:
+            time.sleep(1)
+            try:
+                future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=2)
+                response = future2.result()
+                try:
+                    with open(f"results/save reports/{username}/{social_network}.html",
+                    'w', encoding=r.encoding) as repre:
+                        repre.write(response.text)
+                except:
+                    pass
+            except:
+                pass
+# Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
+    else:
+        try:
+            with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
+                rep.write(r.text)
+        except:
+            pass
 
+# Основная функция.
 def snoop(username, site_data, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True, cert=False):
     username = re.sub(" ", "%20", username)
 
@@ -298,9 +346,6 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 # Создание futures на все запросы. Это позволит распараллетить запросы.
     for social_network, net_info in site_data.items():
-#        print([iz for iz in site_data]) #Тест вывода ключей (названия сайтов)
-#        print(social_network) #(названия сайтов, строки)
-# Результаты анализа конкретного сайта.
         results_site = {}
 
 # Запись URL основного сайта и флага страные (сопоставление с data.json).
@@ -308,8 +353,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         results_site['flagcountryklas'] = net_info.get("country_klas")
         results_site['url_main'] = net_info.get("urlMain")
 
-# Пользовательский user-agent браузера, некоторые сайты от этого зависят напрямую.
-# Чтобы не думали, что запросы идут от ботов.
+# Пользовательский user-agent браузера.
 
         RandHead = (["{'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}",
         "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'}",
@@ -386,262 +430,225 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 # print(results_site) # Проверка записи на успех.
     li_time = []
-    if color == True and verbose == False:
-        progress1 = Progress(BarColumn(bar_width=6),
-        "[progress.percentage]{task.percentage:>3.0f}%", auto_refresh=False)
-    else:
-        progress1 = Progress(auto_refresh=False)
-    if verbose == True:
-        if color:
-            progress1 = Progress(TimeRemainingColumn(),
-            "[progress.percentage]{task.percentage:>3.0f}%", auto_refresh=False)
+    if verbose == False:
+        if sys.platform != 'win32':
+            progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=random.choice(["dots", "dots12"])),
+            "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan', finished_style='cyan bold'),
+            auto_refresh=False)#transient=True) #исчезает прогресс
         else:
-            progress1 = Progress(auto_refresh=False)
+            progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%",
+            BarColumn(bar_width=None, complete_style='cyan', finished_style='cyan bold'),
+            auto_refresh=False)#transient=True) #исчезает прогресс
+    else:
+        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
 
-    for social_network, net_info in progress1.track(site_data.items(), description=""):
-        if color:
-            progress1.refresh()
-# Получить результаты снова.
-        results_site = results_total.get(social_network)
-
+    with progress:
+        if color == True:
+            task0 = progress.add_task("", total=len(site_data.items()))
+# Получить результаты и пройтись по массиву future.
+        for social_network, net_info in site_data.items():
+            if color == True:
+                progress.update(task0, advance=1)
+                progress.refresh()
+            results_site = results_total.get(social_network)
 # Получить другую информацию сайта снова.
-        url = results_site.get("url_user")
-        countryA = results_site.get("flagcountry")
-        countryB = results_site.get("flagcountryklas")
-        exists = results_site.get("exists")
-        if exists is not None:
-            continue
-
+            url = results_site.get("url_user")
+            countryA = results_site.get("flagcountry")
+            countryB = results_site.get("flagcountryklas")
+            exists = results_site.get("exists")
+            if exists is not None:
+                continue
 # Получить ожидаемый тип данных 4 методов.
-        error_type = net_info["errorTypе"]
-
+            error_type = net_info["errorTypе"]
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
-        http_status = "*???"
-        response_text = ""
-
+            http_status = "*???"
+            response_text = ""
 # Получить future и убедиться, что оно закончено.
-        future = net_info["request_future"]
-        r, error_type, response_time = get_response(request_future=future,
-                                                    error_type=error_type,
-                                                    social_network=social_network,
-                                                    verbose=verbose,
-                                                    color=color)
-        if norm == False:
-            A1 = str(future)
-            if r is None and 'raised ConnectionError' in A1:
-                for _ in range(3):
-                    global recensor
-                    recensor += 1
-                    if color:
-                        progress1.refresh()
-                        print(Fore.GREEN + "повторное соединение" + Style.RESET_ALL)
-                    else:
-                        print("повторное соединение")
-                    head1 = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}
-                    time.sleep(0.2)
-                    progress1.refresh() if color == True else ''
-                    future1 = session3.get(url=url, headers=head1, allow_redirects=allow_redirects,
-                    timeout=1.5)
-                    r, error_type, response_time = get_response(request_future=future1,
-                                                                error_type=net_info.get("errorTypе"),
-                                                                social_network=social_network,
-                                                                verbose=verbose,
-                                                                color=color)
-                    if r is not None:
-                        break
-
+            future = net_info["request_future"]
+            r, error_type, response_time = get_response(request_future=future,
+                                                        error_type=error_type,
+                                                        social_network=social_network,
+                                                        print_found_only=print_found_only,
+                                                        verbose=verbose,
+                                                        color=color)
+# Повторное соединение через новую сессию быстрее, чем через adapter timeout*2=дольше.
+            if norm == False:
+#                print(future)
+                A1 = str(future)
+                if r is None and 'raised ConnectionError' in A1:
+                    for _ in range(3):
+                        global recensor
+                        recensor += 1
+                        if color:
+                            if print_found_only==False:
+                                print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
+                                Style.BRIGHT + Fore.GREEN + "    └──повторное соединение" + Style.RESET_ALL)
+                        else:
+                            if print_found_only==False:
+                                print("повторное соединение")
+                        head1 = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'}
+                        time.sleep(0.2)
+                        future1 = session3.get(url=url, headers=head1, allow_redirects=allow_redirects,
+                        timeout=1.5)
+                        r, error_type, response_time = get_response(request_future=future1,
+                                                                    error_type=net_info.get("errorTypе"),
+                                                                    social_network=social_network,
+                                                                    print_found_only=print_found_only,
+                                                                    verbose=verbose,
+                                                                    color=color)
+                        if r is not None:
+                            break
 # Попытка получить информацию запроса.
-        try:
-            http_status = r.status_code
-        except:
-            pass
-        try:
-            response_text = r.text.encode(r.encoding)
-        except:
-            pass
-
-# Сохранение отчетов опция (-S)
-        def sreports():
             try:
-                os.makedirs(str(dirresults + f"/results/save reports/{username}"))
+                http_status = r.status_code
             except:
                 pass
-# Сохранять отчеты для метода: redirection.
-            if error_type == "redirection":
-                try:
-                    future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
-                    response = future2.result()
-                    with open(f"results/save reports/{username}/{social_network}.html",
-                    'w', encoding=r.encoding) as repre:
-                        repre.write(response.text)
-                except requests.exceptions.ConnectionError:
-                    time.sleep(1)
-                    try:
-                        future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=timeout)
-                        response = future2.result()
-                        with open(f"results/save reports/{username}/{social_network}.html",
-                        'w', encoding=r.encoding) as repre:
-                            repre.write(response.text)
-                    except:
-                        pass
-# Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
-            else:
-                with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
-                    rep.write(r.text)
-
+            try:
+                response_text = r.text.encode(r.encoding)
+            except:
+                pass
 
 # Проверка, 4 методов; #1.
 # Ответы message (разные локации).
-        if error_type == "message":
-            error = net_info.get("errorMsg")
-            error2 = net_info.get("errоrMsg2")
-            if net_info.get("errorMsg2"):
-                sys.exit()
-#            print(r.text) #проверка ответа (+- '-S')
-            if error2 in r.text:
-                if not print_found_only:
-                    print_not_found(social_network, response_time, verbose, color)
-                exists = "увы"
-            elif error in r.text:
-                if not print_found_only:
-                    print_not_found(social_network, response_time, verbose, color)
-                exists = "увы"
-            else:
-                if sys.platform == 'win32':
-                    print_found_country(social_network, url, countryB, response_time, verbose, color)
+            if error_type == "message":
+                error = net_info.get("errorMsg")
+                error2 = net_info.get("errоrMsg2")
+                if net_info.get("errorMsg2"):
+                    sys.exit()
+#                print(r.text) #проверка ответа (+- '-S')
+#                print(r.status_code) #Проверка ответа
+                if error2 in r.text:
+                    if not print_found_only:
+                        print_not_found(social_network, response_time, verbose, color)
+                    exists = "увы"
+                elif error in r.text:
+                    if not print_found_only:
+                        print_not_found(social_network, response_time, verbose, color)
+                    exists = "увы"
                 else:
-                    print_found_country(social_network, url, countryA, response_time, verbose, color)
-                exists = "найден!"
-                if reports:
-                    sreports()
-#            print(r.text) #Проверка ответа
+                    if sys.platform == 'win32':
+                        print_found_country(social_network, url, countryB, response_time, verbose, color)
+                    else:
+                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    exists = "найден!"
+                    if reports:
+                        sreports(url, headers,session2,error_type, username,social_network,r)
+
 # Проверка, 4 методов; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
-        elif error_type == "redirection":
-#            print(r.text) #проверка ответа (+- '-S')
-            if r.status_code == 301 or r.status_code == 303:
-                if sys.platform == 'win32':
-                    print_found_country(social_network, url, countryB, response_time, verbose, color)
+            elif error_type == "redirection":
+#                print(r.text) #проверка ответа (+- '-S')
+#                print(r.status_code) #Проверка ответа
+                if r.status_code == 301 or r.status_code == 303:
+                    if sys.platform == 'win32':
+                        print_found_country(social_network, url, countryB, response_time, verbose, color)
+                    else:
+                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    exists = "найден!"
+                    if reports:
+                        sreports(url, headers,session2,error_type, username, social_network,r)
                 else:
-                    print_found_country(social_network, url, countryA, response_time, verbose, color)
-                exists = "найден!"
-                if reports:
-                    sreports()
-            else:
-                if not print_found_only:
-                    print_not_found(social_network, response_time, verbose, color)
-                exists = "увы"
+                    if not print_found_only:
+                        print_not_found(social_network, response_time, verbose, color)
+                    exists = "увы"
 
 # Проверка, 4 методов; #3.
 # Проверяет, является ли код состояния ответа 2..
-        elif error_type == "status_code":
-#            print(r.text) #проверка ответа (+- '-S')
-            if not r.status_code >= 300 or r.status_code < 200:
-                if sys.platform == 'win32':
-                    print_found_country(social_network, url, countryB, response_time, verbose, color)
+            elif error_type == "status_code":
+#                print(r.text) #проверка ответа (+- '-S')
+#                print(r.status_code) #Проверка ответа
+                if not r.status_code >= 300 or r.status_code < 200:
+                    if sys.platform == 'win32':
+                        print_found_country(social_network, url, countryB, response_time, verbose, color)
+                    else:
+                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    if reports:
+                        sreports(url, headers,session2,error_type, username, social_network,r)
+                    exists = "найден!"
                 else:
-                    print_found_country(social_network, url, countryA, response_time, verbose, color)
-                if reports:
-                    sreports()
-                exists = "найден!"
-            else:
-                if not print_found_only:
-                    print_not_found(social_network, response_time, verbose, color)
-                exists = "увы"
+                    if not print_found_only:
+                        print_not_found(social_network, response_time, verbose, color)
+                    exists = "увы"
 
 # Проверка, 4 методов; #4
 # Перенаправление.
-        elif error_type == "response_url":
-#            print(r.text) #проверка ответа (+- '-S')
-            if 200 <= r.status_code < 300:
-                if sys.platform == 'win32':
-                    print_found_country(social_network, url, countryB, response_time, verbose, color)
+            elif error_type == "response_url":
+#                print(r.text) #проверка ответа (+- '-S')
+#                print(r.status_code) #Проверка ответа
+                if 200 <= r.status_code < 300:
+                    if sys.platform == 'win32':
+                        print_found_country(social_network, url, countryB, response_time, verbose, color)
+                    else:
+                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    if reports:
+                        sreports(url, headers,session1,error_type, username, social_network,r)
+                    exists = "найден!"
                 else:
-                    print_found_country(social_network, url, countryA, response_time, verbose, color)
-                if reports:
-                    sreports()
-                exists = "найден!"
+                    if not print_found_only:
+                        print_not_found(social_network, response_time, verbose, color)
+                    exists = "увы"
+
+# Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за каптчи (желтый).
             else:
                 if not print_found_only:
-                    print_not_found(social_network, response_time, verbose, color)
-                exists = "увы"
-#            print(r.text) #Проверка ответа
-
-# Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за каптчи (желтый)
-        else:
-            if not print_found_only and verbose == False:
-                print_invalid("", social_network, "*ПРОПУСК", color)
-            elif not print_found_only and verbose == True:
-                print_invalid2("", social_network, "*ПРОПУСК", color)
-            exists = "блок"
+                    print_invalid("", social_network, "*ПРОПУСК", color)
+                exists = "блок"
 
 # Считать тайминги приближенно.
-        ello = float(time.time() - timestart)
-        li_time.append(ello)
-        dif_time = []
+            ello = float(time.time() - timestart)
+            li_time.append(ello)
+            dif_time = []
 
 # Считать тайминги с высокой точностью.
-        try:
-            time_site = str(response_time).rsplit(sep=':', maxsplit=1)[1]
-            time_site=round(float(time_site)*1000)
-        except:
-            time_site = str("-")
+            try:
+                time_site = str(response_time).rsplit(sep=':', maxsplit=1)[1]
+                time_site=round(float(time_site)*1000)
+            except:
+                time_site = str("-")
 
-        for i in (li_time[-2:-1]):
-            i
-            for i1 in (li_time[-1:]):
-                i1
-            dif = (i1-i)
-            dif_time.append(dif)
+            for i in (li_time[-2:-1]):
+                i
+                for i1 in (li_time[-1:]):
+                    i1
+                dif = (i1-i)
+                dif_time.append(dif)
 
 # Опция '-v'.
-            if verbose == True:
-                if color == False:
-                    if print_found_only == True:
-                        if exists == "найден!" or exists == "блок":
-                            print(f"[*{time_site} ms ответ]" + \
-                            f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
-                    else:
-                        print(f"[*{time_site} ms ответ]" + \
-                        f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
-                if color == True:
-                    if print_found_only == True:
-                        if exists == "найден!" or exists == "блок":
-                            if dif > 5:
-                                print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms ответ]"
-                                f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
-                            else:
-                                print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms ответ]" + \
-                                f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
-                    else:
-                        if dif > 5:
-                            print(Style.BRIGHT + Fore.RED + f"[**{time_site} ms ответ]" + \
-                            f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                if verbose == True:
+                    time_ello=("%.0f" % float(ello*1000))
+                    if color == True:
+                        if dif > 5: #задержка в общем времени
+                            console.print(f"[cyan][**{time_site} ms ответ] -->", f"[bold red][*{time_ello} ms общего времени]")
+                            console.rule("", style="bold red")
                         else:
-                            print(Style.BRIGHT + Fore.CYAN + f"[**{time_site} ms ответ]" + \
-                            f"────────────────────────────────────────[%.0f" % float(ello*1000) + " ms]")
+                            console.print(f"[cyan][**{time_site} ms ответ] -->", f"[cyan][*{time_ello} ms общего времени]")
+                            console.rule("", style="bold blue")
+                    else:
+                        console.print(f"[**{time_site} ms ответ] -->", f"[*{time_ello} ms общего времени]",highlight=False)
+                        console.rule(style="color")
 
 # Служебная информация для CSV.
-        response_time_site_ms = 0
-        for response_time_site_ms in dif_time:
-            response_time_site_ms
+            response_time_site_ms = 0
+            for response_time_site_ms in dif_time:
+                response_time_site_ms
 
 # Сохранить сущ.флаг.
-        results_site['exists'] = exists
+            results_site['exists'] = exists
 
 # Сохранить результаты из запроса.
-        results_site['countryCSV'] = countryB
-        results_site['http_status'] = http_status
-        results_site['check_time_ms'] = time_site
-        results_site['response_time_ms'] = round(float(ello*1000))
-        if response_time_site_ms*1000 < 250:
-            results_site['response_time_site_ms'] = "нет"
-        else:
-            results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
+            results_site['countryCSV'] = countryB
+            results_site['http_status'] = http_status
+            results_site['check_time_ms'] = time_site
+            results_site['response_time_ms'] = round(float(ello*1000))
+            if response_time_site_ms*1000 < 250:
+                results_site['response_time_site_ms'] = "нет"
+            else:
+                results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
-        results_total[social_network] = results_site
+            results_total[social_network] = results_site
 
-    return results_total
+        return results_total
 
 
 # Опция '-t'.
@@ -658,20 +665,14 @@ def timeout_check(value):
 
 # Обновление Snoop.
 def update_snoop():
-    if sys.platform == 'win32':
-        upd = str(input("""Вы действительно хотите:
+    print(
+"""\033[36mВы действительно хотите:
                     __             _  
    ._  _| _._|_ _  (_ ._  _  _ ._   ) 
 |_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
    |                           |    
-нажмите 'y' """))
-    else:
-        upd = str(input("""\033[36mВы действительно хотите:
-                    __             _  
-   ._  _| _._|_ _  (_ ._  _  _ ._   ) 
-|_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
-   |                           |    
-нажмите\033[0m 'y' """))
+нажмите\033[0m 'y' """)
+    upd = str(input())
 
     if upd == "y":
         if sys.platform == 'win32':
@@ -681,31 +682,33 @@ def update_snoop():
             print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
             os.system("./update.sh")
 
+    
+    print(Style.BRIGHT + Fore.RED + "\nВыход")
+    sys.exit(0)
 
 # ОСНОВА.
 def run():
 
-# Запрос лицензии.
+# Лицензия.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
 
     version_snoop = f"\033[37m{cop}\033[0m\n" + \
                     f"\033[36mSnoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}\033[36m\n" + \
-                    f"\033[36m%(prog)s: {version}\033[36m\n" +  \
+                    f"\033[36mBuild: {version}\033[36m\n" +  \
                     f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
                     f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
 
-
-
 # Пожертвование.
-    donate = ("""
-Snoop Demo Version (Публичная оферта)
+    def donate():
+        print("""
+\033[32;1mSnoop Demo Version (Публичная оферта)\033[0m \033[36m
 ===============================================================================
-╭donate/buy                                                                   ||
-├──Яндекс.Деньги (yoomoney): \033[37m4100111364257544\033[0m                                 ||
-├──Visa: \033[37m4274320047338002\033[0m                                                     ||
-└──PayPal: \033[37msnoopproject@protonmail.com\033[0m                                        ||
-                                                                              ||
+╭donate/Buy:                                                                  ||
+├──Яндекс.Деньги (yoomoney): \033[37m4100111364257544\033[0m                                 \033[36m||
+├──Visa: \033[37m4274320047338002\033[0m                                                     \033[36m||
+└──PayPal:\033[0m \033[37msnoopproject@protonmail.com\033[0m                                        \033[36m||
+==============================================================================\033[0m||
 Если вас заинтересовала Snoop Demo Version, Вы можете официально приобрести   ||
 \033[36mSnoop Full Version\033[0m, поддержав развитие проекта \033[32;1m20$\033[0m или \033[32;1m1400р\033[0m.                 ||
 При пожертвовании/покупке в сообщении укажите информацию в таком порядке:     ||
@@ -729,7 +732,15 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
 \033[36msnoopproject@protonmail.com\033[0m                                                   ||
 ==============================================================================||
 Исходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                                ||""")
-
+        print("==============================================================================||\n",
+              Fore.CYAN + f"Ограничения Demo Version: Websites (Database Snoop сокращена в > 19 раз);    ||\n"
+              f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
+              f"Snoop Full Version: 1500+ Websites; поддержка и обновление Database Snoop.    ||\n"
+          	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
+              f"===============================================================================\n")
+        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
+        print(Style.BRIGHT + Fore.RED + "Выход")
+        sys.exit(0)
 
 # Назначение опций Snoop.
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
@@ -838,28 +849,17 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
 
 # Информативный вывод:
     if args.module:
-        from rich.console import Console
-        from rich.table import Table
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
         def module():
-            if sys.platform != 'win32':
-                mod = input(
+            print(
 """\n\033[36m╭Выберите плагин из списка\033[0m
 \033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m
 \033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m
 \033[36m├──\033[0m\033[36;1m[3] --> Yandex_parser\033[0m
 \033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m
-\033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n"""
-                        )
-            else:
-                mod = input(
-"""\nВыберите плагин из списка
-├──[1] --> GEO_IP/domain
-├──[2] --> Reverse Vgeocoder
-├──[3] --> Yandex_parser
-├──[help] --> Справка
-└──[q] --> Выход\n"""
-                        )
+\033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n""")
+            mod = input()
+
             if mod == 'help':
                 print("""\033[32;1m└──[Справка]\033[0m
 
@@ -870,22 +870,23 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
 IPv4/v6; GEO-координаты/ссылку; локация
     (лёгкий ограниченный поиск).
 
-2) Реализует онлайн поиск цели по массиву данных: и предоставляет статистическую и визуализированную информацию:
+2) Реализует онлайн поиск цели по списку данных: и предоставляет статистическую и визуализированную информацию:
 IPv4/v6; GEO-координаты/ссылки; страны/города; отчеты в CLI/txt/csv форматах; предоставляет визуализированный отчет на картах OSM
     (умеренный не быстрый поиск: ограничения запросов:: 15к/час; не предоставляет информацию о провайдерах).
 
-3) Реализует офлайн поиск цели по массиву данных, используя БД: и предоставляет статистическую и визуализированную информацию:
+3) Реализует офлайн поиск цели по списку данных, используя БД: и предоставляет статистическую и визуализированную информацию:
 IPv4/v6; GEO-координаты/ссылки; локации; провайдеры; отчеты в CLI/txt/csv форматах; предоставляет визуализированный отчет на картах OSM
     (сильный и быстрый поиск).
 
 Результаты по 1 и 2 методу могут отличаться и быть неполными - зависит от персональных настроек DNS/IPv6 пользователя.
-Массив данных — текстовый файл, который пользователь указывает в качестве цели, и который содержит ip или domain или url (или их комбинации).
+Список данных — текстовый файл, который пользователь указывает в качестве цели, и который содержит ip, domain или url (или их комбинации).
 
 \033[32;1m============================
 | Плагин Reverse Vgeocoder |
 ============================\033[0m\n
 \033[32mОбратный простенький геокодер для визуализации координат на карте OSM.
-Плагин реализует оффлайн поиск цели по заданным координатам и предоставляет статистическую и визуализированную информацию.
+Плагин реализует оффлайн поиск цели по заданным геокоординатам и предоставляет статистическую и визуализированную информацию.
+С помощью данного плагина пользователь способен получить и проанализировать информацию о тысячах геокоординат за несколько секунд.
 Предназначение плагина — CTF.
 В будущем 'Reverse Vgeocoder' планируется развить до ПРО-уровня.\033[0m
 
@@ -893,35 +894,34 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 | Плагин Yandex_parser |
 ========================\033[0m\n
 \033[32mПлагин позволяет получить информацию о пользователе/пользователях сервисов Яндекс:
-Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Район; Я_Коллекции; Я_Диск; E-mail, Name.
+Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Коллекции; Я_Диск; E-mail, Name.
 И связать полученные данные между собой с высокой скоростью и масштабно.
 Предназначение — OSINT.
 
 Плагин разработан на идее и материалах уязвимости, отчёт был отправлен Яндексу в рамках программы «Охота за ошибками».
 Попал в зал славы, получил финансовое вознаграждение, а Яндекс исправил 'ошибки' по своему усмотрению.
-Плагин Yandex_parser — работает с публичными данными.\033[0m""")
+Плагин Yandex_parser — работает с публичными данными.
 
-                print("\033[36;1m================================================================\033[0m")
+Подробнее о плагинах (скриншоты примеров) см. документацию Snoop Project.\033[0m""")
+
+                console.rule("[bold red]Конец справки")
                 module()
             elif mod == '1':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("GEO_IP/domain_v0.1", style="green")
-                table.add_row('Получение информации об ip/domain/url цели или массиве этих данных')
-                console = Console()
+                table.add_column("GEO_IP/domain_v0.2", style="green")
+                table.add_row('Получение информации об ip/domain/url цели или по списку этих данных')
                 console.print(table)
                 snoopplugins.module1()
             elif mod == '2':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("Reverse Vgeocoder_v0.2", style="green")
+                table.add_column("Reverse Vgeocoder_v0.3", style="green")
                 table.add_row('Визуализация Географических координат')
-                console = Console()
                 console.print(table)
                 snoopplugins.module2()
             elif mod == '3':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("Yandex_parser_v0.2", style="green")
-                table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Район; Я_Коллекции; Я_Диск; E-mail; Name.')
-                console = Console()
+                table.add_column("Yandex_parser_v0.3", style="green")
+                table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Коллекции; Я_Диск; E-mail; Name.')
                 console.print(table)
                 snoopplugins.module3()
             elif mod == 'q':
@@ -933,12 +933,19 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         module()
         sys.exit(0)
 
+# Опция  '-f' + "-v".
+    if args.verbose and args.print_found_only:
+        console.print(f"[yellow bold]Режим подробной вербализации [опция '-v'] отображает детальную информацию,\n\
+[опция '-f'] неуместна", f"\n\n[red bold]Выход")
+        sys.exit(0)
+# Опция  '-С'.
     if args.cert:
         print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах»")
+# Опция  '-cs' несовместимы.
     if args.site_list is not None and args.country == True:
-        print(Style.BRIGHT + Fore.RED + "[опция '-s'] несовместима с [опцией '-с']")
+        print(Style.BRIGHT + Fore.RED + "[опция '-c'] несовместима с [опцией '-s']")
         sys.exit(0)
-# Опция режима SNOOPnina > < нормальный режим
+# Опция режима SNOOPnina > < нормальный режим.
     if args.norm == False:
         sys.exit(0)
         print(Fore.CYAN + "[+] активирована опция '--': «режим SNOOPninja»")
@@ -950,11 +957,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Опция  '-S'.
     if args.reports:
         print(Fore.CYAN + "[+] активирована опция '-S': «сохранять странички найденных аккаунтов»")
-
 # Опция  '-n'.
     if args.no_func:
         print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер; прогресс»")
-
 # Опция  '-t'.
     try:
         if args.timeout:
@@ -965,7 +970,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Сортировка по странам '-с'.
     if args.country:
         patchjson = ("{}".format(args.json_file))
-        jsonjson = fff()
+        jsonjson = DB()
         print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
         country_sites = sorted(jsonjson, key=lambda k: ("country" not in k, jsonjson[k].get("country", sys.maxsize)))
         sortC = {}
@@ -975,35 +980,32 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Опция '-f'.
     if args.print_found_only:
         print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
-
 # Опция '-s'.
     if args.site_list:
         print(Fore.CYAN + "[+] активирована опция '-s': «будет произведён поиск user-a на 1-м выбранном website»\n"
         "    допустимо использовать опцию '-s' несколько раз\n"
         "    [опция '-s'] несовместима с [опцией '-с']")
-
 # Опция '-v'.
     if args.verbose:
-        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»")
-        networktest.nettest()
-
+        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
+        with console.status("[cyan]Ожидайте, идёт самотестирование сети..."):
+            networktest.nettest()
+            console.log("[cyan]--> тест сети")
 
 # Опция '--list all'.
     if args.listing:
-        from rich.console import Console
-        from rich.table import Table
+        print(
+"\033[36m\nСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
+"по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n" + \
+"\033[36mВыберите действие...\033[0m\n")
+        sortY = str(input())
 
-        if sys.platform == 'win32':
-            sortY = str(input("Сортировать БД Snoop по странам, по имени сайта или обобщенно ?\nпо странам — 1 по имени — 2 all — 3\n" + \
-            "Выберите действие..."))
-        else:
-            sortY = str(input("\033[36mСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
-            "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n" + \
-            "\033[36mВыберите действие...\033[0m\n"))
 # Общий вывод стран (3!).
+# Вывод для Demo Version.
         if sortY == "3":
-            print(Fore.CYAN + "========================\nOk, print All Country:\n")
-            datajson0 = fff()
+            console.rule("[cyan]Ok, print All Country:",style="cyan bold")
+            print("")
+            datajson0 = DB()
             cnt0 = Counter()
             li0 = []
             for con0 in datajson0:
@@ -1023,10 +1025,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             table.add_column("Страна:Кол-во websites", style="magenta")
             table.add_column("All", style="cyan", justify='full')
             table.add_row(flag_str_sum0, str(len(datajson0)))
-            console = Console()
             console.print(table)
+
 # Вывод для full Version.
-            datajson00 = kkk()
+            datajson00 = DBflag()
             cnt00 = Counter()
             li00 = []
             for con00 in datajson00:
@@ -1046,106 +1048,71 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             table.add_column("Страна:Кол-во websites", style="magenta")
             table.add_column("All", style="cyan", justify='full')
             table.add_row(flag_str_sum00, str(len(datajson00)))
-            console = Console()
             console.print(table)
             sys.exit(0)
 
-# Сортируем по алфавиту (2!).
-# Сортировка для ОС Win Full Version.
+# Сортируем по алфавиту для Full Version (2!).
         elif sortY == "2":
-            print(Fore.CYAN + "========================\nOk, сортируем по алфавиту:\n")
-            print(Fore.GREEN + "++Белый список Full Version++")
-            datajson = kkk()
+            console.rule("[cyan]Ok, сортируем по алфавиту:",style="cyan bold")
+            print(Fore.GREEN + "\n++Белый список Full Version++")
+            datajson = DBflag()
             i = 0
-            if sys.platform == 'win32':
-                for con in datajson:
+            for con in datajson:
+                if sys.platform == 'win32':
                     aaa = datajson.get(con).get("country_klas")
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                    print(Fore.CYAN + "================")
-# Сортировка для ОС GNU Full Version..
-            else:
-                for con in datajson:
+                else:
                     aaa = datajson.get(con).get("country")
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                    print(Fore.CYAN + "================")
-# Сортировка для ОС Win Demo Version.
+                i += 1
+                print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
+                print(Fore.CYAN + "================")
+# Сортировка по алфавиту для Demo Version (2!).
             print(Fore.GREEN + "\n++Белый список Demo Version++")
-            datajson = fff()
+            datajson = DB()
             i = 0
-            if sys.platform == 'win32':
-                for con in datajson:
+            for con in datajson:
+                if sys.platform == 'win32':
                     aaa = datajson.get(con).get("country_klas")
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                    print(Fore.CYAN + "================")
-# Сортировка для ОС GNU Demo Version.
-            else:
-                for con in datajson:
+                else:
                     aaa = datajson.get(con).get("country")
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                    print(Fore.CYAN + "================")
+                i += 1
+                print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
+                print(Fore.CYAN + "================")
             sys.exit(0)
 
-# Сортируем по странам (1!).
-# Сортировка для ОС Win Full Version.
+# Сортируем по странам для Full Version (1!).
         elif sortY == "1":
-            if sys.platform == 'win32':
-                listwindows = []
-                datajson = kkk()
-                for con in datajson:
+            listwindows = []
+            datajson = DBflag()
+            for con in datajson:
+                if sys.platform == 'win32':
                     aaa = (datajson.get(con).get("country_klas"))
-                    listwindows.append(f"{aaa}  {con}\n")
-                sort_spisok=sorted(listwindows)
-                print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
-                print(Fore.GREEN + "++Белый список Full Version++")
-                for i, numerlist in enumerate(sort_spisok):
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================")
-# Сортировка для ОС GNU Full Version.
-            else:
-                listlinux = []
-                datajson = kkk()
-                for con in datajson:
+                else:
                     aaa = (datajson.get(con).get("country"))
-                    listlinux.append(f"{aaa}  {con}\n")
-                sort_spisok=sorted(listlinux)
-                print(Fore.CYAN + "========================\nOk, сортируем по странам:\n")
-                print(Fore.GREEN + "++Белый список Full Version++")
-                for i, numerlist in enumerate(sort_spisok):
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================")
-# Сортировка для ОС Win Demo Version.
-            if sys.platform == 'win32':
-                listwindows = []
-                datajson = fff()
-                for con in datajson:
+                listwindows.append(f"{aaa}  {con}\n")
+            listwindows=sorted(listwindows)
+
+            console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold")
+            print(Fore.GREEN + "\n++Белый список++")
+            for i in enumerate(listwindows, 1):
+                print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
+                print(Fore.CYAN + "================")
+            listwindows.clear()
+
+# Сортировка по странам для Demo Version (1!).
+            datajson = DB()
+            for con in datajson:
+                if sys.platform == 'win32':
                     aaa = (datajson.get(con).get("country_klas"))
-                    listwindows.append(f"{aaa}  {con}\n")
-                sort_spisok=sorted(listwindows)
-                print(Fore.GREEN + "\n++Белый список Demo Version++")
-                for i, numerlist in enumerate(sort_spisok):
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================")
-# Сортировка для ОС GNU Demo Version.
-            else:
-                listlinux = []
-                datajson = fff()
-                for con in datajson:
+                else:
                     aaa = (datajson.get(con).get("country"))
-                    listlinux.append(f"{aaa}  {con}\n")
-                sort_spisok=sorted(listlinux)
-                print(Fore.GREEN + "\n++Белый список Demo Version++")
-                for i, numerlist in enumerate(sort_spisok):
-                    i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{numerlist}",end = '')
-                    print(Fore.CYAN + "================")
+                listwindows.append(f"{aaa}  {con}\n")
+            listwindows=sorted(listwindows)
+            print(Fore.GREEN + "\n++Белый список Demo Version++")
+            for i in enumerate(listwindows, 1):
+                print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
+                print(Fore.CYAN + "================")
             sys.exit(0)
+
 # Действие не выбрано.
         else:
             print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
@@ -1153,16 +1120,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Опция донат '-d y'.
     if args.donation:
-        print(donate)
-        print("==============================================================================||\n",
-              Fore.CYAN + f"Ограничения Demo Version: {flagBS} Websites (Database Snoop сокращена в > 19 раз); ||\n"
-              f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
-              f"Snoop Full Version: 1500+ Websites; поддержка и обновление Database Snoop.    ||\n"
-	      	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
-              f"===============================================================================\n")
-        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
-        print(Style.BRIGHT + Fore.RED + "Выход")
-        sys.exit(0)
+        donate()
 
 # Опция указания файла-списка разыскиваемых пользователей '-u'.
     if args.user:
@@ -1186,10 +1144,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Завершение обновления Snoop.
     if args.update:
-        print("\033[36m=======================\033[0m")
         update_snoop()
-        print("\033[36m=======================\n", Style.BRIGHT + Fore.RED +"\nВыход")
-        sys.exit(0)
 
 # Проверка остальных опций.
     site_data_all = None
@@ -1204,7 +1159,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             sys.exit(0)
         else:
             try:
-                a1 = fff()
+                a1 = DB()
             except:
                 print("\033[31;1mНеподдерживаемый формат базы данных\033[0m")
         try:
@@ -1215,13 +1170,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         except:
             print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
-# Опция '-w'
+# Опция '-w'.
     if args.web:
         print("\n\033[37m\033[44m{}".format("Функция '-w' действует только для пользователей Full version..."))
-        print(donate)
-        print("\033[31mВыход\033[0m")
-        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
-        sys.exit(0)
+        donate()
 
     if args.site_list is None:
 # Не желательно смотреть на подмножество сайтов.
@@ -1247,216 +1199,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 f"\033[31;1mОшибка:\033[0m \033[36mжелаемый сайт не найден в базе Snoop:: {', '.join(site_missing)}\033[0m")
             sys.exit(0)
 
-# Запуск с опцией '-u' (получаем 'username' из файла).
-# Крутим список юзеров.
-    if args.user:
+# Крутим user's.
+    def starts(SQ):
         kef_user=0
-        for username in userlist:
-            kef_user +=1
-            if args.country ==True:
-                results = snoop(username,
-                               sortC,
-                               country=args.country,
-                               user=args.user,
-                               verbose=args.verbose,
-                               cert=args.cert,
-                               reports=args.reports,
-                               norm=args.norm,
-                               print_found_only=args.print_found_only,
-                               timeout=args.timeout,
-                               color=not args.no_func)
-            else:
-                results = snoop(username,
-                               site_data,
-                               country=args.country,
-                               user=args.user,
-                               verbose=args.verbose,
-                               cert=args.cert,
-                               reports=args.reports,
-                               norm=args.norm,
-                               print_found_only=args.print_found_only,
-                               timeout=args.timeout,
-                               color=not args.no_func)
-
-            exists_counter = 0
-            try:
-                file_txt = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-#                raise Exception("")
-            except:
-                file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
-                "w", encoding="utf-8")
-            file_txt.write("Адрес | ресурс" + "\n\n")
-            for website_name in results:
-                timefinish = time.time() - timestart
-                dictionary = results[website_name]
-                if dictionary.get("exists") == "найден!":
-                    exists_counter += 1
-                    file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
-            file_txt.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-            file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
-            file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
-            file_txt.close()
-            print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
-            print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
-
-    # Запись в html.
-            try:
-                file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
-#                raise Exception("")
-            except:
-                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S",
-                time_data) + ".html", "w", encoding="utf-8")
-            file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
-            no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
-            <div id='particles-js'></div>\n\
-            <div id='report'>\n\n\
-            <h1><a class='GL' href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
-            file_html.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
-            <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
-            <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
-            file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) +
-            "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
-
-            cnt = Counter()
-            for website_name in results:
-                dictionary = results[website_name]
-                flag_sum=dictionary["flagcountry"]
-                if dictionary.get("exists") == "найден!":
-                    li = []
-                    li.append(flag_sum)
-                    exists_counter += 0
-                    for word in li:
-                        cnt[word] += 1
-                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+
-                    (website_name) + "</a>" + "</li>\n")
-            flag_str=str(cnt)
-            try:
-                flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
-                file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
-            except:
-                pass
-            file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-            file_html.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
-            file_html.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
-            file_html.write("""
-    <script>
-    function sortList() {
-      var list, i, switching, b, shouldSwitch;
-      list = document.getElementById('id777');
-      switching = true;
-      while (switching) {
-        switching = false;
-        b = list.getElementsByTagName("LI");
-        for (i = 0; i < (b.length - 1); i++) {
-          shouldSwitch = false;
-          if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-            shouldSwitch = true;
-            break;
-          }
-        }
-        if (shouldSwitch) {
-          b[i].parentNode.insertBefore(b[i + 1], b[i]);
-          switching = true;
-        }
-      }
-    }
-    </script>
-
-<script src="../../web/particles.js"></script>
-<script src="../../web/app.js"></script>
-
-<audio controls="controls" autoplay="autoplay" loop="loop">
-<source src="../../web/Megapolis (remix).mp3" type="audio/mpeg">
-</audio>
-
-<br>
-<audio controls="controls" loop="loop">
-<source src="../../web/for snoop in cyberpunk.mp3" type="audio/mpeg">
-</audio>
-
-<br><br>
-
-<a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">💊 Source Исходный код</span></a>
-<a target='_blank' href='https://sobe.ru/na/snoop_project_2020' class="DnA"><span class="DnSpan">💊 Donation Пожертвование</span></a>
-<br><br><br><br>
-
-</body>
-</html>""")
-            file_html.close()
-
-    # Запись в csv.
-            try:
-                file_csv = open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8")
-#                raise Exception("")
-            except:
-                file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
-            usernamsCSV = re.sub(" ", "_", username)
-            censor = int(censors - recensor)
-            if censor >= 11 * int(kef_user):
-                writer = csv.writer(file_csv)
-                writer.writerow(['Объект',
-                                 'Ресурс',
-                                 'Страна',
-                                 'Url',
-                                 'Url_username',
-                                 'Статус',
-                                 'Статус_http',
-                                 'Общее_замедление/мс',
-                                 'Отклик/мс',
-                                 'Общее_время/мс',
-                                 'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
-                                 'Результаты_могут_быть_неполные.'
-                                 ])
-            else:
-                writer = csv.writer(file_csv)
-                writer.writerow(['Объект',
-                                 'Ресурс',
-                                 'Страна',
-                                 'Url',
-                                 'Url_username',
-                                 'Статус',
-                                 'Статус_http',
-                                 'Общее_замедление/мс',
-                                 'Отклик/мс',
-                                 'Общее_время/мс'
-                                 ])
-            for site in results:
-                writer.writerow([usernamsCSV,
-                                 site,
-                                 results[site]['countryCSV'],
-                                 results[site]['url_main'],
-                                 results[site]['url_user'],
-                                 results[site]['exists'],
-                                 results[site]['http_status'],
-                                 results[site]['response_time_site_ms'],
-                                 results[site]['check_time_ms'],
-                                 results[site]['response_time_ms']
-                                 ])
-            writer.writerow(['«---------------------------------------',
-                             '--------','----', '----------------------------------',
-                             '--------------------------------------------------------',
-                             '-------------', '-----------------', '--------------------------------',
-                             '-------------', '-----------------------»'])
-            writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
-            writer.writerow('')
-            writer.writerow(['Дата'])
-            writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
-            file_csv.close()
-
-    # Финишный вывод.
-        if censor >= 11 * int(kef_user):
-            print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:",
-                              "*используйте VPN")
-            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
-        else:
-            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
-
-# Поиск по умолчанию (без опции '-u').
-    else:
-        for username in args.username:
+        for username in SQ:
+            kef_user+=1
             if args.country == True:
                 results = snoop(username,
                                sortC,
@@ -1485,7 +1232,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             exists_counter = 0
             try:
                 file_txt = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
-#                raise Exception("")
+                #raise Exception("")
             except:
                 file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
                 "w", encoding="utf-8")
@@ -1508,7 +1255,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     # Запись в html.
             try:
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
-#                raise Exception("")
+                #raise Exception("")
             except:
                 file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S",
                 time_data) + ".html", "w", encoding="utf-8")
@@ -1543,7 +1290,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 pass
             file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
-            file_html.write("<br> База Snoop (DemoVersion): <b>" + str(flagBS) + "</b>" + " Websites.\n")
+            file_html.write("<br> База Snoop (Demo Version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
             file_html.write("""
     <script>
@@ -1591,15 +1338,15 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 </html>""")
             file_html.close()
 
-    # Запись в csv.
+# Запись в csv.
             try:
                 file_csv = open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8")
 #                raise Exception("")
             except:
                 file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
-            censor = int(censors - recensor)
-            if censor >= 11:
+            censor = int(censors - recensor) if args.user==False else int((censors - recensor)/kef_user)
+            if censor >= czr:
                 writer = csv.writer(file_csv)
                 writer.writerow(['Объект',
                                  'Ресурс',
@@ -1644,35 +1391,38 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                              '--------------------------------------------------------',
                              '-------------', '-----------------', '--------------------------------',
                              '-------------', '-----------------------»'])
-            writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
+            writer.writerow(['База_Snoop(Demo Version)=' + str(flagBS) + '_Websites'])
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
             file_csv.close()
 
-    # Финишный вывод.
-        if censor >= 11:
+# Финишный вывод.
+        if censor >= czr:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:", "*используйте VPN")
-            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
+            print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:",
+            "*используйте VPN\n")
+            console.print(Panel(f"{e_mail} до {Do}",title="лицензия", style=STL(color="white", bgcolor="blue")))
         else:
-            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
-            print("\n\033[37m\033[44m{}".format("Лицензия: Snoop Project"))
+            print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data), "\n")
+            console.print(Panel(f"{e_mail} до {Do}",title="лицензия", style=STL(color="white", bgcolor="blue")))
 
-# Открывать/нет браузер с результатами поиска.
-    if args.no_func==False:
-        if exists_counter >= 1:
-            try:
-                webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
-#                raise Exception("")
-            except:
-                webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + "username" + \
-                time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html"))
 # Музыка.
         try:
             playsound('end.wav')
         except:
             pass
 
-if __name__ == "__main__":
-    run()
+# Открывать/нет браузер с результатами поиска.
+        if args.no_func==False:
+            if exists_counter >= 1:
+                try:
+                    webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
+                    #raise Exception("")
+                except:
+                    webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + "username" + \
+                    time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html"))
+
+# Arbeiten...
+    starts(args.username) if args.user==False else starts(userlist)
+run()
