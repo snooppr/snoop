@@ -677,7 +677,7 @@ def run():
 
     version_snoop = f"\033[37m{cop}\033[0m\n" + \
                     f"\033[36mSnoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}\033[36m\n" + \
-                    f"\033[36mBuild: {version}\033[36m\n" +  \
+                    f"\033[36mSource: {version}\033[36m\n" +  \
                     f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
                     f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
 
