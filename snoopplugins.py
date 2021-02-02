@@ -469,7 +469,6 @@ Snoop довольно умён: распознаёт координаты че�
                             hvostR = os.path.split(put)[1]
                             timefinishR = time.time() - timestartR
 
-                            print(Style.RESET_ALL + Fore.CYAN + "╭=============================================================================")
                             print(Style.RESET_ALL + Fore.CYAN +f"├─Время обработки файла '\033[36;1m{hvostR}\033[0m\033[36m' -->",
                             "\033[36;1m(%.0f" % float(timefinishR) +"sec)")
                             print(Style.RESET_ALL + Fore.CYAN +f"├─Успешно обработано --> '\033[32;1m{lcoord3}\033[0m\033[36m' геокоординат")
