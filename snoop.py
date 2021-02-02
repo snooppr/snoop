@@ -1108,20 +1108,20 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Опция указания файла-списка разыскиваемых пользователей '-u'.
     if args.user:
         userlist = []
-        patchuserlist = ("{}".format(args.user))
-        userfile=patchuserlist.split('/')[-1]
-        with open(patchuserlist, "r", encoding="utf8") as u1:
-            try:
+        try:
+            patchuserlist = ("{}".format(args.user))
+            userfile=patchuserlist.split('/')[-1]
+            with open(patchuserlist, "r", encoding="utf8") as u1:
                 for lineuserlist in u1.readlines():
                     lineuserlist.strip()
                     userlist.append(lineuserlist)
                 userlist=[line.rstrip() for line in userlist]
-            except:
-                print("\033[31;1mНе могу найти_прочитать!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
-                print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
-                print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
-                print("\033[36mИли удалите из словаря нечитаемые символы.")
-                sys.exit(0)
+        except:
+            print("\033[31;1mНе могу найти_прочитать!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
+            print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
+            print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
+            print("\033[36mИли удалите из словаря нечитаемые символы.")
+            sys.exit(0)
         print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
         print(Fore.CYAN + "    Будем искать:" + f" {userlist[:3]}" + " и других..." + Style.RESET_ALL)
 
