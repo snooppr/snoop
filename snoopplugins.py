@@ -81,8 +81,8 @@ def Erf(hvostfile):
     ravno()
     
 def donate():
-        print("")
-        console.print(Panel("""[cyan]
+    print("")
+    console.print(Panel("""[cyan]
 ╭donate/Buy:
 ├──Яндекс.Деньги (yoomoney):: [white]4100111364257544[/white]
 ├──Visa:: [white]4274320047338002[/white]
@@ -119,9 +119,9 @@ Snoop Full Version: плагины без ограничений; 1500+ Websites
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)", 
 border_style="bold blue"))# ,style="bold green"))
-        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
-        print(Style.BRIGHT + Fore.RED + "Выход")
-        sys.exit(0)
+    webbrowser.open("https://sobe.ru/na/snoop_project_2020")
+    print(Style.BRIGHT + Fore.RED + "Выход")
+    sys.exit(0)
 
 ## Модуль Yandex_parser
 def module3():
