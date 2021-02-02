@@ -45,22 +45,16 @@ _____/ _|  _|\___/ \___/  .__/
                          _|    \033[0m \033[37mv1.2.9\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
+print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
 if sys.platform == 'win32':
-    print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
     print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)
-    print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
-    print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
-    print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
-    console.rule(characters = '=', style="cyan")
-    print("")
 else:
-    print (Fore.CYAN + "#Пример:" + Style.RESET_ALL)
     print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
-    print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
-    print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
-    print (Fore.CYAN + " python3 snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
-    console.rule(characters = '=', style="cyan")
-    print("")
+print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
+print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
+console.rule(characters = '=', style="cyan")
+print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
 version = "1.2.9_rus Snoop (source demo)"
@@ -664,7 +658,6 @@ def update_snoop():
             print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
             os.system("./update.sh")
 
-    
     print(Style.BRIGHT + Fore.RED + "\nВыход")
     sys.exit(0)
 
