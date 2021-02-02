@@ -30,6 +30,8 @@ try:
     from rich.console import Console
     from rich.progress import (track,BarColumn,TimeRemainingColumn,SpinnerColumn,TimeElapsedColumn,Progress)
     from rich.table import Table
+    from rich.panel import Panel
+    from rich.style import Style as STL
 except:
     print("Обновите lib python:\n'cd ~/snoop && python3 -m pip install -r requirements.txt'")
     sys.exit(0)
@@ -79,45 +81,47 @@ def Erf(hvostfile):
     ravno()
     
 def donate():
-    print("""
-\033[32;1mSnoop Demo Version (Публичная оферта)\033[0m \033[36m
-===============================================================================
-╭donate/Buy:                                                                  ||
-├──Яндекс.Деньги (yoomoney): \033[37m4100111364257544\033[0m                                 \033[36m||
-├──Visa: \033[37m4274320047338002\033[0m                                                     \033[36m||
-└──PayPal:\033[0m \033[37msnoopproject@protonmail.com\033[0m                                        \033[36m||
-==============================================================================\033[0m||
-Если вас заинтересовала Snoop Demo Version, Вы можете официально приобрести   ||
-\033[36mSnoop Full Version\033[0m, поддержав развитие проекта \033[32;1m20$\033[0m или \033[32;1m1400р\033[0m.                 ||
-При пожертвовании/покупке в сообщении укажите информацию в таком порядке:     ||
-    '\033[36mПожертвование на развитие Snoop Project: 20$ ваш e-mail\033[0m'                 ||
-    '\033[36mFull Version for Windows RU", или "Full Version for Linux RU\033[0m'            ||
-    '\033[36mВаш статус: Физ.лицо; ИП; Юр.лицо (если покупка ПО)\033[0m'                     ||
-В ближайшее время на email пользователя придёт чек и ссылка для скачивания    ||
-Snoop Full Version готовой сборки то есть исполняемого файла                  ||
-(не исходных кодов), для windows это 'snoop.exe', для GNU/Linux 'snoop'.      ||
-                                                                              ||
-Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой вы ||
-должны ознакомиться перед покупкой ПО. Лицензия (RU/EN) для Snoop Project в   ||
-исполняемом виде находится в rar-архивах демо версий по ссылке                ||
-https://github.com/snooppr/snoop/releases, а так же лицензия                  ||
-доступна по команде 'snoop -V' или 'snoop.exe -V' у исполняемого файла.       ||
-                                                                              ||
-Если Snoop требуется вам для служебных или образовательных задач,             ||
-напишите письмо на e-mail разработчика в свободной форме.                     ||
-Студентам по направлению ИБ/Криминалистика Snoop ПО Full Version может быть   ||
-предоставлено на безвозмездной основе.                                        ||
-\033[36msnoopproject@protonmail.com\033[0m                                                   ||
-==============================================================================||
-Исходный код: \033[37mhttps://github.com/snooppr/snoop\033[0m                                ||""")
-    print("==============================================================================||\n",
-          Fore.CYAN + f"Ограничения Demo Version: Websites (Database Snoop сокращена в > 19 раз);    ||\n"
-          f"отключены некоторые опции; необновляемая и не поддерживаемая Database_Snoop.  ||\n"
-          f"Snoop Full Version: 1500+ Websites; поддержка и обновление Database Snoop.    ||\n"
-      	  f"\033[36;1mПодключение к Web_Database Snoop (online), которая расширяется/обновляется.   ||\033[0m\n"
-          f"===============================================================================\n")
-    webbrowser.open("https://sobe.ru/na/snoop_project_2020")
-    print(Style.BRIGHT + Fore.RED + "Выход")
+        print("")
+        console.print(Panel("""[cyan]
+╭donate/Buy:
+├──Яндекс.Деньги (yoomoney):: [white]4100111364257544[/white]
+├──Visa:: [white]4274320047338002[/white]
+└──PayPal::[/cyan] [white]snoopproject@protonmail.com[/white]
+
+[bold green]Если вас заинтересовала [red]Snoop Demo Version[/red], Вы можете официально приобрести 
+[cyan]Snoop Full Version[/cyan], поддержав развитие проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
+[bold green]При пожертвовании/покупке в сообщении укажите информацию в таком порядке:[/bold green]
+
+    [cyan]"Пожертвование на развитие Snoop Project: 20$ ваш e-mail
+    Full Version for Windows RU", или "Full Version for Linux RU
+    Ваш статус: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
+
+[bold green]В ближайшее время на email пользователя придёт чек и ссылка для скачивания
+Snoop Full Version готовой сборки то есть исполняемого файла, 
+для windows — это 'snoop.exe', для GNU/Linux — 'snoop'.
+
+Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой пользователь
+должен ознакомиться перед покупкой ПО. Лицензия (RU/EN) для Snoop Project в
+исполняемом виде находится в rar-архивах демо версий Snoop по ссылке[/bold green]
+[cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], а так же лицензия доступна по команде '[/bold green][cyan]snoop -V[/cyan][bold green]' или '[/bold green][cyan]snoop.exe -V[/cyan][bold green]' у исполняемого файла.
+
+Если Snoop требуется вам для служебных или образовательных задач,
+напишите письмо на e-mail разработчика в свободной форме.
+Студентам по направлению ИБ/Криминалистика Snoop ПО Full Version может быть
+предоставлено на безвозмездной основе.
+
+Snoop Full Version: плагины без ограничений; 1500+ Websites; 
+поддержка и обновление Database Snoop.
+Подключение к Web_Database Snoop (online), которая расширяется/обновляется.[/bold green]
+[bold red]Ограничения Demo Version: Websites (Database Snoop сокращена в > 19 раз);
+отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
+
+[bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
+[bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)", 
+border_style="bold blue"))# ,style="bold green"))
+        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
+        print(Style.BRIGHT + Fore.RED + "Выход")
+        sys.exit(0)
 
 ## Модуль Yandex_parser
 def module3():
