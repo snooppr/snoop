@@ -122,7 +122,6 @@ def DBflag():
 # Флаг БС.
 def baza():
     BS = DB()
-    flagBS = len(BS)
     return BS
 flagBS = len(baza())
 
@@ -163,7 +162,7 @@ class ElapsedFuturesSession(FuturesSession):
         """test"""
         return super(ElapsedFuturesSession, self).request(method, url, *args, **kwargs)
 
-
+# Вывести на печать инфостроку.
 def print_info(title, info, color=True):
     if color:
         print(Fore.GREEN + "[" + Fore.YELLOW + "*" + Fore.GREEN + f"] {title}" + Fore.RED + "\033[5m <\033[0m" + Fore.WHITE + f" {info}" +
@@ -171,7 +170,7 @@ def print_info(title, info, color=True):
     else:
         print(f"\n[*] {title} {info}:")
 
-
+# Вывести на печать ошибки в режиме обычного поиска.
 def print_error(err, errstr, var, verbose=False, color=True):
     if color:
         print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + Style.BRIGHT +
@@ -183,23 +182,18 @@ def print_error(err, errstr, var, verbose=False, color=True):
     else:
         print(f"[-] {errstr} {var} {err if verbose else ''}")
 
-
 # Вывод на печать на разных платформах, индикация.
-if sys.platform == 'win32':
-    def print_found_country(social_network, url, countryB, response_time=False, verbose=False, color=True):
-        if color:
-            print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {countryB}" + Fore.GREEN + f" {social_network}:", Style.RESET_ALL +
-            Fore.GREEN + f"{url}")
-        else:
-            print(f"[+] {social_network}: {url}")
-else:
-    def print_found_country(social_network, url, countryA, response_time=False, verbose=False, color=True):
-        if color:
-            print(countryA, (Style.BRIGHT + Fore.GREEN + f" {social_network}:"), Style.RESET_ALL + Fore.GREEN + f"{url}")
-        else:
-            print(f"[+] {social_network}: {url}")
+# Вывести на печать аккаунт найден.
+def print_found_country(social_network, url, countryAB, response_time=False, verbose=False, color=True):
+    if color and sys.platform == 'win32':
+        print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {countryAB}" + Fore.GREEN + f" {social_network}:", Style.RESET_ALL +
+        Fore.GREEN + f"{url}")
+    elif color and not sys.platform == 'win32':
+        print(countryAB, (Style.BRIGHT + Fore.GREEN + f" {social_network}:"), Style.RESET_ALL + Fore.GREEN + f"{url}")
+    else:
+        print(f"[+] {social_network}: {url}")
 
-
+# Вывести на печать Аккаунт не найден.
 def print_not_found(social_network, response_time, verbose=False, color=True):
     if color:
         print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
@@ -207,7 +201,7 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
     else:
         print(f"[-] {social_network}: Увы!")
 
-
+# Вывести на печать пропуск сайтов по блок. маске в имени username и прпуск по openssl.
 def print_invalid(mes, social_network, message, color=True):
     """Ошибка вывода результата"""
     if color:
@@ -353,8 +347,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         results_site['flagcountryklas'] = net_info.get("country_klas")
         results_site['url_main'] = net_info.get("urlMain")
 
-# Пользовательский user-agent браузера.
-
+# Пользовательский user-agent браузера (рандомно на каждый сайт).
         RandHead = (["{'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}",
         "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'}",
         "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.109'}",
@@ -455,6 +448,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             url = results_site.get("url_user")
             countryA = results_site.get("flagcountry")
             countryB = results_site.get("flagcountryklas")
+            countryAB = countryA if not sys.platform == 'win32' else countryB
             exists = results_site.get("exists")
             if exists is not None:
                 continue
@@ -471,7 +465,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                                                         print_found_only=print_found_only,
                                                         verbose=verbose,
                                                         color=color)
-# Повторное соединение через новую сессию быстрее, чем через adapter timeout*2=дольше.
+# Повторное соединение через новую сессию быстрее, чем через adapter - timeout*2=дольше.
             if norm == False:
 #                print(future)
                 A1 = str(future)
@@ -527,10 +521,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                         print_not_found(social_network, response_time, verbose, color)
                     exists = "увы"
                 else:
-                    if sys.platform == 'win32':
-                        print_found_country(social_network, url, countryB, response_time, verbose, color)
-                    else:
-                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
                         sreports(url, headers,session2,error_type, username,social_network,r)
@@ -541,10 +532,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if r.status_code == 301 or r.status_code == 303:
-                    if sys.platform == 'win32':
-                        print_found_country(social_network, url, countryB, response_time, verbose, color)
-                    else:
-                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
                         sreports(url, headers,session2,error_type, username, social_network,r)
@@ -559,10 +547,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if not r.status_code >= 300 or r.status_code < 200:
-                    if sys.platform == 'win32':
-                        print_found_country(social_network, url, countryB, response_time, verbose, color)
-                    else:
-                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
                     if reports:
                         sreports(url, headers,session2,error_type, username, social_network,r)
                     exists = "найден!"
@@ -577,10 +562,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if 200 <= r.status_code < 300:
-                    if sys.platform == 'win32':
-                        print_found_country(social_network, url, countryB, response_time, verbose, color)
-                    else:
-                        print_found_country(social_network, url, countryA, response_time, verbose, color)
+                    print_found_country(social_network, url, countryB, response_time, verbose, color)
                     if reports:
                         sreports(url, headers,session1,error_type, username, social_network,r)
                     exists = "найден!"
@@ -851,8 +833,8 @@ https://github.com/snooppr/snoop/releases, а так же лицензия      
     if args.module:
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
         def module():
-            print(
-"""\n\033[36m╭Выберите плагин из списка\033[0m
+            print("""\n
+\033[36m╭Выберите плагин из списка\033[0m
 \033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m
 \033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m
 \033[36m├──\033[0m\033[36;1m[3] --> Yandex_parser\033[0m
@@ -1414,8 +1396,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             pass
 
 # Открывать/нет браузер с результатами поиска.
-        if args.no_func==False:
-            if exists_counter >= 1:
+        if args.no_func==False and exists_counter >= 1:
                 try:
                     webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
                     #raise Exception("")
