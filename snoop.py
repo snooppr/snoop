@@ -556,7 +556,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if 200 <= r.status_code < 300:
-                    print_found_country(social_network, url, countryB, response_time, verbose, color)
+                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
                     if reports:
                         sreports(url, headers,session1,error_type, username, social_network,r)
                     exists = "найден!"
