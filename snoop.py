@@ -64,11 +64,11 @@ timestart = time.time()
 time_data = time.localtime()
 censors = 1
 recensor = 0
-czr=19
+czr=5
 
 # date +%s конвертер
 e_mail = 'Demo: snoopproject@protonmail.com'
-# лицензия: число/месяц/год:
+# лицензия: год/месяц/число:
 ts = (2022, 2, 1, 3, 0, 0, 0, 0, 0) 
 date_up = int(time.mktime(ts)) #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
