@@ -93,8 +93,8 @@ def donate():
 [bold green]При пожертвовании/покупке в сообщении укажите информацию в таком порядке:[/bold green]
 
     [cyan]"Пожертвование на развитие Snoop Project: 20$ ваш e-mail
-    Full Version for Windows RU", или "Full Version for Linux RU
-    Ваш статус: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
+    Full Version for Windows RU или Full Version for Linux RU,
+    ваш статус: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
 
 [bold green]В ближайшее время на email пользователя придёт чек и ссылка для скачивания
 Snoop Full Version готовой сборки то есть исполняемого файла, 
@@ -181,7 +181,7 @@ def module3():
                         table1 = Table(title = "\n" + Style.BRIGHT + Fore.RED + str(login) + Style.RESET_ALL, style="green")
                         table1.add_column("Имя", style="magenta")
                         table1.add_column("Логин", style="cyan")
-                        table1.add_column("E-mail", style="cyan")
+                        table1.add_column("E-mail", style="cyan", overflow="fold")
                         if Ya == '3':
                             table1.add_row(name,"Пропуск","Пропуск")
                         else:
@@ -672,12 +672,12 @@ https://example.org/fo/bar/7564
         table = Table(title = Style.BRIGHT + Fore.RED + str(uu3) + Style.RESET_ALL, style="green")
         table.add_column("Сountry", style="magenta")
         if dip == "":
-            table.add_column("Your IP", style="cyan")
+            table.add_column("Your IP", style="cyan", overflow="fold")
         else:
-            table.add_column("IPv4", style="cyan")
-            table.add_column("IPv6", style="cyan")
-        table.add_column("Domain", style="green")
-        table.add_column("Time_Zone", style="green")
+            table.add_column("IPv4", style="cyan", overflow="fold")
+            table.add_column("IPv6", style="cyan", overflow="fold")
+        table.add_column("Domain", style="green", overflow="fold")
+        table.add_column("Time_Zone", style="green", overflow="fold")
         if dip == "":
             table.add_row(T1,T5,resD1,T2)
         else:
