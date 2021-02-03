@@ -688,8 +688,8 @@ def run():
 [bold green]При пожертвовании/покупке в сообщении укажите информацию в таком порядке:[/bold green]
 
     [cyan]"Пожертвование на развитие Snoop Project: 20$ ваш e-mail
-    Full Version for Windows RU", или "Full Version for Linux RU
-    Ваш статус: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
+    Full Version for Windows RU или Full Version for Linux RU,
+    статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
 
 [bold green]В ближайшее время на email пользователя придёт чек и ссылка для скачивания
 Snoop Full Version готовой сборки то есть исполняемого файла, 
