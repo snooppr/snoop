@@ -1367,7 +1367,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                              '--------------------------------------------------------',
                              '-------------', '-----------------', '--------------------------------',
                              '-------------', '-----------------------»'])
-            writer.writerow(['База_Snoop(Demo Version)=' + str(flagBS) + '_Websites'])
+            writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
