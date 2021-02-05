@@ -86,13 +86,12 @@ def ravno():
 def DB():
     try:
         with open('BDdemo', "r", encoding="utf8") as z:
-            dd = z.read()
-            b1 = dd.encode("UTF-8")
-            d1 = base64.b64decode(b1)
-            rt1 = d1[::-1]
-            d2 = base64.b64decode(rt1)
-            s12 = d2.decode("UTF-8")
-            trinity = json.loads(s12)
+            db = z.read()
+            db = db.encode("UTF-8")
+            db = base64.b64decode(db)
+            db = db[::-1]
+            db = base64.b64decode(db)
+            trinity = json.loads(db.decode("UTF-8"))
             return trinity
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
@@ -101,13 +100,12 @@ def DB():
 def DBflag():
     try:
         with open('BDflag', "r", encoding="utf8") as z1:
-            d11 = z1.read()
-            b11 = d11.encode("UTF-8")
-            t11 = base64.b64decode(b11)
-            rt11 = t11[::-1]
-            d22 = base64.b64decode(rt11)
-            s112 = d22.decode("UTF-8")
-            neo = json.loads(s112)
+            dbf = z1.read()
+            dbf = dbf.encode("UTF-8")
+            dbf = base64.b64decode(dbf)
+            dbf = dbf[::-1]
+            dbf = base64.b64decode(dbf)
+            neo = json.loads(dbf.decode("UTF-8"))
             return neo
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
@@ -245,8 +243,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
             future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
             response = future2.result()
             try:
-                with open(f"results/save reports/{username}/{social_network}.html",
-                'w', encoding=r.encoding) as repre:
+                with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
                     repre.write(response.text)
             except:
                 pass
@@ -256,8 +253,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
                 future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=2)
                 response = future2.result()
                 try:
-                    with open(f"results/save reports/{username}/{social_network}.html",
-                    'w', encoding=r.encoding) as repre:
+                    with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
                         repre.write(response.text)
                 except:
                     pass
@@ -321,7 +317,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
     session0 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     if not sys.platform == 'win32':
         if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
-            session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=13), session=my_session)
+            session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
         else:
             session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=my_session)
     else:
@@ -411,9 +407,6 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 # Добавлять имя сайта 'results_total[social_network]' в окончательный словарь со всеми другими результатами.
         results_total[social_network] = results_site
-
-# Открыть файл, содержащий ссылки на аккаунт.
-# Основная логика: если текущие запросов, сделайте их. Если многопоточные запросы, дождаться ответов.
 
 # print(results_site) # Проверка записи на успех.
     li_time = []
@@ -576,7 +569,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             li_time.append(ello)
             dif_time = []
 
-# Считать тайминги с высокой точностью.
+# Считать тайминги с повышенной точностью.
             try:
                 time_site = str(response_time).rsplit(sep=':', maxsplit=1)[1]
                 time_site=round(float(time_site)*1000)
@@ -626,7 +619,6 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
         return results_total
 
-
 # Опция '-t'.
 def timeout_check(value):
     try:
@@ -637,7 +629,6 @@ def timeout_check(value):
     if timeout <= 0:
         raise ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время > 0sec. \033[0m")
     return timeout
-
 
 # Обновление Snoop.
 def update_snoop():
@@ -1180,30 +1171,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         kef_user=0
         for username in SQ:
             kef_user+=1
-            if args.country == True:
-                results = snoop(username,
-                               sortC,
-                               country=args.country,
-                               user=args.user,
-                               verbose=args.verbose,
-                               cert=args.cert,
-                               reports=args.reports,
-                               norm=args.norm,
-                               print_found_only=args.print_found_only,
-                               timeout=args.timeout,
-                               color=not args.no_func)
-            else:
-                results = snoop(username,
-                               site_data,
-                               country=args.country,
-                               user=args.user,
-                               verbose=args.verbose,
-                               cert=args.cert,
-                               norm=args.norm,
-                               reports=args.reports,
-                               print_found_only=args.print_found_only,
-                               timeout=args.timeout,
-                               color=not args.no_func)
+            sort_sites = sortC if args.country == True else site_data
+            results = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert, norm=args.norm,
+                            print_found_only=args.print_found_only, timeout=args.timeout, color=not args.no_func)
 
             exists_counter = 0
             try:
@@ -1393,11 +1363,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         if args.no_func==False and exists_counter >= 1:
                 try:
                     webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
-                    #raise Exception("")
                 except:
-                    webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + "username" + \
-                    time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html"))
-
+                    pass
 # Arbeiten...
     starts(args.username) if args.user==False else starts(userlist)
 run()
