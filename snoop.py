@@ -231,6 +231,7 @@ def get_response(request_future, error_type, social_network, print_found_only=Fa
         else:
             pass
     return None, "", -1
+
 # Сохранение отчетов опция (-S).
 def sreports(url, headers,session2,error_type, username,social_network,r):
     try:
