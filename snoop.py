@@ -500,11 +500,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                     sys.exit()
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
-                if error2 in r.text:
-                    if not print_found_only:
-                        print_not_found(social_network, response_time, verbose, color)
-                    exists = "увы"
-                elif error in r.text:
+                if error2 in r.text or error in r.text:
                     if not print_found_only:
                         print_not_found(social_network, response_time, verbose, color)
                     exists = "увы"
