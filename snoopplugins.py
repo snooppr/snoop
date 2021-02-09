@@ -449,7 +449,7 @@ Snoop довольно умён: распознаёт координаты че�
                                     coord2.append(g22)
                                     coord3.append(list(coord2))
                                     folium.Marker(location=coord2, popup="Ш:" + str(g11) + \
-                                    " Д:" + str(g22), icon=folium.Icon(color='blue', icon='ok-sign'),).add_to(marker_cluster)
+                                    " Д:" + str(g22), icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
                                 except:
                                     wZ1bad.append(str(a1))
                                     continue
