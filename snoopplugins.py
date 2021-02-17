@@ -179,8 +179,8 @@ def module3():
                         continue
                     else:
                         table1 = Table(title = "\n" + Style.BRIGHT + Fore.RED + str(login) + Style.RESET_ALL, style="green")
-                        table1.add_column("Имя", style="magenta")
-                        table1.add_column("Логин", style="cyan")
+                        table1.add_column("Имя", style="magenta", overflow="fold")
+                        table1.add_column("Логин", style="cyan", overflow="fold")
                         table1.add_column("E-mail", style="cyan", overflow="fold")
                         if Ya == '3':
                             table1.add_row(name,"Пропуск","Пропуск")
