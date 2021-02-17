@@ -121,7 +121,7 @@ Snoop Full Version: плагины без ограничений; 1500+ Websites
 border_style="bold blue"))# ,style="bold green"))
     webbrowser.open("https://sobe.ru/na/snoop_project_2020")
     print(Style.BRIGHT + Fore.RED + "Выход")
-    sys.exit(0)
+    sys.exit()
 
 ## Модуль Yandex_parser
 def module3():
@@ -408,85 +408,88 @@ Snoop довольно умён: распознаёт координаты че�
 
                 with open(put, "r", encoding="utf8") as geo:
                     Geo = geo.read().splitlines() #список готов
-                    while True:
-                        print(
+            except:
+                hvostput = os.path.split(put)[1]
+                Erf(hvostput)
+                sys.exit()
+
+            while True:
+                print(
 """\n\033[36m╭Выберите режим геокодирования:\033[0m
 \033[36m├──\033[36m[\033[0m\033[32;1m1\033[0m\033[36m] --> Простой\033[0m
 \033[36m├──\033[36m[\033[0m\033[32;1m2\033[0m\033[36m] --> Подробный\033[0m
 \033[36m└──\033[36m[\033[0m\033[31;1mq\033[0m\033[36m] --> Выход\033[0m\n""")
-                        rGeo = input()
+                rGeo = input()
 
-                        if rGeo == "q":
-                            break
-                        elif rGeo == '1' or rGeo == '2':
-                            break
-                        else:
-                            print(Style.BRIGHT + Fore.RED + "└──Неверный выбор" + Style.RESET_ALL)
-                            ravno()
+                if rGeo == "q":
+                    break
+                elif rGeo == '1' or rGeo == '2':
+                    break
+                else:
+                    print(Style.BRIGHT + Fore.RED + "└──Неверный выбор" + Style.RESET_ALL)
+                    ravno()
 
-                    if rGeo == "q":
-                        print(Style.BRIGHT + Fore.RED + "Выход")
-                        break
-                        sys.exit()
+            if rGeo == "q":
+                print(Style.BRIGHT + Fore.RED + "Выход")
+                break
+                sys.exit()
 
-                    coord2=[]
-                    coord3=[]
-                    timestartR = time.time()
-                    if rGeo == '1':
-                        with console.status("[green bold]Ожидайте, идёт геокодирование...",spinner=random.choice(["dots", "dots12"])):
-                            for a1 in Geo:
-                                try:
-                                    if "," in a1:
-                                        g1=(a1.split(','))
-                                    elif any(' ' in a1 for a1 in a1):
-                                        g1=(a1.split())
-                                    else:
-                                        wZ1bad.append(str(a1))
-                                        continue
-                                    g11=float(g1[0])
-                                    g22=float(g1[1])
-                                    coord2.append(g11)
-                                    coord2.append(g22)
-                                    coord3.append(list(coord2))
-                                    folium.Marker(location=coord2, popup="Ш:" + str(g11) + \
-                                    " Д:" + str(g22), icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
-                                except:
-                                    wZ1bad.append(str(a1))
-                                    continue
-                                coord2.clear()
-                            namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_data)
-                            namemaps = (f'Maps_{namemaps}.html')
-                            mapsme = str(dirresults + "/results/ReverseVgeocoder/" + str(namemaps))
-                            maps.save(mapsme)
+            coord2=[]
+            coord3=[]
+            timestartR = time.time()
+            if rGeo == '1':
+                with console.status("[green bold]Ожидайте, идёт геокодирование...",spinner=random.choice(["dots", "dots12"])):
+                    for a1 in Geo:
+                        try:
+                            if "," in a1:
+                                g1=(a1.split(','))
+                            elif any(' ' in a1 for a1 in a1):
+                                g1=(a1.split())
+                            else:
+                                wZ1bad.append(str(a1))
+                                continue
+                            g11=float(g1[0])
+                            g22=float(g1[1])
+                            coord2.append(g11)
+                            coord2.append(g22)
+                            coord3.append(list(coord2))
+                            folium.Marker(location=coord2, popup="Ш:" + str(g11) + \
+                            " Д:" + str(g22), icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
+                        except:
+                            wZ1bad.append(str(a1))
+                            continue
+                        coord2.clear()
+                    namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_data)
+                    namemaps = (f'Maps_{namemaps}.html')
+                    mapsme = str(dirresults + "/results/ReverseVgeocoder/" + str(namemaps))
+                    maps.save(mapsme)
 
-                            lcoord3, lwZ1bad = len(coord3), len(wZ1bad)
+                    lcoord3, lwZ1bad = len(coord3), len(wZ1bad)
 
-                            try:
-                                if lcoord3 >= 1:
-                                    webbrowser.open(str("file://" + mapsme))
-                            except:
-                                pass
-                            hvostR = os.path.split(put)[1]
-                            timefinishR = time.time() - timestartR
+                    try:
+                        if lcoord3 >= 1:
+                            webbrowser.open(str("file://" + mapsme))
+                    except:
+                        pass
+                    hvostR = os.path.split(put)[1]
+                    timefinishR = time.time() - timestartR
 
-                            print(Style.RESET_ALL + Fore.CYAN +f"├─Время обработки файла '\033[36;1m{hvostR}\033[0m\033[36m' -->",
-                            "\033[36;1m(%.0f" % float(timefinishR) +"sec)")
-                            print(Style.RESET_ALL + Fore.CYAN +f"├─Успешно обработано --> '\033[32;1m{lcoord3}\033[0m\033[36m' геокоординат")
-                            if lwZ1bad >= 1:
-                                print(Fore.CYAN +f"├─Отброшено --> '\033[31;1m{lwZ1bad}\033[0m\033[36m' случайных данных")
-                            print(Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
-                            f"\033[36;1m{dirresults}/results/ReverseVgeocoder/{hvostR}[.txt.html.csv]")
-                            break
-                            sys.exit()
-                    elif rGeo == '2':
-                        print("\033[31;1m└──В Demo version этот метод плагина недоступен\033[0m\n")
-                        donate()
-                        break
-                        sys.exit()
+                    print(Style.RESET_ALL + Fore.CYAN +f"├─Время обработки файла '\033[36;1m{hvostR}\033[0m\033[36m' -->",
+                    "\033[36;1m(%.0f" % float(timefinishR) +"sec)")
+                    print(Style.RESET_ALL + Fore.CYAN +f"├─Успешно обработано --> '\033[32;1m{lcoord3}\033[0m\033[36m' геокоординат")
+                    if lwZ1bad >= 1:
+                        print(Fore.CYAN +f"├─Отброшено --> '\033[31;1m{lwZ1bad}\033[0m\033[36m' случайных данных")
+                    print(Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
+                    f"\033[36;1m{dirresults}/results/ReverseVgeocoder/{hvostR}[.txt.html.csv]")
+                    break
+                    sys.exit()
+            if rGeo == '2':
+                print("\033[31;1m└──В Demo version этот метод плагина недоступен\033[0m\n")
+                donate()
+                break
+                sys.exit()
 
-            except:
-                hvostput = os.path.split(put)[1]
-                Erf(hvostput)
+
         else:
             print(Style.BRIGHT + Fore.RED + "└──Неверный выбор" + Style.RESET_ALL)
             ravno()
