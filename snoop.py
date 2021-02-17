@@ -772,7 +772,7 @@ border_style="bold blue"))# ,style="bold green"))
                         )
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
-                        help="Вывести на печать информацию о локальной базе данных Snoop"
+                        help="Вывести на печать детальную информацию о базе данных Snoop"
                         )
     parser.add_argument("--country", "-c",
                         action="store_true", dest="country", default=False,
