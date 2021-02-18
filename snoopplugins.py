@@ -488,8 +488,6 @@ Snoop довольно умён: распознаёт координаты че�
                 donate()
                 break
                 sys.exit()
-
-
         else:
             print(Style.BRIGHT + Fore.RED + "└──Неверный выбор" + Style.RESET_ALL)
             ravno()
