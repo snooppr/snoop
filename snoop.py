@@ -79,7 +79,7 @@ Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}") #в UTC (-3 часа)
 
 if time.time() > int(date_up):
     print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии")
-    sys.exit(0)
+    sys.exit()
 else:
     pass
 
@@ -98,7 +98,7 @@ def DB():
             return trinity
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
-        sys.exit(0)
+        sys.exit()
 
 def DBflag():
     try:
@@ -112,7 +112,7 @@ def DBflag():
             return neo
     except:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
-        sys.exit(0)
+        sys.exit()
 
 # Флаг БС.
 def baza():
@@ -290,20 +290,20 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         my_list = list(s1)
         if any(my_list in username for my_list in my_list):
             print(Style.BRIGHT + Fore.RED + f"недопустимые символы в username: {username}")
-            sys.exit(0)
+            sys.exit()
 
     ernumber=['79', '89', "38", "37"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
         if len(username) >= 10 and len(username) <= 13:
             if username.isdigit() == True:
                 print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
-                sys.exit(0)
+                sys.exit()
     elif username[0] == "+" or username[0] == ".":
         print (Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся с такого символа, практически всегда невалидный...")
-        sys.exit(0)
+        sys.exit()
     elif username[0] == "9" and len(username) == 10 and username.isdigit() == True:
         print (Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
-        sys.exit(0)
+        sys.exit()
 
 # Печать первой инфостроки.
     if '%20' in username:
@@ -650,7 +650,7 @@ def update_snoop():
             os.system("./update.sh")
 
     print(Style.BRIGHT + Fore.RED + "\nВыход")
-    sys.exit(0)
+    sys.exit()
 
 # ОСНОВА.
 def run():
@@ -707,7 +707,7 @@ Snoop Full Version: плагины без ограничений; 1500+ Websites
 border_style="bold blue"))# ,style="bold green"))
         webbrowser.open("https://sobe.ru/na/snoop_project_2020")
         print(Style.BRIGHT + Fore.RED + "Выход")
-        sys.exit(0)
+        sys.exit()
 
 # Назначение опций Snoop.
     parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
@@ -898,23 +898,23 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 print(Style.BRIGHT + Fore.RED + "└──Неверный выбор\n" + Style.RESET_ALL)
                 module()
         module()
-        sys.exit(0)
+        sys.exit()
 
 # Опция  '-f' + "-v".
     if args.verbose and args.print_found_only:
         console.print(f"[yellow bold]Режим подробной вербализации [опция '-v'] отображает детальную информацию,\n\
 [опция '-f'] неуместна", f"\n\n[red bold]Выход")
-        sys.exit(0)
+        sys.exit()
 # Опция  '-С'.
     if args.cert:
         print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах»")
 # Опция  '-cs' несовместимы.
     if args.site_list is not None and args.country == True:
         print(Style.BRIGHT + Fore.RED + "[опция '-c'] несовместима с [опцией '-s']")
-        sys.exit(0)
+        sys.exit()
 # Опция режима SNOOPnina > < нормальный режим.
     if args.norm == False:
-        sys.exit(0)
+        sys.exit()
         print(Fore.CYAN + "[+] активирована опция '--': «режим SNOOPninja»")
     else:
         pass
@@ -1016,7 +1016,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             table.add_column("All", style="cyan", justify='full')
             table.add_row(flag_str_sum00, str(len(datajson00)))
             console.print(table)
-            sys.exit(0)
+            sys.exit()
 
 # Сортируем по алфавиту для Full Version (2!).
         elif sortY == "2":
@@ -1044,7 +1044,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 i += 1
                 print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
                 print(Fore.CYAN + "================")
-            sys.exit(0)
+            sys.exit()
 
 # Сортируем по странам для Full Version (1!).
         elif sortY == "1":
@@ -1056,11 +1056,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 else:
                     aaa = (datajson.get(con).get("country"))
                 listwindows.append(f"{aaa}  {con}\n")
-            listwindows=sorted(listwindows)
-
             console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold")
             print(Fore.GREEN + "\n++Белый список++")
-            for i in enumerate(listwindows, 1):
+            for i in enumerate(sorted(listwindows), 1):
                 print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
                 print(Fore.CYAN + "================")
             listwindows.clear()
@@ -1073,17 +1071,16 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 else:
                     aaa = (datajson.get(con).get("country"))
                 listwindows.append(f"{aaa}  {con}\n")
-            listwindows=sorted(listwindows)
             print(Fore.GREEN + "\n++Белый список Demo Version++")
-            for i in enumerate(listwindows, 1):
+            for i in enumerate(sorted(listwindows), 1):
                 print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
                 print(Fore.CYAN + "================")
-            sys.exit(0)
+            sys.exit()
 
 # Действие не выбрано.
         else:
             print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
-            sys.exit(0)
+            sys.exit()
 
 # Опция донат '-d y'.
     if args.donation:
@@ -1091,21 +1088,18 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Опция указания файла-списка разыскиваемых пользователей '-u'.
     if args.user:
-        userlist = []
         try:
             patchuserlist = ("{}".format(args.user))
             userfile=patchuserlist.split('/')[-1]
             with open(patchuserlist, "r", encoding="utf8") as u1:
-                for lineuserlist in u1.readlines():
-                    lineuserlist.strip()
-                    userlist.append(lineuserlist)
-                userlist=[line.rstrip() for line in userlist]
+                userlist=[line.strip() for line in u1.read().splitlines()]
+                userlist.remove("")# удаляем пустые элементы userlist=list(filter(None, userlist))
         except:
-            print("\033[31;1mНе могу найти_прочитать!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
+            print(f"\033[31;1mНе могу найти_прочитать '{userfile}'!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
             print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
             print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
-            print("\033[36mИли удалите из словаря нечитаемые символы.")
-            sys.exit(0)
+            print("\033[36mИли удалите из файла нечитаемые символы.")
+            sys.exit()
         print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
         print(Fore.CYAN + "    Будем искать:" + f" {userlist[:3]}" + " и других..." + Style.RESET_ALL)
 
@@ -1123,7 +1117,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Проверить, существует ли альтернативная база данных, иначе выход.
         if not os.path.exists(baseput):
             print("\033[31;1mФайла базы не существует.\033[0m")
-            sys.exit(0)
+            sys.exit()
         else:
             try:
                 a1 = DB()
@@ -1142,29 +1136,23 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print("\n\033[37m\033[44m{}".format("Функция '-w' действует только для пользователей Full version..."))
         donate()
 
+# Если опция '-s' не указана, то используем БД
     if args.site_list is None:
-# Не желательно смотреть на подмножество сайтов.
         site_data = site_data_all
     else:
-
 # Опция '-s'.
 # Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
-# Убедиться, что сайты поддерживаются, создать сокращенную базу данных сайта.
+# Убедиться, что сайты в базе имеются, создать для проверки сокращенную базу данных сайта(ов).
         site_data = {}
-        site_missing = []
         for site in args.site_list:
             for existing_site in site_data_all:
                 if site.lower() == existing_site.lower():
-                    site_data[existing_site] = site_data_all[existing_site]
-            if not site_data:
-
-# Создать список сайтов, которые не поддерживаются, для будущего сообщения об ошибке.
-                site_missing.append(f"'{site}'")
-
-        if site_missing:
-            print(
-                f"\033[31;1mОшибка:\033[0m \033[36mжелаемый сайт не найден в базе Snoop:: {', '.join(site_missing)}\033[0m")
-            sys.exit(0)
+                    site_data[existing_site] = site_data_all[existing_site] #выбираем в словарь найденные сайты их БД
+            if not any(site.lower() == existing_site.lower() for existing_site in site_data_all): #если ни одного совпадения по сайту
+                print(f"\033[31;1mПропуск:\033[0m \033[36mжелаемый сайт не найден в базе Snoop:: '{site}'\033[0m")
+# Отмена поиска, если нет ни одного совпадения по БД и '-s'
+        if not site_data:
+            sys.exit()
 
 # Крутим user's.
     def starts(SQ):
@@ -1348,10 +1336,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:",
             "*используйте VPN\n")
-            console.print(Panel(f"{e_mail} до {Do}",title="лицензия", style=STL(color="white", bgcolor="blue")))
         else:
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data), "\n")
-            console.print(Panel(f"{e_mail} до {Do}",title="лицензия", style=STL(color="white", bgcolor="blue")))
+        console.print(Panel(f"{e_mail} до {Do}",title="лицензия", style=STL(color="white", bgcolor="blue")))
 
 # Музыка.
         try:
