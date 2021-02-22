@@ -52,6 +52,7 @@ def ravno():
     console.rule(characters = '=', style="cyan bold")
 def helpend():
     console.rule("[bold red]Конец справки")
+
 wZ1bad=[] #отфильтрованные ip (не ip) или отфильтрованные данные Yandex, отфильтрованные 'геокоординаты'.
 azS=[] #список результатов future request.
 
@@ -332,10 +333,6 @@ username3
 
 ## Модуль Reverse Vgeocoder
 def module2():
-    try:
-        os.makedirs(str(dirresults + "/results/ReverseVgeocoder"))
-    except:
-        pass
     while True:
         print("""
 \033[36m[\033[0m\033[32;1m1\033[0m\033[36m] --> Выбрать файл\n\
@@ -494,10 +491,6 @@ Snoop довольно умён: распознаёт координаты че�
 
 ## Модуль GEO_IP/domain
 def module1():
-    try:
-        os.makedirs(str(dirresults + "/results/domain"))
-    except:
-        pass
 # Домен > IPv4/v6
     def res46(dipp):
         try:
