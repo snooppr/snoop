@@ -931,9 +931,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         jsonjson = DB()
         print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
         country_sites = sorted(jsonjson, key=lambda k: ("country" not in k, jsonjson[k].get("country", sys.maxsize)))
-        sortC = {}
+        sort_web = {}
         for site in country_sites:
-            sortC[site] = jsonjson.get(site)
+            sort_web[site] = jsonjson.get(site)
 
 # Опция '-f'.
     if args.print_found_only:
@@ -1124,7 +1124,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Опция '-w'.
     if args.web:
-        print("\n\033[37m\033[44m{}".format("Функция '-w' действует только для пользователей Full version..."))
+        print("\n\033[37m\033[44m{}".format("Функция '-w' доступна только пользователям Snoop Full Version..."))
         donate()
 
 # Если опция '-s' не указана, то используем БД
@@ -1132,14 +1132,14 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         site_data = site_data_all
     else:
 # Опция '-s'.
-# Пользователь желает выборочно запускать запросы к подмножеству списку сайтов.
+# Пользователь выборочно запускает запросы к подмножеству списку сайтов из БД.
 # Убедиться, что сайты в базе имеются, создать для проверки сокращенную базу данных сайта(ов).
         site_data = {}
         for site in args.site_list:
-            for existing_site in site_data_all:
-                if site.lower() == existing_site.lower():
-                    site_data[existing_site] = site_data_all[existing_site] #выбираем в словарь найденные сайты их БД
-            if not any(site.lower() == existing_site.lower() for existing_site in site_data_all): #если ни одного совпадения по сайту
+            for site_yes in site_data_all:
+                if site.lower() == site_yes.lower():
+                    site_data[site_yes] = site_data_all[site_yes] #выбираем в словарь найденные сайты из БД
+            if not any(site.lower() == site_yes.lower() for site_yes in site_data_all): #если ни одного совпадения по сайту
                 print(f"\033[31;1mПропуск:\033[0m \033[36mжелаемый сайт не найден в базе Snoop:: '{site}'\033[0m")
 # Отмена поиска, если нет ни одного совпадения по БД и '-s'
         if not site_data:
@@ -1150,7 +1150,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         kef_user=0
         for username in SQ:
             kef_user+=1
-            sort_sites = sortC if args.country == True else site_data
+            sort_sites = sort_web if args.country == True else site_data
             FULL = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert, 
                         norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout, 
                         color=not args.no_func)
@@ -1178,7 +1178,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
 
 
-    # Запись в html.
+# Запись в html.
             try:
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
                 #raise Exception("")
@@ -1272,34 +1272,22 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
             censor = int((censors - recensor)/kef_user)
+            czr_csv = ''
             if censor >= czr:
-                writer = csv.writer(file_csv)
-                writer.writerow(['Объект',
-                                 'Ресурс',
-                                 'Страна',
-                                 'Url',
-                                 'Url_username',
-                                 'Статус',
-                                 'Статус_http',
-                                 'Общее_замедление/мс',
-                                 'Отклик/мс',
-                                 'Общее_время/мс',
-                                 'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. '
-                                 'Результаты_могут_быть_неполные.'
-                                 ])
-            else:
-                writer = csv.writer(file_csv)
-                writer.writerow(['Объект',
-                                 'Ресурс',
-                                 'Страна',
-                                 'Url',
-                                 'Url_username',
-                                 'Статус',
-                                 'Статус_http',
-                                 'Общее_замедление/мс',
-                                 'Отклик/мс',
-                                 'Общее_время/мс'
-                                 ])
+                czr_csv = 'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. Результаты_могут_быть_неполные.'
+            writer = csv.writer(file_csv)
+            writer.writerow(['Объект',
+                             'Ресурс',
+                             'Страна',
+                             'Url',
+                             'Url_username',
+                             'Статус',
+                             'Статус_http',
+                             'Общее_замедление/мс',
+                             'Отклик/мс',
+                             'Общее_время/мс',
+                             czr_csv
+                             ])
             for site in FULL:
                 writer.writerow([usernamCSV,
                                  site,
