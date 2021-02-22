@@ -80,8 +80,6 @@ Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}") #в UTC (-3 часа)
 if time.time() > int(date_up):
     print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии")
     sys.exit()
-else:
-    pass
 
 def ravno():
     console.rule(characters = '=', style="cyan bold")
@@ -126,15 +124,15 @@ try:
 except:
     pass
 try:
-    os.mkdir(str(dirresults + "/results/html"))
+    os.makedirs(str(dirresults + "/results/html"))
 except:
     pass
 try:
-    os.mkdir(str(dirresults + "/results/txt"))
+    os.makedirs(str(dirresults + "/results/txt"))
 except:
     pass
 try:
-    os.mkdir(str(dirresults + "/results/csv"))
+    os.makedirs(str(dirresults + "/results/csv"))
 except:
     pass
 try:
@@ -149,7 +147,10 @@ try:
     os.makedirs(str(dirresults + "/results/Yandex_parser"))
 except:
     pass
-
+try:
+    os.makedirs(str(dirresults + "/results/domain"))
+except:
+    pass
 ################################################################################
 class ElapsedFuturesSession(FuturesSession):
     """test_metrica: API:: https://pypi.org/project/requests-futures/"""
@@ -214,31 +215,23 @@ def get_response(request_future, error_type, social_network, print_found_only=Fa
     except requests.exceptions.HTTPError as err1:
         if print_found_only==False:
             print_error(err1, "HTTP Error:", social_network, verbose, color)
-        else:
-            pass
     except requests.exceptions.ConnectionError as err2:
         global censors
         censors +=1
         if print_found_only==False:
             print_error(err2, "Ошибка соединения:", social_network, verbose, color)
-        else:
-            pass
     except requests.exceptions.Timeout as err3:
         if print_found_only==False:
             print_error(err3, "Timeout ошибка:", social_network, verbose, color)
-        else:
-            pass
     except requests.exceptions.RequestException as err4:
         if print_found_only==False:
             print_error(err4, "Непредвиденная ошибка", social_network, verbose, color)
-        else:
-            pass
     return None, "", -1
 
 # Сохранение отчетов опция (-S).
 def sreports(url, headers,session2,error_type, username,social_network,r):
     try:
-        os.makedirs(str(dirresults + f"/results/save reports/{username}"))
+        os.makedirs(f"{dirresults}/results/save reports/{username}")
     except:
         pass
 # Сохранять отчеты для метода: redirection.
@@ -247,7 +240,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
             future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
             response = future2.result()
             try:
-                with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
+                with open(f"{dirresults}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
                     repre.write(response.text)
             except:
                 pass
@@ -257,7 +250,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
                 future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=2)
                 response = future2.result()
                 try:
-                    with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
+                    with open(f"{dirresults}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
                         repre.write(response.text)
                 except:
                     pass
@@ -266,7 +259,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
 # Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
     else:
         try:
-            with open(f"results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
+            with open(f"{dirresults}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
                 rep.write(r.text)
         except:
             pass
@@ -916,8 +909,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     if args.norm == False:
         sys.exit()
         print(Fore.CYAN + "[+] активирована опция '--': «режим SNOOPninja»")
-    else:
-        pass
 # Опция  '-w'.
     if args.web:
         print(Fore.CYAN + "[+] активирована опция '-w': «подключение к внешней web_database»")
@@ -1160,8 +1151,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         for username in SQ:
             kef_user+=1
             sort_sites = sortC if args.country == True else site_data
-            results = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert, norm=args.norm,
-                            print_found_only=args.print_found_only, timeout=args.timeout, color=not args.no_func)
+            FULL = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert, 
+            norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout, color=not args.no_func)
 
             exists_counter = 0
             try:
@@ -1171,9 +1162,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
                 "w", encoding="utf-8")
             file_txt.write("Адрес | ресурс" + "\n\n")
-            for website_name in results:
+            for website_name in FULL:
                 timefinish = time.time() - timestart
-                dictionary = results[website_name]
+                dictionary = FULL[website_name]
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
                     file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
@@ -1205,8 +1196,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
 
             cnt = Counter()
-            for website_name in results:
-                dictionary = results[website_name]
+            for website_name in FULL:
+                dictionary = FULL[website_name]
                 flag_sum=dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
                     li = []
@@ -1308,17 +1299,17 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                                  'Отклик/мс',
                                  'Общее_время/мс'
                                  ])
-            for site in results:
+            for site in FULL:
                 writer.writerow([usernamCSV,
                                  site,
-                                 results[site]['countryCSV'],
-                                 results[site]['url_main'],
-                                 results[site]['url_user'],
-                                 results[site]['exists'],
-                                 results[site]['http_status'],
-                                 results[site]['response_time_site_ms'],
-                                 results[site]['check_time_ms'],
-                                 results[site]['response_time_ms']
+                                 FULL[site]['countryCSV'],
+                                 FULL[site]['url_main'],
+                                 FULL[site]['url_user'],
+                                 FULL[site]['exists'],
+                                 FULL[site]['http_status'],
+                                 FULL[site]['response_time_site_ms'],
+                                 FULL[site]['check_time_ms'],
+                                 FULL[site]['response_time_ms']
                                  ])
             writer.writerow(['«---------------------------------------',
                              '--------','----', '----------------------------------',
@@ -1348,10 +1339,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Открывать/нет браузер с результатами поиска.
         if args.no_func==False and exists_counter >= 1:
-                try:
-                    webbrowser.open(str("file://" + str(dirresults) + "/results/html/" + str(username) + ".html"))
-                except:
-                    pass
+            try:
+                webbrowser.open(f"file://{dirresults}/results/html/{username}.html")
+            except:
+                pass
 # Arbeiten...
     starts(args.username) if args.user==False else starts(userlist)
 run()
