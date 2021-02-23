@@ -197,7 +197,7 @@ def print_not_found(social_network, response_time, verbose=False, color=True):
     else:
         print(f"[-] {social_network}: Увы!")
 
-# Вывести на печать пропуск сайтов по блок. маске в имени username и прпуск по openssl.
+# Вывести на печать пропуск сайтов по блок. маске в имени username и пропуск по проблеме с openssl.
 def print_invalid(mes, social_network, message, color=True):
     """Ошибка вывода результата"""
     if color:
@@ -306,7 +306,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         print_info("разыскиваем:", username, color)
 
 # Создать много_поточный/процессный сеанс для всех запросов.
-    requests.packages.urllib3.disable_warnings() #блокировка предупреждений об сертификате.
+    requests.packages.urllib3.disable_warnings() #блокировка предупреждений о сертификате.
     my_session = requests.Session()
     if cert == False:
         my_session.verify = False
@@ -361,7 +361,6 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             results_site['check_time_ms'] = ""
             results_site['response_time_ms'] = ""
             results_site['response_time_site_ms'] = ""
-
         else:
 # URL пользователя на сайте (если он существует).
 #            global url
@@ -609,7 +608,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                 results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             results_total[social_network] = results_site
-
+# Вернуть словарь со всеми данными.
         return results_total
 
 # Опция '-t'.
@@ -1094,7 +1093,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
         print(Fore.CYAN + "    Будем искать:" + f" {userlist[:3]}" + " и других..." + Style.RESET_ALL)
 
-# Завершение обновления Snoop.
+# Опция обновление Snoop '--update y'.
     if args.update:
         update_snoop()
 
