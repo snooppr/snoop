@@ -1322,7 +1322,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Музыка.
         try:
-            playsound('end.wav')
+            if args.no_func==False:
+                playsound('end.wav')
         except:
             pass
 
