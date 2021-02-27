@@ -269,11 +269,8 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
     username = re.sub(" ", "%20", username)
 
 # Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
-    ermail=[]
     with open('domainlist.txt', 'r', encoding="utf-8") as err:
-        for line in err.readlines():
-            errdata=line[:-1]
-            ermail.append(errdata)
+        ermail = err.read().splitlines()
     if any(ermail in username for ermail in ermail):
         print(Style.BRIGHT + Fore.RED + "\nE-mail адрес будет обрезан до валидного состояния")
         username = username.rsplit(sep='@', maxsplit=1)[0]
@@ -287,10 +284,9 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
     ernumber=['79', '89', "38", "37"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
-        if len(username) >= 10 and len(username) <= 13:
-            if username.isdigit() == True:
-                print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
-                sys.exit()
+        if len(username) >= 10 and len(username) <= 13 and username.isdigit() == True:
+            print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
+            sys.exit()
     elif username[0] == "+" or username[0] == ".":
         print (Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся с такого символа, практически всегда невалидный...")
         sys.exit()
@@ -873,7 +869,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 snoopplugins.module1()
             elif mod == '2':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("Reverse Vgeocoder_v0.3", style="green")
+                table.add_column("Reverse Vgeocoder_v0.4", style="green")
                 table.add_row('Визуализация Географических координат')
                 console.print(table)
                 snoopplugins.module2()

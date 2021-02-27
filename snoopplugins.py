@@ -23,6 +23,7 @@ from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from folium.plugins import MarkerCluster
+from  more_itertools import unique_everseen
 from operator import itemgetter
 from requests.adapters import HTTPAdapter
 from requests_futures.sessions import FuturesSession
@@ -55,6 +56,7 @@ def helpend():
 
 wZ1bad=[] #отфильтрованные ip (не ip) или отфильтрованные данные Yandex, отфильтрованные 'геокоординаты'.
 azS=[] #список результатов future request.
+coord=[]
 
 class ElapsedFuturesSession(FuturesSession):
     """test_metrica: API:: https://pypi.org/project/requests-futures/"""
@@ -352,7 +354,7 @@ def module2():
 \033[32m
 В Snoop Project поддерживается два режима геокодирования:
 Метод '\033[32;1mПростой\033[0m\033[32m':: На карте OSM расставляются маркеры по координатам. Все маркеры подписаны геометками.
-Для данного метода доступны только сокращенные отчёты с геометками в html формате.
+Для данного метода доступны сокращенные отчёты с геометками в html формате и статистической информацией в txt формате.
 
 Метод '\033[32;1mПодробный\033[0m\033[32m':: На карте OSM расставляются маркеры по координатам. Все маркеры подписаны геометками; странами;
 округами и городами. Статистические отчёты (с расширенной геоинформацией, а также расчётом количественной информацией процентного
@@ -362,28 +364,33 @@ def module2():
 то маркер на карте OSM встанет точно (в лесу), а подписан он будет примерно так: 'Ш:55.3301 Д:42.2604::Страна:RU::ГородскойОкруг1:
 Nizjnij Novgorod::ГородскойОкруг2:Vyksa'. То есть метод работает на основе — 'Евклидово дерево'.
 
-Плагин Reverse Vgeocoder - работает в оффлайн режиме и укомплектован гео-БД (БД предоставляются под свободной лицензией от
+\033[32;1mПлагин Reverse Vgeocoder\033[0m \033[32m- работает в оффлайн режиме и укомплектован гео-БД (БД предоставляются под свободной лицензией от
 download.geonames.org/export/dump/). То есть для работы плагина не требуется выход в сеть.
 
 Для визуализации данных на карте OSM укажите (при запросе) файл с координатами (с расширением .txt или без расширения).
-Каждая точка координат (широта, долгота) с новой строки в файле.
-Snoop довольно умён: распознаёт координаты через запятую или пробел'ы и вычищает случайные строки.
+Каждая точка координат (широта, долгота) с новой строки в файле (желательно).
+Snoop довольно умён: распознаёт и выбирает геокоординаты через запятую, пробел'ы или делает интелектуальную выборку, вычищая случайные строки.
 Пример файла с координатами (как может быть записан файл с координатами, который необходимо указывать):
 \033[36m
 51.352, 108.625
 55.466,64.776
-случайная строка1
 52.40662,66.77631
 53.028 -104.680
 54.505    73.773
-случайная строка2
+Москва55.75, 37.62 Калининград54.71, 20.51 Ростов-на-Дону47.23, 39.72
+случайная_строка1, которая_будет обработана Казань 55.7734/49.1436
+случайная строка2, которая не будет обработана
 \033[0m\033[32m
 По окончанию рендеринга откроется webrowser с результатом.
-Все результаты сохраняются в '~/snoop/results/ReverseVgeocoder/*[.txt.html.csv]'""")
+Все результаты сохраняются в '~/snoop/results/ReverseVgeocoder/*[.txt.html.csv]'
+
+Это удобный плагин, если пользователю необходимо, например, не только обработать геокоординаты, но и найти хаотичные данные - или наоборот.""")
             helpend()
 
 # выбрать файл с геокоординатами
         elif Vgeo == '1':
+            float_patern = '[-]? (?: (?: \d* \. \d+ ))'
+            rx = re.compile(float_patern, re.VERBOSE)
             while True:
                 print("\033[36m└──Введите \033[0m\033[32;1mабсолютный путь\033[0m \033[36mк файлу (кодировка файла -> utf-8) с данными: \n\
         [геокоординаты] или перетащите файл в окно терминала\033[0m\n")
@@ -393,23 +400,47 @@ Snoop довольно умён: распознаёт координаты че�
                 else:
                     put=put.replace("'", "").strip()
 
-    # Создание карты 'Обратный геокодер'
+# Создание карты 'Обратный геокодер'
+
+                maps = folium.Map(location=[48.5, -33.2], zoom_start = 2)
+                marker_cluster = MarkerCluster().add_to(maps)
+# Проверка пути файла с координатами
                 try:
-                    maps = folium.Map(location=[48.5, -33.2], zoom_start = 2)
-                    marker_cluster = MarkerCluster().add_to(maps)
-    # Проверка пути файла с координатами                
                     with open(put, "r", encoding="utf8") as geo:
-                        Geo = geo.read().splitlines() #список готов win
-                    if sys.platform == 'win32':
-                        print('\033[32;1m|\n└──Good!\033[0m')
-                    else:
-                        print('\033[32;1m┃\n┗━━Good!\033[0m')
+# Выборка геокоординат
+                        for line in geo.readlines():
+                            a1=line[:-1]
+                            s=rx.findall(a1)
+                            s_bad = not rx.findall(a1)
+                            wZ1bad.append(str(a1) if s_bad==True else "")
+                            if len(s)==0 or len(s)==1 or len(s)==3 or len(s)==5 or len(s) >=7:
+                                wZ1bad.append(', '.join(s))
+                                continue
+                            try:
+                                coord.append(list(map(float, s[4:6]))) if s[4:6] else ""
+                            except:
+                                pass
+                            try:
+                                coord.append(list(map(float, s[2:4]))) if s[2:4] else ""
+                            except:
+                                pass
+                            try:
+                                coord.append(list(map(float, s[0:2]))) if s[0:2] else ""
+                            except:
+                                pass
+# Удалили дубли
+                        coord2 = list(unique_everseen(coord))
+                        coord.clear()
+# Конец выборки
+                        if sys.platform == 'win32':
+                            print('\033[32;1m|\n└──Good!\033[0m')
+                        else:
+                            print('\033[32;1m┃\n┗━━Good!\033[0m')
                     break
                 except:
                     print("\033[31;1m└──Указан неверный путь. Укажите правильный абсолютный путь к файлу или перетащите файл в окно терминала\033[0m")
                     hvostput = os.path.split(put)[1].replace('"', '')
                     Erf(hvostput)
-                    #sys.exit()
 
             while True:
                 print(
@@ -419,9 +450,7 @@ Snoop довольно умён: распознаёт координаты че�
 \033[36m└──\033[36m[\033[0m\033[31;1mq\033[0m\033[36m] --> Выход\033[0m\n""")
                 rGeo = input()
 
-                if rGeo == "q":
-                    break
-                elif rGeo == '1' or rGeo == '2':
+                if rGeo == "q" or rGeo == '1' or rGeo == '2':
                     break
                 else:
                     print(Style.BRIGHT + Fore.RED + "└──Неверный выбор" + Style.RESET_ALL)
@@ -431,61 +460,76 @@ Snoop довольно умён: распознаёт координаты че�
                 print(Style.BRIGHT + Fore.RED + "Выход")
                 break
                 sys.exit()
-
-            coord2=[]
-            coord3=[]
-            timestartR = time.time()
             if rGeo == '1':
+                timestartR = time.time()
                 with console.status("[green bold]Ожидайте, идёт геокодирование...",spinner=random.choice(["dots", "dots12"])):
-                    for a1 in Geo:
-                        try:
-                            if "," in a1:
-                                g1=(a1.split(','))
-                            elif any(' ' in a1 for a1 in a1):
-                                g1=(a1.split())
-                            else:
-                                wZ1bad.append(str(a1))
-                                continue
-                            g11=float(g1[0])
-                            g22=float(g1[1])
-                            coord2.append(g11)
-                            coord2.append(g22)
-                            coord3.append(list(coord2))
-                            folium.Marker(location=coord2, popup="Ш:" + str(g11) + \
-                            " Д:" + str(g22), icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
-                        except:
-                            wZ1bad.append(str(a1))
+                    n_yes=0
+                    for geo_sh_do in coord2:
+# Гео ш-д от +-90/+-180
+                        if not -90.1 <= geo_sh_do[0] <=90.1 or not -180.1 <= geo_sh_do[1] <=180.1:
+                            wZ1bad.append(str(geo_sh_do))
                             continue
-                        coord2.clear()
+                        n_yes+=1
+                        coord.append(geo_sh_do)
+# 1. Простой метод
+                        try:
+                            if rGeo == '1':
+                                folium.Marker(location=geo_sh_do, popup="Ш:" + str(geo_sh_do[0]) + \
+                                " Д:" + str(geo_sh_do[1]), icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
+# 2. Подробный метод
+                        except:
+                            continue
+# Сохранение карты osm
                     namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_data)
                     namemaps = (f'Maps_{namemaps}.html')
                     mapsme = str(dirresults + "/results/ReverseVgeocoder/" + str(namemaps))
                     maps.save(mapsme)
+# Обработка bad (извлечение вложенного списка)
+                    wZ1bad_raw=[]
+                    for i in wZ1bad:
+                        [wZ1bad_raw.append(i2) for i2 in i] if isinstance(i, list) else wZ1bad_raw.append(i)
+                    wZ1bad_raw2 = list(unique_everseen(wZ1bad_raw))
+                    wZ1bad_raw2.remove('')
+# Кол-во обработанных координат
+                    lcoord, lwZ1bad = n_yes, len(wZ1bad_raw2)
 
-                    lcoord3, lwZ1bad = len(coord3), len(wZ1bad)
+                hvostR = os.path.split(put)[1]
+                timefinishR = time.time() - timestartR
 
-                    try:
-                        if lcoord3 >= 1:
-                            webbrowser.open(str("file://" + mapsme))
-                    except:
-                        pass
-                    hvostR = os.path.split(put)[1]
-                    timefinishR = time.time() - timestartR
-
-                    print(Style.RESET_ALL + Fore.CYAN +f"├─Время обработки файла '\033[36;1m{hvostR}\033[0m\033[36m' -->",
-                    "\033[36;1m(%.0f" % float(timefinishR) +"sec)")
-                    print(Style.RESET_ALL + Fore.CYAN +f"├─Успешно обработано --> '\033[32;1m{lcoord3}\033[0m\033[36m' геокоординат")
-                    if lwZ1bad >= 1:
-                        print(Fore.CYAN +f"├─Отброшено --> '\033[31;1m{lwZ1bad}\033[0m\033[36m' случайных данных")
-                    print(Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
-                    f"\033[36;1m{dirresults}/results/ReverseVgeocoder/{hvostR}[.txt.html.csv]")
-                    break
-                    sys.exit()
+                print(Style.RESET_ALL + Fore.CYAN +f"├─Время обработки файла '\033[36;1m{hvostR}\033[0m\033[36m' -->",
+                "\033[36;1m(%.0f" % float(timefinishR) +"sec)")
+                print(Style.RESET_ALL + Fore.CYAN +f"├─Успешно обработано --> '\033[32;1m{lcoord}\033[0m\033[36m' геокоординат")
+                if lwZ1bad >= 1:
+                    print(Style.RESET_ALL + Fore.CYAN +f"├─Отброшено --> '\033[31;1m{lwZ1bad}\033[0m\033[36m' случайных данных")
+                print(Style.RESET_ALL + Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
+                f"\033[36;1m{dirresults}/results/ReverseVgeocoder/{hvostR}[.txt.html.csv]")
+                try:
+                    if lcoord >= 1:
+                        webbrowser.open(str("file://" + mapsme))
+                except:
+                    pass
+# Запись в txt
+                try:
+                    file_txtR = open(dirresults + "/results/ReverseVgeocoder/" + str(hvostR) + ".txt", "w", encoding="utf-8")
+                except:
+                    pass
+                file_txtR.write(f"Полученные и обработанные данные из файла '{hvostR}' ({lcoord}):\n\n")
+                for coord_geo in coord:
+                    coord_geo=",".join([str(i) for i in coord_geo])
+                    file_txtR.write(f"{coord_geo}\n")
+                file_txtR.write("===================================" + "\n\n")
+                file_txtR.write(f"Необработанные данные из файла '{hvostR}' ({lwZ1bad}):\n")
+                for badGEO in wZ1bad_raw2:
+                    file_txtR.write(f"{badGEO}\n")
+                file_txtR.write("===================================" + "\n\n")
+                file_txtR.write(time.strftime(f"Дата обработки файла '{hvostR}': %d_%m_%Y_%H_%M_%S", time_data))
+                file_txtR.close()
             if rGeo == '2':
                 print("\033[31;1m└──В Demo version этот метод плагина недоступен\033[0m\n")
                 donate()
-                break
-                sys.exit()
+            break
+            sys.exit()
+            #coord.clear(), coord2.clear(), wZ1bad.clear()
         else:
             print(Style.BRIGHT + Fore.RED + "└──Неверный выбор" + Style.RESET_ALL)
             ravno()
