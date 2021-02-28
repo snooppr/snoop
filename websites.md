@@ -1118,7 +1118,7 @@
 1117. 🇷🇺 [PromoDJ](http://promodj.com/)
 1118. 🇷🇺 [Proshkolu](https://proshkolu.ru)
 1119. 🇷🇺 [Prosvetlenie](http://www.prosvetlenie.org)
-1120. 🌎 [Protonmail](https://linktr.ee)
+1120. 🌎 [Protonmail](https://mail.protonmail.com/login)
 1121. 🇷🇺 [Proza](https://www.proza.ru/)
 1122. 🌎 [Pscp](https://www.pscp.tv)
 1123. 🇬🇧 [Psnprofiles](https://psnprofiles.com/)
