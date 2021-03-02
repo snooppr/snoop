@@ -9,3 +9,4 @@ requests-futures==1.0.0
 rich==9.10.0
 soupsieve==2.1
 speedtest-cli==2.1.2
+more-itertools==8.7.0

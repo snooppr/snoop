@@ -91,6 +91,9 @@ MIT License
 The main idea and part of the modified code of this Software:
 Copyright (c) 2019 Sherlock Project
 
+This software uses more-itertools library, which is
+Copyright (c) 2012 Erik Rose
+
 This software uses Beautiful Soup library, which is
 Copyright (c) 2004-2019 Leonard Richardson
 
