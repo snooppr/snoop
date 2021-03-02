@@ -513,7 +513,7 @@ Snoop довольно умён: распознаёт и выбирает гео
                     file_txtR = open(dirresults + "/results/ReverseVgeocoder/" + str(hvostR) + ".txt", "w", encoding="utf-8")
                 except:
                     pass
-                file_txtR.write(f"Полученные и обработанные данные из файла '{hvostR}' ({lcoord}):\n\n")
+                file_txtR.write(f"Полученные и обработанные данные из файла '{hvostR}' ({lcoord}):\n")
                 for coord_geo in coord:
                     coord_geo=",".join([str(i) for i in coord_geo])
                     file_txtR.write(f"{coord_geo}\n")
