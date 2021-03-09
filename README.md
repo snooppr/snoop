@@ -14,8 +14,6 @@ Snoop — это исследовательская работа (собстве
 в области поиска и обработки публичных данных в сети интернет.  
 По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
 
-[История развития проекта/History](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
-
 | Платформа             | Поддержка |
 |-----------------------|:---------:|
 | GNU/Linux             |     ✅    |
@@ -39,8 +37,7 @@ https://github.com/snooppr/snoop/releases
 
 **RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
-**EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3  
-installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
+**EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
@@ -59,11 +56,11 @@ Snoop Project Plugins
 **Search report dozen username (Plugin — Yandex_parser)**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
-## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
+## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
 
 <details>
-<summary>Using</summary>  
+<summary>Использование/Using</summary>  
 
 **English version — of Snoop see release (available 'Snoop EN version').**
 ```
@@ -246,7 +243,7 @@ $ pkg install coreutils
 </details>
 
 <details>
-<summary>Основные ошибки</summary>
+<summary>Основные ошибки/Basic errors in</summary>
 
 |  Сторона  |                         Проблема                      | Решение |
 |:---------:| ------------------------------------------------------|:-------:|
@@ -307,7 +304,9 @@ $ sudo nano /etc/ssl/openssl.cnf
 </details>
 
 <details>
-<summary>Дополнительная информация</summary>
+<summary>Дополнительная информация/Additional information</summary>
+
+[История развития проекта/History](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
 
 **Информация для госслужащих:** Snoop Project включен в реестр отечественного ПО. Приказ Минкомсвязи РФ №515 реестровый № 7012.  
 
