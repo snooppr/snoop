@@ -43,91 +43,24 @@ https://github.com/snooppr/snoop/releases
 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
 **An example of searching on a PC**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
-............................................................................  
 
 Snoop Project Plugins
 =====================
 
-##1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
+## 1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
 
 **Reports are also available in csv/txt/CLI/maps**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
 
-##2. Demonstration of one of the methods in the Plugin — [Yandex_parser]  
+## 2. Demonstration of one of the methods in the Plugin — [Yandex_parser]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
 
 ##Search report dozen username (Plugin — Yandex_parser)  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
-##3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
+## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
-
-## Самостоятельная сборка ПО из исходно кода/Self-build software from source
-**Native Installation**  
-Примечание: Требуемая версия python 3.7 либо 3.8.
-
-```
-# Клонировать репозиторий
-$ git clone https://github.com/snooppr/snoop
-
-# Войти в рабочий каталог
-$ cd ~/snoop
-
-# Установить python3 и python3-pip, если они не установлены
-$ apt-get update && apt-get install python3 python3-pip
-
-# Установить зависимости 'requirements'
-$ pip install --upgrade pip
-$ python3 -m pip install -r requirements.txt
-# Либо установить все зависимости из 'requirements.txt' в ручную через
-$ pip3 install module
-# Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
-$ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
-# На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
-```
-
-Snoop for Android
-=================
-
-search username
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
-
-plugins
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
-
-**Native Installation**  
-
-Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
-```
-# Примечание: установка Snoop на Termux продолжительная по времени
-# Войти в домашнюю папку Termux (т.е. просто открыть Termux)
-$ termux-setup-storage
-$ ls #/data/data/com.termux/files/home # дефолтный/домашний каталог
-
-# Установить python3 и зависимости
-$ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
-$ pip install --upgrade pip
-
-# Клонировать репозиторий
-$ git clone https://github.com/snooppr/snoop -b snoop_termux
-# (Если флешкa FAT (ни ext4), в таком случае,
-# клонировать репозиторий только в ДОМАШНЮЮ директорию Termux)
-
-# Войти в рабочий каталог Snoop
-$ cd ~/snoop
-# Установить зависимости 'requirements'
-$ python3 -m pip install -r requirements.txt
-
-
-# Дополнение для устаревших гаджетов (Android 6)
-# Примечание на современных гаджетах пакеты уже предустановлены и настроены
-# добавьте любое 'рандомное' имя и почту:
-$ git config --global user.email "you@example.com"
-$ git config --global user.name "username"
-# Установите coreutils
-$ pkg install coreutils
-```
 
 Using
 =====
@@ -241,6 +174,74 @@ csv открывать в *office в кодировке **utf-8**, раздел�
 # Обновляйте Snoop для тестирования новых функций в ПО:
 $ python3 snoop.py --update y #Требуется установка Git.
 ```
+  
+<details>
+<summary>Самостоятельная сборка ПО из исходно кода/Self-build software from source</summary>
+**Native Installation**  
+Примечание: Требуемая версия python 3.7 либо 3.8.
+
+```
+# Клонировать репозиторий
+$ git clone https://github.com/snooppr/snoop
+
+# Войти в рабочий каталог
+$ cd ~/snoop
+
+# Установить python3 и python3-pip, если они не установлены
+$ apt-get update && apt-get install python3 python3-pip
+
+# Установить зависимости 'requirements'
+$ pip install --upgrade pip
+$ python3 -m pip install -r requirements.txt
+# Либо установить все зависимости из 'requirements.txt' в ручную через
+$ pip3 install module
+# Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
+$ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
+# На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
+```
+</details>
+
+<details>
+<summary>Snoop for Android</summary>
+search username
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
+
+plugins
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
+
+**Native Installation**  
+
+Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
+```
+# Примечание: установка Snoop на Termux продолжительная по времени
+# Войти в домашнюю папку Termux (т.е. просто открыть Termux)
+$ termux-setup-storage
+$ ls #/data/data/com.termux/files/home # дефолтный/домашний каталог
+
+# Установить python3 и зависимости
+$ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
+$ pip install --upgrade pip
+
+# Клонировать репозиторий
+$ git clone https://github.com/snooppr/snoop -b snoop_termux
+# (Если флешкa FAT (ни ext4), в таком случае,
+# клонировать репозиторий только в ДОМАШНЮЮ директорию Termux)
+
+# Войти в рабочий каталог Snoop
+$ cd ~/snoop
+# Установить зависимости 'requirements'
+$ python3 -m pip install -r requirements.txt
+
+
+# Дополнение для устаревших гаджетов (Android 6)
+# Примечание на современных гаджетах пакеты уже предустановлены и настроены
+# добавьте любое 'рандомное' имя и почту:
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "username"
+# Установите coreutils
+$ pkg install coreutils
+```
+</details>
 
 <details>
 <summary>Основные ошибки</summary>
