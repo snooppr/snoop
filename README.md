@@ -62,8 +62,8 @@ Snoop Project Plugins
 ## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
 
-Using
-=====
+<details>
+<summary>Using</summary>  
 
 **English version — of Snoop see release (available 'Snoop EN version').**
 ```
@@ -174,7 +174,8 @@ csv открывать в *office в кодировке **utf-8**, раздел�
 # Обновляйте Snoop для тестирования новых функций в ПО:
 $ python3 snoop.py --update y #Требуется установка Git.
 ```
-  
+</details>  
+
 <details>
 <summary>Самостоятельная сборка ПО из исходно кода/Self-build software from source</summary>  
 
