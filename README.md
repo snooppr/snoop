@@ -28,15 +28,14 @@ Namechk **~100** сайтов.
 | Android (Termux)      |     ✅    |
 | macOS                 |     ❗️    |
 | IOS                   |     🚫    |
-| WSL                   |     🚫    |
-
-[Snoop Full version database 1500+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+| WSL                   |     🚫    |  
 
 Snoop for OS Windows and GNU/Linux
 ==================================
 
 **Snoop Local database**
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
+[Snoop Full version database 1500+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")    
 
 ## Релиз/Release
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
