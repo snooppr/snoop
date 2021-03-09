@@ -41,7 +41,7 @@ https://github.com/snooppr/snoop/releases
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
 **EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3  
 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
-**An example of searching on a PC**  
+ 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 Snoop Project Plugins
@@ -56,7 +56,7 @@ Snoop Project Plugins
 ## 2. Demonstration of one of the methods in the Plugin — [Yandex_parser]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
 
-##Search report dozen username (Plugin — Yandex_parser)  
+**Search report dozen username (Plugin — Yandex_parser)**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
 ## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
@@ -176,7 +176,8 @@ $ python3 snoop.py --update y #Требуется установка Git.
 ```
   
 <details>
-<summary>Самостоятельная сборка ПО из исходно кода/Self-build software from source</summary>
+<summary>Самостоятельная сборка ПО из исходно кода/Self-build software from source</summary>  
+
 **Native Installation**  
 Примечание: Требуемая версия python 3.7 либо 3.8.
 
@@ -202,7 +203,7 @@ $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-
 </details>
 
 <details>
-<summary>Snoop for Android</summary>
+<summary>Snoop for Android</summary>  
 search username
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
 
