@@ -44,6 +44,7 @@ installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.
 **An example of searching on a PC**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 ............................................................................  
+
 Snoop Project Plugins
 =====================
 
