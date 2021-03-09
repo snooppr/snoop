@@ -41,7 +41,27 @@ https://github.com/snooppr/snoop/releases
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
 **EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3  
 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
+**An example of searching on a PC**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 ............................................................................  
+Snoop Project Plugins
+=====================
+
+##1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+
+**Reports are also available in csv/txt/CLI/maps**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
+
+##2. Demonstration of one of the methods in the Plugin — [Yandex_parser]  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
+
+##Search report dozen username (Plugin — Yandex_parser)  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
+
+##3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
+
 ## Самостоятельная сборка ПО из исходно кода/Self-build software from source
 **Native Installation**  
 Примечание: Требуемая версия python 3.7 либо 3.8.
@@ -65,8 +85,6 @@ $ pip3 install module
 $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
 ```
-**An example of searching on a PC**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 Snoop for Android
 =================
@@ -109,23 +127,6 @@ $ git config --global user.name "username"
 # Установите coreutils
 $ pkg install coreutils
 ```
-Snoop Project Plugins
-=====================
-
-**1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
-
-**Reports are also available in csv/txt/CLI/maps**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
-
-**2. Demonstration of one of the methods in the Plugin — [Yandex_parser]**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
-
-**Search report dozen username (Plugin — Yandex_parser)**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
-
-**3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" />  
 
 Using
 =====
@@ -242,8 +243,6 @@ $ python3 snoop.py --update y #Требуется установка Git.
 
 <details>
 <summary>Основные ошибки</summary>
-Основные ошибки
-===============
 
 |  Сторона  |                         Проблема                      | Решение |
 |:---------:| ------------------------------------------------------|:-------:|
@@ -303,8 +302,8 @@ $ sudo nano /etc/ssl/openssl.cnf
 ```
 </details>
 
-Дополнительная информация
-=========================
+<details>
+<summary>Дополнительная информация</summary>
 
 **Информация для госслужащих:** Snoop Project включен в реестр отечественного ПО. Приказ Минкомсвязи РФ №515 реестровый № 7012.  
 
@@ -319,5 +318,5 @@ $ sudo nano /etc/ssl/openssl.cnf
 [Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
 
 **email:** snoopproject@protonmail.com
-
+</details>
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.png" />
