@@ -84,33 +84,29 @@ if time.time() > int(date_up):
 def ravno():
     console.rule(characters = '=', style="cyan bold")
 
-def DB():
+
+def decode_db(_db):
     try:
-        with open('BDdemo', "r", encoding="utf8") as z:
+        with open(_db, "r", encoding="utf8") as z:
             db = z.read()
             db = db.encode("UTF-8")
             db = base64.b64decode(db)
             db = db[::-1]
             db = base64.b64decode(db)
-            trinity = json.loads(db.decode("UTF-8"))
-            return trinity
-    except:
-        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
+            trinity_neo = json.loads(db.decode("UTF-8"))
+            return trinity_neo
+    except Exception as e:
+        print(e, Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
         sys.exit()
 
+
+def DB():
+    return decode_db('BDdemo')
+
+
 def DBflag():
-    try:
-        with open('BDflag', "r", encoding="utf8") as z1:
-            dbf = z1.read()
-            dbf = dbf.encode("UTF-8")
-            dbf = base64.b64decode(dbf)
-            dbf = dbf[::-1]
-            dbf = base64.b64decode(dbf)
-            neo = json.loads(dbf.decode("UTF-8"))
-            return neo
-    except:
-        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
-        sys.exit()
+    return decode_db('BDflag')
+
 
 # Флаг БС.
 def baza():
