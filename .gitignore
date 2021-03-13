@@ -11,3 +11,4 @@ results/save reports/*
 !results/csv/новый файл
 !results/html/новый файл
 !results/txt/новый файл
+.idea

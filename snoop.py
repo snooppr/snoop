@@ -118,39 +118,23 @@ def baza():
     return BS
 flagBS = len(baza())
 
+
 # Создание директорий результатов.
-try:
-    os.makedirs(str(dirresults + "/results"))
-except:
-    pass
-try:
-    os.makedirs(str(dirresults + "/results/html"))
-except:
-    pass
-try:
-    os.makedirs(str(dirresults + "/results/txt"))
-except:
-    pass
-try:
-    os.makedirs(str(dirresults + "/results/csv"))
-except:
-    pass
-try:
-    os.makedirs(str(dirresults + "/results/save reports"))
-except:
-    pass
-try:
-    os.makedirs(str(dirresults + "/results/ReverseVgeocoder"))
-except:
-    pass
-try:
-    os.makedirs(str(dirresults + "/results/Yandex_parser"))
-except:
-    pass
-try:
-    os.makedirs(str(dirresults + "/results/domain"))
-except:
-    pass
+def make_sure_path_exists(path, sub_path):
+    if not os.path.exists(path + sub_path):
+        os.makedirs(path + '/results')
+        os.makedirs(path + "/results/html")
+        os.makedirs(path + "/results/txt")
+        os.makedirs(path + "/results/csv")
+        os.makedirs(path + "/results/save reports")
+        os.makedirs(path + "/results/ReverseVgeocoder")
+        os.makedirs(path + "/results/Yandex_parser")
+        os.makedirs(path + "/results/domain")
+
+
+make_sure_path_exists(dirresults, '/results')
+
+
 ################################################################################
 class ElapsedFuturesSession(FuturesSession):
     """test_metrica: API:: https://pypi.org/project/requests-futures/"""
