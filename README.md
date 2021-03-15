@@ -180,7 +180,7 @@ $ python3 snoop.py --update y #Требуется установка Git.
 </details>  
 
 <details>
-<summary>Самостоятельная сборка ПО из исходно кода/Self-build software from source</summary>  
+<summary>Самостоятельная сборка ПО из исходного кода/Self-build software from source</summary>  
 
 **Native Installation**  
 Примечание: Требуемая версия python 3.7 либо 3.8.
