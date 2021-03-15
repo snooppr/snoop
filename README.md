@@ -39,7 +39,7 @@ Snoop for OS Windows and GNU/Linux
 
 ## Релиз/Release
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
-https://github.com/snooppr/snoop/releases  
+🇷🇺 🇺🇸 [Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
 
 **RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
