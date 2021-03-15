@@ -687,7 +687,7 @@ Snoop в исполняемом виде (бинарник) предоставл
 Snoop Full Version: плагины без ограничений; 1500+ Websites; 
 поддержка и обновление Database Snoop.
 Подключение к Web_Database Snoop (online), которая расширяется/обновляется.[/bold green]
-[bold red]Ограничения Demo Version: Websites (Database Snoop сокращена в > 19 раз);
+[bold red]Ограничения Demo Version: Websites (Database Snoop сокращена в > 15 раз);
 отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
 
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
