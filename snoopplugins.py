@@ -89,7 +89,8 @@ def donate():
 ╭donate/Buy:
 ├──Яндекс.Деньги (yoomoney):: [white]4100111364257544[/white]
 ├──Visa:: [white]4274320047338002[/white]
-└──PayPal::[/cyan] [white]snoopproject@protonmail.com[/white]
+├──PayPal:: [white]snoopproject@protonmail.com[/white]
+└──Bitcoin (только Donate)::[/cyan] [white]1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8[/white]
 
 [bold green]Если вас заинтересовала [red]Snoop Demo Version[/red], Вы можете официально приобрести 
 [cyan]Snoop Full Version[/cyan], поддержав развитие проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
