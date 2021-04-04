@@ -1586,7 +1586,7 @@
 1585. 🌎 [YandexCollections](https://yandex.com/collections/)
 1586. 🌎 [YandexMusic](https://music.yandex.ru)
 1587. 🌎 [YandexSoberu](https://yasobe.ru)
-1588. 🇹🇷 [Yapisal](None)
+1588. 🇹🇷 [Yapisal](https://forum.yapisal.net)
 1589. 🇺🇸 [YouNow](https://www.younow.com/)
 1590. 🏁 [YouPic](https://youpic.com/)
 1591. 🌎 [YouTube](https://www.youtube.com/)
