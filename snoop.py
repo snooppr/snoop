@@ -685,7 +685,7 @@ Snoop в исполняемом виде (бинарник) предоставл
 Студентам по направлению ИБ/Криминалистика Snoop ПО Full Version может быть
 предоставлено на безвозмездной основе.
 
-Snoop Full Version: плагины без ограничений; 1500+ Websites; 
+Snoop Full Version: плагины без ограничений; 1600+ Websites; 
 поддержка и обновление Database Snoop.
 Подключение к Web_Database Snoop (online), которая расширяется/обновляется.[/bold green]
 [bold red]Ограничения Demo Version: Websites (Database Snoop сокращена в > 15 раз);
@@ -703,7 +703,7 @@ border_style="bold blue"))# ,style="bold green"))
                             description=f"{module_name} (Version {version})",
                             epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1500+\033[0m \033[36mWebsites!!!\033[0m\n \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1600+\033[0m \033[36mWebsites!!!\033[0m\n \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
