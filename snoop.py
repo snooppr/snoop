@@ -189,7 +189,7 @@ def print_found_country(social_network, url, countryAB, response_time=False, ver
     else:
         print(f"[+] {social_network}: {url}")
 
-# Вывести на печать Аккаунт не найден.
+# Вывести на печать аккаунт не найден.
 def print_not_found(social_network, response_time, verbose=False, color=True):
     if color:
         print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
@@ -630,19 +630,13 @@ def update_snoop():
     upd = str(input())
 
     if upd == "y":
-        if sys.platform == 'win32':
-            print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS Windows")
-            os.startfile("update.bat")
-        else:
-            print(Fore.RED + "Функция обновления Snoop требует установки <Git> на OS GNU/Linux")
-            os.system("./update.sh")
-
+        print(Style.BRIGHT + Fore.RED + "Функция обновления Snoop требует установки <Git>")
+        os.startfile("update.bat") if sys.platform == 'win32' else os.system("./update.sh")
     print(Style.BRIGHT + Fore.RED + "\nВыход")
     sys.exit()
 
 # ОСНОВА.
 def run():
-
 # Лицензия.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
