@@ -276,8 +276,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         username = username.rsplit(sep='@', maxsplit=1)[0]
 
     with open('specialcharacters', 'r', encoding="utf-8") as errspec:
-        s1 = errspec.read()
-        my_list_bad = list(s1)
+        my_list_bad = list(errspec.read())
         if any(my_list_bad in username for my_list_bad in my_list_bad):
             print(Style.BRIGHT + Fore.RED + f"недопустимые символы в username: {username}")
             sys.exit()
@@ -1071,8 +1070,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         userlists=[]
         userlists_bad=[]
         with open('specialcharacters', 'r', encoding="utf-8") as errspec:
-            s1 = errspec.read()
-            my_list_bad = list(s1)
+            my_list_bad = list(errspec.read())
         try:
             patchuserlist = ("{}".format(args.user))
             if sys.platform != 'win32':
