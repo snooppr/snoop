@@ -163,6 +163,7 @@ def module3():
                         progressYa.refresh()
                         progressYa.update(task, advance=1)
                     rY=reqY.result()
+                    print(rY.text)
                     try:
                         rdict = json.loads(rY.text)
                     except:
