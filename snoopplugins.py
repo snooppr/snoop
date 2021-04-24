@@ -411,10 +411,9 @@ Snoop довольно умён: распознаёт и выбирает гео
                     with open(put, "r", encoding="utf8") as geo:
 # Выборка геокоординат
                         for line in geo.readlines():
-                            a1=line[:-1]
-                            s=rx.findall(a1)
-                            s_bad = not rx.findall(a1)
-                            wZ1bad.append(str(a1) if s_bad==True else "")
+                            s=rx.findall(line)
+                            s_bad = not rx.findall(line)
+                            wZ1bad.append(str(line) if s_bad==True else "")
                             if len(s)==0 or len(s)==1 or len(s)==3 or len(s)==5 or len(s) >=7:
                                 wZ1bad.append(', '.join(s))
                                 continue
@@ -524,7 +523,7 @@ Snoop довольно умён: распознаёт и выбирает гео
                 for badGEO in wZ1bad_raw2:
                     file_txtR.write(f"{badGEO}\n")
                 file_txtR.write("===================================" + "\n\n")
-                file_txtR.write(time.strftime(f"Дата обработки файла '{hvostR}': %d_%m_%Y_%H_%M_%S", time_data))
+                file_txtR.write(time.strftime(f"Дата обработки файла '{hvostR}': %d/%m/%Y_%H:%M:%S", time_data))
                 file_txtR.close()
             if rGeo == '2':
                 print("\033[31;1m└──В Demo version этот метод плагина недоступен\033[0m\n")
