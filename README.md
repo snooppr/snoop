@@ -328,4 +328,4 @@ $ sudo nano /etc/ssl/openssl.cnf
 
 **email:** snoopproject@protonmail.com
 </details>
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.png" />
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.jpeg" />
