@@ -655,6 +655,7 @@ def autoclean():
 
 # ОСНОВА.
 def run():
+
 # Лицензия.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
