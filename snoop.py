@@ -3,6 +3,7 @@
 
 import base64
 import csv
+import glob
 import json
 import locale
 import networktest
@@ -60,9 +61,10 @@ console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.9_rus Snoop (source demo)"
+version = "1.2.9_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
+dirhome = os.environ['HOME'] if sys.platform != 'win32' else "c:"
 timestart = time.time()
 time_data = time.localtime()
 censors = 1
@@ -634,6 +636,23 @@ def update_snoop():
     print(Style.BRIGHT + Fore.RED + "\nВыход")
     sys.exit()
 
+# Удаление отчетов.
+def autoclean():
+# Определение директорий.
+    rm = dirresults + '/results' if 'Source' in version else dirhome + "/snoop/results"
+# Подсчет файлов и размера удаляемого каталога 'results'.
+    total_size = 0
+    delfiles=[]
+    for total_file in glob.iglob(rm + '/**/*', recursive=True):
+        total_size += os.path.getsize(total_file)
+        delfiles.append(total_file) if os.path.isfile(total_file) else ""
+# Удаление каталога 'results'.
+    try:
+        shutil.rmtree(rm, ignore_errors=True)
+        print(f"\033[31;1mdeleted --> {rm}\033[0m\033[36m {len(delfiles)} files, {round(total_size/1024/1024, 2)} Mb\033[0m")
+    except:
+        console.log("[red]Ошибка")
+
 # ОСНОВА.
 def run():
 # Лицензия.
@@ -700,33 +719,33 @@ border_style="bold blue"))# ,style="bold green"))
                             )
     parser.add_argument("--donate y", "-d y",
                         action="store_true", dest="donation",
-                        help="Пожертвовать на развитие Snoop Project-а (получить/приобрести \033[36mSnoop Full Version\033[0m)"
+                        help="\033[36mП\033[0mожертвовать на развитие Snoop Project-а, получить/приобрести \033[32;1mSnoop Full Version\033[0m"
                         )
     parser.add_argument("--version", "--about", "-V",
                         action="version",  version=(version_snoop),
-                        help="\033[31;1mНАЧАЛО! Вывод на печать версий: OS; Snoop; Python и Лицензии\033[0m"
+                        help="\033[36mН\033[0mАЧАЛО! Вывод на печать версий: OS; Snoop; Python и Лицензии"
                         )
     parser.add_argument("--verbose", "-v",
                         action="store_true",  dest="verbose", default=False,
-                        help="Во время поиска 'username' выводить на печать подробную вербализацию"
+                        help="\033[36mВ\033[0mо время поиска 'username' выводить на печать подробную вербализацию"
                         )
     parser.add_argument("--base", "-b",
                         dest="json_file", default="BDdemo", metavar='',
-                        help="Указать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
+                        help="\033[36mУ\033[0mказать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
                         )
     parser.add_argument("--web-base", "-w",
                         action="store_true", dest="web", default=False,
-                        help="Подключиться для поиска 'username' к обновляемой web_БД (Online)/В demo version функция отключена"
+                        help="\033[36mП\033[0mодключиться для поиска 'username' к обновляемой web_БД (Online)/В demo version функция отключена"
                         )
     parser.add_argument("--site", "-s",
                         action="append", metavar='',
                         dest="site_list",  default=None,
-                        help="Указать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе"
+                        help="\033[36mУ\033[0mказать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе"
                         )
     parser.add_argument("--time-out", "-t 9",
                         action="store", metavar='',
                         dest="timeout", type=timeout_check, default=5,
-                        help="Установить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
+                        help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
                              "Вкл. эту опцию необходимо при медленном \
                              интернет соединении, чтобы избежать длительных зависаний \
@@ -734,11 +753,11 @@ border_style="bold blue"))# ,style="bold green"))
                         )
     parser.add_argument("--found-print", "-f",
                         action="store_true", dest="print_found_only", default=False,
-                        help="Выводить на печать только найденные аккаунты"
+                        help="\033[36mВ\033[0mыводить на печать только найденные аккаунты"
                         )
     parser.add_argument("--no-func", "-n",
                         action="store_true", dest="no_func", default=False,
-                        help="""✓Монохромный терминал, не использовать цвета в url\n
+                        help="""\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url\n
                                 ✓Отключить звук\n
                                 ✓Запретить открытие web browser-а\n
                                 ✓Отключить вывод на печать флагов стран\n
@@ -748,54 +767,59 @@ border_style="bold blue"))# ,style="bold green"))
     parser.add_argument("username",
                         nargs='+', metavar='USERNAMES',
                         action="store",
-                        help="Никнейм разыскиваемого пользователя, поддерживается несколько имён"
+                        help="\033[36mН\033[0mикнейм разыскиваемого пользователя, поддерживается несколько имён"
                         )
     parser.add_argument("--userload", "-u", metavar='',
                         action="store", dest="user", default=False,
-                        help="Указать файл со списком user-ов. Пример_Linux: 'python3 snoop.py -u ~/listusers.txt start'\n"
+                        help="\033[36mУ\033[0mказать файл со списком user-ов. Пример_Linux: 'python3 snoop.py -u ~/listusers.txt start'\n"
                              "Пример для Windows: 'python snoop.py -u c:\snoop\listusers.txt start'"
                         )
     parser.add_argument("--list all",
                         action="store_true", dest="listing",
-                        help="Вывести на печать детальную информацию о базе данных Snoop"
+                        help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop"
                         )
     parser.add_argument("--country", "-c",
                         action="store_true", dest="country", default=False,
-                        help="Сортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
+                        help="\033[36mС\033[0mортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
                         )
     parser.add_argument("--save-page", "-S",
                         action="store_true", dest="reports", default=False,
-                        help="Сохранять найденные странички пользователей в локальные файлы"
+                        help="\033[36mС\033[0mохранять найденные странички пользователей в локальные файлы"
                         )
     parser.add_argument("--cert-on", "-C", default=False,
                         action="store_true", dest="cert",
-                        help="""Вкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
+                        help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
                         на серверах отключена, что даёт меньше ошибок и больше положительных результатов
                         при поиске username"""
                         )
     parser.add_argument("--normal", "-N",
                         action="store_true", dest="norm", default=True,
-                        help="""Переключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
+                        help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
                                 По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja':
-                                ускорение поиска ~25pct, экономия ОЗУ ~50pct,
-                                повторное 'гибкое' соединение на сбойных ресурсах.
-                                \033[31;1mРежим SNOOPninja эффективен только для
-                                Snoop for GNU/Linux Full Version\033[0m.
-                                По_умолчанию (Windows) вкл 'нормальный режим'.
-                                В Demo Version переключатель режимов деактивирован"""
+                                ускорение поиска ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
+                                Режим SNOOPninja эффективен только для Snoop for GNU/Linux Full Version.
+                                По_умолчанию (Windows) вкл 'нормальный режим'. В Demo Version переключатель режимов деактивирован"""
                         )
     parser.add_argument("--module y", "-m y",
                         action="store_true", dest="module", default=False,
-                        help="OSINT поиск: используя различные плагины Snoop (список плагинов будет пополняться)"
+                        help="\033[36mO\033[0mSINT поиск: используя различные плагины Snoop (список плагинов будет пополняться)"
+                        )
+    parser.add_argument("--autoclean y", "-a y",
+                        action="store_true", dest="autoclean", default=False,
+                        help="\033[36mУ\033[0mдалить все отчеты, очистить место"
                         )
     parser.add_argument("--update y",
                         action="store_true", dest="update",
-                        help="Обновить Snoop"
+                        help="\033[36mО\033[0mбновить Snoop"
                         )
 
     args = parser.parse_args()
 
-
+# Опция  '-a'.
+    if args.autoclean:
+        print(Fore.CYAN + "[+] активирована опция '-a': «удаление накопленных отчетов»\n")
+        autoclean()
+        sys.exit()
 # Информативный вывод:
     if args.module:
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
