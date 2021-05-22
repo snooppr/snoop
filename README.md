@@ -15,7 +15,7 @@ Snoop — это исследовательская работа (собстве
 По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
-Snoop **~1800** сайтов;  
+Snoop **~1900** сайтов;  
 Spiderfoot **~350** сайтов;  
 Sherlock **~350** сайтов;  
 Whatsmyname **~290** сайтов;  
@@ -35,7 +35,7 @@ Snoop for OS Windows and GNU/Linux
 
 **Snoop Local database**
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
-[Snoop Full version database 1800+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")    
+[Snoop Full version database 1900+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")    
 
 ## Релиз/Release
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
