@@ -173,10 +173,10 @@ $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство дл
 csv открывать в *office в кодировке **utf-8**, разделитель полей **запятая**.  
 
 Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  
-
+или ```snoop.exe --autoclean y #Running from release OS Windows```
 ```
 # Обновляйте Snoop для тестирования новых функций в ПО:
-$ python3 snoop.py --update y #Требуется установка Git.
+$ python3 snoop. --update y #Требуется установка Git.
 ```
 </details>  
 
