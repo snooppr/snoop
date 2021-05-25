@@ -15,11 +15,12 @@ Snoop — это исследовательская работа (собстве
 По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
-Snoop **~1900** сайтов;  
-Spiderfoot **~350** сайтов;  
-Sherlock **~350** сайтов;  
-Whatsmyname **~290** сайтов;  
-Namechk **~100** сайтов.  
+<img src="https://img.shields.io/badge/Snoop-~1900 websites-success" width="20%" />  
+<img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="15%" />  
+<img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="15%" />  
+<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="15%" />  
+<img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="10%" />  
+
 
 | Платформа             | Поддержка |
 |-----------------------|:---------:|
@@ -329,4 +330,4 @@ $ sudo nano /etc/ssl/openssl.cnf
 
 **email:** snoopproject@protonmail.com
 </details>
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.jpeg" />
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.jpeg" width="10%" />
