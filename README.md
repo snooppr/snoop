@@ -15,11 +15,11 @@ Snoop — это исследовательская работа (собстве
 По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
-<img src="https://img.shields.io/badge/Snoop-~1900 websites-success" width="20%" />  
-<img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="15%" />  
-<img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="15%" />  
-<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="15%" />  
-<img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="10%" />  
+<img src="https://img.shields.io/badge/Snoop-~1900 websites-success" width="30%" />  
+<img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
+<img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
+<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
+<img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
 
 
 | Платформа             | Поддержка |
