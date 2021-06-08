@@ -655,7 +655,6 @@ def autoclean():
 
 # ОСНОВА.
 def run():
-
 # Лицензия.
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read()
@@ -905,7 +904,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         sys.exit()
 # Опция  '-С'.
     if args.cert:
-        print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах»")
+        print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах вкл»")
 # Опция  '-cs' несовместимы.
     if args.site_list is not None and args.country == True:
         print(Style.BRIGHT + Fore.RED + "[опция '-c'] несовместима с [опцией '-s']")
