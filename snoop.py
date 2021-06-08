@@ -43,25 +43,25 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.9D\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.2.9E\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
 if sys.platform == 'win32':
     print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)
     print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
-    print (Fore.CYAN + " python snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+    print (Fore.CYAN + " python snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
     print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
 else:
     print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
     print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
-    print (Fore.CYAN + " python3 snoop.py username" + Style.RESET_ALL, "#поиск user-a")
+    print (Fore.CYAN + " python3 snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
     print (Fore.CYAN + " python3 snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
 console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "1.2.9D_rus Snoop (Source demo)"
+version = "v1.2.9E_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
 dirhome = os.environ['HOME'] if sys.platform != 'win32' else "c:"
@@ -712,107 +712,99 @@ border_style="bold blue"))# ,style="bold green"))
         sys.exit()
 
 # Назначение опций Snoop.
-    parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
-                            description=f"{module_name} (Version {version})",
-                            epilog=(Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version "+ Style.RESET_ALL + \
+    parser = ArgumentParser(formatter_class = RawDescriptionHelpFormatter,
+                            usage = 'python3 %(prog)s [options] nickname\nor\nusage: python3 %(prog)s nickname [options]\n ',
+                            description = Fore.CYAN + "Справка" + Style.RESET_ALL,
+                            epilog = (Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version " + Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1900+\033[0m \033[36mWebsites!!!\033[0m\n \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
-                            )
-    parser.add_argument("--donate y", "-d y",
-                        action="store_true", dest="donation",
-                        help="\033[36mП\033[0mожертвовать на развитие Snoop Project-а, получить/приобрести \033[32;1mSnoop Full Version\033[0m"
-                        )
-    parser.add_argument("--version", "--about", "-V",
-                        action="version",  version=(version_snoop),
-                        help="\033[36mН\033[0mАЧАЛО! Вывод на печать версий: OS; Snoop; Python и Лицензии"
-                        )
-    parser.add_argument("--verbose", "-v",
-                        action="store_true",  dest="verbose", default=False,
-                        help="\033[36mВ\033[0mо время поиска 'username' выводить на печать подробную вербализацию"
-                        )
-    parser.add_argument("--base", "-b",
-                        dest="json_file", default="BDdemo", metavar='',
-                        help="\033[36mУ\033[0mказать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
-                        )
-    parser.add_argument("--web-base", "-w",
-                        action="store_true", dest="web", default=False,
-                        help="\033[36mП\033[0mодключиться для поиска 'username' к обновляемой web_БД (Online)/В demo version функция отключена"
-                        )
-    parser.add_argument("--site", "-s",
-                        action="append", metavar='',
-                        dest="site_list",  default=None,
-                        help="\033[36mУ\033[0mказать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе"
-                        )
-    parser.add_argument("--time-out", "-t 9",
-                        action="store", metavar='',
-                        dest="timeout", type=timeout_check, default=5,
-                        help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
-                             "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
-                             "Вкл. эту опцию необходимо при медленном \
-                             интернет соединении, чтобы избежать длительных зависаний \
-                             при неполадках в сети (по умолчанию значение выставлено 5с)"
-                        )
-    parser.add_argument("--found-print", "-f",
-                        action="store_true", dest="print_found_only", default=False,
-                        help="\033[36mВ\033[0mыводить на печать только найденные аккаунты"
-                        )
-    parser.add_argument("--no-func", "-n",
-                        action="store_true", dest="no_func", default=False,
-                        help="""\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url\n
-                                ✓Отключить звук\n
-                                ✓Запретить открытие web browser-а\n
-                                ✓Отключить вывод на печать флагов стран\n
-                                ✓Отключить индикацию и статус прогресса.\n
-                                Экономит ресурсы системы и ускоряет поиск"""
-                        )
-    parser.add_argument("username",
-                        nargs='+', metavar='USERNAMES',
-                        action="store",
-                        help="\033[36mН\033[0mикнейм разыскиваемого пользователя, поддерживается несколько имён"
-                        )
-    parser.add_argument("--userload", "-u", metavar='',
-                        action="store", dest="user", default=False,
-                        help="\033[36mУ\033[0mказать файл со списком user-ов. Пример_Linux: 'python3 snoop.py -u ~/listusers.txt start'\n"
-                             "Пример для Windows: 'python snoop.py -u c:\snoop\listusers.txt start'"
-                        )
-    parser.add_argument("--list all",
-                        action="store_true", dest="listing",
-                        help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop"
-                        )
-    parser.add_argument("--country", "-c",
-                        action="store_true", dest="country", default=False,
-                        help="\033[36mС\033[0mортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
-                        )
-    parser.add_argument("--save-page", "-S",
-                        action="store_true", dest="reports", default=False,
-                        help="\033[36mС\033[0mохранять найденные странички пользователей в локальные файлы"
-                        )
-    parser.add_argument("--cert-on", "-C", default=False,
-                        action="store_true", dest="cert",
-                        help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
-                        на серверах отключена, что даёт меньше ошибок и больше положительных результатов
-                        при поиске username"""
-                        )
-    parser.add_argument("--normal", "-N",
-                        action="store_true", dest="norm", default=True,
-                        help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
-                                По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja':
-                                ускорение поиска ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
-                                Режим SNOOPninja эффективен только для Snoop for GNU/Linux Full Version.
-                                По_умолчанию (Windows) вкл 'нормальный режим'. В Demo Version переключатель режимов деактивирован"""
-                        )
-    parser.add_argument("--module y", "-m y",
-                        action="store_true", dest="module", default=False,
-                        help="\033[36mO\033[0mSINT поиск: используя различные плагины Snoop (список плагинов будет пополняться)"
-                        )
-    parser.add_argument("--autoclean y", "-a y",
-                        action="store_true", dest="autoclean", default=False,
-                        help="\033[36mУ\033[0mдалить все отчеты, очистить место"
-                        )
-    parser.add_argument("--update y",
-                        action="store_true", dest="update",
-                        help="\033[36mО\033[0mбновить Snoop"
-                        )
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m1900+\033[0m \033[36mWebsites!!!\033[0m\n\
+ \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
+                           )
+# Service arguments.
+    service_group = parser.add_argument_group('service arguments')
+    service_group.add_argument("--version", "-V", action="version",  version=(version_snoop),
+                               help="\033[36mA\033[0mbout: вывод на печать версий:: OS; Snoop; Python и Лицензии"
+                              )
+    service_group.add_argument("--list all", action="store_true", dest="listing",
+                               help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop"
+                              )
+    service_group.add_argument("--donate y", "-d y", action="store_true", dest="donation",
+                               help="\033[36mП\033[0mожертвовать на развитие Snoop Project-а, получить/приобрести \
+                               \033[32;1mSnoop Full Version\033[0m"
+                              )
+    service_group.add_argument("--autoclean y", "-a y", action="store_true", dest="autoclean", default=False,
+                               help="\033[36mУ\033[0mдалить все отчеты, очистить место"
+                              )
+    service_group.add_argument("--update y", action="store_true", dest="update",
+                               help="\033[36mО\033[0mбновить Snoop"
+                              )
+# Plugins arguments arguments.
+    plugins_group = parser.add_argument_group('plugins arguments')
+    plugins_group.add_argument("--module y", "-m y", action="store_true", dest="module", default=False,
+                               help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX \
+                               (список плагинов будет пополняться)"
+                              )
+# Search arguments.
+    search_group = parser.add_argument_group('search arguments')
+    search_group.add_argument("username", nargs='+', metavar='nickname', action="store",
+                              help="\033[36mН\033[0mикнейм разыскиваемого пользователя. \
+                              Поддерживается поиск одновременно нескольких имён.\
+                              Ник, содеражащий в своем имени пробел, заключается в кавычки"
+                             )
+    search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
+                              help="\033[36mВ\033[0mо время поиска 'username' выводить на печать подробную вербализацию"
+                             )
+    search_group.add_argument("--base", "-b <path>", dest="json_file", default="BDdemo", metavar='',
+                              help="\033[36mУ\033[0mказать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
+                             )
+    search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
+                              help="\033[36mП\033[0mодключиться для поиска 'username' к обновляемой web_БД (Online)/\
+                              В demo version функция отключена"
+                             )
+    search_group.add_argument("--site", "-s chess", action="append", metavar='', dest="site_list",  default=None,
+                              help="\033[36mУ\033[0mказать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе"
+                             )
+    search_group.add_argument("--time-out", "-t 9", action="store", metavar='', dest="timeout", type=timeout_check, default=5,
+                              help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
+                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
+                              "Вкл. эту опцию необходимо при медленном \
+                              интернет соединении, чтобы избежать длительных зависаний \
+                              при неполадках в сети (по умолчанию значение выставлено 5с)"
+                             )
+    search_group.add_argument("--found-print", "-f", action="store_true", dest="print_found_only", default=False,
+                              help="\033[36mВ\033[0mыводить на печать только найденные аккаунты"
+                             )
+    search_group.add_argument("--no-func", "-n", action="store_true", dest="no_func", default=False,
+                              help="\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url\
+                              ✓Отключить звук\
+                              ✓Запретить открытие web browser-а\
+                              ✓Отключить вывод на печать флагов стран\
+                              ✓Отключить индикацию и статус прогресса.\
+                              Экономит ресурсы системы и ускоряет поиск"
+                             )
+    search_group.add_argument("--userload", "-u", metavar='', action="store", dest="user", default=False,
+                              help="\033[36mУ\033[0mказать файл со списком user-ов. \
+                              Пример_Linux: 'python3 snoop.py -u ~/listusers.txt start'.\
+                              Пример_Windows: 'python snoop.py -u c:\snoop\listusers.txt start'"
+                             )
+    search_group.add_argument("--country", "-c", action="store_true", dest="country", default=False,
+                              help="\033[36mС\033[0mортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
+                             )
+    search_group.add_argument("--save-page", "-S", action="store_true", dest="reports", default=False,
+                              help="\033[36mС\033[0mохранять найденные странички пользователей в локальные файлы"
+                             )
+    search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
+                              help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
+                              на серверах отключена, что даёт меньше ошибок и больше положительных результатов
+                              при поиске nickname"""
+                             )
+    search_group.add_argument("--normal", "-N", action="store_true", dest="norm", default=True,
+                              help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
+                              По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja':
+                              ускорение поиска ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
+                              Режим SNOOPninja эффективен только для Snoop for GNU/Linux Full Version.
+                              По_умолчанию (Windows) вкл 'нормальный режим'. В Demo Version переключатель режимов деактивирован"""
+                             )
 
     args = parser.parse_args()
 
