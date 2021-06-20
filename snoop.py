@@ -1355,10 +1355,13 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Открывать/нет браузер с результатами поиска.
         if args.no_func==False and exists_counter >= 1:
-            try:
-                webbrowser.open(f"file://{dirresults}/results/html/{username}.html")
-            except:
+            if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
                 pass
+            else:
+                try:
+                    webbrowser.open(f"file://{dirresults}/results/html/{username}.html")
+                except:
+                    pass
 # Arbeiten...
     starts(args.username) if args.user==False else starts(userlists)
 run()
