@@ -216,7 +216,7 @@ plugins
 
 **Native Installation**  
 
-Установить [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en "Google Play")  
+Установить [Termux](https://f-droid.org/en/packages/com.termux/ "F-Droid")  
 ```
 # Примечание: установка Snoop на Termux продолжительная по времени
 # Войти в домашнюю папку Termux (т.е. просто открыть Termux)
@@ -238,7 +238,7 @@ $ cd ~/snoop
 $ python3 -m pip install -r requirements.txt
 
 # Чтобы расширить вывод терминала в Termux (по умолчанию 2к строку), например, отображение всей БД опции '--list all [1/2]'  
-добавьте строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties'.  
+добавьте строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties' (фича доступна в Termux v0.114+).  
 
 # Дополнение для устаревших гаджетов (Android 6)
 # Примечание на современных гаджетах пакеты уже предустановлены и настроены
