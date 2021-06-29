@@ -216,12 +216,12 @@ plugins
 
 **Native Installation**  
 
-Установить [Termux](https://f-droid.org/en/packages/com.termux/ "F-Droid")  
+Установить [Termux](https://f-droid.org/ru/packages/com.termux/ "F-Droid")  
 ```
 # Примечание: установка Snoop на Termux продолжительная по времени
 # Войти в домашнюю папку Termux (т.е. просто открыть Termux)
 $ termux-setup-storage
-$ ls #/data/data/com.termux/files/home # дефолтный/домашний каталог
+$ ls #/data/data/com.termux/files/home #дефолтный/домашний каталог
 
 # Установить python3 и зависимости
 $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
@@ -237,8 +237,9 @@ $ cd ~/snoop
 # Установить зависимости 'requirements'
 $ python3 -m pip install -r requirements.txt
 
-# Чтобы расширить вывод терминала в Termux (по умолчанию 2к строку), например, отображение всей БД опции '--list all [1/2]'  
-добавьте строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties' (фича доступна в Termux v0.114+).  
+# Чтобы расширить вывод терминала в Termux (по умолчанию 2к строк отображение в CLI), например, отображение всей БД опции '--list all [1/2]'  
+добавить строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties' (фича доступна в Termux v0.114+). 
+Перезапустить Termux.  
 
 # Дополнение для устаревших гаджетов (Android 6)
 # Примечание на современных гаджетах пакеты уже предустановлены и настроены
@@ -322,7 +323,8 @@ $ sudo nano /etc/ssl/openssl.cnf
 
 **Отпечаток публичного ключа:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")  
 
-**Информация для госслужащих:** Snoop Project включен в реестр отечественного ПО. Приказ Минкомсвязи РФ №515 реестровый № 7012.  
+**Информация для госслужащих:** Snoop Project включен в реестр отечественного ПО с заявленным кодом: 26.30.11.16 Программное Обеспечение, обеспечивающее выполнение установленных действий при проведении оперативно-розыскных мероприятий.  
+Приказ Минкомсвязи РФ №515 реестровый № 7012.  
 
 **Snoop неидеален: вэб-сайты падают; закрывающие теги отсутсвуют; хостинги вовремя не оплачиваются. Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются:**  
 [Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)
