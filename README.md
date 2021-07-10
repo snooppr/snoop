@@ -36,7 +36,7 @@ Snoop for OS Windows and GNU/Linux
 
 **Snoop Local database**
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
-[Snoop Full version database 1900+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")    
+[Snoop Full version database 2000+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")    
 
 ## Релиз/Release
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
