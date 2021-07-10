@@ -43,7 +43,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.2.9E\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.3.0\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
@@ -61,7 +61,7 @@ console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "v1.2.9E_rus Snoop (Source demo)"
+version = "v1.3.0_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
 dirhome = os.environ['HOME'] if sys.platform != 'win32' else "c:"
