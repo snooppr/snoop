@@ -1201,10 +1201,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             file_txt.close()
 
-            print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
-            print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + "results/*/" + str(username) + ".*")
-
-
 # Запись в html.
             try:
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
@@ -1339,6 +1335,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_csv.close()
 
 # Финишный вывод.
+        print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
+        print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + dirresults + "/results/*/" + str(username) + ".*")
         if censor >= czr:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + "└────\033[31;1mВнимание!\033[0m", Fore.CYAN + "Нестабильное соединение или Internet Censorship:",
