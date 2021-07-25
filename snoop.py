@@ -74,6 +74,7 @@ czr=5
 # date +%s конвертер
 e_mail = 'Demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число:
+license = 'лицензия'
 ts = (2022, 7, 10, 3, 0, 0, 0, 0, 0) 
 date_up = int(time.mktime(ts)) #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
@@ -1343,7 +1344,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             "*используйте VPN\n")
         else:
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data), "\n")
-        console.print(Panel(f"{e_mail} до {Do}",title="лицензия", style=STL(color="white", bgcolor="blue")))
+        console.print(Panel(f"{e_mail} до {Do}",title=license, style=STL(color="white", bgcolor="blue")))
 
 # Музыка.
         try:
