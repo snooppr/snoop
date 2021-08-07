@@ -333,6 +333,3 @@ $ sudo nano /etc/ssl/openssl.cnf
 **email:** snoopproject@protonmail.com
 </details>
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.jpeg" width="10%" />  
-
-**ru - C 4 августа по 29 августа разработчик в отпуске, ответы могут быть с задержкой в этот период.**  
-**en - From August 4 to August 29, the developer on vacation, the answers may be with a delay during this period.**
