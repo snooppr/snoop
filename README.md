@@ -67,6 +67,33 @@ Snoop Project Plugins
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
 
 <details>
+<summary>Самостоятельная сборка ПО из исходного кода/Self-build software from source</summary>  
+
+**Native Installation**  
+Примечание: требуемая версия python 3.7; 3.8 или 3.9
+
+```
+# Клонировать репозиторий
+$ git clone https://github.com/snooppr/snoop
+
+# Войти в рабочий каталог
+$ cd ~/snoop
+
+# Установить python3 и python3-pip, если они не установлены
+$ apt-get update && apt-get install python3 python3-pip
+
+# Установить зависимости 'requirements'
+$ pip install --upgrade pip
+$ python3 -m pip install -r requirements.txt
+# Либо установить все зависимости из 'requirements.txt' в ручную через
+$ pip3 install module
+# Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
+$ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
+# На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
+```
+</details>
+
+<details>
 <summary>Использование/Using</summary>  
 
 **English version — of Snoop see release (available 'Snoop EN version').**
@@ -178,33 +205,6 @@ csv открывать в *office в кодировке **utf-8**, раздел�
 $ python3 snoop.py --update y #требуется установка Git.
 ```
 </details>  
-
-<details>
-<summary>Самостоятельная сборка ПО из исходного кода/Self-build software from source</summary>  
-
-**Native Installation**  
-Примечание: требуемая версия python 3.7; 3.8 или 3.9
-
-```
-# Клонировать репозиторий
-$ git clone https://github.com/snooppr/snoop
-
-# Войти в рабочий каталог
-$ cd ~/snoop
-
-# Установить python3 и python3-pip, если они не установлены
-$ apt-get update && apt-get install python3 python3-pip
-
-# Установить зависимости 'requirements'
-$ pip install --upgrade pip
-$ python3 -m pip install -r requirements.txt
-# Либо установить все зависимости из 'requirements.txt' в ручную через
-$ pip3 install module
-# Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
-$ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
-# На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
-```
-</details>
 
 <details>
 <summary>Snoop for Android</summary>  
