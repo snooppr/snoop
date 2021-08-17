@@ -736,7 +736,7 @@ border_style="bold blue"))# ,style="bold green"))
     service_group.add_argument("--autoclean y", "-a y", action="store_true", dest="autoclean", default=False,
                                help="\033[36mУ\033[0mдалить все отчеты, очистить место"
                               )
-    service_group.add_argument("--update y", action="store_true", dest="update",
+    service_group.add_argument("--update y", "-U y", action="store_true", dest="update",
                                help="\033[36mО\033[0mбновить Snoop"
                               )
 # Plugins arguments arguments.
