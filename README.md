@@ -111,7 +111,7 @@ service arguments:
   --donate y, -d y     Пожертвовать на развитие Snoop Project-а,
                        получить/приобрести Snoop Full Version
   --autoclean y, -a y  Удалить все отчеты, очистить место
-  --update y           Обновить Snoop Project
+  --update y, -U y     Обновить Snoop Project
 
 plugins arguments:
   --module y, -m y     OSINT поиск: задействовать различные плагины
