@@ -218,7 +218,10 @@ def module3():
                         if webopen == music and Ya == '3':
                             continue
                         else:
-                            webbrowser.open(webopen)
+                            if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
+                                pass
+                            else: 
+                                webbrowser.open(webopen)
             ravno()
             azS.clear()
 
