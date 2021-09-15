@@ -439,6 +439,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
             http_status = "*???"
             response_text = ""
+            session_size = "Err"
 # Получить future и убедиться, что оно закончено.
             future = net_info["request_future"]
             r, error_type, response_time = get_response(request_future=future,
@@ -579,16 +580,23 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 # Опция '-v'.
                 if verbose == True:
+                    if session_size == 0 or session_size is None:
+                        Ssession_size = "Head"
+                    elif session_size == "Err":
+                        Ssession_size = "Нет"
+                    else:
+                        Ssession_size = str(round(session_size/1024)) + " Kb"
+
                     time_ello=("%.0f" % float(ello*1000))
                     if color == True:
                         if dif > 5: #задержка в общем времени
-                            console.print(f"[cyan][**{time_site} ms ответ] -->", f"[bold red][*{time_ello} ms общего времени]")
+                            console.print(f"[cyan][*{time_site} ms T] -->", f"[bold red][*{time_ello} ms t]", f"[cyan][*{Ssession_size}]")
                             console.rule("", style="bold red")
                         else:
-                            console.print(f"[cyan][**{time_site} ms ответ] -->", f"[cyan][*{time_ello} ms общего времени]")
+                            console.print(f"[cyan][*{time_site} ms T] -->", f"[cyan][*{time_ello} ms t]", f"[cyan][*{Ssession_size}]")
                             console.rule("", style="bold blue")
                     else:
-                        console.print(f"[**{time_site} ms ответ] -->", f"[*{time_ello} ms общего времени]",highlight=False)
+                        console.print(f"[*{time_site} ms T] -->", f"[*{time_ello} ms t]", f"[*{Ssession_size}]", highlight=False)
                         console.rule(style="color")
 
 # Служебная информация для CSV.
@@ -1179,6 +1187,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Крутим user's.
     def starts(SQ):
         kef_user=0
+        ungzip = []
         for username in SQ:
             kef_user+=1
             sort_sites = sort_web if args.country == True else site_data
@@ -1187,7 +1196,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                         color=not args.no_func)
 
             exists_counter = 0
-            ungzip = []
             try:
                 file_txt = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
                 #raise Exception("")
@@ -1198,7 +1206,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             for website_name in FULL:
                 timefinish = time.time() - timestart
                 dictionary = FULL[website_name]
-                ungzip.append(dictionary.get("session_size"))
+                if type(dictionary.get("session_size")) != str:
+                    ungzip.append(dictionary.get("session_size"))
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
                     file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
@@ -1207,7 +1216,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             file_txt.close()
 #Размер сесии.
-            sess_size=round(sum(ungzip)/1024/1024 , 2)
+            try:
+                sess_size=round(sum(ungzip)/1024/1024 , 2)
+            except:
+                sess_size=0.00000000001
 # Запись в html.
             try:
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
@@ -1316,9 +1328,16 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                              'Общее_замедление/мс',
                              'Отклик/мс',
                              'Общее_время/мс',
+                             'Сессия/Kb',
                              czr_csv
                              ])
             for site in FULL:
+                if FULL[site]['session_size'] == 0:
+                    Ssession = "Head"
+                elif type(FULL[site]['session_size']) != str:
+                    Ssession = round((FULL.get(site).get("session_size")/1024))
+                else:
+                    Ssession = "Bad"
                 writer.writerow([usernamCSV,
                                  site,
                                  FULL[site]['countryCSV'],
@@ -1328,8 +1347,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                                  FULL[site]['http_status'],
                                  FULL[site]['response_time_site_ms'],
                                  FULL[site]['check_time_ms'],
-                                 FULL[site]['response_time_ms']
-                                 ])
+                                 FULL[site]['response_time_ms'],
+                                 Ssession])
             writer.writerow(['«---------------------------------------',
                              '--------','----', '----------------------------------',
                              '--------------------------------------------------------',
