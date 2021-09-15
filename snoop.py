@@ -43,7 +43,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.3.0\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.3.0A\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
@@ -61,7 +61,7 @@ console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "v1.3.0_rus Snoop (Source demo)"
+version = "v1.3.0A_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
 dirhome = os.environ['HOME'] if sys.platform != 'win32' else "c:"
@@ -360,6 +360,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             results_site['check_time_ms'] = ""
             results_site['response_time_ms'] = ""
             results_site['response_time_site_ms'] = ""
+            results_site['session_size'] = ""
         else:
 # URL пользователя на сайте (если он существует).
 #            global url
@@ -394,8 +395,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Окончательным результатом запроса будет то, что доступно.
                 allow_redirects = True
 
-            future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects,
-            timeout=timeout)
+            future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
 # Сохранить future in data для последующего доступа.
             net_info["request_future"] = future
@@ -484,7 +484,10 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                 response_text = r.text.encode(r.encoding)
             except:
                 pass
-
+            try:
+                session_size = len(r.content)
+            except:
+                pass
 # Проверка, 4 методов; #1.
 # Ответы message (разные локации).
             if error_type == "message":
@@ -595,7 +598,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 # Сохранить сущ.флаг.
             results_site['exists'] = exists
-
+            results_site['session_size'] = session_size
 # Сохранить результаты из запроса.
             results_site['countryCSV'] = countryB
             results_site['http_status'] = http_status
@@ -1184,6 +1187,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                         color=not args.no_func)
 
             exists_counter = 0
+            ungzip = []
             try:
                 file_txt = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
                 #raise Exception("")
@@ -1194,6 +1198,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             for website_name in FULL:
                 timefinish = time.time() - timestart
                 dictionary = FULL[website_name]
+                ungzip.append(dictionary.get("session_size"))
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
                     file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
@@ -1201,7 +1206,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
             file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             file_txt.close()
-
+#Размер сесии.
+            sess_size=round(sum(ungzip)/1024/1024 , 2)
 # Запись в html.
             try:
                 file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
@@ -1239,7 +1245,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             except:
                 pass
             file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-            file_html.write("<br> Затраченное время на создание отчёта: " + "<b>" + "%.0f" % float(timefinish) + "</b>" + " c.\n")
+            file_html.write("<br> Затраченное время на сессию: " + "<b>" + "(%.0f" % float(timefinish) + "сек_ %.2f" % float(sess_size) + "Mb)</b>.\n")
             file_html.write("<br> База Snoop (Demo Version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
             file_html.write("""
@@ -1336,7 +1342,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_csv.close()
 
 # Финишный вывод.
-        print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (%.0f" % float(timefinish) +"sec)")
+        print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
         print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + dirresults + "/results/*/" + str(username) + ".*")
         if censor >= czr:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
