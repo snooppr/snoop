@@ -9,6 +9,7 @@ Snoop Project
 Is your life slideshow? Ask Snoop.  
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user.  
+ • [English readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")    
 
 Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти)  
 в области поиска и обработки публичных данных в сети интернет.  
@@ -86,7 +87,7 @@ $ apt-get update && apt-get install python3 python3-pip
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Либо установить все зависимости из 'requirements.txt' в ручную через
-$ pip3 install module
+$ pip3 install module1 module2...
 # Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например монохромный
 $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-noto-color-emoji
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
@@ -121,13 +122,13 @@ plugins arguments:
 search arguments:
   nickname             Никнейм разыскиваемого пользователя.
                        Поддерживается поиск одновременно нескольких имён. Ник,
-                       содеражащий в своем имени пробел, заключается в кавычки
+                       содержащий в своем имени пробел, заключается в кавычки
   --verbose, -v        Во время поиска 'username' выводить на печать
                        подробную вербализацию
   --base , -b          Указать для поиска 'username' другую БД
                        (Локально)
-  --web-base, -w       Подключиться для поиска 'username' к
-                       обновляемой web_БД (Online)
+  --web-base, -w       Подключиться для поиска 'username' к обновляемой web_БД
+                       (Онлайн)
   --site , -s chess    Указать имя сайта из БД '--list all'. Поиск
                        'username' на одном указанном ресурсе
   --time-out , -t 9    Установить выделение макс.времени на ожидание
@@ -138,11 +139,12 @@ search arguments:
                        зависаний при неполадках в сети (по умолчанию значение
                        выставлено 9с)
   --found-print, -f    Выводить на печать только найденные аккаунты
-  --no-func, -n        ✓Монохромный терминал, не использовать цвета в
-                       url ✓Отключить звук ✓Запретить открытие web browser-а
-                       ✓Отключить вывод на печать флагов стран ✓Отключить
-                       индикацию и статус прогресса. Экономит ресурсы системы
-                       и ускоряет поиск
+  --no-func, -n        ✓Монохромный терминал, не использовать цвета в url 
+                       ✓Отключить звук 
+                       ✓Запретить открытие web browser-а
+                       ✓Отключить вывод на печать флагов стран 
+                       ✓Отключить индикацию и статус прогресса. 
+                       Экономит ресурсы системы и ускоряет поиск
   --userload , -u      Указать файл со списком user-ов. Пример:
                        'snoop -u ~/listusers.txt start'
   --country, -c        Сортировка 'вывода на
@@ -153,7 +155,7 @@ search arguments:
                        умолчанию проверка сертификатов на серверах отключена,
                        что даёт меньше ошибок и больше положительных
                        результатов при поиске nickname
-  --normal, -N         Сменить режим SNOOPnina > нормальный режим
+  --normal, -N         Сменить режим SNOOPnina > нормальный режим.
                        По_умолчанию вкл_режим SNOOPninja: ускорение поиска
                        ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое'
                        соединение на сбойных ресурсах
@@ -178,7 +180,7 @@ $ snoop.exe username1 #Running from release
 $ snoop.exe username1 username2 username3 username4 #Running from release
 
 # Поиск множества юзеров — сортировка вывода результатов по странам;
-# избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от вашего ip-адреса);
+# избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от ip-адреса пользователя);
 # выводить на печать только найденные аккаунты; сохранять странички найденных
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop:
@@ -221,7 +223,7 @@ plugins
 # Примечание: установка Snoop на Termux продолжительная по времени
 # Войти в домашнюю папку Termux (т.е. просто открыть Termux)
 $ termux-setup-storage
-$ ls #/data/data/com.termux/files/home #дефолтный/домашний каталог
+$ pwd #/data/data/com.termux/files/home #дефолтный/домашний каталог
 
 # Установить python3 и зависимости
 $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
@@ -258,7 +260,7 @@ $ pkg install coreutils
 |:---------:| ------------------------------------------------------|:-------:|
 | ========= |=======================================================| ======= |
 | Клиент    |Блокировка соединения проактивной защитой (*Kaspersky) |    1    |
-|           |Недостаточная скорость интернет соединения EDGE / 3G   |    2    |
+|           |Недостаточная скорость интернет соединения EDGE/3G     |    2    |
 |           |Слишком низкое значение опции '-t'                     |    2    |
 |           |недопустимое username                                  |    3    |
 |           |Ошибки соединения: [GipsysTeam; RamblerDaing; Mamochki]|    7    |
@@ -326,9 +328,10 @@ $ sudo nano /etc/ssl/openssl.cnf
 **Информация для госслужащих:** Snoop Project включен в реестр отечественного ПО с заявленным кодом: 26.30.11.16 Программное Обеспечение, обеспечивающее выполнение установленных действий при проведении оперативно-розыскных мероприятий.  
 Приказ Минкомсвязи РФ №515 реестровый № 7012.  
 
-**Snoop неидеален: вэб-сайты падают; закрывающие теги отсутсвуют; хостинги вовремя не оплачиваются. Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются:**  
-[Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)
-**BTC (donation):** 1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8  
+**Snoop неидеален:** вэб-сайты падают; закрывающие теги отсутсвуют; хостинги вовремя не оплачиваются.  
+Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются:  
+[Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
+BTC (donation): 1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8  
 
 **email:** snoopproject@protonmail.com
 </details>
