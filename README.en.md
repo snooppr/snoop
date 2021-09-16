@@ -31,14 +31,16 @@ Comparison of indexations of bd-nikinal such tools:
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |  
 
+
 Snoop for OS Windows and GNU/Linux
 ==================================
 
-**Snoop Local database**
+**Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
-[Snoop Full version database 2000+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")    
+[Snoop Full version database 2000+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Release
+
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
 🇷🇺 🇺🇸 [Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows и GNU/Linux")  
 
