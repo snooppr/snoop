@@ -761,7 +761,7 @@ border_style="bold blue"))# ,style="bold green"))
     search_group.add_argument("username", nargs='+', metavar='nickname', action="store",
                               help="\033[36mН\033[0mикнейм разыскиваемого пользователя. \
                               Поддерживается поиск одновременно нескольких имён.\
-                              Ник, содеражащий в своем имени пробел, заключается в кавычки"
+                              Ник, содержащий в своем имени пробел, заключается в кавычки"
                              )
     search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
                               help="\033[36mВ\033[0mо время поиска 'username' выводить на печать подробную вербализацию"
@@ -770,7 +770,7 @@ border_style="bold blue"))# ,style="bold green"))
                               help="\033[36mУ\033[0mказать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
                              )
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
-                              help="\033[36mП\033[0mодключиться для поиска 'username' к обновляемой web_БД (Online)/\
+                              help="\033[36mП\033[0mодключиться для поиска 'username' к обновляемой web_БД (Онлайн)/\
                               В demo version функция отключена"
                              )
     search_group.add_argument("--site", "-s chess", action="append", metavar='', dest="site_list",  default=None,
