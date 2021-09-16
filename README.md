@@ -9,7 +9,8 @@ Snoop Project
 Is your life slideshow? Ask Snoop.  
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user.  
- • [English readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")    
+
+ • [English readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")  
 
 Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти)  
 в области поиска и обработки публичных данных в сети интернет.  
@@ -49,6 +50,7 @@ snoop.exe (for Windows) and snoop (for GNU/Linux)
 **EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
+
 
 Snoop Project Plugins
 =====================
@@ -98,7 +100,7 @@ $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-
 <details>
 <summary>Использование/Using</summary>  
 
-**English version — of Snoop see release (available 'Snoop EN version').**
+**English version — of Snoop see release (available 'OLD Snoop EN version 1.2.5')**
 ```
 $ snoop --help #справка snoop build version GNU/Linux
 

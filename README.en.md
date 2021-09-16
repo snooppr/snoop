@@ -4,7 +4,7 @@ Snoop Project
 ## Snoop Project One of the most promising OSINT tools to search for nicknames.
 - [X] This is the most powerful software taking into account the CIS location.
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
 
 Is your life slideshow? Ask Snoop.  
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
@@ -36,7 +36,7 @@ Snoop for OS Windows and GNU/Linux
 ==================================
 
 **Snoop Local database**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
 [Snoop Full version database 2000+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Release
@@ -47,6 +47,7 @@ snoop.exe (for Windows) and snoop (for GNU/Linux)
 Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
+
 
 Snoop Project Plugins
 =====================
@@ -96,7 +97,7 @@ $ apt-get install ttf-ancient-fonts or color apt-get install fonts-noto-color-em
 <details>
 <summary>Using</summary>  
 
-**English version — of Snoop see release (available 'Snoop EN version 1.2.5').**
+**English version — of Snoop see release (available 'OLD Snoop EN version 1.2.5').**
 ```
 $ snoop --help #manual snoop build version GNU/Linux
 
@@ -135,9 +136,9 @@ search arguments:
                        It is necessary to enable this option almost always with a slow Internet connection,
                        in order to avoid prolonged freezes in case of network problems (default 9s)
   --found-print, -f    Print only found accounts
-  --no-func, -n        ✓Monochrome terminal, do not use colors in url\n
-                       ✓Mute\n
-                       ✓Prevent opening a web browser\n
+  --no-func, -n        ✓Monochrome terminal, do not use colors in url
+                       ✓Mute
+                       ✓Prevent opening a web browser
                        ✓Disable printing of country flags
                        ✓Disable display and progress status.
                        Saves system resources and speeds up searches
@@ -162,9 +163,9 @@ $ snoop username1 #Running from release
 # Or, for example, Cyrillic is supported:
 $ python3 snoop.py олеся #Running from source
 # To search for a name containing a space:
-$ snoop "ivan ivanov" #Running from release
-$ snoop ivan_ivanov #Running from release
-$ snoop ivan-ivanov #Running from release
+$ snoop "bob dylan" #Running from release
+$ snoop dob_dylan #Running from release
+$ snoop bob-dylan #Running from release
 
 # Running on Windows OS:
 $ python snoop.py username1 #Running from source
@@ -283,7 +284,7 @@ $ python3 snoop.py -t 15 username
 (for example, some sites do not allow Cyrillic characters; "spaces"; or "Vietnamese-Chinese encoding"  
 in user names, in order to save time: - requests are filtered).
 
-4. **Сменить свой ip-адрес**  
+4. **Change your IP address**  
 ("Gray" ip and censorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
 When using Snoop from the IP address of the mobile operator's provider, the speed **may * * drop significantly, depending on the provider.  
 For example, the most effective way to solve the problem is **TO USE A VPN**, Tor is not very well suited for this task.  
@@ -315,9 +316,9 @@ on
 
 [Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog")  
 
-[License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT)  
+[License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT "The version of the License in English can be found in the EN-version of Snoop Build")  
 
-[Documentation](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)  
+[Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)  
 
 **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")  
 
@@ -326,10 +327,10 @@ Order of the Ministry of Communications of the Russian Federation No. 515 regist
 
 **Snoop is not perfect**: web sites are falling; closing tags are missing; hosting services are not paid on time.  
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:  
-[Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
+[Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
 BTC (donation): 1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8  
 
 **email:** snoopproject@protonmail.com
 </details>
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.jpeg" width="10%" />  
-Please feel free to improve the translation of this page.
+*Please feel free to improve the translation of this page.*
