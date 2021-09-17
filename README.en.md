@@ -204,6 +204,7 @@ $ python3 snoop.py --update y #Git installation is required.
 
 <details>
 <summary>Snoop for Android</summary>  
+
 search username  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="70%" />  
 
