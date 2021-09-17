@@ -237,16 +237,16 @@ $ python3 -m pip install -r requirements.txt
 for example, displaying the entire database of the option '--list all [1/2]'  
 add the line 'terminal-transcript-rows=10000' to the file '~/.termux/termux.properties'  
 (the feature is available in Termux v0.114+).  
-Restart Termux.  
+Restart Termux. 
 
-# Add-on for outdated gadgets (Android 6)
-# Note on modern gadgets, packages are already pre-installed and configured
-# add any 'random' name and email:
-$ git config --global user.email "you@example.com"
-$ git config --global user.name "username"
-# Install coreutils
-$ pkg install coreutils
+# The user can also launch the Snoop Project on the snoop command from anywhere in the cli by creating an alias.
+$ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
+
+# The user can also run a quick check on the database of the site he is interested in, without using the 'list all' option, using the 'snoopcheck'command
+alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc 
 ```
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" />  
+
 </details>
 
 <details>
