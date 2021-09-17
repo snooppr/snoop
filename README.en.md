@@ -204,10 +204,10 @@ $ python3 snoop.py --update y #Git installation is required.
 
 <details>
 <summary>Snoop for Android</summary>  
-search username
+search username  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="70%" />  
 
-plugins
+plugins  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
 
 **Native Installation**  
