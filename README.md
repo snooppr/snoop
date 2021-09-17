@@ -246,14 +246,13 @@ $ python3 -m pip install -r requirements.txt
 добавить строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties' (фича доступна в Termux v0.114+). 
 Перезапустить Termux.  
 
-# Дополнение для устаревших гаджетов (Android 6)
-# Примечание на современных гаджетах пакеты уже предустановлены и настроены
-# добавьте любое 'рандомное' имя и почту:
-$ git config --global user.email "you@example.com"
-$ git config --global user.name "username"
-# Установите coreutils
-$ pkg install coreutils
+# Пользователь также может запустить snoop по команде 'snoop' из любого места в CLI, создав alias.
+$ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
+# Пользователь также может выполнить быструю проверку интересующего его сайта по БД, не используя опцию "--list all", используя команду "snoopcheck"
+alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc
 ```
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" />  
+
 </details>
 
 <details>
