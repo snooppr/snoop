@@ -206,7 +206,7 @@ $ python3 snoop.py --update y #Git installation is required.
 <summary>Snoop for Android</summary>  
 
 search username  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="70%" />  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="60%" />  
 
 plugins  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
@@ -244,9 +244,9 @@ Restart Termux.
 $ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
 
 # The user can also run a quick check on the database of the site he is interested in, without using the 'list all' option, using the 'snoopcheck'command
-alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc 
+$ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc 
 ```
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="50%" />  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="40%" />  
 
 </details>
 
