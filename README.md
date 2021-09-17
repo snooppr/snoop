@@ -214,7 +214,7 @@ $ python3 snoop.py --update y #требуется установка Git.
 <details>
 <summary>Snoop for Android</summary>  
 search username
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="50%"/>  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="70%"/>  
 
 plugins
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
@@ -251,7 +251,7 @@ $ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
 # Пользователь также может выполнить быструю проверку интересующего его сайта по БД, не используя опцию "--list all", используя команду "snoopcheck"
 alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc
 ```
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="30%" />  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="50%" />  
 
 </details>
 
