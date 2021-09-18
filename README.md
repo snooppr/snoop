@@ -318,7 +318,8 @@ $ sudo nano /etc/ssl/openssl.cnf
 </details>
 
 <details>
-<summary>Дополнительная информация/Additional information</summary>  
+<summary>Дополнительная информация/Additional information</summary>
+
 
  • [История развития проекта/History](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
 
