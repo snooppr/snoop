@@ -315,23 +315,23 @@ on
 <details>
 <summary>Additional information</summary>
 
-[Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog")  
+ • [Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog")  
 
-[License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT "The version of the License in English can be found in the EN-version of Snoop Build")  
+ • [License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT "The version of the License in English can be found in the EN-version of Snoop Build")  
 
-[Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)  
+ • [Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)  
 
-**Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")  
+ • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")  
 
-**Information for civil servants/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16   Software that ensures the implementation of established actions during operational search activities.  
+ • **Information for civil servants/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16 Software that ensures the implementation of established actions during operational search activities.
 Order of the Ministry of Communications of the Russian Federation No. 515 registered No. 7012.  
 
-**Snoop is not perfect**: web sites are falling; closing tags are missing; hosting services are not paid on time.  
-From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:  
+ • **Snoop is not perfect**: web sites are falling; closing tags are missing; hosting services are not paid on time.  
+From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
 [Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
 BTC (donation): 1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8  
 
-**email:** snoopproject@protonmail.com
+ • **email:** snoopproject@protonmail.com
 </details>
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.jpeg" width="10%" />  
 *Please feel free to improve the translation of this page.*
