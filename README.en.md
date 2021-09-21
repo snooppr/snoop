@@ -244,7 +244,8 @@ Restart Termux.
 $ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
 
 # The user can also run a quick check on the database of the site he is interested in, without using the 'list all' option, using the 'snoopcheck'command
-$ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc 
+$ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc  
+# restart Termux.
 ```
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="40%" />  
 
