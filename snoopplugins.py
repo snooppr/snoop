@@ -166,6 +166,8 @@ def module3():
 #                    print(rY.text)
                     try:
                         rdict = json.loads(rY.text)
+                        if rdict.get('title') == "404 Not Found":
+                            raise Exception("")
                     except:
                         rdict = {}
                         rdict.update(public_id="Увы", display_name="-No-")
