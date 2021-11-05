@@ -900,7 +900,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 snoopplugins.module2()
             elif mod == '3':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("Yandex_parser_v0.3", style="green")
+                table.add_column("Yandex_parser_v0.4", style="green")
                 table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Коллекции; Я_Диск; E-mail; Name.')
                 console.print(table)
                 snoopplugins.module3()
