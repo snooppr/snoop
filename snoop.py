@@ -43,7 +43,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.3.0B\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.3.0C\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
@@ -61,7 +61,7 @@ console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "v1.3.0B_rus Snoop (Source demo)"
+version = "v1.3.0C_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
 dirhome = os.environ['HOME'] if sys.platform != 'win32' else "c:"
@@ -360,10 +360,10 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             results_site["url_user"] = ""
             results_site['countryCSV'] = ""
             results_site['http_status'] = ""
+            results_site['session_size'] = ""
             results_site['check_time_ms'] = ""
             results_site['response_time_ms'] = ""
             results_site['response_time_site_ms'] = ""
-            results_site['session_size'] = ""
         else:
 # URL пользователя на сайте (если он существует).
 #            global url
@@ -1353,11 +1353,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                                  FULL[site]['check_time_ms'],
                                  FULL[site]['response_time_ms'],
                                  Ssession])
-            writer.writerow(['«---------------------------------------',
-                             '--------','----', '----------------------------------',
-                             '--------------------------------------------------------',
-                             '-------------', '-----------------', '--------------------------------',
-                             '-------------', '-----------------------»'])
+            writer.writerow(['«' + "-"*39, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32,'-'*13, '-'*23, '-'*16 + '»'])
             writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
             writer.writerow('')
             writer.writerow(['Дата'])
