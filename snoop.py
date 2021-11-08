@@ -454,6 +454,9 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Повторное соединение через новую сессию быстрее, чем через adapter - timeout*2=дольше.
             if norm == False:
 #                print(future)
+                head1 = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'User-Agent': 'Mozilla/5.0 (Linux; Android 9; Redmi 8 Build/QQ3A.200805.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.152 Mobile Safari/537.36',
+                'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'}
                 A1 = str(future)
                 if r is None and 'raised ConnectionError' in A1:
                     for _ in range(3):
@@ -466,9 +469,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                         else:
                             if print_found_only==False:
                                 print("повторное соединение")
-                        head1 = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'}
-                        time.sleep(0.2)
+#                        time.sleep(0.1)
                         future1 = session3.get(url=url, headers=head1, allow_redirects=allow_redirects,
                         timeout=1.5)
                         r, error_type, response_time = get_response(request_future=future1,
