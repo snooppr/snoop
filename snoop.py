@@ -64,7 +64,7 @@ module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем ф�
 version = "v1.3.1A_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
-dirhome = os.environ['HOME'] if sys.platform != 'win32' else os.environ['USERPROFILE'] + "\Documents"
+dirhome = os.environ['HOME'] if sys.platform != 'win32' else os.environ['LOCALAPPDATA']
 timestart = time.time()
 time_data = time.localtime()
 censors = 1
