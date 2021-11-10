@@ -1196,7 +1196,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     def starts(SQ):
         kef_user=0
         ungzip = []
-        find_url_lst
+        find_url_lst=[]
         for username in SQ:
             kef_user+=1
             sort_sites = sort_web if args.country == True else site_data
