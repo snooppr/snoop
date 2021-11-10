@@ -43,7 +43,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.3.1\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.3.1A\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
@@ -61,16 +61,17 @@ console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "v1.3.1_rus Snoop (Source demo)"
+version = "v1.3.1A_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
-dirhome = os.environ['HOME'] if sys.platform != 'win32' else "c:"
+dirhome = os.environ['HOME'] if sys.platform != 'win32' else os.environ['USERPROFILE'] + "\Documents"
 timestart = time.time()
 time_data = time.localtime()
 censors = 1
 censors_timeout = 1
 recensor = 0
 czr=3
+find_url=0
 
 # date +%s конвертер
 e_mail = 'Demo: snoopproject@protonmail.com'
@@ -801,7 +802,7 @@ border_style="bold blue"))# ,style="bold green"))
     search_group.add_argument("--userload", "-u", metavar='', action="store", dest="user", default=False,
                               help="\033[36mУ\033[0mказать файл со списком user-ов. \
                               Пример_Linux: 'python3 snoop.py -u ~/listusers.txt start'.\
-                              Пример_Windows: 'python snoop.py -u c:\snoop\listusers.txt start'"
+                              Пример_Windows: 'python snoop.py -u c:\\User\\User\Documents\\listusers.txt start'"
                              )
     search_group.add_argument("--country", "-c", action="store_true", dest="country", default=False,
                               help="\033[36mС\033[0mортировка 'вывода на печать/запись_результатов' по странам, а не по алфавиту"
@@ -1036,23 +1037,27 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             print(Fore.GREEN + "\n++Белый список Full Version++")
             datajson = DBflag()
             i = 0
-            for con in datajson:
+            sorted_dict_v_listtuple = sorted(datajson.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
+            datajson_sort = dict(sorted_dict_v_listtuple) #преобр.список обратно в словарь (сортированный)
+            for con in datajson_sort:
                 if sys.platform == 'win32':
-                    aaa = datajson.get(con).get("country_klas")
+                    aaa = datajson_sort.get(con).get("country_klas")
                 else:
-                    aaa = datajson.get(con).get("country")
+                    aaa = datajson_sort.get(con).get("country")
                 i += 1
                 print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
                 print(Fore.CYAN + "================")
 # Сортировка по алфавиту для Demo Version (2!).
             print(Fore.GREEN + "\n++Белый список Demo Version++")
             datajson = DB()
+            sorted_dict_v_listtuple = sorted(datajson.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
+            datajson_sort = dict(sorted_dict_v_listtuple) #преобр.список обратно в словарь (сортированный)
             i = 0
-            for con in datajson:
+            for con in datajson_sort:
                 if sys.platform == 'win32':
-                    aaa = datajson.get(con).get("country_klas")
+                    aaa = datajson_sort.get(con).get("country_klas")
                 else:
-                    aaa = datajson.get(con).get("country")
+                    aaa = datajson_sort.get(con).get("country")
                 i += 1
                 print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
                 print(Fore.CYAN + "================")
@@ -1070,7 +1075,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 listwindows.append(f"{aaa}  {con}\n")
             console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold")
             print(Fore.GREEN + "\n++Белый список++")
-            for i in enumerate(sorted(listwindows), 1):
+            for i in enumerate(sorted(listwindows, key=str.lower), 1):
                 print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
                 print(Fore.CYAN + "================")
             listwindows.clear()
@@ -1084,7 +1089,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     aaa = (datajson.get(con).get("country"))
                 listwindows.append(f"{aaa}  {con}\n")
             print(Fore.GREEN + "\n++Белый список Demo Version++")
-            for i in enumerate(sorted(listwindows), 1):
+            for i in enumerate(sorted(listwindows, key=str.lower), 1):
                 print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
                 print(Fore.CYAN + "================")
             sys.exit()
@@ -1214,6 +1219,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     ungzip.append(dictionary.get("session_size"))
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
+                    global find_url
+                    find_url += exists_counter
                     file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file_txt.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
             file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
@@ -1312,10 +1319,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Запись в csv.
             try:
-                file_csv = open("results/csv/" + username + ".csv", "w", newline='', encoding="utf-8")
+                file_csv = open("results/csv/" + username + ".csv", "w", newline='')#, encoding="utf-8")
 #                raise Exception("")
             except:
-                file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='', encoding="utf-8")
+                file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='')#, encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
             censor = int((censors - recensor)/kef_user)
             flagBS_err = round((censor+censors_timeout-2)*100/flagBS, 3)
@@ -1362,7 +1369,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_csv.close()
 
 # Финишный вывод.
-        print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", exists_counter, "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
+        print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", find_url, "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
         print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + dirresults + "/results/*/" + str(username) + ".*")
         if censor >= czr:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
