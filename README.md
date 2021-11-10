@@ -201,7 +201,7 @@ $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство дл
 ```
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
 Для доступа браузера к результатам поиска на платформе Android желательно иметь рут права.  
-csv открывать в *office в кодировке **utf-8**, разделитель полей **запятая**.  
+csv открывать в *office, разделитель полей **запятая**.  
 
 Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  
 или ```snoop.exe --autoclean y #Running from release OS Windows```
