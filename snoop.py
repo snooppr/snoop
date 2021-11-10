@@ -71,7 +71,6 @@ censors = 1
 censors_timeout = 1
 recensor = 0
 czr=3
-find_url=0
 
 # date +%s конвертер
 e_mail = 'Demo: snoopproject@protonmail.com'
@@ -1197,6 +1196,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     def starts(SQ):
         kef_user=0
         ungzip = []
+        find_url_lst
         for username in SQ:
             kef_user+=1
             sort_sites = sort_web if args.country == True else site_data
@@ -1219,8 +1219,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     ungzip.append(dictionary.get("session_size"))
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
-                    global find_url
-                    find_url += exists_counter
+                    find_url_lst.append(exists_counter)
                     file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file_txt.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
             file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
@@ -1369,7 +1368,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_csv.close()
 
 # Финишный вывод.
-        print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", find_url, "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
+        print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", len(find_url_lst), "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
         print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + dirresults + "/results/*/" + str(username) + ".*")
         if censor >= czr:
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
