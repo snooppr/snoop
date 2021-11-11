@@ -655,7 +655,8 @@ def update_snoop():
 # Удаление отчетов.
 def autoclean():
 # Определение директорий.
-    rm = dirresults + '/results' if 'Source' in version else dirhome + "/snoop/results"
+    path_build_del = "/snoop/results" if sys.platform != 'win32' else "\\snoop\\results"
+    rm = dirresults + '/results' if 'Source' in version else dirhome + path_build_del
 # Подсчет файлов и размера удаляемого каталога 'results'.
     total_size = 0
     delfiles=[]
