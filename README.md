@@ -196,7 +196,7 @@ $ snoop --help #Running from release
 # Задействовать плагины Snoop:
 $ snoop --module y #Running from release
 
-# 'ctrl-c/z' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
+# 'ctrl-c' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
 $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство для разгрузки ОЗУ при прерываниях.
 ```
 Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
