@@ -75,7 +75,7 @@ recensor = 0
 e_mail = 'Demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число:
 license = 'лицензия'
-ts = (2022, 7, 10, 3, 0, 0, 0, 0, 0) 
+ts = (2022, 11, 11, 3, 0, 0, 0, 0, 0) 
 date_up = int(time.mktime(ts)) #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}") #в UTC (-3 часа)
