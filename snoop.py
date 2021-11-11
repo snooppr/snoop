@@ -67,10 +67,9 @@ dirresults = os.getcwd()
 dirhome = os.environ['HOME'] if sys.platform != 'win32' else os.environ['LOCALAPPDATA']
 timestart = time.time()
 time_data = time.localtime()
-censors = 1
-censors_timeout = 1
+censors = 0
+censors_timeout = 0
 recensor = 0
-czr=3
 
 # date +%s конвертер
 e_mail = 'Demo: snoopproject@protonmail.com'
@@ -1323,10 +1322,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             except:
                 file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='')#, encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
-            censor = int((censors - recensor)/kef_user)
-            flagBS_err = round((censor+censors_timeout-2)*100/flagBS, 3)
+            censors_cor = int((censors - recensor)/kef_user) #err_connection
+            censors_timeout_cor = int(censors_timeout/kef_user) #err time-out
+            flagBS_err = round((censors_cor + censors_timeout_cor)*100/flagBS, 3)
             czr_csv = ''
-            if censor >= czr:
+            if flagBS_err >= 2:#perc
                 czr_csv = 'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. Результаты_могут_быть_неполные.'
             writer = csv.writer(file_csv)
             writer.writerow(['Объект',
@@ -1370,11 +1370,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Финишный вывод.
         print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", len(find_url_lst), "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
         print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + dirresults + "/results/*/" + str(username) + ".*")
-        if censor >= czr:
+        if flagBS_err >= 2:#perc
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + f"└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
             print(Fore.CYAN + "     └─нестабильное соединение или Internet Censorship")
-            print("       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение '\033[36;1m-t\033[0m\033[36m'\033[0m\n")
+            print("       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение опции'\033[36;1m-t\033[0m\033[36m'\033[0m\n")
         else:
             print(Fore.CYAN + "└───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data), "\n")
         console.print(Panel(f"{e_mail} до {Do}",title=license, style=STL(color="white", bgcolor="blue")))
