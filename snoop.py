@@ -9,7 +9,7 @@ import locale
 import networktest
 import os
 import platform
-import random   
+import random
 import re
 import requests
 import shutil
