@@ -43,12 +43,12 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.3.1A\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.3.1B\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
 if sys.platform == 'win32':
-    print (Fore.CYAN + " cd с:\snoop" + Style.RESET_ALL)
+    print (Fore.CYAN + " cd с:\<path>\snoop" + Style.RESET_ALL)
     print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
     print (Fore.CYAN + " python snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
     print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
@@ -61,10 +61,10 @@ console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "v1.3.1A_rus Snoop (Source demo)"
+version = "v1.3.1B_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
-dirhome = os.environ['HOME'] if sys.platform != 'win32' else os.environ['LOCALAPPDATA']
+dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\snoop"
 timestart = time.time()
 time_data = time.localtime()
 censors = 0
@@ -122,36 +122,37 @@ def baza():
 flagBS = len(baza())
 
 # Создание директорий результатов.
+dirpath = dirresults if 'Source' in version else dirhome
 try:
-    os.makedirs(str(dirresults + "/results"))
+    os.makedirs(f"{dirpath}/results")
 except:
     pass
 try:
-    os.makedirs(str(dirresults + "/results/html"))
+    os.makedirs(f"{dirpath}/results/html")
 except:
     pass
 try:
-    os.makedirs(str(dirresults + "/results/txt"))
+    os.makedirs(f"{dirpath}/results/txt")
 except:
     pass
 try:
-    os.makedirs(str(dirresults + "/results/csv"))
+    os.makedirs(f"{dirpath}/results/csv")
 except:
     pass
 try:
-    os.makedirs(str(dirresults + "/results/save reports"))
+    os.makedirs(f"{dirpath}/results/save reports")
 except:
     pass
 try:
-    os.makedirs(str(dirresults + "/results/ReverseVgeocoder"))
+    os.makedirs(f"{dirpath}/results/ReverseVgeocoder")
 except:
     pass
 try:
-    os.makedirs(str(dirresults + "/results/Yandex_parser"))
+    os.makedirs(f"{dirpath}/results/Yandex_parser")
 except:
     pass
 try:
-    os.makedirs(str(dirresults + "/results/domain"))
+    os.makedirs(f"{dirpath}/results/domain")
 except:
     pass
 ################################################################################
@@ -236,7 +237,7 @@ def get_response(request_future, error_type, social_network, print_found_only=Fa
 # Сохранение отчетов опция (-S).
 def sreports(url, headers,session2,error_type, username,social_network,r):
     try:
-        os.makedirs(f"{dirresults}/results/save reports/{username}")
+        os.makedirs(f"{dirpath}/results/save reports/{username}")
     except:
         pass
 # Сохранять отчеты для метода: redirection.
@@ -245,7 +246,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
             future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
             response = future2.result()
             try:
-                with open(f"{dirresults}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
+                with open(f"{dirpath}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
                     repre.write(response.text)
             except:
                 pass
@@ -255,7 +256,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
                 future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=2)
                 response = future2.result()
                 try:
-                    with open(f"{dirresults}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
+                    with open(f"{dirpath}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
                         repre.write(response.text)
                 except:
                     pass
@@ -264,7 +265,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
 # Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
     else:
         try:
-            with open(f"{dirresults}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
+            with open(f"{dirpath}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
                 rep.write(r.text)
         except:
             pass
@@ -655,8 +656,8 @@ def update_snoop():
 # Удаление отчетов.
 def autoclean():
 # Определение директорий.
-    path_build_del = "/snoop/results" if sys.platform != 'win32' else "\\snoop\\results"
-    rm = dirresults + '/results' if 'Source' in version else dirhome + path_build_del
+    path_build_del = "/results" if sys.platform != 'win32' else "\\results"
+    rm = dirpath + '/results' if 'Source' in version else dirpath + path_build_del
 # Подсчет файлов и размера удаляемого каталога 'results'.
     total_size = 0
     delfiles=[]
@@ -1206,10 +1207,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
             exists_counter = 0
             try:
-                file_txt = open("results/txt/" + username + ".txt", "w", encoding="utf-8")
+                file_txt = open(f"{dirpath}/results/txt/{username}.txt", "w", encoding="utf-8")
                 #raise Exception("")
             except:
-                file_txt = open("results/txt/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt",
+                file_txt = open(f"{dirpath}/results/txt/username" + str(time.strftime("%d_%m_%Y_%H_%M_%S", time_data)) + ".txt",
                 "w", encoding="utf-8")
             file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in FULL:
@@ -1232,16 +1233,16 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 sess_size=0.00000000001
 # Запись в html.
             try:
-                file_html = open("results/html/" + username + ".html", "w", encoding="utf-8")
+                file_html = open(f"{dirpath}/results/html/{username}.html", "w", encoding="utf-8")
                 #raise Exception("")
             except:
-                file_html = open("results/html/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S",
-                time_data) + ".html", "w", encoding="utf-8")
+                file_html = open(f"{dirpath}/results/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html", "w",
+                encoding="utf-8")
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
             <div id='particles-js'></div>\n\
             <div id='report'>\n\n\
-            <h1><a class='GL' href='file://" + str(dirresults) + "/results/html/'>Главная</a>" + "</h1>\n")
+            <h1><a class='GL' href='file://" + f"{dirpath}/results/html/'>Главная</a>" + "</h1>\n")
             file_html.write("""\t\t\t<h3>Snoop Project (Demo Version)</h3>
             <p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>
             <button onclick="sortList()">Сортировать по странам</button><br><br>\n\n""")
@@ -1318,10 +1319,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Запись в csv.
             try:
-                file_csv = open("results/csv/" + username + ".csv", "w", newline='')#, encoding="utf-8")
+                file_csv = open(f"{dirpath}/results/csv/{username}.csv", "w", newline='')#, encoding="utf-8")
 #                raise Exception("")
             except:
-                file_csv = open("results/csv/" + "username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='')#, encoding="utf-8")
+                file_csv = open(f"{dirpath}/results/csv/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='')#, encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
             censors_cor = int((censors - recensor)/kef_user) #err_connection
             censors_timeout_cor = int(censors_timeout/kef_user) #err time-out
@@ -1370,7 +1371,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 # Финишный вывод.
         print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", len(find_url_lst), "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
-        print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + dirresults + "/results/*/" + str(username) + ".*")
+        print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + f"{dirpath}/results/*/{username}.*")
         if flagBS_err >= 2:#perc
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + f"└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
@@ -1392,7 +1393,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 pass
             else:
                 try:
-                    webbrowser.open(f"file://{dirresults}/results/html/{username}.html")
+                    webbrowser.open(f"file://{dirpath}/results/html/{username}.html")
                 except:
                     pass
 # Arbeiten...
