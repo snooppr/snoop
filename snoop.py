@@ -9,7 +9,7 @@ import locale
 import networktest
 import os
 import platform
-import random
+import random   
 import re
 import requests
 import shutil
@@ -657,7 +657,7 @@ def update_snoop():
 def autoclean():
 # Определение директорий.
     path_build_del = "/results" if sys.platform != 'win32' else "\\results"
-    rm = dirpath + '/results' if 'Source' in version else dirpath + path_build_del
+    rm = dirpath + path_build_del
 # Подсчет файлов и размера удаляемого каталога 'results'.
     total_size = 0
     delfiles=[]
@@ -1370,8 +1370,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_csv.close()
 
 # Финишный вывод.
+        direct_results = f"{dirpath}/results/*/{username}.*" if sys.platform != 'win32' else f"{dirpath}\\results\\*\\{username}.*"
         print(Fore.CYAN + "├─Результаты поиска:", "найдено -->", len(find_url_lst), "url (сессия: %.0f" % float(timefinish) + f"сек_{sess_size}Mb)")
-        print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + f"{dirpath}/results/*/{username}.*")
+        print(Fore.CYAN + "├──Результаты сохранены в: " + Style.RESET_ALL + direct_results)
         if flagBS_err >= 2:#perc
             print(Fore.CYAN + "├───Дата поискового запроса:", time.strftime("%d/%m/%Y_%H:%M:%S", time_data))
             print(Fore.CYAN + f"└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
