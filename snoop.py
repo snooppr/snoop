@@ -165,8 +165,8 @@ class ElapsedFuturesSession(FuturesSession):
 # Вывести на печать инфостроку.
 def print_info(title, info, color=True):
     if color:
-        print(Fore.GREEN + "[" + Fore.YELLOW + "*" + Fore.GREEN + f"] {title}" + Fore.RED + "\033[5m <\033[0m" + Fore.WHITE + f" {info}" +
-        Fore.RED + "\033[5m >\033[0m")
+        print(Fore.GREEN + "[" + Fore.YELLOW + "*" + Fore.GREEN + f"] {title}" + Fore.RED + " <" + Fore.WHITE + f" {info}" +
+        Fore.RED + " >" + Style.RESET_ALL)
     else:
         print(f"\n[*] {title} {info}:")
 
@@ -983,114 +983,69 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Вывод для Demo Version.
         if sortY == "3":
             console.rule("[cyan]Ok, print All Country:",style="cyan bold")
-            print("")
-            datajson0 = DB()
-            cnt0 = Counter()
-            li0 = []
-            for con0 in datajson0:
-                if sys.platform == 'win32':
-                    aaa0 = datajson0.get(con0).get("country_klas")
-                else:
-                    aaa0 = datajson0.get(con0).get("country")
-                li0.append(aaa0)
-            for word0 in li0:
-                cnt0[word0] += 1
-            flag_str0=str(cnt0)
-            try:
-                flag_str_sum0 = (flag_str0.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
-            except:
-                pass
-            table = Table(title = Style.BRIGHT + Fore.RED + "Snoop Demo Version" + Style.RESET_ALL, style="green")
-            table.add_column("Страна:Кол-во websites", style="magenta")
-            table.add_column("All", style="cyan", justify='full')
-            table.add_row(flag_str_sum0, str(len(datajson0)))
-            console.print(table)
+            def sortY3(DB, fore, version):
+                print("")
+                datajson = DB
+                cnt = Counter()
+                li = []
+                for con in datajson:
+                    S = datajson.get(con).get("country_klas") if sys.platform == 'win32' else datajson.get(con).get("country")
+                    li.append(S)
+                for word in li:
+                    cnt[word] += 1
+                flag_str=str(cnt)
+                try:
+                    flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
+                except:
+                    pass
+                table = Table(title = Style.BRIGHT + fore + version + Style.RESET_ALL, style="green")
+                table.add_column("Страна:Кол-во websites", style="magenta")
+                table.add_column("All", style="cyan", justify='full')
+                table.add_row(flag_str_sum, str(len(datajson)))
+                console.print(table)
 
+            sortY3(DB(), Fore.RED, "Demo Version")
 # Вывод для full Version.
-            datajson00 = DBflag()
-            cnt00 = Counter()
-            li00 = []
-            for con00 in datajson00:
-                if sys.platform == 'win32':
-                    aaa00 = datajson00.get(con00).get("country_klas")
-                else:
-                    aaa00 = datajson00.get(con00).get("country")
-                li00.append(aaa00)
-            for word00 in li00:
-                cnt00[word00] += 1
-            flag_str00=str(cnt00)
-            try:
-                flag_str_sum00 = (flag_str00.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
-            except:
-                pass
-            table = Table(title = Style.BRIGHT + Fore.GREEN + "Snoop Full Version" + Style.RESET_ALL, style="green")
-            table.add_column("Страна:Кол-во websites", style="magenta")
-            table.add_column("All", style="cyan", justify='full')
-            table.add_row(flag_str_sum00, str(len(datajson00)))
-            console.print(table)
+            sortY3(DBflag(), Fore.GREEN, "Full Version")
             sys.exit()
 
 # Сортируем по алфавиту для Full Version (2!).
         elif sortY == "2":
             console.rule("[cyan]Ok, сортируем по алфавиту:",style="cyan bold")
-            print(Fore.GREEN + "\n++Белый список Full Version++")
-            datajson = DBflag()
-            i = 0
-            sorted_dict_v_listtuple = sorted(datajson.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
-            datajson_sort = dict(sorted_dict_v_listtuple) #преобр.список обратно в словарь (сортированный)
-            for con in datajson_sort:
-                if sys.platform == 'win32':
-                    aaa = datajson_sort.get(con).get("country_klas")
-                else:
-                    aaa = datajson_sort.get(con).get("country")
-                i += 1
-                print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                print(Fore.CYAN + "================")
-# Сортировка по алфавиту для Demo Version (2!).
-            print(Fore.GREEN + "\n++Белый список Demo Version++")
-            datajson = DB()
-            sorted_dict_v_listtuple = sorted(datajson.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
-            datajson_sort = dict(sorted_dict_v_listtuple) #преобр.список обратно в словарь (сортированный)
-            i = 0
-            for con in datajson_sort:
-                if sys.platform == 'win32':
-                    aaa = datajson_sort.get(con).get("country_klas")
-                else:
-                    aaa = datajson_sort.get(con).get("country")
-                i += 1
-                print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{aaa}  {con}")
-                print(Fore.CYAN + "================")
-            sys.exit()
+            def sortY2(DB, version):
+                print(Fore.GREEN + f"\n++Белый список {version}++")
+                datajson = DB
+                i = 0
+                sorted_dict_v_listtuple = sorted(datajson.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
+                datajson_sort = dict(sorted_dict_v_listtuple) #преобр.список обратно в словарь (сортированный)
+                for con in datajson_sort:
+                    S = datajson_sort.get(con).get("country_klas") if sys.platform == 'win32' else datajson_sort.get(con).get("country")
+                    i += 1
+                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{S}  {con}")
+                    print(Fore.CYAN + "================")
 
+            sortY2(DBflag(), "Full Version")
+# Сортировка по алфавиту для Demo Version (2!).
+            sortY2(DB(), "Demo Version")
+            sys.exit()
+            
 # Сортируем по странам для Full Version (1!).
         elif sortY == "1":
-            listwindows = []
-            datajson = DBflag()
-            for con in datajson:
-                if sys.platform == 'win32':
-                    aaa = (datajson.get(con).get("country_klas"))
-                else:
-                    aaa = (datajson.get(con).get("country"))
-                listwindows.append(f"{aaa}  {con}\n")
             console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold")
-            print(Fore.GREEN + "\n++Белый список++")
-            for i in enumerate(sorted(listwindows, key=str.lower), 1):
-                print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
-                print(Fore.CYAN + "================")
-            listwindows.clear()
+            def sortY1(DB, version):
+                listwindows = []
+                datajson = DB
+                for con in datajson:
+                    S = datajson.get(con).get("country_klas") if sys.platform == 'win32' else datajson.get(con).get("country")
+                    listwindows.append(f"{S}  {con}\n")
+                print(Fore.GREEN + f"\n++Белый список {version}++")
+                for i in enumerate(sorted(listwindows, key=str.lower), 1):
+                    print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
+                    print(Fore.CYAN + "================")
 
+            sortY1(DBflag(), "Full Version")
 # Сортировка по странам для Demo Version (1!).
-            datajson = DB()
-            for con in datajson:
-                if sys.platform == 'win32':
-                    aaa = (datajson.get(con).get("country_klas"))
-                else:
-                    aaa = (datajson.get(con).get("country"))
-                listwindows.append(f"{aaa}  {con}\n")
-            print(Fore.GREEN + "\n++Белый список Demo Version++")
-            for i in enumerate(sorted(listwindows, key=str.lower), 1):
-                print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
-                print(Fore.CYAN + "================")
+            sortY1(DB(), "Demo Version")
             sys.exit()
 
 # Действие не выбрано.
