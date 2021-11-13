@@ -1040,7 +1040,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     listwindows.append(f"{S}  {con}\n")
                 print(Fore.GREEN + f"\n++Белый список {version}++")
                 for i in enumerate(sorted(listwindows, key=str.lower), 1):
-                    print(Style.BRIGHT + Fore.GREEN + str(i[0]), Fore.CYAN + str(i[1]) ,end = '')
+                    print(Style.BRIGHT + Fore.GREEN + str(i[0]) + '.', Fore.CYAN + str(i[1]) ,end = '')
                     print(Fore.CYAN + "================")
 
             sortY1(DBflag(), "Full Version")
