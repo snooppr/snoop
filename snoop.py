@@ -75,7 +75,7 @@ recensor = 0
 e_mail = 'Demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число:
 license = 'лицензия'
-ts = (2022, 11, 11, 3, 0, 0, 0, 0, 0) 
+ts = (2022, 11, 11, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts)) #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}") #в UTC (-3 часа)
@@ -208,7 +208,7 @@ def print_invalid(mes, social_network, message, color=True):
         print(Style.RESET_ALL + Fore.RED + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.RED + "]" +
         Style.BRIGHT + Fore.GREEN + f" {social_network}:" + Style.RESET_ALL + Fore.YELLOW + f" {message}")
     else:
-        print(f"[-] {social_network} {message}")
+        print(f"[-] {social_network}: {message}")
 
 # Вернуть результат future for2.
 def get_response(request_future, error_type, social_network, print_found_only=False, verbose=False, color=True):
@@ -301,8 +301,8 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 # Печать первой инфостроки.
     if '%20' in username:
-        usernameA = re.sub("%20", " ", username)
-        print_info("разыскиваем:", usernameA, color)
+        username_space = re.sub("%20", " ", username)
+        print_info("разыскиваем:", username_space, color)
     else:
         print_info("разыскиваем:", username, color)
 
@@ -330,7 +330,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
     for social_network, net_info in site_data.items():
         results_site = {}
 
-# Запись URL основного сайта и флага страные (сопоставление с data.json).
+# Запись URL основного сайта и флага страны (сопоставление в БД).
         results_site['flagcountry'] = net_info.get("country")
         results_site['flagcountryklas'] = net_info.get("country_klas")
         results_site['url_main'] = net_info.get("urlMain")
@@ -340,7 +340,10 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         "{'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}",
         "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36'}",
         "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.109'}",
-        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/89.0'}"
+        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/89.0'}",
+        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0'}",
+        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.58 Safari/537.36'}",
+        "{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4701.0 Safari/537.36'}"
         ])
         RH = random.choice(RandHead)
         headers = json.loads(RH.replace("'",'"'))
@@ -349,21 +352,26 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Переопределить / добавить любые дополнительные заголовки, необходимые для данного сайта.
             headers.update(net_info["headers"])
 
-# Не делать запрос, если имя пользователя не подходит для сайта.
+# Пропуск временно-отключенного сайта и Не делать запрос, если имя пользователя не подходит для сайта.
         exclusionYES = net_info.get("exclusion")
-        if exclusionYES and re.search(exclusionYES, username):
+        if exclusionYES and re.search(exclusionYES, username) or net_info.get("bad_site") == 1:
 # Не нужно делать проверку на сайте: если это имя пользователя не допускается.
-            if not print_found_only:
-                print_invalid("", social_network, f"Недопустимый формат имени для данного сайта", color)
-
-            results_site["exists"] = "прочерк"
-            results_site["url_user"] = ""
-            results_site['countryCSV'] = ""
-            results_site['http_status'] = ""
+            if exclusionYES and re.search(exclusionYES, username):
+                if not print_found_only:
+                    print_invalid("", social_network, f"Недопустимый формат имени для данного сайта", color)
+            results_site["exists"] = "invalid_nick"
+            results_site["url_user"] = '*'*56
+            results_site['countryCSV'] = "****"
+            results_site['http_status'] = '*'*10
             results_site['session_size'] = ""
-            results_site['check_time_ms'] = ""
-            results_site['response_time_ms'] = ""
-            results_site['response_time_site_ms'] = ""
+            results_site['check_time_ms'] = '*'*15
+            results_site['response_time_ms'] = '*'*15
+            results_site['response_time_site_ms'] = '*'*25
+            if net_info.get("bad_site") == 1:
+                if verbose == True:
+                    if not print_found_only:
+                        print_invalid("", social_network, f"**Пропуск. Dynamic gray_list", color)
+                results_site["exists"] = "gray_list"
         else:
 # URL пользователя на сайте (если он существует).
 #            global url
@@ -434,8 +442,8 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             countryA = results_site.get("flagcountry")
             countryB = results_site.get("flagcountryklas")
             countryAB = countryA if not sys.platform == 'win32' else countryB
-            exists = results_site.get("exists")
-            if exists is not None:
+# Пропустить запрещенный никнейм или пропуск сайта из gray-list.
+            if results_site.get("exists") is not None:
                 continue
 # Получить ожидаемый тип данных 4 методов.
             error_type = net_info["errorTypе"]
@@ -482,15 +490,15 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                             break
 # Попытка получить информацию запроса.
             try:
-                http_status = r.status_code
+                http_status = r.status_code #запрос статус-кода.
             except:
                 pass
             try:
-                response_text = r.text.encode(r.encoding)
+                response_text = r.text.encode(r.encoding) #запрос данных.
             except:
                 pass
             try:
-                session_size = len(r.content)
+                session_size = len(r.content) #подсчет извлеченных данных.
             except:
                 pass
 # Проверка, 4 методов; #1.
@@ -693,7 +701,7 @@ def run():
 ├──PayPal:: [white]snoopproject@protonmail.com[/white]
 └──Bitcoin (только Donate)::[/cyan] [white]1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8[/white]
 
-[bold green]Если вас заинтересовала [red]Snoop Demo Version[/red], Вы можете официально приобрести 
+[bold green]Если вас заинтересовала [red]Snoop Demo Version[/red], Вы можете официально приобрести
 [cyan]Snoop Full Version[/cyan], поддержав развитие проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
 [bold green]При пожертвовании/покупке в сообщении укажите информацию в таком порядке:[/bold green]
 
@@ -702,7 +710,7 @@ def run():
     статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
 
 [bold green]В ближайшее время на email пользователя придёт чек и ссылка для скачивания
-Snoop Full Version готовой сборки то есть исполняемого файла, 
+Snoop Full Version готовой сборки то есть исполняемого файла,
 для Windows — это 'snoop.exe', для GNU/Linux — 'snoop'.
 
 Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой пользователь
@@ -722,7 +730,7 @@ Snoop Full Version: плагины без ограничений; 2200+ Websites
 отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
 
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
-[bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)", 
+[bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)",
 border_style="bold blue"))# ,style="bold green"))
         webbrowser.open("https://sobe.ru/na/snoop_project_2020")
         print(Style.BRIGHT + Fore.RED + "Выход")
@@ -1028,7 +1036,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Сортировка по алфавиту для Demo Version (2!).
             sortY2(DB(), "Demo Version")
             sys.exit()
-            
+
 # Сортируем по странам для Full Version (1!).
         elif sortY == "1":
             console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold")
@@ -1155,8 +1163,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         for username in SQ:
             kef_user+=1
             sort_sites = sort_web if args.country == True else site_data
-            FULL = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert, 
-                        norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout, 
+            FULL = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert,
+                        norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout,
                         color=not args.no_func)
 
             exists_counter = 0
@@ -1177,7 +1185,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     find_url_lst.append(exists_counter)
                     file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file_txt.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-            file_txt.write("\n" f"База Snoop (DemoVersion): " + str(flagBS) + " Websites.")
+            file_txt.write("\n" f"База Snoop (Demo Version): " + str(flagBS) + " Websites.")
             file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             file_txt.close()
 #Размер сесии.
@@ -1285,11 +1293,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             if flagBS_err >= 2:#perc
                 czr_csv = 'Внимание!_Поиск_проходил_при_нестабильном_интернет_соединении_или_Internet-Censorship. Результаты_могут_быть_неполные.'
             writer = csv.writer(file_csv)
-            writer.writerow(['Объект',
+            writer.writerow(['Никнейм',
                              'Ресурс',
                              'Страна',
                              'Url',
-                             'Url_username',
+                             'Ссылка_на_профиль',
                              'Статус',
                              'Статус_http',
                              'Общее_замедление/мс',
@@ -1316,7 +1324,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                                  FULL[site]['check_time_ms'],
                                  FULL[site]['response_time_ms'],
                                  Ssession])
-            writer.writerow(['«' + "-"*39, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32,'-'*13, '-'*23, '-'*16 + '»'])
+            writer.writerow(['«' + "-"*30, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32,'-'*13, '-'*23, '-'*16 + '»'])
             writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
             writer.writerow('')
             writer.writerow(['Дата'])
