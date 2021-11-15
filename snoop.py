@@ -353,10 +353,8 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             results_site['check_time_ms'] = '*'*15
             results_site['response_time_ms'] = '*'*15
             results_site['response_time_site_ms'] = '*'*25
-            if net_info.get("bad_site") == 1:
-                if verbose == True:
-                    if not print_found_only:
-                        print_invalid("", social_network, f"**Пропуск. Dynamic gray_list", color)
+            if net_info.get("bad_site") == 1 and verbose == True and not print_found_only:
+                print_invalid("", social_network, f"**Пропуск. Dynamic gray_list", color)
                 results_site["exists"] = "gray_list"
         else:
 # URL пользователя на сайте (если он существует).
