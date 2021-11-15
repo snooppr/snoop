@@ -87,10 +87,10 @@ if time.time() > int(date_up):
 def ravno():
     console.rule(characters = '=', style="cyan bold")
 
-def DB():
+def DB(db_base):
     try:
-        with open('BDdemo', "r", encoding="utf8") as z:
-            db = z.read()
+        with open(db_base, "r", encoding="utf8") as f_r:
+            db = f_r.read()
             db = db.encode("UTF-8")
             db = base64.b64decode(db)
             db = db[::-1]
@@ -101,23 +101,9 @@ def DB():
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
         sys.exit()
 
-def DBflag():
-    try:
-        with open('BDflag', "r", encoding="utf8") as z1:
-            dbf = z1.read()
-            dbf = dbf.encode("UTF-8")
-            dbf = base64.b64decode(dbf)
-            dbf = dbf[::-1]
-            dbf = base64.b64decode(dbf)
-            neo = json.loads(dbf.decode("UTF-8"))
-            return neo
-    except:
-        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
-        sys.exit()
-
 # Флаг БС.
 def baza():
-    BS = DB()
+    BS = DB('BDdemo')
     return BS
 flagBS = len(baza())
 
@@ -448,7 +434,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 # Получить ожидаемый тип данных 4 методов.
             error_type = net_info["errorTypе"]
 # Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
-            http_status = "*???"
+            http_status = "сбой"
             response_text = ""
             session_size = "Err"
 # Получить future и убедиться, что оно закончено.
@@ -957,7 +943,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Сортировка по странам '-с'.
     if args.country:
         patchjson = ("{}".format(args.json_file))
-        jsonjson = DB()
+        jsonjson = DB('BDdemo')
         print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
         country_sites = sorted(jsonjson, key=lambda k: ("country" not in k, jsonjson[k].get("country", sys.maxsize)))
         sort_web = {}
@@ -1012,9 +998,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 table.add_row(flag_str_sum, str(len(datajson)))
                 console.print(table)
 
-            sortY3(DB(), Fore.RED, "Demo Version")
+            sortY3(DB('BDdemo'), Fore.RED, "Demo Version")
 # Вывод для full Version.
-            sortY3(DBflag(), Fore.GREEN, "Full Version")
+            sortY3(DB('BDflag'), Fore.GREEN, "Full Version")
             sys.exit()
 
 # Сортируем по алфавиту для Full Version (2!).
@@ -1032,9 +1018,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{S}  {con}")
                     print(Fore.CYAN + "================")
 
-            sortY2(DBflag(), "Full Version")
+            sortY2(DB('BDflag'), "Full Version")
 # Сортировка по алфавиту для Demo Version (2!).
-            sortY2(DB(), "Demo Version")
+            sortY2(DB('BDdemo'), "Demo Version")
             sys.exit()
 
 # Сортируем по странам для Full Version (1!).
@@ -1051,9 +1037,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     print(Style.BRIGHT + Fore.GREEN + str(i[0]) + '.', Fore.CYAN + str(i[1]) ,end = '')
                     print(Fore.CYAN + "================")
 
-            sortY1(DBflag(), "Full Version")
+            sortY1(DB('BDflag'), "Full Version")
 # Сортировка по странам для Demo Version (1!).
-            sortY1(DB(), "Demo Version")
+            sortY1(DB('BDdemo'), "Demo Version")
             sys.exit()
 
 # Действие не выбрано.
@@ -1121,7 +1107,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             sys.exit()
         else:
             try:
-                a1 = DB()
+                a1 = DB('BDdemo')
             except:
                 print("\033[31;1mНеподдерживаемый формат базы данных\033[0m")
         try:
