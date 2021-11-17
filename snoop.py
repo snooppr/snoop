@@ -977,7 +977,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         diff_list=list(set(enter_coun_u) - set(bd_flag)) # вывести уникальные элементы только из enter_coun_u иначе set(enter_coun_u)^set(bd_flag
 
         print(Fore.CYAN + f"[+] активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
-        print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]') + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
+        print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
         str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
         "    допустимо использовать опцию '-e' несколько раз\n"
         "    [опция '-e'] несовместима с [опциями '-s', '-c']")
@@ -1185,7 +1185,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         kef_user=0
         ungzip = []
         find_url_lst=[]
-        exl = "_".join(lap) if any(lap) == True else "нет" #искл.регионы_valid.
+        exl = "/".join(lap).upper() if any(lap) == True else "нет" #искл.регионы_valid.
         for username in SQ:
             kef_user+=1
             sort_sites = sort_web if args.country == True else site_data
