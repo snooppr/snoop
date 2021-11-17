@@ -43,7 +43,7 @@ print ("""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37mv1.3.1B\033[34;1m_rus_\033[31;1mSource Demo\033[0m
+                         _|    \033[0m \033[37mv1.3.2\033[34;1m_rus_\033[31;1mSource Demo\033[0m
 """)
 
 print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
@@ -61,7 +61,7 @@ console.rule(characters = '=', style="cyan")
 print("")
 
 module_name = (Fore.CYAN + "Snoop: поиск никнейма по всем фронтам!" + Style.RESET_ALL)
-version = "v1.3.1B_rus Snoop (Source demo)"
+version = "v1.3.2_rus Snoop (Source demo)"
 
 dirresults = os.getcwd()
 dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\snoop"
@@ -81,7 +81,7 @@ up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}") #в UTC (-3 часа)
 
 if time.time() > int(date_up):
-    print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии")
+    print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии.")
     sys.exit()
 
 def ravno():
@@ -730,11 +730,11 @@ border_style="bold blue"))# ,style="bold green"))
  \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
                            )
 # Service arguments.
-    service_group = parser.add_argument_group('service arguments')
+    service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
     service_group.add_argument("--version", "-V", action="version",  version=(version_snoop),
                                help="\033[36mA\033[0mbout: вывод на печать версий:: OS; Snoop; Python и Лицензии"
                               )
-    service_group.add_argument("--list all", action="store_true", dest="listing",
+    service_group.add_argument("--list all", "-l y", action="store_true", dest="listing",
                                help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop"
                               )
     service_group.add_argument("--donate y", "-d y", action="store_true", dest="donation",
@@ -748,13 +748,13 @@ border_style="bold blue"))# ,style="bold green"))
                                help="\033[36mО\033[0mбновить Snoop"
                               )
 # Plugins arguments arguments.
-    plugins_group = parser.add_argument_group('plugins arguments')
+    plugins_group = parser.add_argument_group('\033[36mplugins arguments\033[0m')
     plugins_group.add_argument("--module y", "-m y", action="store_true", dest="module", default=False,
                                help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX \
                                (список плагинов будет пополняться)"
                               )
 # Search arguments.
-    search_group = parser.add_argument_group('search arguments')
+    search_group = parser.add_argument_group('\033[36msearch arguments\033[0m')
     search_group.add_argument("username", nargs='+', metavar='nickname', action="store",
                               help="\033[36mН\033[0mикнейм разыскиваемого пользователя. \
                               Поддерживается поиск одновременно нескольких имён.\
@@ -771,7 +771,12 @@ border_style="bold blue"))# ,style="bold green"))
                               В demo version функция отключена"
                              )
     search_group.add_argument("--site", "-s chess", action="append", metavar='', dest="site_list",  default=None,
-                              help="\033[36mУ\033[0mказать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе"
+                              help="\033[36mУ\033[0mказать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе, \
+                              допустимо использовать опцию '-s' несколько раз"
+                             )
+    search_group.add_argument("--exclude", "-e ru", action="append", metavar='', dest="exclude_country",  default=None,
+                              help="\033[36mИ\033[0mсключить из поиска выбранный регион, например, 'wr' — мир, \
+                              допустимо использовать опцию '-e' несколько раз"
                              )
     search_group.add_argument("--time-out", "-t 9", action="store", metavar='', dest="timeout", type=timeout_check, default=5,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
@@ -914,9 +919,13 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Опция  '-С'.
     if args.cert:
         print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах вкл»")
-# Опция  '-cs' несовместимы.
-    if args.site_list is not None and args.country == True:
-        print(Style.BRIGHT + Fore.RED + "[опция '-c'] несовместима с [опцией '-s']")
+# Опции  '-cse' несовместимы.
+    if args.site_list is not None and args.country == True or args.exclude_country is not None and args.country == True:
+        print(Style.BRIGHT + Fore.RED + "[опция '-c'] несовместима с [опциями '-s', '-e']")
+        sys.exit()
+# Опции  '-se' несовместимы.
+    if args.site_list is not None and args.exclude_country is not None:
+        print(Style.BRIGHT + Fore.RED + "[опция '-e'] несовместима с [опцией '-s']")
         sys.exit()
 # Опция режима SNOOPnina > < нормальный режим.
     if args.norm == False:
@@ -955,14 +964,28 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     if args.site_list:
         print(Fore.CYAN + "[+] активирована опция '-s': «будет произведён поиск user-a на 1-м выбранном website»\n"
         "    допустимо использовать опцию '-s' несколько раз\n"
-        "    [опция '-s'] несовместима с [опцией '-с']")
+        "    [опция '-s'] несовместима с [опциями '-с', '-e']")
+# Опция '-e'.
+    if args.exclude_country:
+        bd_flag = []
+        for k,v in DB('BDdemo').items():
+            bd_flag.append(v.get('country_klas').lower())
+
+        enter_coun_u=[x.lower() for x in args.exclude_country]
+        lap=list(set(bd_flag) & set(enter_coun_u))
+        diff_list=list(set(enter_coun_u) - set(bd_flag)) # вывести уникальные элементы только из enter_coun_u иначе set(enter_coun_u)^set(bd_flag
+
+        print(Fore.CYAN + f"[+] активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
+        print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]') + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
+        str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
+        "    допустимо использовать опцию '-e' несколько раз\n"
+        "    [опция '-e'] несовместима с [опциями '-s', '-c']")
 # Опция '-v'.
     if args.verbose:
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
         with console.status("[cyan]Ожидайте, идёт самотестирование сети..."):
             networktest.nettest()
             console.log("[cyan]--> тест сети")
-
 # Опция '--list all'.
     if args.listing:
         print(
@@ -1121,23 +1144,40 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print("\n\033[37m\033[44m{}".format("Функция '-w' доступна только пользователям Snoop Full Version..."))
         donate()
 
-# Если опция '-s' не указана, то используем БД
-    if args.site_list is None:
+# Если опции '-se' не указаны, то используем БД, как есть.
+    site_data = {}
+    if args.site_list is None and args.exclude_country is None:
         site_data = site_data_all
-    else:
+# Если опция '-s' указана, а опция '-e' нет, то поиск на 1-м выбранном сайте.
+    elif args.site_list is not None and args.exclude_country is None:
 # Опция '-s'.
 # Пользователь выборочно запускает запросы к подмножеству списку сайтов из БД.
 # Убедиться, что сайты в базе имеются, создать для проверки сокращенную базу данных сайта(ов).
-        site_data = {}
         for site in args.site_list:
             for site_yes in site_data_all:
                 if site.lower() == site_yes.lower():
                     site_data[site_yes] = site_data_all[site_yes] #выбираем в словарь найденные сайты из БД
-            if not any(site.lower() == site_yes.lower() for site_yes in site_data_all): #если ни одного совпадения по сайту
-                print(f"\033[31;1mПропуск:\033[0m \033[36mжелаемый сайт не найден в базе Snoop:: '{site}'\033[0m")
+
+            diff_k_bd = set(DB('BDflag')) ^ set(DB('BDdemo'))
+            for site_yes_full_diff in diff_k_bd:
+                if site.lower() == site_yes_full_diff.lower(): #если сайт (-s) в БД Full версии.
+                    print(f"\033[31;1m[?] Пропуск:\033[0m \033[36mсайт из БД \033[36;1mFull-версии\033[0m \033[36mнедоступен в БД" +
+                    f"\033[0m \033[33;1mDemo-версии\033[0m\033[36m:: '\033[30;1m{site_yes_full_diff}\033[0m\033[36m'\033[0m")
+
+            if not any(site.lower() == site_yes_full.lower() for site_yes_full in DB('BDflag')): #если ни одного совпадения по сайту
+                print(f"\033[31;1m[!] Пропуск:\033[0m \033[36mжелаемый сайт отсутствует в БД Snoop:: '\033[31;1m{site}\033[0m\033[36m'\033[0m")
+
 # Отмена поиска, если нет ни одного совпадения по БД и '-s'
         if not site_data:
             sys.exit()
+# Если опция '-e' указана, а опция '-s' нет, то исключаем из поиска регион-ы.
+# Создать для проверки сокращенную базу данных сайта(ов).
+# Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
+    elif args.exclude_country is not None and args.site_list is None:
+        for k,v in site_data_all.items():
+            if all(item.lower() != v.get('country_klas').lower() for item in args.exclude_country) == True:
+                site_data[k] = v
+
 
 # Крутим user's.
     def starts(SQ):
@@ -1309,7 +1349,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                                  FULL[site]['response_time_ms'],
                                  Ssession])
             writer.writerow(['«' + "-"*30, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32,'-'*13, '-'*23, '-'*16 + '»'])
-            writer.writerow(['База_Snoop(DemoVersion)=' + str(flagBS) + '_Websites'])
+            writer.writerow(['БД_(DemoVersion)=' + str(flagBS) + '_Websites'])
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
