@@ -966,6 +966,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         "    допустимо использовать опцию '-s' несколько раз\n"
         "    [опция '-s'] несовместима с [опциями '-с', '-e']")
 # Опция '-e'.
+    lap = []
     if args.exclude_country:
         bd_flag = []
         for k,v in DB('BDdemo').items():
@@ -1184,6 +1185,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         kef_user=0
         ungzip = []
         find_url_lst=[]
+        exl = "_".join(lap) if any(lap) == True else "нет" #искл.регионы_valid.
         for username in SQ:
             kef_user+=1
             sort_sites = sort_web if args.country == True else site_data
@@ -1209,7 +1211,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     find_url_lst.append(exists_counter)
                     file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
             file_txt.write("\n" f"Запрашиваемый объект: <{username}> найден: {exists_counter} раз(а).")
-            file_txt.write("\n" f"База Snoop (Demo Version): " + str(flagBS) + " Websites.")
+            file_txt.write("\n" f"База Snoop (Demo Version): {flagBS} Websites.")
+            file_txt.write("\n" f"Исключённые регионы: {exl}.")
             file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
             file_txt.close()
 #Размер сесии.
@@ -1255,6 +1258,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 pass
             file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Затраченное время на сессию: " + "<b>" + "(%.0f" % float(timefinish) + "сек_ %.2f" % float(sess_size) + "Mb)</b>.\n")
+            file_html.write("<br> Исключённые регионы: <b>" + str(exl) + ".</b>\n")
             file_html.write("<br> База Snoop (Demo Version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
             file_html.write("""
@@ -1350,6 +1354,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                                  Ssession])
             writer.writerow(['«' + "-"*30, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32,'-'*13, '-'*23, '-'*16 + '»'])
             writer.writerow(['БД_(DemoVersion)=' + str(flagBS) + '_Websites'])
+            writer.writerow(['Исключённые_регионы=' + str(exl)])
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
