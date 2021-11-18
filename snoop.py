@@ -1201,12 +1201,12 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.exclude_country is not None:
-        one_exl(args.exclude_country, True)
+        one_exl(args.exclude_country, bool_=True)
 ## Опция '-o'.
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.one_level is not None:
-        one_exl(args.one_level, False)
+        one_exl(args.one_level, bool_=False)
 
 ## Крутим user's.
     def starts(SQ):
