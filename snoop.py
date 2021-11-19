@@ -109,38 +109,15 @@ flagBS = len(baza())
 
 ## Создание директорий результатов.
 dirpath = dirresults if 'Source' in version else dirhome
-try:
-    os.makedirs(f"{dirpath}/results")
-except:
-    pass
-try:
-    os.makedirs(f"{dirpath}/results/html")
-except:
-    pass
-try:
-    os.makedirs(f"{dirpath}/results/txt")
-except:
-    pass
-try:
-    os.makedirs(f"{dirpath}/results/csv")
-except:
-    pass
-try:
-    os.makedirs(f"{dirpath}/results/save reports")
-except:
-    pass
-try:
-    os.makedirs(f"{dirpath}/results/ReverseVgeocoder")
-except:
-    pass
-try:
-    os.makedirs(f"{dirpath}/results/Yandex_parser")
-except:
-    pass
-try:
-    os.makedirs(f"{dirpath}/results/domain")
-except:
-    pass
+os.makedirs(f"{dirpath}/results", exist_ok=True)
+os.makedirs(f"{dirpath}/results/html", exist_ok=True)
+os.makedirs(f"{dirpath}/results/txt", exist_ok=True)
+os.makedirs(f"{dirpath}/results/csv", exist_ok=True)
+os.makedirs(f"{dirpath}/results/save reports", exist_ok=True)
+os.makedirs(f"{dirpath}/results/ReverseVgeocoder", exist_ok=True)
+os.makedirs(f"{dirpath}/results/Yandex_parser", exist_ok=True)
+os.makedirs(f"{dirpath}/results/domain", exist_ok=True)
+
 ################################################################################
 class ElapsedFuturesSession(FuturesSession):
     """test_metrica: API:: https://pypi.org/project/requests-futures/"""
@@ -222,10 +199,7 @@ def get_response(request_future, error_type, social_network, print_found_only=Fa
 
 ## Сохранение отчетов опция (-S).
 def sreports(url, headers,session2,error_type, username,social_network,r):
-    try:
-        os.makedirs(f"{dirpath}/results/save reports/{username}")
-    except:
-        pass
+    os.makedirs(f"{dirpath}/results/save reports/{username}", exist_ok=True)
 # Сохранять отчеты для метода: redirection.
     if error_type == "redirection":
         try:
@@ -719,7 +693,7 @@ border_style="bold blue"))# ,style="bold green"))
         print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit()
 
-## Функция выбор регионов для поиска.
+## Функция выбор/искл регионов для поиска.
     def onelevel_or_exclude(exl_onelevel):
         lap = []
         bd_flag = []
@@ -1414,9 +1388,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 ## Открывать/нет браузер с результатами поиска.
         if args.no_func==False and exists_counter >= 1:
-            if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
-                pass
-            else:
+            if not "arm" in platform.platform(aliased=True, terse=0) or not "aarch64" in platform.platform(aliased=True, terse=0):
                 try:
                     webbrowser.open(f"file://{dirpath}/results/html/{username}.html")
                 except:
