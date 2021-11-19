@@ -101,11 +101,11 @@ def DB(db_base):
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
         sys.exit()
 
+## Получаем результаты и в будущем везде используем, сокращая вызовы функций.
+BDdemo = DB('BDdemo')
+BDflag = DB('BDflag')
 ## Флаг БС.
-def baza():
-    BS = DB('BDdemo')
-    return BS
-flagBS = len(baza())
+flagBS = len(BDdemo)
 
 ## Создание директорий результатов.
 dirpath = dirresults if 'Source' in version else dirhome
@@ -147,58 +147,58 @@ def print_error(err, errstr, var, verbose=False, color=True):
 
 ## Вывод на печать на разных платформах, индикация.
 ## Вывести на печать аккаунт найден.
-def print_found_country(social_network, url, countryAB, response_time=False, verbose=False, color=True):
+def print_found_country(websites_names, url, countryAB, response_time=False, verbose=False, color=True):
     if color and sys.platform == 'win32':
-        print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {countryAB}" + Fore.GREEN + f" {social_network}:", Style.RESET_ALL +
+        print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {countryAB}" + Fore.GREEN + f" {websites_names}:", Style.RESET_ALL +
         Fore.GREEN + f"{url}")
     elif color and not sys.platform == 'win32':
-        print(countryAB, (Style.BRIGHT + Fore.GREEN + f" {social_network}:"), Style.RESET_ALL + Fore.GREEN + f"{url}")
+        print(countryAB, (Style.BRIGHT + Fore.GREEN + f" {websites_names}:"), Style.RESET_ALL + Fore.GREEN + f"{url}")
     else:
-        print(f"[+] {social_network}: {url}")
+        print(f"[+] {websites_names}: {url}")
 
 ## Вывести на печать аккаунт не найден.
-def print_not_found(social_network, response_time, verbose=False, color=True):
+def print_not_found(websites_names, response_time, verbose=False, color=True):
     if color:
         print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
-        Style.BRIGHT + Fore.GREEN + f" {social_network}:" + Style.BRIGHT + Fore.YELLOW + " Увы!")
+        Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.BRIGHT + Fore.YELLOW + " Увы!")
     else:
-        print(f"[-] {social_network}: Увы!")
+        print(f"[-] {websites_names}: Увы!")
 
 ## Вывести на печать пропуск сайтов по блок. маске в имени username и пропуск по проблеме с openssl.
-def print_invalid(mes, social_network, message, color=True):
+def print_invalid(mes, websites_names, message, color=True):
     """Ошибка вывода результата"""
     if color:
         print(Style.RESET_ALL + Fore.RED + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.RED + "]" +
-        Style.BRIGHT + Fore.GREEN + f" {social_network}:" + Style.RESET_ALL + Fore.YELLOW + f" {message}")
+        Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.RESET_ALL + Fore.YELLOW + f" {message}")
     else:
-        print(f"[-] {social_network}: {message}")
+        print(f"[-] {websites_names}: {message}")
 
 ## Вернуть результат future for2.
-def get_response(request_future, error_type, social_network, print_found_only=False, verbose=False, color=True):
+def get_response(request_future, error_type, websites_names, print_found_only=False, verbose=False, color=True):
     try:
         res = request_future.result()
         if res.status_code:
             return res, error_type, res.elapsed
     except requests.exceptions.HTTPError as err1:
         if print_found_only==False:
-            print_error(err1, "HTTP Error:", social_network, verbose, color)
+            print_error(err1, "HTTP Error:", websites_names, verbose, color)
     except requests.exceptions.ConnectionError as err2:
         global censors
         censors +=1
         if print_found_only==False:
-            print_error(err2, "Ошибка соединения:", social_network, verbose, color)
+            print_error(err2, "Ошибка соединения:", websites_names, verbose, color)
     except requests.exceptions.Timeout as err3:
         global censors_timeout
         censors_timeout +=1
         if print_found_only==False:
-            print_error(err3, "Timeout ошибка:", social_network, verbose, color)
+            print_error(err3, "Timeout ошибка:", websites_names, verbose, color)
     except requests.exceptions.RequestException as err4:
         if print_found_only==False:
-            print_error(err4, "Непредвиденная ошибка", social_network, verbose, color)
+            print_error(err4, "Непредвиденная ошибка", websites_names, verbose, color)
     return None, "", -1
 
 ## Сохранение отчетов опция (-S).
-def sreports(url, headers,session2,error_type, username,social_network,r):
+def sreports(url, headers,session2,error_type, username,websites_names,r):
     os.makedirs(f"{dirpath}/results/save reports/{username}", exist_ok=True)
 # Сохранять отчеты для метода: redirection.
     if error_type == "redirection":
@@ -206,7 +206,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
             future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
             response = future2.result()
             try:
-                with open(f"{dirpath}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
+                with open(f"{dirpath}/results/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as repre:
                     repre.write(response.text)
             except:
                 pass
@@ -216,7 +216,7 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
                 future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=2)
                 response = future2.result()
                 try:
-                    with open(f"{dirpath}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as repre:
+                    with open(f"{dirpath}/results/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as repre:
                         repre.write(response.text)
                 except:
                     pass
@@ -225,13 +225,13 @@ def sreports(url, headers,session2,error_type, username,social_network,r):
 # Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
     else:
         try:
-            with open(f"{dirpath}/results/save reports/{username}/{social_network}.html", 'w', encoding=r.encoding) as rep:
+            with open(f"{dirpath}/results/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as rep:
                 rep.write(r.text)
         except:
             pass
 
 ## Основная функция.
-def snoop(username, site_data, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True, cert=False):
+def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True, cert=False):
     username = re.sub(" ", "%20", username)
 
 ## Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
@@ -287,13 +287,13 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
     results_total = {}
 
 ### Создание futures на все запросы. Это позволит распараллетить запросы.
-    for social_network, net_info in site_data.items():
+    for websites_names, param_websites in BDdemo_new.items():
         results_site = {}
 
 ## Запись URL основного сайта и флага страны (сопоставление в БД).
-        results_site['flagcountry'] = net_info.get("country")
-        results_site['flagcountryklas'] = net_info.get("country_klas")
-        results_site['url_main'] = net_info.get("urlMain")
+        results_site['flagcountry'] = param_websites.get("country")
+        results_site['flagcountryklas'] = param_websites.get("country_klas")
+        results_site['url_main'] = param_websites.get("urlMain")
 
 ## Пользовательский user-agent браузера (рандомно на каждый сайт).
         RandHead = ([
@@ -308,17 +308,17 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
         RH = random.choice(RandHead)
         headers = json.loads(RH.replace("'",'"'))
 
-        if "headers" in net_info:
+        if "headers" in param_websites:
 ## Переопределить/добавить любые дополнительные заголовки, необходимые для данного сайта.
-            headers.update(net_info["headers"])
+            headers.update(param_websites["headers"])
 
 ## Пропуск временно-отключенного сайта и Не делать запрос, если имя пользователя не подходит для сайта.
-        exclusionYES = net_info.get("exclusion")
-        if exclusionYES and re.search(exclusionYES, username) or net_info.get("bad_site") == 1:
+        exclusionYES = param_websites.get("exclusion")
+        if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
 ## Не нужно делать проверку на сайте: если это имя пользователя не допускается.
             if exclusionYES and re.search(exclusionYES, username):
                 if not print_found_only:
-                    print_invalid("", social_network, f"Недопустимый формат имени для данного сайта", color)
+                    print_invalid("", websites_names, f"Недопустимый формат имени для данного сайта", color)
             results_site["exists"] = "invalid_nick"
             results_site["url_user"] = '*'*56
             results_site['countryCSV'] = "****"
@@ -327,15 +327,15 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             results_site['check_time_ms'] = '*'*15
             results_site['response_time_ms'] = '*'*15
             results_site['response_time_site_ms'] = '*'*25
-            if net_info.get("bad_site") == 1 and verbose == True and not print_found_only:
-                print_invalid("", social_network, f"**Пропуск. Dynamic gray_list", color)
+            if param_websites.get("bad_site") == 1 and verbose == True and not print_found_only:
+                print_invalid("", websites_names, f"**Пропуск. Dynamic gray_list", color)
                 results_site["exists"] = "gray_list"
         else:
 ## URL пользователя на сайте (если он существует).
             #global url
-            url = net_info["url"].format(username)
+            url = param_websites["url"].format(username)
             results_site["url_user"] = url
-            url_API = net_info.get("urlProbe")
+            url_API = param_websites.get("urlProbe")
             if url_API is None:
 ## URL-адрес — является обычным, который видят люди в Интернете.
                 url_API = url
@@ -345,17 +345,17 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 
 ## Если нужен только статус кода, не загружать тело страницы.
             if norm == False:
-                if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
+                if reports == True or param_websites["errorTypе"] == 'message' or param_websites["errorTypе"] == 'response_url':
                     request_method = session1.get
                 else:
                     request_method = session1.head
             else:
-                if reports == True or net_info["errorTypе"] == 'message' or net_info["errorTypе"] == 'response_url':
+                if reports == True or param_websites["errorTypе"] == 'message' or param_websites["errorTypе"] == 'response_url':
                     request_method = session0.get
                 else:
                     request_method = session0.head
 
-            if net_info["errorTypе"] == "response_url" or net_info["errorTypе"] == "redirection":
+            if param_websites["errorTypе"] == "response_url" or param_websites["errorTypе"] == "redirection":
 ## Сайт перенаправляет запрос на другой URL, если имя пользователя не существует.
 ## Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
                 allow_redirects = False
@@ -367,10 +367,10 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
 ## Сохранить future in data для последующего доступа.
-            net_info["request_future"] = future
+            param_websites["request_future"] = future
 
-## Добавлять имя сайта 'results_total[social_network]' в окончательный словарь со всеми другими результатами.
-        results_total[social_network] = results_site
+## Добавлять имя сайта 'results_total[websites_names]' в окончательный словарь со всеми другими результатами.
+        results_total[websites_names] = results_site
 
 # print(results_site) # Проверка записи на успех.
     li_time = []
@@ -389,12 +389,12 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 ### Получить результаты и пройтись по массиву future.
     with progress:
         if color == True:
-            task0 = progress.add_task("", total=len(site_data.items()))
-        for social_network, net_info in site_data.items():
+            task0 = progress.add_task("", total=len(BDdemo_new.items()))
+        for websites_names, param_websites in BDdemo_new.items():
             if color == True:
                 progress.update(task0, advance=1)
                 progress.refresh()
-            results_site = results_total.get(social_network)
+            results_site = results_total.get(websites_names)
 ## Получить другую информацию сайта снова.
             url = results_site.get("url_user")
             countryA = results_site.get("flagcountry")
@@ -404,16 +404,16 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             if results_site.get("exists") is not None:
                 continue
 ## Получить ожидаемый тип данных 4 методов.
-            error_type = net_info["errorTypе"]
+            error_type = param_websites["errorTypе"]
 ## Данные по умолчанию в случае каких-либо сбоев в выполнении запроса.
             http_status = "сбой"
             response_text = ""
             session_size = "Err"
 ## Получить future и убедиться, что оно закончено.
-            future = net_info["request_future"]
+            future = param_websites["request_future"]
             r, error_type, response_time = get_response(request_future=future,
                                                         error_type=error_type,
-                                                        social_network=social_network,
+                                                        websites_names=websites_names,
                                                         print_found_only=print_found_only,
                                                         verbose=verbose,
                                                         color=color)
@@ -439,8 +439,8 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
                         future1 = session3.get(url=url, headers=head1, allow_redirects=allow_redirects,
                         timeout=1.5)
                         r, error_type, response_time = get_response(request_future=future1,
-                                                                    error_type=net_info.get("errorTypе"),
-                                                                    social_network=social_network,
+                                                                    error_type=param_websites.get("errorTypе"),
+                                                                    websites_names=websites_names,
                                                                     print_found_only=print_found_only,
                                                                     verbose=verbose,
                                                                     color=color)
@@ -462,21 +462,21 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 ## Проверка, 4 методов; #1.
 # Ответы message (разные локации).
             if error_type == "message":
-                error = net_info.get("errorMsg")
-                error2 = net_info.get("errоrMsg2")
-                if net_info.get("errorMsg2"):
+                error = param_websites.get("errorMsg")
+                error2 = param_websites.get("errоrMsg2")
+                if param_websites.get("errorMsg2"):
                     sys.exit()
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if error2 in r.text or error in r.text:
                     if not print_found_only:
-                        print_not_found(social_network, response_time, verbose, color)
+                        print_not_found(websites_names, response_time, verbose, color)
                     exists = "увы"
                 else:
-                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
+                    print_found_country(websites_names, url, countryAB, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
-                        sreports(url, headers,session2,error_type, username,social_network,r)
+                        sreports(url, headers,session2,error_type, username,websites_names,r)
 
 ## Проверка, 4 методов; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
@@ -484,13 +484,13 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if r.status_code == 301 or r.status_code == 303:
-                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
+                    print_found_country(websites_names, url, countryAB, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
-                        sreports(url, headers,session2,error_type, username, social_network,r)
+                        sreports(url, headers,session2,error_type, username, websites_names,r)
                 else:
                     if not print_found_only:
-                        print_not_found(social_network, response_time, verbose, color)
+                        print_not_found(websites_names, response_time, verbose, color)
                     exists = "увы"
 
 ## Проверка, 4 методов; #3.
@@ -499,13 +499,13 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if not r.status_code >= 300 or r.status_code < 200:
-                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
+                    print_found_country(websites_names, url, countryAB, response_time, verbose, color)
                     if reports:
-                        sreports(url, headers,session2,error_type, username, social_network,r)
+                        sreports(url, headers,session2,error_type, username, websites_names,r)
                     exists = "найден!"
                 else:
                     if not print_found_only:
-                        print_not_found(social_network, response_time, verbose, color)
+                        print_not_found(websites_names, response_time, verbose, color)
                     exists = "увы"
 
 ## Проверка, 4 методов; #4
@@ -514,19 +514,19 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if 200 <= r.status_code < 300:
-                    print_found_country(social_network, url, countryAB, response_time, verbose, color)
+                    print_found_country(websites_names, url, countryAB, response_time, verbose, color)
                     if reports:
-                        sreports(url, headers,session1,error_type, username, social_network,r)
+                        sreports(url, headers,session1,error_type, username, websites_names,r)
                     exists = "найден!"
                 else:
                     if not print_found_only:
-                        print_not_found(social_network, response_time, verbose, color)
+                        print_not_found(websites_names, response_time, verbose, color)
                     exists = "увы"
 
 ## Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за каптчи (желтый).
             else:
                 if not print_found_only:
-                    print_invalid("", social_network, "*ПРОПУСК", color)
+                    print_invalid("", websites_names, "*ПРОПУСК", color)
                 exists = "блок"
 
 ## Считать тайминги приближенно.
@@ -586,7 +586,7 @@ def snoop(username, site_data, verbose=False, norm=False, reports=False, user=Fa
             else:
                 results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 ## Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
-            results_total[social_network] = results_site
+            results_total[websites_names] = results_site
 # Вернуть словарь со всеми данными.
         return results_total
 
@@ -693,11 +693,11 @@ border_style="bold blue"))# ,style="bold green"))
         print(Style.BRIGHT + Fore.RED + "Выход")
         sys.exit()
 
-## Функция выбор/искл регионов для поиска.
+## Функция валидатор: выбор/искл регионов для поиска.
     def onelevel_or_exclude(exl_onelevel):
         lap = []
         bd_flag = []
-        for k,v in DB('BDdemo').items():
+        for k,v in BDdemo.items():
             bd_flag.append(v.get('country_klas').lower())
 
         enter_coun_u=[x.lower() for x in exl_onelevel]
@@ -945,13 +945,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         pass
 ## Опция  '-c'. Сортировка по странам.
     if args.country:
-        patchjson = ("{}".format(args.json_file))
-        jsonjson = DB('BDdemo')
         print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
-        country_sites = sorted(jsonjson, key=lambda k: ("country" not in k, jsonjson[k].get("country", sys.maxsize)))
-        sort_web = {}
+        country_sites = sorted(BDdemo, key=lambda k: ("country" not in k, BDdemo[k].get("country", sys.maxsize)))
+        sort_web_BDdemo_new = {}
         for site in country_sites:
-            sort_web[site] = jsonjson.get(site)
+            sort_web_BDdemo_new[site] = BDdemo.get(site)
 ## Опция '-f'.
     if args.print_found_only:
         print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
@@ -1017,9 +1015,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 table.add_row(flag_str_sum, str(len(datajson)))
                 console.print(table)
 
-            sortY3(DB('BDdemo'), Fore.RED, "Demo Version")
+            sortY3(BDdemo, Fore.RED, "Demo Version")
 # Вывод для full Version.
-            sortY3(DB('BDflag'), Fore.GREEN, "Full Version")
+            sortY3(BDflag, Fore.GREEN, "Full Version")
             sys.exit()
 
 # Сортируем по алфавиту для Full Version (2!).
@@ -1037,9 +1035,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{S}  {con}")
                     print(Fore.CYAN + "================")
 
-            sortY2(DB('BDflag'), "Full Version")
+            sortY2(BDflag, "Full Version")
 # Сортировка по алфавиту для Demo Version (2!).
-            sortY2(DB('BDdemo'), "Demo Version")
+            sortY2(BDdemo, "Demo Version")
             sys.exit()
 
 # Сортируем по странам для Full Version (1!).
@@ -1056,9 +1054,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     print(Style.BRIGHT + Fore.GREEN + str(i[0]) + '.', Fore.CYAN + str(i[1]) ,end = '')
                     print(Fore.CYAN + "================")
 
-            sortY1(DB('BDflag'), "Full Version")
+            sortY1(BDflag, "Full Version")
 # Сортировка по странам для Demo Version (1!).
-            sortY1(DB('BDdemo'), "Demo Version")
+            sortY1(BDdemo, "Demo Version")
             sys.exit()
 
 # Действие не выбрано --list all.
@@ -1108,71 +1106,59 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
         print(Fore.CYAN + "    Будем искать:" + f" {userlists[:3]}" + " и других..." + Style.RESET_ALL)
 
+## Проверка остальных (в т.ч. повтор) опций.
 ## Опция '--update y' обновление Snoop.
     if args.update:
         update_snoop()
-
-## Проверка остальных опций.
-    site_data_all = None
-    baseput = ("{}".format(args.json_file))
-    #print(baseput) #проверка пути базы.
-## Работа с базой.
-    if site_data_all is None:
-# Проверить, существует ли альтернативная база данных, иначе выход.
-        if not os.path.exists(baseput):
-            print("\033[31;1mФайла базы не существует.\033[0m")
-            sys.exit()
-        else:
-            try:
-                a1 = DB('BDdemo')
-            except:
-                print("\033[31;1mНеподдерживаемый формат базы данных\033[0m")
-        try:
-            if args.web == False:
-                site_data_all = a1
-                print(Fore.CYAN + f"\nзагружена локальная база: " +
-                Style.BRIGHT + Fore.CYAN + f"{len(site_data_all)}" + "_Websites" + Style.RESET_ALL)
-        except:
-            print("\033[31;1mInvalid загружаемая база данных.\033[0m")
-
-## Функция для опций '-eo'
-    def one_exl(one_exl, bool_):
-        for k,v in site_data_all.items():
-            if all(item.lower() != v.get('country_klas').lower() for item in one_exl) == bool_:
-                site_data[k] = v
-        if bool(site_data) == False:
-            print(f"\033[31;1m[{str(diff_list).strip('[]')}] Все регионы поиска являются невалидными.\033[0m")
-            sys.exit()
-
 ## Опция '-w'.
     if args.web:
         print("\n\033[37m\033[44m{}".format("Функция '-w' доступна только пользователям Snoop Full Version..."))
         donate()
+## Работа с базой.
+# Проверить, существует ли альтернативная база данных, иначе demo.
+    if not os.path.exists(str(args.json_file)):
+        print(f"\033[31;1mОшибка! Неверно указан путь к файлу: '{str(args.json_file)}'.\033[0m")
+        sys.exit()
+    try:
+        if args.web == False:
+            print(Fore.CYAN + f"\nзагружена локальная база: " +
+            Style.BRIGHT + Fore.CYAN + f"{len(BDdemo)}" + "_Websites" + Style.RESET_ALL)
+    except:
+        print("\033[31;1mInvalid загружаемая база данных.\033[0m")
+
+## Функция для опций '-eo'
+    def one_exl(one_exl, bool_):
+        for k,v in BDdemo.items():
+            if all(item.lower() != v.get('country_klas').lower() for item in one_exl) == bool_:
+                BDdemo_new[k] = v
+        if bool(BDdemo_new) == False:
+            print(f"\033[31;1m[{str(diff_list).strip('[]')}] Все регионы поиска являются невалидными.\033[0m")
+            sys.exit()
 
 ## Если опции '-seo' не указаны, то используем БД, как есть.
-    site_data = {}
+    BDdemo_new = {}
     if args.site_list is None and args.exclude_country is None and args.one_level is None:
-        site_data = site_data_all
+        BDdemo_new = BDdemo
 ## Опция '-s'.
     elif args.site_list is not None:
 # Пользователь выборочно запускает запросы к подмножеству списку сайтов из БД.
 # Убедиться, что сайты в базе имеются, создать для проверки сокращенную базу данных сайта(ов).
         for site in args.site_list:
-            for site_yes in site_data_all:
+            for site_yes in BDdemo:
                 if site.lower() == site_yes.lower():
-                    site_data[site_yes] = site_data_all[site_yes] #выбираем в словарь найденные сайты из БД
+                    BDdemo_new[site_yes] = BDdemo[site_yes] #выбираем в словарь найденные сайты из БД
 
-            diff_k_bd = set(DB('BDflag')) ^ set(DB('BDdemo'))
+            diff_k_bd = set(BDflag) ^ set(BDdemo)
             for site_yes_full_diff in diff_k_bd:
                 if site.lower() == site_yes_full_diff.lower(): #если сайт (-s) в БД Full версии.
                     print(f"\033[31;1m[?] Пропуск:\033[0m \033[36mсайт из БД \033[36;1mFull-версии\033[0m \033[36mнедоступен в" +
                     f"\033[0m \033[33;1mDemo-версии\033[0m\033[36m:: '\033[30;1m{site_yes_full_diff}\033[0m\033[36m'\033[0m")
 
-            if not any(site.lower() == site_yes_full.lower() for site_yes_full in DB('BDflag')): #если ни одного совпадения по сайту
+            if not any(site.lower() == site_yes_full.lower() for site_yes_full in BDflag): #если ни одного совпадения по сайту
                 print(f"\033[31;1m[!] Пропуск:\033[0m \033[36mжелаемый сайт отсутствует в БД Snoop:: '\033[31;1m{site}\033[0m\033[36m'\033[0m")
 
 ## Отмена поиска, если нет ни одного совпадения по БД и '-s'.
-        if not site_data:
+        if not BDdemo_new:
             sys.exit()
 ## Опция '-e'.
 # Создать для проверки сокращенную базу данных сайта(ов).
@@ -1195,7 +1181,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         one = "/".join(lap).upper() if args.one_level is not None else "нет" #вкл.регионы_valid.
         for username in SQ:
             kef_user+=1
-            sort_sites = sort_web if args.country == True else site_data
+            sort_sites = sort_web_BDdemo_new if args.country == True else BDdemo_new
             FULL = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert,
                         norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout,
                         color=not args.no_func)
