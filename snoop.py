@@ -1182,7 +1182,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     elif args.one_level is not None:
         one_exl(args.one_level, bool_=False)
         if bool(site_data) == False:
-            print(f"\033[31;1m[{str(diff_list).strip('[]')}] Выбран один и неверный регион для поиска.\033[0m")
+            print(f"\033[31;1m[{str(diff_list).strip('[]')}] Выбран единственно неверный регион для поиска.\033[0m")
             sys.exit()
 
 
