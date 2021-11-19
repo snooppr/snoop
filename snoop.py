@@ -1388,7 +1388,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 ## Открывать/нет браузер с результатами поиска.
         if args.no_func==False and exists_counter >= 1:
-            if not "arm" in platform.platform(aliased=True, terse=0) or not "aarch64" in platform.platform(aliased=True, terse=0):
+            if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
                 try:
                     webbrowser.open(f"file://{dirpath}/results/html/{username}.html")
                 except:
