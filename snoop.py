@@ -1181,6 +1181,10 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.one_level is not None:
         one_exl(args.one_level, bool_=False)
+        if bool(site_data) == False:
+            print(f"\033[31;1m[{str(diff_list).strip('[]')}] Выбран один и неверный регион для поиска.\033[0m")
+            sys.exit()
+
 
 ## Крутим user's.
     def starts(SQ):
