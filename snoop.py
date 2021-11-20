@@ -951,24 +951,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print(Fore.CYAN + "[+] активирована опция '-s': «будет произведён поиск user-a на 1-м выбранном website»\n"
         "    допустимо использовать опцию '-s' несколько раз\n"
         "    [опция '-s'] несовместима с [опциями '-с', '-e', 'o']")
-## Опция '-e'.
-    if args.exclude_country:
-        lap, diff_list = onelevel_or_exclude(args.exclude_country)
-
-        print(Fore.CYAN + f"[+] активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
-        print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
-        str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
-        "    допустимо использовать опцию '-e' несколько раз\n"
-        "    [опция '-e'] несовместима с [опциями '-s', '-c', 'o']")
-## Опция '-o'.
-    if args.one_level:
-        lap, diff_list = onelevel_or_exclude(args.one_level)
-
-        print(Fore.CYAN + f"[+] активирована опция '-o': «включить в поиск только выбранные регионы»::", end=' ')
-        print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
-        str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
-        "    допустимо использовать опцию '-o' несколько раз\n"
-        "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
 ## Опция '-v'.
     if args.verbose:
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
@@ -1166,11 +1148,27 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.exclude_country is not None:
+        lap, diff_list = onelevel_or_exclude(args.exclude_country)
+
+        print(Fore.CYAN + f"[+] активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
+        print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
+        str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
+        "    допустимо использовать опцию '-e' несколько раз\n"
+        "    [опция '-e'] несовместима с [опциями '-s', '-c', 'o']")
+
         one_exl(args.exclude_country, bool_=True)
 ## Опция '-o'.
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.one_level is not None:
+        lap, diff_list = onelevel_or_exclude(args.one_level)
+
+        print(Fore.CYAN + f"[+] активирована опция '-o': «включить в поиск только выбранные регионы»::", end=' ')
+        print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
+        str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
+        "    допустимо использовать опцию '-o' несколько раз\n"
+        "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
+
         one_exl(args.one_level, bool_=False)
 
 
