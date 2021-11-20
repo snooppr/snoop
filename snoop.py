@@ -943,13 +943,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
     except:
         pass
-## Опция  '-c'. Сортировка по странам.
-    if args.country:
-        print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
-        country_sites = sorted(BDdemo, key=lambda k: ("country" not in k, BDdemo[k].get("country", sys.maxsize)))
-        sort_web_BDdemo_new = {}
-        for site in country_sites:
-            sort_web_BDdemo_new[site] = BDdemo.get(site)
 ## Опция '-f'.
     if args.print_found_only:
         print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
@@ -1119,6 +1112,15 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     if not os.path.exists(str(args.json_file)):
         print(f"\033[31;1mОшибка! Неверно указан путь к файлу: '{str(args.json_file)}'.\033[0m")
         sys.exit()
+
+## Опция  '-c'. Сортировка по странам.
+    if args.country:
+        print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись в HTML результатов по странам»")
+        country_sites = sorted(BDdemo, key=lambda k: ("country" not in k, BDdemo[k].get("country", sys.maxsize)))
+        sort_web_BDdemo_new = {}
+        for site in country_sites:
+            sort_web_BDdemo_new[site] = BDdemo.get(site)
+## Опция  '-w' не активна.
     try:
         if args.web == False:
             print(Fore.CYAN + f"\nзагружена локальная база: " +
