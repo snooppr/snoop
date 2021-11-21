@@ -26,16 +26,12 @@ from folium.plugins import MarkerCluster
 from operator import itemgetter
 from requests.adapters import HTTPAdapter
 from requests_futures.sessions import FuturesSession
-try:
-    from  more_itertools import unique_everseen
-    from rich.console import Console
-    from rich.progress import (track,BarColumn,TimeRemainingColumn,SpinnerColumn,TimeElapsedColumn,Progress)
-    from rich.table import Table
-    from rich.panel import Panel
-    from rich.style import Style as STL
-except:
-    print("Обновите lib python:\n'cd ~/snoop && python3 -m pip install -r requirements.txt'")
-    sys.exit(0)
+from more_itertools import unique_everseen
+from rich.console import Console
+from rich.progress import (track,BarColumn,TimeRemainingColumn,SpinnerColumn,TimeElapsedColumn,Progress)
+from rich.table import Table
+from rich.panel import Panel
+from rich.style import Style as STL
 from urllib.parse import urlparse
 
 if sys.platform == 'win32':
