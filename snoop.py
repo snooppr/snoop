@@ -232,7 +232,17 @@ def sreports(url, headers,session2,error_type, username,websites_names,r):
 
 ## Основная функция.
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False, timeout=None, color=True, cert=False):
+## Печать первой инфостроки.
+    if '%20' in username:
+        username_space = re.sub("%20", " ", username)
+        print_info("разыскиваем:", username_space, color)
+    else:
+        print_info("разыскиваем:", username, color)
+
     username = re.sub(" ", "%20", username)
+
+## Результаты анализа всех сайтов.
+    dic_snoop_full = {}
 
 ## Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
     with open('domainlist.txt', 'r', encoding="utf-8") as err:
@@ -259,13 +269,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         print (Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
         sys.exit()
 
-## Печать первой инфостроки.
-    if '%20' in username:
-        username_space = re.sub("%20", " ", username)
-        print_info("разыскиваем:", username_space, color)
-    else:
-        print_info("разыскиваем:", username, color)
-
 ## Создать много_поточный/процессный сеанс для всех запросов.
     requests.packages.urllib3.disable_warnings() #блокировка предупреждений о сертификате.
     my_session = requests.Session()
@@ -282,9 +285,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     session2 = FuturesSession(max_workers=4, session=my_session)
     session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=4), session=my_session)
-
-## Результаты анализа всех сайтов.
-    results_total = {}
 
 ### Создание futures на все запросы. Это позволит распараллетить запросы.
     for websites_names, param_websites in BDdemo_new.items():
@@ -369,8 +369,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Сохранить future in data для последующего доступа.
             param_websites["request_future"] = future
 
-## Добавлять имя сайта 'results_total[websites_names]' в окончательный словарь со всеми другими результатами.
-        results_total[websites_names] = results_site
+## Добавлять имя сайта 'dic_snoop_full[websites_names]' в окончательный словарь со всеми другими результатами.
+        dic_snoop_full[websites_names] = results_site
 
 # print(results_site) # Проверка записи на успех.
     li_time = []
@@ -394,7 +394,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             if color == True:
                 progress.update(task0, advance=1)
                 progress.refresh()
-            results_site = results_total.get(websites_names)
+            results_site = dic_snoop_full.get(websites_names)
 ## Получить другую информацию сайта снова.
             url = results_site.get("url_user")
             countryA = results_site.get("flagcountry")
@@ -586,9 +586,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             else:
                 results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
 ## Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
-            results_total[websites_names] = results_site
+            dic_snoop_full[websites_names] = results_site
 # Вернуть словарь со всеми данными.
-        return results_total
+        return dic_snoop_full
 
 ## Опция '-t'.
 def timeout_check(value):
@@ -973,12 +973,17 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 print("")
                 li = [DB.get(con).get("country_klas") if sys.platform == 'win32' else DB.get(con).get("country") for con in DB]
                 cnt = str(Counter(li))
-                flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
-
+                try:
+                    flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
+                    all_= str(len(DB))
+                    #raise Exception("")
+                except:
+                    flag_str_sum = str("БД повреждена.")
+                    all_= "-1"
                 table = Table(title = Style.BRIGHT + fore + version + Style.RESET_ALL, style="green")
                 table.add_column("Страна:Кол-во websites", style="magenta")
                 table.add_column("All", style="cyan", justify='full')
-                table.add_row(flag_str_sum, str(len(DB)))
+                table.add_row(flag_str_sum, all_)
                 console.print(table)
 
 # Сортируем по алфавиту для Full/Demo Version (2!).
@@ -1220,24 +1225,21 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_html.write("Объект " + "<b>" + (username) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) +
             "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
 
-            cnt = Counter()
+            li = []            
             for website_name in FULL:
                 dictionary = FULL[website_name]
                 flag_sum=dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
-                    li = []
                     li.append(flag_sum)
                     exists_counter += 0
-                    for word in li:
-                        cnt[word] += 1
                     file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+
                     (website_name) + "</a>" + "</li>\n")
-            flag_str=str(cnt)
             try:
-                flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
-                file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+                cnt = str(Counter(li))
+                flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
             except:
-                pass
+                flag_str_sum = "0"
+            file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
             file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Затраченное время на сессию: " + "<b>" + "(%.0f" % float(timefinish) + "сек_ %.2f" % float(sess_size) + "Mb)</b>.\n")
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + ".</b>\n")
