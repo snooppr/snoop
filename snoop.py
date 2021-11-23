@@ -882,7 +882,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 И связать полученные данные между собой с высокой скоростью и масштабно.
 Предназначение — OSINT.
 
-Плагин разработан на идее и материалах уязвимости, отчёт был отправлен Яндексу в рамках программы «Охота за ошибками».
+Плагин разработан на идее и материалах уязвимости, отчёты былы отправлены Яндексу в рамках программы «Охота за ошибками».
 Попал в зал славы, получил финансовое вознаграждение, а Яндекс исправил 'ошибки' по своему усмотрению.
 
 Подробнее о плагинах (скриншоты примеров) см. документацию Snoop Project.\033[0m""")
@@ -966,78 +966,66 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         sortY = str(input())
 
 # Общий вывод стран (3!).
-# Вывод для Demo Version.
-        if sortY == "3":
-            console.rule("[cyan]Ok, print All Country:",style="cyan bold")
-            def sortY3(DB, fore, version):
+# Вывод для Full/Demo Version.
+        def sort_list_all(DB, fore, version, line=None):
+            if sortY == "3":
+                console.rule("[cyan]Ok, print All Country:", style="cyan bold") if line == "str_line" else ""
                 print("")
-                datajson = DB
-                cnt = Counter()
-                li = []
-                for con in datajson:
-                    S = datajson.get(con).get("country_klas") if sys.platform == 'win32' else datajson.get(con).get("country")
-                    li.append(S)
-                for word in li:
-                    cnt[word] += 1
-                flag_str=str(cnt)
-                try:
-                    flag_str_sum = (flag_str.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
-                except:
-                    pass
+                li = [DB.get(con).get("country_klas") if sys.platform == 'win32' else DB.get(con).get("country") for con in DB]
+                cnt = str(Counter(li))
+                flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
+
                 table = Table(title = Style.BRIGHT + fore + version + Style.RESET_ALL, style="green")
                 table.add_column("Страна:Кол-во websites", style="magenta")
                 table.add_column("All", style="cyan", justify='full')
-                table.add_row(flag_str_sum, str(len(datajson)))
+                table.add_row(flag_str_sum, str(len(DB)))
                 console.print(table)
 
-            sortY3(BDdemo, Fore.RED, "Demo Version")
-# Вывод для full Version.
-            sortY3(BDflag, Fore.GREEN, "Full Version")
-            sys.exit()
-
-# Сортируем по алфавиту для Full Version (2!).
-        elif sortY == "2":
-            console.rule("[cyan]Ok, сортируем по алфавиту:",style="cyan bold")
-            def sortY2(DB, version):
-                print(Fore.GREEN + f"\n++Белый список {version}++")
-                datajson = DB
+# Сортируем по алфавиту для Full/Demo Version (2!).
+            elif sortY == "2":
+                console.rule("[cyan]Ok, сортируем по алфавиту:",style="cyan bold") if line == "str_line" else ""
+                if version == "Demo Version":
+                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan", bgcolor="red")))
+                else:
+                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
                 i = 0
-                sorted_dict_v_listtuple = sorted(datajson.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
+                sorted_dict_v_listtuple = sorted(DB.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
                 datajson_sort = dict(sorted_dict_v_listtuple) #преобр.список обратно в словарь (сортированный)
+
                 for con in datajson_sort:
                     S = datajson_sort.get(con).get("country_klas") if sys.platform == 'win32' else datajson_sort.get(con).get("country")
                     i += 1
-                    print(Style.BRIGHT + Fore.GREEN + f"{i}.", Fore.CYAN + f"{S}  {con}")
-                    print(Fore.CYAN + "================")
+                    print(f"{Style.BRIGHT}{Fore.GREEN}{i}. {Style.RESET_ALL}{Fore.CYAN}{S}  {con}\n================")
 
-            sortY2(BDflag, "Full Version")
-# Сортировка по алфавиту для Demo Version (2!).
-            sortY2(BDdemo, "Demo Version")
-            sys.exit()
-
-# Сортируем по странам для Full Version (1!).
-        elif sortY == "1":
-            console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold")
-            def sortY1(DB, version):
+# Сортируем по странам для Full/Demo Version (1!).
+            elif sortY == "1":
+                console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold") if line == "str_line" else ""
                 listwindows = []
-                datajson = DB
-                for con in datajson:
-                    S = datajson.get(con).get("country_klas") if sys.platform == 'win32' else datajson.get(con).get("country")
-                    listwindows.append(f"{S}  {con}\n")
-                print(Fore.GREEN + f"\n++Белый список {version}++")
-                for i in enumerate(sorted(listwindows, key=str.lower), 1):
-                    print(Style.BRIGHT + Fore.GREEN + str(i[0]) + '.', Fore.CYAN + str(i[1]) ,end = '')
-                    print(Fore.CYAN + "================")
 
-            sortY1(BDflag, "Full Version")
-# Сортировка по странам для Demo Version (1!).
-            sortY1(BDdemo, "Demo Version")
-            sys.exit()
+                for con in DB:
+                    S = DB.get(con).get("country_klas") if sys.platform == 'win32' else DB.get(con).get("country")
+                    listwindows.append(f"{S}  {con}\n")
+
+                if version == "Demo Version":
+                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan", bgcolor="red")))
+                else:
+                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
+
+                for i in enumerate(sorted(listwindows, key=str.lower), 1):
+                    print(f"{Style.BRIGHT}{Fore.GREEN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}" ,end = '')
 
 # Действие не выбрано --list all.
+            else:
+                print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
+                sys.exit()
+# Запуск функции '--list all'.
+        if sortY != "3":
+            sort_list_all(BDflag, Fore.GREEN, "Full Version", line = "str_line")
+            sort_list_all(BDdemo, Fore.RED, "Demo Version")
         else:
-            print(Style.BRIGHT + Fore.RED + "Извините, но вы не выбрали действие\nвыход")
-            sys.exit()
+            sort_list_all(BDdemo, Fore.RED, "Demo Version", line = "str_line")
+            sort_list_all(BDflag, Fore.GREEN, "Full Version")
+        sys.exit()
 
 ## Опция донат '-d y'.
     if args.donation:
