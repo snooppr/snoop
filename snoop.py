@@ -593,7 +593,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Опция '-t'.
 def timeout_check(value):
     try:
-        global timeout
         timeout = int(value)
     except:
         raise ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'. \033[0m")
@@ -636,22 +635,10 @@ def autoclean():
     except:
         console.log("[red]Ошибка")
 
-### ОСНОВА.
-def run():
-## Лицензия.
-    with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
-        cop = copyright.read()
-
-    version_snoop = f"\033[37m{cop}\033[0m\n" + \
-                    f"\033[36mSnoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}\033[36m\n" + \
-                    f"\033[36mSource: {version}\033[36m\n" +  \
-                    f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
-                    f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
-
 ## Пожертвование.
-    def donate():
-        print("")
-        console.print(Panel("""[cyan]
+def donate():
+    print("")
+    console.print(Panel("""[cyan]
 ╭donate/Buy:
 ├──Яндекс.Деньги (Юmoney):: [white]4100111364257544[/white]
 ├──Visa:: [white]4274320047338002[/white]
@@ -670,9 +657,8 @@ def run():
 Snoop Full Version готовой сборки то есть исполняемого файла,
 для Windows — это 'snoop.exe', для GNU/Linux — 'snoop'.
 
-Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой пользователь
-должен ознакомиться перед покупкой ПО. Лицензия (RU/EN) для Snoop Project в
-исполняемом виде находится в rar-архивах демо версий Snoop по ссылке[/bold green]
+Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
+Лицензия (RU/EN) для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке: [/bold green]
 [cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], а так же лицензия доступна по команде '[/bold green][cyan]snoop -V[/cyan][bold green]' или '[/bold green][cyan]snoop.exe -V[/cyan][bold green]' у исполняемого файла.
 
 Если Snoop требуется вам для служебных или образовательных задач,
@@ -689,22 +675,21 @@ Snoop Full Version: плагины без ограничений; 2200+ Websites
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)",
 border_style="bold blue"))# ,style="bold green"))
-        webbrowser.open("https://sobe.ru/na/snoop_project_2020")
-        print(Style.BRIGHT + Fore.RED + "Выход")
-        sys.exit()
+    webbrowser.open("https://sobe.ru/na/snoop_project_2020")
+    print(Style.BRIGHT + Fore.RED + "Выход")
+    sys.exit()
 
-## Функция валидатор: выбор/искл регионов для поиска.
-    def onelevel_or_exclude(exl_onelevel):
-        lap = []
-        bd_flag = []
-        for k,v in BDdemo.items():
-            bd_flag.append(v.get('country_klas').lower())
+### ОСНОВА.
+def run():
+## Лицензия.
+    with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
+        cop = copyright.read()
 
-        enter_coun_u=[x.lower() for x in exl_onelevel]
-        lap=list(set(bd_flag) & set(enter_coun_u))
-        diff_list=list(set(enter_coun_u) - set(bd_flag)) # вывести уникальные элементы только из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
-# Вернуть корректный и bad списки пользовательского ввода в cli.
-        return lap, diff_list
+    version_snoop = f"\033[37m{cop}\033[0m\n" + \
+                    f"\033[36mSnoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}\033[36m\n" + \
+                    f"\033[36mSource: {version}\033[36m\n" +  \
+                    f"\033[36mOS: {platform.platform(aliased=True, terse=0)}\033[36m\n" + \
+                    f"\033[36mPython: {platform.python_version()}\033[36m\n\n"
 
 ## Назначение опций Snoop.
     parser = ArgumentParser(formatter_class = RawDescriptionHelpFormatter,
@@ -938,11 +923,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     if args.no_func:
         print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер; прогресс»")
 ## Опция  '-t'.
-    try:
-        if args.timeout:
-            print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
-    except:
-        pass
+    if args.timeout:
+        print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {args.timeout}_sec\033[0m\033[36m.» \033[0m")
 ## Опция '-f'.
     if args.print_found_only:
         print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
@@ -1043,10 +1025,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             my_list_bad = list(errspec.read())
         try:
             patchuserlist = ("{}".format(args.user))
-            if sys.platform != 'win32':
-                userfile=patchuserlist.split('/')[-1]
-            else:
-                userfile=patchuserlist.split('\\')[-1]
+            userfile = patchuserlist.split('/')[-1] if sys.platform != 'win32' else patchuserlist.split('\\')[-1]
             with open(patchuserlist, "r", encoding="utf8") as u1:
                 userlist=[line.strip() for line in u1.read().splitlines()]
                 for i in userlist:
@@ -1056,8 +1035,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     elif any(' ' in i for i in i):
                         g1=i.split()
                         g11 = " ".join(g1)
-                        if g11 not in userlist:
-                            userlists.append(g11)
+                        userlists.append(g11) if g11 not in userlist else ""
                     elif i == "":
                         continue
                     else:
@@ -1104,13 +1082,24 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
 ## Функция для опций '-eo'
-    def one_exl(one_exl, bool_):
+    def one_exl(one_exl_, bool_):
+        lap = []
+        bd_flag = []
+
         for k,v in BDdemo.items():
-            if all(item.lower() != v.get('country_klas').lower() for item in one_exl) == bool_:
+            bd_flag.append(v.get('country_klas').lower())
+            if all(item.lower() != v.get('country_klas').lower() for item in one_exl_) == bool_:
                 BDdemo_new[k] = v
+
+        enter_coun_u=[x.lower() for x in one_exl_]
+        lap=list(set(bd_flag) & set(enter_coun_u))
+        diff_list=list(set(enter_coun_u) - set(bd_flag)) # вывести уникальные элементы только из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
+
         if bool(BDdemo_new) == False:
             print(f"\033[31;1m[{str(diff_list).strip('[]')}] Все регионы поиска являются невалидными.\033[0m")
             sys.exit()
+# Вернуть корректный и bad списки пользовательского ввода в cli.
+        return lap, diff_list
 
 ## Если опции '-seo' не указаны, то используем БД, как есть.
     BDdemo_new = {}
@@ -1137,11 +1126,12 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 ## Отмена поиска, если нет ни одного совпадения по БД и '-s'.
         if not BDdemo_new:
             sys.exit()
+
 ## Опция '-e'.
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.exclude_country is not None:
-        lap, diff_list = onelevel_or_exclude(args.exclude_country)
+        lap, diff_list = one_exl(one_exl_ = args.exclude_country, bool_=True)
 
         print(Fore.CYAN + f"[+] активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
@@ -1149,20 +1139,17 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         "    допустимо использовать опцию '-e' несколько раз\n"
         "    [опция '-e'] несовместима с [опциями '-s', '-c', 'o']")
 
-        one_exl(args.exclude_country, bool_=True)
 ## Опция '-o'.
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.one_level is not None:
-        lap, diff_list = onelevel_or_exclude(args.one_level)
+        lap, diff_list = one_exl(one_exl_ = args.one_level, bool_=False)
 
         print(Fore.CYAN + f"[+] активирована опция '-o': «включить в поиск только выбранные регионы»::", end=' ')
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
         str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
         "    допустимо использовать опцию '-o' несколько раз\n"
         "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
-
-        one_exl(args.one_level, bool_=False)
 
 
 ## Крутим user's.
@@ -1241,7 +1228,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 flag_str_sum = "0"
             file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
             file_html.write("<br> Запрашиваемый объект < <b>" + str(username) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
-            file_html.write("<br> Затраченное время на сессию: " + "<b>" + "(%.0f" % float(timefinish) + "сек_ %.2f" % float(sess_size) + "Mb)</b>.\n")
+            file_html.write("<br> Сессия: " + "<b>" + "(%.0f" % float(timefinish) + "сек_ %.2f" % float(sess_size) + "Mb)</b>.\n")
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + ".</b>\n")
             file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + ".</b>\n")
             file_html.write("<br> База Snoop (Demo Version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
@@ -1373,6 +1360,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     webbrowser.open(f"file://{dirpath}/results/html/{username}.html")
                 except:
                     pass
-## Arbeiten...
+## поиск по выбранным пользователям.
     starts(args.username) if args.user==False else starts(userlists)
-run()
+## Arbeiten...
+run() #$( snoop(...) --> def(...) --> starts() ).
