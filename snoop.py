@@ -569,17 +569,16 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     console.rule(style="color")
 
 ## Служебная информация для CSV.
-            response_time_site_ms = 0
             if dif_time[0] * 1000 < 250:
                 results_site['response_time_site_ms'] = "нет"
             else:
-                results_site['response_time_site_ms'] = round(float(response_time_site_ms*1000))
+                results_site['response_time_site_ms'] = round(float(dif_time[0] * 1000))
             results_site['exists'] = exists
             results_site['session_size'] = session_size
             results_site['countryCSV'] = countryB
             results_site['http_status'] = http_status
             results_site['check_time_ms'] = time_site
-            results_site['response_time_ms'] = round(float(ello*1000))
+            results_site['response_time_ms'] = round(float(ello * 1000))
 
 ## Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             dic_snoop_full[websites_names] = results_site
@@ -589,6 +588,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Опция '-t'.
 def timeout_check(value):
     try:
+        global timeout
         timeout = int(value)
     except:
         raise ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'. \033[0m")
@@ -919,8 +919,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     if args.no_func:
         print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; звук; флаги; браузер; прогресс»")
 ## Опция  '-t'.
-    if args.timeout:
-        print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {args.timeout}_sec\033[0m\033[36m.» \033[0m")
+    try:
+        if args.timeout:
+            print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
+    except:
+        pass
 ## Опция '-f'.
     if args.print_found_only:
         print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
@@ -1069,13 +1072,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         sort_web_BDdemo_new = {}
         for site in country_sites:
             sort_web_BDdemo_new[site] = BDdemo.get(site)
-## Опция  '-w' не активна.
-    try:
-        if args.web == False:
-            print(Fore.CYAN + f"\nзагружена локальная база: " +
-            Style.BRIGHT + Fore.CYAN + f"{len(BDdemo)}" + "_Websites" + Style.RESET_ALL)
-    except:
-        print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
 ## Функция для опций '-eo'
     def one_exl(one_exl_, bool_):
@@ -1147,6 +1143,13 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         "    допустимо использовать опцию '-o' несколько раз\n"
         "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
 
+## Опция  '-w' не активна.
+    try:
+        if args.web == False:
+            print(Fore.CYAN + f"\nзагружена локальная база: " +
+            Style.BRIGHT + Fore.CYAN + f"{len(BDdemo)}" + "_Websites" + Style.RESET_ALL)
+    except:
+        print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
 ## Крутим user's.
     def starts(SQ):
