@@ -66,7 +66,7 @@ version = "v1.3.2A_rus Snoop (Source demo)"
 dirresults = os.getcwd()
 dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\snoop"
 timestart = time.time()
-time_data = time.localtime()
+time_date = time.localtime()
 censors = 0
 censors_timeout = 0
 recensor = 0
@@ -272,11 +272,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
             session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
         else:
-            session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=30), session=my_session)
+            session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=26), session=my_session)
     else:
         session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
     session2 = FuturesSession(max_workers=4, session=my_session)
-    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=4), session=my_session)
+    session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=2), session=my_session)
 
 ### Создание futures на все запросы. Это позволит распараллетить запросы.
     for websites_names, param_websites in BDdemo_new.items():
@@ -372,7 +372,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if sys.platform != 'win32':
             progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=random.choice(["dots", "dots12"])),
             "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan', finished_style='cyan bold'),
-            auto_refresh=False)#transient=True) #исчезает прогресс
+            refresh_per_second = 3.0)#auto_refresh=False) #transient=True) #исчезает прогресс
         else:
             progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%",
             BarColumn(bar_width=None, complete_style='cyan', finished_style='cyan bold'),
@@ -402,7 +402,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         for websites_names, param_websites in BDdemo_new.items():# БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_list, запрос-future.
             if color == True:
                 progress.update(task0, advance=1)
-                progress.refresh()
+                #progress.refresh()
 ## Получить другую информацию сайта снова.
             url = dic_snoop_full.get(websites_names).get("url_user")
             country_emojis = dic_snoop_full.get(websites_names).get("flagcountry")
@@ -1026,8 +1026,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                         userlists_bad.append(i)
                         continue
                     elif any(' ' in i for i in i):
-                        g1=i.split()
-                        g11 = " ".join(g1)
+                        g11 = " ".join(i.split())
                         userlists.append(g11) if g11 not in userlist else ""
                     elif i == "":
                         continue
@@ -1159,11 +1158,12 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                         color=not args.no_func)
 
             exists_counter = 0
+## Запись в txt.
             try:
                 file_txt = open(f"{dirpath}/results/txt/{username}.txt", "w", encoding="utf-8")
                 #raise Exception("")
             except:
-                file_txt = open(f"{dirpath}/results/txt/username" + str(time.strftime("%d_%m_%Y_%H_%M_%S", time_data)) + ".txt",
+                file_txt = open(f"{dirpath}/results/txt/username" + str(time.strftime("%d_%m_%Y_%H_%M_%S", time_date)) + ".txt",
                 "w", encoding="utf-8")
             file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in FULL:
@@ -1178,7 +1178,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_txt.write("\n" f"База Snoop (Demo Version): {flagBS} Websites.")
             file_txt.write("\n" f"Исключённые регионы: {exl}.")
             file_txt.write("\n" f"Выбор конкретных регионов: {one}.")
-            file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".")
+            file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_date) + ".")
             file_txt.close()
 ## Размер сесии.
             try:
@@ -1196,7 +1196,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_html = open(f"{dirpath}/results/html/{username}.html", "w", encoding="utf-8")
                 #raise Exception("")
             except:
-                file_html = open(f"{dirpath}/results/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".html", "w",
+                file_html = open(f"{dirpath}/results/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + ".html", "w",
                 encoding="utf-8")
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
@@ -1215,7 +1215,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 flag_sum=dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
                     li.append(flag_sum)
-                    exists_counter += 0
                     file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+
                     (website_name) + "</a>" + "</li>\n")
             try:
@@ -1229,7 +1228,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + ".</b>\n")
             file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + ".</b>\n")
             file_html.write("<br> База Snoop (Demo Version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_data) + ".</i><br><br>\n")
+            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_date) + ".</i><br><br>\n")
             file_html.write("""
     <script>
     function sortList() {
@@ -1281,7 +1280,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_csv = open(f"{dirpath}/results/csv/{username}.csv", "w", newline='')#, encoding="utf-8")
                 #raise Exception("")
             except:
-                file_csv = open(f"{dirpath}/results/csv/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".csv", "w", newline='')#, encoding="utf-8")
+                file_csv = open(f"{dirpath}/results/csv/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + ".csv", "w", newline='')#, encoding="utf-8")
             usernamCSV = re.sub(" ", "_", username)
             censors_cor = int((censors - recensor)/kef_user) #err_connection
             censors_timeout_cor = int(censors_timeout/kef_user) #err time-out
@@ -1326,22 +1325,23 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             writer.writerow(["Bad_raw:_" + str(flagBS_err) + "%_БД" if flagBS_err >= 2 else ''])
             writer.writerow('')
             writer.writerow(['Дата'])
-            writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_data)])
+            writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_date)])
             file_csv.close()
 
             ungzip.clear()
+            #print(exists_counter) if 'exists_counter' in locals() else ""
 ## Финишный вывод.
         direct_results = f"{dirpath}/results/*/{username}.*" if sys.platform != 'win32' else f"{dirpath}\\results\\*\\{username}.*"
         print(f"{Fore.CYAN}├─Результаты поиска:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all} сек_{s_size_all}Mb)")
         print(f"{Fore.CYAN}├──Результаты сохранены в:{Style.RESET_ALL} {direct_results}")
         if flagBS_err >= 2:#perc
-            print(f"{Fore.CYAN}├───Дата поискового запроса: {time.strftime('%d/%m/%Y_%H:%M:%S', time_data)}")
+            print(f"{Fore.CYAN}├───Дата поискового запроса:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
             print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
             print(f"{Fore.CYAN}     └─нестабильное соединение или Internet Censorship")
             print("       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение опции \
 '\033[36;1m-t\033[0m\033[36m'\033[0m\n")
         else:
-            print(f"{Fore.CYAN}└───Дата поискового запроса: {time.strftime('%d/%m/%Y_%H:%M:%S', time_data)}\n")
+            print(f"{Fore.CYAN}└───Дата поискового запроса:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
         console.print(Panel(f"{e_mail} до {Do}",title=license, style=STL(color="white", bgcolor="blue")))
 
 ## Музыка.
