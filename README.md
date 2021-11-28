@@ -110,15 +110,15 @@ optional arguments:
 service arguments:
   --version, -V        About: вывод на печать версий:: OS; Snoop;
                        Python и Лицензии
-  --list all, -l y     Вывести на печать детальную информацию о базе
+  --list-all, -l       Вывести на печать детальную информацию о базе
                        данных Snoop
-  --donate y, -d y     Пожертвовать на развитие Snoop Project-а,
+  --donate y, -d       Пожертвовать на развитие Snoop Project-а,
                        получить/приобрести Snoop Full Version
-  --autoclean y, -a y  Удалить все отчеты, очистить место
-  --update y, -U y     Обновить Snoop Project
+  --autoclean, -a      Удалить все отчеты, очистить место
+  --update, -U         Обновить Snoop Project
 
 plugins arguments:
-  --module y, -m y     OSINT поиск: задействовать различные плагины
+  --module, -m         OSINT поиск: задействовать различные плагины
                        Snoop:: IP/GEO/YANDEX (список плагинов будет
                        пополняться)
 
@@ -132,12 +132,15 @@ search arguments:
                        (Локально)
   --web-base, -w       Подключиться для поиска 'username' к обновляемой web_БД
                        (Онлайн)
-  --site , -s chess    Указать имя сайта из БД '--list all'. Поиск
+  --site , -s chess    Указать имя сайта из БД '--list-all'. Поиск
                        'username' на одном указанном ресурсе, допустимо
                        использовать опцию '-s' несколько раз
-  --exclude , -e ru    Исключить из поиска выбранный регион,
-                       например, 'wr' — мир, допустимо использовать опцию '-e'
-                       несколько раз
+  --exclude , -e RU    Исключить из поиска выбранный регион,
+                       допустимо использовать опцию '-e' несколько раз,
+                       например, '-e ru -e wr' исключить из поиска Россию и Мир
+  --one-level , -o UA  Влючить в поиск только выбранный регион,
+                       допустимо использовать опцию '-o' несколько раз,
+                       например, '-o us -o ua' поиск по США и Украине
   --time-out , -t 9    Установить выделение макс.времени на ожидание
                        ответа от сервера (секунды). Влияет на
                        продолжительность поиска. Влияет на 'Timeout
@@ -153,10 +156,9 @@ search arguments:
                        ✓Отключить индикацию и статус прогресса. 
                        Экономит ресурсы системы и ускоряет поиск
   --userload , -u      Указать файл со списком user-ов. Пример_Linux:
-                       'python3 snoop.py -u ~/listusers.txt start'.
+                       'python3 snoop.py -u ~/listusers.txt'.
                        Пример_Windows: 'python snoop.py -u
-                       c:\User\User\Documents\listusers.txt start'
-                       'snoop -u ~/listusers.txt start'
+                       c:\User\User\Documents\listusers.txt'
   --country, -c        Сортировка 'вывода на
                        печать/запись_результатов' по странам, а не по алфавиту
   --save-page, -S      Сохранять найденные странички пользователей в
@@ -166,9 +168,9 @@ search arguments:
                        что даёт меньше ошибок и больше положительных
                        результатов при поиске nickname
   --normal, -N         Сменить режим SNOOPnina > нормальный режим.
-                       По_умолчанию вкл_режим SNOOPninja: ускорение поиска
-                       ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое'
-                       соединение на сбойных ресурсах
+                       По_умолчанию (в Full-version) вкл_режим SNOOPninja: 
+                       ускорение поиска ~25pct, экономия ОЗУ ~50pct, 
+                       повторное 'гибкое' соединение на сбойных ресурсах
 ```
 
 **Example**
@@ -195,14 +197,16 @@ $ snoop.exe username1 username2 username3 username4 #Running from release
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop;
 # исключить из поиска все сайты в RU-регионе:
-$ snoop -с -t 6 -f -S -u ~/file.txt -w -e RU start #Running from release
+$ snoop -с -t 6 -f -S -u ~/file.txt -w -e RU #Running from release
+
 # проверить базу данных Snoop:
-$ snoop --list all #Running from release
+$ snoop --list-all #Running from release
+
 # распечатать справку по функциям Snoop:
 $ snoop --help #Running from release
 
 # Задействовать плагины Snoop:
-$ snoop --module y #Running from release
+$ snoop --module #Running from release
 
 # 'ctrl-c' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
 $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство для разгрузки ОЗУ при прерываниях.
@@ -212,10 +216,10 @@ $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство дл
 csv открывать в *office, разделитель полей **запятая**.  
 
 Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  
-или ```snoop.exe --autoclean y #Running from release OS Windows```
+или ```snoop.exe --autoclean #Running from release OS Windows```
 ```
 # Обновляйте Snoop для тестирования новых функций в ПО:
-$ python3 snoop.py --update y #требуется установка Git.
+$ python3 snoop.py --update #требуется установка Git.
 ```
 </details>  
 
@@ -251,14 +255,14 @@ $ cd ~/snoop
 # Установить зависимости 'requirements'
 $ python3 -m pip install -r requirements.txt
 
-# Чтобы расширить вывод терминала в Termux (по умолчанию 2к строк отображение в CLI), например, отображение всей БД опции '--list all [1/2]'  
+# Чтобы расширить вывод терминала в Termux (по умолчанию 2к строк отображение в CLI), например, отображение всей БД опции '--list-all [1/2]'  
 добавить строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties' (фича доступна в Termux v0.114+). 
 Перезапустить Termux.  
 
 # Пользователь также может запустить snoop по команде 'snoop' из любого места в CLI, создав alias.
 $ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
-# Пользователь также может выполнить быструю проверку интересующего его сайта по БД, не используя опцию "--list all", используя команду "snoopcheck"
-$ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc  
+# Пользователь также может выполнить быструю проверку интересующего его сайта по БД, не используя опцию "--list-all", используя команду "snoopcheck"
+$ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | grep -i' >> .bashrc  
 # перезапустить Termux.
 ```
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="50%" />  
