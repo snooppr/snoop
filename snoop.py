@@ -8,7 +8,7 @@ import glob
 try:
     import psutil
 except:
-    print("Обновите lib python:\n'cd ~/snoop && python3 -m pip install -r requirements.txt'")
+    print("ВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt")
 import json
 import locale
 import networktest
@@ -54,12 +54,12 @@ if sys.platform == 'win32':
     print (Fore.CYAN + " cd с:\<path>\snoop" + Style.RESET_ALL)
     print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
     print (Fore.CYAN + " python snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
-    print (Fore.CYAN + " python snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
+    print (Fore.CYAN + " python snoop.py --module" + Style.RESET_ALL, "#задействовать плагины")
 else:
     print (Fore.CYAN + " cd ~/snoop" + Style.RESET_ALL)
     print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
     print (Fore.CYAN + " python3 snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
-    print (Fore.CYAN + " python3 snoop.py --module y" + Style.RESET_ALL, "#задействовать плагины")
+    print (Fore.CYAN + " python3 snoop.py --module" + Style.RESET_ALL, "#задействовать плагины")
 console.rule(characters = '=', style="cyan")
 print("")
 
@@ -386,11 +386,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Панель вербализации.
         if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
             if color == True:
-                console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполнения[/magenta] | \
+                console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполн.[/magenta] | \
 [bold cyan]отклик сайта[/bold cyan] | [bold red]цвет.[bold cyan]об[/bold cyan].скор.[/bold red] | [bold cyan]разм.расп.данных[/bold cyan]",
                 title="Обозначение", style=STL(color="cyan")))
             else:
-                console.print(Panel("об.время | об.% выполнения | отклик сайта | цвет.об.время | разм.расп.данных" , title="Обозначение"))
+                console.print(Panel("об.время | об.% выполн. | отклик сайта | цвет.об.время | разм.расп.данных" , title="Обозначение"))
         else:
             if color == True:
                 console.print(Panel("[yellow]time[/yellow] | [magenta]perc.[/magenta] | \
@@ -746,7 +746,7 @@ def run():
                               В demo version функция отключена"
                              )
     search_group.add_argument("--site", "-s chess", action="append", metavar='', dest="site_list",  default=None,
-                              help="\033[36mУ\033[0mказать имя сайта из БД '--list all'. Поиск 'username' на одном указанном ресурсе, \
+                              help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'username' на одном указанном ресурсе, \
                               допустимо использовать опцию '-s' несколько раз"
                              )
     search_group.add_argument("--exclude", "-e RU", action="append", metavar='', dest="exclude_country",  default=None,
@@ -791,7 +791,7 @@ def run():
                               на серверах отключена, что даёт меньше ошибок и больше положительных результатов
                               при поиске nickname"""
                              )
-    search_group.add_argument("--normal", "-N", action="store_true", dest="norm", default=True,
+    search_group.add_argument("--normal", "-N", action="store_false", dest="norm", default=True,
                               help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
                               По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja':
                               ускорение поиска ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
@@ -823,7 +823,8 @@ def run():
     if args.autoclean:
         print(Fore.CYAN + "[+] активирована опция '-a': «удаление накопленных отчетов»\n")
         autoclean()
-## Информативный вывод.
+## Опция  '-m'.
+# Информативный вывод.
     if args.module:
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
         def module():
@@ -917,8 +918,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах вкл»")
 ## Опция режима SNOOPnina > < нормальный режим.
     if args.norm == False:
+        print(Fore.CYAN + "[-] деактивирована опция '--': «режим SNOOPninja»")
         sys.exit()
-        print(Fore.CYAN + "[+] активирована опция '--': «режим SNOOPninja»")
 ## Опция  '-w'.
     if args.web:
         print(Fore.CYAN + "[+] активирована опция '-w': «подключение к внешней web_database»")
@@ -948,7 +949,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         with console.status("[cyan]Ожидайте, идёт самотестирование сети..."):
             networktest.nettest()
             console.log("[cyan]--> тест сети")
-## Опция '--list all'.
+## Опция '--list-all'.
     if args.listing:
         print(
 "\033[36m\nСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
@@ -1010,11 +1011,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 for i in enumerate(sorted(listwindows, key=str.lower), 1):
                     print(f"{Style.BRIGHT}{Fore.GREEN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}" ,end = '')
 
-# Действие не выбрано --list all.
+# Действие не выбрано --list-all.
             else:
                 print(Style.BRIGHT + Fore.RED + "└──Извините, но вы не выбрали действие [1/2/3]\nвыход")
                 sys.exit()
-# Запуск функции '--list all'.
+# Запуск функции '--list-all'.
         if sortY != "3":
             sort_list_all(BDflag, Fore.GREEN, "Full Version", line = "str_line")
             sort_list_all(BDdemo, Fore.RED, "Demo Version")
@@ -1153,13 +1154,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         "    допустимо использовать опцию '-o' несколько раз\n"
         "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
 
-## Опция  '-w' не активна.
-    try:
-        if args.web == False:
-            print(Fore.CYAN + f"\nзагружена локальная база: " +
-            Style.BRIGHT + Fore.CYAN + f"{len(BDdemo)}" + "_Websites" + Style.RESET_ALL)
-    except:
-        print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 ## Ник не задан или противоречие.
     if bool(args.username) == False and bool(args.user) == False:
         print("\033[31;1mnickname не задан(ы)\n\nВыход")
@@ -1167,6 +1161,13 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
     if bool(args.username) == True and bool(args.user) == True:
         print("\033[31;1mвыберите для поиска nickname(s) из файла или задайте в cli,\nно не одновременно из файла и cli.\n\nВыход")
         sys.exit()
+## Опция  '-w' не активна.
+    try:
+        if args.web == False:
+            print(Fore.CYAN + f"\nзагружена локальная база: " +
+            Style.BRIGHT + Fore.CYAN + f"{len(BDdemo)}" + "_Websites" + Style.RESET_ALL)
+    except:
+        print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
 
 ## Крутим user's.
