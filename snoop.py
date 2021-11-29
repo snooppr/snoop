@@ -1042,17 +1042,17 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                         continue
                     else:
                         userlists.append(i)
+            print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
+            print(Fore.CYAN + f"    Будем искать: {userlists[:3]} и других..." + Style.RESET_ALL)
             if userlists_bad:
-                print(Style.RESET_ALL + Style.BRIGHT + Fore.RED + f"Следующие [username] из '{userfile}' содержат ошибки и будут пропущены:")
-                print(Style.BRIGHT + Fore.RED + f"{userlists_bad}" + Style.RESET_ALL)
+                print(Style.BRIGHT + Fore.RED + f"\nСледующие [username] из '{userfile}' содержат ошибки и будут пропущены:")
+                print(Style.BRIGHT + Fore.RED + f"{userlists_bad}\n" + Style.RESET_ALL)
         except:
             print(f"\033[31;1mНе могу найти_прочитать '{userfile}'!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
             print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
             print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
             print("\033[36mИли удалите из файла нечитаемые символы.")
             sys.exit()
-        print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
-        print(Fore.CYAN + "    Будем искать:" + f" {userlists[:3]}" + " и других..." + Style.RESET_ALL)
 
 ## Проверка остальных (в т.ч. повтор) опций.
 ## Опция '--update y' обновление Snoop.
