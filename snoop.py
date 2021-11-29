@@ -805,15 +805,8 @@ def run():
         license_snoop()
 
 ## Опции  '-cseo' несовместимы между собой.
-    list_cseo = []
-
-    list_cseo.append(bool(args.site_list))
-    list_cseo.append(bool(args.country))
-    list_cseo.append(bool(args.exclude_country))
-    list_cseo.append(bool(args.one_level))
-
     k=0
-    for _ in list_cseo:
+    for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
         if _ == True:
             k += 1
         if k == 2:
