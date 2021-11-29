@@ -378,11 +378,10 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan', finished_style='cyan bold'),
             refresh_per_second = 3.0)#auto_refresh=False) #transient=True) #исчезает прогресс
         else:
-            progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%",
-            BarColumn(bar_width=None, complete_style='cyan', finished_style='cyan bold'),
-            auto_refresh=False)#transient=True) #исчезает прогресс
+            progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None,
+            complete_style='cyan', finished_style='cyan bold'),refresh_per_second = 3.0)#,auto_refresh=False)#transient=True) #исчезает прогресс
     else:
-        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
+        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", refresh_per_second = 3.0)#, auto_refresh=False)
 # Панель вербализации.
         if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
             if color == True:
