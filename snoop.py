@@ -379,9 +379,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             refresh_per_second = 3.0)#auto_refresh=False) #transient=True) #исчезает прогресс
         else:
             progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None,
-            complete_style='cyan', finished_style='cyan bold'),refresh_per_second = 3.0)#,auto_refresh=False)#transient=True) #исчезает прогресс
+            complete_style='cyan', finished_style='cyan bold'), refresh_per_second = 3.0)#,auto_refresh=False)#transient=True) #исчезает прогресс
     else:
-        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", refresh_per_second = 3.0)#, auto_refresh=False)
+        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)#,refresh_per_second = 3.0)#
 # Панель вербализации.
         if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
             if color == True:
@@ -399,13 +399,14 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 console.print(Panel("time | perc. | response | joint.rate | data" , title="Designation"))
 
 ### Получить результаты и пройтись по массиву future.
+    BDdemo_len = len(BDdemo_new.items())
     with progress:
         if color == True:
-            task0 = progress.add_task("", total=len(BDdemo_new.items()))
+            task0 = progress.add_task("", BDdemo_len)
         for websites_names, param_websites in BDdemo_new.items():# БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_list, запрос-future.
             if color == True:
                 progress.update(task0, advance=1)
-                #progress.refresh()
+                progress.refresh()
 ## Получить другую информацию сайта снова.
             url = dic_snoop_full.get(websites_names).get("url_user")
             country_emojis = dic_snoop_full.get(websites_names).get("flagcountry")
