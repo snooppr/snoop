@@ -193,7 +193,7 @@ def module3():
 
                         otzyv=f"https://reviews.yandex.ru/user/{pub}"
                         market=f"https://market.yandex.ru/user/{pub}/reviews"
-                        collections=f"https://yandex.ru/collections/user/{login}/"
+
                         if Ya == '3':
                             music=f"\033[33;1mПропуск\033[0m"
                         else:
@@ -203,14 +203,13 @@ def module3():
 
                         print("\033[32;1mЯ.Отзывы:\033[0m", otzyv)
                         print("\033[32;1mЯ.Маркет:\033[0m", market)
-                        print("\033[32;1mЯ.Картинки:\033[0m", collections)
                         print("\033[32;1mЯ.Музыка:\033[0m", music)
                         print("\033[32;1mЯ.Дзен:\033[0m", dzen)
                         print("\033[32;1mЯ.Кью:\033[0m", qu)
 
-                        yalist=[otzyv, market, collections, music, dzen, qu]
+                        yalist=[otzyv, market, music, dzen, qu]
 
-                        file_txt.write(f"{login} | {email} | {name}\n{otzyv}\n{market}\n{collections}\n{music}\n{dzen}\n{qu}\n\n")
+                        file_txt.write(f"{login} | {email} | {name}\n{otzyv}\n{market}\n{music}\n{dzen}\n{qu}\n\n")
 
                     for webopen in yalist:
                         if webopen == music and Ya == '3':

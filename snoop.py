@@ -558,13 +558,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                 if color == True:
                     if dif_time > 5 and dif_time != ello_time: #задержка в общем времени
-                        console.print(f"[cyan] [*{site_time} s T] -->", f"[bold red][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
+                        console.print(f"[cyan] [*{site_time} s T] >>", f"[bold red][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
                         console.rule("", style="bold red")
                     else:
-                        console.print(f"[cyan] [*{site_time} s T] -->", f"[cyan][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
+                        console.print(f"[cyan] [*{site_time} s T] >>", f"[cyan][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
                         console.rule("", style="bold blue")
                 else:
-                    console.print(f" [*{site_time} s T] -->", f"[*{ello_time} s t]", f"[*{Ssession_size}]", highlight=False)
+                    console.print(f" [*{site_time} s T] >>", f"[*{ello_time} s t]", f"[*{Ssession_size}]", highlight=False)
                     console.rule(style="color")
 
 ## Служебная информация для CSV.
@@ -863,7 +863,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 | Плагин Yandex_parser |
 ========================\033[0m\n
 \033[32mПлагин позволяет получить информацию о пользователе/пользователях сервисов Яндекс:
-Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Коллекции; Я_Диск; E-mail, Name.
+Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail, Name.
 И связать полученные данные между собой с высокой скоростью и масштабно.
 Предназначение — OSINT.
 
@@ -888,8 +888,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 snoopplugins.module2()
             elif mod == '3':
                 table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("Yandex_parser_v0.4", style="green")
-                table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Коллекции; Я_Диск; E-mail; Name.')
+                table.add_column("Yandex_parser_v0.5", style="green")
+                table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail; Name.')
                 console.print(table)
                 snoopplugins.module3()
             elif mod == 'q':
