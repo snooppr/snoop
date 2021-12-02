@@ -246,7 +246,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     with open('specialcharacters', 'r', encoding="utf-8") as errspec:
         my_list_bad = list(errspec.read())
         if any(my_list_bad in username for my_list_bad in my_list_bad):
-            print(Style.BRIGHT + Fore.RED + f"недопустимые символы в username: {username}")
+            console.print(f"[bold red]недопустимые символы в username: '{username}'\n\nВыход")
             sys.exit()
 
     ernumber=['79', '89', "38", "37"]
@@ -297,23 +297,21 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         results_site['flagcountryklas'] = param_websites.get("country_klas")
         results_site['url_main'] = param_websites.get("urlMain")
 
-## Пользовательский user-agent браузера (рандомно на каждый сайт).
-        RandHead = ([
-        "{'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}",
-        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36'}",
-        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.109'}",
-        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/89.0'}",
-        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0'}",
-        "{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.58 Safari/537.36'}",
-        "{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4701.0 Safari/537.36'}"
-        ])
+## Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое постоянный с расширенным заголовком.
+        majR = random.choice(range(73, 94, 1))
+        minR = random.choice(range(3683, 4606, 34)) #0.4701
+        patR = random.choice(range(52, 99, 1))
+        RandHead=([f"{{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " + \
+                   f"Chrome/{majR}.0.{minR}.{patR} Safari/537.36'}}",
+                   f"{{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) "+ \
+                   f"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{majR}.0.{minR}.{patR} Safari/537.36'}}"])
         RH = random.choice(RandHead)
         headers = json.loads(RH.replace("'",'"'))
 
         if "headers" in param_websites:
 ## Переопределить/добавить любые дополнительные заголовки, необходимые для данного сайта.
             headers.update(param_websites["headers"])
-
+#        console.print(headers) #проверка
 ## Пропуск временно-отключенного сайта и Не делать запрос, если имя пользователя не подходит для сайта.
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
@@ -382,16 +380,16 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Панель вербализации.
         if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
             if color == True:
-                console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполн.[/magenta] | \
-[bold cyan]отклик сайта[/bold cyan] | [bold red]цвет.[bold cyan]об[/bold cyan].скор.[/bold red] | [bold cyan]разм.расп.данных[/bold cyan]",
-                title="Обозначение", style=STL(color="cyan")))
+                console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполн.[/magenta] | [bold cyan]отклик сайта[/bold cyan] " + \
+                                    "| [bold red]цвет.[bold cyan]об[/bold cyan].скор.[/bold red] | [bold cyan]разм.расп.данных[/bold cyan]",
+                                    title="Обозначение", style=STL(color="cyan")))
             else:
                 console.print(Panel("об.время | об.% выполн. | отклик сайта | цвет.об.время | разм.расп.данных" , title="Обозначение"))
         else:
             if color == True:
-                console.print(Panel("[yellow]time[/yellow] | [magenta]perc.[/magenta] | \
-[bold cyan]response [/bold cyan] | [bold red]joint[bold cyan].[/bold cyan]rate[/bold red] | [bold cyan]data[/bold cyan]",
-                title="Designation", style=STL(color="cyan")))
+                console.print(Panel("[yellow]time[/yellow] | [magenta]perc.[/magenta] | [bold cyan]response [/bold cyan] " + \
+                                    "| [bold red]joint[bold cyan].[/bold cyan]rate[/bold red] | [bold cyan]data[/bold cyan]",
+                                    title="Designation", style=STL(color="cyan")))
             else:
                 console.print(Panel("time | perc. | response | joint.rate | data" , title="Designation"))
 
@@ -419,15 +417,14 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             if norm == False and quickly == False and r is None and 'raised ConnectionError' in str(future):
                 #print(future)
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                        'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
-                        'User-Agent': 'Mozilla/5.0 (Linux; Android 9; Redmi 8 Build/QQ3A.200805.001; wv)' + \
-                        ' AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.152 Mobile Safari/537.36'
-                             }
+                              'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
+                              'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)' + \
+                                            'Chrome/76.0.3809.100 Safari/537.36'}
 
                 for _ in range(3):
                     global recensor
                     recensor += 1
-                    future_rec = session3.get(url=url, headers=head_duble, allow_redirects=allow_redirects, timeout=1.5)
+                    future_rec = session3.get(url=url, headers=headers, allow_redirects=allow_redirects, timeout=1.5)
                     if color and print_found_only == False:
                         print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
                         Style.BRIGHT + Fore.GREEN + "    └──повторное соединение" + Style.RESET_ALL)
@@ -689,9 +686,8 @@ def run():
                             description = Fore.CYAN + "Справка" + Style.RESET_ALL,
                             epilog = (Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version " + Style.RESET_ALL + \
                             Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m2200+\033[0m \033[36mWebsites!!!\033[0m\n\
- \033[32;1mEnglish version — of Snoop see release (available 'Snoop EN version')\033[0m\n\n")
-                                    )
+                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m2200+\033[0m \033[36mWebsites!!!\033[0m\n" +\
+                            f" \033[32;1mEnglish version — see release (available 'old build Snoop EN version')\033[0m\n\n"))
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
     service_group.add_argument("--version", "-V", action="store_true",
@@ -779,16 +775,17 @@ def run():
                               на серверах отключена, что даёт меньше ошибок и больше положительных результатов
                               при поиске nickname"""
                              )
-    search_group.add_argument("--normal", "-N", action="store_false", dest="norm", default=True,
+    search_group.add_argument("--normal-mode", "-N", action="store_false", dest="norm", default=True,
                               help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
                               По_умолчанию (GNU/Linux Full Version) вкл 'режим SNOOPninja':
                               ускорение поиска ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
                               Режим SNOOPninja эффективен только для Snoop for GNU/Linux Full Version.
-                              По_умолчанию (Windows) вкл 'нормальный режим'. В Demo Version переключатель режимов деактивирован"""
+                              По_умолчанию (в Windows) вкл 'нормальный режим'. В Demo Version переключатель режимов деактивирован"""
                              )
     search_group.add_argument("--quiet-mode ", "-q", default=False, action="store_true", dest="quickly",
                               help="""\033[36mВ\033[0mкл  тихий режим поиска. Промежуточные результаты не выводятся на печать.
-                              Повторные гибкие соединения на сбойных ресурсах. Самый экономный и быстрый режим поиска (В разработке - не использовать)"""
+                              Повторные гибкие соединения на сбойных ресурсах без замедления ПО.
+                              Самый экономичный и быстрый режим поиска (в разработке - не использовать)"""
                              )
 
     args = parser.parse_args()
@@ -937,9 +934,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             console.log("[cyan]--> тест сети")
 ## Опция '--list-all'.
     if args.listing:
-        print(
-"\033[36m\nСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
-"по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n")
+        print("\033[36m\nСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
+              "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n")
         sortY = console.input("[cyan]Выберите действие: [/cyan]")
 
 # Общий вывод стран (3!).
@@ -1034,17 +1030,20 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                         continue
                     else:
                         userlists.append(i)
-            print(Fore.CYAN + f"[+] активирована опция '-u': «розыск user-ов из файла: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
-            print(Fore.CYAN + f"    Будем искать: {userlists[:3]} и других..." + Style.RESET_ALL)
-            if userlists_bad:
-                print(Style.BRIGHT + Fore.RED + f"\nСледующие [username] из '{userfile}' содержат ошибки и будут пропущены:")
-                print(Style.BRIGHT + Fore.RED + f"{userlists_bad}\n" + Style.RESET_ALL)
+            print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла: \033[36;1m{userfile}\033[0m\033[36m»::\033[0m")
+            console.print(Panel.fit("\n".join(userlists), title='valid', style=STL(color="cyan")))
         except:
-            print(f"\033[31;1mНе могу найти_прочитать '{userfile}'!\033[0m \033[36mПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
-            print("\033[36mПо умолчанию блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
-            print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8]")
-            print("\033[36mИли удалите из файла нечитаемые символы.")
+            print(f"\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m " + \
+                  "\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
+            print("\033[36mПо умолчанию, например, блокнот в OS Windows сохраняет текст в кодировке — ANSI\033[0m")
+            print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8].")
+            print("\033[36mИли удалите из файла нечитаемые спецсимволы.")
             sys.exit()
+        if userlists_bad:
+            print(f"\n\033[36mСледующие [nickname(s)] из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+                 "\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
+            console.print(Panel.fit("\n".join(userlists_bad), title='invalid', style=STL(color="bright_red")))
+        sys.exit() if bool(userlists) == False else ""
 
 ## Проверка остальных (в т.ч. повтор) опций.
 ## Опция '--update y' обновление Snoop.
@@ -1106,10 +1105,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             for site_yes_full_diff in diff_k_bd:
                 if site.lower() == site_yes_full_diff.lower(): #если сайт (-s) в БД Full версии.
                     print(f"\033[31;1m[?] Пропуск:\033[0m \033[36mсайт из БД \033[36;1mFull-версии\033[0m \033[36mнедоступен в" +
-                    f"\033[0m \033[33;1mDemo-версии\033[0m\033[36m:: '\033[30;1m{site_yes_full_diff}\033[0m\033[36m'\033[0m")
+                          f"\033[0m \033[33;1mDemo-версии\033[0m\033[36m:: '\033[30;1m{site_yes_full_diff}\033[0m\033[36m'\033[0m")
 
             if not any(site.lower() == site_yes_full.lower() for site_yes_full in BDflag): #если ни одного совпадения по сайту
-                print(f"\033[31;1m[!] Пропуск:\033[0m \033[36mжелаемый сайт отсутствует в БД Snoop:: '\033[31;1m{site}\033[0m\033[36m'\033[0m")
+                print(f"\033[31;1m[!] Пропуск:\033[0m \033[36mжелаемый сайт отсутствует в БД Snoop:: '" +
+                      f"\033[31;1m{site}\033[0m\033[36m'\033[0m")
 
 ## Отмена поиска, если нет ни одного совпадения по БД и '-s'.
         if not BDdemo_new:
@@ -1161,14 +1161,15 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
      \/__,_ /\/____/\/_/\/_/\/_/\/___/ 
 """)
                 time.sleep(1.4)
-        for i in "nickname не задан(ы)":  # этот цикл будет брать по 1 буковке из тхт
+        for i in "nickname не задан(ы)":
             time.sleep(0.04)
             print(f"\033[31;1m{i}", end='', flush=True)
         print("\033[31;1m\n\nВыход")
         sys.exit()
 
     if bool(args.username) == True and bool(args.user) == True:
-        print("\033[31;1mвыберите для поиска nickname(s) из файла или задайте в cli,\nно не одновременно из файла и cli.\n\nВыход")
+        print("\n\033[31;1mВыберите для поиска nickname(s) из файла или задайте в cli,\n" + \
+              "но не совместное использование nickname(s): из файла и cli.\n\nВыход")
         sys.exit()
 ## Опция  '-w' не активна.
     try:
@@ -1380,8 +1381,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             print(f"{Fore.CYAN}├───Дата поискового запроса:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
             print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
             print(f"{Fore.CYAN}     └─нестабильное соединение или Internet Censorship")
-            print("       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение опции \
-'\033[36;1m-t\033[0m\033[36m'\033[0m\n")
+            print("       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение опции" + \
+                  "'\033[36;1m-t\033[0m\033[36m'\033[0m\n")
         else:
             print(f"{Fore.CYAN}└───Дата поискового запроса:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
         console.print(Panel(f"{e_mail} до {Do}",title=license, style=STL(color="white", bgcolor="blue")))
@@ -1403,4 +1404,4 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 ## поиск по выбранным пользователям.
     starts(args.username) if args.user==False else starts(userlists)
 ## Arbeiten...
-run() #$( snoop(...) --> def(...) --> starts() ).
+run() #snoop(...) --> def(..) --> starts(.).
