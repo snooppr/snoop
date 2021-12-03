@@ -63,8 +63,6 @@ else:
 console.rule(characters = '=', style="cyan")
 print("")
 
-dirresults = os.getcwd()
-dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\snoop"
 timestart = time.time()
 time_date = time.localtime()
 censors = 0
@@ -108,6 +106,8 @@ BDflag = DB('BDflag')
 flagBS = len(BDdemo)
 
 ## Создание директорий результатов.
+dirresults = os.getcwd()
+dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\snoop"
 dirpath = dirresults if 'Source' in version else dirhome
 os.makedirs(f"{dirpath}/results", exist_ok=True)
 os.makedirs(f"{dirpath}/results/html", exist_ok=True)
@@ -299,7 +299,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 ## Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое постоянный с расширенным заголовком.
         majR = random.choice(range(73, 94, 1))
-        minR = random.choice(range(3683, 4606, 34)) #0.4701
+        minR = random.choice(range(2683, 4606, 13)) #0.4701
         patR = random.choice(range(52, 99, 1))
         RandHead=([f"{{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " + \
                    f"Chrome/{majR}.0.{minR}.{patR} Safari/537.36'}}",
@@ -424,7 +424,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 for _ in range(3):
                     global recensor
                     recensor += 1
-                    future_rec = session3.get(url=url, headers=headers, allow_redirects=allow_redirects, timeout=1.5)
+                    future_rec = session3.get(url=url, headers=head_duble, allow_redirects=allow_redirects, timeout=1.5)
                     if color and print_found_only == False:
                         print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
                         Style.BRIGHT + Fore.GREEN + "    └──повторное соединение" + Style.RESET_ALL)
@@ -523,7 +523,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Реакция.
             ello_time = round(float(time.time() - timestart), 2)#текущее.
             li_time.append(ello_time)
-            dif_time = li_time[-1] - li_time[-2]#разница.
+            dif_time = round(li_time[-1] - li_time[-2], 2)#разница.
 # Отклик.
             try:
                 site_time = str(response_time).rsplit(sep=':', maxsplit=1)[1]
@@ -541,7 +541,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     Ssession_size = str(round(session_size/1024)) + " Kb"
 
                 if color == True:
-                    if dif_time > 5 and dif_time != ello_time: #задержка в общем времени
+                    if dif_time > 2.7 and dif_time != ello_time: #задержка в общем времени
                         console.print(f"[cyan] [*{site_time} s T] >>", f"[bold red][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
                         console.rule("", style="bold red")
                     else:
@@ -552,7 +552,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     console.rule(style="color")
 
 ## Служебная информация для CSV.
-            if dif_time > 200 and dif_time != ello_time:
+            if dif_time > 2.7 and dif_time != ello_time:
                 dic_snoop_full.get(websites_names)['response_time_site_ms'] = str(dif_time)
             else:
                 dic_snoop_full.get(websites_names)['response_time_site_ms'] = "нет"
@@ -1336,7 +1336,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                              'Ссылка_на_профиль',
                              'Статус',
                              'Статус_http',
-                             'Общее_замедление/мс',
+                             'Общее_замедление/сек',
                              'Отклик/сек',
                              'Общее_время/сек',
                              'Сессия/Kb'
