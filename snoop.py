@@ -312,13 +312,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Переопределить/добавить любые дополнительные заголовки, необходимые для данного сайта.
             headers.update(param_websites["headers"])
 #        console.print(headers) #проверка
-## Пропуск временно-отключенного сайта и Не делать запрос, если имя пользователя не подходит для сайта.
+## Пропуск временно-отключенного сайта и не делать запрос, если имя пользователя не подходит для сайта.
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
-## Не нужно делать проверку на сайте: если это имя пользователя не допускается.
-            if exclusionYES and re.search(exclusionYES, username):
-                if not print_found_only:
-                    print_invalid("", websites_names, f"недопустимый ник '{username}' для данного сайта", color)
+            if exclusionYES and re.search(exclusionYES, username) and not print_found_only:
+                print_invalid("", websites_names, f"недопустимый ник '{username}' для данного сайта", color)
             results_site["exists"] = "invalid_nick"
             results_site["url_user"] = '*'*56
             results_site['countryCSV'] = "****"
@@ -615,6 +613,34 @@ def autoclean():
         console.log("[red]Ошибка")
     sys.exit()
 
+## Лого.
+def logo(text):
+    if sys.platform != 'win32':
+        with console.screen():
+            console.print("""[cyan]
+ ____                                      
+/\  _`\                                    
+\ \,\L\_\    ___     ___     ___   _____   
+ \/_\__ \  /' _ `\  / __`\  / __`\/\ '__`\\
+   /\ \L\ \/\ \/\ \/\ \_\ \/\ \_\ \ \ \L\ \\
+   \ `\____\ \_\ \_\ \____/\ \____/\ \ ,__/
+    \/_____/\/_/\/_/\/___/  \/___/  \ \ \/ 
+                                     \ \_\\
+      __                              \/_/ 
+     /\ \                              
+     \_\ \     __    ___ ___     ___   
+     /'_` \  /'__`\/' __` __`\  / __`\\
+    /\ \_\ \/\  __//\ \/\ \/\ \/\ \_\ \\
+    \ \___,_\ \____\ \_\ \_\ \_\ \____/
+     \/__,_ /\/____/\/_/\/_/\/_/\/___/ 
+""")
+            time.sleep(1.4)
+    for i in text:
+        time.sleep(0.04)
+        print(f"\033[31;1m{i}", end='', flush=True)
+    print("\033[31;1m\n\nВыход")
+    sys.exit()
+
 ## Пожертвование.
 def donate():
     print("")
@@ -665,14 +691,14 @@ def license_snoop():
         cop = copyright.read().replace("\ufeffSnoop", "Snoop")
         console.print(Panel(cop, title='COPYRIGHT', style=STL(color="white", bgcolor="blue")))
 
-    threads = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
+    threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
     console.print('\n',
 Panel(f"""Snoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}
 Source: {version}
 OS: {platform.platform(aliased=True, terse=0)}
 Locale: {locale.setlocale(locale.LC_ALL)}
 Python: {platform.python_version()}
-CPU(s): {psutil.cpu_count()}, threads(s): {threads}
+CPU(s): {psutil.cpu_count()}, threads(s): {threadS}
 Ram: {int(psutil.virtual_memory().total/1024/1024)} Мб, доступно: {int(psutil.virtual_memory().available/1024/1024)} Мб""",
 title='snoop info', style=STL(color="cyan")))
     sys.exit()
@@ -789,7 +815,7 @@ def run():
                              )
 
     args = parser.parse_args()
-    sys.exit() if args.quickly else ""
+    logo(text="🛠 новая функциональность — в разработке") if args.quickly else ""
 #    print(args)
 ## Опции  '-cseo' несовместимы между собой.
     k=0
@@ -797,8 +823,7 @@ def run():
         if _ == True:
             k += 1
         if k == 2:
-            print(Style.BRIGHT + Fore.RED + "опциии ['-c', '-e' '-o', '-s'] несовместимы между собой\n\nВыход")
-            sys.exit()
+            logo(text="⛔️ опциии ['-c', '-e' '-o', '-s'] несовместимы между собой")
 ## Опция  '-V' не путать с опцией '-v'.
     if args.version:
         license_snoop()
@@ -893,8 +918,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 ## Опция  '-f' + "-v".
     if args.verbose and args.print_found_only:
-        console.print(f"[yellow bold]Режим подробной вербализации [опция '-v'] отображает детальную информацию,\n\
-[опция '-f'] неуместна", f"\n\n[red bold]Выход")
+        logo(text="⛔️ Режим подробной вербализации [опция '-v'] отображает детальную информацию,\n " + \
+                  "  [опция '-f'] неуместна")
         sys.exit()
 ## Опция  '-С'.
     if args.cert:
@@ -990,7 +1015,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                     console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
 
                 for i in enumerate(sorted(listwindows, key=str.lower), 1):
-                    print(f"{Style.BRIGHT}{Fore.GREEN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}" ,end = '')
+                    print(f"{Style.BRIGHT}{Fore.GREEN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}", end = '')
 
 # Действие не выбрано --list-all.
             else:
@@ -1034,14 +1059,14 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             console.print(Panel.fit("\n".join(userlists), title='valid', style=STL(color="cyan")))
         except:
             print(f"\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m " + \
-                  "\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
+                   "\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
             print("\033[36mПо умолчанию, например, блокнот в OS Windows сохраняет текст в кодировке — ANSI.\033[0m")
             print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8].")
             print("\033[36mИли удалите из файла нечитаемые спецсимволы.")
             sys.exit()
         if userlists_bad:
             print(f"\n\033[36mСледующие [nickname(s)] из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
-                 "\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
+                   "\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(userlists_bad), title='invalid', style=STL(color="bright_red")))
         sys.exit() if bool(userlists) == False else ""
 
@@ -1083,7 +1108,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         diff_list=list(set(enter_coun_u) - set(bd_flag)) # вывести уникальные элементы только из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
 
         if bool(BDdemo_new) == False:
-            print(f"\033[31;1m[{str(diff_list).strip('[]')}] Все регионы поиска являются невалидными.\033[0m")
+            print(f"\033[31;1m[{str(diff_list).strip('[]')}] все регионы поиска являются невалидными.\033[0m")
             sys.exit()
 # Вернуть корректный и bad списки пользовательского ввода в cli.
         return lap, diff_list
@@ -1141,32 +1166,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 
 ## Ник не задан или противоречие.
     if bool(args.username) == False and bool(args.user) == False:
-        if sys.platform != 'win32':
-            with console.screen():
-                console.print("""[cyan]
- ____                                      
-/\  _`\                                    
-\ \,\L\_\    ___     ___     ___   _____   
- \/_\__ \  /' _ `\  / __`\  / __`\/\ '__`\\
-   /\ \L\ \/\ \/\ \/\ \_\ \/\ \_\ \ \ \L\ \\
-   \ `\____\ \_\ \_\ \____/\ \____/\ \ ,__/
-    \/_____/\/_/\/_/\/___/  \/___/  \ \ \/ 
-                                     \ \_\\
-      __                              \/_/ 
-     /\ \                              
-     \_\ \     __    ___ ___     ___   
-     /'_` \  /'__`\/' __` __`\  / __`\\
-    /\ \_\ \/\  __//\ \/\ \/\ \/\ \_\ \\
-    \ \___,_\ \____\ \_\ \_\ \_\ \____/
-     \/__,_ /\/____/\/_/\/_/\/_/\/___/ 
-""")
-                time.sleep(1.4)
-        for i in "nickname не задан(ы)":
-            time.sleep(0.04)
-            print(f"\033[31;1m{i}", end='', flush=True)
-        print("\033[31;1m\n\nВыход")
-        sys.exit()
-
+        logo(text="nickname не задан(ы)")
     if bool(args.username) == True and bool(args.user) == True:
         print("\n\033[31;1mВыберите для поиска nickname(s) из файла или задайте в cli,\n" + \
               "но не совместное использование nickname(s): из файла и cli.\n\nВыход")
@@ -1174,8 +1174,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 ## Опция  '-w' не активна.
     try:
         if args.web == False:
-            print(Fore.CYAN + f"\nзагружена локальная база: " +
-            Style.BRIGHT + Fore.CYAN + f"{len(BDdemo)}" + "_Websites" + Style.RESET_ALL)
+            print(f"\n{Fore.CYAN}загружена локальная база: {Style.BRIGHT}{Fore.CYAN}{len(BDdemo)}_Websites{Style.RESET_ALL}")
     except:
         print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
@@ -1203,8 +1202,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_txt = open(f"{dirpath}/results/txt/{username}.txt", "w", encoding="utf-8")
                 #raise Exception("")
             except:
-                file_txt = open(f"{dirpath}/results/txt/username" + str(time.strftime("%d_%m_%Y_%H_%M_%S", time_date)) + ".txt",
-                "w", encoding="utf-8")
+                file_txt = open(f"{dirpath}/results/txt/username{time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.txt", "w", encoding="utf-8")
             file_txt.write("Адрес | ресурс" + "\n\n")
             for website_name in FULL:
                 dictionary = FULL[website_name]
@@ -1230,7 +1228,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             file_txt.write("\n" f"База Snoop (Demo Version): {flagBS} Websites.")
             file_txt.write("\n" f"Исключённые регионы: {exl}.")
             file_txt.write("\n" f"Выбор конкретных регионов: {one}.")
-            file_txt.write("\n" f"Обновлено: " + time.strftime("%d/%m/%Y_%H:%M:%S", time_date) + ".")
+            file_txt.write("\n" f"Обновлено: {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}.")
             file_txt.close()
 
 ## Запись в html.
@@ -1239,7 +1237,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 #raise Exception("")
             except:
                 file_html = open(f"{dirpath}/results/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + ".html", "w",
-                encoding="utf-8")
+                                  encoding="utf-8")
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../web/public.png) \
             no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../web/style.css'>\n</head>\n<body>\n\n\
             <div id='particles-js'></div>\n\
@@ -1257,7 +1255,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 flag_sum=dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
                     li.append(flag_sum)
-                    file_html.write("<li>" + dictionary["flagcountry"]+ "<a target='_blank' href='" + dictionary ["url_user"] + "'>"+
+                    file_html.write("<li>" + dictionary["flagcountry"] + "<a target='_blank' href='" + dictionary ["url_user"] + "'>" +
                     (website_name) + "</a>" + "</li>\n")
             try:
                 cnt = str(Counter(li))
@@ -1322,7 +1320,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                 file_csv = open(f"{dirpath}/results/csv/{username}.csv", "w", newline='')#, encoding="utf-8")
                 #raise Exception("")
             except:
-                file_csv = open(f"{dirpath}/results/csv/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + ".csv", "w", newline='')#, encoding="utf-8")
+                file_csv = open(f"{dirpath}/results/csv/username {time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.csv", "w", newline='')
             usernamCSV = re.sub(" ", "_", username)
             censors_cor = int((censors - recensor)/kef_user) #err_connection
             censors_timeout_cor = int(censors_timeout/kef_user) #err time-out
@@ -1361,11 +1359,11 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
                                  FULL[site]['response_time_ms'].replace('.',locale.localeconv()['decimal_point']),
                                  Ssession])
             writer.writerow(['«' + "-"*30, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32,'-'*13, '-'*23, '-'*16 + '»'])
-            writer.writerow(['БД_(DemoVersion)=' + str(flagBS) + '_Websites'])
+            writer.writerow([f'БД_(DemoVersion)={flagBS}_Websites'])
             writer.writerow('')
-            writer.writerow(['Исключённые_регионы=' + str(exl)])
-            writer.writerow(['Выбор_конкретных_регионов=' + str(one)])
-            writer.writerow(["Bad_raw:_" + str(flagBS_err) + "%_БД" if flagBS_err >= 2 else ''])
+            writer.writerow([f'Исключённые_регионы={exl}'])
+            writer.writerow([f'Выбор_конкретных_регионов={one}'])
+            writer.writerow([f"Bad_raw:_{flagBS_err}%_БД" if flagBS_err >= 2 else ''])
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_date)])
