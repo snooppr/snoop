@@ -1382,7 +1382,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
             print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
             print(f"{Fore.CYAN}     └─нестабильное соединение или Internet Censorship")
             print("       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение опции" + \
-                  "'\033[36;1m-t\033[0m\033[36m'\033[0m\n")
+                  " '\033[36;1m-t\033[0m\033[36m'\033[0m\n")
         else:
             print(f"{Fore.CYAN}└───Дата поискового запроса:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
         console.print(Panel(f"{e_mail} до {Do}",title=license, style=STL(color="white", bgcolor="blue")))
