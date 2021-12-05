@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
-"Плагины Snoop Project"
+"Плагины Snoop Project/Черновик"
 
 import csv
 import folium
@@ -23,10 +23,10 @@ from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from folium.plugins import MarkerCluster
+from more_itertools import unique_everseen
 from operator import itemgetter
 from requests.adapters import HTTPAdapter
 from requests_futures.sessions import FuturesSession
-from more_itertools import unique_everseen
 from rich.console import Console
 from rich.progress import (track,BarColumn,TimeRemainingColumn,SpinnerColumn,TimeElapsedColumn,Progress)
 from rich.table import Table
@@ -99,9 +99,8 @@ def donate():
 Snoop Full Version готовой сборки то есть исполняемого файла, 
 для Windows — это 'snoop.exe', для GNU/Linux — 'snoop'.
 
-Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой пользователь
-должен ознакомиться перед покупкой ПО. Лицензия (RU/EN) для Snoop Project в
-исполняемом виде находится в rar-архивах демо версий Snoop по ссылке[/bold green]
+Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
+Лицензия (RU/EN) для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке:[/bold green]
 [cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], а так же лицензия доступна по команде '[/bold green][cyan]snoop -V[/cyan][bold green]' или '[/bold green][cyan]snoop.exe -V[/cyan][bold green]' у исполняемого файла.
 
 Если Snoop требуется вам для служебных или образовательных задач,
@@ -131,11 +130,11 @@ def module3():
         def parsingYa(login):
 # Запись в txt
             if Ya == '4':
-                file_txt = open(dirresults + "/results/Yandex_parser/" + str(hvostfile) + '_' + \
+                file_txt = open(dirresults + "/results/plugins/Yandex_parser/" + str(hvostfile) + '_' + \
                 time.strftime("%d_%m_%Y_%H_%M_%S", time_data) + ".txt", "w", encoding="utf-8")
             #raise Exception("")
             else:
-                file_txt = open(dirresults + "/results/Yandex_parser/" + str(login) + ".txt", "w", encoding="utf-8")
+                file_txt = open(dirresults + "/results/plugins/Yandex_parser/" + str(login) + ".txt", "w", encoding="utf-8")
 
 # Парсинг
             for login in listlogin:
@@ -170,6 +169,7 @@ def module3():
                     pub = rdict.get("public_id")
                     name = rdict.get("display_name")
                     email=str(login)+"@yandex.ru"
+                    avatar = rdict.get("default_avatar_id")
 
                     if rdict.get("display_name") == "-No-":
                         if Ya != '4':
@@ -199,16 +199,19 @@ def module3():
                             music=f"https://music.yandex.ru/users/{login}/tracks"
                         dzen=f"https://zen.yandex.ru/user/{pub}"
                         qu=f"https://yandex.ru/q/profile/{pub}/"
+                        avatar_html = f"https://avatars.mds.yandex.net/get-yapic/{avatar}/islands-retina-50"
+                        avatar_cli = f"https://avatars.mds.yandex.net/get-yapic/{avatar}/islands-300"
 
                         print("\033[32;1mЯ.Отзывы:\033[0m", otzyv)
                         print("\033[32;1mЯ.Маркет:\033[0m", market)
                         print("\033[32;1mЯ.Музыка:\033[0m", music)
                         print("\033[32;1mЯ.Дзен:\033[0m", dzen)
                         print("\033[32;1mЯ.Кью:\033[0m", qu)
+                        print("\033[32;1mAvatar:\033[0m", avatar_cli)
 
-                        yalist=[otzyv, market, music, dzen, qu]
+                        yalist=[avatar_html, otzyv, market, music, dzen, qu]
 
-                        file_txt.write(f"{login} | {email} | {name}\n{otzyv}\n{market}\n{music}\n{dzen}\n{qu}\n\n")
+                        file_txt.write(f"{login} | {email} | {name}\n{avatar_cli}\n{otzyv}\n{market}\n{music}\n{dzen}\n{qu}\n\n")
 
                     for webopen in yalist:
                         if webopen == music and Ya == '3':
@@ -277,7 +280,7 @@ username3
 
 Плагин генерирует, но не проверяет 'доступность' персональных страниц пользователей по причине: частая защита страниц Я.капчей.
 
-Все результаты сохраняются в '\033[36m~/snoop/results/Yandex_parser/*\033[0m\033[32m'\033[0m""")
+Все результаты сохраняются в '\033[36m~/snoop/results/plugins/Yandex_parser/*\033[0m\033[32m'\033[0m""")
             helpend()
 
 # Указать login
@@ -378,7 +381,7 @@ Snoop довольно умён: распознаёт и выбирает гео
 случайная строка2, которая не будет обработана
 \033[0m\033[32m
 По окончанию рендеринга откроется webrowser с визуальным результатом.
-Все результаты сохраняются в '~/snoop/results/ReverseVgeocoder/*[.txt.html.csv]'
+Все результаты сохраняются в '~/snoop/results/plugins/ReverseVgeocoder/*[.txt.html.csv]'
 Для статистической обработки информации (сортировка по странам/координатам/raw_данным) пользователь должен изучить отчёт в csv-формате.
 
 Это удобный плагин, если пользователю необходимо, например, не только обработать геокоординаты, но и найти хаотичные данные - или наоборот.""")
@@ -478,7 +481,7 @@ Snoop довольно умён: распознаёт и выбирает гео
 # Сохранение карты osm
                     namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_data)
                     namemaps = (f'Maps_{namemaps}.html')
-                    mapsme = str(dirresults + "/results/ReverseVgeocoder/" + str(namemaps))
+                    mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
                     maps.save(mapsme)
 # Обработка bad (извлечение вложенного списка)
                     wZ1bad_raw=[]
@@ -491,7 +494,7 @@ Snoop довольно умён: распознаёт и выбирает гео
 
                 hvostR = os.path.split(put)[1]
                 timefinishR = time.time() - timestartR
-                path_dir = "/results/ReverseVgeocoder/" if sys.platform != 'win32' else "\\results\\ReverseVgeocoder\\"
+                path_dir = "/results/plugins/ReverseVgeocoder/" if sys.platform != 'win32' else "\\results\\ReverseVgeocoder\\"
 
                 print(Style.RESET_ALL + Fore.CYAN +f"\n╭Время обработки файла '\033[36;1m{hvostR}\033[0m\033[36m' -->",
                 "\033[36;1m(%.0f" % float(timefinishR) +"sec)" + Style.RESET_ALL)
@@ -507,7 +510,7 @@ Snoop довольно умён: распознаёт и выбирает гео
                     pass
 # Запись в txt
                 try:
-                    file_txtR = open(dirresults + "/results/ReverseVgeocoder/" + str(hvostR) + ".txt", "w", encoding="utf-8")
+                    file_txtR = open(dirresults + "/results/plugins/ReverseVgeocoder/" + str(hvostR) + ".txt", "w", encoding="utf-8")
                 except:
                     pass
                 file_txtR.write(f"Полученные и обработанные данные из файла '{hvostR}' ({lcoord}):\n")
