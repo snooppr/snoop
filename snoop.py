@@ -823,7 +823,7 @@ def run():
                               на серверах отключена, что даёт меньше ошибок и больше положительных результатов
                               при поиске nickname"""
                              )
-    search_group.add_argument("--headers", "-H <name>", action="append", metavar='', dest="headerS",  default=None,
+    search_group.add_argument("--headers", "-H <name>", metavar='', dest="headerS", nargs=1, default=None,
                               help="""\033[36mЗ\033[0mадать user-agent вручную, агент заключается в кавычки, по умолчанию для каждого сайта
                                задаётся случайный либо переопреденный user-agent из БД snoop. https://юзерагент.рф/"""
                              )
