@@ -323,7 +323,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             headers.update(param_websites["headers"])
         if headerS is not None:
             headers.update({"User-Agent":''.join(headerS)})
-        #console.print(headers) #проверка u-агентов.
+        #console.print(headers, websites_names) #проверка u-агентов.
 ## Пропуск временно-отключенного сайта и не делать запрос, если имя пользователя не подходит для сайта.
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
@@ -842,7 +842,7 @@ def run():
 
     args = parser.parse_args()
     logo(text="🛠 новая функциональность — в разработке") if args.quickly else ""
-#    print(args)
+    #print(args)
 ## Опции  '-cseo' несовместимы между собой.
     k=0
     for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
