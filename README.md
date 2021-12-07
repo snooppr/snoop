@@ -229,7 +229,7 @@ $ snoop --module #Running from release
 # 'ctrl-c' — прервать поиск #не рекомендуется прерывать таким образом поиск в режиме 'SNOOPnina'.
 $ kill $(ps aux | grep python/snoop | awk '{print $2}') #лекарство для разгрузки ОЗУ при прерываниях.
 ```
-Найденные учетные записи будут храниться в ~/snoop/results/*/username.{txt.csv.html}.  
+Найденные учетные записи будут храниться в ~/snoop/results/nicknames/*/username.{txt.csv.html}.  
 Для доступа внешнего браузера к результатам поиска на платформе Android желательно иметь рут права.  
 csv открывать в *office, разделитель полей **запятая**.  
 
