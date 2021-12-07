@@ -245,7 +245,9 @@ $ python3 snoop.py --update #требуется установка Git.
 <summary>Snoop for Android</summary>  
 
 search username  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="70%" />  
+<p align="center">  
+  <img src="<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="70%" />  
+</p>  
 
 plugins  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
@@ -283,7 +285,9 @@ $ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
 $ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | grep -i' >> .bashrc  
 # перезапустить Termux.
 ```
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="50%" />  
+<p align="center">  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="50%" />  
+</p>  
 
 </details>
 
@@ -326,7 +330,9 @@ $ python3 snoop.py -t 15 username
 При использовании Snoop с IP адреса провайдера мобильного оператора скорость **может** упасть в разы, зависит от провайдера.  
 Например, самый действенный способ решить проблему — **ИСПОЛЬЗОВАТЬ VPN**, Tor не очень хорошо подходит для данной задачи).  
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/censorship.png" width="70%" />  
+<p align="center">  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/censorship.png" width="70%" />  
+</p>  
 
 5. Открыть в Snoop репозитории на Github-e Issue/Pull request  
 (сообщить об этом разработчику).
