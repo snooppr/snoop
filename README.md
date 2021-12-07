@@ -286,7 +286,7 @@ $ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | gr
 # перезапустить Termux.
 ```
 <p align="center">  
-  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="50%" />  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="40%" />  
 </p>  
 
 </details>
