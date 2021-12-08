@@ -2,11 +2,17 @@
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com> 
 "Самотестирование сети"
 
-def nettest():
-    from colorama import Fore, Style, init
-    import sys
-    import speedtest
+import speedtest
+import sys
+from colorama import Fore, Style, init
+from rich.panel import Panel
+from rich.style import Style as STL
+from rich.console import Console
 
+init(autoreset=True)
+console2 = Console()
+
+def nettest():
     servers = []
     threads = None
 
@@ -18,38 +24,33 @@ def nettest():
 
     a = s.results.dict()
 
-    v1 = round(a.get("download")/1000000,2)
-    v2 = round(a.get("upload")/1000000,2)
-    v3 = round(a.get("ping"))
-    v4 = (a.get("client"))
+    d = round(a.get("download")/1000000,2)
+    u = round(a.get("upload")/1000000,2)
+    p = round(a.get("ping"))
+    v4 = a.get("client")
 
-    # Скорость загрузки
-    def func_v1():
-        if v1 < 3:
-            return (Style.BRIGHT + Fore.RED + str(v1) + Style.RESET_ALL)
-        elif 3 <= v1 <= 5.5:
-            return (Style.BRIGHT + Fore.YELLOW + str(v1) + Style.RESET_ALL)
-        elif v1 > 5.5:
-            return (Style.BRIGHT + Fore.GREEN + str(v1) + Style.RESET_ALL)
+# Скорость загрузки
+    try:
+        if d < 3: d = f"Download: [bold red]{d}[/bold red] Мбит/с"
+        elif 3 <= d <= 5.5: d = f"Download: [yellow]{d}[/yellow] Мбит/с"
+        elif d > 5.5: d = f"Download: [bold green]{d}[/bold green] Мбит/с"
+    except:
+        d = f"Download: [bold red]Сбой[/bold red]"
 
-    # Скорость выгрузки
-    def func_v2():
-        if v2 < 0.8:
-            return (Style.BRIGHT + Fore.RED + str(v2) + Style.RESET_ALL)
-        elif 0.8 <= v2 <= 1.5:
-            return (Style.BRIGHT + Fore.YELLOW + str(v2) + Style.RESET_ALL)
-        elif v2 > 1.5:
-            return (Style.BRIGHT + Fore.GREEN + str(v2) + Style.RESET_ALL)
+# Скорость выгрузки
+    try:
+        if u < 0.8: u = f"Upload: [bold red]{u}[/bold red] Мбит/с"
+        elif 0.8 <= u <= 1.5: u = f"Upload: [yellow]{u}[/yellow] Мбит/с"
+        elif u > 1.5: u = f"Upload: [bold green]{u}[/bold green] Мбит/с"
+    except:
+        u = f"Upload: [bold red]Сбой[/bold red]"
+# Ping
+    try:
+        if p >= 250: p = f"Ping: [bold red]{p}[/bold red] мс"
+        elif 60 <= p < 250: p = f"Ping: [yellow]{p}[/yellow] мс"
+        elif p < 60: p = f"Ping: [bold green]{p}[/bold green] мс"
+    except:
+        p = f"Ping: [bold red]Сбой[/bold red]"
 
-    # Ping
-    def func_v3():
-        if v3 >= 250:
-            return (Style.BRIGHT + Fore.RED + str(v3) + Style.RESET_ALL)
-        elif 60 <= v3 < 250:
-            return (Style.BRIGHT + Fore.YELLOW + str(v3) + Style.RESET_ALL)
-        elif v3 < 60:
-            return (Style.BRIGHT + Fore.GREEN + str(v3) + Style.RESET_ALL)
-
-    print("\033[36mТест сети:\033[0m Download::", func_v1(), "Мбит/с, Upload::", func_v2(), "Мбит/с, Ping::", func_v3(), "мс")
-    print("\033[36mВаш ip:\033[0m", v4.get("ip"), "\n\033[36mПровайдер:\033[0m", v4.get("isp"))
-    print("\033[36mЛокация:\033[0m", v4.get("country"))
+    console2.print('\n', Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {v4.get('ip')}\nПровайдер: {v4.get('isp')}\nЛокация: {v4.get('country')}",
+                                   title="🌐 Тест сети:", style=STL(color="cyan")))
