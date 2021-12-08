@@ -248,6 +248,8 @@ $ python3 snoop.py --update #требуется установка Git.
 <details>
 <summary>Snoop for Android</summary>  
 
+ • [Для удобства отдельный мануал](https://github.com/snooppr/snoop/tree/snoop_termux "Snoop for Android")  
+
 search username  
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
