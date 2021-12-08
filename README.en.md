@@ -48,9 +48,8 @@ Snoop comes with ready-made assemblies (release) and does not require dependenci
  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
-
-Snoop Project Plugins
-=====================
+<details>
+<summary>Snoop Project Plugins</summary>  
 
 ## 1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
@@ -66,6 +65,7 @@ Snoop Project Plugins
 
 ## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
+</details>
 
 <details>
 <summary>Self-build software from source</summary>  
