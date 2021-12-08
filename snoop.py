@@ -980,12 +980,6 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
               f"{Fore.CYAN}' на выбранных website(s)»\n"
         "    допустимо использовать опцию '-s' несколько раз\n"
         "    [опция '-s'] несовместима с [опциями '-с', '-e', 'o']")
-## Опция '-v'.
-    if args.verbose and bool(args.username):
-        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
-        with console.status("[cyan]Ожидайте, идёт самотестирование сети..."):
-            networktest.nettest()
-            console.log("[cyan]--> тест сети")
 ## Опция '--list-all'.
     if args.listing:
         print(Fore.CYAN + "[+] активирована опция '-l': «детальная информация о БД snoop»")
@@ -1202,6 +1196,13 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print("\n\033[31;1mВыберите для поиска nickname(s) из файла или задайте в cli,\n" + \
               "но не совместное использование nickname(s): из файла и cli.\n\nВыход")
         sys.exit()
+
+## Опция '-v'.
+    if args.verbose and bool(args.username):
+        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
+        with console.status("[cyan]Ожидайте, идёт самотестирование сети..."):
+            networktest.nettest()
+            console.log("[cyan]--> тест сети")
 ## Опция  '-w' не активна.
     try:
         if args.web == False:
