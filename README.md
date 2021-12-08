@@ -250,7 +250,7 @@ $ python3 snoop.py --update #требуется установка Git.
 
 search username  
 <p align="center">  
-  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="50%" />  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
 </p>  
 
 plugins  

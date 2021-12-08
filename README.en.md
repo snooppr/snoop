@@ -204,51 +204,7 @@ $ python3 snoop.py --update y #Git installation is required.
 
 <details>
 <summary>Snoop for Android</summary>  
-
-search username  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" width="60%" />  
-
-plugins  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
-
-**Native Installation**  
-
-Install [Termux](https://f-droid.org/en/packages/com.termux/ "F-Droid")  
-```
-# Note: The installation of Snoop on Termux is time-consuming
-# Enter the Termux home folder (i.e. just open Termux)
-$ termux-setup-storage
-$ pwd #/data/data/com.termux/files/home #default/home directory
-
-# Install python3 and dependencies
-$ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
-$ pip install --upgrade pip
-
-# Clone a repository
-$ git clone https://github.com/snooppr/snoop -b snoop_termux
-# (If the flash drive is FAT (neither ext4), in this case, 
-# clone the repository only to the Termux HOME directory)
-
-# Log in to the Snoop working directory
-$ cd ~/snoop
-# Install the 'requirements' dependencies
-$ python3 -m pip install -r requirements.txt
-
-# To expand the terminal output in Termux (by default, 2k lines are displayed in the CLI),  
-for example, displaying the entire database of the option '--list all [1/2]'  
-add the line 'terminal-transcript-rows=10000' to the file '~/.termux/termux.properties'  
-(the feature is available in Termux v0.114+).  
-Restart Termux. 
-
-# The user can also launch the Snoop Project on the snoop command from anywhere in the cli by creating an alias.
-$ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
-
-# The user can also run a quick check on the database of the site he is interested in, without using the 'list all' option, using the 'snoopcheck'command
-$ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list all | grep -i' >> .bashrc  
-# restart Termux.
-```
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_alias.gif" width="40%" />  
-
+ • [Detailed manual in English.](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Snoop for Android")  
 </details>
 
 <details>
