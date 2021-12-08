@@ -35,14 +35,13 @@ from rich.style import Style as STL
 from urllib.parse import urlparse
 
 locale.setlocale(locale.LC_ALL, '')
+# раскраска
+init(autoreset=True)
+console = Console()
 
 head0 = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}
 url = "https://freegeoip.app/json/"
 time_data = time.localtime()
-
-# раскраска
-init(autoreset=True)
-console = Console()
 
 def ravno():
     console.rule(characters = '=', style="cyan bold")
