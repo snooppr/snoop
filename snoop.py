@@ -9,7 +9,7 @@ try:
     import psutil
     import click
 except:
-    print("ВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt")
+    print("\n\nВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt\n\n")
 import json
 import locale
 import networktest

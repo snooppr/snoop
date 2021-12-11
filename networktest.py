@@ -55,4 +55,4 @@ def nettest():
 # Результат.
         console2.print(Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {v4.get('ip')}\nПровайдер: {v4.get('isp')}\nЛокация: {v4.get('country')}",
                                        title="🌐 Тест сети:", style=STL(color="cyan")))
-        console2.log("[cyan]--> тест сети завершен")
+        console2.log("[cyan]--> завершен")
