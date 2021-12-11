@@ -63,12 +63,8 @@ my_session = requests.Session()
 da = requests.adapters.HTTPAdapter(max_retries=4)
 my_session.mount('https://', da)
 
-if not sys.platform == 'win32':
-    sessionY = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=10), session=my_session)
-else:
-    sessionY = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
-
 dirresults = os.getcwd()
+sessionY = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
 progressYa = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
 
 def Erf(hvostfile):
