@@ -7,6 +7,7 @@ import csv
 import glob
 try:
     import psutil
+    import click
 except:
     print("ВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt")
 import json
@@ -26,7 +27,7 @@ import webbrowser
 
 from collections import Counter
 from colorama import Fore, Style, init
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
 from rich.progress import (track,BarColumn,TimeRemainingColumn,SpinnerColumn,TimeElapsedColumn,Progress)
@@ -279,7 +280,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         my_session.verify = False
         requests.packages.urllib3.disable_warnings()
 
-    if not sys.platform == 'win32':
+    if sys.platform != 'win32':
         if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
             session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
         else:
@@ -366,6 +367,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Отправить параллельно все запросы и сохранить future in data для последующего доступа к хукам.
             future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
             param_websites["request_future"] = future
+            #d2.update({future:{k:v}})
 
 ## Добавлять флаги/url-s/хуки в будущий-окончательный словарь с будущими всеми другими результатами.
         dic_snoop_full[websites_names] = results_site
@@ -566,7 +568,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     console.print(f" [*{site_time} s T] >>", f"[*{ello_time} s t]", f"[*{Ssession_size}]", highlight=False)
                     console.rule(style="color")
 
-## Служебная информация для CSV.
+## Служебная информация для CSV (2-й словарь, чтобы не вызывать ошибку длины 1го при итерациях).
             if dif_time > 2.7 and dif_time != ello_time:
                 dic_snoop_full.get(websites_names)['response_time_site_ms'] = str(dif_time)
             else:
@@ -698,7 +700,15 @@ Snoop Full Version: плагины без ограничений; 2200+ Websites
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)",
 border_style="bold blue"))# ,style="bold green"))
-    webbrowser.open("https://sobe.ru/na/snoop_project_2020")
+    try:
+        if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
+            webbrowser.open("https://sobe.ru/na/snoop_project_2020")
+        else:
+            click.pause("\033[36m\nНажмите любую клавишу для открытия web browser\033[0m\n")
+            click.launch(f"https://sobe.ru/na/snoop_project_2020")
+    except:
+        print("\n\033[31;1mНе удалось открыть браузер\033[0m")
+
     print(Style.BRIGHT + Fore.RED + "Выход")
     sys.exit()
 
@@ -763,7 +773,7 @@ def run():
                               Ник, содержащий в своем имени пробел, заключается в кавычки"
                              )
     search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
-                              help="\033[36mВ\033[0mо время поиска 'username' выводить на печать подробную вербализацию"
+                              help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию"
                              )
     search_group.add_argument("--base", "-b <path>", dest="json_file", default="BDdemo", metavar='',
                               help="\033[36mУ\033[0mказать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
@@ -789,8 +799,8 @@ def run():
                              )
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=5,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
-                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки:'"
-                              "Вкл. эту опцию необходимо при медленном \
+                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'."
+                              " Вкл. эту опцию необходимо при медленном \
                               интернет соединении, чтобы избежать длительных зависаний \
                               при неполадках в сети (по умолчанию значение выставлено 5с)"
                              )
@@ -815,8 +825,7 @@ def run():
                              )
     search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
                               help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
-                              на серверах отключена, что даёт меньше ошибок и больше положительных результатов
-                              при поиске nickname"""
+                              на серверах отключена, что даёт меньше ошибок и больше результатов при поиске nickname"""
                              )
     search_group.add_argument("--headers", "-H <name>", metavar='', dest="headerS", nargs=1, default=None,
                               help="""\033[36mЗ\033[0mадать user-agent вручную, агент заключается в кавычки, по умолчанию для каждого сайта
@@ -836,8 +845,8 @@ def run():
                              )
 
     args = parser.parse_args()
-    logo(text="🛠 новая функциональность — в разработке") if args.quickly else ""
-    #print(args)
+    logo(text="🛠  [-q] новая функциональность — в разработке") if args.quickly else ""
+#    print(args)
 ## Опции  '-cseo' несовместимы между собой.
     k=0
     for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
@@ -902,7 +911,7 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 \033[32;1m========================
 | Плагин Yandex_parser |
 ========================\033[0m\n
-\033[32mПлагин позволяет получить информацию о пользователе/пользователях сервисов Яндекс:
+\033[32mПлагин позволяет получить информацию о пользователях Яндекс-сервисов:
 Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail, Name.
 И связать полученные данные между собой с высокой скоростью и масштабно.
 Предназначение — OSINT.
@@ -1099,9 +1108,9 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
         print("\n\033[37m\033[44m{}".format("Функция '-w' доступна только пользователям Snoop Full Version..."))
         donate()
 ## Работа с базой.
-# Проверить, существует ли альтернативная база данных, иначе demo.
+# опция '-b'. Проверить, существует ли альтернативная база данных, иначе demo.
     if not os.path.exists(str(args.json_file)):
-        print(f"\033[31;1mОшибка! Неверно указан путь к файлу: '{str(args.json_file)}'.\033[0m")
+        print(f"\n\033[31;1mОшибка! Неверно указан путь к файлу: '{str(args.json_file)}'.\033[0m")
         sys.exit()
 
 ## Опция  '-c'. Сортировка по странам.
@@ -1194,9 +1203,8 @@ IPv4/v6; GEO-координаты/ссылки; локации; провайде
 ## Опция '-v'.
     if args.verbose and bool(args.username):
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
-        with console.status("[cyan]Ожидайте, идёт самотестирование сети..."):
-            networktest.nettest()
-            console.log("[cyan]--> тест сети")
+        networktest.nettest()
+
 ## Опция  '-w' не активна.
     try:
         if args.web == False:
@@ -1411,11 +1419,14 @@ function sortList() {
 
 ## Открывать/нет браузер с результатами поиска.
         if args.no_func==False and exists_counter >= 1:
-            if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
-                try:
+            try:
+                if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
                     webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
-                except:
-                    pass
+                else:
+                    click.pause("\033[36m\nНажмите любую клавишу для открытия результатов во внешнем браузере\033[0m")
+                    click.launch(f"file://{dirpath}/results/nicknames/html/{username}.html")
+            except:
+                print("\n\033[31;1mНе удалось открыть браузер\033[0m")
 ## поиск по выбранным пользователям.
     starts(args.username) if args.user==False else starts(userlists)
 ## Arbeiten...
