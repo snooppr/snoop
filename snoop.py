@@ -40,7 +40,7 @@ locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
 console = Console()
 
-vers = 'v1.3.2C'
+vers = 'v1.3.2D'
 print (f"""\033[36m
   ___|                          
 \___ \  __ \   _ \   _ \  __ \  
@@ -342,6 +342,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             if param_websites.get("bad_site") == 1 and verbose == True and not print_found_only:
                 print_invalid("", websites_names, f"**Пропуск. Dynamic gray_list", color)
                 results_site["exists"] = "gray_list"
+            if param_websites.get("bad_site") == 1 and exclusionYES is None:
+                results_site["exists"] = "gray_list"
         else:
 ## URL пользователя на сайте (если он существует).
             url = param_websites["url"].format(username)
@@ -349,7 +351,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             url_API = param_websites.get("urlProbe")
 # Использование api/nickname
             url_API = url if url_API is None else url_API.format(username)
-                
+
 ## Если нужен только статус кода, не загружать тело страницы, экономим память для status/redirect методов.
             if reports == True or param_websites["errorTypе"] == 'message' or param_websites["errorTypе"] == 'response_url':
                 request_method = session1.get
@@ -383,7 +385,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             complete_style='cyan', finished_style='cyan bold'), refresh_per_second = 3.0)#,auto_refresh=False)
     else:
         progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)#,refresh_per_second = 3.0)#
-#№ Панель вербализации.
+## Панель вербализации.
         if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
             if color == True:
                 console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполн.[/magenta] | [bold cyan]отклик сайта[/bold cyan] " + \
