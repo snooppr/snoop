@@ -67,8 +67,8 @@ border_style="bold blue"))# ,style="bold green"))
             webbrowser.open("https://sobe.ru/na/snoop_project_2020")
         else:
             click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия web browser\n")
-            click.launch(f"https://www.paypal.com/paypalme/snoopproject/20usd")
             click.launch(f"https://sobe.ru/na/snoop_project_2020")
+            click.launch(f"https://www.paypal.com/paypalme/snoopproject/20usd")
     except:
         print("\033[31;1mНе удалось открыть браузер\033[0m")
 
