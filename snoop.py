@@ -5,11 +5,6 @@ import argparse
 import base64
 import csv
 import glob
-try:
-    import psutil
-    import click
-except:
-    print("\n\nВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt\n\n")
 import json
 import locale
 import networktest
@@ -19,8 +14,6 @@ import random
 import re
 import requests
 import shutil
-import snoopbanner
-import snoopplugins
 import subprocess
 import sys
 import time
@@ -31,11 +24,20 @@ from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
-from rich.progress import (track,BarColumn,TimeRemainingColumn,SpinnerColumn,TimeElapsedColumn,Progress)
+from rich.progress import BarColumn, TimeRemainingColumn, SpinnerColumn, TimeElapsedColumn, Progress
 from rich.panel import Panel
 from rich.style import Style as STL
 from rich.console import Console
 from rich.table import Table
+
+try:
+    import psutil
+    import click
+except Exception:
+    print("\n\nВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt\n\n")
+
+import snoopbanner
+import snoopplugins
 
 
 locale.setlocale(locale.LC_ALL, '')
@@ -43,9 +45,9 @@ init(autoreset=True)
 console = Console()
 
 
-vers = 'v1.3.2D'
-print (f"""\033[36m
-  ___|                          
+vers = 'v1.3.2E'
+print(f"""\033[36m
+  ___|
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
@@ -53,18 +55,18 @@ _____/ _|  _|\___/ \___/  .__/
 """)
 version = f"{vers}_rus Snoop (Source demo)"
 
-print (Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
+print(Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
 if sys.platform == 'win32':
-    print (Fore.CYAN + " cd с:\<path>\snoop")
-    print (Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
-    print (Fore.CYAN + " python snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
-    print (Fore.CYAN + " python snoop.py --module" + Style.RESET_ALL, "#задействовать плагины")
+    print(Fore.CYAN + " cd с:\\<path>\\snoop")
+    print(Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
+    print(Fore.CYAN + " python snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
+    print(Fore.CYAN + " python snoop.py --module" + Style.RESET_ALL, "#задействовать плагины")
 else:
-    print (Fore.CYAN + " cd ~/snoop")
-    print (Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
-    print (Fore.CYAN + " python3 snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
-    print (Fore.CYAN + " python3 snoop.py --module" + Style.RESET_ALL, "#задействовать плагины")
-console.rule(characters = '=', style="cyan")
+    print(Fore.CYAN + " cd ~/snoop")
+    print(Fore.CYAN + " python3 snoop.py --help" + Style.RESET_ALL, "#справка")
+    print(Fore.CYAN + " python3 snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
+    print(Fore.CYAN + " python3 snoop.py --module" + Style.RESET_ALL, "#задействовать плагины")
+console.rule(characters="=", style="cyan")
 print("")
 
 
@@ -73,9 +75,9 @@ e_mail = 'Demo: snoopproject@protonmail.com'
 ## лицензия: год/месяц/число:
 license = 'лицензия'
 ts = (2022, 11, 11, 3, 0, 0, 0, 0, 0)
-date_up = int(time.mktime(ts)) #дата в секундах с начала эпохи
+date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
-Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}") #в UTC (-3 часа)
+Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
 # чек.
 if time.time() > int(date_up):
     print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии.")
@@ -83,7 +85,7 @@ if time.time() > int(date_up):
 
 
 def ravno():
-    console.rule(characters = '=', style="cyan bold")
+    console.rule(characters='=', style="cyan bold")
 
 
 def DB(db_base):
@@ -96,9 +98,11 @@ def DB(db_base):
             db = base64.b64decode(db)
             trinity = json.loads(db.decode("UTF-8"))
             return trinity
-    except:
+    except Exception:
         print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
         sys.exit()
+
+
 ## Получаем результаты и в будущем везде используем, сокращая вызовы функций.
 BDdemo = DB('BDdemo')
 BDflag = DB('BDflag')
@@ -114,7 +118,7 @@ recensor = 0
 
 ## Создание директорий результатов.
 dirresults = os.getcwd()
-dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\snoop"
+dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\\snoop"
 dirpath = dirresults if 'Source' in version else dirhome
 os.makedirs(f"{dirpath}/results", exist_ok=True)
 os.makedirs(f"{dirpath}/results/nicknames/html", exist_ok=True)
@@ -137,8 +141,8 @@ class ElapsedFuturesSession(FuturesSession):
 ## Вывести на печать инфостроку.
 def print_info(title, info, color=True):
     if color:
-        print(Fore.GREEN + "[" + Fore.YELLOW + "*" + Fore.GREEN + f"] {title}" + Fore.RED + " <" + Fore.WHITE + f" {info}" +
-        Fore.RED + " >" + Style.RESET_ALL)
+        print(Fore.GREEN + "[" + Fore.YELLOW + "*" + Fore.GREEN + f"] {title}" + Fore.RED + " <" + Fore.WHITE + f" {info}" + \
+              Fore.RED + " >" + Style.RESET_ALL)
     else:
         print(f"\n[*] {title} {info}:")
 
@@ -146,43 +150,43 @@ def print_info(title, info, color=True):
 ## Вывести на печать ошибки в режиме обычного поиска.
 def print_error(err, errstr, var, verbose=False, color=True):
     if color:
-        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + Style.BRIGHT +
-        Fore.RED + f" {errstr}" + Style.BRIGHT + Fore.YELLOW + f" {var}" + f" {err if verbose else ''}")
+        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + Style.BRIGHT + \
+              Fore.RED + f" {errstr}" + Style.BRIGHT + Fore.YELLOW + f" {var}" + f" {err if verbose else ''}")
         try:
             playsound('err.wav')
-        except:
+        except Exception:
             pass
     else:
         print(f"[-] {errstr} {var} {err if verbose else ''}")
 
 
 ## Вывод на печать на разных платформах, индикация.
-## Вывести на печать аккаунт найден.
 def print_found_country(websites_names, url, country_Emoj_Code, response_time=False, verbose=False, color=True):
+    """Вывести на печать аккаунт найден."""
     if color and sys.platform == 'win32':
-        print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {country_Emoj_Code}" + Fore.GREEN + f" {websites_names}:", Style.RESET_ALL +
-        Fore.GREEN + f"{url}")
+        print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {country_Emoj_Code}" + Fore.GREEN + f" {websites_names}:", Style.RESET_ALL + \
+              Fore.GREEN + f"{url}")
     elif color and not sys.platform == 'win32':
         print(country_Emoj_Code, (Style.BRIGHT + Fore.GREEN + f" {websites_names}:"), Style.RESET_ALL + Fore.GREEN + f"{url}")
     else:
         print(f"[+] {websites_names}: {url}")
 
 
-## Вывести на печать аккаунт не найден.
 def print_not_found(websites_names, response_time, verbose=False, color=True):
+    """Вывести на печать аккаунт не найден."""
     if color:
-        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
-        Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.BRIGHT + Fore.YELLOW + " Увы!")
+        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + \
+              Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.BRIGHT + Fore.YELLOW + " Увы!")
     else:
         print(f"[-] {websites_names}: Увы!")
 
 
-## Вывести на печать пропуск сайтов по блок. маске в имени username и пропуск по проблеме с openssl.
+## Вывести на печать пропуск сайтов по блок. маске в имени username, gray_list, и пропуск по проблеме с openssl.
 def print_invalid(mes, websites_names, message, color=True):
     """Ошибка вывода результата"""
     if color:
-        print(Style.RESET_ALL + Fore.RED + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.RED + "]" +
-        Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.RESET_ALL + Fore.YELLOW + f" {message}")
+        print(Style.RESET_ALL + Fore.RED + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.RED + "]" + \
+              Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.RESET_ALL + Fore.YELLOW + f" {message}")
     else:
         print(f"[-] {websites_names}: {message}")
 
@@ -194,33 +198,33 @@ def get_response(request_future, error_type, websites_names, print_found_only=Fa
         if res.status_code:
             return res, error_type, res.elapsed
     except requests.exceptions.HTTPError as err1:
-        if print_found_only==False:
+        if print_found_only is False:
             print_error(err1, "HTTP Error:", websites_names, verbose, color)
     except requests.exceptions.ConnectionError as err2:
         global censors
         censors += 1
-        if print_found_only==False:
+        if print_found_only is False:
             print_error(err2, "Ошибка соединения:", websites_names, verbose, color)
     except requests.exceptions.Timeout as err3:
         global censors_timeout
         censors_timeout += 1
-        if print_found_only==False:
+        if print_found_only is False:
             print_error(err3, "Timeout ошибка:", websites_names, verbose, color)
     except requests.exceptions.RequestException as err4:
-        if print_found_only==False:
+        if print_found_only is False:
             print_error(err4, "Непредвиденная ошибка", websites_names, verbose, color)
     return None, "", -1
 
 
 ## Сохранение отчетов опция (-S).
-def sreports(url, headers,session2,error_type, username,websites_names,r):
+def sreports(url, headers, session2, error_type, username, websites_names, r):
     os.makedirs(f"{dirpath}/results/nicknames/save reports/{username}", exist_ok=True)
-# Сохранять отчеты для метода: redirection.
+    """Сохранять отчеты для метода: redirection."""
     if error_type == "redirection":
         try:
             future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=4)
             response = future2.result()
-            session_size = len(response.content) #подсчет извлеченных данных.
+            session_size = len(response.content)  #подсчет извлеченных данных
             with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as repre:
                 repre.write(response.text)
         except requests.exceptions.ConnectionError:
@@ -228,13 +232,13 @@ def sreports(url, headers,session2,error_type, username,websites_names,r):
             try:
                 future2 = session2.get(url=url, headers=headers, allow_redirects=True, timeout=2)
                 response = future2.result()
-                session_size = len(response.content) #подсчет извлеченных данных.
+                session_size = len(response.content)  #подсчет извлеченных данных
                 with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as repre:
                     repre.write(response.text)
-            except:
-                session_size = 'Err' #подсчет извлеченных данных.
+            except Exception:
+                session_size = 'Err' #подсчет извлеченных данных
         return session_size
-# Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
+##Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
     else:
         with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as rep:
             rep.write(r.text)
@@ -243,7 +247,8 @@ def sreports(url, headers,session2,error_type, username,websites_names,r):
 ## Основная функция.
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False, print_found_only=False,
           timeout=None, color=True, cert=False, quickly=False, headerS=None):
-## Печать первой инфостроки.
+
+# Печать первой инфостроки.
     if '%20' in username:
         username_space = re.sub("%20", " ", username)
         print_info("разыскиваем:", username_space, color)
@@ -255,16 +260,28 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 ## Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
     with open('domainlist.txt', 'r', encoding="utf-8") as err:
+        ermail = err.read().splitlines()
+
         username_bad = username.rsplit(sep='@', maxsplit=1)
         username_bad = '@bro'.join(username_bad).lower()
 
-        ermail = err.read().splitlines()
-        if any(ermail_iter.lower() in username.lower() for ermail_iter in ermail):
-            username = username.rsplit(sep='@', maxsplit=1)[0]
-            print(f"\n{Fore.CYAN}Обнаружен E-mail адрес, извлекаем nickname: '{Style.BRIGHT}{Fore.CYAN}{username}{Style.RESET_ALL}" + \
-                  f"{Fore.CYAN}'\nsnoop способен отличать e-mail от логина, например, поиск '{username_bad}'\n" + \
-                  f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
+        for ermail_iter in ermail:
+            if ermail_iter.lower() == username.lower():
+                print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (поиск по email недоступен)")
+                sys.exit()
+            elif ermail_iter.lower() in username.lower():
+                usernameR = username.rsplit(sep=ermail_iter.lower(), maxsplit=1)[1] 
+                username = username.rsplit(sep='@', maxsplit=1)[0]
+                if len(username) == 0:
+                    username = usernameR
+                    if len(usernameR) == 0:
+                        print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (поиск по email недоступен)")
+                        sys.exit()
         del ermail
+
+        print(f"\n{Fore.CYAN}Обнаружен E-mail адрес, извлекаем nickname: '{Style.BRIGHT}{Fore.CYAN}{username}{Style.RESET_ALL}" + \
+              f"{Fore.CYAN}'\nsnoop способен отличать e-mail от логина, например, поиск '{username_bad}'\n" + \
+              f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
 
 
     with open('specialcharacters', 'r', encoding="utf-8") as errspec:
@@ -274,27 +291,27 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             sys.exit()
 
 
-    ernumber=['79', '89', "38", "37"]
+    ernumber = ['79', '89', "38", "37"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
-        if len(username) >= 10 and len(username) <= 13 and username.isdigit() == True:
+        if len(username) >= 10 and len(username) <= 13 and username.isdigit() is True:
             print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
             sys.exit()
     elif username[0] == "+" or username[0] == ".":
-        print (Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся с такого символа, практически всегда невалидный...")
+        print(Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся с такого символа, практически всегда невалидный...")
         sys.exit()
-    elif username[0] == "9" and len(username) == 10 and username.isdigit() == True:
-        print (Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
+    elif username[0] == "9" and len(username) == 10 and username.isdigit() is True:
+        print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
         sys.exit()
 
     global nick
-    nick = username #username 2переменые (args/info).
+    nick = username  #username 2-переменые (args/info)
 
 
 ## Создать многопоточный/процессный сеанс для всех запросов.
-    requests.packages.urllib3.disable_warnings() #блокировка предупреждений о сертификате.
+    requests.packages.urllib3.disable_warnings()  #блокировка предупреждений о сертификате
     my_session = requests.Session()
 
-    if cert == False:
+    if cert is False:
         my_session.verify = False
         requests.packages.urllib3.disable_warnings()
 
@@ -302,7 +319,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
             session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
         else:
-            if norm == False:
+            if norm is False:
                 session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=26), session=my_session)
             else:
                 session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
@@ -311,13 +328,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
     if reports:
         session2 = FuturesSession(max_workers=1, session=my_session)
-    if norm == False:
+    if norm is False:
         session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=1), session=my_session)
 
 
 ## Результаты анализа всех сайтов.
     dic_snoop_full = {}
-### Создание futures на все запросы. Это позволит распараллелить запросы с прерываниями.
+## Создание futures на все запросы. Это позволит распараллелить запросы с прерываниями.
     for websites_names, param_websites in BDdemo_new.items():
         results_site = {}
 
@@ -325,128 +342,131 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         param_websites.pop('usernameOFF', None)
         param_websites.pop('comments', None)
 
-## Запись URL основного сайта и флага страны (сопоставление в БД).
+# Запись URL основного сайта и флага страны (сопоставление в БД).
         results_site['flagcountry'] = param_websites.get("country")
         results_site['flagcountryklas'] = param_websites.get("country_klas")
         results_site['url_main'] = param_websites.get("urlMain")
 
-## Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое постоянный с расширенным заголовком.
+# Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое — постоянный с расширенным заголовком.
         majR = random.choice(range(73, 94, 1))
         minR = random.choice(range(2683, 4606, 13))
         patR = random.choice(range(52, 99, 1))
         RandHead=([f"{{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " + \
                    f"Chrome/{majR}.0.{minR}.{patR} Safari/537.36'}}",
-                   f"{{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) "+ \
+                   f"{{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) " + \
                    f"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{majR}.0.{minR}.{patR} Safari/537.36'}}"])
         RH = random.choice(RandHead)
-        headers = json.loads(RH.replace("'",'"'))
+        headers = json.loads(RH.replace("'", '"'))
 
-## Переопределить/добавить любые дополнительные заголовки, необходимые для данного сайта из БД или cli.
+# Переопределить/добавить любые дополнительные заголовки, необходимые для данного сайта из БД или cli.
         if "headers" in param_websites:
             headers.update(param_websites["headers"])
         if headerS is not None:
-            headers.update({"User-Agent":''.join(headerS)})
-        #console.print(headers, websites_names) #проверка u-агентов.
-## Пропуск временно-отключенного сайта и не делать запрос, если имя пользователя не подходит для сайта.
+            headers.update({"User-Agent": ''.join(headerS)})
+        #console.print(headers, websites_names)  #проверка u-агентов
+
+# Пропуск временно-отключенного сайта и не делать запрос, если имя пользователя не подходит для сайта.
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
             if exclusionYES and re.search(exclusionYES, username) and not print_found_only:
                 print_invalid("", websites_names, f"недопустимый ник '{username}' для данного сайта", color)
             results_site["exists"] = "invalid_nick"
-            results_site["url_user"] = '*'*56
+            results_site["url_user"] = '*' * 56
             results_site['countryCSV'] = "****"
-            results_site['http_status'] = '*'*10
+            results_site['http_status'] = '*' * 10
             results_site['session_size'] = ""
-            results_site['check_time_ms'] = '*'*15
-            results_site['response_time_ms'] = '*'*15
-            results_site['response_time_site_ms'] = '*'*25
-            if param_websites.get("bad_site") == 1 and verbose == True and not print_found_only:
+            results_site['check_time_ms'] = '*' * 15
+            results_site['response_time_ms'] = '*' * 15
+            results_site['response_time_site_ms'] = '*' * 25
+            if param_websites.get("bad_site") == 1 and verbose and not print_found_only:
                 print_invalid("", websites_names, f"**Пропуск. Dynamic gray_list", color)
                 results_site["exists"] = "gray_list"
             if param_websites.get("bad_site") == 1 and exclusionYES is None:
                 results_site["exists"] = "gray_list"
         else:
-## URL пользователя на сайте (если он существует).
+# URL пользователя на сайте (если он существует).
             url = param_websites["url"].format(username)
             results_site["url_user"] = url
             url_API = param_websites.get("urlProbe")
-# Использование api/nickname
+# Использование api/nickname.
             url_API = url if url_API is None else url_API.format(username)
 
-## Если нужен только статус кода, не загружать тело страницы, экономим память для status/redirect методов.
-            if reports == True or param_websites["errorTypе"] == 'message' or param_websites["errorTypе"] == 'response_url':
+# Если нужен только статус кода, не загружать тело страницы, экономим память для status/redirect методов.
+            if reports or param_websites["errorTypе"] == 'message' or param_websites["errorTypе"] == 'response_url':
                 request_method = session1.get
             else:
                 request_method = session1.head
 
-## Сайт перенаправляет запрос на другой URL.
+# Сайт перенаправляет запрос на другой URL.
 # Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
             if param_websites["errorTypе"] == "response_url" or param_websites["errorTypе"] == "redirection":
                 allow_redirects = False
-# Разрешить любой редирект, который хочет сделать сайт и захватить тело и статус ответа..
+# Разрешить любой редирект, который хочет сделать сайт и захватить тело и статус ответа.
             else:
                 allow_redirects = True
 
-## Отправить параллельно все запросы и сохранить future in data для последующего доступа к хукам.
+# Отправить параллельно все запросы и сохранить future in data для последующего доступа к хукам.
             future = request_method(url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
             param_websites["request_future"] = future
             #d2.update({future:{k:v}})
-## Добавлять флаги/url-s/хуки в будущий-окончательный словарь с будущими всеми другими результатами.
+# Добавлять флаги/url-s/хуки в будущий-окончательный словарь с будущими всеми другими результатами.
         dic_snoop_full[websites_names] = results_site
 
 
-## Прогресс_описание.
-    if verbose == False:
+# Прогресс_описание.
+    if not verbose:
         if sys.platform != 'win32':
             progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=random.choice(["dots", "dots12"])),
-            "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan', finished_style='cyan bold'),
-            refresh_per_second = 3.0)#auto_refresh=False) #transient=True) #исчезает прогресс
+                                "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan',
+                                finished_style='cyan bold'), refresh_per_second=3.0)  #transient=True) #исчезает прогресс
         else:
             progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None,
-            complete_style='cyan', finished_style='cyan bold'), refresh_per_second = 3.0)#,auto_refresh=False)
+                                complete_style='cyan', finished_style='cyan bold'), refresh_per_second=3.0)  #auto_refresh=False)
     else:
-        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)#refresh_per_second=3)
+        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)  #refresh_per_second=3
 
 
 ## Панель вербализации.
-        if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
-            if color == True:
+        if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
+            if color:
                 console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполн.[/magenta] | [bold cyan]отклик сайта[/bold cyan] " + \
                                     "| [bold red]цвет.[bold cyan]об[/bold cyan].скор.[/bold red] | [bold cyan]разм.расп.данных[/bold cyan]",
                                     title="Обозначение", style=STL(color="cyan")))
             else:
-                console.print(Panel("об.время | об.% выполн. | отклик сайта | цвет.об.время | разм.расп.данных" , title="Обозначение"))
+                console.print(Panel("об.время | об.% выполн. | отклик сайта | цвет.об.время | разм.расп.данных", title="Обозначение"))
         else:
-            if color == True:
+            if color:
                 console.print(Panel("[yellow]time[/yellow] | [magenta]perc.[/magenta] | [bold cyan]response [/bold cyan] " + \
                                     "| [bold red]joint[bold cyan].[/bold cyan]rate[/bold red] | [bold cyan]data[/bold cyan]",
                                     title="Designation", style=STL(color="cyan")))
             else:
-                console.print(Panel("time | perc. | response | joint.rate | data" , title="Designation"))
+                console.print(Panel("time | perc. | response | joint.rate | data", title="Designation"))
 
 
-### Пройтись по массиву future и получить результаты.
+## Пройтись по массиву future и получить результаты.
     li_time = [0]
     with progress:
-        task0 = progress.add_task("", total=len(BDdemo_new.items())) if color == True else None
-        for websites_names, param_websites in BDdemo_new.items():# БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future.
-            progress.update(task0, advance=1, refresh=True) if color == True else "" #\nprogress.refresh()
-## Получить другую информацию сайта, снова.
+        if color is True:
+            task0 = progress.add_task("", total=len(BDdemo_new.items()))
+        for websites_names, param_websites in BDdemo_new.items():  #БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future
+            if color is True:
+                progress.update(task0, advance=1, refresh=True)  #\nprogress.refresh()
+# Получить другую информацию сайта, снова.
             url = dic_snoop_full.get(websites_names).get("url_user")
             country_emojis = dic_snoop_full.get(websites_names).get("flagcountry")
             country_code = dic_snoop_full.get(websites_names).get("flagcountryklas")
             country_Emoj_Code = country_emojis if sys.platform != 'win32' else country_code
-## Пропустить запрещенный никнейм или пропуск сайта из gray-list.
+# Пропустить запрещенный никнейм или пропуск сайта из gray-list.
             if dic_snoop_full.get(websites_names).get("exists") is not None:
                 continue
-## Получить ожидаемый тип данных 4 методов.
+# Получить ожидаемый тип данных 4 методов.
             error_type = param_websites["errorTypе"]
-## Получить результаты future.
+# Получить результаты future.
             r, error_type, response_time = get_response(request_future=param_websites["request_future"], error_type=error_type,
                                                         websites_names=websites_names, print_found_only=print_found_only,
                                                         verbose=verbose, color=color)
-## Повторное сбойное соединение через новую сессию быстрее, чем через adapter - timeout*2=дольше.
-            if norm == False and quickly == False and r is None and 'raised ConnectionError' in str(future):
+# Повторное сбойное соединение через новую сессию быстрее, чем через adapter - timeout*2=дольше.
+            if norm is False and quickly is False and r is None and 'raised ConnectionError' in str(future):
                 #print(future)
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
                               'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
@@ -457,11 +477,12 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     global recensor
                     recensor += 1
                     future_rec = session3.get(url=url, headers=head_duble, allow_redirects=allow_redirects, timeout=1.5)
-                    if color and print_found_only == False:
-                        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" +
-                        Style.BRIGHT + Fore.GREEN + "    └──повторное соединение" + Style.RESET_ALL)
+                    if color is True and print_found_only is False:
+                        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + \
+                              Style.BRIGHT + Fore.GREEN + "    └──повторное соединение" + Style.RESET_ALL)
                     else:
-                        print("повторное соединение") if print_found_only==False else ""
+                        if print_found_only is False:
+                            print("повторное соединение")
                         #time.sleep(0.1)
                     r, error_type, response_time = get_response(request_future=future_rec, error_type=param_websites.get("errorTypе"),
                                                                 websites_names=websites_names, print_found_only=print_found_only,
@@ -489,7 +510,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
-                        sreports(url, headers,session2,error_type, username,websites_names,r)
+                        sreports(url, headers, session2, error_type, username, websites_names, r)
 ## Проверка, 4 методов; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
             elif error_type == "redirection":
@@ -499,7 +520,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
-                        session_size = sreports(url, headers,session2,error_type, username, websites_names,r)
+                        session_size = sreports(url, headers, session2, error_type, username, websites_names, r)
                 else:
                     if not print_found_only:
                         print_not_found(websites_names, response_time, verbose, color)
@@ -513,7 +534,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 if not r.status_code >= 300 or r.status_code < 200:
                     print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     if reports:
-                        sreports(url, headers,session2,error_type, username, websites_names,r)
+                        sreports(url, headers, session2, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only:
@@ -527,7 +548,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 if 200 <= r.status_code < 300:
                     print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     if reports:
-                        sreports(url, headers,session1,error_type, username, websites_names,r)
+                        sreports(url, headers, session1, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only:
@@ -535,48 +556,49 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     exists = "увы"
 ## Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за капчи (желтый).
             else:
-                print_invalid("", websites_names, "*ПРОПУСК", color) if not print_found_only else ""
+                if not print_found_only:
+                    print_invalid("", websites_names, "*ПРОПУСК", color)
                 exists = "блок"
 
 
 ## Попытка получить информацию из запроса.
             try:
-                http_status = r.status_code #запрос статус-кода.
-            except:
+                http_status = r.status_code  #запрос статус-кода.
+            except Exception:
                 http_status = "сбой"
             try:
-                response_text = r.text.encode(r.encoding) #запрос данных.
-            except:
+                response_text = r.text.encode(r.encoding)  #запрос данных.
+            except Exception:
                 response_text = ""
-            try:# сессия в КБ.
-                if reports == True:
+            try:  # сессия в КБ
+                if reports is True:
                     session_size = session_size if error_type == 'redirection' else len(str(r.content))
                 else:
                     session_size = len(str(r.content))
 
                 if session_size >= 555:
-                    session_size = round(session_size/1024)
+                    session_size = round(session_size / 1024)
                 elif session_size <= 555:
-                    session_size = round((session_size/1024), 2)
-            except:
+                    session_size = round((session_size / 1024), 2)
+            except Exception:
                 session_size = "Err"
 
 
 ## Считать 2x-тайминги с приемлемой точностью.
 # Реакция.
-            ello_time = round(float(time.time() - timestart), 2)#текущее.
+            ello_time = round(float(time.time() - timestart), 2)  #текущее
             li_time.append(ello_time)
-            dif_time = round(li_time[-1] - li_time[-2], 2)#разница.
+            dif_time = round(li_time[-1] - li_time[-2], 2)  #разница
 # Отклик.
             try:
                 site_time = str(response_time).rsplit(sep=':', maxsplit=1)[1]
-                site_time=round(float(site_time), 2)#реальный ответ.
-            except:
+                site_time = round(float(site_time), 2)  #реальный ответ
+            except Exception:
                 site_time = str("-")
 
 
 ## Опция '-v'.
-            if verbose == True:
+            if verbose is True:
                 if session_size == 0 or session_size is None:
                     Ssession_size = "Head"
                 elif session_size == "Err":
@@ -584,8 +606,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 else:
                     Ssession_size = str(session_size) + " Kb"
 
-                if color == True:
-                    if dif_time > 2.7 and dif_time != ello_time: #задержка в общем времени
+                if color is True:
+                    if dif_time > 2.7 and dif_time != ello_time:  #задержка в общем времени
                         console.print(f"[cyan] [*{site_time} s T] >>", f"[bold red][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
                         console.rule("", style="bold red")
                     else:
@@ -596,7 +618,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     console.rule(style="color")
 
 
-## Служебная информация для CSV (2-й словарь 'объединение словарей', чтобы не вызывать ошибку длины 1го при итерациях).
+## Служебная информация и для CSV (2-й словарь 'объединение словарей', чтобы не вызывать ошибку длины 1го при итерациях).
             if dif_time > 2.7 and dif_time != ello_time:
                 dic_snoop_full.get(websites_names)['response_time_site_ms'] = str(dif_time)
             else:
@@ -607,7 +629,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             dic_snoop_full.get(websites_names)['http_status'] = http_status
             dic_snoop_full.get(websites_names)['check_time_ms'] = str(site_time)
             dic_snoop_full.get(websites_names)['response_time_ms'] = str(ello_time)
-## Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
+# Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
 # Вернуть словарь со всеми данными на запрос функции snoop.
         return dic_snoop_full
@@ -618,7 +640,7 @@ def timeout_check(value):
     try:
         global timeout
         timeout = int(value)
-    except:
+    except Exception:
         raise argparse.ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'. \033[0m")
     if timeout <= 0:
         raise argparse.ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время > 0sec. \033[0m")
@@ -627,13 +649,14 @@ def timeout_check(value):
 
 ## Обновление Snoop.
 def update_snoop():
-    print(
-"""\033[36m\nВы действительно хотите:
+    print("""
+\033[36mВы действительно хотите:
                     __             _  
    ._  _| _._|_ _  (_ ._  _  _ ._   ) 
 |_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
    |                           |    
 нажмите\033[0m 'y' """)
+
     upd = str(input())
 
     if upd == "y":
@@ -650,15 +673,15 @@ def autoclean():
     rm = dirpath + path_build_del
 # Подсчет файлов и размера удаляемого каталога 'results'.
     total_size = 0
-    delfiles=[]
+    delfiles = []
     for total_file in glob.iglob(rm + '/**/*', recursive=True):
         total_size += os.path.getsize(total_file)
-        delfiles.append(total_file) if os.path.isfile(total_file) else ""
+        if os.path.isfile(total_file): delfiles.append(total_file)
 # Удаление каталога 'results'.
     try:
         shutil.rmtree(rm, ignore_errors=True)
         print(f"\033[31;1mdeleted --> {rm}\033[0m\033[36m {len(delfiles)} files, {round(total_size/1024/1024, 2)} Mb\033[0m")
-    except:
+    except Exception:
         console.log("[red]Ошибка")
     sys.exit()
 
@@ -670,29 +693,30 @@ def license_snoop():
         console.print(Panel(cop, title='COPYRIGHT', style=STL(color="white", bgcolor="blue")))
 
     threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
-    console.print('\n',
-Panel(f"""Snoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}
+    console.print('\n', Panel(f"""
+Snoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}
 Source: {version}
 OS: {platform.platform(aliased=True, terse=0)}
 Locale: {locale.setlocale(locale.LC_ALL)}
 Python: {platform.python_version()}
 CPU(s): {psutil.cpu_count()}, threads(s): {threadS}
 Ram: {int(psutil.virtual_memory().total/1024/1024)} Мб, доступно: {int(psutil.virtual_memory().available/1024/1024)} Мб""",
-title='snoop info', style=STL(color="cyan")))
+                              title='snoop info', style=STL(color="cyan")))
     sys.exit()
-#    print(repr(cop))
+    #print(repr(cop))
 
 
-### ОСНОВА.
+## ОСНОВА.
 def run():
-## Назначение опций Snoop.
-    parser = argparse.ArgumentParser(formatter_class = argparse.RawDescriptionHelpFormatter,
-                            usage = 'python3 %(prog)s [options] nickname\nor\nusage: python3 %(prog)s nickname [options]\n ',
-                            description = Fore.CYAN + "Справка" + Style.RESET_ALL,
-                            epilog = (Fore.CYAN + f"Snoop " + Style.BRIGHT + Fore.RED + f"Demo Version " + Style.RESET_ALL + \
-                            Fore.CYAN + f"поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n"  + Fore.CYAN +
-                            f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m2200+\033[0m \033[36mWebsites!!!\033[0m\n" +\
-                            Style.DIM + Fore.CYAN + " English version — see release (available 'old build Snoop EN version')\n\n"))
+# Назначение опций Snoop.
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                     usage="python3 snoop.py [options] nickname\nor\nusage: python3 snoop.py nickname [options]\n",
+                                     description=f"{Fore.CYAN}\nСправка{Style.RESET_ALL}",
+                                     epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}Demo Version {Style.RESET_ALL}" + \
+                                             f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n{Fore.CYAN}" + \
+                                             f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m2200+\033[0m" + \
+                                             f"\033[36mWebsites!!!\033[0m\n {Style.DIM}{Fore.CYAN}English version — see release" + \
+                                             f"(available 'old build Snoop EN version')\n\n"))
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
     service_group.add_argument("--version", "-V", action="store_true",
@@ -734,15 +758,15 @@ def run():
                               help="\033[36mП\033[0mодключиться для поиска 'username' к обновляемой web_БД (Онлайн)/\
                               В demo version функция отключена"
                              )
-    search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list",  default=None,
+    search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list", default=None,
                               help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'username' на одном указанном ресурсе, \
                               допустимо использовать опцию '-s' несколько раз"
                              )
-    search_group.add_argument("--exclude", "-e <country_code>", action="append", metavar='', dest="exclude_country",  default=None,
+    search_group.add_argument("--exclude", "-e <country_code>", action="append", metavar='', dest="exclude_country", default=None,
                               help="\033[36mИ\033[0mсключить из поиска выбранный регион, \
                               допустимо использовать опцию '-e' несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир"
                              )
-    search_group.add_argument("--one-level", "-o <country code>", action="append", metavar='', dest="one_level",  default=None,
+    search_group.add_argument("--one-level", "-o <country code>", action="append", metavar='', dest="one_level", default=None,
                               help="\033[36mВ\033[0mлючить в поиск только выбранный регион, \
                               допустимо использовать опцию '-o' несколько раз, например, '-o US -o UA' поиск по США и Украине"
                              )
@@ -797,16 +821,16 @@ def run():
                              )
 
     args = parser.parse_args()
-#    print(args)
+    #print(args)
 
     if args.quickly:
         snoopbanner.logo(text="🛠  [-q] новая функциональность — в разработке")
 
 
 ## Опции  '-cseo' несовместимы между собой.
-    k=0
+    k = 0
     for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
-        if _ == True:
+        if _ is True:
             k += 1
         if k == 2:
             snoopbanner.logo(text="⛔️ опциии ['-c', '-e' '-o', '-s'] несовместимы между собой")
@@ -833,6 +857,7 @@ def run():
 # Информативный вывод.
     if args.module:
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
+
         def module():
             print("""\n
 \033[36m╭Выберите плагин или действие из списка\033[0m
@@ -841,28 +866,32 @@ def run():
 \033[36m├──\033[0m\033[36;1m[3] --> Yandex_parser\033[0m
 \033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m
 \033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n""")
+
             mod = console.input("[cyan]Я выбираю: [/cyan]")
 
             if mod == 'help':
                 snoopbanner.help_module_1()
                 module()
             elif mod == '1':
-                table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
                 table.add_column("GEO_IP/domain_v0.2", style="green")
                 table.add_row('Получение информации об ip/domain/url цели или по списку этих данных')
                 console.print(table)
+
                 snoopplugins.module1()
             elif mod == '2':
-                table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
                 table.add_column("Reverse Vgeocoder_v0.4", style="green")
                 table.add_row('Визуализация Географических координат')
                 console.print(table)
+
                 snoopplugins.module2()
             elif mod == '3':
-                table = Table(title = Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
                 table.add_column("Yandex_parser_v0.5", style="green")
                 table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail; Name.')
                 console.print(table)
+
                 snoopplugins.module3()
             elif mod == 'q':
                 print(Style.BRIGHT + Fore.RED + "└──Выход")
@@ -875,7 +904,7 @@ def run():
 
 
 ## Опция  '-f' + "-v".
-    if args.verbose and args.print_found_only:
+    if args.verbose is True and args.print_found_only is True:
         snoopbanner.logo(text="⛔️ Режим подробной вербализации [опция '-v'] отображает детальную информацию,\n   [опция '-f'] неуместна")
 
 
@@ -885,7 +914,7 @@ def run():
 
 
 ## Опция режима SNOOPnina > < нормальный режим.
-    if args.norm == False:
+    if args.norm is False:
         snoopbanner.logo(text="[-] в demo деактивирован переключатель '--': «режимов SNOOPninja/Normal»")
 
 
@@ -907,9 +936,9 @@ def run():
 ## Опция  '-t'.
     try:
         if args.timeout:
-            print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от " +
-                              f"сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
-    except:
+            print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от " + \
+                  f"сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
+    except Exception:
         pass
 
 
@@ -921,9 +950,9 @@ def run():
 ## Опция '-s'.
     if args.site_list:
         print(f"{Fore.CYAN}[+] активирована опция '-s': «поиск '{Style.BRIGHT}{Fore.CYAN}{', '.join(args.username)}{Style.RESET_ALL}" + \
-              f"{Fore.CYAN}' на выбранных website(s)»\n"
-        "    допустимо использовать опцию '-s' несколько раз\n"
-        "    [опция '-s'] несовместима с [опциями '-с', '-e', 'o']")
+              f"{Fore.CYAN}' на выбранных website(s)»\n" + \
+              f"    допустимо использовать опцию '-s' несколько раз\n" + \
+              f"    [опция '-s'] несовместима с [опциями '-с', '-e', 'o']")
 
 
 ## Опция '--list-all'.
@@ -932,45 +961,50 @@ def run():
         print("\033[36m\nСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
               "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n")
         sortY = console.input("[cyan]Выберите действие: [/cyan]")
+
 # Общий вывод стран (3!).
 # Вывод для Full/Demo Version.
         def sort_list_all(DB, fore, version, line=None):
             if sortY == "3":
-                console.rule("[cyan]Ok, print All Country:", style="cyan bold") if line == "str_line" else ""
+                if line == "str_line":
+                    console.rule("[cyan]Ok, print All Country:", style="cyan bold")
                 print("")
                 li = [DB.get(con).get("country_klas") if sys.platform == 'win32' else DB.get(con).get("country") for con in DB]
                 cnt = str(Counter(li))
                 try:
                     flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
-                    all_= str(len(DB))
+                    all_ = str(len(DB))
                     #raise Exception("")
-                except:
+                except Exception:
                     flag_str_sum = str("БД повреждена.")
-                    all_= "-1"
-                table = Table(title = Style.BRIGHT + fore + version + Style.RESET_ALL, style="green")
+                    all_ = "-1"
+                table = Table(title=Style.BRIGHT + fore + version + Style.RESET_ALL, style="green")
                 table.add_column("Страна:Кол-во websites", style="magenta")
                 table.add_column("All", style="cyan", justify='full')
                 table.add_row(flag_str_sum, all_)
                 console.print(table)
 # Сортируем по алфавиту для Full/Demo Version (2!).
             elif sortY == "2":
-                console.rule("[cyan]Ok, сортируем по алфавиту:",style="cyan bold") if line == "str_line" else ""
+                if line == "str_line":
+                    console.rule("[cyan]Ok, сортируем по алфавиту:", style="cyan bold")
                 if version == "Demo Version":
                     console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan", bgcolor="red")))
                 else:
                     console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
                 i = 0
-                sorted_dict_v_listtuple = sorted(DB.items(), key=lambda x: x[0].lower()) # сорт.словаря по глав.ключу без учета регистра
-                datajson_sort = dict(sorted_dict_v_listtuple) #преобр.список обратно в словарь (сортированный)
+                sorted_dict_v_listtuple = sorted(DB.items(), key=lambda x: x[0].lower())  #сорт.словаря по глав.ключу без учета регистра
+                datajson_sort = dict(sorted_dict_v_listtuple)  #преобр.список обратно в словарь (сортированный)
 
                 for con in datajson_sort:
                     S = datajson_sort.get(con).get("country_klas") if sys.platform == 'win32' else datajson_sort.get(con).get("country")
-                    i += 1 
+                    i += 1
                     print(f"{Style.DIM}{Fore.CYAN}{i}. {Style.RESET_ALL}{Fore.CYAN}{S}  {con}\n================")
 # Сортируем по странам для Full/Demo Version (1!).
             elif sortY == "1":
-                console.rule("[cyan]Ok, сортируем по странам:",style="cyan bold") if line == "str_line" else ""
                 listwindows = []
+
+                if line == "str_line":
+                    console.rule("[cyan]Ok, сортируем по странам:", style="cyan bold")
 
                 for con in DB:
                     S = DB.get(con).get("country_klas") if sys.platform == 'win32' else DB.get(con).get("country")
@@ -982,18 +1016,18 @@ def run():
                     console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
 
                 for i in enumerate(sorted(listwindows, key=str.lower), 1):
-                    print(f"{Style.DIM}{Fore.CYAN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}", end = '')
-# Действие не выбрано --list-all.
+                    print(f"{Style.DIM}{Fore.CYAN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}", end='')
+# Действие не выбрано '--list-all'.
             else:
                 print(Style.BRIGHT + Fore.RED + "└──Извините, но вы не выбрали действие [1/2/3]\n\nвыход")
                 sys.exit()
 
 # Запуск функции '--list-all'.
         if sortY != "3":
-            sort_list_all(BDflag, Fore.GREEN, "Full Version", line = "str_line")
+            sort_list_all(BDflag, Fore.GREEN, "Full Version", line="str_line")
             sort_list_all(BDdemo, Fore.RED, "Demo Version")
         else:
-            sort_list_all(BDdemo, Fore.RED, "Demo Version", line = "str_line")
+            sort_list_all(BDdemo, Fore.RED, "Demo Version", line="str_line")
             sort_list_all(BDflag, Fore.GREEN, "Full Version")
         sys.exit()
 
@@ -1006,15 +1040,17 @@ def run():
 
 ## Опция '-u' указания файла-списка разыскиваемых пользователей.
     if args.user:
-        userlists=[]
-        userlists_bad=[]
+        userlists = []
+        userlists_bad = []
+
         with open('specialcharacters', 'r', encoding="utf-8") as errspec:
             my_list_bad = list(errspec.read())
         try:
             patchuserlist = ("{}".format(args.user))
             userfile = patchuserlist.split('/')[-1] if sys.platform != 'win32' else patchuserlist.split('\\')[-1]
+
             with open(patchuserlist, "r", encoding="utf8") as u1:
-                userlist=[line.strip() for line in u1.read().splitlines()]
+                userlist = [line.strip() for line in u1.read().splitlines()]
 
                 for i in userlist:
                     if any(D in i for D in my_list_bad):
@@ -1029,18 +1065,21 @@ def run():
 
             print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла: \033[36;1m{userfile}\033[0m\033[36m»::\033[0m")
             console.print(Panel.fit("\n".join(userlists), title='valid', style=STL(color="cyan")))
-        except:
+        except Exception:
             print(f"\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m " + \
-                   "\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
+                  f"\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
             print("\033[36mПо умолчанию, например, блокнот в OS Windows сохраняет текст в кодировке — ANSI.\033[0m")
             print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8].")
             print("\033[36mИли удалите из файла нечитаемые спецсимволы.")
             sys.exit()
+
         if userlists_bad:
             print(f"\n\033[36mСледующие [nickname(s)] из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
-                   "\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
+                  f"\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(userlists_bad), title='invalid', style=STL(color="bright_red")))
-        sys.exit() if bool(userlists) == False else ""
+
+        if bool(userlists) is False:
+            sys.exit()
 
 
 ## Проверка остальных (в т.ч. повтор) опций.
@@ -1072,21 +1111,21 @@ def run():
             sort_web_BDdemo_new[site] = BDdemo.get(site)
 
 
-## Функция для опций '-eo'
+## Функция для опций '-eo'.
     def one_exl(one_exl_, bool_):
         lap = []
         bd_flag = []
 
-        for k,v in BDdemo.items():
+        for k, v in BDdemo.items():
             bd_flag.append(v.get('country_klas').lower())
             if all(item.lower() != v.get('country_klas').lower() for item in one_exl_) == bool_:
                 BDdemo_new[k] = v
 
-        enter_coun_u=[x.lower() for x in one_exl_]
-        lap=list(set(bd_flag) & set(enter_coun_u))
-        diff_list=list(set(enter_coun_u) - set(bd_flag)) # вывести униr элем из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
+        enter_coun_u = [x.lower() for x in one_exl_]
+        lap = list(set(bd_flag) & set(enter_coun_u))
+        diff_list = list(set(enter_coun_u) - set(bd_flag))  #вывести униr элем из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
 
-        if bool(BDdemo_new) == False:
+        if bool(BDdemo_new) is False:
             print(f"\033[31;1m[{str(diff_list).strip('[]')}] все регионы поиска являются невалидными.\033[0m")
             sys.exit()
 # Вернуть корректный и bad списки пользовательского ввода в cli.
@@ -1105,16 +1144,16 @@ def run():
         for site in args.site_list:
             for site_yes in BDdemo:
                 if site.lower() == site_yes.lower():
-                    BDdemo_new[site_yes] = BDdemo[site_yes] #выбираем в словарь найденные сайты из БД
+                    BDdemo_new[site_yes] = BDdemo[site_yes]  #выбираем в словарь найденные сайты из БД
 
             diff_k_bd = set(BDflag) ^ set(BDdemo)
             for site_yes_full_diff in diff_k_bd:
-                if site.lower() == site_yes_full_diff.lower(): #если сайт (-s) в БД Full версии.
-                    print(f"\033[31;1m[?] Пропуск:\033[0m \033[36mсайт из БД \033[36;1mFull-версии\033[0m \033[36mнедоступен в" +
+                if site.lower() == site_yes_full_diff.lower():  #если сайт (-s) в БД Full версии
+                    print(f"\033[31;1m[?] Пропуск:\033[0m \033[36mсайт из БД \033[36;1mFull-версии\033[0m \033[36mнедоступен в" + \
                           f"\033[0m \033[33;1mDemo-версии\033[0m\033[36m:: '\033[30;1m{site_yes_full_diff}\033[0m\033[36m'\033[0m")
 
-            if not any(site.lower() == site_yes_full.lower() for site_yes_full in BDflag): #если ни одного совпадения по сайту
-                print(f"\033[31;1m[!] Пропуск:\033[0m \033[36mжелаемый сайт отсутствует в БД Snoop:: '" +
+            if not any(site.lower() == site_yes_full.lower() for site_yes_full in BDflag):  #если ни одного совпадения по сайту
+                print(f"\033[31;1m[!] Пропуск:\033[0m \033[36mжелаемый сайт отсутствует в БД Snoop:: '" + \
                       f"\033[31;1m{site}\033[0m\033[36m'\033[0m")
 # Отмена поиска, если нет ни одного совпадения по БД и '-s'.
         if not BDdemo_new:
@@ -1125,32 +1164,32 @@ def run():
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.exclude_country is not None:
-        lap, diff_list = one_exl(one_exl_ = args.exclude_country, bool_=True)
+        lap, diff_list = one_exl(one_exl_=args.exclude_country, bool_=True)
 
         print(Fore.CYAN + f"[+] активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
-        str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
-        "    допустимо использовать опцию '-e' несколько раз\n"
-        "    [опция '-e'] несовместима с [опциями '-s', '-c', 'o']")
+              str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
+              "    допустимо использовать опцию '-e' несколько раз\n" + \
+              "    [опция '-e'] несовместима с [опциями '-s', '-c', 'o']")
 
 
 ## Опция '-o'.
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.one_level is not None:
-        lap, diff_list = one_exl(one_exl_ = args.one_level, bool_=False)
+        lap, diff_list = one_exl(one_exl_=args.one_level, bool_=False)
 
         print(Fore.CYAN + f"[+] активирована опция '-o': «включить в поиск только выбранные регионы»::", end=' ')
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
-        str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
-        "    допустимо использовать опцию '-o' несколько раз\n"
-        "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
+              str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
+              "    допустимо использовать опцию '-o' несколько раз\n" + \
+              "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
 
 
-## Ник не задан или противоречие.
-    if bool(args.username) == False and bool(args.user) == False:
+## Ник не задан или противоречие опций.
+    if bool(args.username) is False and bool(args.user) is False:
         snoopbanner.logo(text="параметры либо nickname(s) не задан(ы)")
-    if bool(args.username) == True and bool(args.user) == True:
+    if bool(args.username) is True and bool(args.user) is True:
         print("\n\033[31;1mВыберите для поиска nickname(s) из файла или задайте в cli,\n" + \
               "но не совместное использование nickname(s): из файла и cli.\n\nВыход")
         sys.exit()
@@ -1164,25 +1203,25 @@ def run():
 
 ## Опция  '-w' не активна.
     try:
-        if args.web == False:
+        if args.web is False:
             print(f"\n{Fore.CYAN}загружена локальная база: {Style.BRIGHT}{Fore.CYAN}{len(BDdemo)}_Websites{Style.RESET_ALL}")
-    except:
+    except Exception:
         print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
 
 ## Крутим user's.
     def starts(SQ):
-        kef_user=0
-        ungzip, ungzip_all, find_url_lst, el =[],[],[],[]
-        exl = "/".join(lap).upper() if args.exclude_country is not None else "нет" #искл.регионы_valid.
-        one = "/".join(lap).upper() if args.one_level is not None else "нет" #вкл.регионы_valid.
+        kef_user = 0
+        ungzip, ungzip_all, find_url_lst, el = [], [], [], []
+        exl = "/".join(lap).upper() if args.exclude_country is not None else "нет"  #искл.регионы_valid
+        one = "/".join(lap).upper() if args.one_level is not None else "нет"  #вкл.регионы_valid
         for username in SQ:
-            kef_user+=1
-            sort_sites = sort_web_BDdemo_new if args.country == True else BDdemo_new
+            kef_user += 1
+            sort_sites = sort_web_BDdemo_new if args.country is True else BDdemo_new
 
             FULL = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert,
-                        norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout,
-                        color=not args.no_func, quickly=args.quickly, headerS = args.headerS)
+                         norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout,
+                         color=not args.no_func, quickly=args.quickly, headerS=args.headerS)
 
             exists_counter = 0
 
@@ -1191,9 +1230,9 @@ def run():
             try:
                 file_txt = open(f"{dirpath}/results/nicknames/txt/{username}.txt", "w", encoding="utf-8")
                 #raise Exception("")
-            except:
-                file_txt = open(f"{dirpath}/results/nicknames/txt/username{time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.txt", 
-                                 "w", encoding="utf-8")
+            except Exception:
+                file_txt = open(f"{dirpath}/results/nicknames/txt/username{time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.txt",
+                                "w", encoding="utf-8")
 
             file_txt.write("Адрес | ресурс" + "\n\n")
 
@@ -1204,14 +1243,14 @@ def run():
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
                     find_url_lst.append(exists_counter)
-                    file_txt.write(dictionary ["url_user"] + " | " + (website_name)+"\n")
+                    file_txt.write(dictionary["url_user"] + " | " + (website_name) + "\n")
 # Размер сессии персональный и общий, кроме CSV.
             try:
-                sess_size=round(sum(ungzip)/1024 , 2)#в МБ
-                s_size_all=round(sum(ungzip_all)/1024 , 2)#в МБ
-            except:
-                sess_size=0.00000000001
-                s_size_all="Err"
+                sess_size = round(sum(ungzip) / 1024, 2)  #в МБ
+                s_size_all = round(sum(ungzip_all) / 1024, 2)  #в МБ
+            except Exception:
+                sess_size = 0.00000000001
+                s_size_all = "Err"
             timefinish = time.time() - timestart - sum(el)
             el.append(timefinish)
             time_all = str(round(time.time() - timestart))
@@ -1229,32 +1268,32 @@ def run():
             try:
                 file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
                 #raise Exception("")
-            except:
+            except Exception:
                 file_html = open(f"{dirpath}/results/nicknames/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + ".html", "w",
-                                  encoding="utf-8")
+                                 encoding="utf-8")
 
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../../web/public.png) " + \
-            "no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n<body>\n\n" + \
-            "<div id='particles-js'></div>\n" + \
-            "<div id='report'>\n\n" + \
-            "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>Главная</a>" + "</h1>\n")
+                            "no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n<body>\n\n" + \
+                            "<div id='particles-js'></div>\n" + \
+                            "<div id='report'>\n\n" + \
+                            "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>Главная</a>" + "</h1>\n")
             file_html.write("<h3>Snoop Project (Demo Version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n" + \
-            "<button onclick='sortList()'>Сортировать по странам</button><br><br>\n\n")
-            file_html.write("Объект " + "<b>" + (nick) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) +
-            "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
+                            "<button onclick='sortList()'>Сортировать по странам</button><br><br>\n\n")
+            file_html.write("Объект " + "<b>" + (nick) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + \
+                            "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
 
-            li = []            
+            li = []
             for website_name in FULL:
                 dictionary = FULL[website_name]
-                flag_sum=dictionary["flagcountry"]
+                flag_sum = dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
                     li.append(flag_sum)
-                    file_html.write("<li>" + dictionary["flagcountry"] + "<a target='_blank' href='" + dictionary ["url_user"] + "'>" +
-                    (website_name) + "</a>" + "</li>\n")
+                    file_html.write("<li>" + dictionary["flagcountry"] + "<a target='_blank' href='" + dictionary["url_user"] + "'>" + \
+                                    (website_name) + "</a>" + "</li>\n")
             try:
                 cnt = str(Counter(li))
                 flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
-            except:
+            except Exception:
                 flag_str_sum = "0"
 
             file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
@@ -1313,16 +1352,16 @@ function sortList() {
 
 ## Запись в csv.
             try:
-                file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='')#, encoding="utf-8")
+                file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='')  #, encoding="utf-8")
                 #raise Exception("")
-            except:
+            except Exception:
                 file_csv = open(f"{dirpath}/results/nicknames/csv/username {time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.csv",
                                 "w", newline='')
 
             usernamCSV = re.sub(" ", "_", nick)
-            censors_cor = int((censors - recensor)/kef_user) #err_connection
-            censors_timeout_cor = int(censors_timeout/kef_user) #err time-out
-            flagBS_err = round((censors_cor + censors_timeout_cor)*100/flagBS, 3)
+            censors_cor = int((censors - recensor) / kef_user)  #err_connection
+            censors_timeout_cor = int(censors_timeout / kef_user)  #err time-out
+            flagBS_err = round((censors_cor + censors_timeout_cor) * 100 / flagBS, 3)
 
             writer = csv.writer(file_csv)
             writer.writerow(['Никнейм', 'Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http', 'Общее_замедление/сек',
@@ -1332,18 +1371,18 @@ function sortList() {
                 if FULL[site]['session_size'] == 0:
                     Ssession = "Head"
                 elif type(FULL[site]['session_size']) != str:
-                    Ssession = str(FULL.get(site).get("session_size")).replace('.',locale.localeconv()['decimal_point'])
+                    Ssession = str(FULL.get(site).get("session_size")).replace('.', locale.localeconv()['decimal_point'])
                 else:
                     Ssession = "Bad"
 
                 writer.writerow([usernamCSV, site, FULL[site]['countryCSV'], FULL[site]['url_main'], FULL[site]['url_user'],
                                  FULL[site]['exists'], FULL[site]['http_status'],
-                                 FULL[site]['response_time_site_ms'].replace('.',locale.localeconv()['decimal_point']),
-                                 FULL[site]['check_time_ms'].replace('.',locale.localeconv()['decimal_point']),
-                                 FULL[site]['response_time_ms'].replace('.',locale.localeconv()['decimal_point']),
+                                 FULL[site]['response_time_site_ms'].replace('.', locale.localeconv()['decimal_point']),
+                                 FULL[site]['check_time_ms'].replace('.', locale.localeconv()['decimal_point']),
+                                 FULL[site]['response_time_ms'].replace('.', locale.localeconv()['decimal_point']),
                                  Ssession])
 
-            writer.writerow(['«' + "-"*30, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32,'-'*13, '-'*23, '-'*16 + '»'])
+            writer.writerow(['«' + '-'*30, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32, '-'*13, '-'*23, '-'*16 + '»'])
             writer.writerow([f'БД_(DemoVersion)={flagBS}_Websites'])
             writer.writerow('')
             writer.writerow([f'Исключённые_регионы={exl}'])
@@ -1352,18 +1391,18 @@ function sortList() {
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_date)])
-            
+
             file_csv.close()
 
             ungzip.clear()
-            #print(exists_counter) if 'exists_counter' in locals() else ""
+            #if 'exists_counter' in locals(): print(exists_counter)
 
 
 ## Финишный вывод.
         direct_results = f"{dirpath}/nicknames/results/*/{username}.*" if sys.platform != 'win32' else f"{dirpath}\\results\\*\\{username}.*"
         print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all} сек_{s_size_all}Mb)")
         print(f"{Fore.CYAN}├──Cохранено в:{Style.RESET_ALL} {direct_results}")
-        if flagBS_err >= 2:#perc
+        if flagBS_err >= 2:  #perc
             print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
             print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
             print(f"{Fore.CYAN}     └─нестабильное соединение или Internet Censorship")
@@ -1371,29 +1410,30 @@ function sortList() {
                   " '\033[36;1m-t\033[0m\033[36m'\033[0m\n")
         else:
             print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
-        console.print(Panel(f"{e_mail} до {Do}",title=license, style=STL(color="white", bgcolor="blue")))
+        console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
 
 
 ## Музыка.
         try:
-            if args.no_func==False: playsound('end.wav')
-        except:
+            if args.no_func is False: playsound('end.wav')
+        except Exception:
             pass
 
 
 ## Открывать/нет браузер с результатами поиска.
-        if args.no_func==False and exists_counter >= 1:
+        if args.no_func is False and exists_counter >= 1:
             try:
-                if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
+                if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
                     webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
                 else:
                     click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия результатов во внешнем браузере")
                     click.launch(f"file://{dirpath}/results/nicknames/html/{username}.html")
-            except:
+            except Exception:
                 print("\n\033[31;1mНе удалось открыть браузер\033[0m")
 
 
 ## поиск по выбранным пользователям.
-    starts(args.username) if args.user==False else starts(userlists)
+    starts(args.username) if args.user is False else starts(userlists)
+
 ## Arbeiten...
-run() #snoop(...) --> def(..) --> starts(.).
+run()  #snoop(...) --> def(..) --> starts(.)
