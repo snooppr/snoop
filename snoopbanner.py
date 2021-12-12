@@ -60,16 +60,17 @@ Snoop Full Version: плагины без ограничений; 2200+ Websites
 
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)",
-border_style="bold blue"))# ,style="bold green"))
+                        border_style="bold blue"))  # ,style="bold green"))
+
     try:
-        if not "arm" in platform.platform(aliased=True, terse=0) and not "aarch64" in platform.platform(aliased=True, terse=0):
+        if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
             webbrowser.open("https://www.paypal.com/paypalme/snoopproject/20usd")
             webbrowser.open("https://sobe.ru/na/snoop_project_2020")
         else:
             click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия web browser\n")
             click.launch(f"https://sobe.ru/na/snoop_project_2020")
             click.launch(f"https://www.paypal.com/paypalme/snoopproject/20usd")
-    except:
+    except Exception:
         print("\033[31;1mНе удалось открыть браузер\033[0m")
 
     print(Style.BRIGHT + Fore.RED + "Выход")
