@@ -272,16 +272,17 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             elif ermail_iter.lower() in username.lower():
                 usernameR = username.rsplit(sep=ermail_iter.lower(), maxsplit=1)[1] 
                 username = username.rsplit(sep='@', maxsplit=1)[0]
-                if len(username) == 0:
-                    username = usernameR
-                    if len(usernameR) == 0:
-                        print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (поиск по email недоступен)")
-                        sys.exit()
-        del ermail
 
-        print(f"\n{Fore.CYAN}Обнаружен E-mail адрес, извлекаем nickname: '{Style.BRIGHT}{Fore.CYAN}{username}{Style.RESET_ALL}" + \
-              f"{Fore.CYAN}'\nsnoop способен отличать e-mail от логина, например, поиск '{username_bad}'\n" + \
-              f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
+                if len(username) == 0: username = usernameR
+                print(f"\n{Fore.CYAN}Обнаружен E-mail адрес, извлекаем nickname: '{Style.BRIGHT}{Fore.CYAN}{username}{Style.RESET_ALL}" + \
+                      f"{Fore.CYAN}'\nsnoop способен отличать e-mail от логина, например, поиск '{username_bad}'\n" + \
+                      f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
+
+                if len(username) == 0 and len(usernameR) == 0:
+                    print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (поиск по email недоступен)")
+                    sys.exit()
+
+        del ermail
 
 
     with open('specialcharacters', 'r', encoding="utf-8") as errspec:
