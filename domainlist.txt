@@ -307,7 +307,7 @@
 @agedmail.com
 @agendawe.us
 @agger.ro
-@aggressive.com(skating)
+@aggressive.com
 @agilewe.us
 @agoodmail.com
 @agorawe.us
@@ -881,7 +881,7 @@
 @badpotato.tk
 @bagherpour.com
 @bahraini.cc
-@bakililar.az(azerbaidjan)
+@bakililar.az
 @baldmama.de
 @baldpapa.de
 @ballyfinance.com
@@ -1927,7 +1927,7 @@
 @email.com
 @e-mail.com.tr
 @emailcorner.net
-@email.co.yu(yugoslavia)
+@email.co.yu
 @emailcu.icu
 @email.cz
 @email.de
@@ -4590,7 +4590,7 @@ Invalid_emails
 @kcks.com
 @kc.rr.com
 @kcrw.de
-@k-earthmail.com(radio)
+@k-earthmail.com
 @keepmymail.com
 @keg-party.com
 @keinhirn.de
@@ -4646,7 +4646,7 @@ Invalid_emails
 @kmail.com.au
 @kmhow.com
 @km.ru
-@knac.com(purerock)
+@knac.com
 @knol-power.nl
 @kolumbus.fi
 @kolyma.org
@@ -7923,7 +7923,7 @@ Invalid_emails
 @postaccesslite.com
 @postacin.com
 @postafree.com
-@postamatik.com(istambul)
+@postamatik.com
 @posta.net
 @posta.ro
 @posta.store
@@ -8481,7 +8481,7 @@ Invalid_emails
 @slopsbox.com
 @slothmail.net
 @slotter.com
-@sluggy.net(webcomics)
+@sluggy.net
 @slushmail.com
 @sluteen.com
 @sly.io
