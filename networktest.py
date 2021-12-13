@@ -16,8 +16,11 @@ def nettest():
     with console2.status("[cyan]Ожидайте, идёт самотестирование сети..."):
         servers = []
         threads = None
-
-        s = speedtest.Speedtest()
+        try:
+            s = speedtest.Speedtest()
+        except Exception:
+            console2.print(f"[bold red]Нет сети\n\nВыход")
+            sys.exit()
         s.get_servers(servers)
         s.get_best_server()
         s.download(threads=threads)

@@ -140,7 +140,7 @@ class ElapsedFuturesSession(FuturesSession):
 
 ## Вывести на печать инфостроку.
 def print_info(title, info, color=True):
-    if color:
+    if color is True:
         print(Fore.GREEN + "[" + Fore.YELLOW + "*" + Fore.GREEN + f"] {title}" + Fore.RED + " <" + Fore.WHITE + f" {info}" + \
               Fore.RED + " >" + Style.RESET_ALL)
     else:
@@ -149,32 +149,33 @@ def print_info(title, info, color=True):
 
 ## Вывести на печать ошибки в режиме обычного поиска.
 def print_error(err, errstr, var, verbose=False, color=True):
-    if color:
-        print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + Style.BRIGHT + \
-              Fore.RED + f" {errstr}" + Style.BRIGHT + Fore.YELLOW + f" {var}" + f" {err if verbose else ''}")
+    if color is True:
+        print(Style.RESET_ALL + Fore.RED + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.RED + "]" + Style.BRIGHT + \
+              Fore.GREEN + f" {var}:" + Style.BRIGHT + Fore.RED + f" {errstr}" + Fore.YELLOW + f" {err if verbose else ''}")
         try:
             playsound('err.wav')
         except Exception:
             pass
     else:
-        print(f"[-] {errstr} {var} {err if verbose else ''}")
+        print(f"[!] {var}: {errstr} {err if verbose else ''}")
 
 
 ## Вывод на печать на разных платформах, индикация.
 def print_found_country(websites_names, url, country_Emoj_Code, response_time=False, verbose=False, color=True):
     """Вывести на печать аккаунт найден."""
-    if color and sys.platform == 'win32':
-        print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {country_Emoj_Code}" + Fore.GREEN + f" {websites_names}:", Style.RESET_ALL + \
-              Fore.GREEN + f"{url}")
-    elif color and not sys.platform == 'win32':
-        print(country_Emoj_Code, (Style.BRIGHT + Fore.GREEN + f" {websites_names}:"), Style.RESET_ALL + Fore.GREEN + f"{url}")
+    if color is True and sys.platform == 'win32':
+        print(Style.RESET_ALL + Style.BRIGHT + Fore.CYAN + f" {country_Emoj_Code}" + \
+              Fore.GREEN + f" {websites_names}:", Style.RESET_ALL + Fore.GREEN + f"{url}")
+    elif color is True and sys.platform != 'win32':
+        print(Style.RESET_ALL + country_Emoj_Code, (Style.BRIGHT + Fore.GREEN + f" {websites_names}:"),
+              Style.RESET_ALL + Style.DIM + Fore.GREEN + f"{url}")
     else:
         print(f"[+] {websites_names}: {url}")
 
 
 def print_not_found(websites_names, response_time, verbose=False, color=True):
     """Вывести на печать аккаунт не найден."""
-    if color:
+    if color is True:
         print(Style.RESET_ALL + Fore.CYAN + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.CYAN + "]" + \
               Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.BRIGHT + Fore.YELLOW + " Увы!")
     else:
@@ -183,8 +184,8 @@ def print_not_found(websites_names, response_time, verbose=False, color=True):
 
 ## Вывести на печать пропуск сайтов по блок. маске в имени username, gray_list, и пропуск по проблеме с openssl.
 def print_invalid(mes, websites_names, message, color=True):
-    """Ошибка вывода результата"""
-    if color:
+    """Ошибка вывода nickname и gray list"""
+    if color is True:
         print(Style.RESET_ALL + Fore.RED + "[" + Style.BRIGHT + Fore.RED + "-" + Style.RESET_ALL + Fore.RED + "]" + \
               Style.BRIGHT + Fore.GREEN + f" {websites_names}:" + Style.RESET_ALL + Fore.YELLOW + f" {message}")
     else:
@@ -199,17 +200,17 @@ def get_response(request_future, error_type, websites_names, print_found_only=Fa
             return res, error_type, res.elapsed
     except requests.exceptions.HTTPError as err1:
         if print_found_only is False:
-            print_error(err1, "HTTP Error:", websites_names, verbose, color)
+            print_error(err1, "HTTP Error", websites_names, verbose, color)
     except requests.exceptions.ConnectionError as err2:
         global censors
         censors += 1
         if print_found_only is False:
-            print_error(err2, "Ошибка соединения:", websites_names, verbose, color)
+            print_error(err2, "Ошибка соединения", websites_names, verbose, color)
     except requests.exceptions.Timeout as err3:
         global censors_timeout
         censors_timeout += 1
         if print_found_only is False:
-            print_error(err3, "Timeout ошибка:", websites_names, verbose, color)
+            print_error(err3, "Timeout ошибка", websites_names, verbose, color)
     except requests.exceptions.RequestException as err4:
         if print_found_only is False:
             print_error(err4, "Непредвиденная ошибка", websites_names, verbose, color)
@@ -555,10 +556,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not print_found_only:
                         print_not_found(websites_names, response_time, verbose, color)
                     exists = "увы"
-## Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за капчи (желтый).
+## Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за неизвестной ошибки.
             else:
-                if not print_found_only:
-                    print_invalid("", websites_names, "*ПРОПУСК", color)
                 exists = "блок"
 
 
@@ -694,14 +693,15 @@ def license_snoop():
         console.print(Panel(cop, title='COPYRIGHT', style=STL(color="white", bgcolor="blue")))
 
     threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
-    console.print('\n', Panel(f"""
-Snoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}
-Source: {version}
-OS: {platform.platform(aliased=True, terse=0)}
-Locale: {locale.setlocale(locale.LC_ALL)}
-Python: {platform.python_version()}
-CPU(s): {psutil.cpu_count()}, threads(s): {threadS}
-Ram: {int(psutil.virtual_memory().total/1024/1024)} Мб, доступно: {int(psutil.virtual_memory().available/1024/1024)} Мб""",
+
+    console.print('\n', Panel(f"Snoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}\n" + \
+                              f"Source: {version}\n" + \
+                              f"OS: {platform.platform(aliased=True, terse=0)}\n" + \
+                              f"Locale: {locale.setlocale(locale.LC_ALL)}\n" + \
+                              f"Python: {platform.python_version()}\n" + \
+                              f"CPU(s): {psutil.cpu_count()}, threads(s): {threadS}\n" + \
+                              f"Ram: {int(psutil.virtual_memory().total/1024/1024)} Мб, доступно: " + \
+                              f"{int(psutil.virtual_memory().available/1024/1024)} Мб",
                               title='snoop info', style=STL(color="cyan")))
     sys.exit()
     #print(repr(cop))
@@ -818,7 +818,7 @@ def run():
     search_group.add_argument("--quick-mode ", "-q", default=False, action="store_true", dest="quickly",
                               help="""\033[36mВ\033[0mкл  тихий режим поиска. Промежуточные результаты не выводятся на печать.
                               Повторные гибкие соединения на сбойных ресурсах без замедления ПО.
-                              Самый прогрессивный режим поиска (в разработке - не использовать)"""
+                              Самый прогрессивный режим поиска (в разработке - не использовать)"""  #argparse.SUPPRESS
                              )
 
     args = parser.parse_args()
@@ -1057,7 +1057,7 @@ def run():
             userfile = patchuserlist.split('/')[-1] if sys.platform != 'win32' else patchuserlist.split('\\')[-1]
 
             with open(patchuserlist, "r", encoding="utf8") as u1:
-                userlist = [line.strip() for line in u1.read().splitlines()]
+                userlist = [line.strip() for line in u1.read().replace("\ufeff", "").splitlines()]
 
                 for i in userlist:
                     if any(D in i for D in my_list_bad):
@@ -1071,19 +1071,19 @@ def run():
                         userlists.append(i)
 
             print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла: \033[36;1m{userfile}\033[0m\033[36m»::\033[0m")
-            console.print(Panel.fit("\n".join(userlists), title='valid', style=STL(color="cyan")))
+            console.print(Panel.fit("\n".join(userlists).replace("%20", " "), title=f"valid ({len(userlists)})", style=STL(color="cyan")))
         except Exception:
-            print(f"\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m " + \
-                  f"\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n")
-            print("\033[36mПо умолчанию, например, блокнот в OS Windows сохраняет текст в кодировке — ANSI.\033[0m")
-            print("\033[36mОткройте ваш список пользователей и измените кодировку [файл ---> сохранить как ---> utf-8].")
-            print("\033[36mИли удалите из файла нечитаемые спецсимволы.")
+            print(f"\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m\n " + \
+                  f"\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n" + \
+                  f"\033[36mПо умолчанию, например, блокнот в OS Windows сохраняет текст в кодировке — ANSI.\033[0m\n" + \
+                  f"\033[36mОткройте ваш файл '{userfile}' и измените кодировку [файл ---> сохранить как ---> utf-8].\n" + \
+                  f"\033[36mИли удалите из файла нечитаемые спецсимволы.")
             sys.exit()
 
         if userlists_bad:
-            print(f"\n\033[36mСледующие [nickname(s)] из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
-            console.print(Panel.fit("\n".join(userlists_bad), title='invalid', style=STL(color="bright_red")))
+            console.print(Panel.fit("\n".join(userlists_bad), title=f"invalid ({len(userlists_bad)})", style=STL(color="bright_red")))
 
         if bool(userlists) is False:
             sys.exit()
@@ -1125,12 +1125,12 @@ def run():
 
         for k, v in BDdemo.items():
             bd_flag.append(v.get('country_klas').lower())
-            if all(item.lower() != v.get('country_klas').lower() for item in one_exl_) == bool_:
+            if all(item.lower() != v.get('country_klas').lower() for item in one_exl_) is bool_:
                 BDdemo_new[k] = v
 
         enter_coun_u = [x.lower() for x in one_exl_]
         lap = list(set(bd_flag) & set(enter_coun_u))
-        diff_list = list(set(enter_coun_u) - set(bd_flag))  #вывести униr элем из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
+        diff_list = list(set(enter_coun_u) - set(bd_flag))  #вывести уник элем из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
 
         if bool(BDdemo_new) is False:
             print(f"\033[31;1m[{str(diff_list).strip('[]')}] все регионы поиска являются невалидными.\033[0m")
@@ -1276,8 +1276,8 @@ def run():
                 file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
                 #raise Exception("")
             except Exception:
-                file_html = open(f"{dirpath}/results/nicknames/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + ".html", "w",
-                                 encoding="utf-8")
+                file_html = open(f"{dirpath}/results/nicknames/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + \
+                                 ".html", "w", encoding="utf-8")
 
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../../web/public.png) " + \
                             "no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n<body>\n\n" + \
@@ -1449,8 +1449,6 @@ if __name__ == '__main__':
     try:
         run()
     except KeyboardInterrupt:
-        print(Style.BRIGHT + Fore.RED + '\nОстанов')
-        try:
-            sys.exit(0)
-        except SystemExit:
-            os._exit(0)
+        console.print(f"\n[bold red]Останов [italic](высвобождение ресурсов, ждите...)")
+        sys.exit()  #неспешное завершение с очисткой процессов в т.ч.
+        #os._exit(0)  #немедленное завершение, расплата блок-ОЗУ. Нет очистки ProcessPool, в full-version критично
