@@ -860,13 +860,13 @@ def run():
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
 
         def module():
-            print("""\n
-\033[36m╭Выберите плагин или действие из списка\033[0m
-\033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m
-\033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m
-\033[36m├──\033[0m\033[36;1m[3] --> Yandex_parser\033[0m
-\033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m
-\033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n""")
+            print(f"\n" +\
+                  f"\033[36m╭Выберите плагин или действие из списка\033[0m\n" + \
+                  f"\033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m\n" + \
+                  f"\033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m\n" + \
+                  f"\033[36m├──\033[0m\033[36;1m[3] --> Yandex_parser\033[0m\n" + \
+                  f"\033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m\n" + \
+                  f"\033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n")
 
             mod = console.input("[cyan]Я выбираю: [/cyan]")
 
@@ -1451,6 +1451,6 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         console.print(f"\n[bold red]Останов [italic](высвобождение ресурсов, ждите...)")
         if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
-            sys.exit()  #неспешное завершение с очисткой процессов в т.ч.
+            sys.exit()
         else:
-            os._exit(0)  #немедленное завершение, расплата блок-ОЗУ. Нет очистки ProcessPool, в full-version критично
+            os._exit(0)
