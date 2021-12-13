@@ -59,8 +59,9 @@ Snoop Full Version: плагины без ограничений; 2200+ Websites
 отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
 
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
-[bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""", title="[bold red]Demo: (Публичная оферта)",
-                        border_style="bold blue"))  # ,style="bold green"))
+[bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""",
+                        title="[bold red]Demo: (Публичная оферта)",
+                        border_style="bold blue"))
 
     try:
         if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
