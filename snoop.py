@@ -305,7 +305,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         sys.exit()
 
     global nick
-    nick = username  #username 2-переменые (args/info)
+    nick = username  #username 2-переменные (args/info)
 
 
 ## Создать многопоточный/процессный сеанс для всех запросов.
@@ -714,9 +714,9 @@ def run():
                                      usage="python3 snoop.py [options] nickname\nor\nusage: python3 snoop.py nickname [options]\n",
                                      description=f"{Fore.CYAN}\nСправка{Style.RESET_ALL}",
                                      epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}Demo Version {Style.RESET_ALL}" + \
-                                             f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m  \033[36mWebsites!\n{Fore.CYAN}" + \
-                                             f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m2200+\033[0m" + \
-                                             f"\033[36mWebsites!!!\033[0m\n {Style.DIM}{Fore.CYAN}English version — see release" + \
+                                             f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
+                                             f"Snoop \033[36;1mFull Version\033[0m \033[36mподдержка: \033[36;1m2200+ \033[0m" + \
+                                             f"\033[36mWebsites!!!\033[0m\n {Style.DIM}{Fore.CYAN}English version — see release " + \
                                              f"(available 'old build Snoop EN version')\n\n"))
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
@@ -875,21 +875,21 @@ def run():
                 module()
             elif mod == '1':
                 table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("GEO_IP/domain_v0.2", style="green")
+                table.add_column("GEO_IP/domain_v0.2", style="green", justify="center")
                 table.add_row('Получение информации об ip/domain/url цели или по списку этих данных')
                 console.print(table)
 
                 snoopplugins.module1()
             elif mod == '2':
                 table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("Reverse Vgeocoder_v0.4", style="green")
+                table.add_column("Reverse Vgeocoder_v0.4", style="green", justify="center")
                 table.add_row('Визуализация Географических координат')
                 console.print(table)
 
                 snoopplugins.module2()
             elif mod == '3':
                 table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("Yandex_parser_v0.5", style="green")
+                table.add_column("Yandex_parser_v0.5", style="green", justify="center")
                 table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail; Name.')
                 console.print(table)
 
@@ -966,6 +966,7 @@ def run():
 # Общий вывод стран (3!).
 # Вывод для Full/Demo Version.
         def sort_list_all(DB, fore, version, line=None):
+            listfull = []
             if sortY == "3":
                 if line == "str_line":
                     console.rule("[cyan]Ok, print All Country:", style="cyan bold")
@@ -980,7 +981,7 @@ def run():
                     flag_str_sum = str("БД повреждена.")
                     all_ = "-1"
                 table = Table(title=Style.BRIGHT + fore + version + Style.RESET_ALL, style="green")
-                table.add_column("Страна:Кол-во websites", style="magenta")
+                table.add_column("Страна:Кол-во websites", style="magenta", justify="center")
                 table.add_column("All", style="cyan", justify='full')
                 table.add_row(flag_str_sum, all_)
                 console.print(table)
@@ -999,7 +1000,9 @@ def run():
                 for con in datajson_sort:
                     S = datajson_sort.get(con).get("country_klas") if sys.platform == 'win32' else datajson_sort.get(con).get("country")
                     i += 1
-                    print(f"{Style.DIM}{Fore.CYAN}{i}. {Style.RESET_ALL}{Fore.CYAN}{S}  {con}\n================")
+                    #print(f"{Style.DIM}{Fore.CYAN}{i}. {Style.RESET_ALL}{Fore.CYAN}{S}  {con}\n================")  #дорого
+                    listfull.append(f"\033[36;2m{i}.\033[0m \033[36m{S}  {con}")
+                print("\n================\n".join(listfull))
 # Сортируем по странам для Full/Demo Version (1!).
             elif sortY == "1":
                 listwindows = []
@@ -1017,7 +1020,10 @@ def run():
                     console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
 
                 for i in enumerate(sorted(listwindows, key=str.lower), 1):
-                    print(f"{Style.DIM}{Fore.CYAN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}", end='')
+                    #print(f"{Style.DIM}{Fore.CYAN}{i[0]}. {Style.RESET_ALL}{Fore.CYAN}{i[1]}", end='')  #дорого
+                    listfull.append(f"\033[36;2m{i[0]}. \033[0m\033[36m{i[1]}")
+                print("================\n".join(listfull))
+
 # Действие не выбрано '--list-all'.
             else:
                 print(Style.BRIGHT + Fore.RED + "└──Извините, но вы не выбрали действие [1/2/3]\n\nвыход")
@@ -1342,8 +1348,9 @@ function sortList() {
 
 <br><br>
 
-<a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">💊 Source Исходный код</span></a>
-<a target='_blank' href='https://sobe.ru/na/snoop_project_2020' class="DnA"><span class="DnSpan">💊 Donation Пожертвование</span></a>
+<a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">🛠  Source Исходный код</span></a>
+<a target='_blank' href='https://drive.google.com/file/d/12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih/view' class="DnA"><span class="DnSpan">📖 Doc Документация</span></a>
+<a target='_blank' href='https://sobe.ru/na/snoop_project_2020' class="DnA"><span class="DnSpan">💳 Donation Пожертвование</span></a>
 <br><br><br><br>
 
 </body>
@@ -1437,4 +1444,13 @@ function sortList() {
     starts(args.username) if args.user is False else starts(userlists)
 
 ## Arbeiten...
-run()  #snoop(...) --> def(..) --> starts(.)
+if __name__ == '__main__':
+#snoop(...) --> def(..) --> starts(.)
+    try:
+        run()
+    except KeyboardInterrupt:
+        print(Style.BRIGHT + Fore.RED + '\nОстанов')
+        try:
+            sys.exit(0)
+        except SystemExit:
+            os._exit(0)

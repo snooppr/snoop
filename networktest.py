@@ -25,8 +25,8 @@ def nettest():
 
         a = s.results.dict()
 
-        d = round(a.get("download")/1000000,2)
-        u = round(a.get("upload")/1000000,2)
+        d = round(a.get("download") / 1000000, 2)
+        u = round(a.get("upload") / 1000000, 2)
         p = round(a.get("ping"))
         v4 = a.get("client")
 
@@ -54,5 +54,5 @@ def nettest():
             p = f"Ping: [bold red]Сбой[/bold red]"
 # Результат.
         console2.print(Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {v4.get('ip')}\nПровайдер: {v4.get('isp')}\nЛокация: {v4.get('country')}",
-                                       title="🌐 Тест сети:", style=STL(color="cyan")))
+                                 title="🌐 Тест сети:", style=STL(color="cyan")))
         console2.log("[cyan]--> завершен")
