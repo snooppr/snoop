@@ -28,8 +28,8 @@ def nettest():
 
         a = s.results.dict()
 
-        d = round(a.get("download") / 1000000, 2)
-        u = round(a.get("upload") / 1000000, 2)
+        d = round(a.get("download") / 1_000_000, 2)
+        u = round(a.get("upload") / 1_000_000, 2)
         p = round(a.get("ping"))
         v4 = a.get("client")
 

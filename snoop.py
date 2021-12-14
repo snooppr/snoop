@@ -3,6 +3,7 @@
 
 import argparse
 import base64
+import certifi
 import csv
 import glob
 import json
@@ -33,7 +34,7 @@ from rich.table import Table
 try:
     import psutil
     import click
-except Exception:
+except ModuleNotFoundError:
     print("\n\nВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt\n\n")
 
 import snoopbanner
@@ -694,14 +695,16 @@ def license_snoop():
 
     threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
 
-    console.print('\n', Panel(f"Snoop: {platform.architecture(executable=sys.executable, bits='', linkage='')}\n" + \
-                              f"Source: {version}\n" + \
-                              f"OS: {platform.platform(aliased=True, terse=0)}\n" + \
-                              f"Locale: {locale.setlocale(locale.LC_ALL)}\n" + \
-                              f"Python: {platform.python_version()}\n" + \
-                              f"CPU(s): {psutil.cpu_count()}, threads(s): {threadS}\n" + \
-                              f"Ram: {int(psutil.virtual_memory().total/1024/1024)} Мб, доступно: " + \
-                              f"{int(psutil.virtual_memory().available/1024/1024)} Мб",
+    console.print('\n', Panel(f"Snoop: [dim cyan]{platform.architecture(executable=sys.executable, bits='', linkage='')}[/dim cyan]\n" + \
+                              f"Source: [dim cyan]{version}[/dim cyan]\n" + \
+                              f"OS: [dim cyan]{platform.platform(aliased=True, terse=0)}[/dim cyan]\n" + \
+                              f"Locale: [dim cyan]{locale.setlocale(locale.LC_ALL)}[/dim cyan]\n" + \
+                              f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
+                              f"Key libraries: [dim cyan](requests::{requests.__version__}), (certifi::{certifi.__version__})," + \
+                                               f"(spt::{networktest.speedtest.__version__})[/dim cyan]\n" + \
+                              f"CPU(s): [dim cyan]{psutil.cpu_count()}[/dim cyan], threads(s): [dim cyan]{threadS}[/dim cyan]\n" + \
+                              f"Ram: [dim cyan]{int(psutil.virtual_memory().total / 1024 / 1024)} Мб, доступно: " + \
+                                     f"{int(psutil.virtual_memory().available / 1024 / 1024)} Мб[/dim cyan]",
                               title='snoop info', style=STL(color="cyan")))
     sys.exit()
     #print(repr(cop))
@@ -753,14 +756,14 @@ def run():
                               help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию"
                              )
     search_group.add_argument("--base", "-b <path>", dest="json_file", default="BDdemo", metavar='',
-                              help="\033[36mУ\033[0mказать для поиска 'username' другую БД (Локально)/В demo version функция отключена"
+                              help="\033[36mУ\033[0mказать для поиска 'nickname' другую БД (Локально)/В demo version функция отключена"
                              )
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
-                              help="\033[36mП\033[0mодключиться для поиска 'username' к обновляемой web_БД (Онлайн)/\
+                              help="\033[36mП\033[0mодключиться для поиска 'nickname' к обновляемой web_БД (Онлайн)/\
                               В demo version функция отключена"
                              )
     search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list", default=None,
-                              help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'username' на одном указанном ресурсе, \
+                              help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'nickname' на одном указанном ресурсе, \
                               допустимо использовать опцию '-s' несколько раз"
                              )
     search_group.add_argument("--exclude", "-e <country_code>", action="append", metavar='', dest="exclude_country", default=None,
@@ -976,7 +979,6 @@ def run():
                 try:
                     flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "")
                     all_ = str(len(DB))
-                    #raise Exception("")
                 except Exception:
                     flag_str_sum = str("БД повреждена.")
                     all_ = "-1"
@@ -1361,7 +1363,6 @@ function sortList() {
 ## Запись в csv.
             try:
                 file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='')  #, encoding="utf-8")
-                #raise Exception("")
             except Exception:
                 file_csv = open(f"{dirpath}/results/nicknames/csv/username {time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.csv",
                                 "w", newline='')
