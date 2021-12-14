@@ -41,6 +41,7 @@ import snoopbanner
 import snoopplugins
 
 
+Android = True if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0) else False
 locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
 console = Console()
@@ -319,14 +320,14 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         requests.packages.urllib3.disable_warnings()
 
     if sys.platform != 'win32':
-        if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0):
+        if Android:
             session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
-        else:
+        else:  #linux
             if norm is False:
                 session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=26), session=my_session)
             else:
                 session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=16), session=my_session)
-    else:
+    else:  #windows
         session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=15), session=my_session)
 
     if reports:
@@ -430,7 +431,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 
 ## Панель вербализации.
-        if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
+        if not Android:
             if color:
                 console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполн.[/magenta] | [bold cyan]отклик сайта[/bold cyan] " + \
                                     "| [bold red]цвет.[bold cyan]об[/bold cyan].скор.[/bold red] | [bold cyan]разм.расп.данных[/bold cyan]",
@@ -693,7 +694,13 @@ def license_snoop():
         cop = copyright.read().replace("\ufeffSnoop", "Snoop")
         console.print(Panel(cop, title='COPYRIGHT', style=STL(color="white", bgcolor="blue")))
 
-    threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
+    if not Android:
+        try:
+            threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
+        except Exception:
+            console.print(f"\n[bold red]Используемая версия Snoop: '{version}' написана для платформы Android, " + \
+                          f"но кажется используется что-то другое 💻\n\nВыход")
+            sys.exit()
 
     console.print('\n', Panel(f"Source: [dim cyan]{version} {platform.architecture(executable=sys.executable, bits='', linkage='')}" + \
                               "[/dim cyan]\n"
@@ -914,7 +921,8 @@ def run():
 
 ## Опция  '-С'.
     if args.cert:
-        print(Fore.CYAN + "[+] активирована опция '-C': «проверка сертификатов на серверах вкл»")
+        sumbol = "выкл" if Android else "вкл"
+        print(Fore.CYAN + f"[+] активирована опция '-C': «проверка сертификатов на серверах {sumbol}»")
 
 
 ## Опция режима SNOOPnina > < нормальный режим.
@@ -1408,15 +1416,22 @@ function sortList() {
 
 
 ## Финишный вывод.
+        if Android:
+            recomend = "       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36m, или увеличьте значение опции" + \
+                       " '\033[36;1m-t\033[0m\033[36m', или используйте опцию '\033[36;1m-C\033[0m\033[36m'\033[0m\n"
+        else:
+            recomend = "       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение опции" + \
+                       " '\033[36;1m-t\033[0m\033[36m'\033[0m\n"
+
         direct_results = f"{dirpath}/nicknames/results/*/{username}.*" if sys.platform != 'win32' else f"{dirpath}\\results\\*\\{username}.*"
+
         print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all} сек_{s_size_all}Mb)")
         print(f"{Fore.CYAN}├──Cохранено в:{Style.RESET_ALL} {direct_results}")
         if flagBS_err >= 2:  #perc
             print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
             print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
             print(f"{Fore.CYAN}     └─нестабильное соединение или Internet Censorship")
-            print("       \033[36m└─используйте \033[36;1mVPN\033[0m \033[36mили увеличьте значение опции" + \
-                  " '\033[36;1m-t\033[0m\033[36m'\033[0m\n")
+            print(recomend)
         else:
             print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
         console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
@@ -1432,7 +1447,7 @@ function sortList() {
 ## Открывать/нет браузер с результатами поиска.
         if args.no_func is False and exists_counter >= 1:
             try:
-                if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
+                if not Android:
                     webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
                 else:
                     click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия результатов во внешнем браузере")
@@ -1451,7 +1466,7 @@ if __name__ == '__main__':
         run()
     except KeyboardInterrupt:
         console.print(f"\n[bold red]Останов [italic](высвобождение ресурсов, ждите...)")
-        if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
+        if not Android:
             sys.exit()
         else:
             os._exit(0)
