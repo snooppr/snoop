@@ -1,10 +1,10 @@
 beautifulsoup4==4.9.1
-certifi>=2020.6.20
+certifi>=2021.10.8
 click==8.0.3
 colorama==0.4.4
 folium==0.11.0
 more-itertools==8.11.0
-lxml==4.6.3
+lxml>=4.6.5
 playsound==1.2.2
 psutil==5.6.7
 requests==2.25.1
