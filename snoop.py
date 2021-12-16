@@ -336,7 +336,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     if sys.platform != 'win32':
         if Android:
             tread__ = len(BDdemo_new) if len(BDdemo_new) < 10 else 10
-            session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread_), session=my_session)
+            session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread__), session=my_session)
         else:  #linux
             if norm is False:
                 proc_ = len(BDdemo_new) if len(BDdemo_new) < 26 else 26
@@ -346,7 +346,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread_), session=my_session)
     else:  #windows
         tread__ = len(BDdemo_new) if len(BDdemo_new) < 14 else 14
-        session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread_), session=my_session)
+        session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread__), session=my_session)
 
     if reports:
         session2 = FuturesSession(max_workers=1, session=my_session)
