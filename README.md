@@ -261,7 +261,7 @@ plugins
 
 Установить [Termux](https://f-droid.org/ru/packages/com.termux/ "F-Droid")  
 ```
-# Примечание: установка Snoop на Termux продолжительная по времени
+# Примечание!: установка Snoop на Termux продолжительная по времени (минуты)
 # Войти в домашнюю папку Termux (т.е. просто открыть Termux)
 $ termux-setup-storage
 $ pwd #/data/data/com.termux/files/home #дефолтный/домашний каталог
