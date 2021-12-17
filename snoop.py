@@ -40,7 +40,7 @@ except ModuleNotFoundError:
 import snoopbanner
 import snoopplugins
 
-if int(platform.python_version_tuple( )[1]) >= 8:
+if int(platform.python_version_tuple()[1]) >= 8:
     from importlib.metadata import version as version_lib
     python3_8 = True
 else:
@@ -182,7 +182,7 @@ def print_found_country(websites_names, url, country_Emoj_Code, response_time=Fa
         print(f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.CYAN}{country_Emoj_Code}" \
               f"{Fore.GREEN}  {websites_names}:{Style.RESET_ALL}{Fore.GREEN} {url}")
     elif color is True and sys.platform != 'win32':
-        print(f"{Style.RESET_ALL}{country_Emoj_Code}{Style.BRIGHT}{Fore.GREEN}  {websites_names}:" \
+        print(f"{Style.RESET_ALL}{country_Emoj_Code}{Style.BRIGHT}{Fore.GREEN}  {websites_names}: " \
               f"{Style.RESET_ALL}{Style.DIM}{Fore.GREEN}{url}")
     else:
         print(f"[+] {websites_names}: {url}")
@@ -590,6 +590,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 response_text = r.text.encode(r.encoding)  #запрос данных.
             except Exception:
                 response_text = ""
+
             try:  # сессия в КБ
                 if reports is True:
                     session_size = session_size if error_type == 'redirection' else len(str(r.content))
@@ -1131,7 +1132,7 @@ def run():
 ## Проверка остальных (в т.ч. повтор) опций.
 ## Опция '--update y' обновление Snoop.
     if args.update:
-        print(Fore.CYAN + "[+] активирована опция '-U': «Обновление Snoop»")
+        print(Fore.CYAN + "[+] активирована опция '-U': «обновление snoop»")
         update_snoop()
 
 
