@@ -222,6 +222,7 @@ def get_response(request_future, error_type, websites_names, print_found_only=Fa
         censors += 1
         if print_found_only is False:
             print_error(websites_names, "Ошибка соединения", err2, verbose, color)
+            return "FakeNone", "", -1
     except requests.exceptions.Timeout as err3:
         global censors_timeout
         censors_timeout += 1
@@ -487,8 +488,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             r, error_type, response_time = get_response(request_future=param_websites["request_future"], error_type=error_type,
                                                         websites_names=websites_names, print_found_only=print_found_only,
                                                         verbose=verbose, color=color)
+
 # Повторное сбойное соединение через новую сессию быстрее, чем через adapter - timeout*2=дольше.
-            if norm is False and quickly is False and r is None and 'raised ConnectionError' in str(future):
+            if norm is False and quickly is False and r == "FakeNone":
                 #print(future)
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
                               'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
@@ -501,7 +503,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     future_rec = session3.get(url=url, headers=head_duble, allow_redirects=allow_redirects, timeout=1.5)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
-                              f"{Style.BRIGHT}{Fore.GREEN}    └──повторное соединение{Style.RESET_ALL}")
+                              f"{Style.DIM}{Fore.GREEN}    └──повторное соединение{Style.RESET_ALL}")
                     else:
                         if print_found_only is False:
                             print("повторное соединение")
@@ -510,7 +512,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                                                 websites_names=websites_names, print_found_only=print_found_only,
                                                                 verbose=verbose, color=color)
 
-                    if r is not None:
+                    if r != "FakeNone":
                         break
 
 
