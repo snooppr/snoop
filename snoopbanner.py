@@ -31,16 +31,16 @@ def donate():
 ├──PayPal:: [white]snoopproject@protonmail.com[/white]
 └──Bitcoin (только Donate)::[/cyan] [white]1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8[/white]
 
-[bold green]Если вас заинтересовала [red]Snoop Demo Version[/red], Вы можете официально приобрести
-[cyan]Snoop Full Version[/cyan], поддержав развитие проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
+[bold green]Если вас заинтересовала [red]Snoop demo version[/red], Вы можете официально приобрести
+[cyan]Snoop full version[/cyan], поддержав развитие проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
 [bold green]При пожертвовании/покупке в сообщении укажите информацию в таком порядке:[/bold green]
 
     [cyan]"Пожертвование на развитие Snoop Project: 20$ ваш e-mail
-    Full Version for Windows RU или Full Version for Linux RU,
+    full version for Windows RU или full version for Linux RU,
     статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
 
 [bold green]В ближайшее время на email пользователя придёт чек и ссылка для скачивания
-Snoop Full Version готовой сборки то есть исполняемого файла,
+Snoop full version готовой сборки то есть исполняемого файла,
 для Windows — это 'snoop.exe', для GNU/Linux — 'snoop'.
 
 Snoop в исполняемом виде (бинарник) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
@@ -49,18 +49,18 @@ Snoop в исполняемом виде (бинарник) предоставл
 
 Если Snoop требуется вам для служебных или образовательных задач,
 напишите письмо на e-mail разработчика в свободной форме.
-Студентам по направлению ИБ/Криминалистика Snoop ПО Full Version может быть
+Студентам по направлению ИБ/Криминалистика Snoop ПО full version может быть
 предоставлено на безвозмездной основе.
 
-Snoop Full Version: плагины без ограничений; 2200+ Websites;
+Snoop full version: плагины без ограничений; 2200+ Websites;
 поддержка и обновление Database Snoop.
 Подключение к Web_Database Snoop (online), которая расширяется/обновляется.[/bold green]
-[bold red]Ограничения Demo Version: Websites (Database Snoop сокращена в > 15 раз);
+[bold red]Ограничения demo version: Websites (Database Snoop сокращена в > 15 раз);
 отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
 
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]""",
-                        title="[bold red]Demo: (Публичная оферта)",
+                        title="[bold red]demo: (Публичная оферта)",
                         border_style="bold blue"))
 
     try:
@@ -215,12 +215,13 @@ def help_yandex_parser():
 username
 username2
 username3
-случайная строка\033[0m
+случайная строка
+bobbimonov@ya.ru\033[0m
 
 \033[32mПри использовании многопользовательского режима по окончанию поиска (быстро)
 открывается браузер с расширенным отчётом, в котором перечислены:
 логины пользователей; их имена; e-mail's и их персональные ссылки на сервисы Яндекса.
-А так же txt-отчет с расширенными, структурированными данными о пользователях.
+А так же доступен txt-отчет с расширенными, структурированными данными о пользователях.
 
 Плагин генерирует, но не проверяет 'доступность' персональных страниц пользователей по причине: частая защита страниц Я.капчей.
 
