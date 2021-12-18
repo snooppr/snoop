@@ -354,7 +354,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     if norm is False:
         session3 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=1), session=my_session)
 
-
 ## Результаты анализа всех сайтов.
     dic_snoop_full = {}
 ## Создание futures на все запросы. Это позволит распараллелить запросы с прерываниями.
@@ -811,7 +810,7 @@ def run():
                               help="\033[36mВ\033[0mлючить в поиск только выбранный регион, \
                               допустимо использовать опцию '-o' несколько раз, например, '-o US -o UA' поиск по США и Украине"
                              )
-    search_group.add_argument("--country", "-c", action="store_true", dest="country", default=False,
+    search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
                               help="\033[36mС\033[0mортировка 'печать/запись_результатов' по странам, а не по алфавиту"
                              )
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=5,
@@ -1152,7 +1151,7 @@ def run():
 
 
 ## Опция  '-c'. Сортировка по странам.
-    if args.country:
+    if args.country is True and args.web is False:
         print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись результатов по странам»")
         country_sites = sorted(BDdemo, key=lambda k: ("country" not in k, BDdemo[k].get("country", sys.maxsize)))
         sort_web_BDdemo_new = {}
