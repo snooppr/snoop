@@ -1066,18 +1066,17 @@ def run():
                     listfull.append(f"\033[36;2m{i[0]}. \033[0m\033[36m{i[1]}")
                 print("================\n".join(listfull))
 
-# Действие не выбрано '--list-all'.
-            else:
-                print(Style.BRIGHT + Fore.RED + "└──Извините, но вы не выбрали действие [1/2/3]\n\nВыход")
-                sys.exit()
-
 # Запуск функции '--list-all'.
-        if sortY != "3":
+        if sortY == "1" or sortY == "2":
             sort_list_all(BDflag, Fore.GREEN, "full version", line="str_line")
             sort_list_all(BDdemo, Fore.RED, "demo version")
-        else:
+        elif sortY == "3":
             sort_list_all(BDdemo, Fore.RED, "demo version", line="str_line")
             sort_list_all(BDflag, Fore.GREEN, "full version")
+# Действие не выбрано '--list-all'.
+        else:
+            print(Style.BRIGHT + Fore.RED + "└──Извините, но вы не выбрали действие [1/2/3]\n\nВыход")
+            sys.exit()
         sys.exit()
 
 
@@ -1091,29 +1090,31 @@ def run():
     if args.user:
         userlists = []
         userlists_bad = []
+        duble = []
 
         with open('specialcharacters', 'r', encoding="utf-8") as errspec:
             my_list_bad = list(errspec.read())
         try:
             patchuserlist = ("{}".format(args.user))
             userfile = patchuserlist.split('/')[-1] if sys.platform != 'win32' else patchuserlist.split('\\')[-1]
+            print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла:: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
 
             with open(patchuserlist, "r", encoding="utf8") as u1:
                 userlist = [line.strip() for line in u1.read().replace("\ufeff", "").splitlines()]
 
                 for i in userlist:
                     if any(D in i for D in my_list_bad):
-                        userlists_bad.append(i)
+                        userlists_bad.append(i) if i not in userlists_bad else duble.append(i)
                         continue
-                    elif ' ' in i:
-                        userlists.append(i.replace(" ", "%20"))
                     elif i == "":
                         continue
+                    elif ' ' in i:
+                        userlists.append(i.replace(" ", "%20")) if i not in userlists else duble.append(i.replace(" ", "%20"))
                     else:
-                        userlists.append(i)
+                        userlists.append(i) if i not in userlists else duble.append(i)
 
-            print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла: \033[36;1m{userfile}\033[0m\033[36m»::\033[0m")
-            console.print(Panel.fit("\n".join(userlists).replace("%20", " "), title=f"valid ({len(userlists)})", style=STL(color="cyan")))
+            _userlists = [f"{i}. {p}" for i, p in enumerate(userlists, 1)]
+            console.print(Panel.fit("\n".join(_userlists).replace("%20", " "), title=f"valid ({len(userlists)})", style=STL(color="cyan")))
         except Exception:
             print(f"\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m\n " + \
                   f"\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n" + \
@@ -1122,14 +1123,31 @@ def run():
                   f"\033[36mИли удалите из файла нечитаемые спецсимволы.")
             sys.exit()
 
+        if duble:
+            cnt = dict(Counter(duble))
+            dubles = [f"{k} ———> {v} шт." for k, v in cnt.items()]
+            _duble = [f"{i}. {p}" for i, p in enumerate(dubles, 1)]
+
+            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+                  f"\033[33mдубли\033[0m\033[36m и будут пропущены:\033[0m")
+            console.print(Panel.fit("\n".join(_duble), title=f"duplicate ({len(duble)})", style=STL(color="yellow")))
+
         if userlists_bad:
+            _userlists_bad = [f"{i}. {p}" for i, p in enumerate(userlists_bad, 1)]
             print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
-            console.print(Panel.fit("\n".join(userlists_bad), title=f"invalid ({len(userlists_bad)})", style=STL(color="bright_red")))
+            console.print(Panel.fit("\n".join(_userlists_bad), title=f"invalid ({len(userlists_bad)})", style=STL(color="bright_red")))
 
         if bool(userlists) is False:
             sys.exit()
 
+## Ник не задан или противоречие опций.
+    if bool(args.username) is False and bool(args.user) is False:
+        snoopbanner.logo(text="\nпараметры либо nickname(s) не задан(ы)")
+    if bool(args.username) is True and bool(args.user) is True:
+        print("\n\033[31;1mВыберите для поиска nickname(s) из файла или задайте в cli,\n" + \
+              "но не совместное использование nickname(s): из файла и cli.\n\nВыход")
+        sys.exit()
 
 ## Проверка остальных (в т.ч. повтор) опций.
 ## Опция '--update y' обновление Snoop.
@@ -1233,15 +1251,6 @@ def run():
               str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
               "    допустимо использовать опцию '-o' несколько раз\n" + \
               "    [опция '-o'] несовместима с [опциями '-s', '-c', 'e']")
-
-
-## Ник не задан или противоречие опций.
-    if bool(args.username) is False and bool(args.user) is False:
-        snoopbanner.logo(text="\nпараметры либо nickname(s) не задан(ы)")
-    if bool(args.username) is True and bool(args.user) is True:
-        print("\n\033[31;1mВыберите для поиска nickname(s) из файла или задайте в cli,\n" + \
-              "но не совместное использование nickname(s): из файла и cli.\n\nВыход")
-        sys.exit()
 
 
 ## Опция '-v'.
