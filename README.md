@@ -39,7 +39,7 @@ Snoop for OS Windows and GNU/Linux
 
 **Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
-[Snoop Full version database 2200+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop full version database 2200+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Релиз/Release
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
@@ -63,7 +63,7 @@ snoop.exe (for Windows) and snoop (for GNU/Linux)
 ## 2. Demonstration of one of the methods in the Plugin — [Yandex_parser]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
 
-**Search report dozen username (Plugin — Yandex_parser)**  
+**Search report dozen nickname (Plugin — Yandex_parser)**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
 ## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]  
@@ -74,7 +74,7 @@ snoop.exe (for Windows) and snoop (for GNU/Linux)
 <summary>Самостоятельная сборка ПО из исходного кода/Self-build software from source</summary>  
 
 **Native Installation**  
-Примечание: требуемая версия python 3.7; 3.8 или 3.9
+Примечание: требуемая версия python 3.7+
 
 ```
 # Клонировать репозиторий
@@ -113,7 +113,7 @@ service arguments:
   --list-all, -l        Вывести на печать детальную информацию о базе
                         данных Snoop
   --donate, -d          Пожертвовать на развитие Snoop Project-а,
-                        получить/приобрести Snoop Full Version
+                        получить/приобрести Snoop full version
   --autoclean, -a       Удалить все отчеты, очистить место
   --update, -U          Обновить Snoop
 
@@ -147,7 +147,7 @@ search arguments:
                         Влючить в поиск только выбранный регион,
                         допустимо использовать опцию '-o' несколько раз,
                         например, '-o US -o UA' поиск по США и Украине
-  --country, -c         Сортировка 'печать/запись_результатов' по
+  --country-sort, -c    Сортировка 'печать/запись_результатов' по
                         странам, а не по алфавиту
   --time-out , -t <digit> 
                         Установить выделение макс.времени на ожидание
@@ -181,25 +181,26 @@ search arguments:
                         https://юзерагент.рф/
   --normal-mode, -N     Переключатель режимов: SNOOPninja >
                         нормальный режим > SNOOPninja. По_умолчанию (GNU/Linux
-                        Full Version) вкл 'режим SNOOPninja': ускорение поиска
+                        full version) вкл 'режим SNOOPninja': ускорение поиска
                         ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое'
                         соединение на сбойных ресурсах. Режим SNOOPninja
-                        эффективен только для Snoop for GNU/Linux Full
-                        Version. По_умолчанию (в Windows) вкл 'нормальный
-                        режим'. В Demo Version переключатель режимов
+                        эффективен только для Snoop for GNU/Linux full
+                        version. По_умолчанию (в Windows) вкл 'нормальный
+                        режим'. В demo version переключатель режимов
                         деактивирован
   --quick-mode , -q     Вкл тихий режим поиска. Промежуточные
                         результаты не выводятся на печать. Повторные гибкие
                         соединения на сбойных ресурсах без замедления ПО.
                         Самый прогрессивный режим поиска (в разработке - не
                         использовать)
+
 ```
 
 **Example**
 ```
 # Для поиска только одного пользователя:
-$ python3 snoop.py username1 #Running from source
-$ snoop username1 #Running from release
+$ python3 snoop.py nickname1 #Running from source
+$ snoop nickname1 #Running from release
 # Или, например, кириллица поддерживается:
 $ python3 snoop.py олеся #Running from source
 # Для поиска имени, содержащего пробел:
@@ -208,10 +209,10 @@ $ snoop ivan_ivanov #Running from release
 $ snoop ivan-ivanov #Running from release
 
 # Запуск на OS Windows:
-$ python snoop.py username1 #Running from source
-$ snoop.exe username1 #Running from release
+$ python snoop.py nickname1 #Running from source
+$ snoop.exe nickname1 #Running from release
 # Для поиска одного и более юзеров:
-$ snoop.exe username1 username2 username3 username123321 #Running from release
+$ snoop.exe nickname1 nickname2 nickname123321 #Running from release
 
 # Поиск множества юзеров — сортировка вывода результатов по странам;
 # избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от ip-адреса пользователя);
@@ -232,7 +233,7 @@ $ snoop --module #Running from release
 ```
 
 **'ctrl + c'** — прервать поиск (остановить корректно ПО).  
-Найденные учетные записи будут храниться в ~/snoop/results/nicknames/*/'username'.{txt.csv.html}.  
+Найденные учетные записи будут храниться в ~/snoop/results/nicknames/*/'nickname'.{txt.csv.html}.  
 Для доступа внешнего браузера к результатам поиска на платформе Android желательно иметь рут права.  
 csv открывать в *office, разделитель полей **запятая**.  
 
@@ -249,7 +250,7 @@ $ python3 snoop.py --update #требуется установка Git.
 
  • [Для удобства отдельный мануал](https://github.com/snooppr/snoop/tree/snoop_termux "Snoop for Android")  
 
-search username  
+search nickname  
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
 </p>  
@@ -281,7 +282,7 @@ $ cd ~/snoop
 $ python3 -m pip install -r requirements.txt
 
 # Чтобы расширить вывод терминала в Termux (по умолчанию 2к строк отображение в CLI), например, отображение всей БД опции '--list-all [1/2]'  
-добавить строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties' (фича доступна в Termux v0.114+). 
+добавить строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties' (крайне полезная опция доступна в Termux v0.114+). 
 Перезапустить Termux.  
 
 # Пользователь также может запустить snoop по команде 'snoop' из любого места в CLI, создав alias.
@@ -305,7 +306,7 @@ $ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | gr
 | Клиент    |Блокировка соединения проактивной защитой (*Kaspersky) |    1    |
 |           |Недостаточная скорость интернет соединения EDGE/3G     |    2    |
 |           |Слишком низкое значение опции '-t'                     |    2    |
-|           |недопустимое username                                  |    3    |
+|           |недопустимое nickname                                  |    3    |
 |           |Ошибки соединения: [GipsysTeam; RamblerDaing; Mamochki |    7    |
 |           |                    Virtualireland; Forum_rzn; Ddo]    |    7    |
 |           |Ошибки соединения: [PayPal]                            |    4    |
@@ -322,12 +323,12 @@ $ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | gr
 1. Перенастроить свой Firewall (например, Kaspersky блочит Ресурсы для взрослых).
 
 2. Проверить скорость своего интернет соединения:  
-$ python3 snoop.py -v username  
+$ python3 snoop.py -v nickname  
 Если какой-либо из параметров сети выделен красным цветом, Snoop может подвисать во время поиска.  
 При низкой скорости увеличить значение 'x' опции '--time-out x':  
-$ python3 snoop.py -t 15 username  
+$ python3 snoop.py -t 15 nickname  
 
-3. Фактически это не ошибка. Исправить username  
+3. Фактически это не ошибка. Исправить nickname  
 (например, на некоторых сайтах недопустимы символы кириллицы; "пробелы"; или 'вьетнамо-китайская_кодировка'
 в именах пользователей, в целях экономии времени: — запросы фильтруются).
 

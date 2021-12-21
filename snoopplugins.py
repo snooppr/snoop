@@ -123,9 +123,10 @@ def module3():
                         rdict = {}
                         rdict.update(public_id="Увы", display_name="-No-")
 
+                    login_tab = login.split(sep='@', maxsplit=1)[0]
                     pub = rdict.get("public_id")
                     name = rdict.get("display_name")
-                    email = str(login) + "@yandex.ru"
+                    email = f"{login_tab}@yandex.ru"
                     avatar = rdict.get("default_avatar_id")
 
                     if rdict.get("display_name") == "-No-":
@@ -143,7 +144,7 @@ def module3():
                         if Ya == '3':
                             table1.add_row(name, "Пропуск", "Пропуск")
                         else:
-                            table1.add_row(name, login, email)
+                            table1.add_row(name, login_tab, email)
                         console.print(table1)
 
                         otzyv = f"https://reviews.yandex.ru/user/{pub}"

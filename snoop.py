@@ -25,7 +25,7 @@ from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from playsound import playsound
 from requests_futures.sessions import FuturesSession
-from rich.progress import BarColumn, TimeRemainingColumn, SpinnerColumn, TimeElapsedColumn, Progress
+from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
 from rich.panel import Panel
 from rich.style import Style as STL
 from rich.console import Console
@@ -39,6 +39,7 @@ except ModuleNotFoundError:
 
 import snoopbanner
 import snoopplugins
+
 
 if int(platform.python_version_tuple()[1]) >= 8:
     from importlib.metadata import version as version_lib
@@ -60,7 +61,7 @@ print(f"""\033[36m
 \___ \  __ \   _ \   _ \  __ \  
       | |   | (   | (   | |   | 
 _____/ _|  _|\___/ \___/  .__/  
-                         _|    \033[0m \033[37m{vers}\033[0m
+                         _|    \033[0m \033[37m\033[44m{vers}\033[0m
 """)
 
 _sb = "build" if vers_code == 'b' else "source"
@@ -499,7 +500,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 for _ in range(3):
                     global recensor
                     recensor += 1
-                    future_rec = session3.get(url=url, headers=head_duble, allow_redirects=allow_redirects, timeout=1.5)
+                    future_rec = session3.get(url=url, headers=head_duble, allow_redirects=allow_redirects, timeout=2.5)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
                               f"{Style.DIM}{Fore.GREEN}    └──повторное соединение{Style.RESET_ALL}")
@@ -1412,8 +1413,8 @@ function sortList() {
             flagBS_err = round((censors_cor + censors_timeout_cor) * 100 / flagBS, 3)
 
             writer = csv.writer(file_csv)
-            writer.writerow(['Никнейм', 'Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http', 'Общее_замедление/сек',
-                             'Отклик/сек', 'Общее_время/сек', 'Сессия/Kb'])
+            writer.writerow(['Никнейм', 'Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
+                             'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/Kb'])
 
             for site in FULL:
                 if FULL[site]['session_size'] == 0:
