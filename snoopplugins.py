@@ -374,7 +374,6 @@ def module2():
 
                 hvostR = os.path.split(put)[1]
                 timefinishR = time.time() - timestartR
-                path_dir = "/results/plugins/ReverseVgeocoder/" if sys.platform != 'win32' else "\\results\\ReverseVgeocoder\\"
 
                 print(Style.RESET_ALL + Fore.CYAN + f"\n╭Время обработки файла '\033[36;1m{hvostR}\033[0m\033[36m' -->",
                       "\033[36;1m(%.0f" % float(timefinishR) + "sec)" + Style.RESET_ALL)
@@ -383,8 +382,13 @@ def module2():
                 if lwZ1bad >= 1:
                     print(Style.RESET_ALL + Fore.CYAN + f"├─Отброшено --> '\033[31;1m{lwZ1bad}\033[0m\033[36m' случайных данных")
 
+                path_dir = f"/results/plugins/ReverseVgeocoder/" if sys.platform != 'win32' else "\\results\\plugins\\ReverseVgeocoder\\"
+                if sys.platform == 'win32':
+                    Path0 = f"{path_dir}{hvostR}[.txt.html.csv]"
+                else:
+                    Path0 = f"{path_dir}{hvostR}[.txt.html.csv]"
                 print(Style.RESET_ALL + Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
-                      f"\033[36;1m{dirresults}{path_dir}{hvostR}[.txt.html.csv]")
+                      f"\033[36;1m{dirresults}{Path0}\033[0m")
                 try:
                     if lcoord >= 1:
                         webbrowser.open(str("file://" + mapsme))
