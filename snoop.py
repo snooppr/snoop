@@ -311,17 +311,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             sys.exit()
 
 
-    ernumber = ['79', '89', "38", "37"]
+    ernumber = ['76', '77', '78', '79', '89', "38", "37", "9", "+"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
-        if len(username) >= 10 and len(username) <= 13 and username.isdigit() is True:
-            print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
+        if len(username) >= 10 and len(username) <= 13 and username[1:].isdigit() is True:
+            print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...\n\nВыход")
             sys.exit()
-    elif username[0] == "+" or username[0] == ".":
-        print(Style.BRIGHT + Fore.RED + "\nПубличный логин, начинающийся с такого символа, практически всегда невалидный...")
+    elif '.' in username and '@' not in username:
+        print(Style.BRIGHT + Fore.RED + "\nnickname, содержащий [.] и не являющийся email, невалидный...\n\nВыход")
         sys.exit()
-    elif username[0] == "9" and len(username) == 10 and username.isdigit() is True:
-        print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...")
-        sys.exit()
+
 
     global nick
     nick = username  #username 2-переменные (args/info)
@@ -1125,8 +1123,7 @@ def run():
 
         if duble:
             cnt = dict(Counter(duble))
-            dubles = [f"{k} ———> {v} шт." for k, v in cnt.items()]
-            _duble = [f"{i}. {p}" for i, p in enumerate(dubles, 1)]
+            _duble = [f"{i}. {k} ———> [bold yellow]{v} шт.[/bold yellow]" for i, (k, v) in enumerate(cnt.items(), 1)]
 
             print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[33mдубли\033[0m\033[36m и будут пропущены:\033[0m")
