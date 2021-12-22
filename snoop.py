@@ -1460,7 +1460,7 @@ function sortList() {
                        "'\033[36;1m-t\033[0m\033[36m'\n       └─или используйте опцию '\033[36;1m-C\033[0m\033[36m'\033[0m\n"
         else:
             recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       └─или увеличьте значение опции" + \
-                       "'\033[36;1m-t\033[0m\033[36m'"
+                       "'\033[36;1m-t\033[0m\033[36m'\033[0m\n"
 
         direct_results = f"{dirpath}/nicknames/results/*" if sys.platform != 'win32' else f"{dirpath}\\results\\*"
 

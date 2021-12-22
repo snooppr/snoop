@@ -30,7 +30,7 @@ def nettest():
             p = round(a.get("ping"))
             v4 = a.get("client")
 
-    # Скорость загрузки.
+# Скорость загрузки.
             try:
                 if d < 3: d = f"Download: [bold red]{d}[/bold red] Мбит/с"
                 elif 3 <= d <= 5.5: d = f"Download: [yellow]{d}[/yellow] Мбит/с"
