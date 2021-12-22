@@ -1074,7 +1074,6 @@ def run():
 # Действие не выбрано '--list-all'.
         else:
             print(Style.BRIGHT + Fore.RED + "└──Извините, но вы не выбрали действие [1/2/3]\n\nВыход")
-            sys.exit()
         sys.exit()
 
 
