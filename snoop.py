@@ -1516,14 +1516,14 @@ function sortList() {
             console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
 
 
-    ## Музыка.
+## Музыка.
             try:
                 if args.no_func is False: playsound('end.wav')
             except Exception:
                 pass
 
 
-    ## Открывать/нет браузер с результатами поиска.
+## Открывать/нет браузер с результатами поиска.
             if args.no_func is False and exists_counter >= 1:
                 try:
                     if not Android:
