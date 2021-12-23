@@ -54,7 +54,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.2G', "s", "d"
+vers, vers_code, demo_full = 'v1.3.2H', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -286,8 +286,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
         for ermail_iter in ermail:
             if ermail_iter.lower() == username.lower():
-                print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (поиск по email недоступен)")
-                sys.exit()
+                print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (обнаружен чистый домен)\nпропуск\n")
+                return False
             elif ermail_iter.lower() in username.lower():
                 usernameR = username.rsplit(sep=ermail_iter.lower(), maxsplit=1)[1] 
                 username = username.rsplit(sep='@', maxsplit=1)[0]
@@ -298,8 +298,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                       f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
 
                 if len(username) == 0 and len(usernameR) == 0:
-                    print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (поиск по email недоступен)")
-                    sys.exit()
+                    print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (обнаружен чистый домен)\nпропуск\n")
+                    return False
 
         del ermail
 
@@ -307,22 +307,22 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     with open('specialcharacters', 'r', encoding="utf-8") as errspec:
         my_list_bad = list(errspec.read())
         if any(symbol_bad in username for symbol_bad in my_list_bad):
-            console.print(f"[bold red]недопустимые символы в username: '{username}'\n\nВыход")
-            sys.exit()
+            console.print(f"⛔️ [bold red]Недопустимые символы в username: '{username}'\nПропуск\n")
+            return False
 
 
     ernumber = ['76', '77', '78', '79', '89', "38", "37", "9", "+"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
         if len(username) >= 10 and len(username) <= 13 and username[1:].isdigit() is True:
-            print(Style.BRIGHT + Fore.RED + "\nSnoop выслеживает учётки пользователей, но не номера телефонов...\n\nВыход")
-            sys.exit()
+            print(Style.BRIGHT + Fore.RED + "⛔️ Snoop выслеживает учётки пользователей, но не номера телефонов...\nпропуск\n")
+            return False
     elif '.' in username and '@' not in username:
-        print(Style.BRIGHT + Fore.RED + "\nnickname, содержащий [.] и не являющийся email, невалидный...\n\nВыход")
-        sys.exit()
+        print(Style.BRIGHT + Fore.RED + "⛔️ nickname, содержащий [.] и не являющийся email, невалидный...\nпропуск\n")
+        return False
 
 
     global nick
-    nick = username  #username 2-переменные (args/info)
+    nick = username.replace("%20", " ")  #username 2-переменные (args/info)
 
 
 ## Создать многопоточный/процессный сеанс для всех запросов.
@@ -468,7 +468,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     li_time = [0]
     with progress:
         if color is True:
-            task0 = progress.add_task("", total=len(BDdemo_new.items()))
+            task0 = progress.add_task("", total=len(BDdemo_new))
         for websites_names, param_websites in BDdemo_new.items():  #БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future
             if color is True:
                 progress.update(task0, advance=1, refresh=True)  #\nprogress.refresh()
@@ -831,9 +831,10 @@ def run():
                               Экономит ресурсы системы и ускоряет поиск"
                              )
     search_group.add_argument("--userlist", "-u <path>", metavar='', action="store", dest="user", default=False,
-                              help="\033[36mУ\033[0mказать файл со списком user-ов. \
-                              Пример_Linux: 'python3 snoop.py -u ~/users.txt'.\
-                              Пример_Windows: 'python snoop.py -u c:\\User\\User\Documents\\users.txt'"
+                              help="\033[36mУ\033[0mказать файл со списком user-ов. Snoop интеллектуально обработает \
+                              данные и предоставит доп.отчёты.\
+                              Пример для Linux: 'python3 snoop.py -u ~/users.txt'.\
+                              Пример для Windows: 'python snoop.py -u c:\\User\\User\Documents\\users.txt'"
                              )
     search_group.add_argument("--save-page", "-S", action="store_true", dest="reports", default=False,
                               help="\033[36mС\033[0mохранять найденные странички пользователей в локальные файлы"
@@ -1088,6 +1089,9 @@ def run():
         userlists = []
         userlists_bad = []
         duble = []
+        flipped = {}
+        d={}
+        _duble = []
 
         with open('specialcharacters', 'r', encoding="utf-8") as errspec:
             my_list_bad = list(errspec.read())
@@ -1097,21 +1101,24 @@ def run():
             print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла:: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
 
             with open(patchuserlist, "r", encoding="utf8") as u1:
-                userlist = [line.strip() for line in u1.read().replace("\ufeff", "").splitlines()]
+                userlist=[(line[0], line[1].strip()) for line in enumerate(u1.read().replace("\ufeff", "").splitlines(), 1)]
 
-                for i in userlist:
+                for num, i in userlist:
+                    i_for = (num, i)
                     if any(D in i for D in my_list_bad):
-                        userlists_bad.append(i) if i not in userlists_bad else duble.append(i)
+                        if all(i_for[1] != x[1] for x in userlists_bad):
+                            userlists_bad.append(i_for)
+                        else:
+                            duble.append(i_for)
                         continue
                     elif i == "":
                         continue
-                    elif ' ' in i:
-                        userlists.append(i.replace(" ", "%20")) if i not in userlists else duble.append(i.replace(" ", "%20"))
                     else:
-                        userlists.append(i) if i not in userlists else duble.append(i)
+                        if all(i_for[1] != x[1] for x in userlists):
+                            userlists.append(i_for)
+                        else:
+                            duble.append(i_for)
 
-            _userlists = [f"{i}. {p}" for i, p in enumerate(userlists, 1)]
-            console.print(Panel.fit("\n".join(_userlists).replace("%20", " "), title=f"valid ({len(userlists)})", style=STL(color="cyan")))
         except Exception:
             print(f"\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m\n " + \
                   f"\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n" + \
@@ -1120,21 +1127,48 @@ def run():
                   f"\033[36mИли удалите из файла нечитаемые спецсимволы.")
             sys.exit()
 
-        if duble:
-            cnt = dict(Counter(duble))
-            _duble = [f"{i}. {k} ———> [bold yellow]{v} шт.[/bold yellow]" for i, (k, v) in enumerate(cnt.items(), 1)]
+# good.
+        if userlists:
+            _userlists = [f"[dim cyan]{num}.[/dim cyan] {v} [{k}]".replace("", "") for num, (k, v) in enumerate(userlists, 1)]
+            console.print(Panel.fit("\n".join(_userlists).replace("%20", " "), title=f"valid ({len(userlists)})",
+                                    style=STL(color="cyan")))
 
-            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+# duplicate.
+        if duble:
+            dict_duble = dict(duble)
+            for key, value in dict_duble.items():
+                if value not in flipped:
+                    flipped[value] = [key]
+                else:
+                    flipped[value].append(key)
+
+            for k,v in flipped.items():
+                k=f"{k} ({len(v)})"
+                d[k]=v
+
+            for num, (k, v) in enumerate(d.items(), 1):
+                str_1 = f"[dim yellow]{num}.[/dim yellow] {k} {v}".replace(" (", " ——> ").replace(")", " шт.")
+                str_2 = str_1.replace("——> ", "——> [bold yellow]").replace(" шт.", " шт.[/bold yellow]")
+                _duble.append(str_2)
+
+            print(f"\n\033[36mСледующие niskname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[33mдубли\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(_duble), title=f"duplicate ({len(duble)})", style=STL(color="yellow")))
 
+# bad.
         if userlists_bad:
-            _userlists_bad = [f"{i}. {p}" for i, p in enumerate(userlists_bad, 1)]
-            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+            _userlists_bad = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(userlists_bad, 1)]
+            print(f"\n\033[36mСледующие niskname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
-            console.print(Panel.fit("\n".join(_userlists_bad), title=f"invalid ({len(userlists_bad)})", style=STL(color="bright_red")))
+            console.print(Panel.fit("\n".join(_userlists_bad), title=f"invalid_data ({len(userlists_bad)})",
+                                    style=STL(color="bright_red")))
 
-        if bool(userlists) is False:
+        USERLIST = [i[1] for i in userlists]
+
+        del userlists, duble, userlists_bad, _duble, flipped, d
+
+        if bool(USERLIST) is False:
+            console.print(f"\n⛔️ [bold red]Файл '{patchuserlist}' пустой'\n\nВыход\n")
             sys.exit()
 
 
@@ -1252,7 +1286,7 @@ def run():
 
 
 ## Опция '-v'.
-    if args.verbose and bool(args.username):
+    if args.verbose and bool(args.username) or args.verbose and bool(USERLIST):
         print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
         networktest.nettest()
 
@@ -1281,6 +1315,11 @@ def run():
 
             exists_counter = 0
 
+            if bool(FULL) is False:
+                with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
+                    bad_nick.write(f"{time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}  {username}\n")
+
+                continue
 
 ## Запись в txt.
             try:
@@ -1455,48 +1494,49 @@ function sortList() {
 
 
 ## Финишный вывод.
-        if Android:
-            recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       ├─или увеличьте значение опции" + \
-                       "'\033[36;1m-t\033[0m\033[36m'\n       └─или используйте опцию '\033[36;1m-C\033[0m\033[36m'\033[0m\n"
-        else:
-            recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       └─или увеличьте значение опции" + \
-                       "'\033[36;1m-t\033[0m\033[36m'\033[0m\n"
+        if bool(FULL) is True:
+            if Android:
+                recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       ├─или увеличьте значение опции" + \
+                           "'\033[36;1m-t\033[0m\033[36m'\n       └─или используйте опцию '\033[36;1m-C\033[0m\033[36m'\033[0m\n"
+            else:
+                recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       └─или увеличьте значение опции" + \
+                           "'\033[36;1m-t\033[0m\033[36m'\033[0m\n"
 
-        direct_results = f"{dirpath}/nicknames/results/*" if sys.platform != 'win32' else f"{dirpath}\\results\\*"
+            direct_results = f"{dirpath}/nicknames/results/*" if sys.platform != 'win32' else f"{dirpath}\\results\\*"
 
-        print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all} сек_{s_size_all}Mb)")
-        print(f"{Fore.CYAN}├──Cохранено в:{Style.RESET_ALL} {direct_results}")
-        if flagBS_err >= 2:  #perc
-            print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
-            print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
-            print(f"{Fore.CYAN}     └─нестабильное соединение или I_Censorship")
-            print(recomend)
-        else:
-            print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
-        console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
-
-
-## Музыка.
-        try:
-            if args.no_func is False: playsound('end.wav')
-        except Exception:
-            pass
+            print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all} сек_{s_size_all}Mb)")
+            print(f"{Fore.CYAN}├──Cохранено в:{Style.RESET_ALL} {direct_results}")
+            if flagBS_err >= 2:  #perc
+                print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
+                print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
+                print(f"{Fore.CYAN}     └─нестабильное соединение или I_Censorship")
+                print(recomend)
+            else:
+                print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
+            console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
 
 
-## Открывать/нет браузер с результатами поиска.
-        if args.no_func is False and exists_counter >= 1:
+    ## Музыка.
             try:
-                if not Android:
-                    webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
-                else:
-                    click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия результатов во внешнем браузере")
-                    click.launch(f"file://{dirpath}/results/nicknames/html/{username}.html")
+                if args.no_func is False: playsound('end.wav')
             except Exception:
-                print("\n\033[31;1mНе удалось открыть браузер\033[0m")
+                pass
+
+
+    ## Открывать/нет браузер с результатами поиска.
+            if args.no_func is False and exists_counter >= 1:
+                try:
+                    if not Android:
+                        webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
+                    else:
+                        click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия результатов во внешнем браузере")
+                        click.launch(f"file://{dirpath}/results/nicknames/html/{username}.html")
+                except Exception:
+                    print("\n\033[31;1mНе удалось открыть браузер\033[0m")
 
 
 ## поиск по выбранным пользователям.
-    starts(args.username) if args.user is False else starts(userlists)
+    starts(args.username) if args.user is False else starts(USERLIST)
 
 ## Arbeiten...
 if __name__ == '__main__':
