@@ -54,7 +54,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.2H', "s", "d"
+vers, vers_code, demo_full = 'v1.3.3', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -92,7 +92,7 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2022, 11, 11, 3, 0, 0, 0, 0, 0)
+ts = (2022, 12, 24, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
@@ -837,7 +837,7 @@ def run():
                               Пример для Windows: 'python snoop.py -u c:\\User\\User\Documents\\users.txt'"
                              )
     search_group.add_argument("--save-page", "-S", action="store_true", dest="reports", default=False,
-                              help="\033[36mС\033[0mохранять найденные странички пользователей в локальные файлы"
+                              help="\033[36mС\033[0mохранять найденные странички пользователей в локальные html-файлы"
                              )
     search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
                               help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
@@ -899,7 +899,7 @@ def run():
         print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
 
         def module():
-            print(f"\n" +\
+            print(f"\n" + \
                   f"\033[36m╭Выберите плагин или действие из списка\033[0m\n" + \
                   f"\033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m\n" + \
                   f"\033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m\n" + \
@@ -1101,7 +1101,7 @@ def run():
             print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла:: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
 
             with open(patchuserlist, "r", encoding="utf8") as u1:
-                userlist=[(line[0], line[1].strip()) for line in enumerate(u1.read().replace("\ufeff", "").splitlines(), 1)]
+                userlist = [(line[0], line[1].strip()) for line in enumerate(u1.read().replace("\ufeff", "").splitlines(), 1)]
 
                 for num, i in userlist:
                     i_for = (num, i)
@@ -1168,7 +1168,7 @@ def run():
         del userlists, duble, userlists_bad, _duble, flipped, d
 
         if bool(USERLIST) is False:
-            console.print(f"\n⛔️ [bold red]Файл '{patchuserlist}' пустой'\n\nВыход\n")
+            console.print(f"\n⛔️ [bold red]Файл '{patchuserlist}' не содержит ни одного валидного nickname'\n\nВыход\n")
             sys.exit()
 
 
@@ -1235,8 +1235,10 @@ def run():
             for site_yes in BDdemo:
                 if site.lower() == site_yes.lower():
                     BDdemo_new[site_yes] = BDdemo[site_yes]  #выбираем в словарь найденные сайты из БД
-
-            diff_k_bd = set(BDflag) ^ set(BDdemo)
+            try:
+                diff_k_bd = set(BDflag) ^ set(BDdemo)
+            except Exception:
+                snoopbanner.logo(text="\nnickname(s) не задан(ы)")
             for site_yes_full_diff in diff_k_bd:
                 if site.lower() == site_yes_full_diff.lower():  #если сайт (-s) в БД Full версии
                     print(f"\033[31;1m[?] Пропуск:\033[0m \033[36mсайт из БД \033[36;1mfull-версии\033[0m \033[36mнедоступен в" + \

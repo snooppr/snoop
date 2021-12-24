@@ -60,9 +60,7 @@ coord = []  #координаты многоцелевой список
 
 
 class ElapsedFuturesSession(FuturesSession):
-    """test_metrica: API:: https://pypi.org/project/requests-futures/"""
     def request(self, method, url, *args, **kwargs):
-        """test"""
         return super(ElapsedFuturesSession, self).request(method, url, *args, **kwargs)
 
 
@@ -86,15 +84,17 @@ def Erf(hvostfile):
 
 
 ## Модуль Yandex_parser.
+# api https://yandex.ru/dev/id/doc/dg/reference/response.html#response__norights_5
 def module3():
     while True:
         listlogin = []
         dicYa = {}
 
 # Парсинг.
-        def parsingYa(login):
+        def parsingYa():
             for login in listlogin:
                 urlYa = f'https://yandex.ru/collections/api/users/{login}/'
+                #urlYa = f'https://yandex.ru/znatoki/api/user/public/{login}/'
                 try:
                     r = sessionY.get(urlYa, headers=head0, timeout=3)
                     azS.append(r)
@@ -110,10 +110,13 @@ def module3():
 
                 for reqY, login in zip(azS, listlogin):
                     if Ya == '4':
-                        progressYa.refresh()
-                        progressYa.update(task, advance=1)
-
-                    rY = reqY.result()
+                        progressYa.update(task, advance=1, refresh=True)
+                    try:
+                        rY = reqY.result()
+                    except Exception:
+                        print(f"\n{Fore.RED}Ошибка сети пропуск —> '{Style.RESET_ALL}{Style.BRIGHT}" + \
+                              f"{Fore.RED}{login}{Style.RESET_ALL}{Fore.RED}'{Style.RESET_ALL}")
+                        continue
                     #print(rY.text)
                     try:
                         rdict = json.loads(rY.text)
@@ -137,7 +140,7 @@ def module3():
                             continue
                         continue
                     else:
-                        table1 = Table(title="\n" + Style.BRIGHT + Fore.RED + str(login) + Style.RESET_ALL, style="green")
+                        table1 = Table(title=f"\n{Style.DIM}{Fore.CYAN}demo_func{Style.RESET_ALL}", style="green")
                         table1.add_column("Имя", style="magenta", overflow="fold")
                         table1.add_column("Логин", style="cyan", overflow="fold")
                         table1.add_column("E-mail", style="cyan", overflow="fold")
@@ -202,9 +205,10 @@ def module3():
         elif Ya == '1':
             print("\033[36m└──Введите login/email разыскиваемого пользователя, например,\033[0m\033[32;1m bobbimonov\033[0m\n")
             login = console.input("[cyan]login/email --->  [/cyan]")
+            login = login.split(sep='@', maxsplit=1)[0]
             listlogin.append(login)
 
-            parsingYa(login)
+            parsingYa()
 
 # Указать ссылку на Я.Диск.
         elif Ya == '2':
@@ -225,7 +229,7 @@ def module3():
 
             if login != "NoneStop":
                 listlogin.append(login)
-                parsingYa(login)
+                parsingYa()
 
 # Указать идентиффикатор Яндекс пользователя.
         elif Ya == '3':
@@ -237,7 +241,7 @@ def module3():
                 print(Style.BRIGHT + Fore.RED + "└──Неверно указан идентификатор пользователя" + Style.RESET_ALL)
                 ravno()
             else:
-                parsingYa(login)
+                parsingYa()
 
 # Указать файл с логинами.
         elif Ya == '4':
