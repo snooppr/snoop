@@ -187,7 +187,7 @@ $ snoop --help #Running from release
 # Enable Snoop plugins:
 $ snoop --module y #Running from release
 
-# 'ctrl-c/z' — interrupt the search #it is not recommended to interrupt the search in this way in the 'SNOOPnina' mode.
+# 'ctrl-c', 'ctrl-\' — interrupt the search #it is not recommended to interrupt the search in this way in the 'SNOOPnina' mode.
 $ kill $(ps aux | grep python/snoop | awk '{print $2}') #fix' for unloading RAM during interrupts.
 ```
 The found accounts will be stored in ~/snoop/results/*/username.{txt.csv.html}.  
