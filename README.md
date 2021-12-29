@@ -281,7 +281,7 @@ $ pip install --upgrade pip
 # Клонировать репозиторий
 $ git clone https://github.com/snooppr/snoop -b snoop_termux
 # (Если флешкa FAT (ни ext4), в таком случае,
-# клонировать репозиторий только в ДОМАШНЮЮ директорию Termux)
+# клонировать репозиторий только в домашнюю директорию Termux)
 
 # Войти в рабочий каталог Snoop
 $ cd ~/snoop
@@ -292,10 +292,11 @@ $ python3 -m pip install -r requirements.txt
 # например, отображение всей БД опции '--list-all [1/2]'  
 # добавить строку 'terminal-transcript-rows=10000' в файл '~/.termux/termux.properties'
 # (крайне полезная опция доступна в Termux v0.114+). 
-#Перезапустить Termux.  
+# Перезапустить Termux.  
 
 # Пользователь также может запустить snoop по команде 'snoop' из любого места в CLI, создав alias.
 $ printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
+
 # Пользователь также может выполнить быструю проверку интересующего его сайта по БД,
 # не используя опцию "--list-all", используя команду "snoopcheck"
 $ alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | grep -i' >> .bashrc  
