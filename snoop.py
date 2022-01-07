@@ -329,7 +329,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests.packages.urllib3.disable_warnings()  #блокировка предупреждений о сертификате
     my_session = requests.Session()
 
-    if cert is False:
+    F_T = False if not Android else True
+    if cert is F_T:
         my_session.verify = False
         requests.packages.urllib3.disable_warnings()
 
