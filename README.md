@@ -43,6 +43,7 @@ Snoop for OS Windows and GNU/Linux
 
 ## Релиз/Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="16%" />  
+
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
 🇷🇺 🇺🇸 [Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
 
