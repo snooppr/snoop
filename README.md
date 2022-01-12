@@ -399,4 +399,4 @@ BTC (donation): 1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8
 
  • **email:** snoopproject@protonmail.com
 </details>
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/zvezda.jpeg" width="10%" />  
+[![test](https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="16%")](https://github.com)
