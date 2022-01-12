@@ -234,7 +234,7 @@ $ snoop --help #Running from release
 $ snoop --module #Running from release
 ```
 
-**'ctrl + c'** — прервать поиск (остановить корректно ПО в исх.форме).  **'ctrl + \'** build-version GNU\Linux.
+**'ctrl + c'** — прервать поиск (остановить корректно ПО в исх.форме).  **'ctrl + \\'** build-version GNU\Linux.
 Найденные учетные записи будут храниться в ~/snoop/results/nicknames/*/'nickname'.{txt.csv.html}.  
 Для доступа внешнего браузера к результатам поиска на платформе Android желательно иметь рут права.  
 csv открывать в *office, разделитель полей **запятая**.  
