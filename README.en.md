@@ -40,6 +40,7 @@ Snoop for OS Windows and GNU/Linux
 [Snoop Full version database 2300+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Release
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="16%" />  
 
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
 🇷🇺 🇺🇸 [Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows и GNU/Linux")  
@@ -292,5 +293,4 @@ BTC (donation): 1Ae5uUrmUnTjRzYEJ1KkvEY51r4hDGgNd8
 
  • **email:** snoopproject@protonmail.com
 </details>
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="16%" />  
 Please feel free to improve the translation of this page.
