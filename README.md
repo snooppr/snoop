@@ -42,7 +42,7 @@ Snoop for OS Windows and GNU/Linux
 [Snoop full version database 2300+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Релиз/Release
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="16%" />  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
 🇷🇺 🇺🇸 [Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
