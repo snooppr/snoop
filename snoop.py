@@ -47,14 +47,14 @@ if int(platform.python_version_tuple()[1]) >= 8:
 else:
     python3_8 = False
 
-Android = True if "arm" in platform.platform(aliased=True, terse=0) or "aarch64" in platform.platform(aliased=True, terse=0) else False
+Android = True if hasattr(sys, 'getandroidapilevel') else False
 
 locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.3', "s", "d"
+vers, vers_code, demo_full = 'v1.3.3A', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -136,9 +136,19 @@ recensor = 0
 
 
 ## Создание директорий результатов.
+if sys.platform == 'win32':
+    os.environ['LOCALAPPDATA'] + "\\snoop"
+elif Android:
+    try:
+        dirhome = "/data/data/com.termux/files/home/storage/shared/snoop"
+    except Exception:
+        dirhome = os.environ['HOME'] + "/snoop"
+else:
+    dirhome = os.environ['HOME'] + "/snoop"
+
 dirresults = os.getcwd()
-dirhome = os.environ['HOME'] + "/snoop" if sys.platform != 'win32' else os.environ['LOCALAPPDATA'] + "\\snoop"
-dirpath = dirresults if 'source' in version else dirhome
+dirpath = dirresults if 'source' in version and not Android else dirhome
+
 os.makedirs(f"{dirpath}/results", exist_ok=True)
 os.makedirs(f"{dirpath}/results/nicknames/html", exist_ok=True)
 os.makedirs(f"{dirpath}/results/nicknames/txt", exist_ok=True)
@@ -721,6 +731,14 @@ def license_snoop():
             console.print(f"\n[bold red]Используемая версия Snoop: '{version}' написана для платформы Android, " + \
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
+    else:
+        with open('config android.txt', "r", encoding="utf8") as f_r:
+            and_v = ''.join(num for num in list(f_r.read()) if num.isdigit())
+
+        try:
+            T_v = dict(os.environ).get("TERMUX_VERSION")
+        except:
+            T_v = "Not Termux!"
 
     if python3_8 is True:
         rich_v = f", (rich::{version_lib('rich')})"
@@ -1533,10 +1551,23 @@ function sortList() {
                     if not Android:
                         webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
                     else:
-                        click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия результатов во внешнем браузере")
-                        click.launch(f"file://{dirpath}/results/nicknames/html/{username}.html")
+                        with open('config android.txt', "r", encoding="utf8") as f_r:
+                            and_v = ''.join(num for num in list(f_r.read()) if num.isdigit())
+
+                        if int(and_v) >= 10 :
+                            click.pause(Style.DIM + Fore.CYAN + "\nДля авто-открытия результатов во внешнем браузере у пользователя " + \
+                                        "Android 10+ должны быть установлены приложения: 'Total commander' и 'Chrome browser'" + \
+                                        "\nнажмите любую клавишу для продолжения")
+                            click.launch(f"content://com.ghisler.files/storage/emulated/0/snoop/results/nicknames/html/{username}.html")
+                        else:
+                            click.pause(Style.DIM + Fore.CYAN + "\nДля авто-открытия результатов во внешнем браузере у пользователя " + \
+                                        "Android 7..9 должно быть установлено приложение: 'Chrome browser'" + \
+                                        "\nнажмите любую клавишу для продолжения")
+                            os.system(f"am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main -d " + \
+                                      f"file:///storage/emulated/0/snoop/results/nicknames/html/{username}.html")
+
                 except Exception:
-                    print("\n\033[31;1mНе удалось открыть браузер\033[0m")
+                    print(f"\n\033[31;1mНе удалось открыть браузер (проверьте в т.ч. {dirresults}/config android.txt)\033[0m")
 
 
 ## поиск по выбранным пользователям.
