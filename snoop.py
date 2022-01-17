@@ -1574,7 +1574,7 @@ function sortList() {
                                         "\n\nнажмите любую клавишу для продолжения")
                             os.system(f"am start --user 0 -a android.intent.action.VIEW -d " + \
                                       f"content://com.android.externalstorage.documents/document/" + \
-                                      f"primary%3Asnoop%2Fresults%2Fnicknames%2Fhtml%2F{username}.html")
+                                      f"primary%3Asnoop%2Fresults%2Fnicknames%2Fhtml%2F")
 
                 except Exception:
                     print(f"\n\033[31;1mНе удалось открыть результаты (проверьте в т.ч. {dirresults}/config android.txt)\033[0m")
