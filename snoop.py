@@ -137,7 +137,7 @@ recensor = 0
 
 ## Создание директорий результатов.
 if sys.platform == 'win32':
-    os.environ['LOCALAPPDATA'] + "\\snoop"
+    dirhome = os.environ['LOCALAPPDATA'] + "\\snoop"
 elif Android:
     try:
         dirhome = "/data/data/com.termux/files/home/storage/shared/snoop"
@@ -1178,14 +1178,14 @@ def run():
                 str_2 = str_1.replace("——> ", "——> [bold yellow]").replace(" шт.", " шт.[/bold yellow]")
                 _duble.append(str_2)
 
-            print(f"\n\033[36mСледующие niskname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[33mдубли\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(_duble), title=f"duplicate ({len(duble)})", style=STL(color="yellow")))
 
 # bad.
         if userlists_bad:
             _userlists_bad = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(userlists_bad, 1)]
-            print(f"\n\033[36mСледующие niskname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(_userlists_bad), title=f"invalid_data ({len(userlists_bad)})",
                                     style=STL(color="bright_red")))
@@ -1593,7 +1593,7 @@ if __name__ == '__main__':
             console.print(f"\n[bold red]Останов [italic](высвобождение ресурсов, ждите...)")
             os._exit(0)
         elif sys.platform == 'win32':
-            console.print(f"\n[bold red]Останов (высвобождение ресурсов, ждите...)")
+            console.print(f"\n[bold red]Останов (высвобождение ресурсов, закройте окно или ждите...)")
             sys.exit()
         elif sys.platform != 'win32':
             if 'demo' in version:
