@@ -824,7 +824,7 @@ def run():
                               help="\033[36mИ\033[0mсключить из поиска выбранный регион, \
                               допустимо использовать опцию '-e' несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир"
                              )
-    search_group.add_argument("--one-level", "-o <country code>", action="append", metavar='', dest="one_level", default=None,
+    search_group.add_argument("--one-level", "-o <country_code>", action="append", metavar='', dest="one_level", default=None,
                               help="\033[36mВ\033[0mлючить в поиск только выбранный регион, \
                               допустимо использовать опцию '-o' несколько раз, например, '-o US -o UA' поиск по США и Украине"
                              )
