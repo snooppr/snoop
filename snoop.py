@@ -344,20 +344,19 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         my_session.verify = False
         requests.packages.urllib3.disable_warnings()
 
-    if sys.platform != 'win32':
-        if Android:
-            tread__ = len(BDdemo_new) if len(BDdemo_new) < 10 else 10
-            session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread__), session=my_session)
-        else:  #linux
-            if norm is False:
-                proc_ = len(BDdemo_new) if len(BDdemo_new) < 26 else 26
-                session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=proc_), session=my_session)
-            else:
-                tread_ = len(BDdemo_new) if len(BDdemo_new) < 16 else 16
-                session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread_), session=my_session)
-    else:  #windows
+    if Android:  #android
+        tread__ = len(BDdemo_new) if len(BDdemo_new) < 10 else 10
+        session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread__), session=my_session)
+    elif sys.platform == 'win32':  #windows
         tread__ = len(BDdemo_new) if len(BDdemo_new) < 14 else 14
         session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread__), session=my_session)
+    elif sys.platform != 'win32':  #linux
+        if norm is False:
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 26 else 26
+            session1 = ElapsedFuturesSession(executor=ProcessPoolExecutor(max_workers=proc_), session=my_session)
+        else:
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < 16 else 16
+            session1 = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=tread__), session=my_session)
 
     if reports:
         session2 = FuturesSession(max_workers=1, session=my_session)
@@ -1113,12 +1112,8 @@ def run():
 
 ## Опция '-u' указания файла-списка разыскиваемых пользователей.
     if args.user:
-        userlists = []
-        userlists_bad = []
-        duble = []
-        flipped = {}
-        d={}
-        _duble = []
+        userlists, userlists_bad, duble, _duble = [], [], [], []
+        flipped, d = {}, {}
 
         with open('specialcharacters', 'r', encoding="utf-8") as errspec:
             my_list_bad = list(errspec.read())
