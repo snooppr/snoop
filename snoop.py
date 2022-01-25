@@ -771,7 +771,7 @@ def run():
                                      description=f"{Fore.CYAN}\nСправка{Style.RESET_ALL}",
                                      epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
                                              f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
-                                             f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: \033[36;1m2300+ \033[0m" + \
+                                             f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: \033[36;1m2400+ \033[0m" + \
                                              f"\033[36mWebsites!!!\033[0m\n {Style.DIM}{Fore.CYAN}English version — see release " + \
                                              f"(available 'old build Snoop EN version')\n\n"))
 # Service arguments.
