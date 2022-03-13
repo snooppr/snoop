@@ -49,12 +49,26 @@ else:
 
 Android = True if hasattr(sys, 'getandroidapilevel') else False
 
+try:
+    if os.environ.get('LANG') is not None and 'ru' in os.environ.get('LANG'):
+        rus_unix = True
+    else:
+        rus_unix = False
+    if sys.platform == 'win32' and "1251" in locale.setlocale(locale.LC_ALL):
+        rus_windows = True
+    else:
+        rus_windows = False
+except Exception:
+    rus_unix = False
+    rus_windows = False
+
+
 locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.3A', "s", "d"
+vers, vers_code, demo_full = 'v1.3.3B', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -1472,10 +1486,13 @@ function sortList() {
 
 ## Запись в csv.
             try:
-                file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='')  #, encoding="utf-8")
+                if rus_windows is False:
+                    file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='', encoding="utf-8")
+                else:
+                    file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='') #для ru_пользователей
             except Exception:
                 file_csv = open(f"{dirpath}/results/nicknames/csv/username {time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.csv",
-                                "w", newline='')
+                                "w", newline='', encoding="utf-8")
 
             usernamCSV = re.sub(" ", "_", nick)
             censors_cor = int((censors - recensor) / kef_user)  #err_connection
@@ -1483,8 +1500,12 @@ function sortList() {
             flagBS_err = round((censors_cor + censors_timeout_cor) * 100 / flagBS, 3)
 
             writer = csv.writer(file_csv)
-            writer.writerow(['Никнейм', 'Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
-                             'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/Kb'])
+            if rus_windows or rus_unix or Android:
+                writer.writerow(['Никнейм', 'Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
+                                 'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/Kb'])
+            else:
+                writer.writerow(['username', 'resource', 'country', 'url', 'url_username', 'status', 'http',
+                                 'deceleration/s', 'response/s', 'time/s', 'session/Kb'])
 
             for site in FULL:
                 if FULL[site]['session_size'] == 0:
