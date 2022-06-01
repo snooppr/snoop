@@ -1818,7 +1818,7 @@
 1817. 🇷🇺 [Op_ggRU](https://ru.op.gg/)
 1818. 🇹🇷 [Op_ggTR](https://tr.op.gg/)
 1819. 🇷🇺 [Opelclub](http://www.opelclub.ru)
-1820. 🇷🇺 [Opencartforum](https://opencartforum.com)
+1820. 🇷🇺 [Opencartforum (g. l.)](https://opencartforum.com)
 1821. 🌎 [OpenCollective](https://opencollective.com/)
 1822. 🇷🇺 [Opennet](https://www.opennet.ru/)
 1823. 🇺🇸 [Opensource](https://opensource.com/)
