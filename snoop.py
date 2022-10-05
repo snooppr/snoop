@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.3B', "s", "d"
+vers, vers_code, demo_full = 'v1.3.3C', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -738,15 +738,15 @@ def license_snoop():
         console.print(Panel(cop, title='COPYRIGHT', style=STL(color="white", bgcolor="blue")))
 
     if not Android:
+        os_ver = platform.platform(aliased=True, terse=0)
         try:
             threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
         except Exception:
-            console.print(f"\n[bold red]Используемая версия Snoop: '{version}' написана для платформы Android, " + \
+            console.print(f"\n[bold red]Используемая версия Snoop: '{version}' разработана для платформы Android, " + \
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
     else:
-        with open('config android.txt', "r", encoding="utf8") as f_r:
-            and_v = int(f_r.read().split()[-1])
+        os_ver = f'Android {subprocess.check_output(["getprop ro.build.version.release"], universal_newlines=True, shell=True, stderr=subprocess.STDOUT)}'.replace("\n", "")
 
         try:
             T_v = dict(os.environ).get("TERMUX_VERSION")
@@ -764,11 +764,11 @@ def license_snoop():
 
     console.print('\n', Panel(f"Program: [dim cyan]{version} {str(platform.architecture(executable=sys.executable, bits='', linkage=''))}" + \
                               "[/dim cyan]\n"
-                              f"OS: [dim cyan]{platform.platform(aliased=True, terse=0)}[/dim cyan]\n" + \
+                              f"OS: [dim cyan]{os_ver}[/dim cyan]\n" + \
                               f"Locale: [dim cyan]{locale.setlocale(locale.LC_ALL)}[/dim cyan]\n" + \
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
                               f"Key libraries: [dim cyan](requests::{requests.__version__}), (certifi::{certifi.__version__}), " + \
-                                               f"(spt::{networktest.speedtest.__version__}){rich_v}{req_fut_v}{plays_v}[/dim cyan]\n" + \
+                                               f"(speedtest::{networktest.speedtest.__version__}){rich_v}{req_fut_v}{plays_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{psutil.cpu_count()}[/dim cyan], threads(s): [dim cyan]{threadS}[/dim cyan]\n" + \
                               f"Ram: [dim cyan]{int(psutil.virtual_memory().total / 1024 / 1024)} Мб, доступно: " + \
                                      f"{int(psutil.virtual_memory().available / 1024 / 1024)} Мб[/dim cyan]",
@@ -1574,26 +1574,24 @@ function sortList() {
                     if not Android:
                         webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
                     else:
-                        with open('config android.txt', "r", encoding="utf8") as f_r:
-                            and_v = int(f_r.read().split()[-1])
+                        and_v = int(subprocess.check_output(["getprop", "ro.build.version.release"]))
 
-                        if and_v <= 0 : pass
-                        elif and_v <= 9:
+                        if and_v <= 9:
                             click.pause(Style.DIM + Fore.CYAN + "\nДля авто-открытия результатов во внешнем браузере у пользователя " + \
-                                        "Android 7..9 должно быть установлено приложение: 'Chrome browser' (см. config android.txt)" + \
+                                        "Android v7..9 должно быть установлено приложение: 'Chrome browser'" + \
                                         "\n\nнажмите любую клавишу для продолжения")
                             os.system(f"am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main -d " + \
                                       f"file:///storage/emulated/0/snoop/results/nicknames/html/{username}.html")
                         elif and_v >= 10:
                             click.pause(Style.DIM + Fore.CYAN + "\nДля открытия результатов во внешнем браузере на " + \
-                                        "Android 10+ используйте 'файловый менеджер' (см. config android.txt)" + \
+                                        "Android v10+ используйте 'файловый менеджер'" + \
                                         "\n\nнажмите любую клавишу для продолжения")
                             os.system(f"am start --user 0 -a android.intent.action.VIEW -d " + \
                                       f"content://com.android.externalstorage.documents/document/" + \
                                       f"primary%3Asnoop%2Fresults%2Fnicknames%2Fhtml%2F")
 
                 except Exception:
-                    print(f"\n\033[31;1mНе удалось открыть результаты (проверьте в т.ч. {dirresults}/config android.txt)\033[0m")
+                    print(f"\n\033[31;1mНе удалось открыть результаты\033[0m")
 
 
 ## поиск по выбранным пользователям.
