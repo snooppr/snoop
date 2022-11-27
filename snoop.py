@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.3C', "s", "d"
+vers, vers_code, demo_full = 'v1.3.3E', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -1574,22 +1574,27 @@ function sortList() {
                     if not Android:
                         webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
                     else:
-                        and_v = int(subprocess.check_output(["getprop", "ro.build.version.release"]))
+                        install_service = Style.DIM + Fore.CYAN + \
+                                              "\nДля авто-открытия результатов во внешнем браузере на Android у пользователя " + \
+                                              "должна быть настроена среда, код:" + Style.RESET_ALL + Fore.CYAN + \
+                                              "\ncd && pkg install termux-tools; echo 'allow-external-apps=true' >>" + \
+                                              ".termux/termux.properties" + Style.RESET_ALL + \
+                                              Style.DIM + Fore.CYAN + "\n\nИ перезапустить терминал."
 
-                        if and_v <= 9:
-                            click.pause(Style.DIM + Fore.CYAN + "\nДля авто-открытия результатов во внешнем браузере у пользователя " + \
-                                        "Android v7..9 должно быть установлено приложение: 'Chrome browser'" + \
-                                        "\n\nнажмите любую клавишу для продолжения")
-                            os.system(f"am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main -d " + \
-                                      f"file:///storage/emulated/0/snoop/results/nicknames/html/{username}.html")
-                        elif and_v >= 10:
-                            click.pause(Style.DIM + Fore.CYAN + "\nДля открытия результатов во внешнем браузере на " + \
-                                        "Android v10+ используйте 'файловый менеджер'" + \
-                                        "\n\nнажмите любую клавишу для продолжения")
-                            os.system(f"am start --user 0 -a android.intent.action.VIEW -d " + \
-                                      f"content://com.android.externalstorage.documents/document/" + \
-                                      f"primary%3Asnoop%2Fresults%2Fnicknames%2Fhtml%2F")
+                        termux_sv = False
+                        if os.path.exists("/data/data/com.termux/files/usr/bin/termux-open"):
+                            with open("/data/data/com.termux/files/home/.termux/termux.properties", "r", encoding="utf-8") as f:
+                                for line in f:
+                                    if ("allow-external-apps" in line and "#" not in line) and line.split("=")[1].strip().lower() == "true":
+                                        termux_sv = True
 
+                            if termux_sv is True:
+                                subprocess.run(f"termux-open {dirpath}/results/nicknames/html/{username}.html", shell=True)
+                            else:
+                                print(install_service)
+
+                        else:
+                            print(install_service)
                 except Exception:
                     print(f"\n\033[31;1mНе удалось открыть результаты\033[0m")
 

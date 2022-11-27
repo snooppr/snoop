@@ -303,7 +303,8 @@ $ cd && printf "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc
 $ cd && printf "alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | grep -i'" >> .bashrc  
 # перезапустить Termux.
 
-# ПРИМЕЧАНИЕ_3!: Snoop довольно умён и может автоматически открывать результаты поиска во внешнем веб-браузере или файловом менеджере.
+# ПРИМЕЧАНИЕ_3!: Snoop довольно умён и может автоматически открывать результаты поиска во внешнем веб-браузере:  
+$ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/termux.properties  
 # ПРИМЕЧАНИЕ_4!: после отключения РФ от Лондонской точки обмена интернет-трафиком скорость поиска Snoop на моб.операторах Мегафон/Yota упала в 2 раза.
 ```
 <p align="center">  

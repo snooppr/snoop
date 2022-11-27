@@ -479,7 +479,7 @@
 478. 🏁 [Easyeda](https://easyeda.com)
 479. 🇷🇺 [Easyen](https://easyen.ru/)
 480. 🇺🇸 [Ebaumsworld](https://www.ebaumsworld.com/)
-481. 🌎 [Ebay](https://www.ebay.com/)
+481. 🌎 [Ebay (g. l.)](https://www.ebay.com/)
 482. 🇪🇺 [Eclipso](https://www.eclipso.eu)
 483. 🇷🇺 [Ecodelo](https://ecodelo.org/)
 484. 🇷🇺 [Ecoindustry](https://www.ecoindustry.ru)
