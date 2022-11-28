@@ -192,7 +192,6 @@ $ snoop --module y #Running from release
 $ kill $(ps aux | grep python/snoop | awk '{print $2}') #fix' for unloading RAM during interrupts.
 ```
 The found accounts will be stored in ~/snoop/results/*/username.{txt.csv.html}.  
-To access the browser to the search results on the Android platform, it is desirable to have root rights.  
 open csv in office in, field separator **comma**.  
 
 Destroy **all** search results — delete the '~/snoop/results' directory.  
