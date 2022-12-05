@@ -399,4 +399,9 @@ $ sudo nano /etc/ssl/openssl.cnf
  • **27 января сжатие репозитория/если возникли проблемы сделайте 'git clone' по новому**  
 
  • **email:** snoopproject@protonmail.com
-</details>
+</details>  
+
+<p align="center"> 
+  Визиты <b>с 5 декабря 2022г.</b><br>
+  <img src="https://profile-counter.glitch.me/snooppr/count.svg" />
+</p>
