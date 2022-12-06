@@ -291,5 +291,6 @@ From time to time, it is necessary to follow all this "Web rock' n 'roll", so do
 
  • **email:** snoopproject@protonmail.com
 </details>
-This is a translated "Readme" and is incomplete. Full [Readme in Russian](https://github.com/snooppr/snoop/blob/master/README.md)  
+
+This is a translated "Readme" and is incomplete. Full [Readme in Russian](https://github.com/snooppr/snoop)  
 Please feel free to improve the translation of this page.
