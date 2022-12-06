@@ -51,7 +51,7 @@ Snoop в исполняемом виде (build-версия) предостав
 Студентам по направлению ИБ/Криминалистика Snoop ПО full version может быть
 предоставлено на безвозмездной основе.
 
-Snoop full version: плагины без ограничений; 2500+ Websites;
+Snoop full version: плагины без ограничений; 2600+ Websites;
 поддержка и обновление Database Snoop.
 Подключение к Web_Database Snoop (online), которая расширяется/обновляется.[/bold green]
 [bold red]Ограничения demo version: Websites (Database Snoop сокращена в > 15 раз);

@@ -15,7 +15,7 @@ in the search and processing of public data on the Internet.
 According to Snoop's specialized search, it is capable of competing with traditional search engines.  
 
 Comparison of indexations of bd-nikinal such tools:  
-<img src="https://img.shields.io/badge/Snoop-~2500+%20websites-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2600+%20websites-success" width="30%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
@@ -37,7 +37,7 @@ Snoop for OS Windows and GNU/Linux
 
 **Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop Full version database 2500+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop Full version database 2600+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -291,4 +291,5 @@ From time to time, it is necessary to follow all this "Web rock' n 'roll", so do
 
  • **email:** snoopproject@protonmail.com
 </details>
+This is a translated "Readme" and is incomplete. Full ["Readme" in Russian](https://github.com/snooppr/snoop/blob/master/README.md)  
 Please feel free to improve the translation of this page.
