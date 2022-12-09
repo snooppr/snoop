@@ -14,7 +14,7 @@ Snoop is a research dev-work (own database/closed bugbounty)
 in the search and processing of public data on the Internet.  
 According to Snoop's specialized search, it is capable of competing with traditional search engines.  
 
-Comparison of indexations of bd-nikinal such tools:  
+Comparison of indexations of databases such tools:  
 <img src="https://img.shields.io/badge/Snoop-~2600+%20websites-success" width="30%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
@@ -43,7 +43,7 @@ Snoop for OS Windows and GNU/Linux
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
-🇷🇺 🇺🇸 [Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows и GNU/Linux")  
+[Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows и GNU/Linux")  
 
 Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
  
@@ -98,62 +98,95 @@ $ apt-get install ttf-ancient-fonts or color apt-get install fonts-noto-color-em
 <details>
 <summary>Using</summary>  
 
-**English version — of Snoop see release (available 'OLD Snoop EN version 1.2.5').**
 ```
 $ snoop --help #manual snoop build version GNU/Linux
 
+Help
+
 optional arguments:
-  -h, --help           show this help message and exit
+  -h, --help            show this help message and exit
 
 service arguments:
-  --version, -V        About: Print to print versions :: OS; Snoop;
-                       Python and Licenses
-  --list all           Print detailed information about
-                       the Snoop database
-  --donate y, -d y     Donate on the development of Snoop Project,
-                       get/purchase Snoop Full Version
-  --autoclean y, -a y  Delete all reports, clean the place
-  --update y, -U y     Update Snoop Project
+  --version, -V         printing versions of :: OS; Snoop;
+                        Python and Licenses
+  --list-all, -l        Print detailed information about the 
+                        Snoop database
+  --donate, -d          Donate to the development of the Snoop Project,
+                        get/buy Snoop Full Version
+  --autoclean, -a       Delete all reports, clear space
+  --update, -U          Update Snoop
 
 plugins arguments:
-  --module y, -m y     OSINT search: use various plugins
-                       Snoop:: IP/GEO/YANDEX
-                       (the list of plugins will be updated)
+  --module, -m          OSINT search: use various plugins Snoop ::
+                        IP/GEO/YANDEX (the list of plugins will continue
+                        to grow)
 
 search arguments:
-  nickname             The nickname of the wanted user.
-                       It supports the search for several nicknames at the same time.
-                       A nickname containing a space in its name is enclosed in quotation marks
-  --verbose, -v        Print detailed verbalization 
-                       during the search for 'username' 
-  --base , -b          Specify another database to search for 'username' 
-                       (Local)
-  --web-base, -w       Connect to the updated web database to search for 'username'
-                       (Online)
-  --site , -s chess    Specify the site name from the database '--list all'. Search
-                       for 'username' on one specified resource
-  --time-out , -t 9    Set the allocation of max time to wait for a response from the server (seconds).
-                       Affects the duration of the search. Affects the 'Timeout errors.'
-                       It is necessary to enable this option almost always with a slow Internet connection,
-                       in order to avoid prolonged freezes in case of network problems (default 9s)
-  --found-print, -f    Print only found accounts
-  --no-func, -n        ✓Monochrome terminal, do not use colors in url
-                       ✓Mute
-                       ✓Prevent opening a web browser
-                       ✓Disable printing of country flags
-                       ✓Disable display and progress status.
-                       Saves system resources and speeds up searches
-  --userload , -u      Specify a file with a list of users. Example:
-                       'snoop -u ~/listusers.txt start'
-  --country, -c        Sorting 'print output/record_results' 
-                       by country, not alphabetically
-  --save-page, -S      Save the found user pages to local files
-  --cert-on, -C        Enable certificate verification on servers. 
-                       By default, certificate verification on servers is disabled, 
-                       which gives fewer errors and more positive results when searching for nickname
-  --normal, -N         Change the SNOOPnina mode > normal mode.
-                       On_ Silence on_ SNOOPninja mode: search acceleration ~25pct,
-                       RAM saving ~50pct, repeated 'flexible' connection on failed resources
+  nickname              The nickname of the wanted user.
+                        Searching for several names at the same time is 
+                        supported. Nicknames containing a space in their name
+                        are enclosed in quotation marks
+  --verbose, -v         When searching for 'username', print detailed
+                        verbalization
+  --base , -b <path>    Specify another database for search for 'username'
+                        (Local)/In demo version the function is disabled
+  --web-base, -w        Connect to search for 'username' to the updated web_DB
+                        (Online)/In demo version the function is disabled
+  --site , -s <site_name> 
+                        Specify the name of the site from the database 
+                        '--list-all'. Search for 'username' on one specified
+                        resource, it is acceptable to use the '-s' option
+                        multiple times
+  --exclude , -e <country_code> 
+                        Exclude the selected region from the search,
+                        it is permissible to use the '-e' option several times,
+                        for example, '-e RU -e WR' exclude Russia and World from search
+  --one-level , -o <country_code> 
+                        Include only the selected region in the search,
+                        it is permissible to use the '-o' option several times,
+                        for example, '-o US -o UA' search for USA and Ukraine
+  --country, -c         Sort 'print/record_results' by country,
+                        not alphabetically
+  --time-out , -t <digit> 
+                        Set maximum time allocation for waiting for a response 
+                        from the server (seconds). Affects the search duration.
+                        Affects 'Timeout errors:' On. this option is necessary
+                        with a slow Internet connection to avoid long freezes
+                        in case of network problems
+                        (by default, the value is set to 5s)
+  --found-print, -f     Print only found accounts
+  --no-func, -n         ✓Monochrome terminal, do not use colors in url 
+                        ✓Disable sound ✓Disable opening web browser
+                        ✓Disable printing of country flags 
+                        ✓Disable indication and progress status. 
+                        Saves system resources and speeds up searches
+  --userlist , -u <path> 
+                        Specify a file with a list of users.
+                        Example: 'python snoop.py -u
+                        /storage/emulated/0/Download/listusers.txt'
+  --save-page, -S       Save found user pages to local files
+  --cert-off, -C        Disable verification of certificates on servers. 
+                        By default, server certificate checking is enabled on
+                        Snoop for Android, which improves search speed, 
+                        but may result in higher percentages of false positives
+  --headers , -H <name> 
+                        Set the user-agent manually, the agent is enclosed in 
+                        quotes, by default a random or overridden user-agent
+                        from the snoop database is set for each site.
+                        https://юзерагент.рф/
+  --normal-mode, -N     Mode switch: SNOOPninja> normal mode> SNOOPninja. 
+                        By_default (GNU/Linux Full Version) on 
+                        'SNOOPninja mode': search acceleration ~ 25pct,
+                        RAM saving ~ 50pct, repeated 'flexible' connection on
+                        failed resources. SNOOPninja mode is only effective for
+                        Snoop for GNU/Linux Full Version. The default
+                        (on Windows) is 'normal mode'. 
+                        In Demo Version, the mode switch is deactivated
+  --quick-mode , -q     Quiet search mode on. Intermediate
+                        the results are not printed. Repeated flexible
+                        connections on faulty resources without slowing down
+                        the software. The most advanced search mode 
+                        (in development - not use)
 ```
 
 **Example**
