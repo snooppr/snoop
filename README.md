@@ -45,7 +45,7 @@ Snoop for OS Windows and GNU/Linux
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
 snoop.exe (for Windows) and snoop (for GNU/Linux)  
-🇷🇺 🇺🇸 [Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
+[Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
 
 **RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
@@ -102,7 +102,6 @@ $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-
 <details>
 <summary>Использование/Using</summary>  
 
-**English version — of Snoop see release (available 'OLD Snoop EN version 1.2.5')**
 ```
 Справка
 
@@ -146,7 +145,7 @@ search arguments:
                         например, '-e RU -e WR' исключить из поиска Россию и
                         Мир
   --one-level , -o <country_code> 
-                        Влючить в поиск только выбранный регион,
+                        Включить в поиск только выбранный регион,
                         допустимо использовать опцию '-o' несколько раз,
                         например, '-o US -o UA' поиск по США и Украине
   --country-sort, -c    Сортировка 'печать/запись_результатов' по

@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.3E', "s", "d"
+vers, vers_code, demo_full = 'v1.3.4', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -106,7 +106,7 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2022, 12, 24, 3, 0, 0, 0, 0, 0)
+ts = (2023, 12, 10, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
@@ -786,8 +786,7 @@ def run():
                                      epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
                                              f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
                                              f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: \033[36;1m2600+ \033[0m" + \
-                                             f"\033[36mWebsites!!!\033[0m\n {Style.DIM}{Fore.CYAN}English version — see release " + \
-                                             f"(available 'old build Snoop EN version')\n\n"))
+                                             f"\033[36mWebsites!!!\033[0m\n\n"))
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
     service_group.add_argument("--version", "-V", action="store_true",
@@ -838,7 +837,7 @@ def run():
                               допустимо использовать опцию '-e' несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир"
                              )
     search_group.add_argument("--one-level", "-o <country_code>", action="append", metavar='', dest="one_level", default=None,
-                              help="\033[36mВ\033[0mлючить в поиск только выбранный регион, \
+                              help="\033[36mВ\033[0mключить в поиск только выбранный регион, \
                               допустимо использовать опцию '-o' несколько раз, например, '-o US -o UA' поиск по США и Украине"
                              )
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
@@ -1432,8 +1431,8 @@ def run():
             file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
             file_html.write("<br> Запрашиваемый объект < <b>" + str(nick) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Сессия: " + "<b>" + str(round(timefinish)) + "сек_" + str(sess_size) + "Mb</b>.\n")
-            file_html.write("<br> Исключённые регионы: <b>" + str(exl) + ".</b>\n")
-            file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + ".</b>\n")
+            file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
+            file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + "</b>.\n")
             file_html.write("<br> База Snoop (demo version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_date) + ".</i><br><br>\n")
             file_html.write("""
