@@ -189,7 +189,7 @@ def module3():
               "[\033[0m\033[32;1mhelp\033[0m\033[36m] --> Справка\n" + \
               "[\033[0m\033[31;1mq\033[0m\033[36m] --> Выход\n")
 
-        Ya = input()
+        Ya = console.input("[cyan]ввод --->  [/cyan]")
 
 # Выход.
         if Ya == "q":
@@ -260,7 +260,7 @@ def module2():
 [\033[0m\033[32;1mhelp\033[0m\033[36m] --> Справка\n\
 [\033[0m\033[31;1mq\033[0m\033[36m] --> Выход\n""")
 
-        Vgeo = input()
+        Vgeo = console.input("[cyan]ввод --->  [/cyan]")
 
 # Выход.
         if Vgeo == "q":
@@ -331,7 +331,7 @@ def module2():
                       "\033[36m├──\033[36m[\033[0m\033[32;1m1\033[0m\033[36m] --> Простой\033[0m\n" + \
                       "\033[36m├──\033[36m[\033[0m\033[32;1m2\033[0m\033[36m] --> Подробный\033[0m\n" + \
                       "\033[36m└──\033[36m[\033[0m\033[31;1mq\033[0m\033[36m] --> Выход\033[0m\n")
-                rGeo = input()
+                rGeo = console.input("[cyan]ввод --->  [/cyan]")
 
                 if rGeo == "q" or rGeo == '1' or rGeo == '2':
                     break
@@ -564,7 +564,7 @@ def module1():
 
         if dip == "":
             uu3 = "Мой ip"
-        elif '.' not in dip:
+        elif '.' not in dip and ':' not in dip:
             print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
             sys.exit()
         else:

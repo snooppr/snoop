@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.4 (A)', "s", "d"
+vers, vers_code, demo_full = 'v1.3.5', "s", "d"
 
 print(f"""\033[36m
   ___|
