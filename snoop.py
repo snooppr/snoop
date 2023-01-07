@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.4', "s", "d"
+vers, vers_code, demo_full = 'v1.3.4 (A)', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -494,6 +494,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if color is True:
             task0 = progress.add_task("", total=len(BDdemo_new))
         for websites_names, param_websites in BDdemo_new.items():  #БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future
+            #print(round(psutil.virtual_memory().active/1024/1024), "Мб")
             if color is True:
                 progress.update(task0, advance=1, refresh=True)  #\nprogress.refresh()
 # Получить другую информацию сайта, снова.
@@ -953,7 +954,7 @@ def run():
                 module()
             elif mod == '1':
                 table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("GEO_IP/domain_v0.3", style="green", justify="center")
+                table.add_column("GEO_IP/domain_v0.4", style="green", justify="center")
                 table.add_row('Получение информации об ip/domain/url цели или по списку этих данных')
                 console.print(table)
 

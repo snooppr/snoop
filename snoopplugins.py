@@ -42,8 +42,8 @@ locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
 console = Console()
 time_date = time.localtime()
-head0 = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}
-url = "https://freegeoip.app/json/"
+head0 = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ' + \
+         f'Chrome/{random.choice(range(97, 108, 1))}.0.3809.100 Safari/537.36'}
 
 
 def ravno():
@@ -65,7 +65,7 @@ class ElapsedFuturesSession(FuturesSession):
 
 
 my_session = requests.Session()
-da = requests.adapters.HTTPAdapter(max_retries=4)
+da = requests.adapters.HTTPAdapter(max_retries=3)
 my_session.mount('https://', da)
 
 
@@ -468,7 +468,9 @@ def module1():
           "[\033[0m\033[32;1menter\033[0m\033[36m] --> информация о своем GEO_IP\n" + \
           "[\033[0m\033[31;1mq\033[0m\033[36m] --> Выход")
 
-    dip = input("\n")
+
+    dip = console.input("\n[cyan]ввод --->  [/cyan]")
+    print('')
 
 # выход.
     if dip == "q":
@@ -520,9 +522,52 @@ def module1():
 
 # одиночный запрос.
     else:
+        def ip_check(url_api, dip, res4, err):
+            url_api = url_api if dip == "" else f"{url_api}{res4}"
+
+            try:
+                r = my_session.get(url=url_api, headers=head0, timeout=3)
+                dip_dic = json.loads(r.text)
+                T1 = dip_dic.get("country_code") if err is False else dip_dic.get("country").get("isoCode")
+                T2 = dip_dic.get("region") if err is False else dip_dic.get("city").get("name")
+                T3 = dip_dic.get("latitude") if err is False else dip_dic.get("location").get("latitude")
+                T4 = dip_dic.get("longitude") if err is False else dip_dic.get("location").get("longitude")
+                if err is True and res4 == '-':
+                    T5 = my_session.get(url=f"https://ipinfo.io/ip", timeout=3).text
+                else:
+                    T5 = dip_dic.get("ip")
+            except Exception:
+                try:
+                    if err is True:
+                        p = '' if res4 == '-' else res4 + '/'
+                        console.log("[bold yellow]--> Внимание! Последний доступный url_ip[/bold yellow]")
+                        T1 = my_session.get(url=f"https://ipinfo.io/{p}country", timeout=3).text
+                        T2 = my_session.get(url=f"https://ipinfo.io/{p}region", timeout=3).text
+                        T5 = my_session.get(url=f"https://ipinfo.io/{p}ip", timeout=3).text
+
+                        T3 = "stop"
+                        T4 = "stop"
+                        return T1, T2, T3, T4, T5
+#                        raise Exception("")
+                    return ip_check('https://ipdb.ipcalc.co/ipdata/', dip, res4, err=True)
+                except:
+                    T1 = "-"
+                    T2 = "-"
+                    T3 = "stop"
+                    T4 = "stop"
+                    T5 = "-"
+                    print("""\033[31;1m\n
+|\ | _ ._  _
+| \|(_)| |(/_\033[0m""")
+
+            return T1, T2, T3, T4, T5
+
+
         if dip == "":
-            pass
-            uu3 = dip
+            uu3 = "Мой ip"
+        elif '.' not in dip:
+            print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
+            sys.exit()
         else:
             u = urlparse(dip).hostname
             uu3 = dip
@@ -530,57 +575,39 @@ def module1():
                 dip = dip.split("/")[0].strip()
             else:
                 dip = u.replace("www.", "").strip()
-        session = requests.Session()
-        url2 = 'https://freegeoip.app/json/{}'.format(dip)
-        try:
-            r = session.get(url=url2, headers=head0, timeout=3)
-            dip1 = r.text
-            dip_dic = json.loads(dip1)
-            T1 = dip_dic.get("country_code")
-            T2 = dip_dic.get("time_zone")
-            T3 = dip_dic.get("latitude")
-            T4 = dip_dic.get("longitude")
-            T5 = dip_dic.get("ip")
-        except Exception:
-            T1 = "-"
-            T2 = "-"
-            T3 = "stop"
-            T4 = "stop"
-            T5 = "-"
-            print("""\033[31;1m\n
-|\ | _ ._  _
-| \|(_)| |(/_\033[0m""")
 
-# IP/Домен > Домен и IPv4v6.
-        try:
-            resD1 = socket.getfqdn(dip)
-            res4, res6 = res46(resD1)
-        except Exception:
-            resD1 = "-"
-            print("err")
+        with console.status("[cyan]работаю[/cyan]"):
+            try: # IP/Домен > Домен и IPv4v6.
+                resD1 = socket.getfqdn(dip)
+                res4, res6 = res46(resD1)
+            except Exception:
+                resD1 = "-"
+                print("err")
 
-        table = Table(title=Style.BRIGHT + Fore.RED + str(uu3) + Style.RESET_ALL, style="green")
-        table.add_column("Сountry", style="magenta")
-        if dip == "":
-            table.add_column("Your IP", style="cyan", overflow="fold")
-        else:
-            table.add_column("IPv4", style="cyan", overflow="fold")
-            table.add_column("IPv6", style="cyan", overflow="fold")
-        table.add_column("Domain", style="green", overflow="fold")
-        table.add_column("Time_Zone", style="green", overflow="fold")
-        if dip == "":
-            table.add_row(T1, T5, resD1, T2)
-        else:
-            table.add_row(T1, res4, res6, resD1, T2)
-        console.print(table)
-        if T3 == "stop" and T4 == "stop":
-            print("\n")
-            URL_GEO = ""
-        else:
-            URL_GEO = f"https://www.openstreetmap.org/#map=13/{T3}/{T4}"
-            URL_GEO2 = f"https://www.google.com/maps/@{T3},{T4},28m/data=!3m1!1e3"
-            print(Style.BRIGHT + Fore.BLACK + f"{URL_GEO}" + Style.RESET_ALL)
-            print(Style.BRIGHT + Fore.BLACK + f"{URL_GEO2}\n" + Style.RESET_ALL)
+            T1, T2, T3, T4, T5 = ip_check('https://ipwho.is/', dip, res4, err=False)
+
+            table = Table(title=Style.BRIGHT + Fore.RED + str(uu3) + Style.RESET_ALL, style="green")
+            table.add_column("Сountry", style="magenta")
+            if dip == "":
+                table.add_column("Your IP", style="cyan", overflow="fold")
+            else:
+                table.add_column("IPv4", style="cyan", overflow="fold")
+                table.add_column("IPv6", style="cyan", overflow="fold")
+            table.add_column("Domain", style="green", overflow="fold")
+            table.add_column("Time_Zone", style="green", overflow="fold")
+            if dip == "":
+                table.add_row(T1, T5, resD1, T2)
+            else:
+                table.add_row(T1, res4, res6, resD1, T2)
+            console.print(table)
+            if T3 == "stop" and T4 == "stop":
+                print("\n")
+                URL_GEO = ""
+            else:
+                URL_GEO = f"https://www.openstreetmap.org/#map=13/{T3}/{T4}"
+                URL_GEO2 = f"https://www.google.com/maps/@{T3},{T4},12z"
+                print(Style.BRIGHT + Fore.BLACK + f"{URL_GEO}" + Style.RESET_ALL)
+                print(Style.BRIGHT + Fore.BLACK + f"{URL_GEO2}\n" + Style.RESET_ALL)
 
         module1()
 

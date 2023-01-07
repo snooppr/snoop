@@ -9,6 +9,6 @@ playsound==1.2.2
 psutil==5.6.7
 requests>=2.25.1
 requests-futures==1.0.0
-rich==10.15.2
+rich==13.0.1
 soupsieve>=2.1
 speedtest-cli==2.1.3
