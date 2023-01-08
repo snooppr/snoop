@@ -564,9 +564,9 @@ def module1():
             return T1, T2, T3, T4, T5
 
 
-        if dip == "":
-            uu3 = "Мой ip"
-        elif '.' not in dip and ':' not in dip or len(dip) <= 4:
+        if dip == "": uu3 = "Мой ip"
+
+        if '.' not in dip and ':' not in dip and dip != "" or (dip != "" and len(dip) <= 4):
             print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
             sys.exit()
         else:
@@ -577,13 +577,18 @@ def module1():
             else:
                 dip = u.replace("www.", "").strip()
 
+            domain = socket.getfqdn(dip)
+            try:
+                ipaddress.ip_address(dip)
+                resD1 = domain
+            except Exception:
+                resD1 = dip
+
         with console.status("[cyan]работаю[/cyan]"):
             try: # IP/Домен > Домен и IPv4v6.
-                resD1 = socket.getfqdn(dip)
                 res4, res6 = res46(resD1)
             except Exception:
-                resD1 = "-"
-                print("err")
+                res4 = "-"
 
             T1, T2, T3, T4, T5 = ip_check('https://ipwho.is/', dip, res4, err=False)
 
@@ -604,9 +609,9 @@ def module1():
             table.add_column("Домен", style="green", overflow="fold")
             table.add_column("Регион", style="green", overflow="fold")
             if dip == "":
-                table.add_row(T1, T5, resD1, T2)
+                table.add_row(T1, T5, domain, T2)
             else:
-                table.add_row(T1, res4, res6, resD1, T2)
+                table.add_row(T1, res4, res6, domain, T2)
             console.print(table)
             if T3 == "stop" and T4 == "stop":
                 print("\n")
