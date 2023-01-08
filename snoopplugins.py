@@ -564,14 +564,13 @@ def module1():
             return T1, T2, T3, T4, T5
 
 
-        if dip == "": uu3 = "Мой ip"
+        uu3 = "Мой ip" if dip == "" else dip
 
         if '.' not in dip and ':' not in dip and dip != "" or (dip != "" and len(dip) <= 4):
             print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
             sys.exit()
         else:
             u = urlparse(dip).hostname
-            uu3 = dip
             if bool(u) is False:
                 dip = dip.split("/")[0].strip()
             else:
