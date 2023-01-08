@@ -947,7 +947,7 @@ def run():
                   f"\033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m\n" + \
                   f"\033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n")
 
-            mod = console.input("[cyan]Я выбираю: [/cyan]")
+            mod = console.input("[cyan]ввод --->  [/cyan]")
 
             if mod == 'help':
                 snoopbanner.help_module_1()

@@ -5,6 +5,7 @@
 import click
 import csv
 import folium
+import ipaddress
 import itertools
 import json
 import locale
@@ -425,18 +426,15 @@ def module1():
 # Домен > IPv4/v6.
     def res46(dipp):
         try:
-            res46 = socket.getaddrinfo(f"{dipp}", 80)
+            res46 = socket.getaddrinfo(f"{dipp}", 443)
         except Exception:
             pass
         try:
-            res4 = res46[0][4][0]
+            res4 = res46[0][4][0] if ipaddress.IPv4Address(res46[0][4][0]) else ""
         except Exception:
             res4 = "-"
         try:
-            if ":" not in res46[-1][4][0]:
-                res6 = "-"
-            else:
-                res6 = res46[-1][4][0]
+            res6 = res46[-1][4][0] if ipaddress.IPv6Address(res46[-1][4][0]) else ""
         except Exception:
             res6 = "-"
         #print(res46)
@@ -522,7 +520,9 @@ def module1():
 # одиночный запрос.
     else:
         def ip_check(url_api, dip, res4, err):
-            url_api = url_api if dip == "" else f"{url_api}{res4}"
+            if dip == "": url_api = url_api
+            elif res4 == "-": url_api = f"{url_api}{dip}"
+            else: url_api = f"{url_api}{res4}"
 
             try:
                 r = my_session.get(url=url_api, headers=head0, timeout=3)
@@ -538,7 +538,9 @@ def module1():
             except Exception:
                 try:
                     if err is True:
-                        p = '' if res4 == '-' else res4 + '/'
+                        if dip == '': p = ''
+                        elif res4 != '-': p = res4 + '/'
+                        else: dip + '/'
                         console.log("[bold yellow]--> Внимание! Последний доступный url_ip[/bold yellow]")
                         T1 = my_session.get(url=f"https://ipinfo.io/{p}country", timeout=3).text
                         T2 = my_session.get(url=f"https://ipinfo.io/{p}region", timeout=3).text
@@ -564,7 +566,7 @@ def module1():
 
         if dip == "":
             uu3 = "Мой ip"
-        elif '.' not in dip and ':' not in dip:
+        elif '.' not in dip and ':' not in dip or len(dip) <= 4:
             print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
             sys.exit()
         else:
@@ -585,15 +587,22 @@ def module1():
 
             T1, T2, T3, T4, T5 = ip_check('https://ipwho.is/', dip, res4, err=False)
 
+            try:
+                if ipaddress.IPv4Address(dip): res4 = dip
+            except Exception: pass
+            try:
+                if ipaddress.IPv6Address(dip): res6 = dip
+            except Exception: pass
+
             table = Table(title=Style.BRIGHT + Fore.RED + str(uu3) + Style.RESET_ALL, style="green")
-            table.add_column("Сountry", style="magenta")
+            table.add_column("Код", style="magenta")
             if dip == "":
-                table.add_column("Your IP", style="cyan", overflow="fold")
+                table.add_column("IP", style="cyan", overflow="fold")
             else:
                 table.add_column("IPv4", style="cyan", overflow="fold")
                 table.add_column("IPv6", style="cyan", overflow="fold")
-            table.add_column("Domain", style="green", overflow="fold")
-            table.add_column("Time_Zone", style="green", overflow="fold")
+            table.add_column("Домен", style="green", overflow="fold")
+            table.add_column("Регион", style="green", overflow="fold")
             if dip == "":
                 table.add_row(T1, T5, resD1, T2)
             else:
