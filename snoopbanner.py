@@ -40,11 +40,11 @@ def donate():
 
 [bold green]В ближайшее время на email пользователя придёт чек и ссылка для скачивания
 Snoop full version готовой сборки то есть исполняемого файла,
-для Windows — это 'snoop.exe', для GNU/Linux — 'snoop'.
+для Windows — это 'snoop_cli.exe', для GNU/Linux — 'snoop_cli'.
 
 Snoop в исполняемом виде (build-версия) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
 Лицензия (RU/EN) для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке: [/bold green]
-[cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], а так же лицензия доступна по команде '[/bold green][cyan]snoop -V[/cyan][bold green]' или '[/bold green][cyan]snoop.exe -V[/cyan][bold green]' у исполняемого файла.
+[cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], а так же лицензия доступна по команде '[/bold green][cyan]snoop_cli -V[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe -V[/cyan][bold green]' у исполняемого файла.
 
 Если Snoop требуется вам для служебных или образовательных задач,
 напишите письмо на e-mail разработчика в свободной форме.

@@ -44,7 +44,7 @@ init(autoreset=True)
 console = Console()
 time_date = time.localtime()
 head0 = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ' + \
-         f'Chrome/{random.choice(range(97, 108, 1))}.0.3809.100 Safari/537.36'}
+         f'Chrome/{random.choice(range(97, 108, 1))}.0.{random.choice(range(2007, 3008, 23))}.100 Safari/537.36'}
 
 
 def ravno():
@@ -527,10 +527,10 @@ def module1():
             try:
                 r = my_session.get(url=url_api, headers=head0, timeout=3)
                 dip_dic = json.loads(r.text)
-                T1 = dip_dic.get("country_code") if err is False else dip_dic.get("country").get("isoCode")
-                T2 = dip_dic.get("region") if err is False else dip_dic.get("city").get("name")
-                T3 = dip_dic.get("latitude") if err is False else dip_dic.get("location").get("latitude")
-                T4 = dip_dic.get("longitude") if err is False else dip_dic.get("location").get("longitude")
+                T1 = dip_dic["country_code"] if err is False else dip_dic["country"]["isoCode"]
+                T2 = dip_dic["region"] if err is False else dip_dic["city"]["name"]
+                T3 = dip_dic["latitude"] if err is False else dip_dic["location"]["latitude"]
+                T4 = dip_dic["longitude"] if err is False else dip_dic["location"]["longitude"]
                 if err is True and res4 == '-':
                     T5 = my_session.get(url=f"https://ipinfo.io/ip", timeout=3).text
                 else:
@@ -564,7 +564,7 @@ def module1():
             return T1, T2, T3, T4, T5
 
 
-        uu3 = "Мой ip" if dip == "" else dip
+        zagol = "Мой ip" if dip == "" else dip
 
         if '.' not in dip and ':' not in dip and dip != "" or (dip != "" and len(dip) <= 4):
             print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
@@ -598,7 +598,7 @@ def module1():
                 if ipaddress.IPv6Address(dip): res6 = dip
             except Exception: pass
 
-            table = Table(title=Style.BRIGHT + Fore.RED + str(uu3) + Style.RESET_ALL, style="green")
+            table = Table(title=zagol, title_style="italic bold red", style="green", header_style='green')
             table.add_column("Код", style="magenta")
             if dip == "":
                 table.add_column("IP", style="cyan", overflow="fold")

@@ -106,7 +106,7 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2023, 12, 10, 3, 0, 0, 0, 0, 0)
+ts = (2024, 1, 8, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
@@ -393,7 +393,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         results_site['url_main'] = param_websites.get("urlMain")
 
 # Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое — постоянный с расширенным заголовком.
-        majR = random.choice(range(73, 94, 1))
+        majR = random.choice(range(97, 107, 1))
         minR = random.choice(range(2683, 4606, 13))
         patR = random.choice(range(52, 99, 1))
         RandHead=([f"{{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " + \
@@ -884,7 +884,7 @@ def run():
                                  )
     search_group.add_argument("--headers", "-H <name>", metavar='', dest="headerS", nargs=1, default=None,
                               help="""\033[36mЗ\033[0mадать user-agent вручную, агент заключается в кавычки, по умолчанию для каждого сайта
-                               задаётся случайный либо переопреденный user-agent из БД snoop. https://юзерагент.рф/"""
+                               задаётся случайный либо переопреденный user-agent из БД snoop"""
                              )
     search_group.add_argument("--normal-mode", "-N", action="store_false", dest="norm", default=True,
                               help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
@@ -1059,7 +1059,7 @@ def run():
                 except Exception:
                     flag_str_sum = str("БД повреждена.")
                     all_ = "-1"
-                table = Table(title=Style.BRIGHT + fore + version + Style.RESET_ALL, style="green")
+                table = Table(title=Style.BRIGHT + fore + version + Style.RESET_ALL, header_style='green', style="green")
                 table.add_column("Страна:Кол-во websites", style="magenta", justify='full')
                 table.add_column("All", style="cyan", justify='full')
                 table.add_row(flag_str_sum, all_)
