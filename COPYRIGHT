@@ -95,15 +95,6 @@ Copyright (c) 2019 Sherlock Project
 This software uses more-itertools library, which is
 Copyright (c) 2012 Erik Rose
 
-This software uses Beautiful Soup library, which is
-Copyright (c) 2004-2019 Leonard Richardson
-
-Beautiful Soup incorporates code from the html5lib library, which is
-Copyright (c) 2006-2013 James Graham and other contributors
-
-Beautiful Soup depends on the soupsieve library, which is 
-Copyright (c) 2018 Isaac Muse isaacmuse@gmail.com
-
 This software uses Rich library, which is
 Copyright 2020 Will McGugan
 
@@ -196,10 +187,6 @@ All rights reserved.
 
 This software uses colorama library, which is
 Copyright (c) 2010 Jonathan Hartley
-All rights reserved.
-
-This software uses lxml library, which is
-Copyright (c) 2004 Infrae
 All rights reserved.
 
 This software uses numpy library, which is
