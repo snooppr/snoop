@@ -44,7 +44,7 @@ Snoop for OS Windows and GNU/Linux
 ## Релиз/Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-snoop.exe (for Windows) and snoop (for GNU/Linux)  
+snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
 [Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
 
 **RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
@@ -196,19 +196,19 @@ search arguments:
 ```
 # Для поиска только одного пользователя:
 $ python3 snoop.py nickname1 #Running from source
-$ snoop nickname1 #Running from release
+$ snoop_cli nickname1 #Running from release linux
 # Или, например, кириллица поддерживается:
 $ python3 snoop.py олеся #Running from source
 # Для поиска имени, содержащего пробел:
-$ snoop "ivan ivanov" #Running from release
-$ snoop ivan_ivanov #Running from release
-$ snoop ivan-ivanov #Running from release
+$ snoop_cli "ivan ivanov" #Running from release linux
+$ snoop_cli ivan_ivanov #Running from release linux
+$ snoop_cli ivan-ivanov #Running from release linux
 
 # Запуск на OS Windows:
 $ python snoop.py nickname1 #Running from source
-$ snoop.exe nickname1 #Running from release
+$ snoop_cli.exe nickname1 #Running from release win
 # Для поиска одного и более юзеров:
-$ snoop.exe nickname1 nickname2 nickname123321 #Running from release
+$ snoop_cli.exe nickname1 nickname2 nickname123321 #Running from release win
 
 # Поиск множества юзеров — сортировка вывода результатов по странам;
 # избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от ip-адреса пользователя);
@@ -216,16 +216,16 @@ $ snoop.exe nickname1 nickname2 nickname123321 #Running from release
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop;
 # исключить из поиска все сайты в RU-регионе:
-$ snoop -с -t 6 -f -S -u ~/file.txt -w -e RU #Running from release
+$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w -e RU #Running from release linux
 
 # проверить базу данных Snoop:
-$ snoop --list-all #Running from release
+$ snoop_cli --list-all #Running from release linux
 
 # распечатать справку по функциям Snoop:
-$ snoop --help #Running from release
+$ snoop_cli --help #Running from release linux
 
 # Задействовать плагины Snoop:
-$ snoop --module #Running from release
+$ snoop_cli --module #Running from release linux
 ```
 
 **'ctrl + c'** — прервать поиск (остановить корректно ПО в исх.форме).  **'ctrl + \\'** build-version GNU\Linux.
@@ -233,7 +233,7 @@ $ snoop --module #Running from release
 csv открывать в *office, разделитель полей **запятая**.  
 
 Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  
-или ```snoop.exe --autoclean #Running from release OS Windows```
+или ```snoop_cli.exe --autoclean #Running from release OS Windows```
 ```
 # Обновляйте Snoop для тестирования новых функций в ПО:
 $ python3 snoop.py --update #требуется установка Git.

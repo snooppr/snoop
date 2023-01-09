@@ -42,7 +42,7 @@ Snoop for OS Windows and GNU/Linux
 ## Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-snoop.exe (for Windows) and snoop (for GNU/Linux)  
+snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
 [Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
 
 Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
@@ -193,42 +193,42 @@ search arguments:
 ```
 # To search for only one user:
 $ python3 snoop.py username1 #Running from source
-$ snoop username1 #Running from release
+$ snoop_cli username1 #Running from release linux
 # Or, for example, Cyrillic is supported:
 $ python3 snoop.py олеся #Running from source
 # To search for a name containing a space:
-$ snoop "bob dylan" #Running from release
-$ snoop dob_dylan #Running from release
-$ snoop bob-dylan #Running from release
+$ snoop_cli "bob dylan" #Running from release linux
+$ snoop_cli dob_dylan #Running from release linux
+$ snoop_cli bob-dylan #Running from release linux
 
 # Running on Windows OS:
 $ python snoop.py username1 #Running from source
-$ snoop.exe username1 #Running from release
+$ snoop_cli.exe username1 #Running from release win
 # To search for one or more users:
-$ snoop.exe username1 username2 username3 username4 #Running from release
+$ snoop_cli.exe username1 username2 username3 username4 #Running from release win
 
 # Search for a lot of users-sorting the output of results by country;
 # avoiding freezes on websites (more often the "dead zone" depends on the user's ip address);
 # print only found accounts; save pages of found accounts locally; 
 # specify a file with a list of wanted accounts; 
 # connect to the expandable and updated web-base Snoop for search:
-$ snoop -с -t 6 -f -S -u ~/file.txt -w start #Running from release
+$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w start #Running from release linux
 # check the Snoop database:
-$ snoop --list all #Running from release
+$ snoop_cli --list all #Running from release linux
 # print the help for Snoop functions:
-$ snoop --help #Running from release
+$ snoop_cli --help #Running from release linux
 
 # Enable Snoop plugins:
-$ snoop --module y #Running from release
+$ snoop_cli --module y #Running from release linux
 
 # 'ctrl-c', 'ctrl-\' — interrupt the search #it is not recommended to interrupt the search in this way in the 'SNOOPnina' mode.
-$ kill $(ps aux | grep python/snoop | awk '{print $2}') #fix' for unloading RAM during interrupts.
+$ kill $(ps aux | grep python/snoop_cli | awk '{print $2}') #fix' for unloading RAM during interrupts.
 ```
 The found accounts will be stored in ~/snoop/results/*/username.{txt.csv.html}.  
 open csv in office in, field separator **comma**.  
 
 Destroy **all** search results — delete the '~/snoop/results' directory.  
-or ```snoop.exe --autoclean y #Running from release OS Windows```
+or ```snoop_cli.exe --autoclean y #Running from release OS Windows```
 ```
 # Update Snoop to test new features in the software
 $ python3 snoop.py --update y #Git installation is required.
