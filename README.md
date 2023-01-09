@@ -228,7 +228,7 @@ $ snoop_cli --help #Running from release linux
 $ snoop_cli --module #Running from release linux
 ```
 
-**'ctrl + c'** — прервать поиск (остановить корректно ПО в исх.форме).  **'ctrl + \\'** build-version GNU\Linux.
+**'ctrl + c'** — прервать поиск (остановить корректно ПО в исх.форме), **'ctrl + \\'** в build-version GNU\Linux.  
 Найденные учетные записи будут храниться в ~/snoop/results/nicknames/*/'nickname'.{txt.csv.html}.  
 csv открывать в *office, разделитель полей **запятая**.  
 
