@@ -395,7 +395,7 @@ $ sudo nano /etc/ssl/openssl.cnf
 Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются:
 [Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
 
- • **27 января сжатие репозитория/если возникли проблемы сделайте 'git clone' по новому**  
+ • **27 января 2022г. сжатие репозитория/если возникли проблемы сделайте 'git clone' по новому**  
 
  • **email:** snoopproject@protonmail.com
 </details>  
