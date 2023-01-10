@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.5', "s", "d"
+vers, vers_code, demo_full = 'v1.3.5 (А)', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -739,21 +739,34 @@ def license_snoop():
         console.print(Panel(cop, title='COPYRIGHT', style=STL(color="white", bgcolor="blue")))
 
     if not Android:
-        os_ver = platform.platform(aliased=True, terse=0)
         try:
-            threadS = int(psutil.cpu_count() / psutil.cpu_count(logical=False))
+            ram = int(psutil.virtual_memory().total / 1024 / 1024)
+            ram_free = int(psutil.virtual_memory().available / 1024 / 1024)
+            if ram_free <= 700:
+                A, B = "[bold red]", "[/bold red]"
+            else:
+                A, B = "[dim cyan]", "[/dim cyan]"
+            os_ver = platform.platform(aliased=True, terse=0)
+            threadS = f"thread(s) per core: [dim cyan]{int(psutil.cpu_count() / psutil.cpu_count(logical=False))}[/dim cyan]"
         except Exception:
             console.print(f"\n[bold red]Используемая версия Snoop: '{version}' разработана для платформы Android, " + \
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
     else:
-        os_ver = 'Android ' + subprocess.check_output("getprop ro.build.version.release", shell=True, text=True,
-                                                      stderr=subprocess.STDOUT).strip()
-
         try:
+            ram = subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[1]
+            ram_free = int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
+            if ram_free <= 200:
+                A, B = "[bold red]", "[/bold red]"
+            else:
+                A, B = "[dim cyan]", "[/dim cyan]"
+            os_ver = 'Android ' + subprocess.check_output("getprop ro.build.version.release", shell=True, text=True).strip()
+            threadS = f'model: [dim cyan]{subprocess.check_output("getprop ro.product.cpu.abi", shell=True, text=True).strip()}[/dim cyan]'
             T_v = dict(os.environ).get("TERMUX_VERSION")
         except:
             T_v = "Not Termux?!"
+
+    termux = f"\nTermux: [dim cyan]{T_v}[/dim cyan]\n" if Android else "\n"
 
     if python3_8 is True:
         rich_v = f", (rich::{version_lib('rich')})"
@@ -766,14 +779,13 @@ def license_snoop():
 
     console.print('\n', Panel(f"Program: [dim cyan]{version} {str(platform.architecture(executable=sys.executable, bits='', linkage=''))}" + \
                               "[/dim cyan]\n"
-                              f"OS: [dim cyan]{os_ver}[/dim cyan]\n" + \
+                              f"OS: [dim cyan]{os_ver}[/dim cyan]" + termux + \
                               f"Locale: [dim cyan]{locale.setlocale(locale.LC_ALL)}[/dim cyan]\n" + \
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
                               f"Key libraries: [dim cyan](requests::{requests.__version__}), (certifi::{certifi.__version__}), " + \
-                                               f"(speedtest::{networktest.speedtest.__version__}){rich_v}{req_fut_v}{plays_v}[/dim cyan]\n" + \
-                              f"CPU(s): [dim cyan]{psutil.cpu_count()}[/dim cyan], threads(s): [dim cyan]{threadS}[/dim cyan]\n" + \
-                              f"Ram: [dim cyan]{int(psutil.virtual_memory().total / 1024 / 1024)} Мб, доступно: " + \
-                                     f"{int(psutil.virtual_memory().available / 1024 / 1024)} Мб[/dim cyan]",
+                                             f"(speedtest::{networktest.speedtest.__version__}){rich_v}{req_fut_v}{plays_v}[/dim cyan]\n" + \
+                              f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
+                              f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}",
                               title='snoop info', style=STL(color="cyan")))
     sys.exit()
     #print(repr(cop))

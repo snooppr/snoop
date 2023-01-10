@@ -66,7 +66,7 @@ class ElapsedFuturesSession(FuturesSession):
 
 
 my_session = requests.Session()
-da = requests.adapters.HTTPAdapter(max_retries=3)
+da = requests.adapters.HTTPAdapter(max_retries=2)
 my_session.mount('https://', da)
 
 
