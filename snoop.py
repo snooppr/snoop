@@ -747,7 +747,8 @@ def license_snoop():
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
     else:
-        os_ver = f'Android {subprocess.check_output(["getprop ro.build.version.release"], universal_newlines=True, shell=True, stderr=subprocess.STDOUT)}'.replace("\n", "")
+        os_ver = 'Android ' + subprocess.check_output("getprop ro.build.version.release", shell=True, text=True,
+                                                      stderr=subprocess.STDOUT).strip()
 
         try:
             T_v = dict(os.environ).get("TERMUX_VERSION")
