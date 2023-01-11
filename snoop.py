@@ -863,7 +863,7 @@ def run():
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
                               help="\033[36mС\033[0mортировка 'печать/запись_результатов' по странам, а не по алфавиту"
                              )
-    search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=5,
+    search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=9,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                               "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'."
                               " Вкл. эту опцию необходимо при медленном \
