@@ -15,6 +15,7 @@ import random
 import re
 import requests
 import shutil
+import signal
 import subprocess
 import sys
 import time
@@ -49,6 +50,10 @@ else:
 
 Android = True if hasattr(sys, 'getandroidapilevel') else False
 
+if not Android and not sys.platform == 'win32':
+    "не поломать старые версии python/termux"
+    from multiprocessing import active_children
+
 try:
     if os.environ.get('LANG') is not None and 'ru' in os.environ.get('LANG'):
         rus_unix = True
@@ -68,7 +73,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.5 (А)', "s", "d"
+vers, vers_code, demo_full = 'v1.3.5 (B)', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -793,6 +798,7 @@ def license_snoop():
 
 ## ОСНОВА.
 def run():
+    global working_mode
 # Назначение опций Snoop.
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      usage="python3 snoop.py [options] nickname\nor\nusage: python3 snoop.py nickname [options]\n",
@@ -899,7 +905,7 @@ def run():
                               help="""\033[36mЗ\033[0mадать user-agent вручную, агент заключается в кавычки, по умолчанию для каждого сайта
                                задаётся случайный либо переопреденный user-agent из БД snoop"""
                              )
-    search_group.add_argument("--normal-mode", "-N", action="store_false", dest="norm", default=True,
+    search_group.add_argument("--normal-mode", "-N", action="store_true", dest="norm", default=False,
                               help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
                               По_умолчанию (GNU/Linux full version) вкл 'режим SNOOPninja':
                               ускорение поиска ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
@@ -914,6 +920,7 @@ def run():
                              )
 
     args = parser.parse_args()
+    working_mode = args.norm
     #print(args)
 
     if args.quickly:
@@ -1008,7 +1015,7 @@ def run():
 
 
 ## Опция режима SNOOPnina > < нормальный режим.
-    if args.norm is False:
+    if args.norm is True:
         snoopbanner.logo(text="[-] в demo деактивирован переключатель '--': «режимов SNOOPninja/Normal»")
 
 
@@ -1621,17 +1628,15 @@ if __name__ == '__main__':
     try:
         run()
     except KeyboardInterrupt:
+        console.print(f"\n[bold red]Прерывание [italic](высвобождение ресурсов, ждите...)[/bold red]")
+        if sys.platform == 'win32':
+            os.kill(os.getpid(), signal.SIGBREAK)
         if Android:
-            console.print(f"\n[bold red]Останов [italic](высвобождение ресурсов, ждите...)")
-            os._exit(0)
-        elif sys.platform == 'win32':
-            console.print(f"\n[bold red]Останов (высвобождение ресурсов, закройте окно или ждите...)")
-            sys.exit()
-        elif sys.platform != 'win32':
-            if 'demo' in version:
-                console.print(f"\n[bold red]Останов (высвобождение ресурсов, ждите...)\n\n" + \
-                              "используйте 'ctrl + \\' для немедленного завершения программы (предпочтительнее)")
-                sys.exit()
+            os.kill(os.getpid(), signal.SIGKILL)
+        else:
+            if working_mode:
+                os.kill(os.getpid(), signal.SIGKILL)
             else:
-                console.print(f"\n[bold red]Внимание! Не используйте (ctrl + c/z) в GNU/Linux (full version)\n\n" + \
-                              "используйте 'ctrl + \\' для завершения программы")
+                for child in active_children():
+                    child.terminate()
+                    time.sleep(0.1)

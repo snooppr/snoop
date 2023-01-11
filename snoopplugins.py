@@ -15,6 +15,7 @@ import re
 import random
 import requests
 import shutil
+import signal
 import socket
 import sys
 import threading
@@ -423,22 +424,51 @@ def module2():
 
 ## Модуль GEO_IP/domain.
 def module1():
+    t_socket = 3
+    domain = None
+    res4, res6 = None, None
+
+# Домен.
+    def task_fbn(dip):
+        nonlocal domain
+        #time.sleep(11)
+        domain = socket.getfqdn(dip)
+        return domain
+
 # Домен > IPv4/v6.
     def res46(dipp):
+        nonlocal res4, res6
+        #time.sleep(11)
         try:
             res46 = socket.getaddrinfo(f"{dipp}", 443)
+            try:
+                res4 = res46[0][4][0] if ipaddress.IPv4Address(res46[0][4][0]) else ""
+            except Exception:
+                res4 = "-"
+            try:
+                res6 = res46[-1][4][0] if ipaddress.IPv6Address(res46[-1][4][0]) else ""
+            except Exception:
+                res6 = "-"
         except Exception:
-            pass
-        try:
-            res4 = res46[0][4][0] if ipaddress.IPv4Address(res46[0][4][0]) else ""
-        except Exception:
-            res4 = "-"
-        try:
-            res6 = res46[-1][4][0] if ipaddress.IPv6Address(res46[-1][4][0]) else ""
-        except Exception:
-            res6 = "-"
-        #print(res46)
+            res4, res6 = "-", "-"
+
         return res4, res6
+
+# Потоки.
+    def treads_dr(fun, args, dr):
+        """Потоки необходимы для того, чтобы оборачивать встроенные socket-функции, не имеющие таймаута.
+
+        В случае замедления (на Android ожидание может доходить до > 1 минуты, обычно возвращается пустой результат,
+        когда ip/domain ложный) уничтожить потоки через заданное время 't_socket'.
+        """
+
+        d1 = threading.Thread(target=fun, args=(args,))
+        d1.start()
+        d1.join(t_socket)
+
+        if domain is None or (dr=='res' and res4 is None and res6 is None):
+            console.log("[bold red]--> Внимание! Функционал критично замедлен,\n    нет смысла продолжать обработку данных.[/bold red]")
+            os.kill(os.getpid(), signal.SIGBREAK) if sys.platform == 'win32' else os.kill(os.getpid(), signal.SIGKILL)
 
 # Запрос future request.
     def reqZ():
@@ -483,9 +513,9 @@ def module1():
 [\033[0m\033[32;1m2\033[0m\033[36m] --> Offline (быстро)
 [\033[0m\033[32;1m3\033[0m\033[36m] --> Offline_тихий (очень быстро)
 [\033[0m\033[32;1mhelp\033[0m\033[36m] --> Справка\n\
-[\033[31;1mq\033[0m\033[36m] --> Выход\033[0m""")
+[\033[31;1mq\033[0m\033[36m] --> Выход\033[0m\n""")
 
-            dipbaza = input('\n')
+            dipbaza = console.input("[cyan]ввод --->  [/cyan]")
 
 # Выход.
             if dipbaza == "q":
@@ -564,7 +594,7 @@ def module1():
             return T1, T2, T3, T4, T5
 
 
-        zagol = "Мой ip" if dip == "" else dip
+        table_name = "Мой ip" if dip == "" else dip
 
         if '.' not in dip and ':' not in dip and dip != "" or (dip != "" and len(dip) <= 4):
             print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
@@ -576,18 +606,17 @@ def module1():
             else:
                 dip = u.replace("www.", "").strip()
 
-            domain = socket.getfqdn(dip)
+
+        with console.status("[cyan]работаю[/cyan]", spinner="earth"):
+            treads_dr(task_fbn, dip, dr="dom")
+
             try:
                 ipaddress.ip_address(dip)
                 resD1 = domain
             except Exception:
                 resD1 = dip
 
-        with console.status("[cyan]работаю[/cyan]"):
-            try: # IP/Домен > Домен и IPv4v6.
-                res4, res6 = res46(resD1)
-            except Exception:
-                res4 = "-"
+            treads_dr(res46, resD1, dr="res")
 
             T1, T2, T3, T4, T5 = ip_check('https://ipwho.is/', dip, res4, err=False)
 
@@ -598,7 +627,7 @@ def module1():
                 if ipaddress.IPv6Address(dip): res6 = dip
             except Exception: pass
 
-            table = Table(title=zagol, title_style="italic bold red", style="green", header_style='green')
+            table = Table(title=table_name, title_style="italic bold red", style="green", header_style='green')
             table.add_column("Код", style="magenta")
             if dip == "":
                 table.add_column("IP", style="cyan", overflow="fold")
