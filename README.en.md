@@ -128,10 +128,8 @@ search arguments:
                         are enclosed in quotation marks
   --verbose, -v         When searching for 'username', print detailed
                         verbalization
-  --base , -b <path>    Specify another database for search for 'username'
-                        (Local)/In demo version the function is disabled
   --web-base, -w        Connect to search for 'username' to the updated web_DB
-                        (Online)/In demo version the function is disabled
+                        (2600+ websites). In demo version the function is disabled
   --site , -s <site_name> 
                         Specify the name of the site from the database 
                         '--list-all'. Search for 'username' on one specified
@@ -151,9 +149,7 @@ search arguments:
                         Set maximum time allocation for waiting for a response 
                         from the server (seconds). Affects the search duration.
                         Affects 'Timeout errors:' On. this option is necessary
-                        with a slow Internet connection to avoid long freezes
-                        in case of network problems
-                        (by default, the value is set to 5s)
+                        with a slow Internet connection (by default 9s)
   --found-print, -f     Print only found accounts
   --no-func, -n         ✓Monochrome terminal, do not use colors in url 
                         ✓Disable sound ✓Disable opening web browser
@@ -165,10 +161,10 @@ search arguments:
                         Example: 'python snoop.py -u
                         /storage/emulated/0/Download/listusers.txt'
   --save-page, -S       Save found user pages to local files
-  --cert-off, -C        Disable verification of certificates on servers. 
-                        By default, server certificate checking is enabled on
-                        Snoop for Android, which improves search speed, 
-                        but may result in higher percentages of false positives
+  --cert-on, -C         Enable verification of certificates on servers.
+                        By default, certificate verification on servers is
+                        disabled, which gives fewer errors and more results
+                        when searching for nickname
   --headers , -H <name> 
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
@@ -182,11 +178,6 @@ search arguments:
                         Snoop for GNU/Linux Full Version. The default
                         (on Windows) is 'normal mode'. 
                         In Demo Version, the mode switch is deactivated
-  --quick-mode , -q     Quiet search mode on. Intermediate
-                        the results are not printed. Repeated flexible
-                        connections on faulty resources without slowing down
-                        the software. The most advanced search mode 
-                        (in development - not use)
 ```
 
 **Example**
@@ -212,7 +203,7 @@ $ snoop_cli.exe username1 username2 username3 username4 #Running from release wi
 # print only found accounts; save pages of found accounts locally; 
 # specify a file with a list of wanted accounts; 
 # connect to the expandable and updated web-base Snoop for search:
-$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w start #Running from release linux
+$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #Running from release linux
 # check the Snoop database:
 $ snoop_cli --list all #Running from release linux
 # print the help for Snoop functions:
@@ -221,8 +212,7 @@ $ snoop_cli --help #Running from release linux
 # Enable Snoop plugins:
 $ snoop_cli --module #Running from release linux
 
-# 'ctrl-c' — interrupt the search #it is not recommended to interrupt the search in this way in the 'SNOOPnina' mode.
-$ kill $(ps aux | grep python/snoop_cli | awk '{print $2}') #fix' for unloading RAM during interrupts.
+# 'ctrl-c' — abort search.  
 ```
 The found accounts will be stored in ~/snoop/results/*/username.{txt.csv.html}.  
 open csv in office in, field separator **comma**.  
