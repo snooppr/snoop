@@ -73,7 +73,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.5 (B)', "s", "d"
+vers, vers_code, demo_full = 'v1.3.5 (C)', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -358,8 +358,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests.packages.urllib3.disable_warnings()  #блокировка предупреждений о сертификате
     my_session = requests.Session()
 
-    F_T = False if not Android else True
-    if cert is F_T:
+    if cert is False:
         my_session.verify = False
         requests.packages.urllib3.disable_warnings()
 
@@ -798,6 +797,7 @@ def license_snoop():
 
 ## ОСНОВА.
 def run():
+    web_sites = "2600+"
     global working_mode
 # Назначение опций Snoop.
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -805,7 +805,7 @@ def run():
                                      description=f"{Fore.CYAN}\nСправка{Style.RESET_ALL}",
                                      epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
                                              f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
-                                             f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: \033[36;1m2600+ \033[0m" + \
+                                             f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: \033[36;1m{web_sites} \033[0m" + \
                                              f"\033[36mWebsites!!!\033[0m\n\n"))
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
@@ -842,10 +842,11 @@ def run():
                               help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию"
                              )
     search_group.add_argument("--base", "-b <path>", dest="json_file", default="BDdemo", metavar='',
-                              help="\033[36mУ\033[0mказать для поиска 'nickname' другую БД (Локально)/В demo version функция отключена"
+                              #help="\033[36mУ\033[0mказать для поиска 'nickname' другую БД (Локально)/В demo version функция отключена"
+                              help=argparse.SUPPRESS
                              )
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
-                              help="\033[36mП\033[0mодключиться для поиска 'nickname' к обновляемой web_БД (Онлайн)/\
+                              help=f"\033[36mП\033[0mодключиться для поиска 'nickname' к динамично-обновляемой web_БД ({web_sites} сайтов).\
                               В demo version функция отключена"
                              )
     search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list", default=None,
@@ -865,10 +866,8 @@ def run():
                              )
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=9,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
-                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'."
-                              " Вкл. эту опцию необходимо при медленном \
-                              интернет соединении, чтобы избежать длительных зависаний \
-                              при неполадках в сети (по умолчанию значение выставлено 5с)"
+                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'.\
+                              Вкл. эту опцию необходимо при медленном интернет соединении (по умолчанию 9с)"
                              )
     search_group.add_argument("--found-print", "-f", action="store_true", dest="print_found_only", default=False,
                               help="\033[36mВ\033[0mыводить на печать только найденные аккаунты"
@@ -890,17 +889,10 @@ def run():
     search_group.add_argument("--save-page", "-S", action="store_true", dest="reports", default=False,
                               help="\033[36mС\033[0mохранять найденные странички пользователей в локальные html-файлы"
                              )
-    if Android:
-        search_group.add_argument("--cert-off", "-C", default=False, action="store_true", dest="cert",
-                                  help="""\033[36mВ\033[0mыкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
-                                  на серверах включена на Snoop for Android, что повышает скорость поиска,
-                                  но может дать больший percent ложных срабатываний"""
-                                 )
-    else:
-        search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
+    search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
                                   help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
                                   на серверах отключена, что даёт меньше ошибок и больше результатов при поиске nickname"""
-                                 )
+                             )
     search_group.add_argument("--headers", "-H <name>", metavar='', dest="headerS", nargs=1, default=None,
                               help="""\033[36mЗ\033[0mадать user-agent вручную, агент заключается в кавычки, по умолчанию для каждого сайта
                                задаётся случайный либо переопреденный user-agent из БД snoop"""
@@ -974,7 +966,7 @@ def run():
                 module()
             elif mod == '1':
                 table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
-                table.add_column("GEO_IP/domain_v0.4", style="green", justify="center")
+                table.add_column("GEO_IP/domain_v0.5", style="green", justify="center")
                 table.add_row('Получение информации об ip/domain/url цели или по списку этих данных')
                 console.print(table)
 
@@ -1010,8 +1002,7 @@ def run():
 
 ## Опция  '-С'.
     if args.cert:
-        sumbol = "выкл" if Android else "вкл"
-        print(Fore.CYAN + f"[+] активирована опция '-C': «проверка сертификатов на серверах {sumbol}»")
+        print(Fore.CYAN + f"[+] активирована опция '-C': «проверка сертификатов на серверах вкл»")
 
 
 ## Опция режима SNOOPnina > < нормальный режим.
@@ -1560,11 +1551,7 @@ function sortList() {
 
 ## Финишный вывод.
         if bool(FULL) is True:
-            if Android:
-                recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       ├─или увеличьте значение опции" + \
-                           "'\033[36;1m-t\033[0m\033[36m'\n       └─или используйте опцию '\033[36;1m-C\033[0m\033[36m'\033[0m\n"
-            else:
-                recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       └─или увеличьте значение опции" + \
+            recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       └─или увеличьте значение опции" + \
                            "'\033[36;1m-t\033[0m\033[36m'\033[0m\n"
 
             direct_results = f"{dirpath}/nicknames/results/*" if sys.platform != 'win32' else f"{dirpath}\\results\\*"

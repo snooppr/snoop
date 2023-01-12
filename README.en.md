@@ -145,7 +145,7 @@ search arguments:
                         Include only the selected region in the search,
                         it is permissible to use the '-o' option several times,
                         for example, '-o US -o UA' search for USA and Ukraine
-  --country, -c         Sort 'print/record_results' by country,
+  --country-sort, -c    Sort 'print/record_results' by country,
                         not alphabetically
   --time-out , -t <digit> 
                         Set maximum time allocation for waiting for a response 
@@ -219,19 +219,19 @@ $ snoop_cli --list all #Running from release linux
 $ snoop_cli --help #Running from release linux
 
 # Enable Snoop plugins:
-$ snoop_cli --module y #Running from release linux
+$ snoop_cli --module #Running from release linux
 
-# 'ctrl-c', 'ctrl-\' — interrupt the search #it is not recommended to interrupt the search in this way in the 'SNOOPnina' mode.
+# 'ctrl-c' — interrupt the search #it is not recommended to interrupt the search in this way in the 'SNOOPnina' mode.
 $ kill $(ps aux | grep python/snoop_cli | awk '{print $2}') #fix' for unloading RAM during interrupts.
 ```
 The found accounts will be stored in ~/snoop/results/*/username.{txt.csv.html}.  
 open csv in office in, field separator **comma**.  
 
 Destroy **all** search results — delete the '~/snoop/results' directory.  
-or ```snoop_cli.exe --autoclean y #Running from release OS Windows```
+or ```snoop_cli.exe --autoclean #Running from release OS Windows```
 ```
 # Update Snoop to test new features in the software
-$ python3 snoop.py --update y #Git installation is required.
+$ python3 snoop.py --update #Git installation is required.
 ```
 </details>  
 

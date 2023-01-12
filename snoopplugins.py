@@ -467,7 +467,7 @@ def module1():
         d1.join(t_socket)
 
         if domain is None or (dr=='res' and res4 is None and res6 is None):
-            console.log("[bold red]--> Внимание! Функционал критично замедлен,\n    нет смысла продолжать обработку данных.[/bold red]")
+            console.log("[bold red]--> таймаут | ресурс не существует.[/bold red]")
             os.kill(os.getpid(), signal.SIGBREAK) if sys.platform == 'win32' else os.kill(os.getpid(), signal.SIGKILL)
 
 # Запрос future request.
@@ -490,9 +490,8 @@ def module1():
     print("\n\033[36mВведите домен (пример:\033[0m \033[32;1mexample.com\033[0m\033[36m), или IPv4/IPv6 (пример:\033[0m" + \
           "\033[32;1m8.8.8.8\033[0m\033[36m),\n" + \
           "или url (пример: \033[32;1mhttps://example.com/1/2/3/foo\033[0m\033[36m), \n" + \
-          "или укажите файл с данными, выбрав ключ (пример:\033[0m \033[32;1m--file\033[0m\033[36m или\033[0m " +\
-          "\033[32;1m-f\033[0m\033[36m)\n" + \
-          "[\033[0m\033[32;1m-f\033[0m\033[36m] --> обработатка файла данных\n" + \
+          "или укажите файл с данными, выбрав ключ (пример:\033[0m \033[32;1mfile\033[0m\033[36m).\n" + \
+          "[\033[0m\033[32;1mfile\033[0m\033[36m] --> обработатка файла данных\n" + \
           "[\033[0m\033[32;1menter\033[0m\033[36m] --> информация о своем GEO_IP\n" + \
           "[\033[0m\033[31;1mq\033[0m\033[36m] --> Выход")
 
@@ -505,7 +504,7 @@ def module1():
         sys.exit()
 
 # проверка данных.
-    elif dip == '--file' or dip == '-f':
+    elif dip == 'file':
         while True:
             print("""\033[36m├──Выберите тип поиска
 │
