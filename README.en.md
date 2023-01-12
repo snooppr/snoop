@@ -169,7 +169,6 @@ search arguments:
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
                         from the snoop database is set for each site.
-                        https://юзерагент.рф/
   --normal-mode, -N     Mode switch: SNOOPninja> normal mode> SNOOPninja. 
                         By_default (GNU/Linux Full Version) on 
                         'SNOOPninja mode': search acceleration ~ 25pct,
