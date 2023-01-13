@@ -393,8 +393,6 @@ $ sudo nano /etc/ssl/openssl.cnf
 [Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
 
  • **27 января 2022г. сжатие репозитория/если возникли проблемы сделайте 'git clone' по новому**  
-
- • **email:** snoopproject@protonmail.com
 </details>  
 
 <p align="center"> 
