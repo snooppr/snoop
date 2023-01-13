@@ -324,7 +324,8 @@ def module2():
                             print('\033[32;1m┃\n┗━━Good!\033[0m')
                     break
                 except Exception:
-                    print("\033[31;1m└──Указан неверный путь. Укажите правильный абсолютный путь к файлу или перетащите файл в окно терминала\033[0m")
+                    print("\033[31;1m└──Указан неверный путь." + \
+                          "Укажите правильный абсолютный путь к файлу или перетащите файл в окно терминала\033[0m")
                     hvostput = os.path.split(put)[1].replace('"', '')
                     Erf(hvostput)
 
@@ -596,7 +597,7 @@ def module1():
         table_name = "Мой ip" if dip == "" else dip
 
         if '.' not in dip and ':' not in dip and dip != "" or (dip != "" and len(dip) <= 4) or '..' in dip:
-            print(Style.BRIGHT + Fore.RED + "└──Неверный ввод \n\nвыход" + Style.RESET_ALL)
+            print(Style.BRIGHT + Fore.RED + "└──Неверный ввод\n" + Style.RESET_ALL)
             module1()
         else:
             u = urlparse(dip).hostname

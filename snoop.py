@@ -4,6 +4,7 @@
 import argparse
 import base64
 import certifi
+import click
 import csv
 import glob
 import json
@@ -11,6 +12,7 @@ import locale
 import networktest
 import os
 import platform
+import psutil
 import random
 import re
 import requests
@@ -31,12 +33,6 @@ from rich.panel import Panel
 from rich.style import Style as STL
 from rich.console import Console
 from rich.table import Table
-
-try:
-    import psutil
-    import click
-except ModuleNotFoundError:
-    print("\n\nВНИМАНИЕ! Обновите lib python:\ncd ~/snoop && python3 -m pip install -r requirements.txt\n\n")
 
 import snoopbanner
 import snoopplugins
@@ -73,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.5 (C)', "s", "d"
+vers, vers_code, demo_full = 'v1.3.6', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -111,7 +107,7 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2024, 1, 8, 3, 0, 0, 0, 0, 0)
+ts = (2024, 1, 13, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
@@ -238,7 +234,7 @@ def print_invalid(websites_names, message, color=True):
 
 
 ## Вернуть результат future for2.
-# Логика: возврат ответа и дуб_метода в случае успеха, иначе возврат несуществующего метода для посл.работки.
+# Логика: возврат ответа и дуб_метода (из 4-х) в случае успеха, иначе возврат несуществующего метода для повторного запроса.
 def get_response(request_future, error_type, websites_names, print_found_only=False, verbose=False, color=True):
     try:
         res = request_future.result()
@@ -782,7 +778,7 @@ def license_snoop():
         plays_v = ""
 
     console.print('\n', Panel(f"Program: [dim cyan]{version} {str(platform.architecture(executable=sys.executable, bits='', linkage=''))}" + \
-                              "[/dim cyan]\n"
+                              "[/dim cyan]\n" + \
                               f"OS: [dim cyan]{os_ver}[/dim cyan]" + termux + \
                               f"Locale: [dim cyan]{locale.setlocale(locale.LC_ALL)}[/dim cyan]\n" + \
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
