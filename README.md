@@ -393,6 +393,11 @@ $ sudo nano /etc/ssl/openssl.cnf
 [Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
 
  • **27 января 2022г. сжатие репозитория/если возникли проблемы сделайте 'git clone' по новому**  
+
+
+ • **Визуализация  коммитов от рождения проекта до пятницы тринадцатого 2023г.**  
+
+https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
 </details>  
 
 <p align="center"> 
