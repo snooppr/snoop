@@ -959,23 +959,23 @@ def run():
 
             if mod == 'help':
                 snoopbanner.help_module_1()
-                module()
+                return module()
             elif mod == '1':
-                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green", header_style='green')
                 table.add_column("GEO_IP/domain_v0.5", style="green", justify="center")
                 table.add_row('Получение информации об ip/domain/url цели или по списку этих данных')
                 console.print(table)
 
                 snoopplugins.module1()
             elif mod == '2':
-                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green", header_style='green')
                 table.add_column("Reverse Vgeocoder_v0.5", style="green", justify="center")
                 table.add_row('Визуализация Географических координат')
                 console.print(table)
 
                 snoopplugins.module2()
             elif mod == '3':
-                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green")
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green", header_style='green')
                 table.add_column("Yandex_parser_v0.5", style="green", justify="center")
                 table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail; Name.')
                 console.print(table)
@@ -986,8 +986,8 @@ def run():
                 sys.exit()
             else:
                 print(Style.BRIGHT + Fore.RED + "└──Неверный выбор\n" + Style.RESET_ALL)
-                module()
-        module()
+                return module()
+        return module()
         sys.exit()
 
 

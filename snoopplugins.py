@@ -425,7 +425,7 @@ def module2():
 
 ## Модуль GEO_IP/domain.
 def module1():
-    t_socket = 3
+    t_socket = 4
     domain = None
     res4, res6 = None, None
 
@@ -598,7 +598,7 @@ def module1():
 
         if '.' not in dip and ':' not in dip and dip != "" or (dip != "" and len(dip) <= 4) or '..' in dip:
             print(Style.BRIGHT + Fore.RED + "└──Неверный ввод\n" + Style.RESET_ALL)
-            module1()
+            return module1()
         else:
             u = urlparse(dip).hostname
             if bool(u) is False:
@@ -650,7 +650,7 @@ def module1():
                 print(Style.BRIGHT + Fore.BLACK + f"{URL_GEO}" + Style.RESET_ALL)
                 print(Style.BRIGHT + Fore.BLACK + f"{URL_GEO2}\n" + Style.RESET_ALL)
 
-        module1()
+        return module1()
 
 
 if __name__ == "__main__":
