@@ -42,7 +42,7 @@ Snoop for OS Windows and GNU/Linux
 ## Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
+⬇️snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
 [Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
 
 Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
@@ -50,7 +50,7 @@ Snoop comes with ready-made assemblies (release) and does not require dependenci
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
-<summary>Snoop Project Plugins</summary>  
+<summary> 🟣 Snoop Project Plugins</summary>  
 
 ## 1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
@@ -69,7 +69,7 @@ Snoop comes with ready-made assemblies (release) and does not require dependenci
 </details>
 
 <details>
-<summary>Self-build software from source</summary>  
+<summary> 🟤 Self-build software from source</summary>  
 
 **Native Installation**  
 Note: The required version of Python 3.7+
@@ -96,7 +96,7 @@ $ apt-get install ttf-ancient-fonts or color apt-get install fonts-noto-color-em
 </details>
 
 <details>
-<summary>Using</summary>  
+<summary> 🟢 Using</summary>  
 
 ```
 $ snoop --help #manual snoop build version GNU/Linux
@@ -225,14 +225,14 @@ $ python3 snoop.py --update #Git installation is required.
 </details>  
 
 <details>
-<summary>Snoop for Android</summary>  
+<summary> 🔵 Snoop for Android</summary>  
 
  • [Detailed manual in English](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Snoop for Android")  
 
 </details>
 
 <details>
-<summary>Basic errors in</summary>
+<summary> 🔴 Basic errors in</summary>
 
 |  Side     |                         Problem                       | Solving |
 |:---------:| ------------------------------------------------------|:-------:|
@@ -294,7 +294,7 @@ on
 </details>
 
 <details>
-<summary>Additional information</summary>
+<summary> 🟠 Additional information</summary>
 
  • [Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog")  
 
@@ -316,5 +316,4 @@ From time to time, it is necessary to follow all this "Web rock' n 'roll", so do
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
 </details>
 
-This is a translated "Readme" and is incomplete. Full [Readme in Russian](https://github.com/snooppr/snoop)  
-Please feel free to improve the translation of this page.
+【RU -> EN】 This is a translated [Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English")
