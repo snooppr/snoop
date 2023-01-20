@@ -44,7 +44,7 @@ Snoop for OS Windows and GNU/Linux
 ## Релиз/Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
+⬇️snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
 [Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
 
 **RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
@@ -54,7 +54,7 @@ snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
-<summary>Snoop Project Plugins</summary>  
+<summary> 🟣 Snoop Project Plugins</summary>  
 
 ## 1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
@@ -73,7 +73,7 @@ snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)
 </details>
 
 <details>
-<summary>Самостоятельная сборка ПО из исходного кода/Self-build software from source</summary>  
+<summary> 🟤 Самостоятельная сборка ПО из исходного кода/Self-build software from source</summary>  
 
 **Native Installation**  
 Примечание: требуемая версия python 3.7+
@@ -100,7 +100,7 @@ $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-
 </details>
 
 <details>
-<summary>Использование/Using</summary>  
+<summary> 🟢 Использование/Using</summary>  
 
 ```
 Справка
@@ -236,7 +236,7 @@ $ python3 snoop.py --update #требуется установка Git.
 </details>  
 
 <details>
-<summary>Snoop for Android</summary>  
+<summary> 🔵 Snoop for Android</summary>  
 
  • [Для удобства отдельный мануал](https://github.com/snooppr/snoop/tree/snoop_termux "Snoop for Android")  
 
@@ -309,7 +309,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 </details>
 
 <details>
-<summary>Основные ошибки/Basic errors in</summary>
+<summary> 🔴 Основные ошибки/Basic errors in</summary>
 
 |  Сторона  |                         Проблема                      | Решение |
 |:---------:| ------------------------------------------------------|:-------:|
@@ -375,7 +375,7 @@ $ sudo nano /etc/ssl/openssl.cnf
 </details>
 
 <details>
-<summary>Дополнительная информация/Additional information</summary>
+<summary> 🟠 Дополнительная информация/Additional information</summary>
 
  • [История развития проекта/History](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
 
