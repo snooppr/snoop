@@ -829,8 +829,7 @@ def run():
 # Plugins arguments arguments.
     plugins_group = parser.add_argument_group('\033[36mplugins arguments\033[0m')
     plugins_group.add_argument("--module", "-m", action="store_true", dest="module", default=False,
-                               help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX \
-                               (список плагинов будет пополняться)"
+                               help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX"
                               )
 # Search arguments.
     search_group = parser.add_argument_group('\033[36msearch arguments\033[0m')
@@ -863,7 +862,7 @@ def run():
                               допустимо использовать опцию '-o' несколько раз, например, '-o US -o UA' поиск по США и Украине"
                              )
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
-                              help="\033[36mС\033[0mортировка 'печать и запись_результатов' по странам, а не по алфавиту"
+                              help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту"
                              )
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=9,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
