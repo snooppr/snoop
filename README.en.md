@@ -118,8 +118,7 @@ service arguments:
 
 plugins arguments:
   --module, -m          OSINT search: use various plugins Snoop ::
-                        IP/GEO/YANDEX (the list of plugins will continue
-                        to grow)
+                        IP/GEO/YANDEX
 
 search arguments:
   nickname              The nickname of the wanted user.
@@ -143,7 +142,7 @@ search arguments:
                         Include only the selected region in the search,
                         it is permissible to use the '-o' option several times,
                         for example, '-o US -o UA' search for USA and Ukraine
-  --country-sort, -c    Sort 'print and record_results' by country,
+  --country-sort, -c    Print and record_results' by country,
                         not alphabetically
   --time-out , -t <digit> 
                         Set maximum time allocation for waiting for a response 
