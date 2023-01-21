@@ -735,8 +735,12 @@ def autoclean():
 ## Лицензия/версия.
 def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
+        if sys.platform == 'win32':
+            wl = 5 if int(platform.win32_ver()[0]) < 10 else 4
+        else:
+            wl = 4
         cop = copyright.read().replace("\ufeffSnoop", "Snoop")
-        cop = cop.replace('='*80, "="*(os.get_terminal_size()[0]-4)).strip()
+        cop = cop.replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
         console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
 
     if not Android:
