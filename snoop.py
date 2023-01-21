@@ -69,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.6', "s", "d"
+vers, vers_code, demo_full = 'v1.3.6a', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -736,7 +736,8 @@ def autoclean():
 def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         cop = copyright.read().replace("\ufeffSnoop", "Snoop")
-        console.print(Panel(cop, title='COPYRIGHT', style=STL(color="white", bgcolor="blue")))
+        cop = cop.replace('='*80, "="*(os.get_terminal_size()[0]-4)).strip()
+        console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
 
     if not Android:
         try:
@@ -786,7 +787,7 @@ def license_snoop():
                                              f"(speedtest::{networktest.speedtest.__version__}){rich_v}{req_fut_v}{plays_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
                               f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}",
-                              title='snoop info', style=STL(color="cyan")))
+                              title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
     sys.exit()
     #print(repr(cop))
 
@@ -858,7 +859,7 @@ def run():
                               допустимо использовать опцию '-o' несколько раз, например, '-o US -o UA' поиск по США и Украине"
                              )
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
-                              help="\033[36mС\033[0mортировка 'печать/запись_результатов' по странам, а не по алфавиту"
+                              help="\033[36mС\033[0mортировка 'печать и запись_результатов' по странам, а не по алфавиту"
                              )
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=9,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
