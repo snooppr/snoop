@@ -1,7 +1,7 @@
 Snoop Project
 =============
 
-## Snoop Project One of the most promising OSINT tools to search for nicknames.
+### Snoop Project One of the most promising OSINT tools to search for nicknames.
 - [X] This is the most powerful software taking into account the CIS location.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
@@ -10,9 +10,8 @@ Is your life slideshow? Ask Snoop.
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user.  
 
-Snoop is a research dev-work (own database/closed bugbounty)  
-in the search and processing of public data on the Internet.  
-According to Snoop's specialized search, it is capable of competing with traditional search engines.  
+> *Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.  
+According to Snoop's specialized search, it is capable of competing with traditional search engines.*  
 
 Comparison of indexations of databases such tools:  
 <img src="https://img.shields.io/badge/Snoop-~2600+%20websites-success" width="30%" />  
@@ -52,19 +51,27 @@ Snoop comes with ready-made assemblies (release) and does not require dependenci
 <details>
 <summary> 🟣 Snoop Project Plugins</summary>  
 
-## 1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
+## 1. Demonstration of one of the methods in the Plugin — 〘GEO_IP/domain〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+
+$$$$
 
 **Reports are also available in csv/txt/CLI/maps**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
 
-## 2. Demonstration of one of the methods in the Plugin — [Yandex_parser]  
+$$$$
+
+## 2. Demonstration of one of the methods in the Plugin — 〘Yandex_parser〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
+
+$$$$
 
 **Search report dozen username (Plugin — Yandex_parser)**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
-## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]  
+$$$$
+
+## 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
 </details>
 
@@ -315,4 +322,4 @@ From time to time, it is necessary to follow all this "Web rock' n 'roll", so do
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
 </details>
 
-【RU -> EN】 This is a translated [Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English")
+【RU -> EN】 This is a translated [➰Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English")
