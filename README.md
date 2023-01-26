@@ -1,7 +1,7 @@
 Snoop Project
 =============
 
-## Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов.
+### Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов
 - [X] This is the most powerful software taking into account the CIS location.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
@@ -12,9 +12,7 @@ that is, it is available to the average user.
 
  • [English readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")  
 
-Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти)  
-в области поиска и обработки публичных данных в сети интернет.  
-По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.  
+> *Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти) в области поиска и обработки публичных данных в сети интернет. По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.*  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
 <img src="https://img.shields.io/badge/Snoop-~2600+%20websites-success" width="30%" />  
@@ -56,19 +54,27 @@ Snoop for OS Windows and GNU/Linux
 <details>
 <summary> 🟣 Snoop Project Plugins</summary>  
 
-## 1. Demonstration of one of the methods in the Plugin — [GEO_IP/domain]  
+## 1. Demonstration of one of the methods in the Plugin — 〘GEO_IP/domain〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+
+$$$$
 
 **Reports are also available in csv/txt/CLI/maps**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
 
-## 2. Demonstration of one of the methods in the Plugin — [Yandex_parser]  
+$$$$
+
+## 2. Demonstration of one of the methods in the Plugin — 〘Yandex_parser〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
+
+$$$$
 
 **Search report dozen nickname (Plugin — Yandex_parser)**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
-## 3. Demonstration of one of the methods in the Plugin — [Reverse Vgeocoder]  
+$$$$
+
+## 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
 </details>
 
@@ -240,15 +246,15 @@ $ python3 snoop.py --update #требуется установка Git.
  • [Для удобства отдельный мануал](https://github.com/snooppr/snoop/tree/snoop_termux "Snoop for Android")  
 
 <p align="center">  
-  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_2android.png" />  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_2android.png" width="70%"/>  
 </p>  
 
-search nickname  
+$$search-nickname$$  
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
 </p>  
 
-plugins  
+$$plugins$$  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
 
 **Native Installation**  
