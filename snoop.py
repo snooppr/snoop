@@ -701,7 +701,7 @@ def update_snoop():
    ._  _| _._|_ _  (_ ._  _  _ ._   ) 
 |_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
    |                           |    
-выберите действие:\033[0m [y/n] """, end='')
+Выберите действие:\033[0m [y/n] """, end='')
 
     upd = input()
 
@@ -769,7 +769,8 @@ def license_snoop():
             threadS = f'model: [dim cyan]{subprocess.check_output("getprop ro.product.cpu.abi", shell=True, text=True).strip()}[/dim cyan]'
             T_v = dict(os.environ).get("TERMUX_VERSION")
         except:
-            T_v = "Not Termux?!"
+            T_v, ram_free, os_ver, os_ver, threadS, A, B = "Not Termux?!", "?", "?", "?", "?", "[bold red]", "[/bold red]"
+            ram = "pkg install procps |"
 
     termux = f"\nTermux: [dim cyan]{T_v}[/dim cyan]\n" if Android else "\n"
 
@@ -925,7 +926,7 @@ def run():
         if _ is True:
             k += 1
         if k == 2:
-            snoopbanner.logo(text="⛔️ опциии ['-c', '-e' '-o', '-s'] несовместимы между собой")
+            snoopbanner.logo(text="⛔️ опции ['-c', '-e' '-o', '-s'] несовместимы между собой")
 
 
 ## Опция  '-V' не путать с опцией '-v'.
@@ -991,7 +992,8 @@ def run():
             else:
                 print(Style.BRIGHT + Fore.RED + "└──Неверный выбор\n" + Style.RESET_ALL)
                 return module()
-        return module()
+
+        module()
         sys.exit()
 
 
@@ -1557,7 +1559,7 @@ function sortList() {
             direct_results = f"{dirpath}/nicknames/results/*" if sys.platform != 'win32' else f"{dirpath}\\results\\*"
 
             print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all} сек_{s_size_all}Mb)")
-            print(f"{Fore.CYAN}├──Cохранено в:{Style.RESET_ALL} {direct_results}")
+            print(f"{Fore.CYAN}├──Сохранено в:{Style.RESET_ALL} {direct_results}")
             if flagBS_err >= 2:  #perc
                 print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
                 print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
