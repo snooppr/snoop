@@ -302,24 +302,24 @@ on
 <details>
 <summary> 🟠 Additional information</summary>
 
- • [Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog")  
+ • [Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog").  
 
- • [License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT "The version of the License in English can be found in the EN-version of Snoop Build")  
+ • [License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT "The version of the License in English can be found in the EN-version of Snoop Build").  
 
- • [Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)  
+ • [Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
 
- • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")  
+ • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").  
 
  • **Information for civil servants/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16 Software that ensures the implementation of established actions during operational search activities.
 Order of the Ministry of Communications of the Russian Federation No. 515 registered No. 7012.  
 
  • **Snoop is not perfect**: web sites are falling; closing tags are missing; hosting services are not paid on time.  
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
-[Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
+[example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
 
- • **Visualization of commits from the birth of the project to Friday the thirteenth, 2023.**  
+ • **Visualization of commits:** from the birth of the project to Friday the thirteenth, 2023.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
 </details>
 
-【RU -> EN】 This is a translated [➰Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English")
+【RU -> EN】 This is a translated [➰Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English").
