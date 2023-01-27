@@ -387,25 +387,25 @@ $ sudo nano /etc/ssl/openssl.cnf
 <details>
 <summary> 🟠 Дополнительная информация/Additional information</summary>
 
- • [История развития проекта/History](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history")  
+ • [История развития проекта/History](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Project development history").  
 
- • [Лицензия Snoop Project/License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT)  
+ • [Лицензия Snoop Project/License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT).  
 
- • [Документация/Documentation](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih)  
+ • [Документация/Documentation](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
 
- • **Отпечаток публичного ключа:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key")  
+ • **Отпечаток публичного ключа:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").  
 
  • **Информация для госслужащих:** Snoop Project включен в реестр отечественного ПО с заявленным кодом: 26.30.11.16 Программное Обеспечение, обеспечивающее выполнение установленных действий при проведении оперативно-розыскных мероприятий.
 Приказ Минкомсвязи РФ №515 реестровый № 7012.  
 
  • **Snoop неидеален:** вэб-сайты падают; закрывающие теги отсутствуют; хостинги вовремя не оплачиваются.
 Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются:
-[Примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing)  
+[примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
 
- • **27 января 2022г. сжатие репозитория/если возникли проблемы сделайте 'git clone' по новому**  
+ • **Сжатие репозитория 27 января 2022г.:** если возникли проблемы сделайте 'git clone' по новому.  
 
 
- • **Визуализация  коммитов от рождения проекта до пятницы тринадцатого 2023г.**  
+ • **Визуализация  коммитов:** от рождения проекта до пятницы тринадцатого 2023г.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
 </details>  
