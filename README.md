@@ -111,6 +111,8 @@ $ apt-get install ttf-ancient-fonts или цветной apt-get install fonts-
 <summary> 🟢 Использование/Using</summary>  
 
 ```
+$ snoop_cli --help #запуск сборки на GNU/Linux
+
 Справка
 
 optional arguments:
