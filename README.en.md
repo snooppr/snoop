@@ -79,9 +79,9 @@ $$$$
 <summary> 🟤 Self-build software from source</summary>  
 
 **Native Installation**  
- • Note: don't do this if you want to install snoop on android/termux
-*(see dedicated section below for that).*  
- • Note: the required version of Python 3.7+
++ Note: don't do this if you want to install snoop on android/termux
+*(installation is different, see dedicated section below for that).*  
++ Note: the required version of Python 3.7+
 
 ```
 # Clone the repository
@@ -108,7 +108,7 @@ $ apt-get install ttf-ancient-fonts or color apt-get install fonts-noto-color-em
 <summary> 🟢 Using</summary>  
 
 ```
-$ snoop --help #manual snoop build version GNU/Linux
+$ snoop_cli --help #manual snoop build version GNU/Linux
 
 Help
 
@@ -218,17 +218,15 @@ $ snoop_cli --help #Running from release linux
 
 # Enable Snoop plugins:
 $ snoop_cli --module #Running from release linux
-
-# 'ctrl-c' — abort search.  
 ```
-The found accounts will be stored in ~/snoop/results/*/username.{txt.csv.html}.  
-open csv in office in, field separator **comma**.  
-
-Destroy **all** search results — delete the '~/snoop/results' directory.  
-or ```snoop_cli.exe --autoclean #Running from release OS Windows```
++ 'ctrl-c' — abort search.  
++ The found accounts will be stored in `~/snoop/results/nicknames/*{txt|csv|html}`.  
++ Open csv in office in, field separator **comma**.  
++ Destroy **all** search results — delete the '~/snoop/results' directory.  
+or `snoop_cli.exe --autoclean #Running from release OS Windows`.
 ```
 # Update Snoop to test new features in the software
-$ python3 snoop.py --update #Git installation is required.
+$ python3 snoop.py --update #Git installation is required
 ```
 </details>  
 
@@ -265,13 +263,13 @@ Solving:
 1. Reconfigure your Firewall *(for example, Kaspersky blocks Resources for adults).*
 
 2. Check the speed of your Internet connection:  
-`$ python3 snoop.py -v username`  
+`python3 snoop.py -v username`  
 If any of the network parameters are highlighted in red, Snoop may hang during the search.  
 At low speed, increase the 'x' value of the '--time-out x' option:  
-`$ python3 snoop.py -t 15 username`  
+`python3 snoop.py -t 15 username`.  
 
 3. In fact, this is not a mistake. Fix username  
-*(for example, some sites do not allow Cyrillic characters; "spaces"; or "Vietnamese-Chinese encoding"  
+*(for example, some sites do not allow Cyrillic characters; "spaces" or "Vietnamese-Chinese encoding"
 in user names, in order to save time: - requests are filtered).*
 
 4. **Change your IP address**  
