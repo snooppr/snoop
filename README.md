@@ -254,7 +254,7 @@ $$search-nickname$$
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoopandroid.png" />  
 </p>  
 
-$$plugins$$  
+$$plugins$$
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" />  
 
 **Native Installation**  
@@ -329,7 +329,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 | ========= |=======================================================| ======= |
 | Провайдер |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
-| Сервер    |Cайт изменил свой ответ/API; обновился CF/WAF          |    5    |
+| Сервер    |Сайт изменил свой ответ/API; обновился CF/WAF          |    5    |
 |           |Блокировка сервером диапазона ip-адресов клиента       |    4    |
 |           |Срабатывание/защита ресурса captch-ей                  |    4    |
 |           |Некоторые сайты временно недоступны, технические работы|    6    |
