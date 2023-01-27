@@ -1,7 +1,7 @@
 Snoop Project
 =============
 
-### Snoop Project One of the most promising OSINT tools to search for nicknames.
+### Snoop Project One of the most promising OSINT tools to search for nicknames
 - [X] This is the most powerful software taking into account the CIS location.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
@@ -10,7 +10,7 @@ Is your life slideshow? Ask Snoop.
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user.  
 
-> *Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.  
+> *Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.
 According to Snoop's specialized search, it is capable of competing with traditional search engines.*  
 
 Comparison of indexations of databases such tools:  
@@ -51,27 +51,27 @@ Snoop comes with ready-made assemblies (release) and does not require dependenci
 <details>
 <summary> 🟣 Snoop Project Plugins</summary>  
 
-## 1. Demonstration of one of the methods in the Plugin — 〘GEO_IP/domain〙  
+### 1. Demonstration of one of the methods in the Plugin — 〘GEO_IP/domain〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
 
 $$$$
 
-**Reports are also available in csv/txt/CLI/maps**  
+Reports are also available in csv/txt/CLI/maps  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
 
 $$$$
 
-## 2. Demonstration of one of the methods in the Plugin — 〘Yandex_parser〙  
+### 2. Demonstration of one of the methods in the Plugin — 〘Yandex_parser〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
 
 $$$$
 
-**Search report dozen username (Plugin — Yandex_parser)**  
+Search report dozen username (Plugin — Yandex_parser)  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
 $$$$
 
-## 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
+### 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
 </details>
 
@@ -79,7 +79,9 @@ $$$$
 <summary> 🟤 Self-build software from source</summary>  
 
 **Native Installation**  
-Note: The required version of Python 3.7+
+ • Note: don't do this if you want to install snoop on android/termux
+*(see dedicated section below for that).*  
+ • Note: the required version of Python 3.7+
 
 ```
 # Clone the repository
@@ -95,10 +97,10 @@ $ apt-get update && apt-get install python3 python3-pip
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Or install all dependencies from 'requirements.txt' to manual through
-$ pip3 install module1 module2...
+$ pip install lib1 lib2...
 # If instead of the flags of countries are displayed in special mixtures, deliver a font package, such as monochrome
 $ apt-get install ttf-ancient-fonts or color apt-get install fonts-noto-color-emoji
-# On Windows OS use CMD or PowerShell (to choose from convenience), but not WSL!
+# On Windows OS use CMD or PowerShell (to choose from convenience), but not ~~WSL~~!
 ```
 </details>
 
@@ -260,26 +262,26 @@ $ python3 snoop.py --update #Git installation is required.
 | ========= |=======================================================| ======= |
 
 Solving:
-1. Reconfigure your Firewall (for example, Kaspersky blocks Resources for adults).
+1. Reconfigure your Firewall *(for example, Kaspersky blocks Resources for adults).*
 
 2. Check the speed of your Internet connection:  
-$ python3 snoop.py -v username  
+`$ python3 snoop.py -v username`  
 If any of the network parameters are highlighted in red, Snoop may hang during the search.  
-If the speed is low, increase the value of ' x 'of the'--time-out x ' option:  
-$ python3 snoop.py -t 15 username  
+At low speed, increase the 'x' value of the '--time-out x' option:  
+`$ python3 snoop.py -t 15 username`  
 
 3. In fact, this is not a mistake. Fix username  
-(for example, some sites do not allow Cyrillic characters; "spaces"; or "Vietnamese-Chinese encoding"  
-in user names, in order to save time: - requests are filtered).
+*(for example, some sites do not allow Cyrillic characters; "spaces"; or "Vietnamese-Chinese encoding"  
+in user names, in order to save time: - requests are filtered).*
 
 4. **Change your IP address**  
-("Gray" ip and censorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
-When using Snoop from the IP address of the mobile operator's provider, the speed **may * * drop significantly, depending on the provider.  
+"Gray" ip and censorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
+When using Snoop from the IP address of the mobile operator's provider, the speed **may** drop significantly, depending on the provider.  
 For example, the most effective way to solve the problem is **TO USE A VPN**, Tor is not very well suited for this task.  
-Rule: one scan from one ip is not enough to get the most out of Snoop).
+Rule: one scan from one ip is not enough to get the most out of Snoop.
 
 5. Open in the Snoop repository on Github-e Issue/Pull request  
-(inform the developer about this).
+*(inform the developer about this).*
 
 6. Do not pay attention, sites sometimes go for repair work and return to operation.
 
