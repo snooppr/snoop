@@ -627,7 +627,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             ello_time = round(float(time.time() - timestart), 2)  #текущее
             li_time.append(ello_time)
             dif_time = round(li_time[-1] - li_time[-2], 2)  #разница
-            # Отклик.
+# Отклик.
             try:
                 site_time = str(response_time).rsplit(sep=':', maxsplit=1)[1]
                 site_time = round(float(site_time), 2)  #реальный ответ
