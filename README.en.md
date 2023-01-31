@@ -260,7 +260,7 @@ $ python3 snoop.py --update #Git installation is required
 | ========= |=======================================================| ======= |
 
 Solving:
-1. Reconfigure your Firewall *(for example, Kaspersky blocks Resources for adults).*
+1. Reconfigure your Firewall *(for example, Kaspersky blocks resources for adults).*
 
 2. Check the speed of your Internet connection:  
 `python3 snoop.py -v username`  
@@ -273,7 +273,7 @@ At low speed, increase the 'x' value of the '--time-out x' option:
 in user names, in order to save time: - requests are filtered).*
 
 4. **Change your IP address**  
-"Gray" ip and censorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
+Сensorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
 When using Snoop from the IP address of the mobile operator's provider, the speed **may** drop significantly, depending on the provider.  
 For example, the most effective way to solve the problem is **TO USE A VPN**, Tor is not very well suited for this task.  
 Rule: one scan from one ip is not enough to get the most out of Snoop.
@@ -283,7 +283,7 @@ Rule: one scan from one ip is not enough to get the most out of Snoop.
 
 6. Do not pay attention, sites sometimes go for repair work and return to operation.
 
-7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions.  
+7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions. This problem occurs if the user intentionally started snoop with the '--cert-on' option.  
 Solving:
 ```
 $ sudo nano /etc/ssl/openssl.cnf
