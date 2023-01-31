@@ -29,7 +29,6 @@ from folium.plugins import MarkerCluster
 from more_itertools import unique_everseen
 from operator import itemgetter
 from requests.adapters import HTTPAdapter
-from requests_futures.sessions import FuturesSession
 from rich.console import Console
 from rich.progress import track, BarColumn, TimeRemainingColumn, SpinnerColumn, TimeElapsedColumn, Progress
 from rich.table import Table
@@ -61,18 +60,12 @@ azS = []  #список результатов future request
 coord = []  #координаты многоцелевой список
 
 
-class ElapsedFuturesSession(FuturesSession):
-    def request(self, method, url, *args, **kwargs):
-        return super(ElapsedFuturesSession, self).request(method, url, *args, **kwargs)
-
-
 my_session = requests.Session()
 da = requests.adapters.HTTPAdapter(max_retries=2)
 my_session.mount('https://', da)
 
 
 dirresults = os.getcwd()
-sessionY = ElapsedFuturesSession(executor=ThreadPoolExecutor(max_workers=10), session=my_session)
 progressYa = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
 
 
@@ -98,10 +91,11 @@ def module3():
                 urlYa = f'https://yandex.ru/collections/api/users/{login}/'
                 #urlYa = f'https://yandex.ru/znatoki/api/user/public/{login}/'
                 try:
-                    r = sessionY.get(urlYa, headers=head0, timeout=3)
+                    r = my_session.get(urlYa, headers=head0, timeout=3)
                     azS.append(r)
                 except Exception:
-                    print(Fore.RED + "\nОшибка" + Style.RESET_ALL)
+                    print(f"\n{Fore.RED}Ошибка сети пропуск —> '{Style.RESET_ALL}{Style.BRIGHT}" + \
+                          f"{Fore.RED}{login}{Style.RESET_ALL}{Fore.RED}'{Style.RESET_ALL}")
                     if Ya != '4':
                         ravno()
                     continue
@@ -113,12 +107,8 @@ def module3():
                 for reqY, login in zip(azS, listlogin):
                     if Ya == '4':
                         progressYa.update(task, advance=1, refresh=True)
-                    try:
-                        rY = reqY.result()
-                    except Exception:
-                        print(f"\n{Fore.RED}Ошибка сети пропуск —> '{Style.RESET_ALL}{Style.BRIGHT}" + \
-                              f"{Fore.RED}{login}{Style.RESET_ALL}{Fore.RED}'{Style.RESET_ALL}")
-                        continue
+
+                    rY = reqY.text
                     #print(rY.text)
                     try:
                         rdict = json.loads(rY.text)
