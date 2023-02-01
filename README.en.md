@@ -248,7 +248,7 @@ $ python3 snoop.py --update #Git installation is required
 |           |The value of the '-t' option is too low                |    2    |
 |           |invalid username                                       |    3    |
 |           |Connection errors: [GipsysTeam; RamblerDaing; Mamochki]|    7    |
-|           |Connection errors: [Virtualireland; Forum_rzn; Ddo]    |    7    |
+|           |Connection errors: [Virtualireland; Nixp; Ddo]         |    7    |
 | ========= |=======================================================| ======= |
 | Provider  |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
