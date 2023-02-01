@@ -329,7 +329,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 |           |Слишком низкое значение опции '-t'                     |    2    |
 |           |недопустимое nickname                                  |    3    |
 |           |Ошибки соединения: [GipsysTeam; RamblerDaing; Mamochki |    7    |
-|           |                    Virtualireland; Forum_rzn; Ddo]    |    7    |
+|           |                    Virtualireland; Nixp; Ddo]         |    7    |
 |           |Ошибки соединения: [PayPal]                            |    4    |
 | ========= |=======================================================| ======= |
 | Провайдер |Internet Censorship                                    |    4    |
