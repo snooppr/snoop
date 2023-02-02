@@ -703,10 +703,8 @@ def update_snoop():
     upd = input()
 
     if upd == "y":
-        with console.status("[cyan]работаю\n" + \
-                            "Функция обновления Snoop требует установки утилиты < Git >[/cyan]", spinner="arrow3"):
-            time.sleep(1)
-            os.startfile("update.bat") if sys.platform == 'win32' else os.system("./update.sh")
+        print("\033[36mФункция обновления Snoop требует установки утилиты < Git >\033[0m")
+        os.startfile("update.bat") if sys.platform == 'win32' else os.system("./update.sh")
     print(Style.BRIGHT + Fore.RED + "\nВыход")
     sys.exit()
 
