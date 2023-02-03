@@ -283,7 +283,7 @@ Rule: one scan from one ip is not enough to get the most out of Snoop.
 
 6. Do not pay attention, sites sometimes go for repair work and return to operation.
 
-7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions. This problem occurs if the user intentionally started snoop with the '--cert-on' option.  
+7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions, and also the problem with sites that haven't been updated in years. These problems occur if the user intentionally started snoop with the '--cert-on' option.  
 Solving:
 ```
 $ sudo nano /etc/ssl/openssl.cnf

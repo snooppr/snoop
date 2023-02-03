@@ -297,6 +297,10 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     else:
         info_str("разыскиваем:", username, color)
 
+    if len(username) <= 2:
+        console.print(f"⛔️ [bold red]nickname не может быть короче 2-х символов: '{username}'\nПропуск\n")
+        return False, False
+
     username = re.sub(" ", "%20", username)
 
 
@@ -310,7 +314,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         for ermail_iter in ermail:
             if ermail_iter.lower() == username.lower():
                 print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (обнаружен чистый домен)\nпропуск\n")
-                return False
+                return False, False
             elif ermail_iter.lower() in username.lower():
                 usernameR = username.rsplit(sep=ermail_iter.lower(), maxsplit=1)[1]
                 username = username.rsplit(sep='@', maxsplit=1)[0]
@@ -322,7 +326,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                 if len(username) == 0 and len(usernameR) == 0:
                     print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (обнаружен чистый домен)\nпропуск\n")
-                    return False
+                    return False, False
 
         del ermail
 
@@ -331,17 +335,17 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         my_list_bad = list(errspec.read())
         if any(symbol_bad in username for symbol_bad in my_list_bad):
             console.print(f"⛔️ [bold red]Недопустимые символы в username: '{username}'\nПропуск\n")
-            return False
+            return False, False
 
 
     ernumber = ['76', '77', '78', '79', '89', "38", "37", "9", "+"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
         if len(username) >= 10 and len(username) <= 13 and username[1:].isdigit() is True:
             print(Style.BRIGHT + Fore.RED + "⛔️ Snoop выслеживает учётки пользователей, но не номера телефонов...\nпропуск\n")
-            return False
+            return False, False
     elif '.' in username and '@' not in username:
         print(Style.BRIGHT + Fore.RED + "⛔️ nickname, содержащий [.] и не являющийся email, невалидный...\nпропуск\n")
-        return False
+        return False, False
 
 
     global nick
@@ -444,7 +448,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 # Отправить параллельно все запросы и сохранить future для последующего доступа.
             param_websites["request_future"] = executor1.submit(request_method, url=url_API, headers=headers,
-                                                               allow_redirects=allow_redirects, timeout=timeout)
+                                                                allow_redirects=allow_redirects, timeout=timeout)
 # Добавлять флаги/url-s/хуки в будущий-окончательный словарь с будущими всеми другими результатами.
         dic_snoop_full[websites_names] = results_site
 
@@ -670,6 +674,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             dic_snoop_full.get(websites_names)['response_time_ms'] = str(ello_time)
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
+# не удерживать сокетом отработанное по всем п. соединение с сервером.
             requests_future.close()
 # Высвободить незначительную часть ресурсов.
         if 'executor2' in locals(): executor2.shutdown()
