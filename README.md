@@ -311,6 +311,8 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 # ПРИМЕЧАНИЕ_3!: после отключения РФ от Лондонской точки обмена интернет-трафиком скорость поиска Snoop
 # (возможно и у других поставщиков связи) на мобильных операторах Мегафон/Yota упала в ~2 раза.
 ```
+ПРИМЕЧАНИЕ_4!: если ваш Android ущербный (то есть 12+) и ломает Termux, читайте инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
+
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Android%20snoop_run.gif" width="40%" />  
 </p>  
