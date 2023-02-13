@@ -26,6 +26,7 @@ import webbrowser
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, TimeoutError
+from multiprocessing import active_children
 from playsound import playsound
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
 from rich.panel import Panel
@@ -47,9 +48,6 @@ Android = True if hasattr(sys, 'getandroidapilevel') else False
 Windows = True if sys.platform == 'win32' else False
 Linux = True if Android is False and Windows is False else False
 
-if Linux:
-    "не поломать старые версии python/termux"
-    from multiprocessing import active_children
 
 try:
     if os.environ.get('LANG') is not None and 'ru' in os.environ.get('LANG'):
@@ -358,15 +356,16 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests.packages.urllib3.disable_warnings()
     requests_future = requests.Session()
     requests_future.verify = False if cert is False else True
+    global workhorse
 
     if Android:
-        tread__ = len(BDdemo_new) if len(BDdemo_new) < 8 else 8
-        executor1 = ThreadPoolExecutor(max_workers=tread__)
+        workhorse = True
+        tread__ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
+        executor1 = ProcessPoolExecutor(max_workers=tread__)
     elif Windows:
         tread__ = len(BDdemo_new) if len(BDdemo_new) < 12 else 12
         executor1 = ThreadPoolExecutor(max_workers=tread__)
     elif Linux:
-        global workhorse
         workhorse = True
         if norm is False:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 25 else 25
@@ -751,10 +750,10 @@ def autoclean():
 ## Лицензия/версия.
 def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
+        wl = 4
         if Windows:
             wl = 5 if int(platform.win32_ver()[0]) < 10 else 4
-        else:
-            wl = 4
+
         cop = copyright.read().replace("\ufeffSnoop", "Snoop")
         cop = cop.replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
         console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
@@ -1639,12 +1638,7 @@ if __name__ == '__main__':
         console.print(f"\n[bold red]Прерывание [italic](высвобождение ресурсов, ждите...)[/bold red]")
         if Windows:
             os.kill(os.getpid(), signal.SIGBREAK)
-        elif Android:
-            os.kill(os.getpid(), signal.SIGKILL)
-        elif Linux:
-            if workhorse:
-                for child in active_children():
-                    child.terminate()
-                    time.sleep(0.1)                
-            else:
-                os.kill(os.getpid(), signal.SIGKILL)
+        elif workhorse:
+            for child in active_children():
+                child.terminate()
+                time.sleep(0.1)
