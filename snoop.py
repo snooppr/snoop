@@ -142,7 +142,6 @@ BDflag = DB('BDflag')
 flagBS = len(BDdemo)
 
 
-workhorse = False
 timestart = time.time()
 time_date = time.localtime()
 censors = 0
@@ -356,17 +355,14 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests.packages.urllib3.disable_warnings()
     requests_future = requests.Session()
     requests_future.verify = False if cert is False else True
-    global workhorse
 
     if Android:
-        workhorse = True
         tread__ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
         executor1 = ProcessPoolExecutor(max_workers=tread__)
     elif Windows:
         tread__ = len(BDdemo_new) if len(BDdemo_new) < 12 else 12
         executor1 = ThreadPoolExecutor(max_workers=tread__)
     elif Linux:
-        workhorse = True
         if norm is False:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 25 else 25
             executor1 = ProcessPoolExecutor(max_workers=proc_)
@@ -863,7 +859,7 @@ def run():
     search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
                               help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию"
                              )
-    search_group.add_argument("--base", "-b <path>", dest="json_file", default="BDdemo", metavar='',
+    search_group.add_argument("--base", "-b <file>", dest="json_file", default="BDdemo", metavar='',
                               #help="\033[36mУ\033[0mказать для поиска 'nickname' другую БД (Локально)/В demo version функция отключена"
                               help=argparse.SUPPRESS
                              )
@@ -902,7 +898,7 @@ def run():
                               ✓Отключить индикацию и статус прогресса.\
                               Экономит ресурсы системы и ускоряет поиск"
                              )
-    search_group.add_argument("--userlist", "-u <path>", metavar='', action="store", dest="user", default=False,
+    search_group.add_argument("--userlist", "-u <file>", metavar='', action="store", dest="user", default=False,
                               help="\033[36mУ\033[0mказать файл со списком user-ов. Snoop интеллектуально обработает \
                               данные и предоставит доп.отчёты"
                              )
@@ -1638,7 +1634,7 @@ if __name__ == '__main__':
         console.print(f"\n[bold red]Прерывание [italic](высвобождение ресурсов, ждите...)[/bold red]")
         if Windows:
             os.kill(os.getpid(), signal.SIGBREAK)
-        elif workhorse:
+        else:
             for child in active_children():
                 child.terminate()
                 time.sleep(0.1)
