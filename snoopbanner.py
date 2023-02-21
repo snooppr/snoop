@@ -28,6 +28,7 @@ def donate():
 ╭donate/Buy:
 ├──Яндекс.Деньги (Юmoney):: [white]4100111364257544[/white]
 ├──Visa:: [white]4274320047338002[/white]
+├──Qiwi:: [white]https://qiwi.com/n/SNOOPPROJECT[/white]
 └──PayPal:: [white]snoopproject@protonmail.com[/white]
 
 [bold green]Если вас заинтересовала [red]Snoop demo version[/red], Вы можете официально приобрести
@@ -64,12 +65,12 @@ Snoop full version: плагины без ограничений; 2600+ Websites
 
     try:
         if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
-            webbrowser.open("https://www.paypal.com/paypalme/snoopproject/20usd")
+            webbrowser.open("https://qiwi.com/n/SNOOPPROJECT")
             webbrowser.open("https://sobe.ru/na/snoop_project_2020")
         else:
             click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия web browser\n")
             click.launch(f"https://sobe.ru/na/snoop_project_2020")
-            click.launch(f"https://www.paypal.com/paypalme/snoopproject/20usd")
+            click.launch(f"https://qiwi.com/n/SNOOPPROJECT")
     except Exception:
         print("\033[31;1mНе удалось открыть браузер\033[0m")
 

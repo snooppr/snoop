@@ -403,6 +403,7 @@ $ sudo nano /etc/ssl/openssl.cnf
  • **Snoop неидеален:** вэб-сайты падают; закрывающие теги отсутствуют; хостинги вовремя не оплачиваются.
 Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются:
 [примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
+donate — https://qiwi.com/n/SNOOPPROJECT  
 
  • **Сжатие репозитория 27 января 2022г.:** если возникли проблемы сделайте 'git clone' по новому.  
 
