@@ -316,7 +316,6 @@ Order of the Ministry of Communications of the Russian Federation No. 515 regist
  • **Snoop is not perfect**: web sites are falling; closing tags are missing; hosting services are not paid on time.  
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
 [example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
-donate — https://qiwi.com/n/SNOOPPROJECT  
 
  • **Visualization of commits:** from the birth of the project to Friday the thirteenth, 2023.  
 
