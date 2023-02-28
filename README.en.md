@@ -164,7 +164,7 @@ search arguments:
                         ✓Disable printing of country flags 
                         ✓Disable indication and progress status. 
                         Saves system resources and speeds up searches
-  --userlist , -u <path> 
+  --userlist , -u <file> 
                         Specify a file with a list of users.
                         Example: 'python snoop.py -u
                         /storage/emulated/0/Download/listusers.txt'
@@ -173,7 +173,7 @@ search arguments:
                         By default, certificate verification on servers is
                         disabled, which gives fewer errors and more results
                         when searching for nickname
-  --headers , -H <name> 
+  --headers , -H <User-Agent> 
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
                         from the snoop database is set for each site.
