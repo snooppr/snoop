@@ -817,7 +817,7 @@ def license_snoop():
 
 ## ОСНОВА.
 def run():
-    web_sites = "2600+"
+    web_sites = f"{len(BDflag) // 100}00+"
 # Назначение опций Snoop.
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      usage="python3 snoop.py [options] nickname\nor\nusage: python3 snoop.py nickname [options]\n",
@@ -1386,12 +1386,7 @@ def run():
                 continue
 
 ## Запись в txt.
-            try:
-                file_txt = open(f"{dirpath}/results/nicknames/txt/{username}.txt", "w", encoding="utf-8")
-                #raise Exception("")
-            except Exception:
-                file_txt = open(f"{dirpath}/results/nicknames/txt/username{time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.txt",
-                                "w", encoding="utf-8")
+            file_txt = open(f"{dirpath}/results/nicknames/txt/{username}.txt", "w", encoding="utf-8")
 
             file_txt.write("Адрес | ресурс" + "\n\n")
 
@@ -1424,12 +1419,10 @@ def run():
 
 
 ## Запись в html.
-            try:
-                file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
-                #raise Exception("")
-            except Exception:
-                file_html = open(f"{dirpath}/results/nicknames/html/username" + time.strftime("%d_%m_%Y_%H_%M_%S", time_date) + \
-                                 ".html", "w", encoding="utf-8")
+            if Android and re.search("[^\W \da-zA-Z]+", nick):
+                username = f"nickname_{time.strftime('%d_%m_%Y_%H-%M-%S')}"
+
+            file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
 
             file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../../web/public.png) " + \
                             "no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n<body>\n\n" + \
@@ -1511,14 +1504,10 @@ function sortList() {
 
 
 ## Запись в csv.
-            try:
-                if rus_windows is False:
-                    file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='', encoding="utf-8")
-                else:
-                    file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='') #для ru_пользователей
-            except Exception:
-                file_csv = open(f"{dirpath}/results/nicknames/csv/username {time.strftime('%d_%m_%Y_%H_%M_%S', time_date)}.csv",
-                                "w", newline='', encoding="utf-8")
+            if rus_windows is False:
+                file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='', encoding="utf-8")
+            else:
+                file_csv = open(f"{dirpath}/results/nicknames/csv/{username}.csv", "w", newline='') #для ru_пользователей
 
             usernamCSV = re.sub(" ", "_", nick)
             censors_cor = int((censors - recensor) / kef_user)  #err_connection
