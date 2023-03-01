@@ -120,28 +120,10 @@ def ravno():
     console.rule(characters='=', style="cyan bold")
 
 
-def DB(db_base):
-    try:
-        with open(db_base, "r", encoding="utf8") as f_r:
-            db = f_r.read()
-            db = db.encode("UTF-8")
-            db = base64.b64decode(db)
-            db = db[::-1]
-            db = base64.b64decode(db)
-            trinity = json.loads(db.decode("UTF-8"))
-            return trinity
-    except Exception:
-        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
-        sys.exit()
-
-
-## Получаем результаты и в будущем везде используем, сокращая вызовы функций.
-BDdemo = DB('BDdemo')
-BDflag = DB('BDflag')
+BDdemo = snoopbanner.DB('BDdemo')
+BDflag = snoopbanner.DB('BDflag')
 
 flagBS = len(BDdemo)
-
-
 timestart = time.time()
 time_date = time.localtime()
 censors = 0
@@ -875,9 +857,9 @@ def run():
                               help="\033[36mИ\033[0mсключить из поиска выбранный регион, \
                               допустимо использовать опцию '-e' несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир"
                              )
-    search_group.add_argument("--one-level", "-o <country_code>", action="append", metavar='', dest="one_level", default=None,
+    search_group.add_argument("--include", "-i <country_code>", action="append", metavar='', dest="one_level", default=None,
                               help="\033[36mВ\033[0mключить в поиск только выбранный регион, \
-                              допустимо использовать опцию '-o' несколько раз, например, '-o US -o UA' поиск по США и Украине"
+                              допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине"
                              )
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
                               help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту"
