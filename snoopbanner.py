@@ -2,7 +2,9 @@
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 "Text_banner_logo_help"
 
+import base64
 import click
+import json
 import locale
 import os
 import platform
@@ -21,10 +23,26 @@ init(autoreset=True)
 console = Console()
 
 
+## БД.
+def DB(db_base):
+    try:
+        with open(db_base, "r", encoding="utf8") as f_r:
+            db = f_r.read()
+            db = db.encode("UTF-8")
+            db = base64.b64decode(db)
+            db = db[::-1]
+            db = base64.b64decode(db)
+            trinity = json.loads(db.decode("UTF-8"))
+            return trinity
+    except Exception:
+        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
+        sys.exit()
+
+
 ## Пожертвование.
 def donate():
     print("")
-    console.print(Panel("""[cyan]
+    console.print(Panel(f"""[cyan]
 ╭donate/Buy:
 ├──Яндекс.Деньги (Юmoney):: [white]4100111364257544[/white]
 ├──Visa:: [white]4274320047338002[/white]
@@ -52,7 +70,7 @@ Snoop в исполняемом виде (build-версия) предостав
 Студентам по направлению ИБ/Криминалистика Snoop ПО full version может быть
 предоставлено на безвозмездной основе.
 
-Snoop full version: плагины без ограничений; 2600+ Websites;
+Snoop full version: плагины без ограничений; {len(DB('BDflag')) // 100}00+ Websites;
 поддержка и обновление Database Snoop.
 Подключение к Web_Database Snoop (online), которая расширяется/обновляется.[/bold green]
 [bold red]Ограничения demo version: Websites (Database Snoop сокращена в > 15 раз);

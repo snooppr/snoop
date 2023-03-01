@@ -147,10 +147,10 @@ search arguments:
                         Exclude the selected region from the search,
                         it is permissible to use the '-e' option several times,
                         for example, '-e RU -e WR' exclude Russia and World from search
-  --one-level , -o <country_code> 
+  --include , -i <country_code> 
                         Include only the selected region in the search,
-                        it is permissible to use the '-o' option several times,
-                        for example, '-o US -o UA' search for USA and Ukraine
+                        it is permissible to use the '-i' option several times,
+                        for example, '-i US -i UA' search for USA and Ukraine
   --country-sort, -c    Print and record_results' by country,
                         not alphabetically
   --time-out , -t <digit> 
