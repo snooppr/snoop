@@ -339,8 +339,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests_future.verify = False if cert is False else True
 
     if Android:
-        tread__ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
-        executor1 = ProcessPoolExecutor(max_workers=tread__)
+        proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
+        executor1 = ProcessPoolExecutor(max_workers=proc_)
     elif Windows:
         tread__ = len(BDdemo_new) if len(BDdemo_new) < 12 else 12
         executor1 = ThreadPoolExecutor(max_workers=tread__)
@@ -877,8 +877,7 @@ def run():
                               ✓Отключить звук\
                               ✓Запретить открытие web browser-а\
                               ✓Отключить вывод на печать флагов стран\
-                              ✓Отключить индикацию и статус прогресса.\
-                              Экономит ресурсы системы и ускоряет поиск"
+                              ✓Отключить индикацию и статус прогресса"
                              )
     search_group.add_argument("--userlist", "-u <file>", metavar='', action="store", dest="user", default=False,
                               help="\033[36mУ\033[0mказать файл со списком user-ов. Snoop интеллектуально обработает \
