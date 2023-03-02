@@ -162,8 +162,7 @@ search arguments:
   --no-func, -n         ✓Monochrome terminal, do not use colors in url 
                         ✓Disable sound ✓Disable opening web browser
                         ✓Disable printing of country flags 
-                        ✓Disable indication and progress status. 
-                        Saves system resources and speeds up searches
+                        ✓Disable indication and progress status
   --userlist , -u <file> 
                         Specify a file with a list of users.
                         Example: 'python snoop.py -u
@@ -176,15 +175,7 @@ search arguments:
   --headers , -H <User-Agent> 
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
-                        from the snoop database is set for each site.
-  --normal-mode, -N     Mode switch: SNOOPninja> normal mode> SNOOPninja. 
-                        By_default (GNU/Linux Full Version) on 
-                        'SNOOPninja mode': search acceleration ~ 25pct,
-                        RAM saving ~ 50pct, repeated 'flexible' connection on
-                        failed resources. SNOOPninja mode is only effective for
-                        Snoop for GNU/Linux Full Version. The default
-                        (on Windows) is 'normal mode'. 
-                        In Demo Version, the mode switch is deactivated
+                        from the snoop database is set for each site
 ```
 
 **Example**

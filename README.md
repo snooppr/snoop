@@ -167,8 +167,7 @@ search arguments:
   --no-func, -n         ✓Монохромный терминал, не использовать цвета
                         в url ✓Отключить звук ✓Запретить открытие web
                         browser-а ✓Отключить вывод на печать флагов стран
-                        ✓Отключить индикацию и статус прогресса. Экономит
-                        ресурсы системы и ускоряет поиск
+                        ✓Отключить индикацию и статус прогресса
   --userlist , -u <file> 
                         Указать файл со списком user-ов. Snoop
                         интеллектуально обработает данные и предоставит
@@ -185,15 +184,6 @@ search arguments:
                         Задать user-agent вручную, агент заключается
                         в кавычки, по умолчанию для каждого сайта задаётся
                         случайный либо переопреденный user-agent из БД snoop
-  --normal-mode, -N     Переключатель режимов: SNOOPninja >
-                        нормальный режим > SNOOPninja. По_умолчанию (GNU/Linux
-                        full version) вкл 'режим SNOOPninja': ускорение поиска
-                        ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое'
-                        соединение на сбойных ресурсах. Режим SNOOPninja
-                        эффективен только для Snoop for GNU/Linux full
-                        version. По_умолчанию (в Windows) вкл 'нормальный
-                        режим'. В demo version переключатель режимов
-                        деактивирован
 ```  
 
 **Example**
@@ -297,11 +287,11 @@ $ python3 -m pip install -r requirements.txt
 # Перезапустить Termux.  
 
 # Пользователь также может запустить snoop по команде 'snoop' из любого места в CLI, создав alias.
-$ cd && printf "alias snoop='cd && cd snoop && python snoop.py'\n" >> .bashrc && bash  
+$ cd && echo "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc && bash  
 
 # Пользователь также может выполнить быструю проверку интересующего его сайта по БД,
 # не используя опцию "--list-all", используя команду "snoopcheck".
-$ cd && printf "alias snoopcheck='cd && cd snoop && printf 2 | python snoop.py --list-all | grep -i'\n" >> .bashrc && bash  
+$ cd && echo "alias snoopcheck='cd && cd snoop && echo 2 | python snoop.py --list-all | grep -i'" >> .bashrc && bash  
 
 # ПРИМЕЧАНИЕ_2!: Snoop довольно умён и может автоматически открывать результаты поиска во внешнем веб-браузере:  
 $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/termux.properties  
