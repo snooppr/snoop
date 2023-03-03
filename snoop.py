@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.6e', "s", "d"
+vers, vers_code, demo_full = 'v1.3.6f', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -210,7 +210,7 @@ def print_invalid(websites_names, message, color=True):
 
 ## Вернуть результат future for2.
 # Логика: возврат ответа и дуб_метода (из 4-х) в случае успеха, иначе возврат несуществующего метода для повторного запроса.
-def request_res(request_future, error_type, websites_names, timeout=None,
+def request_res(request_future, error_type, websites_names, timeout=None, norm=False,
                 print_found_only=False, verbose=False, color=True, country_code=''):
     # verbose=True
     global censors_timeout, censors
@@ -219,23 +219,23 @@ def request_res(request_future, error_type, websites_names, timeout=None,
         if res.status_code:
             return res, error_type, res.elapsed
     except requests.exceptions.HTTPError as err1:
-        if print_found_only is False:
+        if norm is False and print_found_only is False:
             print_error(websites_names, "HTTP Error", country_code, err1, verbose, color)
     except requests.exceptions.ConnectionError as err2:
         censors += 1
-        if 'aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2):
+        if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2)):
             if print_found_only is False:
                 print_error(websites_names, "Ошибка соединения", country_code, err2, verbose, color)
             return "FakeNone", "", -1
         else:
-            if print_found_only is False:
+            if norm is False and print_found_only is False:
                 print_error(websites_names, "Censorship | SSL", country_code, err2, verbose, color)
     except (requests.exceptions.Timeout, TimeoutError) as err3:
         censors_timeout += 1
-        if print_found_only is False:
+        if norm is False and print_found_only is False:
             print_error(websites_names, "Timeout ошибка", country_code, err3, verbose, color)
     except requests.exceptions.RequestException as err4:
-        if print_found_only is False:
+        if norm is False and print_found_only is False:
             print_error(websites_names, "Непредвиденная ошибка", country_code, err4, verbose, color)
     return None, "Great Snoop returns None", -1
 
@@ -270,7 +270,7 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
 
 ## Основная функция.
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
-          print_found_only=False, timeout=None, color=True, cert=False, quickly=False, headerS=None):
+          print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
 # Печать первой инфостроки.
     if '%20' in username:
         username_space = re.sub("%20", " ", username)
@@ -342,15 +342,17 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
         executor1 = ProcessPoolExecutor(max_workers=proc_)
     elif Windows:
-        tread__ = len(BDdemo_new) if len(BDdemo_new) < 12 else 12
+        if norm is False:
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < 12 else 12
+        else:
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < 16 else 16
         executor1 = ThreadPoolExecutor(max_workers=tread__)
     elif Linux:
         if norm is False:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 25 else 25
-            executor1 = ProcessPoolExecutor(max_workers=proc_)
         else:
-            tread__ = len(BDdemo_new) if len(BDdemo_new) < 16 else 16
-            executor1 = ThreadPoolExecutor(max_workers=tread__)
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 28 else 28
+        executor1 = ProcessPoolExecutor(max_workers=proc_)
 
     if reports:
         executor2 = ThreadPoolExecutor(max_workers=1)
@@ -389,7 +391,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Пропуск временно-отключенного сайта и не делать запрос, если имя пользователя не подходит для сайта.
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
-            if exclusionYES and re.search(exclusionYES, username) and not print_found_only:
+            if exclusionYES and re.search(exclusionYES, username) and not print_found_only and not norm:
                 print_invalid(websites_names, f"недопустимый ник '{username}' для данного сайта", color)
             results_site["exists"] = "invalid_nick"
             results_site["url_user"] = '*' * 56
@@ -399,7 +401,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             results_site['check_time_ms'] = '*' * 15
             results_site['response_time_ms'] = '*' * 15
             results_site['response_time_site_ms'] = '*' * 25
-            if param_websites.get("bad_site") == 1 and verbose and not print_found_only:
+            if param_websites.get("bad_site") == 1 and verbose and not print_found_only and not norm:
                 print_invalid(websites_names, f"**Пропуск. Dynamic gray_list", color)
                 results_site["exists"] = "gray_list"
             if param_websites.get("bad_site") == 1 and exclusionYES is None:
@@ -436,7 +438,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Прогресс_описание.
     if not verbose:
         if not Windows:
-            progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=random.choice(["dots", "dots12"])),
+            spin_emoj = 'arrow3' if norm else random.choice(["dots", "dots12"])
+            progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=spin_emoj),
                                 "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan',
                                 finished_style='cyan bold'), refresh_per_second=3.0)  #transient=True) #исчезает прогресс
         else:
@@ -481,13 +484,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Получить ожидаемый тип данных 4-х методов.
             error_type = param_websites["errorTypе"]
 # Получить результаты future.
-            r, error_type, response_time = request_res(request_future=param_websites["request_future"],
+            r, error_type, response_time = request_res(request_future=param_websites["request_future"], norm=norm,
                                                        error_type=error_type, websites_names=websites_names,
                                                        print_found_only=print_found_only, verbose=verbose,
                                                        color=color, timeout=timeout, country_code=f" ~{country_code}")
 
 # Повторное сбойное соединение через новую сессию быстрее, чем через adapter.
-            if norm is False and quickly is False and r == "FakeNone":
+            if norm is False and r == "FakeNone":
                 global recensor
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
                               'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
@@ -529,11 +532,12 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if r.status_code > 200 or (error2 in r.text or error in r.text or error3 in r.text):
-                    if not print_found_only:
+                    if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
                     exists = "увы"
                 else:
-                    print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
+                    if not norm:
+                        print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
                         sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r)
@@ -543,12 +547,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if r.status_code == 301 or r.status_code == 303:
-                    print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
+                    if not norm:
+                        print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     exists = "найден!"
                     if reports:
                         session_size = sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r)
                 else:
-                    if not print_found_only:
+                    if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
                         session_size = len(str(r.content))
                     exists = "увы"
@@ -558,12 +563,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if not r.status_code >= 300 or r.status_code < 200:
-                    print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
+                    if not norm:
+                        print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     if reports:
                         sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
-                    if not print_found_only:
+                    if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
                     exists = "увы"
 ## Проверка, 4 методов; #4
@@ -572,12 +578,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
                 if 200 <= r.status_code < 300:
-                    print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
+                    if not norm:
+                        print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
                     if reports:
                         sreports(url, headers, executor1, requests_future, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
-                    if not print_found_only:
+                    if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
                     exists = "увы"
 ## Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за неизвестной ошибки.
@@ -818,7 +825,7 @@ def run():
                               )
     service_group.add_argument("--donate", "-d", action="store_true", dest="donation",
                                help="\033[36mП\033[0mожертвовать на развитие Snoop Project-а, получить/приобрести \
-                               \033[32;1mSnoop full version\033[0m"
+                                     \033[32;1mSnoop full version\033[0m"
                               )
     service_group.add_argument("--autoclean", "-a", action="store_true", dest="autoclean", default=False,
                                help="\033[36mУ\033[0mдалить все отчеты, очистить место"
@@ -835,8 +842,8 @@ def run():
     search_group = parser.add_argument_group('\033[36msearch arguments\033[0m')
     search_group.add_argument("username", nargs='*', metavar='nickname', action="store", default=None,
                               help="\033[36mН\033[0mикнейм разыскиваемого пользователя. \
-                              Поддерживается поиск одновременно нескольких имён.\
-                              Ник, содержащий в своем имени пробел, заключается в кавычки"
+                                    Поддерживается поиск одновременно нескольких имен.\
+                                    Ник, содержащий в своем имени пробел, заключается в кавычки"
                              )
     search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
                               help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию"
@@ -847,76 +854,85 @@ def run():
                              )
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
                               help=f"\033[36mП\033[0mодключиться для поиска 'nickname' к динамично-обновляемой web_БД ({web_sites} сайтов).\
-                              В demo version функция отключена"
+                                     В demo version функция отключена"
                              )
     search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list", default=None,
                               help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'nickname' на одном указанном ресурсе, \
-                              допустимо использовать опцию '-s' несколько раз"
+                                    допустимо использовать опцию '-s' несколько раз"
                              )
     search_group.add_argument("--exclude", "-e <country_code>", action="append", metavar='', dest="exclude_country", default=None,
                               help="\033[36mИ\033[0mсключить из поиска выбранный регион, \
-                              допустимо использовать опцию '-e' несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир"
+                                    допустимо использовать опцию '-e' несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир"
                              )
     search_group.add_argument("--include", "-i <country_code>", action="append", metavar='', dest="one_level", default=None,
                               help="\033[36mВ\033[0mключить в поиск только выбранный регион, \
-                              допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине"
+                                    допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине"
                              )
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
                               help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту"
                              )
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=9,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
-                              "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'.\
-                              Вкл. эту опцию необходимо при медленном интернет соединении (по умолчанию 9с)"
+                                   "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'.\
+                                    Вкл. эту опцию необходимо при медленном интернет соединении (по умолчанию 9с)"
                              )
     search_group.add_argument("--found-print", "-f", action="store_true", dest="print_found_only", default=False,
                               help="\033[36mВ\033[0mыводить на печать только найденные аккаунты"
                              )
     search_group.add_argument("--no-func", "-n", action="store_true", dest="no_func", default=False,
-                              help="\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url\
-                              ✓Отключить звук\
-                              ✓Запретить открытие web browser-а\
-                              ✓Отключить вывод на печать флагов стран\
-                              ✓Отключить индикацию и статус прогресса"
+                              help="\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url \
+                                    ✓Отключить звук\
+                                    ✓Запретить открытие web browser-а\
+                                    ✓Отключить вывод на печать флагов стран\
+                                    ✓Отключить индикацию и статус прогресса"
                              )
     search_group.add_argument("--userlist", "-u <file>", metavar='', action="store", dest="user", default=False,
                               help="\033[36mУ\033[0mказать файл со списком user-ов. Snoop интеллектуально обработает \
-                              данные и предоставит доп.отчёты"
+                                    данные и предоставит доп.отчеты"
                              )
     search_group.add_argument("--save-page", "-S", action="store_true", dest="reports", default=False,
                               help="\033[36mС\033[0mохранять найденные странички пользователей в локальные html-файлы"
                              )
     search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
-                                  help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
-                                  на серверах отключена, что даёт меньше ошибок и больше результатов при поиске nickname"""
+                              help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
+                                      на серверах отключена, что дает меньше ошибок и больше результатов при поиске nickname"""
                              )
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="headerS", nargs=1, default=None,
                               help="""\033[36mЗ\033[0mадать user-agent вручную, агент заключается в кавычки, по умолчанию для каждого сайта
-                               задаётся случайный либо переопреденный user-agent из БД snoop"""
+                                      задается случайный либо переопределенный user-agent из БД snoop"""
                              )
-    search_group.add_argument("--normal-mode", "-N", action="store_true", dest="norm", default=False,
-                              help=argparse.SUPPRESS
-                              #help="""\033[36mП\033[0mереключатель режимов: SNOOPninja > нормальный режим > SNOOPninja.
-                              #По_умолчанию (GNU/Linux full version) вкл 'режим SNOOPninja':
-                              #ускорение поиска ~25pct, экономия ОЗУ ~50pct, повторное 'гибкое' соединение на сбойных ресурсах.
-                              #Режим SNOOPninja эффективен только для Snoop for GNU/Linux full version.
-                              #По_умолчанию (в Windows) вкл 'нормальный режим'. В demo version переключатель режимов деактивирован"""
-                             )
-    search_group.add_argument("--quick-mode ", "-q", default=False, action="store_true", dest="quickly",
-                              help=argparse.SUPPRESS
-                              #help="""\033[36mВ\033[0mкл  тихий режим поиска. Промежуточные результаты не выводятся на печать.
-                              #Повторные гибкие соединения на сбойных ресурсах без замедления ПО.
-                              #Самый прогрессивный режим поиска (в разработке - не использовать)"""  #help=argparse.SUPPRESS
+    search_group.add_argument("--quick", "-q", action="store_true", dest="norm", default=False,
+                              help="""\033[36mБ\033[0mыстрый и агрессивный режим поиска.
+                                      Не обрабатывает повторно сбойные ресурсы, в следствие чего, ускоряется поиск, но и повышается Bad_raw.
+                                      Не выводит промежуточные результаты на печать. Потребляет больше ресурсов.
+                                      Режим эффективен в full version"""
                              )
 
     args = parser.parse_args()
-    #print(args)
-
-    if args.quickly:
-        snoopbanner.logo(text="🛠  [-q] новая функциональность — в разработке")
+    # print(args)
 
 
-## Опции  '-cseo' несовместимы между собой.
+## Опции  '-cseo' несовместимы между собой и быстрый режим.
+    if args.norm and demo_full == "f":
+        print(Fore.CYAN + "[+] активирована опция '-q': «быстрый режим поиска»\n")
+        args.version, args.listing, args.donation, args.autoclean = False, False, False, False
+        args.update, args.module, args.autoclean = False, False, False
+
+        options = []
+        options.append(args.site_list)
+        options.append(args.country)
+        options.append(args.verbose)
+        options.append(args.print_found_only)
+        options.append(args.no_func)
+        options.append(args.reports)
+        options.append(args.cert)
+        options.append(args.headerS)
+
+        if any(options) or args.timeout != 9:
+            snoopbanner.logo(text="⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']")
+    elif args.norm and demo_full == "d":
+        snoopbanner.logo(text="[-] в demo деактивирован переключатель '-q': «режимов SNOOPninja/Quick»")
+
     k = 0
     for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
         if _ is True:
@@ -1003,11 +1019,6 @@ def run():
         print(Fore.CYAN + f"[+] активирована опция '-C': «проверка сертификатов на серверах вкл»")
 
 
-## Опция режима SNOOPnina > < нормальный режим.
-    if args.norm is True:
-        snoopbanner.logo(text="[-] в demo деактивирован переключатель '--': «режимов SNOOPninja/Normal»")
-
-
 ## Опция  '-w'.
     if args.web:
         print(Fore.CYAN + "[+] активирована опция '-w': «подключение к внешней web_database»")
@@ -1025,7 +1036,7 @@ def run():
 
 ## Опция  '-t'.
     try:
-        if args.timeout:
+        if args.timeout and args.norm is False:
             print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от " + \
                   f"сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
     except Exception:
@@ -1356,7 +1367,7 @@ def run():
 
             FULL, hardware = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert,
                                    norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout,
-                                   color=not args.no_func, quickly=args.quickly, headerS=args.headerS)
+                                   color=not args.no_func, headerS=args.headerS)
 
             exists_counter = 0
 

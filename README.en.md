@@ -134,13 +134,13 @@ search arguments:
                         Searching for several names at the same time is 
                         supported. Nicknames containing a space in their name
                         are enclosed in quotation marks
-  --verbose, -v         When searching for 'username', print detailed
+  --verbose, -v         When searching for 'nickname', print detailed
                         verbalization
-  --web-base, -w        Connect to search for 'username' to the updated web_DB
+  --web-base, -w        Connect to search for 'nickname' to the updated web_DB
                         (2600+ websites). In demo version the function is disabled
   --site , -s <site_name> 
                         Specify the name of the site from the database 
-                        '--list-all'. Search for 'username' on one specified
+                        '--list-all'. Search for 'nickname' on one specified
                         resource, it is acceptable to use the '-s' option
                         multiple times
   --exclude , -e <country_code> 
@@ -164,9 +164,8 @@ search arguments:
                         ✓Disable printing of country flags 
                         ✓Disable indication and progress status
   --userlist , -u <file> 
-                        Specify a file with a list of users.
-                        Example: 'python snoop.py -u
-                        /storage/emulated/0/Download/listusers.txt'
+                        Specify a file with a list of users. Snoop will
+                        intelligently process the data and provide additional reports
   --save-page, -S       Save found user pages to local files
   --cert-on, -C         Enable verification of certificates on servers.
                         By default, certificate verification on servers is
@@ -176,6 +175,10 @@ search arguments:
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
                         from the snoop database is set for each site
+  --quick, -q           Fast and aggressive search mode. Does not reprocess bad
+                        resources, as a result of which the search is accelerated,
+                        but Bad_raw also increases. Does not print intermediate results.
+                        Consumes more resources. The mode is effective in full version
 ```
 
 **Example**
