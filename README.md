@@ -15,7 +15,7 @@ that is, it is available to the average user.
 > *Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти) в области поиска и обработки публичных данных в сети интернет. По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.*  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
-<img src="https://img.shields.io/badge/Snoop-~2600+%20websites-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2700+%20websites-success" width="30%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
@@ -37,7 +37,7 @@ Snoop for OS Windows and GNU/Linux
 
 **Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
-[Snoop full version database 2600+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop full version database 2700+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Релиз/Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -140,7 +140,7 @@ search arguments:
   --verbose, -v         Во время поиска 'nickname' выводить на печать
                         подробную вербализацию
   --web-base, -w        Подключиться для поиска 'nickname' к
-                        динамично-обновляемой web_БД (2600+ сайтов). В demo
+                        динамично-обновляемой web_БД (2700+ сайтов). В demo
                         version функция отключена
   --site , -s <site_name> 
                         Указать имя сайта из БД '--list-all'. Поиск
@@ -304,7 +304,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 # ПРИМЕЧАНИЕ_3!: после отключения РФ от Лондонской точки обмена интернет-трафиком скорость поиска Snoop
 # (возможно и у других поставщиков связи) на мобильных операторах Мегафон/Yota упала в ~2 раза.
 ```
-ПРИМЕЧАНИЕ_4!: если ваш Android ущербный (то есть 12+) и ломает Termux, читайте инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
+ПРИМЕЧАНИЕ_4!: если у пользователя Android ущербный (то есть 12+) и ломает Termux, читайте инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
 ПРИМЕЧАНИЕ_5!: поддерживаются старые пропатченные python версии 3.7-3.10 из [termux_tur repo](https://github.com/termux-user-repository/tur/tree/master/tur).  
 
 <p align="center">  
@@ -363,8 +363,8 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 
 6. Не обращать внимание, сайты иногда уходят на ремонтные работы и возвращаются в строй.
 
-7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с openssl в некоторых дистрибутивах GNU/Linux, а также проблема с сайтами, которые не обновлялись годами. Проблемы эти встречаются, если пользователь намеренно запустил snoop с опцией '--cert-on'.  
-Решение:
+7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с openssl в некоторых дистрибутивах GNU/Linux, а также проблема с сайтами, которые не обновлялись годами. Проблема эта встречается, если пользователь намеренно запустил snoop с опцией '--cert-on'.  
+Решение не использовать опцию «--cert-on» или:
 ```
 $ sudo nano /etc/ssl/openssl.cnf
 
