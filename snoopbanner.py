@@ -25,18 +25,15 @@ console = Console()
 
 ## БД.
 def DB(db_base):
-    try:
-        with open(db_base, "r", encoding="utf8") as f_r:
-            db = f_r.read()
-            db = db.encode("UTF-8")
-            db = base64.b64decode(db)
-            db = db[::-1]
-            db = base64.b64decode(db)
-            trinity = json.loads(db.decode("UTF-8"))
-            return trinity
-    except Exception:
-        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
-        sys.exit()
+    with open(db_base, "r", encoding="utf8") as f_r:
+        db = f_r.read()
+        db = db.encode("UTF-8")
+        db = base64.b64decode(db)
+        db = db[::-1]
+        db = base64.b64decode(db)
+        trinity = json.loads(db.decode("UTF-8"))
+        return trinity
+
 
 
 ## Пожертвование.
