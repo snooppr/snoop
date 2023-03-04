@@ -785,9 +785,17 @@ def license_snoop():
     termux = f"\nTermux: [dim cyan]{T_v}[/dim cyan]\n" if Android else "\n"
 
     if python3_8:
+        colorama_v = f", (colorama::{version_lib('colorama')})"
         rich_v = f", (rich::{version_lib('rich')})"
         plays_v = f", (playsound::{version_lib('playsound')})"
+        urlib_v = f", (urllib3::{version_lib('urllib3')})"
+        folium_v = f", (folium::{version_lib('folium')})" if not Android else ""
+        numpy_v = f", (numpy::{version_lib('numpy')})" if not Android else ""
     else:
+        urlib_v = ""
+        colorama_v = ""
+        folium_v = ""
+        numpy_v = ""
         rich_v = ""
         plays_v = ""
 
@@ -797,7 +805,8 @@ def license_snoop():
                               f"Locale: [dim cyan]{locale.setlocale(locale.LC_ALL)}[/dim cyan]\n" + \
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
                               f"Key libraries: [dim cyan](requests::{requests.__version__}), (certifi::{certifi.__version__}), " + \
-                                             f"(speedtest::{networktest.speedtest.__version__}){rich_v}{plays_v}[/dim cyan]\n" + \
+                                             f"(speedtest::{networktest.speedtest.__version__}){rich_v}{plays_v}" + \
+                                             f"{folium_v}{numpy_v}{colorama_v}{urlib_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
                               f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}",
                               title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
