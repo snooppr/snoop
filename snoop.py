@@ -129,7 +129,7 @@ time_date = time.localtime()
 censors = 0
 censors_timeout = 0
 recensor = 0
-
+lame_workhorse = False
 
 ## Создание директорий результатов.
 if Windows:
@@ -339,8 +339,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests_future.verify = False if cert is False else True
 
     if Android:
-        proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
-        executor1 = ProcessPoolExecutor(max_workers=proc_)
+        try:
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
+            executor1 = ProcessPoolExecutor(max_workers=proc_)
+            #raise Exception("")
+        except Exception:
+            console.log(snoopbanner.err_all(err_="high"))
+            global lame_workhorse
+            lame_workhorse = True
+            executor1 = ThreadPoolExecutor(max_workers=8)
     elif Windows:
         if norm is False:
             tread__ = len(BDdemo_new) if len(BDdemo_new) < 12 else 12
@@ -1624,6 +1631,8 @@ if __name__ == '__main__':
         console.print(f"\n[bold red]Прерывание [italic](высвобождение ресурсов, ждите...)[/bold red]")
         if Windows:
             os.kill(os.getpid(), signal.SIGBREAK)
+        elif lame_workhorse:
+            os.kill(os.getpid(), signal.SIGKILL)
         else:
             for child in active_children():
                 child.terminate()
