@@ -130,6 +130,8 @@ censors = 0
 censors_timeout = 0
 recensor = 0
 lame_workhorse = False
+d_g_l = []
+
 
 ## Создание директорий результатов.
 if Windows:
@@ -412,6 +414,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 print_invalid(websites_names, f"**Пропуск. Dynamic gray_list", color)
                 results_site["exists"] = "gray_list"
             if param_websites.get("bad_site") == 1 and exclusionYES is None:
+                d_g_l.append(websites_names)
                 results_site["exists"] = "gray_list"
         else:
 # URL пользователя на сайте (если он существует).
@@ -795,11 +798,11 @@ def license_snoop():
         colorama_v = f", (colorama::{version_lib('colorama')})"
         rich_v = f", (rich::{version_lib('rich')})"
         plays_v = f", (playsound::{version_lib('playsound')})"
-        urlib_v = f", (urllib3::{version_lib('urllib3')})"
+        urllib3_v = f", (urllib3::{version_lib('urllib3')})"
         folium_v = f", (folium::{version_lib('folium')})" if not Android else ""
         numpy_v = f", (numpy::{version_lib('numpy')})" if not Android else ""
     else:
-        urlib_v = ""
+        urllib3_v = ""
         colorama_v = ""
         folium_v = ""
         numpy_v = ""
@@ -813,7 +816,7 @@ def license_snoop():
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
                               f"Key libraries: [dim cyan](requests::{requests.__version__}), (certifi::{certifi.__version__}), " + \
                                              f"(speedtest::{networktest.speedtest.__version__}){rich_v}{plays_v}" + \
-                                             f"{folium_v}{numpy_v}{colorama_v}{urlib_v}[/dim cyan]\n" + \
+                                             f"{folium_v}{numpy_v}{colorama_v}{urllib3_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
                               f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}",
                               title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
@@ -1520,7 +1523,7 @@ function sortList() {
             usernamCSV = re.sub(" ", "_", nick)
             censors_cor = int((censors - recensor) / kef_user)  #err_connection
             censors_timeout_cor = int(censors_timeout / kef_user)  #err time-out
-            flagBS_err = round((censors_cor + censors_timeout_cor) * 100 / flagBS, 2)
+            flagBS_err = round((censors_cor + censors_timeout_cor) * 100 / (len(BDdemo_new) - len(d_g_l)), 2)
 
             writer = csv.writer(file_csv)
             if rus_windows or rus_unix or Android:
@@ -1558,6 +1561,7 @@ function sortList() {
             file_csv.close()
 
             ungzip.clear()
+            d_g_l.clear()
 
 
 ## Финишный вывод.
