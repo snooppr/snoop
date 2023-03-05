@@ -23,17 +23,30 @@ init(autoreset=True)
 console = Console()
 
 
+## Логирование ошибок.
+def err_all(err_= "low"):
+    if err_ == "high":
+        err_log = ("⚠️ [bold red][RU] Внимание! Критическая ошибка, просьба сообщить об этом разработчику.\n" + \
+                   "[EN] Attention! Critical error, please report it to the developer.\nhttps://github.com/snooppr/snoop/issues[/bold red]")
+    elif err_ == "low":
+        err_log = ("⚠️ [bold yellow][RU] Ошибка | [EN] Error[/bold yellow]")
+    return err_log
+
+
 ## БД.
 def DB(db_base):
-    with open(db_base, "r", encoding="utf8") as f_r:
-        db = f_r.read()
-        db = db.encode("UTF-8")
-        db = base64.b64decode(db)
-        db = db[::-1]
-        db = base64.b64decode(db)
-        trinity = json.loads(db.decode("UTF-8"))
-        return trinity
-
+    try:
+        with open(db_base, "r", encoding="utf8") as f_r:
+            db = f_r.read()
+            db = db.encode("UTF-8")
+            db = base64.b64decode(db)
+            db = db[::-1]
+            db = base64.b64decode(db)
+            trinity = json.loads(db.decode("UTF-8"))
+            return trinity
+    except Exception:
+        print(Style.BRIGHT + Fore.RED + "Упс, что-то пошло не так..." + Style.RESET_ALL)
+        sys.exit()
 
 
 ## Пожертвование.
