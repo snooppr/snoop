@@ -954,7 +954,7 @@ def run():
         if _ is True:
             k += 1
         if k == 2:
-            snoopbanner.logo(text="⛔️ опции ['-c', '-e' '-o', '-s'] несовместимы между собой")
+            snoopbanner.logo(text="⛔️ опции ['-c', '-e' '-i', '-s'] несовместимы между собой")
 
 
 ## Опция  '-V' не путать с опцией '-v'.
@@ -1069,7 +1069,7 @@ def run():
         print(f"{Fore.CYAN}[+] активирована опция '-s': «поиск '{Style.BRIGHT}{Fore.CYAN}{', '.join(args.username)}{Style.RESET_ALL}" + \
               f"{Fore.CYAN}' на выбранных website(s)»\n" + \
               f"    допустимо использовать опцию '-s' несколько раз\n" + \
-              f"    [опция '-s'] несовместима с [опциями '-с', '-e', 'o']")
+              f"    [опция '-s'] несовместима с [опциями '-с', '-e', '-i']")
 
 
 ## Опция '--list-all'.
@@ -1332,16 +1332,16 @@ def run():
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
               str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
               "    допустимо использовать опцию '-e' несколько раз\n" + \
-              "    [опция '-e'] несовместима с [опциями '-s', '-c', 'o']")
+              "    [опция '-e'] несовместима с [опциями '-s', '-c', '-i']")
 
 
-## Опция '-o'.
+## Опция '-i'.
 # Создать для проверки сокращенную базу данных сайта(ов).
 # Создать и добавить в новую БД сайты, аргументы (-e) которых != бук.кодам стран (country_klas).
     elif args.one_level is not None:
         lap, diff_list = one_exl(one_exl_=args.one_level, bool_=False)
 
-        print(Fore.CYAN + f"[+] активирована опция '-o': «включить в поиск только выбранные регионы»::", end=' ')
+        print(Fore.CYAN + f"[+] активирована опция '-i': «включить в поиск только выбранные регионы»::", end=' ')
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
               str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
               "    допустимо использовать опцию '-i' несколько раз\n" + \
