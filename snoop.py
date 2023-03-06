@@ -360,7 +360,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if norm is False:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 25 else 25
         else:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 28 else 28
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 27 else 27
         executor1 = ProcessPoolExecutor(max_workers=proc_)
 
     if reports:
