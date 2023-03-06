@@ -401,7 +401,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
             if exclusionYES and re.search(exclusionYES, username) and not print_found_only and not norm:
-                print_invalid(websites_names, f"недопустимый ник '{username}' для данного сайта", color)
+                print_invalid(websites_names, f"недопустимый ник '{nick}' для данного сайта", color)
             results_site["exists"] = "invalid_nick"
             results_site["url_user"] = '*' * 56
             results_site['countryCSV'] = "****"
