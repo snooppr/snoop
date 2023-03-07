@@ -412,8 +412,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             results_site['response_time_site_ms'] = '*' * 25
             if param_websites.get("bad_site") == 1 and verbose and not print_found_only and not norm:
                 print_invalid(websites_names, f"**Пропуск. Dynamic gray_list", color)
-                results_site["exists"] = "gray_list"
-            if param_websites.get("bad_site") == 1 and exclusionYES is None:
+            if param_websites.get("bad_site") == 1:
                 d_g_l.append(websites_names)
                 results_site["exists"] = "gray_list"
         else:
@@ -951,6 +950,9 @@ def run():
             snoopbanner.logo(text="⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']")
     elif args.norm and demo_full == "d":
         snoopbanner.logo(text="[-] в demo деактивирован переключатель '-q': «режимов SNOOPninja/Quick»")
+    elif args.norm is False and args.listing is False and demo_full == "f":
+        if Linux:
+            print(Fore.CYAN + "[+] активирован дефолтный поиск '--': «режим SNOOPninja»")
 
     k = 0
     for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
