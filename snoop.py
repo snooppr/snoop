@@ -7,6 +7,7 @@ import certifi
 import click
 import csv
 import glob
+import itertools
 import json
 import locale
 import networktest
@@ -68,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.7', "s", "d"
+vers, vers_code, demo_full = 'v1.3.7a', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -131,6 +132,7 @@ censors_timeout = 0
 recensor = 0
 lame_workhorse = False
 d_g_l = []
+symbol_bad = re.compile("[^a-zA-Zа-яА-Я\_\s\d\%\@\-\.\+]")
 
 
 ## Создание директорий результатов.
@@ -244,7 +246,7 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
 ## Сохранение отчетов опция (-S).
 def new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t):
     future2 = executor2.submit(requests_future.get, url=url, headers=headers, allow_redirects=True, timeout=t)
-    response = future2.result(t+2)
+    response = future2.result(t + 2)
     session_size = len(response.content)  #подсчет извлеченных данных
     with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as repre:
         repre.write(response.text)
@@ -314,11 +316,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         del ermail
 
 
-    with open('specialcharacters', 'r', encoding="utf-8") as errspec:
-        my_list_bad = list(errspec.read())
-        if any(symbol_bad in username for symbol_bad in my_list_bad):
-            console.print(f"⛔️ [bold red]Недопустимые символы в username: '{username}'\nПропуск\n")
-            return False, False
+    err_nick = re.findall(symbol_bad, username)
+    if err_nick:
+        print(f"⛔️ {Style.BRIGHT + Fore.RED}Недопустимые символы в nickname: {Style.RESET_ALL}" + \
+              f"{Fore.RED}{err_nick}{Style.RESET_ALL}\n{Style.BRIGHT + Fore.RED}Пропуск\n")
+        return False, False
 
 
     ernumber = ['76', '77', '78', '79', '89', "38", "37", "9", "+"]
@@ -1165,11 +1167,9 @@ def run():
 
 ## Опция '-u' указания файла-списка разыскиваемых пользователей.
     if args.user:
-        userlists, userlists_bad, duble, _duble = [], [], [], []
+        userlists, userlists_bad, duble, _duble, short_user = [], [], [], [], []
         flipped, d = {}, {}
 
-        with open('specialcharacters', 'r', encoding="utf-8") as errspec:
-            my_list_bad = list(errspec.read())
         try:
             patchuserlist = ("{}".format(args.user))
             userfile = patchuserlist.split('/')[-1] if not Windows else patchuserlist.split('\\')[-1]
@@ -1178,15 +1178,18 @@ def run():
             with open(patchuserlist, "r", encoding="utf8") as u1:
                 userlist = [(line[0], line[1].strip()) for line in enumerate(u1.read().replace("\ufeff", "").splitlines(), 1)]
 
-                for num, i in userlist:
-                    i_for = (num, i)
-                    if any(D in i for D in my_list_bad):
+                for num, user in userlist:
+                    i_for = (num, user)
+                    if re.findall(symbol_bad, user):
                         if all(i_for[1] != x[1] for x in userlists_bad):
                             userlists_bad.append(i_for)
                         else:
                             duble.append(i_for)
                         continue
-                    elif i == "":
+                    elif user == "":
+                        continue
+                    elif len(user) <= 2:
+                        short_user.append(i_for)
                         continue
                     else:
                         if all(i_for[1] != x[1] for x in userlists):
@@ -1238,9 +1241,27 @@ def run():
             console.print(Panel.fit("\n".join(_userlists_bad), title=f"invalid_data ({len(userlists_bad)})",
                                     style=STL(color="bright_red")))
 
+# Short.
+        if short_user:
+            _short_user = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(short_user, 1)]
+            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m " + \
+                  f"\033[31;1mкороче 3-х символов\033[0m\033[36m и будут пропущены:\033[0m")
+            console.print(Panel.fit("\n".join(_short_user).replace("%20", " "), title=f"short nickname ({len(short_user)})",
+                                    style=STL(color="bright_red")))
+
+# Сохранение bad_nickname(s) в результатах txt.
+        if short_user or userlists_bad:
+            for bad_user1, bad_user2 in itertools.zip_longest(short_user, userlists_bad):
+                with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
+                    if bad_user1:
+                        bad_nick.write(f"{time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user1[1]}'\n")
+                    if bad_user2:
+                        bad_nick.write(f"{time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user2[1]}'\n")
+
+
         USERLIST = [i[1] for i in userlists]
 
-        del userlists, duble, userlists_bad, _duble, flipped, d
+        del userlists, duble, userlists_bad, _duble, short_user, flipped, d
 
         if bool(USERLIST) is False:
             console.print(f"\n⛔️ [bold red]Файл '{patchuserlist}' не содержит ни одного валидного nickname'\n\nВыход\n")
@@ -1394,7 +1415,7 @@ def run():
 
             if bool(FULL) is False:
                 with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
-                    bad_nick.write(f"{time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}  {username}\n")
+                    bad_nick.write(f"{time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}  <CLI>  '{username}'\n")
 
                 continue
 
@@ -1525,7 +1546,10 @@ function sortList() {
             usernamCSV = re.sub(" ", "_", nick)
             censors_cor = int((censors - recensor) / kef_user)  #err_connection
             censors_timeout_cor = int(censors_timeout / kef_user)  #err time-out
-            flagBS_err = round((censors_cor + censors_timeout_cor) * 100 / (len(BDdemo_new) - len(d_g_l)), 2)
+            try:
+                flagBS_err = round((censors_cor + censors_timeout_cor) * 100 / (len(BDdemo_new) - len(d_g_l)), 2)
+            except ZeroDivisionError:
+                flagBS_err = 0
 
             writer = csv.writer(file_csv)
             if rus_windows or rus_unix or Android:
