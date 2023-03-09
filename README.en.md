@@ -307,7 +307,7 @@ on
  • **Information for civil servants/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16 Software that ensures the implementation of established actions during operational search activities.
 Order of the Ministry of Communications of the Russian Federation No. 515 registered No. 7012.  
 
- • **Snoop is not perfect**: web sites are falling; closing tags are missing; hosting services are not paid on time.  
+ • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; hosting services are not paid on time.  
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
 [example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
 
