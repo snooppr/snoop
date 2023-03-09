@@ -283,7 +283,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         info_str("разыскиваем:", username, color)
 
     if len(username) <= 2:
-        console.print(f"⛔️ [bold red]nickname не может быть короче 2-х символов: '{username}'\nПропуск\n")
+        console.print(f"⛔️ [bold red]nickname не может быть короче 2-х символов\nПропуск\n")
         return False, False
 
     username = re.sub(" ", "%20", username)
