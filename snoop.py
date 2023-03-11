@@ -173,7 +173,8 @@ def print_error(websites_names, errstr, country_code, errX, verbose=False, color
         print(f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]{Style.BRIGHT}" \
               f"{Fore.GREEN} {websites_names}: {Style.BRIGHT}{Fore.RED}{errstr}{country_code}{Fore.YELLOW} {errX if verbose else ''}")
         try:
-            if vers_code == 's': playsound('err.wav')
+            if 'source' in version:
+                playsound('err.wav')
         except Exception:
             pass
     else:
@@ -216,7 +217,6 @@ def print_invalid(websites_names, message, color=True):
 # Логика: возврат ответа и дуб_метода (из 4-х) в случае успеха, иначе возврат несуществующего метода для повторного запроса.
 def request_res(request_future, error_type, websites_names, timeout=None, norm=False,
                 print_found_only=False, verbose=False, color=True, country_code=''):
-    # verbose=True
     global censors_timeout, censors
     try:
         res = request_future.result(timeout=timeout + 4)
@@ -282,8 +282,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     else:
         info_str("разыскиваем:", username, color)
 
-    if len(username) <= 2:
-        console.print(f"⛔️ [bold red]nickname не может быть короче 2-х символов\nПропуск\n")
+    if len(username) < 3:
+        console.print(f"⛔️ [bold red]nickname не может быть короче 3-х символов\nПропуск\n")
         return False, False
 
     username = re.sub(" ", "%20", username)
@@ -533,8 +533,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 try:
                     if param_websites.get("encoding") is not None: r.encoding = param_websites.get("encoding")
                 except Exception:
-                    console.log("[bold red]err!: проверить кодировку/оповестить разработчика\nВыход")
-                    sys.exit()
+                    console.log(snoopbanner.err_all(err_="high"))
                 error = param_websites.get("errorMsg")
                 error2 = param_websites.get("errоrMsg2")
                 error3 = param_websites.get("errorMsg3") if param_websites.get("errorMsg3") is not None else "FakeNoneNoneNone"
@@ -609,7 +608,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             except Exception:
                 http_status = "сбой"
 
-            try:  # сессия в КБ
+            try:  #сессия в КБ
                 if reports is True:
                     session_size = session_size if error_type == 'redirection' else len(str(r.content))
                 else:
