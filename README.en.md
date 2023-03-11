@@ -96,10 +96,8 @@ $ apt-get update && apt-get install python3 python3-pip
 # Install dependencies 'requirements'
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
-# Or install all dependencies from 'requirements.txt' to manual through
-$ pip install lib1 lib2...
 # If instead of the flags of countries are displayed in special mixtures, deliver a font package, such as monochrome
-$ apt-get install ttf-ancient-fonts or color apt-get install fonts-noto-color-emoji
+$ apt-get install ttf-ancient-fonts or color (recomend) $ apt-get install fonts-noto-color-emoji
 # On Windows OS use CMD or PowerShell (to choose from convenience), but not ~~WSL~~!
 ```
 </details>
