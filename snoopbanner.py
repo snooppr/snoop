@@ -24,7 +24,7 @@ console = Console()
 
 
 ## Логирование ошибок.
-def err_all(err_= "low"):
+def err_all(err_="low"):
     if err_ == "high":
         err_log = ("⚠️ [bold red][RU] Внимание! Критическая ошибка, просьба сообщить об этом разработчику.\n" + \
                    "[EN] Attention! Critical error, please report it to the developer.\nhttps://github.com/snooppr/snoop/issues[/bold red]")
