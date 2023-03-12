@@ -106,6 +106,11 @@ $ apt-get install ttf-ancient-fonts or color (recomend) $ apt-get install fonts-
 <summary> 🟢 Using</summary>  
 
 ```
+usage: snoop_cli [search arguments...] nickname
+or
+usage: snoop_cli [service arguments | plugins arguments]
+
+
 $ snoop_cli --help #manual snoop build version GNU/Linux
 
 Help
@@ -166,9 +171,8 @@ search arguments:
                         intelligently process the data and provide additional reports
   --save-page, -S       Save found user pages to local files
   --cert-on, -C         Enable verification of certificates on servers.
-                        By default, certificate verification on servers is
-                        disabled, which gives fewer errors and more results
-                        when searching for nickname
+                        By default, certificate verification on servers is disabled, 
+                        which allows you to process problematic sites without errors
   --headers , -H <User-Agent> 
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent

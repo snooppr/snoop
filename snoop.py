@@ -828,7 +828,8 @@ def run():
     web_sites = f"{len(BDflag) // 100}00+"
 # Назначение опций Snoop.
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
-                                     usage="python3 snoop.py [options] nickname\nor\nusage: python3 snoop.py nickname [options]\n",
+                                     usage="python3 snoop.py [search arguments...] nickname\nor\n" + \
+                                            "usage: python3 snoop.py [service arguments | plugins arguments]\n",
                                      description=f"{Fore.CYAN}\nСправка{Style.RESET_ALL}",
                                      epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
                                              f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
@@ -914,7 +915,7 @@ def run():
                              )
     search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
                               help="""\033[36mВ\033[0mкл проверку сертификатов на серверах. По умолчанию проверка сертификатов
-                                      на серверах отключена, что дает меньше ошибок и больше результатов при поиске nickname"""
+                                      на серверах отключена, что позволяет обрабатывать проблемные сайты без ошибок"""
                              )
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="headerS", nargs=1, default=None,
                               help="""\033[36mЗ\033[0mадать user-agent вручную, агент заключается в кавычки, по умолчанию для каждого сайта
