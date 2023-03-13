@@ -616,7 +616,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                 if session_size >= 555:
                     session_size = round(session_size / 1024)
-                elif session_size <= 555:
+                elif session_size < 555:
                     session_size = round((session_size / 1024), 2)
             except Exception:
                 session_size = "Err"
