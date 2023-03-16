@@ -11,7 +11,8 @@ Snoop project is developed without taking into account the opinions of the NSA a
 that is, it is available to the average user.  
 
  • [English readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")  
-
+ • [Léame en español](https://github.com/snooppr/snoop/blob/master/README.es.md "Por favor, siéntase libre de mejorar la traducción de esta página").  
+ 
 > *Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти) в области поиска и обработки публичных данных в сети интернет. По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.*  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
@@ -158,8 +159,7 @@ search arguments:
                         Включить в поиск только выбранный регион,
                         допустимо использовать опцию '-i' несколько раз,
                         например, '-i US -i UA' поиск по США и Украине
-  --country-sort, -c    Печать и запись результатов по странам, а не
-                        по алфавиту
+  --country-sort, -c    Печать и запись результатов по странам, а не по алфавиту
   --time-out , -t <digit> 
                         Установить выделение макс.времени на ожидание
                         ответа от сервера (секунды). Влияет на

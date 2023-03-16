@@ -154,8 +154,7 @@ search arguments:
                         Include only the selected region in the search,
                         it is permissible to use the '-i' option several times,
                         for example, '-i US -i UA' search for USA and Ukraine
-  --country-sort, -c    Print and record_results' by country,
-                        not alphabetically
+  --country-sort, -c    Print and record_results' by country, not alphabetically
   --time-out , -t <digit> 
                         Set maximum time allocation for waiting for a response 
                         from the server (seconds). Affects the search duration.
@@ -163,7 +162,8 @@ search arguments:
                         with a slow Internet connection (by default 9s)
   --found-print, -f     Print only found accounts
   --no-func, -n         ✓Monochrome terminal, do not use colors in url 
-                        ✓Disable sound ✓Disable opening web browser
+                        ✓Disable sound
+                        ✓Disable opening web browser
                         ✓Disable printing of country flags 
                         ✓Disable indication and progress status
   --userlist , -u <file> 
