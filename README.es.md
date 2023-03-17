@@ -35,7 +35,7 @@ Snoop para SO Windows y GNU/Linux
 
 **Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Base de datos de la versión completa de Snoop Más de 2800 sitios web ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Base de datos de la versión completa de Snoop Más de 2800+ sitios web ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Liberar
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -118,8 +118,7 @@ argumentos opcionales:
   -h, --help            mostrar este mensaje de ayuda y salir
 
 argumentos de servicio:
-  --version, -V         imprimir versiones de :: OS; Fisgonear;
-                        Python y licencias
+  --version, -V         Über: Druckversionen:: OS; schnüffeln; Python und Lizenzen
   --list-all, -l        Imprimir información detallada sobre la base
                         de datos de Snoop
   --donate, -d          Done al desarrollo del Proyecto Snoop, obtenga/compre
@@ -137,7 +136,7 @@ argumentos de búsqueda:
                         un espacio en su nombre se escribe entre comillas
   --verbose, -v         Cuando busque 'apodo', imprima verbalización detallada
   --web-base, -w        Conéctese a una web_DB dinámicamente actualizada
-                        (más de 2800 sitios) para buscar 'apodo'.
+                        (más de 2800+ sitios) para buscar 'apodo'.
                         En la versión de demostración, la función está deshabilitada
   --site , -s <site_name> 
                         Especifique el nombre del sitio de la base de datos '--list-all'.
