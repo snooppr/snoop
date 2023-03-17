@@ -4,7 +4,7 @@ Snoop Project
 ### Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов
 - [X] This is the most powerful software taking into account the CIS location.
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.png" />
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.jpg" />
 
 Is your life slideshow? Ask Snoop.  
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
