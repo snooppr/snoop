@@ -134,8 +134,8 @@ plugins arguments:
 search arguments:
   nickname              Spitzname des gesuchten Benutzers. Die gleichzeitige
                         Suche nach mehreren Namen wird unterstützt. Ein Spitzname,
-                        der ein Leerzeichen in seinem Namen enthält,
-                        wird in Anführungszeichen eingeschlossen
+                        der ein Leerzeichen in seinem Namen enthält, wird in
+                        Anführungszeichen eingeschlossen
   --verbose, -v         Geben Sie bei der Suche nach 'Spitzname' eine detaillierte
                         Verbalisierung aus
   --web-base, -w        Stellen Sie eine Verbindung zu einer dynamisch aktualisierten
@@ -149,8 +149,8 @@ search arguments:
   --exclude , -e <country_code> 
                         Schließen Sie die ausgewählte Region von der Suche aus,
                         es ist akzeptabel, die Option '-e' mehrmals zu verwenden, z. B.
-                        '-e RU -e WR', schließen Sie Russland und
-                        die Welt von der Suche aus
+                        '-e RU -e WR', schließen Sie Russland und die Welt von der
+                        Suche aus
   --include , -i <country_code> 
                         Wenn Sie nur die ausgewählte Region in die Suche einbeziehen, 
                         können Sie die Option '-i' mehrmals verwenden, z. B.
@@ -186,8 +186,8 @@ search arguments:
   --quick, -q           Schneller und aggressiver Suchmodus. Verarbeitet schlechte
                         Ressourcen nicht erneut, wodurch die Suche beschleunigt wird,
                         aber Bad_raw erhöht sich auch. Druckt keine Zwischenergebnisse.
-                        Verbraucht mehr Ressourcen.
-                        Der Modus ist in der Vollversion wirksam
+                        Verbraucht mehr Ressourcen. Der Modus ist in der Vollversion
+                        wirksam
 ```  
 
 **Beispiel**
@@ -257,7 +257,7 @@ $ python3 snoop.py --update #Git-Installation erforderlich.
 |           |Unzureichende Geschwindigkeit der Interne. EDGE/3G     |    2    |
 |           |'-t'-Option zu niedrig                                 |    2    |
 |           |ungültiger Spitzname                                   |    3    |
-|           |Verbindungsfehler: [GipsysTeam; RamblerDaing; Mamochki |    7    |
+|           |Verbindungsfehler: [GipsysTeam; RamblerDaing; Mamochki;|    7    |
 |           |                    Virtualireland; Nixp; Ddo]         |    7    |
 |           |Verbindungsfehler: [PayPal]                            |    4    |
 | ========= |=======================================================| ======= |

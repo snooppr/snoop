@@ -328,7 +328,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 |           |Недостаточная скорость интернет соединения EDGE/3G     |    2    |
 |           |Слишком низкое значение опции '-t'                     |    2    |
 |           |недопустимое nickname                                  |    3    |
-|           |Ошибки соединения: [GipsysTeam; RamblerDaing; Mamochki |    7    |
+|           |Ошибки соединения: [GipsysTeam; RamblerDaing; Mamochki;|    7    |
 |           |                    Virtualireland; Nixp; Ddo]         |    7    |
 |           |Ошибки соединения: [PayPal]                            |    4    |
 | ========= |=======================================================| ======= |
