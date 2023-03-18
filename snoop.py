@@ -531,7 +531,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Ответы message (разные локации).
             if error_type == "message":
                 try:
-                    if param_websites.get("encoding") is not None: r.encoding = param_websites.get("encoding")
+                    if param_websites.get("encoding") is not None:
+                        r.encoding = param_websites.get("encoding")
                 except Exception:
                     console.log(snoopbanner.err_all(err_="high"))
                 error = param_websites.get("errorMsg")
@@ -673,8 +674,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # не удерживать сокетом отработанное по всем п. соединение с сервером.
             requests_future.close()
 # Высвободить незначительную часть ресурсов.
-        if 'executor2' in locals(): executor2.shutdown()
-        if 'executor3' in locals(): executor3.shutdown()
+        try:
+            if 'executor2' in locals(): executor2.shutdown()
+            if 'executor3' in locals(): executor3.shutdown()
+        except Exception:
+            console.log(snoopbanner.err_all(err_="low"))
 # Вернуть словарь со всеми данными на запрос функции snoop и пробросить удерживаемые ресурсы (позже, закрыть в фоне).
         return dic_snoop_full, executor1
 
@@ -755,14 +759,14 @@ def license_snoop():
         console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
 
     if not Android:
-        if Windows and demo_full == 'f':
+        if Windows and 'full' in version:
             ram_av = 2200
-        elif Windows and demo_full == 'd':
+        elif Windows and 'demo' in version:
             ram_av = 650
 
-        if Linux and demo_full == 'f':
+        if Linux and 'full' in version:
             ram_av = 1200
-        elif Linux and demo_full == 'd':
+        elif Linux and 'demo' in version:
             ram_av = 700
 
         try:
@@ -934,7 +938,7 @@ def run():
 
 
 ## Опции  '-cseo' несовместимы между собой и быстрый режим.
-    if args.norm and demo_full == "f":
+    if args.norm and 'full' in version:
         print(Fore.CYAN + "[+] активирована опция '-q': «быстрый режим поиска»\n")
         args.version, args.listing, args.donation, args.autoclean = False, False, False, False
         args.update, args.module, args.autoclean = False, False, False
@@ -951,9 +955,9 @@ def run():
 
         if any(options) or args.timeout != 9:
             snoopbanner.logo(text="⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']")
-    elif args.norm and demo_full == "d":
+    elif args.norm and 'demo' in version:
         snoopbanner.logo(text="[-] в demo деактивирован переключатель '-q': «режимов SNOOPninja/Quick»")
-    elif args.norm is False and args.listing is False and demo_full == "f":
+    elif args.norm is False and args.listing is False and 'full' in version:
         if Linux:
             print(Fore.CYAN + "[+] активирован дефолтный поиск '--': «режим SNOOPninja»")
 
@@ -1649,6 +1653,7 @@ function sortList() {
         try:
             hardware.shutdown()
         except Exception:
+            console.log(snoopbanner.err_all(err_="low"))
             pass
 
 ## поиск по выбранным пользователям.
