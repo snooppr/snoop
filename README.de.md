@@ -8,7 +8,7 @@ Snoop Projekt
 
 Ist Ihr Leben eine Diashow? Frag Snoop.  
 Das Snoop-Projekt wird entwickelt, ohne die Meinungen der NSA und ihrer Freunde zu berücksichtigen,  
-das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung.  
+das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februar 2020)*.  
 
 > *Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*  
 

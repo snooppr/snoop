@@ -8,7 +8,7 @@ Proyecto Snoop
 
 ¿Tu vida es una presentación de diapositivas? Pregúntale a Snoop.  
 El proyecto Snoop se desarrolla sin tener en cuenta las opiniones de la NSA y sus amigos,  
-es decir, está al alcance del usuario medio.  
+es decir, está al alcance del usuario medio *(14 de febrero de 2020)*.  
 
 > *Snoop es un trabajo de desarrollo de investigación (base de datos propia/bugbounty cerrado) en la búsqueda y procesamiento de datos públicos en Internet. Según la búsqueda especializada de Snoop, es capaz de competir con los motores de búsqueda tradicionales.*  
 
