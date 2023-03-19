@@ -10,9 +10,10 @@ Is your life slideshow? Ask Snoop.
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user *(project creation date: February 14, 2020)*.  
 
- • [🌎 English readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")  
- • [🇪🇸 Léame en español](https://github.com/snooppr/snoop/blob/master/README.es.md "Por favor, siéntase libre de mejorar la traducción de esta página.")  
- • [🇩🇪 Deutsche readme](https://github.com/snooppr/snoop/blob/master/README.de.md "Bitte zögern Sie nicht, die Übersetzung dieser Seite zu verbessern..")  
+ • [🌎 english readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")  
+ • [🇪🇸 LÉAME EN ESPAÑOL](https://github.com/snooppr/snoop/blob/master/README.es.md "Por favor, siéntase libre de mejorar la traducción de esta página.")  
+ • [🇩🇪 deutsche readme](https://github.com/snooppr/snoop/blob/master/README.de.md "Bitte zögern Sie nicht, die Übersetzung dieser Seite zu verbessern..")  
+ • [🌎 中国人 README](https://github.com/snooppr/snoop/blob/master/README.cn.md "请随时改进此页面的翻译。")  
 
  ---
  

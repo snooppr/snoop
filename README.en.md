@@ -97,7 +97,7 @@ $ apt-get update && apt-get install python3 python3-pip
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # If instead of the flags of countries are displayed in special mixtures, deliver a font package, such as monochrome
-$ apt-get install ttf-ancient-fonts or color (recomend) $ apt-get install fonts-noto-color-emoji
+$ apt-get install ttf-ancient-fonts or color (recommend) $ apt-get install fonts-noto-color-emoji
 # On Windows OS use CMD or PowerShell (to choose from convenience), but not ~~WSL~~!
 ```
 </details>
@@ -234,7 +234,7 @@ $ python3 snoop.py --update #Git installation is required
 </details>
 
 <details>
-<summary> 🔴 Basic errors in</summary>
+<summary> 🔴 Basic errors</summary>
 
 |  Side     |                         Problem                       | Solving |
 |:---------:| ------------------------------------------------------|:-------:|
