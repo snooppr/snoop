@@ -14,7 +14,7 @@ that is, it is available to the average user *(project creation date: February 1
  • 【[🇪🇸 ESPAÑOL README](https://github.com/snooppr/snoop/blob/master/README.es.md "Por favor, siéntase libre de mejorar la traducción de esta página.")】  
  • 【[🇩🇪 deutsche readme](https://github.com/snooppr/snoop/blob/master/README.de.md "Bitte zögern Sie nicht, die Übersetzung dieser Seite zu verbessern..")】  
  • 【[🇨🇳 中国人 README](https://github.com/snooppr/snoop/blob/master/README.cn.md "请随时改进此页面的翻译。")】  
-• 【[🇫🇷 français readme](https://github.com/snooppr/snoop/blob/master/README.en.md "N'hésitez pas à améliorer la traduction de cette page.")】  
+• 【[🇫🇷 français readme](https://github.com/snooppr/snoop/blob/master/README.fr.md "N'hésitez pas à améliorer la traduction de cette page.")】  
 
  ---
  
