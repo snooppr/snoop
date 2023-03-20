@@ -249,7 +249,7 @@ $ python3 snoop.py --update #Git installation is required
 | Provider  |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
 | Server    |The site has changed its response/API;                 |    5    |
-|           |CF/WAF has been updated          |                     |    5    |
+|           |CF/WAF has been updated                                |    5    |
 |           |Blocking the client's IP address range by the server   |    4    |
 |           |Triggering/protecting a captcha resource               |    4    |
 |           |Some sites are temporarily unavailable, technical work |    6    |

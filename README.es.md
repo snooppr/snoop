@@ -251,7 +251,7 @@ $ python3 snoop.py --update #Se requiere la instalación de Git
 | Proveedor |censura en internet                                    |    4    |
 | ========= |=======================================================| ======= |
 | Servidor  |El sitio ha cambiado su respuesta/API;                 |    5    |
-|           |CF/WAF ha sido actualizado       |                     |    5    |
+|           |CF/WAF ha sido actualizado                             |    5    |
 |           |Bloqueo del rango de direcciones IP del cliente por    |    4    |
 |           |parte del servidor                                     |    4    |
 |           |Activar/proteger un recurso de captcha                 |    4    |
