@@ -264,7 +264,7 @@ $ python3 snoop.py --update #需要安装 Git
 ```
 $ sudo nano /etc/ssl/openssl.cnf
 
-# Edit the lines at the very bottom of the file:
+# 编辑文件最底部的行：
 [MinProtocol = TLSv1.2]
 在
 [MinProtocol = TLSv1]

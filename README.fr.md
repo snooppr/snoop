@@ -287,7 +287,7 @@ Résoudre :
 ```
 $ sudo nano /etc/ssl/openssl.cnf
 
-# Edit the lines at the very bottom of the file:
+# Modifiez les lignes tout en bas du fichier :
 [MinProtocol = TLSv1.2]
 sur
 [MinProtocol = TLSv1]
