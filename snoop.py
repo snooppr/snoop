@@ -1249,7 +1249,7 @@ def run():
 # Short.
         if short_user:
             _short_user = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(short_user, 1)]
-            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m " + \
+            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m'\033[0m " + \
                   f"\033[31;1mкороче 3-х символов\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(_short_user).replace("%20", " "), title=f"short nickname ({len(short_user)})",
                                     style=STL(color="bright_red")))
