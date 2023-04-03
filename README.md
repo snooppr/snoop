@@ -21,7 +21,7 @@ that is, it is available to the average user *(project creation date: February 1
 > *Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти) в области поиска и обработки публичных данных в сети интернет. По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.*  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
-<img src="https://img.shields.io/badge/Snoop-~2800+%20websites-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2900+%20websites-success" width="30%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
@@ -43,7 +43,7 @@ Snoop for OS Windows and GNU/Linux
 
 **Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop_run.png" />  
-[Snoop full version database 2800+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop full version database 2900+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Релиз/Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -149,7 +149,7 @@ search arguments:
   --verbose, -v         Во время поиска 'nickname' выводить на печать
                         подробную вербализацию
   --web-base, -w        Подключиться для поиска 'nickname' к
-                        динамично-обновляемой web_БД (2800+ сайтов). В demo
+                        динамично-обновляемой web_БД (2900+ сайтов). В demo
                         version функция отключена
   --site , -s <site_name> 
                         Указать имя сайта из БД '--list-all'. Поиск
