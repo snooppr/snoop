@@ -14,7 +14,7 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 根据 Snoop 的专业搜索，它有能力与传统搜索引擎竞争。  
 
 数据库索引等工具的比较：  
-<img src="https://img.shields.io/badge/Snoop-~2800+%20网站-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2900+%20网站-success" width="30%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 网站-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 网站-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 网站-yellowgreen" width="20%" />  
@@ -36,7 +36,7 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 
 **探听本地数据库**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop 完整版数据库 2800+ 个网站 ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "数据库探听")  
+[Snoop 完整版数据库 2900+ 个网站 ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "数据库探听")  
 
 ## 发布
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -131,7 +131,7 @@ plugins arguments:
 search arguments:
   nickname              被通缉用户的昵称。 支持同时搜索多个名称。 名称中包含空格的昵称用引号引起来
   --verbose, -v         搜索'昵称'时，打印详细的语言描述
-  --web-base, -w        连接以在更新的 web_DB（2800 多个网站）中搜索'昵称'。 在演示版本中，
+  --web-base, -w        连接以在更新的 web_DB（2900+ 多个网站）中搜索'昵称'。 在演示版本中，
                         该功能被禁用
   --site , -s <site_name> 
                         从数据库'--list-all'中指定站点名称。 在一个指定的资源上搜索'昵称'，
