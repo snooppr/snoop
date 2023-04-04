@@ -14,7 +14,7 @@ that is, it is available to the average user *(project creation date: February 1
 According to Snoop's specialized search, it is capable of competing with traditional search engines.*  
 
 Comparison of indexations of databases such tools:  
-<img src="https://img.shields.io/badge/Snoop-~2900+%20websites-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2900+%20websites-success" width="50%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  

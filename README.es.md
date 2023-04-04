@@ -13,7 +13,7 @@ es decir, está al alcance del usuario medio *(14 de febrero de 2020)*.
 > *Snoop es un trabajo de desarrollo de investigación (base de datos propia/bugbounty cerrado) en la búsqueda y procesamiento de datos públicos en Internet. Según la búsqueda especializada de Snoop, es capaz de competir con los motores de búsqueda tradicionales.*  
 
 Comparación de indexaciones de bases de datos tales herramientas:  
-<img src="https://img.shields.io/badge/Snoop-~2900+%20sitios web-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2900+%20sitios web-success" width="50%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 sitios web-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 sitios web-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 sitios web-yellowgreen" width="20%" />  
