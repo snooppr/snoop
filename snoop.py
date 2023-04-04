@@ -186,10 +186,10 @@ def print_found_country(websites_names, url, country_Emoj_Code, response_time=Fa
     """Вывести на печать аккаунт найден."""
     if color is True and Windows:
         print(f"{Style.RESET_ALL}{Style.BRIGHT}{Fore.CYAN}{country_Emoj_Code}" \
-              f"{Fore.GREEN}  {websites_names}:{Style.RESET_ALL}{Fore.GREEN} {url}")
+              f"{Fore.GREEN}  {websites_names}:{Style.RESET_ALL}{Fore.GREEN} {url}{Style.RESET_ALL}")
     elif color is True and not Windows:
         print(f"{Style.RESET_ALL}{country_Emoj_Code}{Style.BRIGHT}{Fore.GREEN}  {websites_names}: " \
-              f"{Style.RESET_ALL}{Style.DIM}{Fore.GREEN}{url}")
+              f"{Style.RESET_ALL}{Style.DIM}{Fore.GREEN}{url}{Style.RESET_ALL}")
     else:
         print(f"[+] {websites_names}: {url}")
 
