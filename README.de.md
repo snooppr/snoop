@@ -13,7 +13,7 @@ das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februa
 > *Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*  
 
 Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:  
-<img src="https://img.shields.io/badge/Snoop-~2900+%20websites-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2900+%20websites-success" width="50%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  

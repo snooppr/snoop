@@ -14,7 +14,7 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 根据 Snoop 的专业搜索，它有能力与传统搜索引擎竞争。  
 
 数据库索引等工具的比较：  
-<img src="https://img.shields.io/badge/Snoop-~2900+%20网站-success" width="30%" />  
+<img src="https://img.shields.io/badge/Snoop-~2900+%20网站-success" width="50%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 网站-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 网站-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 网站-yellowgreen" width="20%" />  
