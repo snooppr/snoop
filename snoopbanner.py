@@ -59,8 +59,7 @@ def donate():
 ├──Qiwi:: [white]https://qiwi.com/n/SNOOPPROJECT[/white]
 └──PayPal:: [white]snoopproject@protonmail.com[/white]
 
-[bold green]Если вас заинтересовала [red]Snoop demo version[/red], Вы можете официально приобрести
-[cyan]Snoop full version[/cyan], поддержав развитие проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
+[bold green]Если пользователя заинтересовало ПО [red]Snoop demo version[/red], то он может официально приобрести [cyan]Snoop full version[/cyan], поддержав развитие IT-проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
 [bold green]При пожертвовании/покупке в сообщении укажите информацию в таком порядке:[/bold green]
 
     [cyan]"Пожертвование на развитие Snoop Project: 20$ ваш e-mail
@@ -73,8 +72,7 @@ Snoop в исполняемом виде (build-версия) предостав
 Лицензия для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке: [/bold green]
 [cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], также лицензия доступна по команде '[/bold green][cyan]snoop_cli -V[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe -V[/cyan][bold green]' у исполняемого файла.
 
-Если Snoop требуется вам для служебных или образовательных задач,
-напишите письмо на e-mail разработчика в свободной форме.
+Если Snoop требуется вам для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.
 Студентам ПО Snoop full version предоставляется с 50% скидкой.
 
 Snoop full version: плагины без ограничений; {len(DB('BDflag')) // 100}00+ Websites;
