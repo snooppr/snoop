@@ -332,7 +332,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 |           |недопустимое nickname                                  |    3    |
 |           |Ошибки соединения: [GipsysTeam; RamblerDaing; Mamochki;|    7    |
 |           |                    Virtualireland; Nixp; Ddo]         |    7    |
-|           |Ошибки соединения: [PayPal]                            |    4    |
+|           |Ложные результаты (Беларусь): [D3; ChangeORG]          |    4    |
 | ========= |=======================================================| ======= |
 | Провайдер |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
