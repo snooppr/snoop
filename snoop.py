@@ -117,13 +117,8 @@ if time.time() > int(date_up):
     sys.exit()
 
 
-def ravno():
-    console.rule(characters='=', style="cyan bold")
-
-
 BDdemo = snoopbanner.DB('BDdemo')
 BDflag = snoopbanner.DB('BDflag')
-
 flagBS = len(BDdemo)
 timestart = time.time()
 time_date = time.localtime()
