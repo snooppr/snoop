@@ -364,6 +364,16 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/censorship.png" width="70%" />  
 </p>  
+<p align="center">  
+Пример внутренней интернет-цензуры.  
+</p>  
+
+<p align="center">  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/internet_censorship.png" width="90%" />  
+</p>  
+<p align="center">  
+Пример внешней интернет-цензуры.  
+</p>  
 
 5. Открыть в Snoop репозитории на Github-e Issue/Pull request  
 *(сообщить об этом разработчику)*.
