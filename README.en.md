@@ -41,11 +41,9 @@ Snoop for OS Windows and GNU/Linux
 ## Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-⬇️snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
-[Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
+Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
+┗━━ ⬇️[Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
 
-Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
- 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
@@ -243,8 +241,7 @@ $ python3 snoop.py --update #Git installation is required
 |           |Insufficient speed of the EDGE/3G Internet connection  |    2    |
 |           |The value of the '-t' option is too low                |    2    |
 |           |invalid username                                       |    3    |
-|           |Connection errors: [GipsysTeam; RamblerDaing; Mamochki]|    7    |
-|           |Connection errors: [Virtualireland; Nixp; Ddo]         |    7    |
+|           |Connection errors: [GipsysTeam; Nixp; Ddo; Mamochki]   |    7    |
 | ========= |=======================================================| ======= |
 | Provider  |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
