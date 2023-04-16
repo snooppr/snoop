@@ -41,11 +41,9 @@ Snoop pour OS Windows et GNU/Linux
 ## Libérer
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-⬇️snoop_cli.exe (Pour les fenêtres) et snoop_cli (pour GNU/Linux)  
-[Télécharger le projet Snoop](https://github.com/snooppr/snoop/releases "télécharger l'assembly SNOOP prêt à l'emploi pour Windows et GNU/Linux")  
+Snoop est livré avec des assemblages prêts à l'emploi (version) et ne nécessite pas de dépendances (bibliothèques) ou d'installation de python, c'est-à-dire qu'il s'exécute sur une machine propre avec OS Windows ou GNU/Linux.  
+┗━━ ⬇️[Télécharger le projet Snoop](https://github.com/snooppr/snoop/releases "télécharger l'assembly SNOOP prêt à l'emploi pour Windows et GNU/Linux")  
 
-Snoop est livré avec des assemblages prêts à l'emploi (version) et ne nécessite pas de dépendances (bibliothèques) ou d'installation de python3, c'est-à-dire qu'il s'exécute sur une machine propre avec OS Windows ou GNU/Linux.  
- 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
@@ -246,8 +244,7 @@ $ python3 snoop.py --update #L'installation de Git est requise
 |           |Débit insuffisant de la connexion Internet EDGE/3G     |    2    |
 |           |La valeur de l'option '-t' est trop faible             |    2    |
 |           |nom d'utilisateur invalide                             |    3    |
-|           |Erreurs de connexion : [GipsysTeam; RamblerDaing;      |    7    |
-|           |Erreurs de connexion : [Virtualireland; Nixp; Ddo]     |    7    |
+|           |Erreurs de connexion : [GipsysTeam; Nixp; Ddo]         |    7    |
 | ========= |=======================================================| ======= |
 |Fournisseur|Censure d'Internet                                     |    4    |
 | ========= |=======================================================| ======= |

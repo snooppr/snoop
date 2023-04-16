@@ -40,11 +40,9 @@ Snoop para SO Windows y GNU/Linux
 ## Liberar
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-⬇️snoop_cli.exe (para Windows) y snoop_cli (para GNU/Linux)  
-[Descargar Proyecto Snoop](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
+Snoop viene con ensamblajes listos para usar (versión) y no requiere dependencias (bibliotecas) ni la instalación de python, es decir, se ejecuta en una máquina limpia con sistema operativo Windows o GNU/Linux.  
+┗━━ ⬇️[Descargar Proyecto Snoop](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
 
-Snoop viene con ensamblajes listos para usar (versión) y no requiere dependencias (bibliotecas) ni la instalación de python3, es decir, se ejecuta en una máquina limpia con sistema operativo Windows o GNU/Linux.  
- 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
@@ -245,8 +243,7 @@ $ python3 snoop.py --update #Se requiere la instalación de Git
 |           |Velocidad de conexión a Internet insuficiente EDGE/3G  |    2    |
 |           |El valor de la opción '-t' es demasiado bajo           |    2    |
 |           |nombre de usuario no válido                            |    3    |
-|           |Err de conexión: [GipsysTeam; RamblerDaing; Mamochki]  |    7    |
-|           |Errores de conexión: [Virtualireland; Nixp; Ddo]       |    7    |
+|           |Err de conexión: [GipsysTeam; Nixp; Ddo; Mamochki]     |    7    |
 | ========= |=======================================================| ======= |
 | Proveedor |censura en internet                                    |    4    |
 | ========= |=======================================================| ======= |

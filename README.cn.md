@@ -41,11 +41,9 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 ## 发布
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-⬇️snoop_cli.exe (适用于 Windows) 和 snoop_cli (对于 GNU/Linux)  
-[下载 Snoop 项目](https://github.com/snooppr/snoop/releases "下载适用于 Windows 和 GNU/Linux 的现成 SNOOP 程序集")  
-
 Snoop 带有现成的程序集（发布版），不需要依赖项（库）或 python3 安装，也就是说，它可以在装有 OS Windows 或 GNU/Linux 的干净机器上运行。  
- 
+┗━━ ⬇️[下载 Snoop 项目](https://github.com/snooppr/snoop/releases "下载适用于 Windows 和 GNU/Linux 的现成 SNOOP 程序集")  
+
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
@@ -224,8 +222,7 @@ $ python3 snoop.py --update #需要安装 Git
 |           |EDGE/3G 互联网连接速度不够                                |    2    |
 |           |"-t"选项的值太低                                         |    2    |
 |           |无效的用户名                                             |    3    |
-|           |连接错误：[GipsysTeam; RamblerDaing; Mamochki]           |    7    |
-|           |连接错误：[Virtualireland; Nixp; Ddo]                    |    7    |
+|           |连接错误：[GipsysTeam; Nixp; Ddo; Mamochki]              |    7    |
 | ========= |=======================================================| ======= |
 | 供应商     |互联网审查                                               |    4    |
 | ========= |=======================================================| ======= |

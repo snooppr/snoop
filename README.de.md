@@ -40,12 +40,10 @@ Snoop für Betriebssysteme Windows und GNU/Linux
 ## Freigeben
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-⬇️snoop_cli.exe (für Windows) und snoop_cli (für GNU/Linux)  
-[Snoop-Projekt herunterladen](https://github.com/snooppr/snoop/releases 'Vorgefertigtes Snoop für Windows und GNU/Linux herunterladen')  
-
 Snoop wird vorkonfiguriert (freigegeben) geliefert und erfordert keine Abhängigkeiten (Bibliotheken) oder Python3-Installation,
 d. h. es läuft auf einem sauberen Computer mit dem Betriebssystem Windows oder GNU/Linux.  
- 
+┗━━ ⬇️[Snoop-Projekt herunterladen](https://github.com/snooppr/snoop/releases 'Vorgefertigtes Snoop für Windows und GNU/Linux herunterladen')  
+
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
@@ -257,9 +255,7 @@ $ python3 snoop.py --update #Git-Installation erforderlich.
 |           |Unzureichende Geschwindigkeit der Interne. EDGE/3G     |    2    |
 |           |'-t'-Option zu niedrig                                 |    2    |
 |           |ungültiger Spitzname                                   |    3    |
-|           |Verbindungsfehler: [GipsysTeam; RamblerDaing; Mamochki;|    7    |
-|           |                    Virtualireland; Nixp; Ddo]         |    7    |
-|           |Verbindungsfehler: [PayPal]                            |    4    |
+|           |Verbindungsfehler: [GipsysTeam; Nixp; Ddo; Mamochki]   |    7    |
 | ========= |=======================================================| ======= |
 | Anbieter  |Internetzensur                                         |    4    |
 | ========= |=======================================================| ======= |

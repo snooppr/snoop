@@ -48,13 +48,11 @@ Snoop for OS Windows and GNU/Linux
 ## Релиз/Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-⬇️snoop_cli.exe (for Windows) and snoop_cli (for GNU/Linux)  
-[Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
-
-**RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python3,
+**RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python,
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
-**EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python3 installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
- 
+**EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
+┗━━ ⬇️[Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
+
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
 
 <details>
