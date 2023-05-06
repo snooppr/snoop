@@ -110,10 +110,10 @@ $ apt-get install fonts-noto-color-emoji или $ apt-get install ttf-ancient-fo
 </details>
 
 <details>
-<summary> 🟢 Использование/Using</summary>  
-
+**<summary> 🟢 Использование/Using</summary>  
+**
 ```
-usage: snoop_cli [search arguments...] nickname
+usage: snoop_cli[search arguments...] nickname
 or
 usage: snoop_cli [service arguments | plugins arguments]
 
