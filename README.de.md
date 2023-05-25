@@ -70,7 +70,9 @@ Suchbericht Dutzend Spitzname (Plugin - Yandex_parser)
 $$$$
 
 ### 3. Demonstration einer der Methoden im Plugin — 〘Reverse Vgeocoder〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
+https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+Snoop wählt nur Geokoordinaten aus schmutzigen Daten (Zahlen, Buchstaben, Sonderzeichen) aus.  
+
 </details>
 
 <details>

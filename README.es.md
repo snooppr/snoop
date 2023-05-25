@@ -69,7 +69,9 @@ Informe de búsqueda docena de nombre de usuario (Complemento - Yandex_parser)
 $$$$
 
 ### 3. Demostración de uno de los métodos en el Complemento — 〘Reverse Vgeocoder〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
+https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+Snoop selecciona solo geocoordenadas de datos sucios (números, letras, caracteres especiales).  
+
 </details>
 
 <details>
