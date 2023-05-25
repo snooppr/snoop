@@ -79,7 +79,9 @@ Search report dozen nickname (Plugin — Yandex_parser)
 $$$$
 
 ### 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/RVG.gif" /> 
+https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653 
+Snoop выбирает из грязных данных (цифры, буквы, спецсимволы) лишь геокоррдинаты.  
+
 </details>
 
 <details>
