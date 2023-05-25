@@ -71,6 +71,7 @@ $$$$
 
 ### 3. Démonstration de l'une des méthodes du plugin — 〘Reverse Vgeocoder〙  
 https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+
 Snoop ne sélectionne que les géocoordonnées à partir de données sales (chiffres, lettres, caractères spéciaux).  
 
 </details>
