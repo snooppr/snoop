@@ -69,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.7b', "s", "d"
+vers, vers_code, demo_full = 'v1.3.7c', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -243,29 +243,41 @@ def new_session(url, headers, executor2, requests_future, error_type, username, 
     future2 = executor2.submit(requests_future.get, url=url, headers=headers, allow_redirects=True, timeout=t)
     response = future2.result(t + 2)
     session_size = len(response.content)  #подсчет извлеченных данных
-    with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as repre:
-        repre.write(response.text)
     return response, session_size
 
 def sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r):
     os.makedirs(f"{dirpath}/results/nicknames/save reports/{username}", exist_ok=True)
-    """Сохранять отчеты для метода: redirection."""
 
+    if r.encoding == "cp-1251":
+        r.encoding = "cp1251"
+    elif r.encoding == "cp-1252":
+        r.encoding = "cp1252"
+    elif r.encoding == "windows1251":
+        r.encoding = "windows-1251"
+    elif r.encoding == "windows1252":
+        r.encoding = "windows-1252"
+
+#Сохранять отчеты для метода: redirection.
     if error_type == "redirection":
         try:
-            response, session_size = new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t=4)
+            response, session_size = new_session(url, headers, executor2, requests_future, error_type,
+                                                 username, websites_names, r, t=4)
         except requests.exceptions.ConnectionError:
             time.sleep(0.1)
             try:
-                response, session_size = new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t=2)
+                response, session_size = new_session(url, headers, executor2, requests_future, error_type,
+                                                     username, websites_names, r, t=2)
             except Exception:
                 session_size = 'Err'  #подсчет извлеченных данных
-        return session_size
-    else:
-        """Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами."""
+#Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
+    try:
         with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as rep:
-            rep.write(r.text)
+            rep.write(response.text if error_type == "redirection" else r.text)
+    except Exception:
+        console.log(snoopbanner.err_all(err_="high"), f"\n\nlog_[{websites_names}:{r.encoding}]")
 
+    if error_type == "redirection":
+        return session_size
 
 ## Основная функция.
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
