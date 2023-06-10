@@ -260,21 +260,28 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
 #Сохранять отчеты для метода: redirection.
     if error_type == "redirection":
         try:
-            response, session_size = new_session(url, headers, executor2, requests_future, error_type,
-                                                 username, websites_names, r, t=4)
+            response, session_size = new_session(url, headers, executor2, requests_future,
+                                                 error_type, username, websites_names, r, t=4)
         except requests.exceptions.ConnectionError:
             time.sleep(0.1)
             try:
-                response, session_size = new_session(url, headers, executor2, requests_future, error_type,
-                                                     username, websites_names, r, t=2)
+                response, session_size = new_session(url, headers, executor2, requests_future,
+                                                     error_type, username, websites_names, r, t=2)
             except Exception:
                 session_size = 'Err'  #подсчет извлеченных данных
+        except Exception:
+            session_size = 'Err'
 #Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
     try:
         with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as rep:
-            rep.write(response.text if error_type == "redirection" else r.text)
+            if 'response' in locals():
+                rep.write(response.text)
+            elif error_type == "redirection" and 'response' not in locals():
+                rep.write("❌ Snoop Project bad_save, timeout")
+            else:
+                rep.write(r.text)
     except Exception:
-        console.log(snoopbanner.err_all(err_="high"), f"\n\nlog_[{websites_names}:{r.encoding}]")
+        console.log(snoopbanner.err_all(err_="low"), f"\nlog --> [{websites_names}:[bold red] {r.encoding}[/bold red]]")
 
     if error_type == "redirection":
         return session_size
