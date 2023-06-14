@@ -456,8 +456,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 allow_redirects = True
 
 # Отправить параллельно все запросы и сохранить future для последующего доступа.
-            param_websites["request_future"] = executor1.submit(request_method, url=url_API, headers=headers,
-                                                                allow_redirects=allow_redirects, timeout=timeout)
+            try:
+                param_websites["request_future"] = executor1.submit(request_method, url=url_API, headers=headers,
+                                                                    allow_redirects=allow_redirects, timeout=timeout)
+            except Exception:
+                continue
 # Добавлять во вл. словарь future со всеми другими результатами.
         dic_snoop_full[websites_names] = results_site
 
