@@ -69,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.7c', "s", "d"
+vers, vers_code, demo_full = 'v1.3.7d', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -236,6 +236,8 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
     except requests.exceptions.RequestException as err4:
         if norm is False and print_found_only is False:
             print_error(websites_names, "Непредвиденная ошибка", country_code, err4, verbose, color)
+    except Exception:
+        pass
     return None, "Great Snoop returns None", -1
 
 ## Сохранение отчетов опция (-S).
