@@ -168,7 +168,7 @@ def print_error(websites_names, errstr, country_code, errX, verbose=False, color
         print(f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]{Style.BRIGHT}" \
               f"{Fore.GREEN} {websites_names}: {Style.BRIGHT}{Fore.RED}{errstr}{country_code}{Fore.YELLOW} {errX if verbose else ''}")
         try:
-            if 'source' in version:
+            if 'demo' in version:
                 playsound('err.wav')
         except Exception:
             pass
