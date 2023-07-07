@@ -13,7 +13,7 @@ das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februa
 > *Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*  
 
 Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:  
-<img src="https://img.shields.io/badge/Snoop-~2900+%20websites-success" width="50%" />  
+<img src="https://img.shields.io/badge/Snoop-~3000+%20websites-success" width="50%" />  
 <img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
@@ -35,7 +35,7 @@ Snoop für Betriebssysteme Windows und GNU/Linux
 
 **Snoop lokale Datenbank**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop-Vollversionsdatenbank mit über 2900+ Websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Datenbank-Snoop")  
+[Snoop-Vollversionsdatenbank mit über 3000+ Websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Datenbank-Snoop")  
 
 ## Freigeben
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -140,7 +140,7 @@ search arguments:
   --verbose, -v         Geben Sie bei der Suche nach 'Spitzname' eine detaillierte
                         Verbalisierung aus
   --web-base, -w        Stellen Sie eine Verbindung zu einer dynamisch aktualisierten
-                        web_DB (über 2900+ Websites) her, um nach 'Spitzname'
+                        web_DB (über 3000+ Websites) her, um nach 'Spitzname'
                         zu suchen. In der Demoversion ist die Funktion deaktiviert
   --site , -s <site_name> 
                         Geben Sie den Site-Namen aus der Datenbank '--list-all' an.
