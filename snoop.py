@@ -69,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.7d', "s", "d"
+vers, vers_code, demo_full = 'v1.3.8', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -107,7 +107,7 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2024, 3, 5, 3, 0, 0, 0, 0, 0)
+ts = (2024, 7, 7, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
