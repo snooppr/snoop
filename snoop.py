@@ -1105,7 +1105,7 @@ def run():
 
 ## Опция '--list-all'.
     if args.listing:
-        print(Fore.CYAN + "[+] активирована опция '-l': «детальная информация о БД snoop»")
+        print(Fore.CYAN + "[+] активирована опция '-l': «детальная информация о БД Snoop»")
         print("\033[36m\nСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
               "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n")
         sortY = console.input("[cyan]Выберите действие: [/cyan]")
@@ -1116,7 +1116,7 @@ def run():
             listfull = []
             if sortY == "3":
                 if line == "str_line":
-                    console.rule("[cyan]Ok, print All Country:", style="cyan bold")
+                    console.rule("[cyan]Ok, print All Country", style="cyan bold")
                 print("")
                 li = [DB.get(con).get("country_klas") if Windows else DB.get(con).get("country") for con in DB]
                 cnt = str(Counter(li))
@@ -1135,7 +1135,7 @@ def run():
 # Сортируем по алфавиту для full/demo version (2!).
             elif sortY == "2":
                 if line == "str_line":
-                    console.rule("[cyan]Ok, сортируем по алфавиту:", style="cyan bold")
+                    console.rule("[cyan]Ok, сортируем по алфавиту", style="cyan bold")
                 if version == "demo version":
                     console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan", bgcolor="red")))
                 else:
@@ -1155,7 +1155,7 @@ def run():
                 listwindows = []
 
                 if line == "str_line":
-                    console.rule("[cyan]Ok, сортируем по странам:", style="cyan bold")
+                    console.rule("[cyan]Ok, сортируем по странам", style="cyan bold")
 
                 for con in DB:
                     S = DB.get(con).get("country_klas") if Windows else DB.get(con).get("country")
