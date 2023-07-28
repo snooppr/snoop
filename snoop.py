@@ -69,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.8', "s", "d"
+vers, vers_code, demo_full = 'v1.3.8A', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -244,7 +244,10 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
 def new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t):
     future2 = executor2.submit(requests_future.get, url=url, headers=headers, allow_redirects=True, timeout=t)
     response = future2.result(t + 2)
-    session_size = len(response.content)  #подсчет извлеченных данных
+    try:
+        session_size = len(response.content)  #подсчет извлеченных данных
+    except UnicodeEncodeError:
+        session_size = None
     return response, session_size
 
 def sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r):
