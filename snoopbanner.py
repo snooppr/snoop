@@ -66,7 +66,7 @@ def donate():
     full version for Windows RU или full version for Linux RU,
     статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
 
-[bold green]В ближайшее время на email пользователя придёт чек и ссылка для скачивания Snoop full version готовой сборки то есть исполняемого файла, для Windows — это 'snoop_cli.exe', для GNU/Linux — 'snoop_cli'.
+[bold green]В ближайшее время на email пользователя придёт чек о покупке и ссылка для скачивания Snoop full version готовой сборки то есть исполняемого файла, для Windows — это 'snoop_cli.exe', для GNU/Linux — 'snoop_cli'.
 
 Snoop в исполняемом виде (build-версия) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
 Лицензия для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке: [/bold green]
