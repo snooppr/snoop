@@ -564,17 +564,20 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     sys.exit()
 #                print(r.text) #проверка ответа (+- '-S')
 #                print(r.status_code) #Проверка ответа
-                if r.status_code > 200 and param_websites.get("ignore_status_code") is None \
-                                                             or (error2 in r.text or error in r.text or error3 in r.text):
-                    if not print_found_only and not norm:
-                        print_not_found(websites_names, verbose, color)
+                try:
+                    if r.status_code > 200 and param_websites.get("ignore_status_code") is None \
+                                                                 or (error2 in r.text or error in r.text or error3 in r.text):
+                        if not print_found_only and not norm:
+                            print_not_found(websites_names, verbose, color)
+                        exists = "увы"
+                    else:
+                        if not norm:
+                            print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
+                        exists = "найден!"
+                        if reports:
+                            sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r)
+                except UnicodeEncodeError:
                     exists = "увы"
-                else:
-                    if not norm:
-                        print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
-                    exists = "найден!"
-                    if reports:
-                        sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r)
 ## Проверка, 4 методов; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
             elif error_type == "redirection":
