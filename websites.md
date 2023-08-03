@@ -2130,7 +2130,7 @@
 2129. 🇷🇺 [Lbuckshee](https://lbuckshee.com)
 2130. 🌎 [Leaguefeed](https://leaguefeed.net)
 2131. 🇺🇸 [Leasehackr](https://forum.leasehackr.com/)
-2132. 🇺🇸 [LeetCode](https://leetcode.com/)
+2132. 🌎 [LeetCode](https://leetcode.com/)
 2133. 🏁 [Lemmy](https://lemmy.ml)
 2134. 🏁 [Lemmy_161 (g. l.)](https://lemmy.161.social)
 2135. 🇷🇺 [Lenov](https://lenov.ru)
