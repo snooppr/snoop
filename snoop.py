@@ -1508,7 +1508,7 @@ def run():
                                     (website_name) + "</a>" + "</li>\n")
             try:
                 cnt = str(Counter(li))
-                flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "  ↯  ").replace(":", "⇔")
+                flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "; ").replace(":", "⇔")
             except Exception:
                 flag_str_sum = "0"
 
