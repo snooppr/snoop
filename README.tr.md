@@ -4,7 +4,7 @@
 ### Snoop Projesi, takma adları aramak için en umut verici OSINT araçlarından biridir.
 - [X] Bu, CIS konumunu dikkate alan en güçlü yazılımdır.
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/TR__snoop.png" />
+<img src="https://github.com/snooppr/snoop/master/images/TR__snoop.png" />
 
 Hayatınız bir slayt gösterisi mi? Snoop'a sorun.
 Snoop projesi, NSA'nın ve onların arkadaşlarının görüşlerini dikkate almadan geliştirilmiştir,
@@ -22,48 +22,48 @@ Bu tür araçların veritabanı dizinlemelerinin karşılaştırması:
 
 | Platform              | Destek |
 |-----------------------|:---------:|
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux             |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/10 (32/64)  |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     ❗️    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |
+| <img src="https://github.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux             |     ✅    |
+| <img src="https://github.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/10 (32/64)  |     ✅    |
+| <img src="https://github.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
+| <img src="https://github.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     ❗️    |
+| <img src="https://github.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
+| <img src="https://github.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |
 
 Snoop Windows ve GNU/Linux İçin
 ==================================
 
 **Snoop Yerel veritabanı**
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/TR_DB.png" />
+<img src="https://github.com/snooppr/snoop/master/images/TR_DB.png" />
 [Snoop Tam sürüm veritabanı 3100+ web sitesi ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")
 
 ## Sürüm
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />
+<img src="https://github.com/snooppr/snoop/master/images/snoop box.png" width="35%" />
 
 Snoop, hazır montajlarla birlikte gelir ve bağımlılıkları (kütüphaneler) veya Python kurulumu gerektirmez, yani temiz bir makinede OS Windows veya GNU/Linux üzerinde çalışır.
 ┗━━ ⬇️[Snoop Projesi'ni İndirin](https://github.com/snooppr/snoop/releases "Windows ve GNU/Linux için hazır SNOOP montajını indirin")
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>
+<img src="https://github.com/snooppr/snoop/master/images/Run.gif"/>
 
 <details>
 <summary> 🟣 Snoop Projesi Eklentileri</summary>  
 
 ### 1. Eklentilerden birinin gösterimi — 〘GEO_IP/domain〙
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />
+<img src="https://github.com/snooppr/snoop/master/images/GEO_IP.gif" />
 
 $$$$
 
 Raporlar ayrıca csv/txt/CLI/haritalar olarak mevcuttur
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />
+<img src="https://github.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />
 
 $$$$
 
 ### 2. Eklentilerden birinin gösterimi — 〘Yandex_parser〙
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />
+<img src="https://github.com/snooppr/snoop/master/images/Yandex_parser.gif" />
 
 $$$$
 
 Kullanıcı adı araması (Eklenti — Yandex_parser) için raporlar
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />
+<img src="https://github.com/snooppr/snoop/master/images/Yandex_parser 4.png" />
 
 $$$$
 
