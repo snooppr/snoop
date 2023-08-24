@@ -6,19 +6,19 @@ Snoop Project
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
 
-Is your life slideshow? Ask Snoop.  
-Snoop project is developed without taking into account the opinions of the NSA and their friends,  
-that is, it is available to the average user *(project creation date: February 14, 2020)*.  
+Is your life slideshow? Ask Snoop.
+Snoop project is developed without taking into account the opinions of the NSA and their friends,
+that is, it is available to the average user *(project creation date: February 14, 2020)*.
 
 > *Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.
-According to Snoop's specialized search, it is capable of competing with traditional search engines.*  
+According to Snoop's specialized search, it is capable of competing with traditional search engines.*
 
-Comparison of indexations of databases such tools:  
-<img src="https://img.shields.io/badge/Snoop-~3100+%20websites-success" width="50%" />  
-<img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
+Comparison of indexations of databases such tools:
+<img src="https://img.shields.io/badge/Snoop-~3100+%20websites-success" width="50%" />
+<img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />
+<img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />
+<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />
+<img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />
 
 
 | Platform              | Support |
@@ -28,60 +28,60 @@ Comparison of indexations of databases such tools:
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     ❗️    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |  
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |
 
 
 Snoop for OS Windows and GNU/Linux
 ==================================
 
-**Snoop Local database**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop Full version database 3100+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+**Snoop Local database**
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />
+[Snoop Full version database 3100+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")
 
 ## Release
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />
 
-Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
-┗━━ ⬇️[Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
+Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.
+┗━━ ⬇️[Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>
 
 <details>
-<summary> 🟣 Snoop Project Plugins</summary>  
+<summary> 🟣 Snoop Project Plugins</summary>
 
-### 1. Demonstration of one of the methods in the Plugin — 〘GEO_IP/domain〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
-
-$$$$
-
-Reports are also available in csv/txt/CLI/maps  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
+### 1. Demonstration of one of the methods in the Plugin — 〘GEO_IP/domain〙
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />
 
 $$$$
 
-### 2. Demonstration of one of the methods in the Plugin — 〘Yandex_parser〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
+Reports are also available in csv/txt/CLI/maps
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />
 
 $$$$
 
-Search report dozen username (Plugin — Yandex_parser)  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
+### 2. Demonstration of one of the methods in the Plugin — 〘Yandex_parser〙
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />
 
 $$$$
 
-### 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
-https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+Search report dozen username (Plugin — Yandex_parser)
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />
 
-Snoop selects only geocoordinates from dirty data (numbers, letters, special characters).  
+$$$$
+
+### 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙
+https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653
+
+Snoop selects only geocoordinates from dirty data (numbers, letters, special characters).
 
 </details>
 
 <details>
-<summary> 🟤 Self-build software from source</summary>  
+<summary> 🟤 Self-build software from source</summary>
 
-**Native Installation**  
+**Native Installation**
 + Note: don't do this if you want to install snoop on android/termux
-*(installation is different, see dedicated section below for that).*  
+*(installation is different, see dedicated section below for that).*
 + Note: the required version of Python 3.7+
 
 ```
@@ -104,7 +104,7 @@ $ apt-get install fonts-noto-color-emoji or (monochrome) $ apt-get install ttf-a
 </details>
 
 <details>
-<summary> 🟢 Using</summary>  
+<summary> 🟢 Using</summary>
 
 ```
 usage: snoop_cli [search arguments...] nickname
@@ -122,7 +122,7 @@ optional arguments:
 service arguments:
   --version, -V         printing versions of :: OS; Snoop;
                         Python and Licenses
-  --list-all, -l        Print detailed information about the 
+  --list-all, -l        Print detailed information about the
                         Snoop database
   --donate, -d          Donate to the development of the Snoop Project,
                         get/buy Snoop Full Version
@@ -135,47 +135,47 @@ plugins arguments:
 
 search arguments:
   nickname              The nickname of the wanted user.
-                        Searching for several names at the same time is 
+                        Searching for several names at the same time is
                         supported. Nicknames containing a space in their name
                         are enclosed in quotation marks
   --verbose, -v         When searching for 'nickname', print detailed
                         verbalization
   --web-base, -w        Connect to search for 'nickname' to the updated web_DB
                         (3100+ websites). In demo version the function is disabled
-  --site , -s <site_name> 
-                        Specify the name of the site from the database 
+  --site , -s <site_name>
+                        Specify the name of the site from the database
                         '--list-all'. Search for 'nickname' on one specified
                         resource, it is acceptable to use the '-s' option
                         multiple times
-  --exclude , -e <country_code> 
+  --exclude , -e <country_code>
                         Exclude the selected region from the search,
                         it is permissible to use the '-e' option several times,
                         for example, '-e RU -e WR' exclude Russia and World from search
-  --include , -i <country_code> 
+  --include , -i <country_code>
                         Include only the selected region in the search,
                         it is permissible to use the '-i' option several times,
                         for example, '-i US -i UA' search for USA and Ukraine
   --country-sort, -c    Print and record_results' by country, not alphabetically
-  --time-out , -t <digit> 
-                        Set maximum time allocation for waiting for a response 
+  --time-out , -t <digit>
+                        Set maximum time allocation for waiting for a response
                         from the server (seconds). Affects the search duration.
                         Affects 'Timeout errors:' On. this option is necessary
                         with a slow Internet connection (by default 9s)
   --found-print, -f     Print only found accounts
-  --no-func, -n         ✓Monochrome terminal, do not use colors in url 
+  --no-func, -n         ✓Monochrome terminal, do not use colors in url
                         ✓Disable sound
                         ✓Disable opening web browser
-                        ✓Disable printing of country flags 
+                        ✓Disable printing of country flags
                         ✓Disable indication and progress status
-  --userlist , -u <file> 
+  --userlist , -u <file>
                         Specify a file with a list of users. Snoop will
                         intelligently process the data and provide additional reports
   --save-page, -S       Save found user pages to local files
   --cert-on, -C         Enable verification of certificates on servers.
-                        By default, certificate verification on servers is disabled, 
+                        By default, certificate verification on servers is disabled,
                         which allows you to process problematic sites without errors
-  --headers , -H <User-Agent> 
-                        Set the user-agent manually, the agent is enclosed in 
+  --headers , -H <User-Agent>
+                        Set the user-agent manually, the agent is enclosed in
                         quotes, by default a random or overridden user-agent
                         from the snoop database is set for each site
   --quick, -q           Fast and aggressive search mode. Does not reprocess bad
@@ -204,8 +204,8 @@ $ snoop_cli.exe username1 username2 username3 username4 #Running from release wi
 
 # Search for a lot of users-sorting the output of results by country;
 # avoiding freezes on websites (more often the "dead zone" depends on the user's ip address);
-# print only found accounts; save pages of found accounts locally; 
-# specify a file with a list of wanted accounts; 
+# print only found accounts; save pages of found accounts locally;
+# specify a file with a list of wanted accounts;
 # connect to the expandable and updated web-base Snoop for search:
 $ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #Running from release linux
 # check the Snoop database:
@@ -216,21 +216,36 @@ $ snoop_cli --help #Running from release linux
 # Enable Snoop plugins:
 $ snoop_cli --module #Running from release linux
 ```
-+ 'ctrl-c' — abort search.  
-+ The found accounts will be stored in `~/snoop/results/nicknames/*{txt|csv|html}`.  
-+ Open csv in office in, field separator **comma**.  
-+ Destroy **all** search results — delete the '~/snoop/results' directory.  
++ 'ctrl-c' — abort search.
++ The found accounts will be stored in `~/snoop/results/nicknames/*{txt|csv|html}`.
++ Open csv in office in, field separator **comma**.
++ Destroy **all** search results — delete the '~/snoop/results' directory.
 or `snoop_cli.exe --autoclean #Running from release OS Windows`.
 ```
 # Update Snoop to test new features in the software
 $ python3 snoop.py --update #Git installation is required
+
+# Docker notes
+
+If docker is installed you can build an image and run this as a container.
+
+docker build -t snoop-image .
+Once the image is built, snoop can be invoked by running the following:
+
+docker run --rm -t -v "$PWD/results:/opt/snoop/results" snoop-image user123
+
+# Using docker-compose
+You can use the `docker-compose.yml` file from the repository and use this command:
+
+`docker-compose run snoop user123`
+
 ```
-</details>  
+</details>
 
 <details>
-<summary> 🔵 Snoop for Android</summary>  
+<summary> 🔵 Snoop for Android</summary>
 
- • [Detailed manual in English](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Snoop for Android")  
+ • [Detailed manual in English](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Snoop for Android")
 
 </details>
 
@@ -258,28 +273,28 @@ $ python3 snoop.py --update #Git installation is required
 Solving:
 1. Reconfigure your Firewall *(for example, Kaspersky blocks resources for adults).*
 
-2. Check the speed of your Internet connection:  
-`python3 snoop.py -v username`  
-If any of the network parameters are highlighted in red, Snoop may hang during the search.  
-At low speed, increase the 'x' value of the '--time-out x' option:  
-`python3 snoop.py -t 15 username`.  
+2. Check the speed of your Internet connection:
+`python3 snoop.py -v username`
+If any of the network parameters are highlighted in red, Snoop may hang during the search.
+At low speed, increase the 'x' value of the '--time-out x' option:
+`python3 snoop.py -t 15 username`.
 
-3. In fact, this is not a mistake. Fix username  
+3. In fact, this is not a mistake. Fix username
 *(for example, some sites do not allow Cyrillic characters; "spaces" or "Vietnamese-Chinese encoding"
 in user names, in order to save time: - requests are filtered).*
 
-4. **Change your IP address**  
-Сensorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
-When using Snoop from the IP address of the mobile operator's provider, the speed **may** drop significantly, depending on the provider.  
-For example, the most effective way to solve the problem is **TO USE A VPN**, Tor is not very well suited for this task.  
+4. **Change your IP address**
+Сensorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.
+When using Snoop from the IP address of the mobile operator's provider, the speed **may** drop significantly, depending on the provider.
+For example, the most effective way to solve the problem is **TO USE A VPN**, Tor is not very well suited for this task.
 Rule: one scan from one ip is not enough to get the most out of Snoop.
 
-5. Open in the Snoop repository on Github-e Issue/Pull request  
+5. Open in the Snoop repository on Github-e Issue/Pull request
 *(inform the developer about this).*
 
 6. Do not pay attention, sites sometimes go for repair work and return to operation.
 
-7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions, and also the problem with sites that haven't been updated in years. These problems occur if the user intentionally started snoop with the '--cert-on' option.  
+7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions, and also the problem with sites that haven't been updated in years. These problems occur if the user intentionally started snoop with the '--cert-on' option.
 Solving:
 ```
 $ sudo nano /etc/ssl/openssl.cnf
@@ -298,24 +313,24 @@ on
 <details>
 <summary> 🟠 Additional information</summary>
 
- • [Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog").  
+ • [Project development history](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "changelog").
 
- • [License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT "The version of the License in English can be found in the EN-version of Snoop Build").  
+ • [License](https://github.com/snooppr/snoop/blob/master/COPYRIGHT "The version of the License in English can be found in the EN-version of Snoop Build").
 
- • [Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
+ • [Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).
 
- • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").  
+ • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").
 
  • **Information for civil servants/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16 Software that ensures the implementation of established actions during operational search activities.
-Order of the Ministry of Communications of the Russian Federation No. 515 registered No. 7012.  
+Order of the Ministry of Communications of the Russian Federation No. 515 registered No. 7012.
 
- • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; hosting services are not paid on time.  
+ • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; hosting services are not paid on time.
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
-[example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
+[example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).
 
- • **Visualization of commits:** from the birth of the project to Friday the thirteenth, 2023.  
+ • **Visualization of commits:** from the birth of the project to Friday the thirteenth, 2023.
 
-https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
+https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4
 </details>
 
 【RU -> EN】 This is a translated [➰Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English").

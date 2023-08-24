@@ -6,18 +6,18 @@ Snoop Projekt
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
 
-Ist Ihr Leben eine Diashow? Frag Snoop.  
-Das Snoop-Projekt wird entwickelt, ohne die Meinungen der NSA und ihrer Freunde zu berücksichtigen,  
-das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februar 2020)*.  
+Ist Ihr Leben eine Diashow? Frag Snoop.
+Das Snoop-Projekt wird entwickelt, ohne die Meinungen der NSA und ihrer Freunde zu berücksichtigen,
+das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februar 2020)*.
 
-> *Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*  
+> *Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*
 
-Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:  
-<img src="https://img.shields.io/badge/Snoop-~3100+%20websites-success" width="50%" />  
-<img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
+Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:
+<img src="https://img.shields.io/badge/Snoop-~3100+%20websites-success" width="50%" />
+<img src="https://img.shields.io/badge/Sherlock-~350 websites-yellowgreen" width="20%" />
+<img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />
+<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />
+<img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />
 
 
 | Plattform             | Unterstützung |
@@ -27,61 +27,61 @@ Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     ❗️    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |  
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |
 
 
 Snoop für Betriebssysteme Windows und GNU/Linux
 ==================================
 
-**Snoop lokale Datenbank**  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop-Vollversionsdatenbank mit über 3100+ Websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Datenbank-Snoop")  
+**Snoop lokale Datenbank**
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />
+[Snoop-Vollversionsdatenbank mit über 3100+ Websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Datenbank-Snoop")
 
 ## Freigeben
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />
 
 Snoop wird vorkonfiguriert (freigegeben) geliefert und erfordert keine Abhängigkeiten (Bibliotheken) oder Python3-Installation,
-d. h. es läuft auf einem sauberen Computer mit dem Betriebssystem Windows oder GNU/Linux.  
-┗━━ ⬇️[Snoop-Projekt herunterladen](https://github.com/snooppr/snoop/releases 'Vorgefertigtes Snoop für Windows und GNU/Linux herunterladen')  
+d. h. es läuft auf einem sauberen Computer mit dem Betriebssystem Windows oder GNU/Linux.
+┗━━ ⬇️[Snoop-Projekt herunterladen](https://github.com/snooppr/snoop/releases 'Vorgefertigtes Snoop für Windows und GNU/Linux herunterladen')
 
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>
 
 <details>
-<summary> 🟣 Snoop-Projekt-Plugins</summary>  
+<summary> 🟣 Snoop-Projekt-Plugins</summary>
 
-### 1. Demonstration einer der Methoden im Plugin — 〘GEO_IP/domain〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
-
-$$$$
-
-Berichte sind auch in csv/txt/CLI/maps verfügbar  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
+### 1. Demonstration einer der Methoden im Plugin — 〘GEO_IP/domain〙
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />
 
 $$$$
 
-### 2. Demonstration einer der Methoden im Plugin — 〘Yandex_parser〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
+Berichte sind auch in csv/txt/CLI/maps verfügbar
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />
 
 $$$$
 
-Suchbericht Dutzend Spitzname (Plugin - Yandex_parser)  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
+### 2. Demonstration einer der Methoden im Plugin — 〘Yandex_parser〙
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />
 
 $$$$
 
-### 3. Demonstration einer der Methoden im Plugin — 〘Reverse Vgeocoder〙  
-https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+Suchbericht Dutzend Spitzname (Plugin - Yandex_parser)
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />
 
-Snoop wählt nur Geokoordinaten aus schmutzigen Daten (Zahlen, Buchstaben, Sonderzeichen) aus.  
+$$$$
+
+### 3. Demonstration einer der Methoden im Plugin — 〘Reverse Vgeocoder〙
+https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653
+
+Snoop wählt nur Geokoordinaten aus schmutzigen Daten (Zahlen, Buchstaben, Sonderzeichen) aus.
 
 </details>
 
 <details>
-<summary> 🟤 Selbstgebaute Software aus der Quelle</summary>  
+<summary> 🟤 Selbstgebaute Software aus der Quelle</summary>
 
-**Native Installation**  
+**Native Installation**
 + Hinweis: Tun Sie dies nicht, wenn Sie Snoop auf Android/Termux installieren möchten
-*(Die Installation ist anders, siehe dazu den speziellen Absatz unten).*  
+*(Die Installation ist anders, siehe dazu den speziellen Absatz unten).*
 + Hinweis: Die erforderliche Python-Version ist 3.7+
 
 ```
@@ -104,7 +104,7 @@ $ apt-get install ttf-ancient-fonts oder Farbe (empfohlen) $ apt-get install fon
 </details>
 
 <details>
-<summary> 🟢 Verwendung</summary>  
+<summary> 🟢 Verwendung</summary>
 
 ```
 usage: snoop_cli [search arguments...] nickname
@@ -142,23 +142,23 @@ search arguments:
   --web-base, -w        Stellen Sie eine Verbindung zu einer dynamisch aktualisierten
                         web_DB (über 3100+ Websites) her, um nach 'Spitzname'
                         zu suchen. In der Demoversion ist die Funktion deaktiviert
-  --site , -s <site_name> 
+  --site , -s <site_name>
                         Geben Sie den Site-Namen aus der Datenbank '--list-all' an.
                         Suchen Sie nach 'Spitzname' in einer einzelnen
                         angegebenenRessource. Es ist zulässig, die Option '-s'
                         mehrmals zu verwenden
-  --exclude , -e <country_code> 
+  --exclude , -e <country_code>
                         Schließen Sie die ausgewählte Region von der Suche aus,
                         es ist akzeptabel, die Option '-e' mehrmals zu verwenden, z. B.
                         '-e RU -e WR', schließen Sie Russland und die Welt von der
                         Suche aus
-  --include , -i <country_code> 
-                        Wenn Sie nur die ausgewählte Region in die Suche einbeziehen, 
+  --include , -i <country_code>
+                        Wenn Sie nur die ausgewählte Region in die Suche einbeziehen,
                         können Sie die Option '-i' mehrmals verwenden, z. B.
                         '-i US -i UA', um nach den USA und der Ukraine zu suchen
   --country-sort, -c    Drucken und Aufzeichnen von Ergebnissen nach Land,
                         nicht alphabetisch
-  --time-out , -t <digit> 
+  --time-out , -t <digit>
                         Legen Sie die Zuweisung der maximalen Zeit fest,
                         die auf eineAntwort vom Server gewartet werden soll (Sekunden).
                         Beeinflusst die Dauer der Suche. Beeinflusst das
@@ -170,7 +170,7 @@ search arguments:
                         ✓Öffnen des Webbrowsers verbieten
                         ✓Deaktivieren Sie das Drucken von Länderflaggen
                         ✓Anzeige und Fortschrittsstatus deaktivieren
-  --userlist , -u <file> 
+  --userlist , -u <file>
                         Geben Sie eine Datei mit einer Liste von Benutzern an.
                         Snoop wird die Daten intelligent verarbeiten und
                         zusätzliche Berichte bereitstellen
@@ -179,7 +179,7 @@ search arguments:
                         Standardmäßig ist die Zertifikatsüberprüfung auf
                         Servern deaktiviert, sodass Sie problematische Websites
                         fehlerfrei verarbeiten können.
-  --headers , -H <User-Agent> 
+  --headers , -H <User-Agent>
                         Setzen Sie den User-Agent manuell, der Agent wird in
                         Anführungszeichen gesetzt, standardmäßig wird ein zufälliger
                         oder überschriebener User-Agent aus der Snoop-Datenbank
@@ -189,7 +189,7 @@ search arguments:
                         aber Bad_raw erhöht sich auch. Druckt keine Zwischenergebnisse.
                         Verbraucht mehr Ressourcen. Der Modus ist in der Vollversion
                         wirksam
-```  
+```
 
 **Beispiel**
 ```
@@ -228,10 +228,10 @@ $ snoop_cli --help #Ausführen eines Builds unter Linux
 $ snoop_cli --module #Ausführen eines Builds unter Linux
 ```
 
-+ **'ctrl + c'** — Suche abbrechen.  
++ **'ctrl + c'** — Suche abbrechen.
 + Gefundene Konten werden gespeichert in
-`~/snoop/results/nicknames/*{txt|csv|html}`.  
-+ csv in *office öffnen, Feldtrenner **Komma**.  
+`~/snoop/results/nicknames/*{txt|csv|html}`.
++ csv in *office öffnen, Feldtrenner **Komma**.
 + **Alle** Suchergebnisse beenden - Verzeichnis '~/snoop/results' löschen,
 oder `snoop_cli.exe --autoclean #Ausführen eines Builds unter Windows
 
@@ -239,12 +239,12 @@ oder `snoop_cli.exe --autoclean #Ausführen eines Builds unter Windows
 # Aktualisieren Sie Snoop, um neue Funktionen in der Software zu testen:
 $ python3 snoop.py --update #Git-Installation erforderlich.
 ```
-</details>  
+</details>
 
 <details>
-<summary> 🔵 Snoop für Android</summary>  
+<summary> 🔵 Snoop für Android</summary>
 
- • [Ausführliche Anleitung in Englisch](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Snoop für Android")  
+ • [Ausführliche Anleitung in Englisch](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Snoop für Android")
 
 </details>
 
@@ -273,27 +273,27 @@ $ python3 snoop.py --update #Git-Installation erforderlich.
 Lösungen:
 1. Konfigurieren Sie Ihre Firewall neu *(z. B. blockiert Kaspersky Ressourcen für Erwachsene)*.
 
-2. Überprüfen Sie die Geschwindigkeit Ihrer Internetverbindung:  
-`python3 snoop.py -v nickname`  
-Wenn eine der Netzwerkoptionen rot hervorgehoben ist, kann Snoop während der Suche hängen bleiben.  
-Erhöhen Sie bei niedriger Geschwindigkeit den 'x'-Wert der Option '--time-out x':  
-`python3 snoop.py -t 15 nickname`  
+2. Überprüfen Sie die Geschwindigkeit Ihrer Internetverbindung:
+`python3 snoop.py -v nickname`
+Wenn eine der Netzwerkoptionen rot hervorgehoben ist, kann Snoop während der Suche hängen bleiben.
+Erhöhen Sie bei niedriger Geschwindigkeit den 'x'-Wert der Option '--time-out x':
+`python3 snoop.py -t 15 nickname`
 
-3. Tatsächlich ist dies kein Fehler. Spitznamen korrigieren  
+3. Tatsächlich ist dies kein Fehler. Spitznamen korrigieren
 *(z. B. sind kyrillische Zeichen auf einigen Websites nicht zulässig; „Leerzeichen“ oder „Vietnam-Chinesisch-Codierung“
 in Benutzernamen, um Zeit zu sparen: - Anfragen werden gefiltert)*.
 
-4. **Ändern Sie Ihre IP-Adresse**  
+4. **Ändern Sie Ihre IP-Adresse**
 Internetzensur ist die häufigste Ursache dafür, dass der Benutzer übersprungene/falsch positive Fehler/und in einigen Fällen „**Ach**“ erhält.
 Manchmal: Bei häufigem erneutem Scannen kann der Server einer bestimmten Ressource die IP-Adresse des Clients für eine Weile blockieren.
 Bei der Nutzung von Snoop von der IP-Adresse des Providers des Mobilfunkbetreibers **kann** die Geschwindigkeit je nach Provider deutlich sinken.
-Zum Beispiel ist der effektivste Weg, ein Problem zu lösen, **ein VPN zu VERWENDEN**, Tor ist kein guter Helfer.  
+Zum Beispiel ist der effektivste Weg, ein Problem zu lösen, **ein VPN zu VERWENDEN**, Tor ist kein guter Helfer.
 
-<p align="center">  
-  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/censorship.png" width="70%" />  
-</p>  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/censorship.png" width="70%" />
+</p>
 
-5. In Snoop-Repositories auf Github-e Issue/Pull-Request öffnen  
+5. In Snoop-Repositories auf Github-e Issue/Pull-Request öffnen
 *(Entwickler benachrichtigen)*.
 
 6. Achten Sie nicht darauf, dass Standorte manchmal repariert und wieder in Betrieb genommen werden.
@@ -317,26 +317,26 @@ An
 <details>
 <summary> 🟠 Weitere Informationen</summary>
 
- • [Geschichte der Projektentwicklung](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Geschichte der Projektentwicklung").  
+ • [Geschichte der Projektentwicklung](https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt "Geschichte der Projektentwicklung").
 
- • [Snoop-Projektlizenz](https://github.com/snooppr/snoop/blob/master/COPYRIGHT).  
+ • [Snoop-Projektlizenz](https://github.com/snooppr/snoop/blob/master/COPYRIGHT).
 
- • [Dokumentation/RU](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
+ • [Dokumentation/RU](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).
 
- • **Fingerabdruck des öffentlichen Schlüssels:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp-Schlüssel").  
+ • **Fingerabdruck des öffentlichen Schlüssels:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp-Schlüssel").
 
  • **Informationen für Beamte/RU:** Das Snoop-Projekt ist im Register der inländischen Software mit dem angegebenen Code aufgeführt: 26.30.11.16 Software, die die Umsetzung festgelegter Maßnahmen während der operativen Suchtätigkeiten sicherstellt.
-Verordnung des Ministeriums für Telekommunikation und Massenkommunikation der Russischen Föderation Nr. 515, Registernummer 7012.  
+Verordnung des Ministeriums für Telekommunikation und Massenkommunikation der Russischen Föderation Nr. 515, Registernummer 7012.
 
  • **Snoop ist nicht perfekt:** Websites fallen aus; es gibt keine schließenden Tags; Verbindungen werden zensiert; Hosting wird nicht rechtzeitig bezahlt. All dieser "Web Rock 'n' Roll" muss von Zeit zu Zeit angeschaut werden, daher sind Spenden willkommen:
-[Beispiele für geschlossene/schlechte Websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).    
+[Beispiele für geschlossene/schlechte Websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).
 
- • **Repository-Komprimierung 27. Januar 2022:** Wenn Sie Probleme haben, erstellen Sie einen neuen „Git-Klon“.  
+ • **Repository-Komprimierung 27. Januar 2022:** Wenn Sie Probleme haben, erstellen Sie einen neuen „Git-Klon“.
 
 
- • **Visualisierung von Commits:** von der Geburt des Projekts bis Freitag, den dreizehnten 2023.  
+ • **Visualisierung von Commits:** von der Geburt des Projekts bis Freitag, den dreizehnten 2023.
 
-https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
+https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4
 </details>
 
 【RU -> DE】 Dies ist eine übersetzte [➰Readme auf Russisch](https://github.com/snooppr/snoop "Wenn Sie möchten, können Sie die maschinelle Übersetzung dieser Seite auf Deutsche verbessern (PR)").

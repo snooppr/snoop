@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  snoop:
+    build: .
+    volumes:
+      - "./results:/opt/snoop/results"
+    stdin_open: true
+    tty: true

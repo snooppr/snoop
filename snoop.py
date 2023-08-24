@@ -26,7 +26,7 @@ import webbrowser
 
 from collections import Counter
 from colorama import Fore, Style, init
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, TimeoutError
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
 from multiprocessing import active_children
 from playsound import playsound
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
@@ -73,9 +73,9 @@ vers, vers_code, demo_full = 'v1.3.8A', "s", "d"
 
 print(f"""\033[36m
   ___|
-\___ \  __ \   _ \   _ \  __ \  
-      | |   | (   | (   | |   | 
-_____/ _|  _|\___/ \___/  .__/  
+\___ \  __ \   _ \   _ \  __ \
+      | |   | (   | (   | |   |
+_____/ _|  _|\___/ \___/  .__/
                          _|    \033[0m \033[37m\033[44m{vers}\033[0m
 """)
 
@@ -724,10 +724,10 @@ def timeout_check(value):
 def update_snoop():
     print("""
 \033[36mВы действительно хотите:
-                    __             _  
-   ._  _| _._|_ _  (_ ._  _  _ ._   ) 
-|_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o  
-   |                           |    
+                    __             _
+   ._  _| _._|_ _  (_ ._  _  _ ._   )
+|_||_)(_|(_| |_(/_ __)| |(_)(_)|_) o
+   |                           |
 Выберите действие:\033[0m [y/n] """, end='')
 
     upd = input()
@@ -743,9 +743,9 @@ def update_snoop():
 def autoclean():
     print("""
 \033[36mВы действительно хотите:\033[0m \033[31;1m
-               _                _  
- _| _ |  _.|| |_) _ ._  _ .-_|_  ) 
-(_|(/_| (_||| | \(/_|_)(_)|  |_ o  
+               _                _
+ _| _ |  _.|| |_) _ ._  _ .-_|_  )
+(_|(/_| (_||| | \(/_|_)(_)|  |_ o
                     |                      \033[0m
 \033[36mВыберите действие:\033[0m [y/n] """, end='')
 
