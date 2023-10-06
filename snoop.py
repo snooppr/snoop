@@ -26,7 +26,7 @@ import webbrowser
 
 from collections import Counter
 from colorama import Fore, Style, init
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, TimeoutError
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
 from multiprocessing import active_children
 from playsound import playsound
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
