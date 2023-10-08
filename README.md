@@ -423,5 +423,10 @@ $ sudo nano /etc/ssl/openssl.cnf
  • **Визуализация  коммитов:** от рождения проекта до пятницы тринадцатого 2023г.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
-</details>  
+
+ • **Условно-расчётная финансовая стоимость разработки Snoop Project:** на октябрь 2023г/3,5 года.  
+
+<p align="center">  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Cost_estimate.png" />  
 </p>
+</details>
