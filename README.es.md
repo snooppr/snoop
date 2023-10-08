@@ -14,7 +14,7 @@ es decir, está al alcance del usuario medio *(14 de febrero de 2020)*.
 
 Comparación de indexaciones de bases de datos tales herramientas:  
 <img src="https://img.shields.io/badge/Snoop-~3200+%20sitios web-success" width="50%" />  
-<img src="https://img.shields.io/badge/Sherlock-~350 sitios web-yellowgreen" width="20%" />  
+<img src="https://img.shields.io/badge/Sherlock-~400 sitios web-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 sitios web-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 sitios web-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
