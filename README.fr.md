@@ -309,7 +309,7 @@ sur
 
  • **Empreinte de la clé publique :**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "clé pgp").  
 
- • **Informations pour les fonctionnaires/UR :** Snoop Project est inclus dans le registre des logiciels domestiques avec le code déclaré : 26.30.11.16 Logiciel qui assure la mise en œuvre des actions établies lors des activités de recherche opérationnelle.
+ • **Informations pour les personnes morales/RU:** Snoop Project est inclus dans le registre des logiciels domestiques avec le code déclaré : 26.30.11.16 Logiciel qui assure la mise en œuvre des actions établies lors des activités de recherche opérationnelle.
 Arrêté du Ministère des communications de la Fédération de Russie n° 515 enregistré n° 7012.  
 
  • **Snoop n'est pas parfait** : les sites Web tombent ; les balises de fermeture sont manquantes ; le réseau est censuré ; les services d'hébergement ne sont pas payés à temps.  

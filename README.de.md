@@ -325,7 +325,7 @@ An
 
  • **Fingerabdruck des öffentlichen Schlüssels:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp-Schlüssel").  
 
- • **Informationen für Beamte/RU:** Das Snoop-Projekt ist im Register der inländischen Software mit dem angegebenen Code aufgeführt: 26.30.11.16 Software, die die Umsetzung festgelegter Maßnahmen während der operativen Suchtätigkeiten sicherstellt.
+ • **Informationen für juristische Personen/RU:** Das Snoop-Projekt ist im Register der inländischen Software mit dem angegebenen Code aufgeführt: 26.30.11.16 Software, die die Umsetzung festgelegter Maßnahmen während der operativen Suchtätigkeiten sicherstellt.
 Verordnung des Ministeriums für Telekommunikation und Massenkommunikation der Russischen Föderation Nr. 515, Registernummer 7012.  
 
  • **Snoop ist nicht perfekt:** Websites fallen aus; es gibt keine schließenden Tags; Verbindungen werden zensiert; Hosting wird nicht rechtzeitig bezahlt. All dieser "Web Rock 'n' Roll" muss von Zeit zu Zeit angeschaut werden, daher sind Spenden willkommen:
