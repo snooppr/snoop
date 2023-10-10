@@ -310,7 +310,7 @@ en
 
  • **Huella digital de clave pública:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp Clave").  
 
- • **Información para funcionarios/ruso:** Snoop Project está incluido en el registro de software doméstico con el código declarado: 26.30.11.16 Software que asegura la implementación de las acciones establecidas durante las actividades de búsqueda operativa.
+ • **Información para personas jurídicas/ruso:** Snoop Project está incluido en el registro de software doméstico con el código declarado: 26.30.11.16 Software que asegura la implementación de las acciones establecidas durante las actividades de búsqueda operativa.
 Orden del Ministerio de Comunicaciones de la Federación Rusa No. 515 registrada No. 7012.  
 
  • **Snoop no es perfecto**: los sitios web están cayendo; faltan etiquetas de cierre; la red está siendo censurada; los servicios de hospedaje no se pagan a tiempo.  

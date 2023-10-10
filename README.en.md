@@ -306,7 +306,7 @@ on
 
  • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").  
 
- • **Information for civil servants/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16 Software that ensures the implementation of established actions during operational search activities.
+ • **Information for legal entities/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16 Software that ensures the implementation of established actions during operational search activities.
 Order of the Ministry of Communications of the Russian Federation No. 515 registered No. 7012.  
 
  • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; hosting services are not paid on time.  

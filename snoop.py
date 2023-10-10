@@ -732,8 +732,8 @@ def update_snoop():
 
     upd = input()
 
-    if upd == "y":
-        print("\033[36mФункция обновления Snoop требует установки утилиты < Git >\033[0m")
+    if upd == "y" or upd == "Y":
+        print("\033[36mПримечание: функция обновления Snoop работает при помощи утилиты < Git >\033[0m")
         os.startfile("update.bat") if Windows else os.system("./update.sh")
     print(Style.BRIGHT + Fore.RED + "\nВыход")
     sys.exit()
@@ -751,7 +751,7 @@ def autoclean():
 
     del_all = input()
 
-    if del_all == "y":
+    if del_all == "y" or del_all == "Y":
         try:
 # Определение директорий.
             path_build_del = "/results" if not Windows else "\\results"
@@ -1351,7 +1351,7 @@ def run():
 ## Если опции '-seo' не указаны, то используем БД, как есть.
     BDdemo_new = {}
     if args.site_list is None and args.exclude_country is None and args.one_level is None:
-        BDdemo_new = BDdemo
+        BDdemo_new = BDdemo if len(BDdemo) < 404 else sys.exit()
 
 
 ## Опция '-s'.
