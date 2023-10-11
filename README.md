@@ -106,7 +106,7 @@ $ apt-get update && apt-get install python3 python3-pip
 # Установить зависимости 'requirements'
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
-# Если вместо флагов стран отображаются спецсимволы, доставить пакет шрифта, например (цветной)
+# Если вместо флагов стран отображаются буквенные коды, доставить пакет шрифта, например (цветной)
 $ apt-get install fonts-noto-color-emoji или $ apt-get install ttf-ancient-fonts (монохромный)
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
 ```
