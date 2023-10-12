@@ -232,7 +232,7 @@ $ python3 snoop.py --update #L'installation de Git est requise
 <details>
 <summary> 🔵 Fouineur pour Android</summary>  
 
- • [Manuel détaillé en anglais](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Fouineur pour Android")  
+ • [Manuel détaillé en anglais](https://github.com/snooppr/snoop/blob/master/README_android.en.md "Fouineur pour Android")  
 
 </details>
 

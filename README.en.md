@@ -230,7 +230,7 @@ $ python3 snoop.py --update #Git installation is required
 <details>
 <summary> 🔵 Snoop for Android</summary>  
 
- • [Detailed manual in English](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Snoop for Android")  
+ • [Detailed manual in English](https://github.com/snooppr/snoop/blob/master/README_android.en.md "Snoop for Android")  
 
 </details>
 

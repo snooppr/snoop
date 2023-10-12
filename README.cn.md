@@ -211,7 +211,7 @@ $ python3 snoop.py --update #需要安装 Git
 <details>
 <summary> 🔵 Android 版探听</summary>  
 
- • [详细的英文手册](https://github.com/snooppr/snoop/blob/snoop_termux/README.en.md "Android 版探听")  
+ • [详细的英文手册](https://github.com/snooppr/snoop/blob/master/README_android.en.md "Android 版探听")  
 
 </details>
 
