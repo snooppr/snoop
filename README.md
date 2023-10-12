@@ -249,7 +249,7 @@ $ python3 snoop.py --update #требуется установка Git.
 <details>
 <summary> 🔵 Snoop for Android</summary>  
 
- • [Для удобства отдельный мануал (необязательно)](https://github.com/snooppr/snoop/tree/snoop_termux "Snoop for Android")  
+ • [Для удобства отдельный мануал (необязательно)](https://github.com/snooppr/snoop/README_android.md "Snoop for Android")  
 
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_2android.png" width="70%"/>  
@@ -283,11 +283,11 @@ $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
 $ pip install --upgrade pip
 
 # Клонировать репозиторий
-$ git clone https://github.com/snooppr/snoop -b snoop_termux
+$ git clone https://github.com/snooppr/snoop
 
-# Войти в рабочий каталог Snoop и установить зависимости 'requirements'
+# Войти в рабочий каталог Snoop и установить зависимости 'requirements_android.txt'
 $ cd ~/snoop
-$ python3 -m pip install -r requirements.txt
+$ python3 -m pip install -r requirements_android.txt
 
 # Опционально ↓
 # Чтобы расширить вывод терминала в Termux (по умолчанию 2к строк отображение в CLI),

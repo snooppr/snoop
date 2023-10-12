@@ -13,7 +13,6 @@ import locale
 import networktest
 import os
 import platform
-import psutil
 import random
 import re
 import requests
@@ -49,6 +48,8 @@ Android = True if hasattr(sys, 'getandroidapilevel') else False
 Windows = True if sys.platform == 'win32' else False
 Linux = True if Android is False and Windows is False else False
 
+if not Android:
+    import psutil
 
 try:
     if os.environ.get('LANG') is not None and 'ru' in os.environ.get('LANG'):
@@ -69,7 +70,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.8A', "s", "d"
+vers, vers_code, demo_full = 'v1.3.8b', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -153,6 +154,14 @@ os.makedirs(f"{dirpath}/results/plugins/ReverseVgeocoder", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/Yandex_parser", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/domain", exist_ok=True)
 
+
+## Расход памяти.
+def mem_test():
+    if not Android:
+        ram_free = round(psutil.virtual_memory().available / 1024 / 1024)
+    else:
+        ram_free = int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
+    return ram_free
 
 ## Вывести на печать инфостроку.
 def info_str(infostr, nick, color=True):
@@ -483,18 +492,20 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Панель вербализации.
         if not Android:
             if color:
-                console.print(Panel("[yellow]об.время[/yellow] | [magenta]об.% выполн.[/magenta] | [bold cyan]отклик сайта[/bold cyan] " + \
-                                    "| [bold red]цвет.[bold cyan]об[/bold cyan].скор.[/bold red] | [bold cyan]разм.расп.данных[/bold cyan]",
+                console.print(Panel("[yellow]время[/yellow] | [magenta]выпол.[/magenta] | [bold cyan]отклик (t=s)[/bold cyan] " + \
+                                    "| [bold red]общ.[bold cyan]время (T=s)[/bold cyan][/bold red] | [bold cyan]разм.данных[/bold cyan] " + \
+                                    "| [bold cyan]дост.память[/bold cyan]",
                                     title="Обозначение", style=STL(color="cyan")))
             else:
-                console.print(Panel("об.время | об.% выполн. | отклик сайта | цвет.об.время | разм.расп.данных", title="Обозначение"))
+                console.print(Panel("отклик сайта (t=s) | общ.время (T=s) | разм.данных | дост.память", title="Обозначение"))
         else:
             if color:
-                console.print(Panel("[yellow]time[/yellow] | [magenta]perc.[/magenta] | [bold cyan]response [/bold cyan] " + \
-                                    "| [bold red]joint[bold cyan].[/bold cyan]rate[/bold red] | [bold cyan]data[/bold cyan]",
+                console.print(Panel("[yellow]time[/yellow] | [magenta]perc.[/magenta] | [bold cyan]response (t=s)[/bold cyan] " + \
+                                    "| [bold red]total [bold cyan]time (T=s)[/bold cyan][/bold red] | [bold cyan]data [/bold cyan]" + \
+                                    "| [bold cyan]avail.ram[/bold cyan]",
                                     title="Designation", style=STL(color="cyan")))
             else:
-                console.print(Panel("time | perc. | response | joint.rate | data", title="Designation"))
+                console.print(Panel("time | perc. | response (t=s) | total time (T=s) | data | avail.ram", title="Designation"))
 
 
 ## Пройтись по массиву future и получить результаты.
@@ -503,7 +514,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if color is True:
             task0 = progress.add_task("", total=len(BDdemo_new))
         for websites_names, param_websites in BDdemo_new.items():  #БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future
-            #print(round(psutil.virtual_memory().available / 1024 / 1024), "Мб")
             if color is True:
                 progress.update(task0, advance=1, refresh=True)  #\nprogress.refresh()
 # Получить другую информацию сайта, снова.
@@ -664,6 +674,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 ## Опция '-v'.
             if verbose is True:
+                ram_free = mem_test()
+                ram_free_color = "[cyan]" if ram_free > 100 else "[red]"
+                R = "[red]" if dif_time > 2.7 and dif_time != ello_time else "[cyan]"  #задержка в общем времени, цвет.
+                R1 = "bold red" if dif_time > 2.7 and dif_time != ello_time else "bold blue"
+
                 if session_size == 0 or session_size is None:
                     Ssession_size = "Head"
                 elif session_size == "Err":
@@ -672,14 +687,12 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     Ssession_size = str(session_size) + " Kb"
 
                 if color is True:
-                    if dif_time > 2.7 and dif_time != ello_time:  #задержка в общем времени
-                        console.print(f"[cyan] [*{site_time} s T] >>", f"[bold red][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
-                        console.rule("", style="bold red")
-                    else:
-                        console.print(f"[cyan] [*{site_time} s T] >>", f"[cyan][*{ello_time} s t]", f"[cyan][*{Ssession_size}]")
-                        console.rule("", style="bold blue")
+                    console.print(f"[cyan] [*{site_time} s] {R}[*{ello_time} s] [cyan][*{Ssession_size}]",
+                                  f"{ram_free_color}[*{ram_free} Мб]")
+                    console.rule("", style=R1)
                 else:
-                    console.print(f" [*{site_time} s T] >>", f"[*{ello_time} s t]", f"[*{Ssession_size}]", highlight=False)
+                    console.print(f" [*{site_time} s T] >>", f"[*{ello_time} s t]", f"[*{Ssession_size}]", 
+                                  f"[*{ram_free} Мб]", highlight=False)
                     console.rule(style="color")
 
 
