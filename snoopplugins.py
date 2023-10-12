@@ -4,7 +4,6 @@
 
 import click
 import csv
-import folium
 import ipaddress
 import itertools
 import json
@@ -25,9 +24,6 @@ import webbrowser
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
-from folium.plugins import MarkerCluster
-from more_itertools import unique_everseen
-from operator import itemgetter
 from rich.console import Console
 from rich.progress import track, BarColumn, TimeRemainingColumn, SpinnerColumn, TimeElapsedColumn, Progress
 from rich.table import Table
@@ -37,6 +33,13 @@ from urllib.parse import urlparse
 
 import snoopbanner
 
+Android = True if hasattr(sys, 'getandroidapilevel') else False
+
+if not Android:
+    import folium
+    from folium.plugins import MarkerCluster
+    from more_itertools import unique_everseen
+    from operator import itemgetter
 
 locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
@@ -245,6 +248,9 @@ def module3():
 
 ## Модуль Reverse Vgeocoder.
 def module2():
+    if Android:
+        print(Style.BRIGHT + Fore.RED + "└──Плагин Reverse Vgeocoder 'сложен' и не поддерживается (по умолчанию) в Snoop_termux\n\nВыход\n" + Style.RESET_ALL)
+        sys.exit()
     while True:
         print("""
 \033[36m[\033[0m\033[32;1m1\033[0m\033[36m] --> Выбрать файл\n\
