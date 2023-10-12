@@ -418,7 +418,7 @@ $ sudo nano /etc/ssl/openssl.cnf
 
  • **Сжатие репозитория 27 января 2022г.:** если возникли проблемы сделайте 'git clone' по новому.  
 
- • **Слияние веток snoop_termux и master 12 октября 2023г.:** чтобы и дальше получать обновления для Snoop for Anroid/Termux перейдите на ветку 'master':  
+ • **Слияние веток snoop_termux и master 12 октября 2023г.:** чтобы и дальше получать обновления для Snoop for Anroid/Termux перейдите на ветку 'master'::  
  `$ git checkout master`  
 
  • **Внимание**❗️ Из-за цензуры письма с 'mailru' и 'yandex' не доходят до 'protonmail'. Для пользователей mailru/yandex пишите запросы на запасную почту, email: snoopproject@ya.ru  
