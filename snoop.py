@@ -163,6 +163,7 @@ def mem_test():
         ram_free = int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
     return ram_free
 
+
 ## Вывести на печать инфостроку.
 def info_str(infostr, nick, color=True):
     if color is True:
