@@ -37,7 +37,6 @@ from rich.table import Table
 import snoopbanner
 import snoopplugins
 
-
 if int(platform.python_version_tuple()[1]) >= 8:
     from importlib.metadata import version as version_lib
     python3_8 = True
