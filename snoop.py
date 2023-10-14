@@ -410,13 +410,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         # username = param_websites.get("usernameON")
 
 # Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое — постоянный с расширенным заголовком.
-        majR = random.choice(range(97, 107, 1))
-        minR = random.choice(range(2683, 4606, 13))
-        patR = random.choice(range(52, 99, 1))
+        majR = random.choice(range(101, 118, 1))
         RandHead=([f"{{'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " + \
-                   f"Chrome/{majR}.0.{minR}.{patR} Safari/537.36'}}",
+                   f"Chrome/{majR}.0.0.0 Safari/537.36'}}",
                    f"{{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) " + \
-                   f"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{majR}.0.{minR}.{patR} Safari/537.36'}}"])
+                   f"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{majR}.0.0.0 Safari/537.36'}}"])
         RH = random.choice(RandHead)
         headers = json.loads(RH.replace("'", '"'))
 
