@@ -14,7 +14,7 @@ that is, it is available to the average user *(project creation date: February 1
 According to Snoop's specialized search, it is capable of competing with traditional search engines.*  
 
 Comparison of indexations of databases such tools:  
-<img src="https://img.shields.io/badge/Snoop-~3200+%20websites-success" width="50%" />  
+<img src="https://img.shields.io/badge/Snoop-~3300+%20websites-success" width="50%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
@@ -36,7 +36,7 @@ Snoop for OS Windows and GNU/Linux
 
 **Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop Full version database 3200+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Snoop Full version database 3300+ websites ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
 
 ## Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -141,7 +141,7 @@ search arguments:
   --verbose, -v         When searching for 'nickname', print detailed
                         verbalization
   --web-base, -w        Connect to search for 'nickname' to the updated web_DB
-                        (3200+ websites). In demo version the function is disabled
+                        (3300+ websites). In demo version the function is disabled
   --site , -s <site_name> 
                         Specify the name of the site from the database 
                         '--list-all'. Search for 'nickname' on one specified
