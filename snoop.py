@@ -912,8 +912,7 @@ def run():
                               help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию"
                              )
     search_group.add_argument("--base", "-b <file>", dest="json_file", default="BDdemo", metavar='',
-                              #help="\033[36mУ\033[0mказать для поиска 'nickname' другую БД (Локально)/В demo version функция отключена"
-                              help=argparse.SUPPRESS
+                              help=argparse.SUPPRESS if "demo" in version else "\033[36mУ\033[0mказать для поиска 'nickname' другую БД (Локально)"
                              )
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
                               help=f"\033[36mП\033[0mодключиться для поиска 'nickname' к динамично-обновляемой web_БД ({web_sites} сайтов).\
@@ -975,7 +974,7 @@ def run():
     # print(args)
 
 
-## Опции  '-cseo' несовместимы между собой и быстрый режим.
+## Опции  '-csei' несовместимы между собой и быстрый режим.
     if args.norm and 'full' in version:
         print(Fore.CYAN + "[+] активирована опция '-q': «быстрый режим поиска»\n")
         args.version, args.listing, args.donation, args.autoclean = False, False, False, False
