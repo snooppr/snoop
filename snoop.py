@@ -798,14 +798,14 @@ def license_snoop():
 
     if not Android:
         if Windows and 'full' in version:
-            ram_av = 2200
+            ram_av = 950
         elif Windows and 'demo' in version:
-            ram_av = 650
+            ram_av = 300
 
         if Linux and 'full' in version:
-            ram_av = 1200
+            ram_av = 500
         elif Linux and 'demo' in version:
-            ram_av = 700
+            ram_av = 300
 
         try:
             ram = int(psutil.virtual_memory().total / 1024 / 1024)
