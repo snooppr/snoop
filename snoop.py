@@ -157,10 +157,9 @@ os.makedirs(f"{dirpath}/results/plugins/domain", exist_ok=True)
 ## Расход памяти.
 def mem_test():
     if not Android:
-        ram_free = round(psutil.virtual_memory().available / 1024 / 1024)
+        return round(psutil.virtual_memory().available / 1024 / 1024)
     else:
-        ram_free = int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
-    return ram_free
+        return int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
 
 
 ## Вывести на печать инфостроку.
