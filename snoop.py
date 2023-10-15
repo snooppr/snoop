@@ -69,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.8b', "s", "d"
+vers, vers_code, demo_full = 'v1.3.8c', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -253,6 +253,7 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
 def new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t):
     future2 = executor2.submit(requests_future.get, url=url, headers=headers, allow_redirects=True, timeout=t)
     response = future2.result(t + 2)
+    del future2
     try:
         session_size = len(response.content)  #подсчет извлеченных данных
     except UnicodeEncodeError:
@@ -555,7 +556,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                     if r != "FakeNone":
                         break
-
+                del future_rec
 
 ## Проверка, 4 методов; #1.
 # Ответы message (разные локации).
@@ -707,8 +708,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             dic_snoop_full.get(websites_names)['response_time_ms'] = str(ello_time)
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
-# не удерживать сокетом отработанное по всем п. соединение с сервером.
+# не удерживать сокетом отработанное по всем п. соединение с сервером и предотвратить утечку памяти.
             requests_future.close()
+            param_websites.clear()
 # Высвободить незначительную часть ресурсов.
         try:
             if 'executor2' in locals(): executor2.shutdown()
