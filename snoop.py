@@ -574,7 +574,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 #                print(r.status_code) #Проверка ответа
                 try:
                     if r.status_code > 200 and param_websites.get("ignore_status_code") is None \
-                                                                 or (error2 in r.text or error in r.text or error3 in r.text):
+                                                                 or error in r.text or error2 in r.text or error3 in r.text:
                         if not print_found_only and not norm:
                             print_not_found(websites_names, verbose, color)
                         exists = "увы"
