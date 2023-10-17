@@ -871,7 +871,7 @@ def run():
 # Назначение опций Snoop.
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      usage="python3 snoop.py [search arguments...] nickname\nor\n" + \
-                                            "usage: python3 snoop.py [service arguments | plugins arguments]\n",
+                                           "usage: python3 snoop.py [service arguments | plugins arguments]\n",
                                      description=f"{Fore.CYAN}\nСправка{Style.RESET_ALL}",
                                      epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
                                              f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
