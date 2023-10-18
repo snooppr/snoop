@@ -36,7 +36,7 @@ Snoop pour OS Windows et GNU/Linux
 
 **Base de données locale Snoop**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Base de données de la version complète de Snoop 3300+ sites Web ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "Database Snoop")  
+[Base de données de la version complète de Snoop 3300+ sites Web ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "Database Snoop")  
 
 ## Libérer
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  

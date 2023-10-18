@@ -36,7 +36,7 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 
 **探听本地数据库**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop 完整版数据库 3300+ 个网站 ⚡️⚡️⚡️](https://github.com/snooppr/snoop/blob/master/websites.md "数据库探听")  
+[Snoop 完整版数据库 3300+ 个网站 ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "数据库探听")  
 
 ## 发布
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
