@@ -709,7 +709,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
 # не удерживать сокетом отработанное по всем п. соединение с сервером и предотвратить утечку памяти.
             requests_future.close()
-            param_websites.clear()
+            param_websites.pop("request_future", None)
 # Высвободить незначительную часть ресурсов.
         try:
             if 'executor2' in locals(): executor2.shutdown()
