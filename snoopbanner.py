@@ -92,10 +92,10 @@ Snoop full version: плагины без ограничений; {len(DB('BDfla
     try:
         if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
             webbrowser.open("https://qiwi.com/n/SNOOPPROJECT")
-            webbrowser.open("https://sobe.ru/na/snoop_project_2020")
+            webbrowser.open("https://yoomoney.ru/to/4100111364257544")
         else:
             click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия web browser\n")
-            click.launch(f"https://sobe.ru/na/snoop_project_2020")
+            click.launch(f"https://yoomoney.ru/to/4100111364257544")
             click.launch(f"https://qiwi.com/n/SNOOPPROJECT")
     except Exception:
         print("\033[31;1mНе удалось открыть браузер\033[0m")
