@@ -59,10 +59,10 @@ def donate():
 ├──Qiwi:: [white]https://qiwi.com/n/SNOOPPROJECT[/white]
 └──PayPal:: [white]snoopproject@protonmail.com[/white]
 
-[bold green]Если пользователя заинтересовало ПО [red]Snoop demo version[/red], то он может официально приобрести [cyan]Snoop full version[/cyan], поддержав развитие IT-проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
-[bold green]При пожертвовании/покупке в сообщении укажите информацию в таком порядке:[/bold green]
+[bold green]Если пользователя заинтересовало ПО [red]Snoop demo version[/red], то он может приобрести [cyan]Snoop full version[/cyan], поддержав развитие IT-проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
+[bold green]При пожертвовании/покупке в сообщении укажите:[/bold green]
 
-    [cyan]"Пожертвование на развитие Snoop Project: 20$ ваш e-mail
+    [cyan]"На развитие Snoop Project: 20$ ваш e-mail
     full version for Windows RU или full version for Linux RU,
     статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
 
@@ -84,7 +84,7 @@ Snoop full version: плагины без ограничений; {len(DB('BDfla
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]
 
-❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до 'protonmail'. Для пользователей mailru/yandex пишите запросы на запасную почту.[/bold yellow]
+❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до 'protonmail'. Для пользователей mailru/yandex пишите запросы на запасную почту[/bold yellow]
 [bold green]Email: [/bold green][cyan]snoopproject@ya.ru[/cyan]""",
                         title="[bold red]demo: (Публичная оферта)",
                         border_style="bold blue"))
