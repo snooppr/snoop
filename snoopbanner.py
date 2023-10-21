@@ -54,7 +54,7 @@ def donate():
     print("")
     console.print(Panel(f"""[cyan]
 ╭donate/Buy:
-├──Яндекс.Деньги (Юmoney):: [white]4100111364257544[/white]
+├──ЮMoney:: [white]4100111364257544[/white]
 ├──Visa/Сберкарта:: [white]4276100015931808[/white]
 ├──Qiwi:: [white]https://qiwi.com/n/SNOOPPROJECT[/white]
 └──PayPal:: [white]snoopproject@protonmail.com[/white]
