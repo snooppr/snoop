@@ -114,7 +114,7 @@ Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
 # Чек.
 if time.time() > int(date_up):
     print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии.")
-    sys.exit()
+    #sys.exit()
 
 
 BDdemo = snoopbanner.DB('BDdemo')
@@ -1489,7 +1489,8 @@ def run():
             file_txt.write("\n" f"База Snoop (demo version): {flagBS} Websites.")
             file_txt.write("\n" f"Исключённые регионы: {exl}.")
             file_txt.write("\n" f"Выбор конкретных регионов: {one}.")
-            file_txt.write("\n" f"Обновлено: {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}.")
+            file_txt.write("\n" f"Обновлено: {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}.\n")
+            file_txt.write("\n" f"©2020-{time.localtime().tm_year} «Snoop Project».")
             file_txt.close()
 
 
@@ -1503,7 +1504,7 @@ def run():
                             "no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n<body>\n\n" + \
                             "<div id='particles-js'></div>\n" + \
                             "<div id='report'>\n\n" + \
-                            "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>Главная</a>" + "</h1>\n")
+                            "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>open file</a>" + "</h1>\n")
             file_html.write("<h3>Snoop Project (demo version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n" + \
                             "<button onclick='sortList()'>Сортировать по странам</button><br><br>\n\n")
             file_html.write("Объект " + "<b>" + (nick) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + \
@@ -1570,9 +1571,10 @@ function sortList() {
 
 <a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">🛠  Source Исходный код</span></a>
 <a target='_blank' href='https://drive.google.com/file/d/12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih/view' class="DnA"><span class="DnSpan">📖 Doc Документация</span></a>
-<a target='_blank' href='https://sobe.ru/na/snoop_project_2020' class="DnA"><span class="DnSpan">💳 Donation Пожертвование</span></a>
-<br><br><br><br>
-
+<a target='_blank' href='https://yoomoney.ru/to/4100111364257544' class="DnA"><span class="DnSpan">💳 Donation Пожертвование</span></a>
+<br><br>
+""" + \
+f"""<p><span style="color: gray"><small><small>Отчёт создан в ПО Snoop Project. <br> ©2020-{time.localtime().tm_year} «Snoop Project».</small></small></span></p>
 </body>
 </html>""")
             file_html.close()
@@ -1624,6 +1626,7 @@ function sortList() {
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_date)])
+            writer.writerow([f'©2020-{time.localtime().tm_year} «Snoop Project».'])
 
             file_csv.close()
 
