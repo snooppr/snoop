@@ -66,13 +66,13 @@ def donate():
     full version for Windows RU или full version for Linux RU,
     статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
 
-[bold green]В ближайшее время на email пользователя придёт чек о покупке и ссылка для скачивания Snoop full version готовой сборки то есть исполняемого файла, для Windows — это 'snoop_cli.exe', для GNU/Linux — 'snoop_cli'.
+[bold green]В ближайшее время на email пользователя придёт чек о покупке и ссылка для скачивания Snoop full version готовой сборки, то есть исполняемого файла, для Windows — это 'snoop_cli.exe', для GNU/Linux — 'snoop_cli'.
 
 Snoop в исполняемом виде (build-версия) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
 Лицензия для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке: [/bold green]
 [cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], также лицензия доступна по команде '[/bold green][cyan]snoop_cli -V[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe -V[/cyan][bold green]' у исполняемого файла.
 
-Если Snoop требуется вам для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.
+Если ПО Snoop требуется пользователю для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.
 Студентам ПО Snoop full version предоставляется с 50% скидкой.
 
 Snoop full version: плагины без ограничений; {len(DB('BDflag')) // 100}00+ Websites;
@@ -84,7 +84,7 @@ Snoop full version: плагины без ограничений; {len(DB('BDfla
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]
 
-❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до 'protonmail'. Для пользователей mailru/yandex пишите запросы на запасную почту[/bold yellow]
+❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту[/bold yellow]
 [bold green]Email: [/bold green][cyan]snoopproject@ya.ru[/cyan]""",
                         title="[bold red]demo: (Публичная оферта)",
                         border_style="bold blue"))
