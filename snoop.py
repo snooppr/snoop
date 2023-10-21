@@ -114,7 +114,7 @@ Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
 # Чек.
 if time.time() > int(date_up):
     print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии.")
-    #sys.exit()
+    sys.exit()
 
 
 BDdemo = snoopbanner.DB('BDdemo')
