@@ -226,6 +226,12 @@ $ snoop_cli --help #Ausführen eines Builds unter Linux
 
 # Snoop-Plugins aktivieren:
 $ snoop_cli --module #Ausführen eines Builds unter Linux
+
+# Suche nach zwei Benutzernamen auf zwei Ressourcen:
+$ snoop_cli -s habr -s lichess chikamaria irina
+
+# Holen Sie sich die Vollversion von Snoop:
+$ snoop_cli --donate
 ```
 
 + **'ctrl + c'** — Suche abbrechen.  
@@ -324,9 +330,6 @@ An
  • [Dokumentation/RU](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
 
  • **Fingerabdruck des öffentlichen Schlüssels:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp-Schlüssel").  
-
- • **Informationen für juristische Personen/RU:** Das Snoop-Projekt ist im Register der inländischen Software mit dem angegebenen Code aufgeführt: 26.30.11.16 Software, die die Umsetzung festgelegter Maßnahmen während der operativen Suchtätigkeiten sicherstellt.
-Verordnung des Ministeriums für Telekommunikation und Massenkommunikation der Russischen Föderation Nr. 515, Registernummer 7012.  
 
  • **Snoop ist nicht perfekt:** Websites fallen aus; es gibt keine schließenden Tags; Verbindungen werden zensiert; Hosting wird nicht rechtzeitig bezahlt. All dieser "Web Rock 'n' Roll" muss von Zeit zu Zeit angeschaut werden, daher sind Spenden willkommen:
 [Beispiele für geschlossene/schlechte Websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).    

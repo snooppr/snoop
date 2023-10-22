@@ -196,6 +196,12 @@ $ snoop_cli --help #从发行版 linux 运行
 
 # 启用 Snoop 插件：
 $ snoop_cli --module #从发行版 linux 运行
+
+# 在两个资源上搜索两个用户名：
+$ snoop_cli -s habr -s lichess chikamaria irina
+
+# 获取 Snoop 完整版：
+$ snoop_cli --donate
 ```
 + 'ctrl-c' — 中止搜索。  
 + 找到的账户将存储在 `~/snoop/results/nicknames/*{txt|csv|html}`.  
@@ -284,10 +290,7 @@ $ sudo nano /etc/ssl/openssl.cnf
 
  • [文档/俄语](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
 
- • **公钥指纹：**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp密钥").  
-
- • **法人實體資訊/RU** Snoop 项目包含在国内软件登记册中，声明代码：26.30.11.16 确保在操作搜索活动中执行既定操作的软件。
-俄罗斯联邦交通部命令第 515 号注册号 7012。  
+ • **公钥指纹：**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp密钥").   
 
  • **Snoop 并不完美**：网站正在下降； 结束标签丢失； 网络正在被审查； 托管服务未按时付款。有时，有必要关注所有这些"网络摇滚"，因此欢迎捐款：
 [例子关闭/坏网站](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  

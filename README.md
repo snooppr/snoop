@@ -223,6 +223,9 @@ $ snoop_cli.exe nickname1 nickname2 nickname123321 #Running from release win
 # исключить из поиска все сайты в RU-регионе:
 $ snoop_cli -с -t 6 -f -S -u ~/file.txt -w -e RU #Running from release linux
 
+# Поиск двух username на двух ресурсах:
+$ snoop_cli -s habr -s lichess chikamaria irina
+
 # проверить базу данных Snoop:
 $ snoop_cli --list-all #Running from release linux
 
@@ -231,6 +234,9 @@ $ snoop_cli --help #Running from release linux
 
 # Задействовать плагины Snoop:
 $ snoop_cli --module #Running from release linux
+
+# Получить Snoop full version:
+$ snoop_cli --donate
 ```
 
 + **'ctrl + c'** — прервать поиск.  

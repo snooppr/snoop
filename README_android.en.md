@@ -177,6 +177,12 @@ $ python3 snoop.py username1 username2 username3 username4
 # connect to search for Snoop's extensible and updatable web-base:
 $ python3 snoop.py -c -t 9 -f -S -u ~/file.txt -w
 
+# Search for two usernames on two resources:
+$ snoop_cli -s habr -s lichess chikamaria irina
+
+# Get Snoop full version:
+$ snoop_cli --donate
+
 # 'ctrl-c' — abort search
 ```
 Found accounts will be stored in '/storage/emulated/0/snoop/results/nicknames/*{txt|csv|html}'.  
