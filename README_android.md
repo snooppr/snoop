@@ -185,6 +185,12 @@ $ python3 snoop.py username1 username2 username3 username4
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop:
 $ python3 snoop.py -с -t 9 -f -S -u ~/file.txt -w
+
+# Поиск двух username на двух ресурсах:
+$ snoop_cli -s habr -s lichess chikamaria irina
+
+# Получить Snoop full version:
+$ snoop_cli --donate
 ```
 **'ctrl + c'** — прервать поиск (остановить корректно ПО).  
 

@@ -208,10 +208,18 @@ $ snoop_cli.exe username1 username2 username3 username4 #Running from release wi
 # specify a file with a list of wanted accounts; 
 # connect to the expandable and updated web-base Snoop for search:
 $ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #Running from release linux
+
 # check the Snoop database:
 $ snoop_cli --list all #Running from release linux
+
 # print the help for Snoop functions:
 $ snoop_cli --help #Running from release linux
+
+# Searching for two usernames on two resources:
+$ snoop_cli -s habr -s lichess chikamaria irina
+
+# Get Snoop full version:
+$ snoop_cli --donate
 
 # Enable Snoop plugins:
 $ snoop_cli --module #Running from release linux
@@ -305,9 +313,6 @@ on
  • [Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
 
  • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").  
-
- • **Information for legal entities/RU:** Snoop Project is included in the register of domestic software with the declared code: 26.30.11.16 Software that ensures the implementation of established actions during operational search activities.
-Order of the Ministry of Communications of the Russian Federation No. 515 registered No. 7012.  
 
  • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; hosting services are not paid on time.  
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:

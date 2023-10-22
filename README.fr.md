@@ -188,34 +188,42 @@ search arguments:
 
 **Exemple**
 ```
-# Pour rechercher un seul utilisateur :
+# Pour rechercher un seul utilisateur:
 $ python3 snoop.py username1 #Exécution à partir de la source
 $ snoop_cli username1 #Exécution à partir de la version Linux
-# Ou, par exemple, le cyrillique est pris en charge :
+# Ou, par exemple, le cyrillique est pris en charge:
 $ python3 snoop.py олеся #Exécution à partir de la source
-# Pour rechercher un nom contenant un espace :
+# Pour rechercher un nom contenant un espace:
 $ snoop_cli "bob dylan" #Exécution à partir de la version Linux
 $ snoop_cli dob_dylan #Exécution à partir de la version Linux
 $ snoop_cli bob-dylan #Exécution à partir de la version Linux
 
-# Fonctionnant sur le système d'exploitation Windows :
+# Fonctionnant sur le système d'exploitation Windows:
 $ python snoop.py username1 #Exécution à partir de la source
 $ snoop_cli.exe username1 #Exécution à partir des fenêtres de publication
 # To search for one or more users:
 $ snoop_cli.exe username1 username2 username3 username4 #Exécution à partir des fenêtres de publication
 
-# Rechercher un grand nombre d'utilisateurs en triant la sortie des résultats par pays ;
-# éviter les gels sur les sites Web (le plus souvent la "zone morte" dépend de l'adresse IP de l'utilisateur) ;
-# n'imprime que les comptes trouvés ; enregistrer localement les pages des comptes trouvés ;
-# spécifiez un fichier avec une liste de comptes recherchés ;
-# connectez-vous à la base Web extensible et mise à jour Snoop pour la recherche :
+# Rechercher un grand nombre d'utilisateurs en triant la sortie des résultats par pays;
+# éviter les gels sur les sites Web (le plus souvent la "zone morte" dépend de l'adresse IP de l'utilisateur);
+# n'imprime que les comptes trouvés ; enregistrer localement les pages des comptes trouvés;
+# spécifiez un fichier avec une liste de comptes recherchés;
+# connectez-vous à la base Web extensible et mise à jour Snoop pour la recherche:
 $ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #Exécution à partir de la version Linux
-# consultez la base de données Snoop :
+
+# consultez la base de données Snoop:
 $ snoop_cli --list all #Exécution à partir de la version Linux
-# imprimer l'aide pour les fonctions Snoop :
+
+# imprimer l'aide pour les fonctions Snoop:
 $ snoop_cli --help #Exécution à partir de la version Linux
 
-# Activer les plug-ins Snoop :
+# Recherchez deux noms d'utilisateur sur deux ressources:
+$ snoop_cli -s habr -s lichess chikamaria irina
+
+# Obtenez la version complète de Snoop:
+$ snoop_cli --donate
+
+# Activer les plug-ins Snoop:
 $ snoop_cli --module #Exécution à partir de la version Linux
 ```
 + 'ctrl-c' — abandonner la recherche.  
@@ -308,9 +316,6 @@ sur
  • [Documentation/ru](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
 
  • **Empreinte de la clé publique :**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "clé pgp").  
-
- • **Informations pour les personnes morales/RU:** Snoop Project est inclus dans le registre des logiciels domestiques avec le code déclaré : 26.30.11.16 Logiciel qui assure la mise en œuvre des actions établies lors des activités de recherche opérationnelle.
-Arrêté du Ministère des communications de la Fédération de Russie n° 515 enregistré n° 7012.  
 
  • **Snoop n'est pas parfait** : les sites Web tombent ; les balises de fermeture sont manquantes ; le réseau est censuré ; les services d'hébergement ne sont pas payés à temps.  
 De temps en temps, il faut suivre tout ce "Web rock'n'roll", alors les dons sont les bienvenus :

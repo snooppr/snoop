@@ -210,10 +210,18 @@ $ snoop_cli.exe username1 username2 username3 username4 #Ejecución desde ventan
 # especificar un archivo con una lista de cuentas buscadas;
 # conectarse a la base web ampliable y actualizada de Snoop para la búsqueda:
 $ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #Ejecutando desde la versión de linux
+
 # verifique la base de datos de Snoop:
 $ snoop_cli --list all #Ejecutando desde la versión de Linux
+
 # imprime la ayuda para las funciones de Snoop:
 $ snoop_cli --help #Ejecutando desde la versión de Linux
+
+# Busque dos nombres de usuario en dos recursos:
+$ snoop_cli -s habr -s lichess chikamaria irina
+
+# Obtener la versión completa de Snoop:
+$ snoop_cli --donate
 
 # Habilitar los complementos de Snoop:
 $ snoop_cli --module #Ejecutando desde la versión de Linux
@@ -309,9 +317,6 @@ en
  • [documentación/ruso](https://drive.google.com/open?id=12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih).  
 
  • **Huella digital de clave pública:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp Clave").  
-
- • **Información para personas jurídicas/ruso:** Snoop Project está incluido en el registro de software doméstico con el código declarado: 26.30.11.16 Software que asegura la implementación de las acciones establecidas durante las actividades de búsqueda operativa.
-Orden del Ministerio de Comunicaciones de la Federación Rusa No. 515 registrada No. 7012.  
 
  • **Snoop no es perfecto**: los sitios web están cayendo; faltan etiquetas de cierre; la red está siendo censurada; los servicios de hospedaje no se pagan a tiempo.  
 De vez en cuando, es necesario seguir todo este "rock'n'roll web", por lo que las donaciones son bienvenidas:
