@@ -1655,7 +1655,7 @@ f"""<p><span style="color: gray"><small><small>Отчёт создан в ПО S
             console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
 
 
-## Музыка.
+## Звуковое оповещение о завершении работы.
             try:
                 if args.no_func is False: playsound('end.wav')
             except Exception:
@@ -1695,9 +1695,8 @@ f"""<p><span style="color: gray"><small><small>Отчёт создан в ПО S
             hardware.shutdown()
         except Exception:
             console.log(snoopbanner.err_all(err_="low"))
-            pass
 
-## поиск по выбранным пользователям.
+## поиск по выбранным пользователям либо из cli, либо из файла.
     starts(args.username) if args.user is False else starts(USERLIST)
 
 ## Arbeiten...
