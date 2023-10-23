@@ -4,7 +4,6 @@
 import argparse
 import base64
 import certifi
-import click
 import csv
 import glob
 import itertools

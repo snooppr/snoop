@@ -3,7 +3,6 @@
 "Самотестирование сети"
 
 import speedtest
-import sys
 from colorama import Fore, Style, init
 from rich.panel import Panel
 from rich.style import Style as STL
