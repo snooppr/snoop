@@ -3,20 +3,15 @@
 "Text_banner_logo_help"
 
 import base64
-import click
 import json
 import locale
-import os
-import platform
 import sys
 import time
 import webbrowser
 
 from colorama import Fore, Style, init
 from rich.panel import Panel
-from rich.style import Style as STL
 from rich.console import Console
-from rich.table import Table
 
 locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
@@ -26,11 +21,10 @@ console = Console()
 ## Логирование ошибок.
 def err_all(err_="low"):
     if err_ == "high":
-        err_log = ("⚠️ [bold red][RU] Внимание! Критическая ошибка, просьба сообщить об этом разработчику.\n" + \
-                   "[EN] Attention! Critical error, please report it to the developer.\nhttps://github.com/snooppr/snoop/issues[/bold red]")
+        return "⚠️ [bold red][RU] Внимание! Критическая ошибка, просьба сообщить об этом разработчику.\n" + \
+                   "[EN] Attention! Critical error, please report it to the developer.\nhttps://github.com/snooppr/snoop/issues[/bold red]"
     elif err_ == "low":
-        err_log = ("⚠️ [bold yellow][RU] Ошибка | [EN] Error[/bold yellow]")
-    return err_log
+        return "⚠️ [bold yellow][RU] Ошибка | [EN] Error[/bold yellow]"
 
 
 ## БД.
@@ -90,13 +84,8 @@ Snoop full version: плагины без ограничений; {len(DB('BDfla
                         border_style="bold blue"))
 
     try:
-        if "arm" not in platform.platform(aliased=True, terse=0) and "aarch64" not in platform.platform(aliased=True, terse=0):
-            webbrowser.open("https://qiwi.com/n/SNOOPPROJECT")
-            webbrowser.open("https://yoomoney.ru/to/4100111364257544")
-        else:
-            click.pause(Style.DIM + Fore.CYAN + "\nНажмите любую клавишу для открытия web browser\n")
-            click.launch(f"https://yoomoney.ru/to/4100111364257544")
-            click.launch(f"https://qiwi.com/n/SNOOPPROJECT")
+        webbrowser.open("https://qiwi.com/n/SNOOPPROJECT")
+        webbrowser.open("https://yoomoney.ru/to/4100111364257544")
     except Exception:
         print("\033[31;1mНе удалось открыть браузер\033[0m")
 
