@@ -1020,7 +1020,7 @@ def run():
 
 ## Опция  '-H'.
     if args.headerS:
-        print(f"{Fore.CYAN}[+] активирована опция '-H': «переопределение user-agent(s)»:" + '\n' + \
+        print(f"{Fore.CYAN}[+] активирована скрытая опция '-H': «переопределение user-agent(s)»:" + '\n' + \
               f"    user-agent: '{Style.BRIGHT}{Fore.CYAN}{''.join(args.headerS)}{Style.RESET_ALL}{Fore.CYAN}'")
 
 
@@ -1082,7 +1082,7 @@ def run():
 
 ## Опция  '-С'.
     if args.cert:
-        print(Fore.CYAN + f"[+] активирована опция '-C': «проверка сертификатов на серверах вкл»")
+        print(Fore.CYAN + f"[+] активирована скрытая опция '-C': «проверка сертификатов на серверах вкл»")
 
 
 ## Опция  '-w'.
