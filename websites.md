@@ -3285,7 +3285,7 @@
 3284. 🇨🇳 [Tw_weibo](https://tw.weibo.com)
 3285. 🇷🇺 [Twentysix](https://twentysix.ru)
 3286. 🌎 [Twitch](https://www.twitch.tv/)
-3287. 🌎 [Twitter (g. l.)](https://twitter.com)
+3287. 🌎 [Twitter](https://twitter.com)
 3288. 🇺🇸 [Typeracer](https://data.typeracer.com/)
 3289. 🇷🇺 [Uaksu](https://uaksu.forum24.ru/)
 3290. 🇺🇦 [Uanime](http://uanime.org.ua)
