@@ -27,6 +27,7 @@ from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
 from multiprocessing import active_children
 from playsound import playsound
+from rich.markdown import Markdown
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
 from rich.panel import Panel
 from rich.style import Style as STL
@@ -68,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.8d', "s", "d"
+vers, vers_code, demo_full = 'v1.3.8e', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -302,7 +303,19 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
 ## Основная функция.
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
           print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
+
+    requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
+    requests.packages.urllib3.disable_warnings()
+    requests_future = requests.Session()
+    requests_future.verify = False if cert is False else True
+
 # Печать первой инфостроки.
+    еasteregg = ['Snoop', 'snoop', 'SNOOP',
+                 'Snoop Project', 'snoop project', 'SNOOP PROJECT',
+                 'Snoop_Project', 'snoop_project', 'SNOOP_PROJECT',
+                 'Snoop-Project', 'snoop-project', 'SNOOP-PROJECT',
+                 'Snooppr', 'snooppr', 'SNOOPPR']
+
     if '%20' in username:
         username_space = re.sub("%20", " ", username)
         info_str("разыскиваем:", username_space, color)
@@ -312,6 +325,25 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     if len(username) < 3:
         console.print(f"⛔️ [bold red]nickname не может быть короче 3-х символов\nПропуск\n")
         return False, False
+    elif username in еasteregg:
+        with console.status("[bold blue]💡 Обнаружена пасхалка..."):
+            try:
+                r_east = requests_future.get("https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
+                r_repo = requests_future.get('https://api.github.com/repos/snooppr/snoop', timeout=timeout).json()
+                r_latestvers = requests_future.get('https://api.github.com/repos/snooppr/snoop/tags', timeout=timeout).json()
+
+                console.print(Panel(Markdown(r_east.text.replace("=" * 83, "")),
+                                    subtitle="[bold blue]журнал snoop-версий[/bold blue]", style=STL(color="cyan")))
+                console.print(Panel(f"[bold cyan]Дата создания проекта:[/bold cyan] 2020/02/14 ({round((time.time() - 1581638400.0) / 86400)}_дня)\n" + \
+                                    f"[bold cyan]Последнее обновление репозитория:[/bold cyan] {'_'.join(r_repo.get('pushed_at')[0:-4].split('T'))}\n" + \
+                                    f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} Мб\n" + \
+                                    f"[bold cyan]Github-рейтинг:[/bold cyan] {r_repo.get('watchers')} звёзд\n" + \
+                                    f"[bold cyan]Локальная база данных:[/bold cyan] {len(BDflag) // 100}00+ ресурсов\n" + \
+                                    f"[bold cyan]Последняя версия snoop:[/bold cyan] {r_latestvers[0].get('name')}",
+                                    style=STL(color="cyan"), subtitle="[bold blue]ключевые показатели[/bold blue]", expand=False))
+            except Exception:
+                console.log(snoopbanner.err_all(err_="high"))
+        sys.exit()
 
     username = re.sub(" ", "%20", username)
 
@@ -363,12 +395,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     global nick
     nick = username.replace("%20", " ")  #username 2-переменные (args/info)
 
-## Создать многопоточный/процессный сеанс для всех запросов.
-    requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
-    requests.packages.urllib3.disable_warnings()
-    requests_future = requests.Session()
-    requests_future.verify = False if cert is False else True
 
+## Создать многопоточный/процессный сеанс для всех запросов.
     if Android:
         try:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
