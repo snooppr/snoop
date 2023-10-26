@@ -321,7 +321,7 @@
 320. 🇷🇺 [Club-l200](https://club-l200.ru)
 321. 🇷🇺 [Club-nissan](http://www.club-nissan.ru)
 322. 🇷🇺 [Club_7ya](https://club.7ya.ru)
-323. 🇷🇺 [Club_cnews](https://club.cnews.ru/)
+323. 🇷🇺 [Club_cnews (g. l.)](https://club.cnews.ru/)
 324. 🇫🇷 [Club_doctissimo](https://club.doctissimo.fr)
 325. 🇷🇺 [Club_klerk](https://club.klerk.ru)
 326. 🇷🇺 [Club_maghreb](https://club.maghreb.ru/)
