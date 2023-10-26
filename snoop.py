@@ -335,7 +335,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 console.print(Panel(Markdown(r_east.text.replace("=" * 83, "")),
                                     subtitle="[bold blue]журнал snoop-версий[/bold blue]", style=STL(color="cyan")))
                 console.print(Panel(f"[bold cyan]Дата создания проекта:[/bold cyan] 2020/02/14 ({round((time.time() - 1581638400.0) / 86400)}_дня)\n" + \
-                                    f"[bold cyan]Последнее обновление репозитория:[/bold cyan] {'_'.join(r_repo.get('pushed_at')[0:-4].split('T'))}\n" + \
+                                    f"[bold cyan]Последнее обновление репозитория:[/bold cyan] {'_'.join(r_repo.get('pushed_at')[0:-4].split('T'))} (UTC)\n" + \
                                     f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} Мб\n" + \
                                     f"[bold cyan]Github-рейтинг:[/bold cyan] {r_repo.get('watchers')} звёзд\n" + \
                                     f"[bold cyan]Локальная база данных:[/bold cyan] {len(BDflag) // 100}00+ ресурсов\n" + \
