@@ -334,12 +334,16 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                 console.print(Panel(Markdown(r_east.text.replace("=" * 83, "")),
                                     subtitle="[bold blue]журнал snoop-версий[/bold blue]", style=STL(color="cyan")))
-                console.print(Panel(f"[bold cyan]Дата создания проекта:[/bold cyan] 2020/02/14 ({round((time.time() - 1581638400.0) / 86400)}_дней)\n" + \
-                                    f"[bold cyan]Последнее обновление репозитория:[/bold cyan] {'_'.join(r_repo.get('pushed_at')[0:-4].split('T')).replace('-', '/')} (UTC)\n" + \
-                                    f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} Мб\n" + \
-                                    f"[bold cyan]Github-рейтинг:[/bold cyan] {r_repo.get('watchers')} звёзд\n" + \
-                                    f"[bold cyan]Локальная база данных:[/bold cyan] {len(BDflag) // 100}00+ ресурсов\n" + \
-                                    f"[bold cyan]Последняя версия snoop:[/bold cyan] {r_latestvers[0].get('name')}",
+                console.print(Panel(f"[bold cyan]Дата создания проекта:[/bold cyan] 2020/02/14 ({round((time.time() - 1581638400.0) / 86400)}_дней).\n" + \
+                                    f"[bold cyan]Последнее обновление репозитория:[/bold cyan] {'_'.join(r_repo.get('pushed_at')[0:-4].split('T')).replace('-', '/')} (UTC).\n" + \
+                                    f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} Мб.\n" + \
+                                    f"[bold cyan]Github-рейтинг:[/bold cyan] {r_repo.get('watchers')} звёзд.\n" + \
+                                    f"[bold cyan]Скрытые опции:[/bold cyan]\n'--headers/-H':: Задать user-agent вручную, агент " + \
+                                                              f"заключается в кавычки, по умолчанию для каждого сайта задается случайный " + \
+                                                              f"либо переопределенный user-agent из БД snoop.\n" + \
+                                                              f"'--cert-on/-C':: Включить проверку сертификатов на серверах, по умолчанию проверка сертификатов на серверах " + \
+                                                              f"отключена, что позволяет обрабатывать проблемные сайты без ошибок.\n"
+                                    f"[bold cyan]Последняя версия snoop:[/bold cyan] {r_latestvers[0].get('name')}.",
                                     style=STL(color="cyan"), subtitle="[bold blue]ключевые показатели[/bold blue]", expand=False))
             except Exception:
                 console.log(snoopbanner.err_all(err_="high"))
