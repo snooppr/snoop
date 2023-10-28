@@ -168,10 +168,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 BSD 3-Clause "New" or "Revised" License
 
-This software uses click library, which is
-Copyright 2014 Pallets
-All rights reserved.
-
 This software uses psutil library, which is
 Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola
 All rights reserved.
