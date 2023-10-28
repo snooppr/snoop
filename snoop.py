@@ -69,7 +69,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.8e', "s", "d"
+vers, vers_code, demo_full = 'v1.3.9', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -107,7 +107,7 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2024, 7, 7, 3, 0, 0, 0, 0, 0)
+ts = (2024, 10, 29, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
@@ -986,15 +986,10 @@ def run():
                               help="\033[36mС\033[0mохранять найденные странички пользователей в локальные html-файлы"
                              )
     search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
-                              help=argparse.SUPPRESS if "demo" in version else """\033[36mВ\033[0mкл проверку сертификатов на серверах.
-                                                                                  По умолчанию проверка сертификатов на серверах отключена,
-                                                                                  что позволяет обрабатывать проблемные сайты без ошибок"""
+                              help=argparse.SUPPRESS
                              )
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="headerS", nargs=1, default=None,
-                              help=argparse.SUPPRESS if "demo" in version else """\033[36mЗ\033[0mадать user-agent вручную, агент 
-                                                                                  заключается в кавычки, по умолчанию для каждого
-                                                                                  сайта задается случайный либо переопределенный
-                                                                                  user-agent из БД snoop"""
+                              help=argparse.SUPPRESS
                              )
     search_group.add_argument("--quick", "-q", action="store_true", dest="norm", default=False,
                               help="""\033[36mБ\033[0mыстрый и агрессивный режим поиска.
