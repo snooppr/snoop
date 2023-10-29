@@ -584,10 +584,10 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                                   allow_redirects=allow_redirects, timeout=2.9)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
-                              f"{Style.DIM}{Fore.GREEN} ╭──└──повторное соединение{Style.RESET_ALL}")
+                              f"{Style.DIM}{Fore.GREEN} ┌──└──повторное соединение{Style.RESET_ALL}")
                     else:
                         if print_found_only is False:
-                            print("    ╭──└──повторное соединение")
+                            print("    ┌──└──повторное соединение")
 
                     r, error_type, response_time = request_res(request_future=future_rec, error_type=param_websites.get("errorTypе"),
                                                                websites_names=websites_names, print_found_only=print_found_only,
