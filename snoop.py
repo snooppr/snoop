@@ -2,7 +2,6 @@
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 
 import argparse
-import base64
 import certifi
 import csv
 import glob
@@ -210,10 +209,10 @@ def print_not_found(websites_names, verbose=False, color=True):
 def print_invalid(websites_names, message, color=True):
     """Ошибка вывода nickname и gray list"""
     if color is True:
-        print(f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]" \
-              f"{Style.BRIGHT}{Fore.GREEN} {websites_names}: {Style.RESET_ALL}{Fore.YELLOW}{message}")
+        return f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]" \
+               f"{Style.BRIGHT}{Fore.GREEN} {websites_names}: {Style.RESET_ALL}{Fore.YELLOW}{message}\n"
     else:
-        print(f"[-] {websites_names}: {message}")
+        return f"[-] {websites_names}: {message}\n"
 
 
 ## Вернуть результат future for2.
@@ -250,9 +249,13 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
 
 ## Сохранение отчетов опция (-S).
 def new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t):
+    """Если nickname найден, но актуальная html-страница находится дальше по редиректу,
+    поднимаем новое соединение и двигаемся по редиректу чтобы ее захватить и сохранить.
+    """
+
     future2 = executor2.submit(requests_future.get, url=url, headers=headers, allow_redirects=True, timeout=t)
     response = future2.result(t + 2)
-    del future2
+
     try:
         session_size = len(response.content)  #подсчет извлеченных данных
     except UnicodeEncodeError:
@@ -375,7 +378,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 if len(username) == 0 and len(usernameR) == 0:
                     print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (обнаружен чистый домен)\nпропуск\n")
                     return False, False
-
+                elif len(username) != 0 and len(username) < 3:
+                    console.print(f"⛔️ [bold red]nickname не может быть короче 3-х символов\nПропуск\n")
+                    return False, False
         del ermail
 
 
@@ -431,6 +436,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 ## Результаты анализа всех сайтов.
     dic_snoop_full = {}
+    lst_invalid = []
 ## Создание futures на все запросы. Это позволит распараллелить запросы с прерываниями.
     for websites_names, param_websites in BDdemo_new.items():
         results_site = {}
@@ -460,7 +466,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
             if exclusionYES and re.search(exclusionYES, username) and not print_found_only and not norm:
-                print_invalid(websites_names, f"недопустимый ник '{nick}' для данного сайта", color)
+                lst_invalid.append(print_invalid(websites_names, f"недопустимый ник '{nick}' для данного сайта", color))
             results_site["exists"] = "invalid_nick"
             results_site["url_user"] = '*' * 56
             results_site['countryCSV'] = "****"
@@ -470,7 +476,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             results_site['response_time_ms'] = '*' * 15
             results_site['response_time_site_ms'] = '*' * 25
             if param_websites.get("bad_site") == 1 and verbose and not print_found_only and not norm:
-                print_invalid(websites_names, f"**Пропуск. Dynamic gray_list", color)
+                lst_invalid.append(print_invalid(websites_names, f"**Пропуск. Dynamic gray_list", color))
             if param_websites.get("bad_site") == 1:
                 d_g_l.append(websites_names)
                 results_site["exists"] = "gray_list"
@@ -505,6 +511,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Добавлять во вл. словарь future со всеми другими результатами.
         dic_snoop_full[websites_names] = results_site
 
+# Вывести на печать invalid_data.
+    if bool(lst_invalid) is True:
+        print("".join(lst_invalid))
 
 ## Прогресс_описание.
     if not verbose:
@@ -545,14 +554,14 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         for websites_names, param_websites in BDdemo_new.items():  #БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future
             if color is True:
                 progress.update(task0, advance=1, refresh=True)  #\nprogress.refresh()
+# Пропустить запрещенный никнейм или пропуск сайта из gray-list.
+            if dic_snoop_full.get(websites_names).get("exists") is not None:
+                continue
 # Получить другую информацию сайта, снова.
             url = dic_snoop_full.get(websites_names).get("url_user")
             country_emojis = dic_snoop_full.get(websites_names).get("flagcountry")
             country_code = dic_snoop_full.get(websites_names).get("flagcountryklas")
             country_Emoj_Code = country_emojis if not Windows else country_code
-# Пропустить запрещенный никнейм или пропуск сайта из gray-list.
-            if dic_snoop_full.get(websites_names).get("exists") is not None:
-                continue
 # Получить ожидаемый тип данных 4-х методов.
             error_type = param_websites["errorTypе"]
 # Получить результаты future.
@@ -575,10 +584,10 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                                   allow_redirects=allow_redirects, timeout=2.9)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
-                              f"{Style.DIM}{Fore.GREEN}    └──повторное соединение{Style.RESET_ALL}")
+                              f"{Style.DIM}{Fore.GREEN} ╭──└──повторное соединение{Style.RESET_ALL}")
                     else:
                         if print_found_only is False:
-                            print("повторное соединение")
+                            print("    ╭──└──повторное соединение")
 
                     r, error_type, response_time = request_res(request_future=future_rec, error_type=param_websites.get("errorTypе"),
                                                                websites_names=websites_names, print_found_only=print_found_only,

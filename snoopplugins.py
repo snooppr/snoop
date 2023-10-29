@@ -407,6 +407,7 @@ def module2():
                     file_txtR.write(f"{badGEO}\n")
                 file_txtR.write("===================================" + "\n\n")
                 file_txtR.write(time.strftime(f"Дата обработки файла '{hvostR}': %d/%m/%Y_%H:%M:%S", time_date))
+                file_txtR.write(f"\n©2020-{time.localtime().tm_year} «Snoop Project».")
                 file_txtR.close()
             if rGeo == '2':
                 print("\033[31;1m└──В demo version этот метод плагина недоступен\033[0m\n")
