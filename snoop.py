@@ -1013,7 +1013,7 @@ def run():
 
 ## Опции  '-csei' несовместимы между собой и быстрый режим.
     if args.norm and 'full' in version:
-        print(Fore.CYAN + "[+] активирована опция '-q': «быстрый режим поиска»\n")
+        print(Fore.CYAN + "[+] активирована опция '-q': «быстрый режим поиска»")
         args.version, args.listing, args.donation, args.autoclean = False, False, False, False
         args.update, args.module, args.autoclean = False, False, False
 
