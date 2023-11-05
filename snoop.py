@@ -11,6 +11,7 @@ import locale
 import networktest
 import os
 import platform
+import psutil
 import random
 import re
 import requests
@@ -46,9 +47,6 @@ Android = True if hasattr(sys, 'getandroidapilevel') else False
 Windows = True if sys.platform == 'win32' else False
 Linux = True if Android is False and Windows is False else False
 
-if not Android:
-    import psutil
-
 try:
     if os.environ.get('LANG') is not None and 'ru' in os.environ.get('LANG'):
         rus_unix = True
@@ -68,7 +66,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.9', "s", "d"
+vers, vers_code, demo_full = 'v1.3.9a', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -155,11 +153,13 @@ os.makedirs(f"{dirpath}/results/plugins/domain", exist_ok=True)
 
 ## Расход памяти.
 def mem_test():
-    if not Android:
+    try:
         return round(psutil.virtual_memory().available / 1024 / 1024)
-    else:
-        return int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
-
+    except Exception:
+        if not Windows:
+            return int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
+        else:
+            return -1
 
 ## Вывести на печать инфостроку.
 def info_str(infostr, nick, color=True):
