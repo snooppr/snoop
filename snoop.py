@@ -26,7 +26,6 @@ from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
 from multiprocessing import active_children
-from playsound import playsound
 from rich.markdown import Markdown
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
 from rich.panel import Panel
@@ -174,11 +173,6 @@ def print_error(websites_names, errstr, country_code, errX, verbose=False, color
     if color is True:
         print(f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]{Style.BRIGHT}" \
               f"{Fore.GREEN} {websites_names}: {Style.BRIGHT}{Fore.RED}{errstr}{country_code}{Fore.YELLOW} {errX if verbose else ''}")
-        try:
-            if 'demo' in version:
-                playsound('err.wav')
-        except Exception:
-            pass
     else:
         print(f"[!] {websites_names}: {errstr}{country_code} {errX if verbose else ''}")
 
@@ -466,7 +460,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         exclusionYES = param_websites.get("exclusion")
         if exclusionYES and re.search(exclusionYES, username) or param_websites.get("bad_site") == 1:
             if exclusionYES and re.search(exclusionYES, username) and not print_found_only and not norm:
-                lst_invalid.append(print_invalid(websites_names, f"недопустимый ник '{nick}' для данного сайта", color))
+                lst_invalid.append(print_invalid(websites_names, f"#недопустимый ник '{nick}' для данного сайта", color))
             results_site["exists"] = "invalid_nick"
             results_site["url_user"] = '*' * 56
             results_site['countryCSV'] = "****"
@@ -476,7 +470,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             results_site['response_time_ms'] = '*' * 15
             results_site['response_time_site_ms'] = '*' * 25
             if param_websites.get("bad_site") == 1 and verbose and not print_found_only and not norm:
-                lst_invalid.append(print_invalid(websites_names, f"**Пропуск. Dynamic gray_list", color))
+                lst_invalid.append(print_invalid(websites_names, f"*ПРОПУСК. DYNAMIC GRAY_LIST", color))
             if param_websites.get("bad_site") == 1:
                 d_g_l.append(websites_names)
                 results_site["exists"] = "gray_list"
@@ -879,7 +873,6 @@ def license_snoop():
     if python3_8:
         colorama_v = f", (colorama::{version_lib('colorama')})"
         rich_v = f", (rich::{version_lib('rich')})"
-        plays_v = f", (playsound::{version_lib('playsound')})"
         urllib3_v = f", (urllib3::{version_lib('urllib3')})"
         folium_v = f", (folium::{version_lib('folium')})" if not Android else ""
         numpy_v = f", (numpy::{version_lib('numpy')})" if not Android else ""
@@ -1689,13 +1682,6 @@ f"""<p><span style="color: gray"><small><small>Отчёт создан в ПО S
             else:
                 print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
             console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
-
-
-## Звуковое оповещение о завершении работы.
-            try:
-                if args.no_func is False: playsound('end.wav')
-            except Exception:
-                pass
 
 
 ## Открывать/нет браузер с результатами поиска.
