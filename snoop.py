@@ -1000,13 +1000,14 @@ def run():
                                       Режим эффективен в full version"""
                              )
 
+    gal = "  ✔" if not Windows else "[+]"
     args = parser.parse_args()
     # print(args)
 
 
 ## Опции  '-csei' несовместимы между собой и быстрый режим.
     if args.norm and 'full' in version:
-        print(Fore.CYAN + "[+] активирована опция '-q': «быстрый режим поиска»")
+        print(Fore.CYAN + f"{gal} активирована опция '-q': «быстрый режим поиска»")
         args.version, args.listing, args.donation, args.autoclean = False, False, False, False
         args.update, args.module, args.autoclean = False, False, False
 
@@ -1026,7 +1027,7 @@ def run():
         snoopbanner.logo(text="[-] в demo деактивирован переключатель '-q': «режимов SNOOPninja/Quick»")
     elif args.norm is False and args.listing is False and 'full' in version:
         if Linux:
-            print(Fore.CYAN + "[+] активирован дефолтный поиск '--': «режим SNOOPninja»")
+            print(Fore.CYAN + f"{gal} активирован дефолтный поиск '--': «режим SNOOPninja»")
 
     k = 0
     for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
@@ -1043,20 +1044,20 @@ def run():
 
 ## Опция  '-a'.
     if args.autoclean:
-        print(Fore.CYAN + "[+] активирована опция '-a': «удаление накопленных отчетов»\n")
+        print(Fore.CYAN + f"{gal} активирована опция '-a': «удаление накопленных отчетов»\n")
         autoclean()
 
 
 ## Опция  '-H'.
     if args.headerS:
-        print(f"{Fore.CYAN}[+] активирована скрытая опция '-H': «переопределение user-agent(s)»:" + '\n' + \
+        print(f"{Fore.CYAN}{gal} активирована скрытая опция '-H': «переопределение user-agent(s)»:" + '\n' + \
               f"    user-agent: '{Style.BRIGHT}{Fore.CYAN}{''.join(args.headerS)}{Style.RESET_ALL}{Fore.CYAN}'")
 
 
 ## Опция  '-m'.
 # Информативный вывод.
     if args.module:
-        print(Fore.CYAN + "[+] активирована опция '-m': «модульный поиск»")
+        print(Fore.CYAN + f"{gal} активирована опция '-m': «модульный поиск»")
 
         def module():
             print(f"\n" + \
@@ -1111,28 +1112,28 @@ def run():
 
 ## Опция  '-С'.
     if args.cert:
-        print(Fore.CYAN + f"[+] активирована скрытая опция '-C': «проверка сертификатов на серверах вкл»")
+        print(Fore.CYAN + f"{gal} активирована скрытая опция '-C': «проверка сертификатов на серверах вкл»")
 
 
 ## Опция  '-w'.
     if args.web:
-        print(Fore.CYAN + "[+] активирована опция '-w': «подключение к внешней web_database»")
+        print(Fore.CYAN + f"{gal} активирована опция '-w': «подключение к внешней web_database»")
 
 
 ## Опция  '-S'.
     if args.reports:
-        print(Fore.CYAN + "[+] активирована опция '-S': «сохранять странички найденных аккаунтов»")
+        print(Fore.CYAN + f"{gal} активирована опция '-S': «сохранять странички найденных аккаунтов»")
 
 
 ## Опция  '-n'.
     if args.no_func:
-        print(Fore.CYAN + "[+] активирована опция '-n': «отключены:: цвета; флаги; браузер; прогресс»")
+        print(Fore.CYAN + f"{gal} активирована опция '-n': «отключены:: цвета; флаги; браузер; прогресс»")
 
 
 ## Опция  '-t'.
     try:
         if args.timeout and args.norm is False:
-            print(Fore.CYAN + f"[+] активирована опция '-t': «snoop будет ожидать ответа от " + \
+            print(Fore.CYAN + f"{gal} активирована опция '-t': «snoop будет ожидать ответа от " + \
                   f"сайта \033[36;1m<= {timeout}_sec\033[0m\033[36m.» \033[0m")
     except Exception:
         pass
@@ -1140,12 +1141,12 @@ def run():
 
 ## Опция '-f'.
     if args.print_found_only:
-        print(Fore.CYAN + "[+] активирована опция '-f': «выводить на печать только найденные аккаунты»")
+        print(Fore.CYAN + f"{gal} активирована опция '-f': «выводить на печать только найденные аккаунты»")
 
 
 ## Опция '-s'.
     if args.site_list:
-        print(f"{Fore.CYAN}[+] активирована опция '-s': «поиск '{Style.BRIGHT}{Fore.CYAN}{', '.join(args.username)}{Style.RESET_ALL}" + \
+        print(f"{Fore.CYAN}{gal} активирована опция '-s': «поиск '{Style.BRIGHT}{Fore.CYAN}{', '.join(args.username)}{Style.RESET_ALL}" + \
               f"{Fore.CYAN}' на выбранных website(s)»\n" + \
               f"    допустимо использовать опцию '-s' несколько раз\n" + \
               f"    [опция '-s'] несовместима с [опциями '-с', '-e', '-i']")
@@ -1153,7 +1154,7 @@ def run():
 
 ## Опция '--list-all'.
     if args.listing:
-        print(Fore.CYAN + "[+] активирована опция '-l': «детальная информация о БД Snoop»")
+        print(Fore.CYAN + f"{gal} активирована опция '-l': «детальная информация о БД Snoop»")
         print("\033[36m\nСортировать БД Snoop по странам, по имени сайта или обобщенно ?\n" + \
               "по странам —\033[0m 1 \033[36mпо имени —\033[0m 2 \033[36mall —\033[0m 3\n")
         sortY = console.input("[cyan]Выберите действие: [/cyan]")
@@ -1233,7 +1234,7 @@ def run():
 
 ## Опция донат '-d y'.
     if args.donation:
-        print(Fore.CYAN + "[+] активирована опция '-d': «финансовая поддержка проекта»")
+        print(Fore.CYAN + f"{gal} активирована опция '-d': «финансовая поддержка проекта»")
         snoopbanner.donate()
 
 
@@ -1245,7 +1246,7 @@ def run():
         try:
             patchuserlist = ("{}".format(args.user))
             userfile = patchuserlist.split('/')[-1] if not Windows else patchuserlist.split('\\')[-1]
-            print(Fore.CYAN + f"[+] активирована опция '-u': «розыск nickname(s) из файла:: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
+            print(Fore.CYAN + f"{gal} активирована опция '-u': «розыск nickname(s) из файла:: \033[36;1m{userfile}\033[0m\033[36m»\033[0m")
 
             with open(patchuserlist, "r", encoding="utf8") as u1:
                 userlist = [(line[0], line[1].strip()) for line in enumerate(u1.read().replace("\ufeff", "").splitlines(), 1)]
@@ -1343,7 +1344,7 @@ def run():
 ## Проверка остальных (в т.ч. повтор) опций.
 ## Опция '--update y' обновление Snoop.
     if args.update:
-        print(Fore.CYAN + "[+] активирована опция '-U': «обновление snoop»")
+        print(Fore.CYAN + f"{gal} активирована опция '-U': «обновление snoop»")
         update_snoop()
 
 
@@ -1362,7 +1363,7 @@ def run():
 
 ## Опция  '-c'. Сортировка по странам.
     if args.country is True and args.web is False:
-        print(Fore.CYAN + "[+] активирована опция '-c': «сортировка/запись результатов по странам»")
+        print(Fore.CYAN + f"{gal} активирована опция '-c': «сортировка/запись результатов по странам»")
         country_sites = sorted(BDdemo, key=lambda k: ("country" not in k, BDdemo[k].get("country", sys.maxsize)))
         sort_web_BDdemo_new = {}
         for site in country_sites:
@@ -1426,7 +1427,7 @@ def run():
     elif args.exclude_country is not None:
         lap, diff_list = one_exl(one_exl_=args.exclude_country, bool_=True)
 
-        print(Fore.CYAN + f"[+] активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
+        print(Fore.CYAN + f"{gal} активирована опция '-e': «исключить из поиска выбранные регионы»::", end=' ')
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
               str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
               "    допустимо использовать опцию '-e' несколько раз\n" + \
@@ -1439,7 +1440,7 @@ def run():
     elif args.one_level is not None:
         lap, diff_list = one_exl(one_exl_=args.one_level, bool_=False)
 
-        print(Fore.CYAN + f"[+] активирована опция '-i': «включить в поиск только выбранные регионы»::", end=' ')
+        print(Fore.CYAN + f"{gal} активирована опция '-i': «включить в поиск только выбранные регионы»::", end=' ')
         print(Style.BRIGHT + Fore.CYAN + str(lap).strip('[]').upper() + Style.RESET_ALL + " " + Style.BRIGHT + Fore.RED + \
               str(diff_list).strip('[]') + Style.RESET_ALL + Fore.CYAN + "\n" + \
               "    допустимо использовать опцию '-i' несколько раз\n" + \
@@ -1457,7 +1458,7 @@ def run():
 
 ## Опция '-v'.
     if args.verbose and bool(args.username) or args.verbose and bool(USERLIST):
-        print(Fore.CYAN + "[+] активирована опция '-v': «подробная вербализация в CLI»\n")
+        print(Fore.CYAN + f"{gal} активирована опция '-v': «подробная вербализация в CLI»\n")
         networktest.nettest()
 
 
