@@ -136,7 +136,7 @@ search arguments:
                         with a slow Internet connection (by default 9s)
   --found-print, -f     Print only found accounts
   --no-func, -n         ✓Monochrome terminal, do not use colors in url 
-                        ✓Disable sound ✓Disable opening web browser
+                        ✓Disable opening web browser
                         ✓Disable printing of country flags 
                         ✓Disable indication and progress status
   --userlist , -u <file> 

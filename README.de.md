@@ -166,7 +166,6 @@ search arguments:
                         langsame Internetverbindung erforderlich (Standard 9s)
   --found-print, -f     Drucken Sie nur gefundene Konten
   --no-func, -n         ✓Monochrom-Terminal, verwenden Sie keine Farben in der URL
-                        ✓Ton stummschalten
                         ✓Öffnen des Webbrowsers verbieten
                         ✓Deaktivieren Sie das Drucken von Länderflaggen
                         ✓Anzeige und Fortschrittsstatus deaktivieren
