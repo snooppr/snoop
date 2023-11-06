@@ -164,7 +164,6 @@ search arguments:
                         est nécessaire avec une connexion Internet lente (par défaut 9s)
   --found-print, -f     Imprimer uniquement les comptes trouvés
   --no-func, -n         ✓Terminal monochrome, ne pas utiliser de couleurs dans l'url
-                        ✓Désactiver le son
                         ✓Désactiver l'ouverture du navigateur Web
                         ✓Désactiver l'impression des drapeaux de pays
                         ✓Désactiver l'indication et l'état de progression

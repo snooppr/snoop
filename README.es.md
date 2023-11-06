@@ -160,7 +160,6 @@ argumentos de búsqueda:
                         lenta (9s por defecto)
   --found-print, -f     Imprimir solo cuentas encontradas
   --no-func, -n         ✓Terminal monocromática, no usar colores en url
-                        ✓Deshabilitar el sonido
                         ✓Deshabilitar la apertura del navegador web
                         ✓Deshabilitar la impresión de banderas de países
                         ✓Indicación de desactivación y estado de progreso

@@ -162,8 +162,7 @@ search arguments:
                         Affects 'Timeout errors:' On. this option is necessary
                         with a slow Internet connection (by default 9s)
   --found-print, -f     Print only found accounts
-  --no-func, -n         ✓Monochrome terminal, do not use colors in url 
-                        ✓Disable sound
+  --no-func, -n         ✓Monochrome terminal, do not use colors in url
                         ✓Disable opening web browser
                         ✓Disable printing of country flags 
                         ✓Disable indication and progress status
