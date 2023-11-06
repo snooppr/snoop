@@ -876,13 +876,14 @@ def license_snoop():
         urllib3_v = f", (urllib3::{version_lib('urllib3')})"
         folium_v = f", (folium::{version_lib('folium')})" if not Android else ""
         numpy_v = f", (numpy::{version_lib('numpy')})" if not Android else ""
+        psutil_v = f", (psutil::{version_lib('psutil')})"
     else:
         urllib3_v = ""
         colorama_v = ""
         folium_v = ""
         numpy_v = ""
         rich_v = ""
-        plays_v = ""
+        psutil_v = ""
 
     console.print('\n', Panel(f"Program: [dim cyan]{version} {str(platform.architecture(executable=sys.executable, bits='', linkage=''))}" + \
                               "[/dim cyan]\n" + \
@@ -890,7 +891,7 @@ def license_snoop():
                               f"Locale: [dim cyan]{locale.setlocale(locale.LC_ALL)}[/dim cyan]\n" + \
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
                               f"Key libraries: [dim cyan](requests::{requests.__version__}), (certifi::{certifi.__version__}), " + \
-                                             f"(speedtest::{networktest.speedtest.__version__}){rich_v}{plays_v}" + \
+                                             f"(speedtest::{networktest.speedtest.__version__}){rich_v}{psutil_v}" + \
                                              f"{folium_v}{numpy_v}{colorama_v}{urllib3_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
                               f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}",
