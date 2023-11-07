@@ -2,7 +2,6 @@
 # Copyright (c) 2020 Snoop Project <snoopproject@protonmail.com>
 """Плагины Snoop Project/Черновик"""
 
-import click
 import csv
 import ipaddress
 import itertools
