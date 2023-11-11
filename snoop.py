@@ -22,6 +22,7 @@ import sys
 import time
 import webbrowser
 
+from charset_normalizer import detect as char_detect
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
@@ -251,6 +252,12 @@ def new_session(url, headers, executor2, requests_future, error_type, username, 
     response = future2.result(t + 2)
 
     try:
+        if response and response.content:
+            response.encoding = char_detect(response.content).get("encoding") if char_detect(r.response).get("encoding") is not None else "utf-8"
+    except Exception:
+        response.encoding = "utf-8"
+
+    try:
         session_size = len(response.content)  #подсчет извлеченных данных
     except UnicodeEncodeError:
         session_size = None
@@ -258,15 +265,6 @@ def new_session(url, headers, executor2, requests_future, error_type, username, 
 
 def sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r):
     os.makedirs(f"{dirpath}/results/nicknames/save reports/{username}", exist_ok=True)
-
-    if r.encoding == "cp-1251":
-        r.encoding = "cp1251"
-    elif r.encoding == "cp-1252":
-        r.encoding = "cp1252"
-    elif r.encoding == "windows1251":
-        r.encoding = "windows-1251"
-    elif r.encoding == "windows1252":
-        r.encoding = "windows-1252"
 
 #Сохранять отчеты для метода: redirection.
     if error_type == "redirection":
@@ -292,7 +290,7 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
             else:
                 rep.write(r.text)
     except Exception:
-        console.log(snoopbanner.err_all(err_="low"), f"\nlog --> [{websites_names}:[bold red] {r.encoding}[/bold red]]")
+        console.log(snoopbanner.err_all(err_="low"), f"\nlog --> [{websites_names}:[bold red] {r.encoding} | response?[/bold red]]")
 
     if error_type == "redirection":
         return session_size
@@ -592,7 +590,23 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 del future_rec
 
 ## Проверка, 4 методов; #1.
-# Ответы message (разные локации).
+# Автодетектирование кодировки к ненадежному автодетекту от либы requests/ISO-8859-1, или ее смена вручную через БД.
+            try:
+                if r and r.content:
+                    r.encoding = char_detect(r.content).get("encoding") if char_detect(r.content).get("encoding") is not None else "utf-8"
+
+                    if r.encoding == "cp-1251":
+                        r.encoding = "cp1251"
+                    elif r.encoding == "cp-1252":
+                        r.encoding = "cp1252"
+                    elif r.encoding == "windows1251":
+                        r.encoding = "windows-1251"
+                    elif r.encoding == "windows1252":
+                        r.encoding = "windows-1252"
+            except Exception:
+                r.encoding = "utf-8"
+
+# Ответы message (разные локации).            
             if error_type == "message":
                 try:
                     if param_websites.get("encoding") is not None:
@@ -605,7 +619,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 if param_websites.get("errorMsg2"):
                     sys.exit()
 #                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #Проверка ответа
+#                print(r.status_code) #проверка ответа
+#                print(r.encoding) #проверка кодировки
                 try:
                     if r.status_code > 200 and param_websites.get("ignore_status_code") is None \
                                                                  or error in r.text or error2 in r.text or error3 in r.text:
@@ -624,7 +639,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
             elif error_type == "redirection":
 #                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #Проверка ответа
+#                print(r.status_code) #проверка ответа
                 if r.status_code == 301 or r.status_code == 303:
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
@@ -640,7 +655,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Проверяет, является ли код состояния ответа 2..
             elif error_type == "status_code":
 #                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #Проверка ответа
+#                print(r.status_code) #проверка ответа
                 if not r.status_code >= 300 or r.status_code < 200:
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
@@ -655,7 +670,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Перенаправление.
             elif error_type == "response_url":
 #                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #Проверка ответа
+#                print(r.status_code) #проверка ответа
                 if 200 <= r.status_code < 300:
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, response_time, verbose, color)
@@ -864,7 +879,7 @@ def license_snoop():
             os_ver = 'Android ' + subprocess.check_output("getprop ro.build.version.release", shell=True, text=True).strip()
             threadS = f'model: [dim cyan]{subprocess.check_output("getprop ro.product.cpu.abi", shell=True, text=True).strip()}[/dim cyan]'
             T_v = dict(os.environ).get("TERMUX_VERSION")
-        except:
+        except Exception:
             T_v, ram_free, os_ver, threadS, A, B = "Not Termux?!", "?", "?", "?", "[bold red]", "[/bold red]"
             ram = "pkg install procps |"
 
