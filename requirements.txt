@@ -1,7 +1,7 @@
 branca==0.6.0
 charset-normalizer==3.3.2
 certifi>=2022.12.7
-colorama==0.4.4
+colorama==0.4.6
 commonmark==0.9.1
 folium==0.11.0
 idna==3.4
