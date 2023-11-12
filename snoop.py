@@ -251,11 +251,14 @@ def new_session(url, headers, executor2, requests_future, error_type, username, 
     future2 = executor2.submit(requests_future.get, url=url, headers=headers, allow_redirects=True, timeout=t)
     response = future2.result(t + 2)
 
-    try:
-        if response and response.content:
-            response.encoding = char_detect(response.content).get("encoding") if char_detect(r.response).get("encoding") is not None else "utf-8"
-    except Exception:
-        response.encoding = "utf-8"
+#ловушка на некот.сайтах (if response.content is not None ≠ if response.content)
+    if response.content is not None and response.encoding == 'ISO-8859-1':
+        try:
+            response.encoding = char_detect(response.content).get("encoding")
+            if response.encoding is None:
+                response.encoding = "utf-8"
+        except Exception:
+            response.encoding = "utf-8"
 
     try:
         session_size = len(response.content)  #подсчет извлеченных данных
@@ -590,19 +593,16 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 del future_rec
 
 ## Проверка, 4 методов; #1.
-# Автодетектирование кодировки к ненадежному автодетекту от либы requests/ISO-8859-1, или ее смена вручную через БД.
+# Автодетектирование кодировки при устаревшей специфике либы requests/ISO-8859-1, или ее смена вручную через БД.
             try:
-                if r and r.content:
-                    r.encoding = char_detect(r.content).get("encoding") if char_detect(r.content).get("encoding") is not None else "utf-8"
-
-                    if r.encoding == "cp-1251":
-                        r.encoding = "cp1251"
-                    elif r.encoding == "cp-1252":
-                        r.encoding = "cp1252"
-                    elif r.encoding == "windows1251":
-                        r.encoding = "windows-1251"
-                    elif r.encoding == "windows1252":
-                        r.encoding = "windows-1252"
+                if r is not None and r.content and r.encoding == 'ISO-8859-1': #ловушка на некот.сайтах (if r is not None ≠ if r)
+                    r.encoding = char_detect(r.content).get("encoding")
+                    if r.encoding is None: r.encoding = "utf-8"
+                elif r is not None and r.content and r.encoding != 'ISO-8859-1':
+                    if r.encoding == "cp-1251": r.encoding = "cp1251"
+                    elif r.encoding == "cp-1252": r.encoding = "cp1252"
+                    elif r.encoding == "windows1251": r.encoding = "windows-1251"
+                    elif r.encoding == "windows1252": r.encoding = "windows-1252"
             except Exception:
                 r.encoding = "utf-8"
 
