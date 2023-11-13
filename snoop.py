@@ -17,6 +17,7 @@ import re
 import requests
 import shutil
 import signal
+import ssl
 import subprocess
 import sys
 import time
@@ -302,10 +303,16 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
           print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
 
-    requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
+    #requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.14
     requests.packages.urllib3.disable_warnings()
+    #adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
+    adapter = requests.adapters.HTTPAdapter()
+    adapter.init_poolmanager(connections=100, maxsize=50, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
     requests_future = requests.Session()
+    requests_future.max_redirects = 6
     requests_future.verify = False if cert is False else True
+    requests_future.mount('http://', adapter)
+    requests_future.mount('https://', adapter)
 
 # Печать первой инфостроки.
     еasteregg = ['Snoop', 'snoop', 'SNOOP',
@@ -413,15 +420,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             executor1 = ThreadPoolExecutor(max_workers=8)
     elif Windows:
         if norm is False:
-            tread__ = len(BDdemo_new) if len(BDdemo_new) < 12 else 12
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < 15 else 15
         else:
-            tread__ = len(BDdemo_new) if len(BDdemo_new) < 16 else 16
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < 20 else 20
         executor1 = ThreadPoolExecutor(max_workers=tread__)
     elif Linux:
         if norm is False:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 25 else 25
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 25 else 55
         else:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 27 else 27
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 27 else 60
         executor1 = ProcessPoolExecutor(max_workers=proc_)
 
     if reports:
