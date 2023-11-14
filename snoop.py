@@ -180,8 +180,10 @@ def format_txt(text, k=False, m=False):
     ident_e = "" if k else ident_h
     gal = gal if k and not m else ""
 
-    return textwrap.fill(f"{gal}{text}", width=os.get_terminal_size()[0], subsequent_indent=ident_h, initial_indent=ident_e)
-
+    try:
+        return textwrap.fill(f"{gal}{text}", width=os.get_terminal_size()[0], subsequent_indent=ident_h, initial_indent=ident_e)
+    except OSError:
+        return "ERR"
 ## Вывести на печать ошибки.
 def print_error(websites_names, errstr, country_code, errX, verbose=False, color=True):
     if color is True:
