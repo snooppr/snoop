@@ -12,7 +12,7 @@ init(autoreset=True)
 console2 = Console()
 
 def nettest():
-    with console2.status("[cyan]Ожидайте, идёт самотестирование сети..."):
+    with console2.status("[cyan] Ожидайте, идёт самотестирование сети..."):
         servers = []
         threads = None
         try:
