@@ -1421,7 +1421,8 @@ def run():
         diff_list = list(set(enter_coun_u) - set(bd_flag))  #вывести уник элем из enter_coun_u иначе set(enter_coun_u)^set(bd_flag)
 
         if bool(BDdemo_new) is False:
-            print(f"\033[31;1m[{str(diff_list).strip('[]')}] все регионы поиска являются невалидными.\033[0m")
+            print('\n', format_txt(f"⛔️ \033[31;1m[{str(diff_list).strip('[]')}] пожалуйста проверьте ввод, " + \
+                                   f"т.к. все указанные регионы для поиска являются невалидными.\033[0m", k=True, m=True), sep='')
             sys.exit()
 # Вернуть корректный и bad списки пользовательского ввода в cli.
         return lap, diff_list
@@ -1496,8 +1497,8 @@ def run():
     if bool(args.username) is False and bool(args.user) is False:
         snoopbanner.logo(text="\nпараметры либо nickname(s) не задан(ы)")
     if bool(args.username) is True and bool(args.user) is True:
-        print("\n\033[31;1mВыберите для поиска nickname(s) из файла или задайте в cli,\n" + \
-              "но не совместное использование nickname(s): из файла и cli.\n\nВыход")
+        print('\n⛔️' + format_txt("\033[31;1m Выберите для поиска nickname(s) из файла или задайте в cli,\n" + \
+              "но не совместное использование nickname(s): из файла и cli.", k=True, m=True), "\033[31;1m\n\nВыход\033[0m")
         sys.exit()
 
 
