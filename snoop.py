@@ -241,7 +241,7 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
         if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2)):
             if print_found_only is False:
                 print_error(websites_names, "Ошибка соединения", country_code, err2, verbose, color)
-            return "FakeNone", "", -1
+            return "FakeNone", "", "-"
         else:
             if norm is False and print_found_only is False:
                 print_error(websites_names, "Censorship | SSL", country_code, err2, verbose, color)
@@ -615,14 +615,16 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Проверка, 4 методов; #1.
 # Автодетектирование кодировки при устаревшей специфике либы requests/ISO-8859-1, или ее смена вручную через БД.
             try:
-                if r is not None and r.content and r.encoding == 'ISO-8859-1': #ловушка на некот.сайтах (if r is not None ≠ if r)
-                    r.encoding = char_detect(r.content).get("encoding")
-                    if r.encoding is None: r.encoding = "utf-8"
-                elif r is not None and r.content and r.encoding != 'ISO-8859-1':
-                    if r.encoding == "cp-1251": r.encoding = "cp1251"
-                    elif r.encoding == "cp-1252": r.encoding = "cp1252"
-                    elif r.encoding == "windows1251": r.encoding = "windows-1251"
-                    elif r.encoding == "windows1252": r.encoding = "windows-1252"
+                if r is not None and r != "FakeNone":
+                    if r.content and r.encoding == 'ISO-8859-1': #ловушка (if r is not None ≠ if r)
+                        r.encoding = char_detect(r.content).get("encoding")
+                        if r.encoding is None: r.encoding = "utf-8"
+                elif r is not None and r != "FakeNone":
+                    if r.content and r.encoding != 'ISO-8859-1':
+                        if r.encoding == "cp-1251": r.encoding = "cp1251"
+                        elif r.encoding == "cp-1252": r.encoding = "cp1252"
+                        elif r.encoding == "windows1251": r.encoding = "windows-1251"
+                        elif r.encoding == "windows1252": r.encoding = "windows-1252"
             except Exception:
                 r.encoding = "utf-8"
 
@@ -1260,8 +1262,7 @@ def run():
             sort_list_all(BDflag, Fore.GREEN, "full version")
 # Действие не выбрано '--list-all'.
         else:
-            print(Style.BRIGHT + Fore.RED + format_txt("└──Извините, но вы не выбрали действие [1/2/3]", k=True, m=True),
-                  Style.BRIGHT + Fore.RED + "\n\nВыход")
+            print(Style.BRIGHT + Fore.RED + format_txt("└──Извините, но вы не выбрали действие [1/2/3]", k=True, m=True) + "\n\nВыход")
         sys.exit()
 
 
