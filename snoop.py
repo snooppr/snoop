@@ -163,6 +163,7 @@ def mem_test():
         else:
             return -1
 
+
 ## Вывести на печать инфостроки.
 def info_str(infostr, nick, color=True):
     if color is True:
@@ -184,6 +185,8 @@ def format_txt(text, k=False, m=False):
         return textwrap.fill(f"{gal}{text}", width=os.get_terminal_size()[0], subsequent_indent=ident_h, initial_indent=ident_e)
     except OSError:
         return "ERR"
+
+
 ## Вывести на печать ошибки.
 def print_error(websites_names, errstr, country_code, errX, verbose=False, color=True):
     if color is True:
@@ -258,6 +261,7 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
         pass
     return None, "Great Snoop returns None", "-"
 
+
 ## Сохранение отчетов опция (-S).
 def new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t):
     """Если nickname найден, но актуальная html-страница находится дальше по редиректу,
@@ -267,7 +271,7 @@ def new_session(url, headers, executor2, requests_future, error_type, username, 
     future2 = executor2.submit(requests_future.get, url=url, headers=headers, allow_redirects=True, timeout=t)
     response = future2.result(t + 2)
 
-#ловушка на некот.сайтах (if response.content is not None ≠ if response.content)
+# Ловушка на некот.сайтах (if response.content is not None ≠ if response.content).
     if response.content is not None and response.encoding == 'ISO-8859-1':
         try:
             response.encoding = char_detect(response.content).get("encoding")
@@ -319,17 +323,19 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
           print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
 
     #requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.14
-    requests.packages.urllib3.disable_warnings()
     #adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
+    connections = 200 if not Windows else 50
+    maxsize = 100 if not Windows else 30
+    requests.packages.urllib3.disable_warnings()
     adapter = requests.adapters.HTTPAdapter()
-    adapter.init_poolmanager(connections=200, maxsize=100, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
+    adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
     requests_future = requests.Session()
     requests_future.max_redirects = 6
     requests_future.verify = False if cert is False else True
     requests_future.mount('http://', adapter)
     requests_future.mount('https://', adapter)
 
-# Печать первой инфостроки.
+# Печать инфострок.
     еasteregg = ['Snoop', 'snoop', 'SNOOP',
                  'Snoop Project', 'snoop project', 'SNOOP PROJECT',
                  'Snoop_Project', 'snoop_project', 'SNOOP_PROJECT',
@@ -343,10 +349,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         info_str("разыскиваем:", username, color)
 
     if len(username) < 3:
-        console.print(f"⛔️ [bold red]nickname не может быть короче 3-х символов\nПропуск\n")
+        print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
+                                                               k=True, m=True) + "\n   Пропуск\n")
         return False, False
     elif username in еasteregg:
-        with console.status("[bold blue]💡 Обнаружена пасхалка..."):
+        with console.status("[bold blue] 💡 Обнаружена пасхалка..."):
             try:
                 r_east = requests_future.get("https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
                 r_repo = requests_future.get('https://api.github.com/repos/snooppr/snoop', timeout=timeout).json()
@@ -381,22 +388,26 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
         for ermail_iter in ermail:
             if ermail_iter.lower() == username.lower():
-                print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (обнаружен чистый домен)\nпропуск\n")
+                print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ Bad nickname: '{0}' (обнаружен чистый домен)".format(ermail_iter),
+                                                                  k=True, m=True) + "\n   пропуск\n")
                 return False, False
             elif ermail_iter.lower() in username.lower():
                 usernameR = username.rsplit(sep=ermail_iter.lower(), maxsplit=1)[1]
                 username = username.rsplit(sep='@', maxsplit=1)[0]
 
-                if len(username) == 0: username = usernameR
+                if len(username) == 0:
+                    username = usernameR
                 print(f"\n{Fore.CYAN}Обнаружен E-mail адрес, извлекаем nickname: '{Style.BRIGHT}{Fore.CYAN}{username}{Style.RESET_ALL}" + \
                       f"{Fore.CYAN}'\nsnoop способен отличать e-mail от логина, например, поиск '{username_bad}'\n" + \
                       f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
 
                 if len(username) == 0 and len(usernameR) == 0:
-                    print(f"\n{Style.BRIGHT}{Fore.RED}⛔️ Bad nickname: '{ermail_iter}' (обнаружен чистый домен)\nпропуск\n")
+                    print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ Bad nickname: '{0}' (обнаружен чистый домен)".format(ermail_iter),
+                                                                      k=True, m=True) + "\n   пропуск\n")
                     return False, False
                 elif len(username) != 0 and len(username) < 3:
-                    console.print(f"⛔️ [bold red]nickname не может быть короче 3-х символов\nПропуск\n")
+                    print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
+                                                               k=True, m=True) + "\n   Пропуск\n")
                     return False, False
         del ermail
 
@@ -437,7 +448,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if norm is False:
             tread__ = len(BDdemo_new) if len(BDdemo_new) < 15 else 15
         else:
-            tread__ = len(BDdemo_new) if len(BDdemo_new) < 20 else 20
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < 18 else 18
         executor1 = ThreadPoolExecutor(max_workers=tread__)
     elif Linux:
         if norm is False:
@@ -534,16 +545,19 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 ## Прогресс_описание.
     if not verbose:
+        refresh = False
         if not Windows:
             spin_emoj = 'arrow3' if norm else random.choice(["dots", "dots12"])
             progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=spin_emoj),
                                 "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan',
                                 finished_style='cyan bold'), refresh_per_second=3.0)  #transient=True) #исчезает прогресс
         else:
+            refresh_per_second = 3.0 if 'demo' in version else 1.0
             progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None,
-                                complete_style='cyan', finished_style='cyan bold'), refresh_per_second=3.0)  #auto_refresh=False)
+                                complete_style='cyan', finished_style='cyan bold'), refresh_per_second=refresh_per_second)
     else:
-        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)  #refresh_per_second=3
+        refresh = True
+        progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
 # Панель вербализации.
         if not Android:
             if color:
@@ -570,7 +584,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             task0 = progress.add_task("", total=len(BDdemo_new))
         for websites_names, param_websites in BDdemo_new.items():  #БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future
             if color is True:
-                progress.update(task0, advance=1, refresh=True)  #\nprogress.refresh()
+                progress.update(task0, advance=1, refresh=refresh)  #\nprogress.refresh()
 # Пропустить запрещенный никнейм или пропуск сайта из gray-list.
             if dic_snoop_full.get(websites_names).get("exists") is not None:
                 continue
@@ -587,7 +601,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                                        print_found_only=print_found_only, verbose=verbose,
                                                        color=color, timeout=timeout, country_code=f" ~{country_code}")
 
-# Повторное сбойное соединение через новую сессию быстрее, чем через adapter.
+# Повторное сбойное соединение через новую сессию надежнее, чем через adapter.
             if norm is False and r == "FakeNone":
                 global recensor
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -775,7 +789,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
 # не удерживать сокетом отработанное по всем п. соединение с сервером и предотвратить утечку памяти.
-            requests_future.close()
+            requests_future.close()  #не имеет смысла urllib3 v1.26.14+
             param_websites.pop("request_future", None)
 # Высвободить незначительную часть ресурсов.
         try:
@@ -851,7 +865,7 @@ def autoclean():
     sys.exit()
 
 
-## Лицензия/версия.
+## Лицензия/системная информация.
 def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         wl = 4
@@ -962,7 +976,7 @@ def run():
     service_group.add_argument("--update", "-U", action="store_true", dest="update",
                                help="\033[36mО\033[0mбновить Snoop"
                               )
-# Plugins arguments arguments.
+# Plugins arguments.
     plugins_group = parser.add_argument_group('\033[36mplugins arguments\033[0m')
     plugins_group.add_argument("--module", "-m", action="store_true", dest="module", default=False,
                                help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX"
@@ -1138,7 +1152,7 @@ def run():
         sys.exit()
 
 
-## Опция  '-f' + "-v".
+## Опции  '-f' + "-v".
     if args.verbose is True and args.print_found_only is True:
         snoopbanner.logo(text=format_txt("⛔️ Режим подробной вербализации [опция '-v'] отображает детальную информацию " + \
                                          "[опция '-f'] неуместна", k=True, m=True))
@@ -1268,7 +1282,7 @@ def run():
         sys.exit()
 
 
-## Опция донат '-d y'.
+## Опция донат '-d'.
     if args.donation:
         print(Fore.CYAN + format_txt("активирована опция '-d': «финансовая поддержка проекта»", k=True))
         snoopbanner.donate()
@@ -1380,7 +1394,7 @@ def run():
 
 
 ## Проверка остальных (в т.ч. повтор) опций.
-## Опция '--update y' обновление Snoop.
+## Опция '--update' обновление Snoop.
     if args.update:
         print(Fore.CYAN + format_txt("активирована опция '-U': «обновление snoop»", k=True))
         update_snoop()
@@ -1408,7 +1422,7 @@ def run():
             sort_web_BDdemo_new[site] = BDdemo.get(site)
 
 
-## Функция для опций '-eo'.
+## Функция для опций '-ei'.
     def one_exl(one_exl_, bool_):
         lap = []
         bd_flag = []
@@ -1430,7 +1444,7 @@ def run():
         return lap, diff_list
 
 
-## Если опции '-seo' не указаны, то используем БД, как есть.
+## Если опции '-sei' не указаны, то используем БД, как есть.
     BDdemo_new = {}
     if args.site_list is None and args.exclude_country is None and args.one_level is None:
         BDdemo_new = BDdemo if len(BDdemo) < 404 else sys.exit()
@@ -1513,7 +1527,8 @@ def run():
 ## Опция  '-w' не активна.
     try:
         if args.web is False:
-            print(f"\n{Fore.CYAN}загружена локальная база: {Style.BRIGHT}{Fore.CYAN}{len(BDdemo)}_Websites{Style.RESET_ALL}")
+            _DB = f"_[_{len(BDdemo_new)}_]" if len(BDdemo_new) != len(BDdemo) else ""
+            print(f"\n{Fore.CYAN}загружена локальная база: {Style.BRIGHT}{Fore.CYAN}{len(BDdemo)}_Websites{_DB}{Style.RESET_ALL}")
     except Exception:
         print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
@@ -1723,7 +1738,7 @@ f"""<p><span style="color: gray"><small><small>Отчёт создан в ПО S
 
             print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all}_сек__{s_size_all}_Mb)")
             print(f"{Fore.CYAN}├──Сохранено в:{Style.RESET_ALL} {direct_results}")
-            if flagBS_err >= 2:  #perc_%
+            if flagBS_err >= 2.5:  #perc_%
                 print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
                 print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
                 print(f"{Fore.CYAN}     └─нестабильное соединение или I_Censorship")
@@ -1765,7 +1780,7 @@ f"""<p><span style="color: gray"><small><small>Отчёт создан в ПО S
         try:
             hardware.shutdown()
         except Exception:
-            console.log(snoopbanner.err_all(err_="low"))
+            pass
 
 ## поиск по выбранным пользователям либо из cli, либо из файла.
     starts(args.username) if args.user is False else starts(USERLIST)
@@ -1783,4 +1798,4 @@ if __name__ == '__main__':
         else:
             for child in active_children():
                 child.terminate()
-                time.sleep(0.1)
+                time.sleep(0.02)
