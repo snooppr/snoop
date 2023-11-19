@@ -429,7 +429,7 @@ $ sudo nano /etc/ssl/openssl.cnf
  • **Слияние веток snoop_termux и master 12 октября 2023г.:** чтобы и дальше получать обновления для Snoop for Anroid/Termux перейдите на ветку 'master'::  
  `$ git checkout master`  
 
- • **Внимание**❗️ Из-за цензуры письма с 'mailru' и 'yandex' не доходят до 'protonmail'. Для пользователей mailru/yandex пишите запросы на запасную почту, email: snoopproject@ya.ru  
+ • **Внимание**❗️ Из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту: snoopproject@ya.ru  
 
  • **Визуализация  коммитов:** от рождения проекта до пятницы тринадцатого 2023г/~3года.  
 
@@ -443,6 +443,6 @@ https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-
 
 • **Отзывы о ПО Snoop Project.**  
 <p align="center">  
-  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Reviews.png" />  
+  <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Reviews.jpg" />  
 </p>
 </details>
