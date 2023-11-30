@@ -350,7 +350,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
     if len(username) < 3:
         print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
-                                                               k=True, m=True) + "\n   Пропуск\n")
+                                                               k=True, m=True) + "\n   пропуск\n")
         return False, False
     elif username in еasteregg:
         with console.status("[bold blue] 💡 Обнаружена пасхалка..."):
@@ -388,7 +388,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
         for ermail_iter in ermail:
             if ermail_iter.lower() == username.lower():
-                print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ Bad nickname: '{0}' (обнаружен чистый домен)".format(ermail_iter),
+                print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ bad nickname: '{0}' (обнаружен чистый домен)".format(ermail_iter),
                                                                   k=True, m=True) + "\n   пропуск\n")
                 return False, False
             elif ermail_iter.lower() in username.lower():
@@ -402,30 +402,34 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                       f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
 
                 if len(username) == 0 and len(usernameR) == 0:
-                    print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ Bad nickname: '{0}' (обнаружен чистый домен)".format(ermail_iter),
+                    print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ bad nickname: '{0}' (обнаружен чистый домен)".format(ermail_iter),
                                                                       k=True, m=True) + "\n   пропуск\n")
                     return False, False
                 elif len(username) != 0 and len(username) < 3:
                     print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
-                                                               k=True, m=True) + "\n   Пропуск\n")
+                                                               k=True, m=True) + "\n   пропуск\n")
                     return False, False
         del ermail
 
 
     err_nick = re.findall(symbol_bad, username)
     if err_nick:
-        print(f"⛔️ {Style.BRIGHT + Fore.RED}Недопустимые символы в nickname: {Style.RESET_ALL}" + \
-              f"{Fore.RED}{err_nick}{Style.RESET_ALL}\n{Style.BRIGHT + Fore.RED}Пропуск\n")
+        print(Style.BRIGHT + Fore.RED + format_txt("⛔️ недопустимые символы в nickname: " + \
+                                                   "{0}{1}{2}{3}{4}".format(Style.RESET_ALL, Fore.RED, err_nick,
+                                                                            Style.RESET_ALL, Style.BRIGHT + Fore.RED),
+                                                   k=True, m=True) + "\n   пропуск\n")
         return False, False
 
 
     ernumber = ['76', '77', '78', '79', '89', "38", "37", "9", "+"]
     if any(ernumber in username[0:2] for ernumber in ernumber):
         if len(username) >= 10 and len(username) <= 13 and username[1:].isdigit() is True:
-            print(Style.BRIGHT + Fore.RED + "⛔️ Snoop выслеживает учётки пользователей, но не номера телефонов...\nпропуск\n")
+            print(Style.BRIGHT + Fore.RED + format_txt("⛔️ snoop выслеживает учётки пользователей, " + \
+                                                       "но не номера телефонов...", k=True, m=True) + "\n   пропуск\n")
             return False, False
     elif '.' in username and '@' not in username:
-        print(Style.BRIGHT + Fore.RED + "⛔️ nickname, содержащий [.] и не являющийся email, невалидный...\nпропуск\n")
+        print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname, содержащий [.] и не являющийся email, " + \
+                                                   "невалидный...", k=True, m=True) + "\n   пропуск\n")
         return False, False
 
 
@@ -1154,7 +1158,7 @@ def run():
 
 ## Опции  '-f' + "-v".
     if args.verbose is True and args.print_found_only is True:
-        snoopbanner.logo(text=format_txt("⛔️ Режим подробной вербализации [опция '-v'] отображает детальную информацию " + \
+        snoopbanner.logo(text=format_txt("⛔️ режим подробной вербализации [опция '-v'] отображает детальную информацию " + \
                                          "[опция '-f'] неуместна", k=True, m=True))
 
 
@@ -1183,8 +1187,8 @@ def run():
         if args.timeout and args.norm is False:
             print(Fore.CYAN + format_txt("активирована опция '-t': ожидание ответа от " + \
                                         "сайта до{0}{1} {2} {3}{4}с.» {5}".format(Style.BRIGHT, Fore.CYAN, timeout,
-                                                                                            Style.RESET_ALL, Fore.CYAN,
-                                                                                            Style.RESET_ALL), k=True))
+                                                                                  Style.RESET_ALL, Fore.CYAN,
+                                                                                  Style.RESET_ALL), k=True))
     except Exception:
         pass
 
@@ -1278,7 +1282,7 @@ def run():
             sort_list_all(BDflag, Fore.GREEN, "full version")
 # Действие не выбрано '--list-all'.
         else:
-            print(Style.BRIGHT + Fore.RED + format_txt("└──Извините, но вы не выбрали действие [1/2/3]", k=True, m=True) + "\n\nВыход")
+            print(Style.BRIGHT + Fore.RED + format_txt("└──извините, но вы не выбрали действие [1/2/3]", k=True, m=True) + "\n\nВыход")
         sys.exit()
 
 
@@ -1353,14 +1357,14 @@ def run():
                 str_2 = str_1.replace("——> ", "——> [bold yellow]").replace(" шт.", " шт.[/bold yellow]")
                 _duble.append(str_2)
 
-            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+            print(f"\n\033[36mследующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[33mдубли\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(_duble), title=f"duplicate ({len(duble)})", style=STL(color="yellow")))
 
 # bad.
         if userlists_bad:
             _userlists_bad = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(userlists_bad, 1)]
-            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
+            print(f"\n\033[36mследующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(_userlists_bad), title=f"invalid_data ({len(userlists_bad)})",
                                     style=STL(color="bright_red")))
@@ -1368,7 +1372,7 @@ def run():
 # Short.
         if short_user:
             _short_user = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(short_user, 1)]
-            print(f"\n\033[36mСледующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m'\033[0m " + \
+            print(f"\n\033[36mследующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m'\033[0m " + \
                   f"\033[31;1mкороче 3-х символов\033[0m\033[36m и будут пропущены:\033[0m")
             console.print(Panel.fit("\n".join(_short_user).replace("%20", " "), title=f"short nickname ({len(short_user)})",
                                     style=STL(color="bright_red")))
@@ -1463,7 +1467,7 @@ def run():
                 snoopbanner.logo(text="\nnickname(s) не задан(ы)")
             for site_yes_full_diff in diff_k_bd:
                 if site.lower() == site_yes_full_diff.lower():  #если сайт (-s) в БД Full версии
-                    print(format_txt("{0}⛔️ Пропуск:{2} {3}сайт из БД {4}full-версии{5} {6}недоступен в{7} {8}demo-версии{9}{10}:: " + \
+                    print(format_txt("{0}⛔️ пропуск:{2} {3}сайт из БД {4}full-версии{5} {6}недоступен в{7} {8}demo-версии{9}{10}:: " + \
                                      "'{11}{1}{12}{13}'{14}", k=True, m=True).format(Style.BRIGHT + Fore.RED, site_yes_full_diff,
                                                                                      Style.RESET_ALL, Fore.CYAN, Style.BRIGHT + Fore.CYAN,
                                                                                      Style.RESET_ALL, Fore.CYAN, Style.RESET_ALL,
@@ -1472,7 +1476,7 @@ def run():
                                                                                      Style.RESET_ALL, Fore.CYAN, Style.RESET_ALL))
 
             if not any(site.lower() == site_yes_full.lower() for site_yes_full in BDflag):  #если ни одного совпадения по сайту
-                print(format_txt("{0}⛔️ Пропуск:{1} {2}желаемый сайт отсутствует в БД Snoop:: '" + \
+                print(format_txt("{0}⛔️ пропуск:{1} {2}желаемый сайт отсутствует в БД Snoop:: '" + \
                                  "{3}{4}{5}' {6}", k=True, m=True).format(Style.BRIGHT + Fore.RED, Style.RESET_ALL, Fore.CYAN,
                                                                           Style.BRIGHT + Fore.RED, site, Style.RESET_ALL + Fore.CYAN,
                                                                           Style.RESET_ALL))
@@ -1513,8 +1517,8 @@ def run():
     if bool(args.username) is False and bool(args.user) is False:
         snoopbanner.logo(text="\nпараметры либо nickname(s) не задан(ы)")
     if bool(args.username) is True and bool(args.user) is True:
-        print('\n⛔️' + format_txt("\033[31;1m Выберите для поиска nickname(s) из файла или задайте в cli,\n" + \
-              "но не совместное использование nickname(s): из файла и cli.", k=True, m=True), "\033[31;1m\n\nВыход\033[0m")
+        print('\n⛔️' + format_txt("\033[31;1m выберите для поиска nickname(s) из файла или задайте в cli,\n" + \
+              "но не совместное использование nickname(s): из файла и cli", k=True, m=True), "\033[31;1m\n\nВыход\033[0m")
         sys.exit()
 
 
