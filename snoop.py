@@ -1599,15 +1599,16 @@ def run():
 
             file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
 
-            file_html.write("<!DOCTYPE html>\n<head>\n<meta charset='utf-8'>\n<style>\nbody { background: url(../../../web/public.png) " + \
-                            "no-repeat 20% 0%; }\n</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n<body>\n\n" + \
+            file_html.write("<!DOCTYPE html>\n<html>\n\n<head>\n<title>HTML-отчет</title>\n<meta charset='utf-8'>\n<style>\n" + \
+                            "body {background: url(../../../web/public.png) " + \
+                            "no-repeat 20% 0%}\n.str1{text-shadow: 0px 0px 20px #333333}\n.shad{display: inline; line-height: 0.1}\n" + \
+                            ".shad:hover{text-shadow: 0px 0px 14px #6495ED}\n" + \
+                            "</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n\n<body>\n\n" + \
                             "<div id='particles-js'></div>\n" + \
-                            "<div id='report'>\n\n" + \
+                            "<div id='report'></div>\n\n" + \
                             "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>open file</a>" + "</h1>\n")
             file_html.write("<h3>Snoop Project (demo version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n" + \
-                            "<button onclick='sortList()'>Сортировать по странам</button><br><br>\n\n")
-            file_html.write("Объект " + "<b>" + (nick) + "</b>" + " найден на нижеперечисленных " + "<b>" + str(exists_counter) + \
-                            "</b> ресурсах:\n" + "<br><ol" + " id='id777'>\n")
+                            "<button onclick='sortList()'>Сортировать по странам ↓↑</button><br><ol" + " id='id777'>\n")
 
             li = []
             for website_name in FULL:
@@ -1615,8 +1616,9 @@ def run():
                 flag_sum = dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
                     li.append(flag_sum)
-                    file_html.write("<li>" + dictionary["flagcountry"] + "<a target='_blank' href='" + dictionary["url_user"] + "'>" + \
-                                    (website_name) + "</a>" + "</li>\n")
+                    file_html.write("<li><p class='shad'>" + dictionary["flagcountry"] + \
+                                    "<a target='_blank' href='" + dictionary["url_user"] + "'>" + \
+                                    (website_name) + "</a></p></li>\n")
             try:
                 cnt = str(Counter(li))
                 flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "; ").replace(":", "⇔")
@@ -1624,7 +1626,7 @@ def run():
                 flag_str_sum = "0"
 
             file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
-            file_html.write("<br> Запрашиваемый объект < <b>" + str(nick) + "</b> > найден: <b>" + str(exists_counter) + "</b> раз(а).")
+            file_html.write("<br> Запрашиваемый объект &lt; <b>" + str(nick) + "</b> &gt; найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Сессия: " + "<b>" + str(round(timefinish)) + "сек_" + str(sess_size) + "Mb</b>.\n")
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
             file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + "</b>.\n")
@@ -1658,12 +1660,12 @@ function sortList() {
 <script src="../../../web/app.js"></script>
 
 <audio controls="controls" autoplay="autoplay" loop="loop">
-<source src="../../../web/Megapolis (remix).mp3" type="audio/mpeg">
+<source src="../../../web/Megapolis%20(remix).mp3" type="audio/mpeg">
 </audio>
 
 <br>
 <audio controls="controls" loop="loop">
-<source src="../../../web/for snoop in cyberpunk.mp3" type="audio/mpeg">
+<source src="../../../web/for%20snoop%20in%20cyberpunk.mp3" type="audio/mpeg">
 </audio>
 
 <br><br>
@@ -1671,9 +1673,11 @@ function sortList() {
 <a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">🛠  Source Исходный код</span></a>
 <a target='_blank' href='https://drive.google.com/file/d/12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih/view' class="DnA"><span class="DnSpan">📖 Doc Документация</span></a>
 <a target='_blank' href='https://yoomoney.ru/to/4100111364257544' class="DnA"><span class="DnSpan">💳 Donation Пожертвование</span></a>
-<br><br>
+
+<br><br>\n
 """ + \
-f"""<p><span style="color: gray"><small><small>Отчёт создан в ПО Snoop Project. <br> ©2020-{time.localtime().tm_year} «Snoop Project».</small></small></span></p>
+f"""<p class='str1'><span style="color: gray"><small><small>Отчёт создан в ПО Snoop Project. <br> ©2020-{time.localtime().tm_year} «Snoop Project».</small></small></span></p>
+
 </body>
 </html>""")
             file_html.close()
