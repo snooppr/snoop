@@ -1605,7 +1605,7 @@ def run():
                             ".shad:hover{text-shadow: 0px 0px 14px #6495ED}\n" + \
                             "</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n\n<body id='snoop'>\n\n" + \
                             "<div id='particles-js'></div>\n" + \
-                            "<div id='report'></div>\n\n" + \
+                            "<div id='report'>\n\n" + \
                             "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>open file</a>" + "</h1>\n")
             file_html.write("<h3>Snoop Project (demo version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n" + \
                             "<button onclick='sortList()'>Сортировать по странам ↓↑</button><br><ol" + " id='id777'>\n")
@@ -1620,8 +1620,10 @@ def run():
                                     "<a target='_blank' href='" + dictionary["url_user"] + "'>" + \
                                     (website_name) + "</a></p></li>\n")
             try:
-                cnt = str(Counter(li))
-                flag_str_sum = (cnt.split('{')[1]).replace("'", "").replace("}", "").replace(")", "").replace(",", "; ").replace(":", "⇔")
+                cnt = []
+                for k, v in Counter(li).items():
+                    cnt.append(f"({k} ⇔ {v})")
+                flag_str_sum = "; ".join(cnt)
             except Exception:
                 flag_str_sum = "0"
 
@@ -1631,7 +1633,7 @@ def run():
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
             file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + "</b>.\n")
             file_html.write("<br> База Snoop (demo version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_date) + ".</i><br><br>\n")
+            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_date) + ".</i><br><br>\n</div>\n")
             file_html.write("""
 <script>
 function sortList() {
