@@ -1599,11 +1599,11 @@ def run():
 
             file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
 
-            file_html.write("<!DOCTYPE html>\n<html>\n\n<head>\n<title>HTML-отчет</title>\n<meta charset='utf-8'>\n<style>\n" + \
+            file_html.write("<!DOCTYPE html>\n<html lang='ru'>\n\n<head>\n<title>HTML-отчет</title>\n<meta charset='utf-8'>\n<style>\n" + \
                             "body {background: url(../../../web/public.png) " + \
                             "no-repeat 20% 0%}\n.str1{text-shadow: 0px 0px 20px #333333}\n.shad{display: inline; line-height: 0.1}\n" + \
                             ".shad:hover{text-shadow: 0px 0px 14px #6495ED}\n" + \
-                            "</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n\n<body>\n\n" + \
+                            "</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n\n<body id='snoop'>\n\n" + \
                             "<div id='particles-js'></div>\n" + \
                             "<div id='report'></div>\n\n" + \
                             "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>open file</a>" + "</h1>\n")
@@ -1654,9 +1654,7 @@ function sortList() {
     }
   }
 }
-</script>
 
-<script type="text/javascript">
 function rnd(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -1680,21 +1678,8 @@ sdGA0LXRgtCw0Y8gPGI+PGZvbnQgY29sb3I9ImdyZWVuIj5Tbm9vcCBmdWxsIHZlcnNpb24hPC9m\\
 b250PjwvYj4KPGJyPjxicj4KQ9C8LiAic25vb3BfY2xpIC0taGVscCAvIHNub29wX2NsaS5leGUg\\
 LS1oZWxwIi4K")))
 
-setInterval(
-  () => {
-    alert(don);
-  },
-   rnd(35, 45) * 1000
-)
-
-setTimeout(
-  () => {
-    id777.onmouseover = function() {
-    document.write(don1);}
-  },
-   rnd(20, 75) * 1000
-)
-
+func = setInterval(() => {alert(don)}, rnd(30, 45) * 1000)
+func1 = setTimeout(() => {id777.onmouseover = function() {document.write(don1)}}, rnd(55, 75) * 1000)
 </script>
 
 <script src="../../../web/particles.js"></script>
@@ -1718,6 +1703,11 @@ setTimeout(
 <br><br>\n
 """ + \
 f"""<p class='str1'><span style="color: gray"><small><small>Отчёт создан в ПО Snoop Project. <br> ©2020-{time.localtime().tm_year} «Snoop Project».</small></small></span></p>
+
+<script>
+if(typeof don == "undefined" || typeof don1 == "undefined" || don.length != 212 || don1.length != 331 || typeof func == "undefined" || typeof func1 == "undefined")
+document.getElementById('snoop').innerHTML=""
+</script>
 
 </body>
 </html>""")
