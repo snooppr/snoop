@@ -71,7 +71,8 @@ Snoop в исполняемом виде (build-версия) предостав
 
 Snoop full version: плагины без ограничений; {len(DB('BDflag')) // 100}00+ Websites;
 поддержка и обновление Database Snoop.
-Подключение к Web_Database Snoop (online), которая расширяется/обновляется.[/bold green]
+Подключение к Web_Database Snoop (online), которая расширяется/обновляется.
+Отключены всплывающие окна в HTML-отчёте про упоминание Snoop demo-version.[/bold green]
 [bold red]Ограничения demo version: Websites (Database Snoop сокращена в > 15 раз);
 отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
 
