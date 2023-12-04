@@ -1621,13 +1621,13 @@ def run():
                                     (website_name) + "</a></p></li>\n")
             try:
                 cnt = []
-                for k, v in Counter(li).items():
+                for k, v in sorted(Counter(li).items(), key=lambda x: x[1], reverse=True):
                     cnt.append(f"({k} ⇔ {v})")
                 flag_str_sum = "; ".join(cnt)
             except Exception:
-                flag_str_sum = "0"
+                flag_str_sum = "-1"
 
-            file_html.write("</ol>GEO: " + str(flag_str_sum) + ".\n")
+            file_html.write("</ol>GEO: " + flag_str_sum + ".\n")
             file_html.write("<br> Запрашиваемый объект &lt; <b>" + str(nick) + "</b> &gt; найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Сессия: " + "<b>" + str(round(timefinish)) + "сек_" + str(sess_size) + "Mb</b>.\n")
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
