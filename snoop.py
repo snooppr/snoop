@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.9b', "s", "d"
+vers, vers_code, demo_full = 'v1.3.9c', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -1654,6 +1654,47 @@ function sortList() {
     }
   }
 }
+</script>
+
+<script type="text/javascript">
+function rnd(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+var don = decodeURIComponent(escape(window.atob("\
+4oyb77iPINCh0L/QsNGB0LjQsdC+INC30LAg0LjQvdGC0LXRgNC10YEg0LogU25vb3AgZGVtbyB2\
+ZXJzaW9uLgoK0JXRgdC70Lgg0LjQvNC10LXRgtGB0Y8g0LLQvtC30LzQvtC20L3QvtGB0YLRjCwg\
+0L/QvtC00LTQtdGA0LbQuNGC0LUg0YTQuNC90LDQvdGB0L7QstC+INGN0YLQvtGCINGD0L3QuNC6\
+0LDQu9GM0L3Ri9C5IElULdC/0YDQvtC10LrRgjoK0L/QvtC70YPRh9C40YLQtSBTbm9vcCBmdWxs\
+IHZlcnNpb24g0LHQtdC3INC+0LPRgNCw0L3QuNGH0LXQvdC40LkuCgpD0LwuICJzbm9vcF9jbGkg\
+LS1oZWxwIC8gc25vb3BfY2xpLmV4ZSAtLWhlbHAiLgo=")))
+
+var don1 = decodeURIComponent(escape(window.atob("\
+PGZvbnQgY29sb3I9InJlZCIgc2l6ZT0iMiI+4oybIFNub29wIGRlbW8gdmVyc2lvbi48L2ZvbnQ+\
+Cjxicj48YnI+CtCU0LvRjyDQv9C+0LTQtNC10YDQttC60Lgg0JHQlCDQuCDQtNCw0LvRjNC90LXQ\
+udGI0LXQs9C+INGA0LDQt9Cy0LjRgtC40Y8g0J/QniDigJQg0L/RgNC+0LXQutGC0YMg0YLRgNC1\
+0LHRg9C10YLRgdGPINGE0LjQvdCw0L3RgdC+0LLQsNGPINC/0L7QtNC00LXRgNC20LrQsC48YnI+\
+CtCf0L7QtNC00LXRgNC20LjRgtC1INGA0LDQt9GA0LDQsdC+0YLRh9C40LrQsCDQuCDQtdCz0L4g\
+0LjRgdGB0LvQtdC00L7QstCw0L3QuNGPINC00L7QvdCw0YLQvtC8LCDQuNC70Lgg0L/RgNC40L7Q\
+sdGA0LXRgtCw0Y8gPGI+PGZvbnQgY29sb3I9ImdyZWVuIj5Tbm9vcCBmdWxsIHZlcnNpb24hPC9m\
+b250PjwvYj4KPGJyPjxicj4KQ9C8LiAic25vb3BfY2xpIC0taGVscCAvIHNub29wX2NsaS5leGUg\
+LS1oZWxwIi4K")))
+
+setInterval(
+  () => {
+    alert(don);
+  },
+   rnd(35, 45) * 1000
+)
+
+setTimeout(
+  () => {
+    id777.onmouseover = function() {
+    document.write(don1);}
+  },
+   rnd(20, 75) * 1000
+)
+
 </script>
 
 <script src="../../../web/particles.js"></script>
