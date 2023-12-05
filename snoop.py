@@ -852,11 +852,16 @@ def autoclean():
         try:
 # Определение директорий.
             path_build_del = "/results" if not Windows else "\\results"
-            rm = dirpath + path_build_del
+            if 'source' in version:
+                rm = dirpath + path_build_del
+                reports = rm
+            else:
+                rm = dirpath
+                reports = rm + path_build_del
 # Подсчет файлов и размера удаляемого каталога 'results'.
             total_size = 0
             delfiles = []
-            for total_file in glob.iglob(rm + '/**/*', recursive=True):
+            for total_file in glob.iglob(reports + '/**/*', recursive=True):
                 total_size += os.path.getsize(total_file)
                 if os.path.isfile(total_file): delfiles.append(total_file)
 # Удаление каталога 'results'.
@@ -1599,13 +1604,12 @@ def run():
 
             file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
 
-            file_html.write("<!DOCTYPE html>\n<html lang='ru'>\n\n<head>\n<title>HTML-отчет</title>\n<meta charset='utf-8'>\n<style>\n" + \
-                            "body {background: url(../../../web/public.png) " + \
-                            "no-repeat 20% 0%}\n.str1{text-shadow: 0px 0px 20px #333333}\n.shad{display: inline; line-height: 0.1}\n" + \
-                            ".shad:hover{text-shadow: 0px 0px 14px #6495ED}\n" + \
+            file_html.write("<!DOCTYPE html>\n<html lang='ru'>\n\n<head>\n<title>◕ Snoop HTML-отчет</title>\n" + \
+                            "<meta charset='utf-8'>\n<style>\nbody {background: url(../../../web/public.png) " + \
+                            "no-repeat 20% 0%}\n.str1{text-shadow: 0px 0px 20px #333333}\n.shad{display: inline-block}\n" + \
+                            ".shad:hover{text-shadow: 0px 0px 14px #6495ED; transform: scale(1.1); transition: transform 0.15s}\n" + \
                             "</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n\n<body id='snoop'>\n\n" + \
-                            "<div id='particles-js'></div>\n" + \
-                            "<div id='report'>\n\n" + \
+                            "<div id='particles-js'></div>\n" + "<div id='report'>\n\n" + \
                             "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>open file</a>" + "</h1>\n")
             file_html.write("<h3>Snoop Project (demo version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n" + \
                             "<button onclick='sortList()'>Сортировать по странам ↓↑</button><br><ol" + " id='id777'>\n")
@@ -1616,9 +1620,9 @@ def run():
                 flag_sum = dictionary["flagcountry"]
                 if dictionary.get("exists") == "найден!":
                     li.append(flag_sum)
-                    file_html.write("<li><p class='shad'>" + dictionary["flagcountry"] + \
+                    file_html.write("<li><span class='shad'>" + dictionary["flagcountry"] + \
                                     "<a target='_blank' href='" + dictionary["url_user"] + "'>" + \
-                                    (website_name) + "</a></p></li>\n")
+                                    (website_name) + "</a></span></li>\n")
             try:
                 cnt = []
                 for k, v in sorted(Counter(li).items(), key=lambda x: x[1], reverse=True):
