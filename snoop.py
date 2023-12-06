@@ -1630,7 +1630,8 @@ def run():
                             "</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n\n<body id='snoop'>\n\n" + \
                             "<div id='particles-js'></div>\n" + "<div id='report'>\n\n" + \
                             "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>open file</a>" + "</h1>\n")
-            file_html.write("<h3>Snoop Project (demo version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат: 'F5':</p>\n" + \
+            file_html.write("<h3>Snoop Project (demo version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат:" + \
+                            "'<span style='text-shadow: 0px 0px 13px #40E0D0'>F5'</span></p>\n" + \
                             "<button onclick='sortList()'>Сортировать по странам ↓↑</button><br><ol" + " id='id777'>\n")
 
             li = []
@@ -1656,7 +1657,7 @@ def run():
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
             file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + "</b>.\n")
             file_html.write("<br> База Snoop (demo version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file_html.write("<br> Обновлено: " + "<i>" + time.strftime("%d/%m/%Y_%H:%M:%S", time_date) + ".</i><br><br>\n</div>\n")
+            file_html.write("<br> Обновлено: " + "<i><b>" + time.strftime("%d/%m/%Y</b>_%H:%M:%S", time_date) + ".</i><br><br>\n</div>\n")
             file_html.write("""
 <script>
 function sortList() {
