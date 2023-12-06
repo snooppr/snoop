@@ -152,6 +152,25 @@ os.makedirs(f"{dirpath}/results/plugins/ReverseVgeocoder", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/Yandex_parser", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/domain", exist_ok=True)
 
+# Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
+def web_path_copy():
+    try:
+        if "build" in version and os.path.exists(f"{dirpath}/web") is False:
+            shutil.copytree(web_path, f"{dirpath}/web")
+            if Linux: # и 'build' in 'version'
+                os.chmod(f"{dirpath}/web", 0o755)        
+                for total_file_path in glob.iglob(f"{dirpath}/web/**/*", recursive=True):
+                    if os.path.isfile(total_file_path) == True:
+                        os.chmod(total_file_path, 0o644)
+                    else:
+                        os.chmod(total_file_path, 0o755)            
+        elif "source" in version and Android and os.path.exists("/data/data/com.termux/files/home/storage/shared/snoop/web") is False:
+            shutil.copytree(f"{dirresults}/web", "/data/data/com.termux/files/home/storage/shared/snoop/web")
+    except Exception as e:
+        print(f"ERR: {e}")
+
+web_path_copy()
+
 
 ## Расход памяти.
 def mem_test():
@@ -852,7 +871,7 @@ def autoclean():
         try:
 # Определение директорий.
             path_build_del = "/results" if not Windows else "\\results"
-            if 'source' in version:
+            if 'source' in version and not Android:
                 rm = dirpath + path_build_del
                 reports = rm
             else:
