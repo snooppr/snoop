@@ -71,7 +71,7 @@ $$$$
 ### 3. Demostración de uno de los métodos en el Complemento — 〘Reverse Vgeocoder〙  
 https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
 
-Snoop selecciona solo geocoordenadas de datos sucios (números, letras, caracteres especiales).  
+Snoop selecciona solo coordenadas geográficas de datos sucios (números, letras, caracteres especiales), coloca marcadores en el mapa basándose en ellos y los etiqueta con áreas pobladas cercanas.  
 
 </details>
 
