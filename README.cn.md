@@ -72,7 +72,7 @@ $$$$
 ### 3. 插件中方法之一的演示——〘Reverse Vgeocoder〙  
 https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
 
-Snoop 仅从脏数据*（数字、字母、特殊字符）*中选择地理坐标。  
+Snoop 仅从脏数据（数字、字母、特殊字符）中选择地理坐标，根据它们在地图上放置标记，并用附近的人口稠密区域标记它们。  
 
 </details>
 
