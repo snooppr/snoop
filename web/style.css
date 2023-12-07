@@ -13,10 +13,25 @@ body, html {
 }
 
 #report {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    background-color: transparent
+}
+
+#meta {
+    display: inline-block;
     position: relative;
     z-index: 2;
     background-color: transparent;
-    width: 48%;
+    width:48%
+}
+
+#buttons {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    background-color: transparent
 }
 
 a.GL{
