@@ -16,7 +16,7 @@ def nettest():
         servers = []
         threads = None
         try:
-            s = speedtest.Speedtest()
+            s = speedtest.Speedtest(secure=True)
             s.get_servers(servers)
             s.get_best_server()
             s.download(threads=threads)
