@@ -1623,16 +1623,17 @@ def run():
 
             file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
 
+            path_ = dirpath if not Android else "/storage/emulated/0/snoop"
             file_html.write("<!DOCTYPE html>\n<html lang='ru'>\n\n<head>\n<title>◕ Snoop HTML-отчет</title>\n" + \
                             "<meta charset='utf-8'>\n<style>\nbody {background: url(../../../web/public.png) " + \
                             "no-repeat 20% 0%}\n.str1{text-shadow: 0px 0px 20px #333333}\n.shad{display: inline-block}\n" + \
                             ".shad:hover{text-shadow: 0px 0px 14px #6495ED; transform: scale(1.1); transition: transform 0.15s}\n" + \
                             "</style>\n<link rel='stylesheet' href='../../../web/style.css'>\n</head>\n\n<body id='snoop'>\n\n" + \
-                            "<div id='particles-js'></div>\n" + "<div id='report'>\n\n" + \
-                            "<h1><a class='GL' href='file://" + f"{dirpath}/results/nicknames/html/'>open file</a>" + "</h1>\n")
+                            "<div id='particles-js'></div>\n\n" + \
+                            "<h1><a class='GL' href='file://" + f"{path_}/results/nicknames/html/'>open file</a>" + "</h1>\n")
             file_html.write("<h3>Snoop Project (demo version)</h3>\n<p>Нажмите: 'сортировать по странам', возврат:" + \
-                            "'<span style='text-shadow: 0px 0px 13px #40E0D0'>F5'</span></p>\n" + \
-                            "<button onclick='sortList()'>Сортировать по странам ↓↑</button><br><ol" + " id='id777'>\n")
+                            "'<span style='text-shadow: 0px 0px 13px #40E0D0'>F5'</span></p>\n<div id='report'>\n" + \
+                            "<button onclick='sortList()'>Сортировать по странам ↓↑</button><br>\n<ol" + " id='id777'>\n")
 
             li = []
             for website_name in FULL:
@@ -1651,7 +1652,7 @@ def run():
             except Exception:
                 flag_str_sum = "-1"
 
-            file_html.write("</ol>GEO: " + flag_str_sum + ".\n")
+            file_html.write("</ol>\n</div>\n\n<br>\n\n<div id='meta'>GEO: " + flag_str_sum + ".\n")
             file_html.write("<br> Запрашиваемый объект &lt; <b>" + str(nick) + "</b> &gt; найден: <b>" + str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Сессия: " + "<b>" + str(round(timefinish)) + "сек_" + str(sess_size) + "Mb</b>.\n")
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
@@ -1659,6 +1660,8 @@ def run():
             file_html.write("<br> База Snoop (demo version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
             file_html.write("<br> Обновлено: " + "<i><b>" + time.strftime("%d/%m/%Y</b>_%H:%M:%S", time_date) + ".</i><br><br>\n</div>\n")
             file_html.write("""
+<br>
+
 <script>
 function sortList() {
   var list, i, switching, b, shouldSwitch;
@@ -1711,20 +1714,23 @@ func1 = setTimeout(() => {id777.onmouseover = function() {document.write(don1)}}
 <script src="../../../web/particles.js"></script>
 <script src="../../../web/app.js"></script>
 
-<audio controls="controls" autoplay="autoplay" loop="loop">
+<audio title="Megapolis (remix).mp3" controls="controls" autoplay="autoplay">
 <source src="../../../web/Megapolis%20(remix).mp3" type="audio/mpeg">
 </audio>
 
 <br>
-<audio controls="controls" loop="loop">
+
+<audio title="for snoop in cyberpunk.mp3" controls="controls">
 <source src="../../../web/for%20snoop%20in%20cyberpunk.mp3" type="audio/mpeg">
 </audio>
 
 <br><br>
 
+<div id='buttons'>
 <a target='_blank' href='https://github.com/snooppr/snoop' class="SnA"><span class="SnSpan">🛠  Source Исходный код</span></a>
 <a target='_blank' href='https://drive.google.com/file/d/12DzAQMgTcgeG-zJrfDxpUbFjlXcBq5ih/view' class="DnA"><span class="DnSpan">📖 Doc Документация</span></a>
 <a target='_blank' href='https://yoomoney.ru/to/4100111364257544' class="DnA"><span class="DnSpan">💳 Donation Пожертвование</span></a>
+</div>
 
 <br><br>\n
 """ + \
