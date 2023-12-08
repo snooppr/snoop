@@ -79,6 +79,15 @@ def Erf(hvostfile):
     ravno()
 
 
+def meta_icon(icon_, marker_cluster=None):
+    icon = folium.CustomIcon(icon_, icon_size=(178, 102))
+
+    folium.Marker(location=[74.733, -1.725], popup="❗Обратите внимание на то, что в <b>Snoop full версии</b> " + \
+                                                   "доступны отчеты с расширенной метрикой и не только в html формате, " + \
+                                                   "но и в <b>csv/txt</b> форматах.",
+                  icon=icon).add_to(marker_cluster)
+
+
 ## Модуль Yandex_parser.
 # api https://yandex.ru/dev/id/doc/dg/reference/response.html#response__norights_5
 def module3():
@@ -325,8 +334,8 @@ def module2():
 
             while True:
                 print("\n\033[36m╭Выберите режим геокодирования:\033[0m\n" + \
-                      "\033[36m├──\033[36m[\033[0m\033[32;1m1\033[0m\033[36m] --> Простой\033[0m\n" + \
-                      "\033[36m├──\033[36m[\033[0m\033[32;1m2\033[0m\033[36m] --> Подробный\033[0m\n" + \
+                      "\033[36m├──\033[36m[\033[0m\033[32;1m1\033[0m\033[36m] --> Простой (demo version)\033[0m\n" + \
+                      "\033[36m├──\033[36m[\033[0m\033[32;1m2\033[0m\033[36m] --> Подробный (full version)\033[0m\n" + \
                       "\033[36m└──\033[36m[\033[0m\033[31;1mq\033[0m\033[36m] --> Выход\033[0m\n")
                 rGeo = console.input("[cyan]ввод --->  [/cyan]")
 
@@ -354,11 +363,13 @@ def module2():
 # 1. Простой метод.
                         try:
                             if rGeo == '1':
-                                folium.Marker(location=geo_sh_do, popup="Ш:" + str(geo_sh_do[0]) + \
-                                              " Д:" + str(geo_sh_do[1]), icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
+                                folium.Marker(location=geo_sh_do, popup="🌎 <b>Координаты:</b><br><i> " + str(geo_sh_do[0]) + " " + \
+                                str(geo_sh_do[1]) + "<br>" + "~" * 16, icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
 # 2. Подробный метод.
                         except Exception:
                             continue
+
+                    meta_icon("https://raw.githubusercontent.com/snooppr/snoop/master/icons/Snoop.png", marker_cluster=marker_cluster)
 # Сохранение карты osm.
                     namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_date)
                     namemaps = (f'Maps_{namemaps}.html')
