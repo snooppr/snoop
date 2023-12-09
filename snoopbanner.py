@@ -56,9 +56,11 @@ def donate():
 [bold green]Если пользователя заинтересовало ПО [red]Snoop demo version[/red], то он может приобрести [cyan]Snoop full version[/cyan], поддержав развитие IT-проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
 [bold green]При пожертвовании/покупке в сообщении укажите:[/bold green]
 
-    [cyan]"На развитие Snoop Project: 20$ ваш e-mail
+    \"\"\"
+    [cyan]На развитие Snoop Project: 20$ ваш e-mail
     full version for Windows RU или full version for Linux RU,
-    статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО)"[/cyan]
+    статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО).[/cyan]
+    \"\"\"
 
 [bold green]В ближайшее время на email пользователя придёт чек о покупке и ссылка для скачивания Snoop full version готовой сборки, то есть исполняемого файла, для Windows — это 'snoop_cli.exe', для GNU/Linux — 'snoop_cli'.
 
@@ -70,9 +72,9 @@ Snoop в исполняемом виде (build-версия) предостав
 Студентам ПО Snoop full version предоставляется с 50% скидкой.
 
 Snoop full version: плагины без ограничений; {len(DB('BDflag')) // 100}00+ Websites;
-поддержка и обновление Database Snoop.
-Подключение к Web_Database Snoop (online), которая расширяется/обновляется.
-Отключены всплывающие окна в HTML-отчёте про упоминание Snoop demo-version.[/bold green]
+поддержка и обновление Database Snoop;
+подключение к Web_Database Snoop (online), которая расширяется/обновляется;
+отключены всплывающие окна в HTML-отчёте про упоминание Snoop demo-version.[/bold green]
 [bold red]Ограничения demo version: Websites (Database Snoop сокращена в > 15 раз);
 отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
 

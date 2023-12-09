@@ -1163,7 +1163,7 @@ def run():
 
                 snoopplugins.module2()
             elif mod == '3':
-                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green", header_style='green')
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green", header_style='bold black')
                 table.add_column("Yandex_parser_v0.5", style="green", justify="center")
                 table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail; Name.')
                 console.print(table)
