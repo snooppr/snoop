@@ -1254,7 +1254,7 @@ def run():
                     flag_str_sum = str("БД повреждена.")
                     all_ = "-1"
                 table = Table(title=Style.BRIGHT + fore + version + Style.RESET_ALL, header_style='green', style="green")
-                table.add_column("Страна:Кол-во websites", style="magenta", justify='full')
+                table.add_column("Страна: Кол-во websites", style="magenta", justify='full')
                 table.add_column("All", style="cyan", justify='full')
                 table.add_row(flag_str_sum, all_)
                 console.print(table)
