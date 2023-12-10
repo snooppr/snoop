@@ -202,5 +202,5 @@ $ python3 snoop.py --update #requires a Git installation.
 </p>  
 
  • **January 27 2022 compress the repository/if you have problems, do a 'git clone' again.**  
- • **October 12, 2023 merged snoop_termux and master branches** To continue receiving updates for Snoop for Anroid/Termux, switch to the 'master' branch::  
+ • **October 12, 2023 merged snoop_termux and master branches** To continue receiving updates for Snoop for Android/Termux, switch to the 'master' branch::  
  `$ git checkout master`.  
