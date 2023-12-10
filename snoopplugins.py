@@ -82,9 +82,9 @@ def Erf(hvostfile):
 def meta_icon(icon_, marker_cluster=None):
     icon = folium.CustomIcon(icon_, icon_size=(178, 102))
 
-    folium.Marker(location=[74.733, -1.725], popup="❗Обратите внимание на то, что в <b>Snoop full версии</b> " + \
+    folium.Marker(location=[74.733, -1.725], popup="💬 Обратите внимание на то, что в <b>Snoop full версии</b> " + \
                                                    "доступны отчеты с расширенной метрикой и не только в html формате, " + \
-                                                   "но и в <b>csv/txt</b> форматах.",
+                                                   "но и в <b>csv/txt</b> форматах.<br> {}".format('~' * 20),
                   icon=icon).add_to(marker_cluster)
 
 
