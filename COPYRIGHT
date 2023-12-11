@@ -135,9 +135,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 BSD-2-Clause License
 
+This software uses leafletjs library, which is
+Copyright (c) 2010-2023, Volodymyr Agafonkin
+Copyright (c) 2010-2011, CloudMade
+All rights reserved.
+
 This software uses pygments library, which is
 Copyright (c) 2006-2020 by the respective authors (see AUTHORS file)
 https://github.com/pygments/pygments/blob/master/AUTHORS
+All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -164,6 +170,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ================================================================================
 
 BSD 3-Clause "New" or "Revised" License
+
+This software uses xyzservices library, which is
+Copyright (c) 2021, GeoPandas
+All rights reserved.
 
 This software uses psutil library, which is
 Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola
