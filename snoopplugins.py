@@ -37,6 +37,7 @@ Android = True if hasattr(sys, 'getandroidapilevel') else False
 if not Android:
     import folium
     from folium.plugins import MarkerCluster
+    from folium.plugins import MousePosition
     from more_itertools import unique_everseen
     from operator import itemgetter
 
@@ -70,6 +71,7 @@ dirresults = os.getcwd()
 progressYa = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
 
 
+## ERR.
 def Erf(hvostfile):
     print(f"\033[31;1mНе могу найти_прочитать файл: '{hvostfile}'.\033[0m \033[36m\n " + \
           f"\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n" + \
@@ -79,13 +81,62 @@ def Erf(hvostfile):
     ravno()
 
 
-def meta_icon(icon_, marker_cluster=None):
-    icon = folium.CustomIcon(icon_, icon_size=(178, 102))
+## Карты, мета инфо.
+def meta_icon(stat=None, marker_cluster=None, maps=None):
+    layer_right = folium.TileLayer('openstreetmap')
+    layer_left = folium.TileLayer('OpenTopoMap')
+    sbs = folium.plugins.SideBySideLayers(layer_left=layer_left, layer_right=layer_right)
+    layer_left.add_to(maps)
+    layer_right.add_to(maps)
+    lay2 = sbs.add_to(maps)
 
-    folium.Marker(location=[74.733, -1.725], popup="💬 Обратите внимание на то, что в <b>Snoop full версии</b> " + \
-                                                   "доступны отчеты с расширенной метрикой и не только в html формате, " + \
-                                                   "но и в <b>csv/txt</b> форматах.<br> {}".format('~' * 20),
-                  icon=icon).add_to(marker_cluster)
+    icon = folium.CustomIcon("https://raw.githubusercontent.com/snooppr/snoop/master/icons/Snoop.png", icon_size=(178, 102))
+
+    if stat:
+        popup = "💬 Обратите внимание на то, что в <b>Snoop full версии</b> " + \
+                "доступны отчеты с расширенной метрикой и не только в <b>html</b> формате, " + \
+                "но и в <b>csv/txt</b> форматах.<br>{0}<br>{1}".format('~' * 78, stat)
+    else:
+        popup = "💬 В <b>Snoop demo version</b> доступен лишь HTML-отчёт с <b>урезанным функционалом</b>.<br>" + \
+                "В Snoop full version пользователю предоставляется полноценный HTML-репорт, <br>" +\
+                "а также расширенные отчёты в txt/csv форматах.<br>{0}<br>{1}".format('~' * 73, stat)
+
+    return folium.Marker(location=[74.733, -1.725], popup=popup, icon=icon).add_to(marker_cluster), lay2
+
+# Памятка.
+def glob_marker(count_country=None, full=False):
+    h = "<b>🌎 GEO:</b> " if full else ""
+    a_tmp = []
+    for k, v in sorted(Counter(count_country).items(), key=lambda x: x[1], reverse=True):
+        a_tmp.append(f"({k} ⇔ {v})")
+    flag_str_sum = h + "; ".join(a_tmp) + ("." if bool(a_tmp) else "")
+
+    return flag_str_sum
+
+# Сохранение html отчета.
+def save_maps(mapsme=None):
+    with open(mapsme) as fr:
+        fr = fr.read()
+        mapsme_end = fr.replace("<script src=\"https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js\"></script>",
+                                "<script src=\"../../../web/lib.js\"></script>", 1) #добавление авторских прав Snoop.
+    with open(mapsme, 'w') as fw:
+        fw.write(mapsme_end)
+
+# Создание карты для плагинов.
+def foliums():
+    maps = folium.Map(location=[48.5, -33.2], zoom_start=2, no_wrap=True)
+    control_ = folium.FeatureGroup(name='Памятка')
+    maps.add_child(control_)
+
+    marker_cluster = MarkerCluster().add_to(control_)
+    mcg = folium.plugins.MarkerCluster(control=False)
+    maps.add_child(mcg)
+
+    MousePosition().add_to(maps)
+    folium.plugins.Fullscreen(position="topright", title="Открыть во весь экран",
+                              title_cancel="Выход из полноэкранного режима",force_separate_button=True).add_to(maps)
+
+    return maps, mcg, marker_cluster
 
 
 ## Модуль Yandex_parser.
@@ -291,9 +342,7 @@ def module2():
                     put = put.replace("'", "").strip()
 
 # Создание карты 'Обратный геокодер'.
-
-                maps = folium.Map(location=[48.5, -33.2], zoom_start=2)
-                marker_cluster = MarkerCluster().add_to(maps)
+                maps, mcg, marker_cluster = foliums()
 # Проверка пути файла с координатами.
                 try:
                     with open(put, "r", encoding="utf8") as geo:
@@ -351,8 +400,11 @@ def module2():
                 sys.exit()
             if rGeo == '1':
                 timestartR = time.time()
-                with console.status("[green bold]Ожидайте, идёт геокодирование...", spinner=random.choice(["dots", "dots12"])):
+                with console.status("[green bold]Ожидайте, идёт геокодирование...", spinner='earth'):
                     n_yes = 0
+
+                    dsc = {}
+                    count_country = []
                     for geo_sh_do in coord2:
 # Гео ш-д от +-90/+-180.
                         if not -90.1 <= geo_sh_do[0] <= 90.1 or not -180.1 <= geo_sh_do[1] <= 180.1:
@@ -362,19 +414,31 @@ def module2():
                         coord.append(geo_sh_do)
 # 1. Простой метод.
                         try:
-                            if rGeo == '1':
-                                folium.Marker(location=geo_sh_do, popup="🌎 <b>Координаты:</b><br><i> " + str(geo_sh_do[0]) + " " + \
-                                str(geo_sh_do[1]) + "<br>" + "~" * 16, icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
-# 2. Подробный метод.
+                            folium.Marker(location=geo_sh_do, popup="🌎 <b>Координаты:</b><br><i> " + str(geo_sh_do[0]) + " " + \
+                            str(geo_sh_do[1]) + "<br>" + "~" * 16, icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
+
+                            flag_str_sum = glob_marker(count_country)
                         except Exception:
                             continue
 
-                    meta_icon("https://raw.githubusercontent.com/snooppr/snoop/master/icons/Snoop.png", marker_cluster=marker_cluster)
+                    meta_icon(stat=flag_str_sum, marker_cluster=marker_cluster, maps=maps)
+
+                    folium.LayerControl(collapsed=False).add_to(maps)
+
 # Сохранение карты osm.
                     namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_date)
                     namemaps = (f'Maps_{namemaps}.html')
                     mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
                     maps.save(mapsme)
+
+# Сохраниен/открытие HTML.
+                    save_maps(mapsme=mapsme)
+                    try:
+                        if lcoord >= 1:
+                            webbrowser.open(str("file://" + mapsme))
+                    except Exception:
+                        pass
+
 # Обработка bad (извлечение вложенного списка).
                     wZ1bad_raw = []
                     for i in wZ1bad:
@@ -402,6 +466,8 @@ def module2():
                         webbrowser.open(str("file://" + mapsme))
                 except Exception:
                     pass
+
+
 # Запись в txt.
                 try:
                     file_txtR = open(dirresults + "/results/plugins/ReverseVgeocoder/" + str(hvostR) + ".txt", "w", encoding="utf-8")
@@ -417,7 +483,7 @@ def module2():
                     file_txtR.write(f"{badGEO}\n")
                 file_txtR.write("===================================" + "\n\n")
                 file_txtR.write(time.strftime(f"Дата обработки файла '{hvostR}': %d/%m/%Y_%H:%M:%S", time_date))
-                file_txtR.write(f"\n©2020-{time.localtime().tm_year} «Snoop Project».")
+                file_txtR.write(f"\n©2020-{time.localtime().tm_year} «Snoop Project» (demo version).")
                 file_txtR.close()
             if rGeo == '2':
                 print("\033[31;1m└──В demo version этот метод плагина недоступен\033[0m\n")
