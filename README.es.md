@@ -10,7 +10,8 @@ Proyecto Snoop
 El proyecto Snoop se desarrolla sin tener en cuenta las opiniones de la NSA y sus amigos,  
 es decir, está al alcance del usuario medio *(14 de febrero de 2020)*.  
 
-> *Snoop es un trabajo de desarrollo de investigación (base de datos propia/bugbounty cerrado) en la búsqueda y procesamiento de datos públicos en Internet. Según la búsqueda especializada de Snoop, es capaz de competir con los motores de búsqueda tradicionales.*  
+> [!NOTE]
+> <sub>*Snoop es un trabajo de desarrollo de investigación (base de datos propia/bugbounty cerrado) en la búsqueda y procesamiento de datos públicos en Internet. Según la búsqueda especializada de Snoop, es capaz de competir con los motores de búsqueda tradicionales.*</sub>  
 
 Comparación de indexaciones de bases de datos tales herramientas:  
 <img src="https://img.shields.io/badge/Snoop-~3600+%20sitios web-success" width="50%" />  

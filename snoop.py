@@ -1316,7 +1316,7 @@ def run():
         snoopbanner.donate()
 
 
-## Опция '-u' указания файла-списка разыскиваемых пользователей.
+## Опция '-u' указание файла-списка разыскиваемых пользователей.
     if args.user:
         userlists, userlists_bad, duble, _duble, short_user = [], [], [], [], []
         flipped, d = {}, {}
