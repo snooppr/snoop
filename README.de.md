@@ -60,6 +60,11 @@ Berichte sind auch in csv/txt/CLI/maps verfügbar
 
 $$$$
 
+Bericht im HTML-Format auf der OSM-Karte (Snoop-Vollversion)  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/plugin GEO_IP_domain.jpg" />  
+
+$$$$
+
 ### 2. Demonstration einer der Methoden im Plugin — 〘Yandex_parser〙  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser.gif" />  
 
@@ -74,6 +79,9 @@ $$$$
 https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
 
 Snoop wählt nur Geokoordinaten aus schmutzigen Daten (Zahlen, Buchstaben, Sonderzeichen) aus, platziert darauf basierende Markierungen auf der Karte und beschriftet sie mit nahegelegenen besiedelten Gebieten.  
+
+Visualisierung signierter Geokoordinaten: HTML-Bericht (Snoop-Vollversion).  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/plugin Reverse Vgeocoder.jpg" />  
 
 </details>
 

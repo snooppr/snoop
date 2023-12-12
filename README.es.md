@@ -54,6 +54,11 @@ Snoop viene con ensamblajes listos para usar (versión) y no requiere dependenci
 
 $$$$
 
+Informe en formato HTML en el mapa de OSM (versión completa de Snoop)  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/plugin GEO_IP_domain.jpg" />  
+
+$$$$
+
 Los informes también están disponibles en csv/txt/CLI/maps  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IPcsv.jpeg" />  
 
@@ -73,6 +78,9 @@ $$$$
 https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
 
 Snoop selecciona solo coordenadas geográficas de datos sucios (números, letras, caracteres especiales), coloca marcadores en el mapa basándose en ellos y los etiqueta con áreas pobladas cercanas.  
+
+Visualización de geocoordenadas firmadas: informe HTML (versión completa de Snoop)  
+<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/plugin Reverse Vgeocoder.jpg" />  
 
 </details>
 
