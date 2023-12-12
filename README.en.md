@@ -10,8 +10,9 @@ Is your life slideshow? Ask Snoop.
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user *(project creation date: February 14, 2020)*.  
 
-> *Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.
-According to Snoop's specialized search, it is capable of competing with traditional search engines.*  
+> [!NOTE]
+> <sub>*Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.
+According to Snoop's specialized search, it is capable of competing with traditional search engines.*</sub>  
 
 Comparison of indexations of databases such tools:  
 <img src="https://img.shields.io/badge/Snoop-~3600+%20websites-success" width="50%" />  

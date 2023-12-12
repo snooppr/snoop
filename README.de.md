@@ -10,7 +10,8 @@ Ist Ihr Leben eine Diashow? Frag Snoop.
 Das Snoop-Projekt wird entwickelt, ohne die Meinungen der NSA und ihrer Freunde zu berücksichtigen,  
 das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februar 2020)*.  
 
-> *Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*  
+> [!NOTE]
+> <sub>*Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*</sub>  
 
 Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:  
 <img src="https://img.shields.io/badge/Snoop-~3600+%20websites-success" width="50%" />  

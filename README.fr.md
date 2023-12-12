@@ -10,8 +10,9 @@ Votre vie est-elle un diaporama ? Demandez à Snoop.
 Le projet Snoop est développé sans tenir compte des avis de la NSA et de leurs amis,  
 c'est-à-dire qu'il est disponible pour l'utilisateur moyen *(date de création du projet : 14 février 2020)*.  
 
-> *Snoop est un dev-work de recherche (base de données propre/bounty fermé) dans la recherche et le traitement de données publiques sur Internet.
-Selon la recherche spécialisée de Snoop, il est capable de concurrencer les moteurs de recherche traditionnels.*  
+> [!NOTE]
+> <sub>*Snoop est un dev-work de recherche (base de données propre/bounty fermé) dans la recherche et le traitement de données publiques sur Internet.
+Selon la recherche spécialisée de Snoop, il est capable de concurrencer les moteurs de recherche traditionnels.*</sub>  
 
 Comparaison des indexations de bases de données tels outils:  
 <img src="https://img.shields.io/badge/Snoop-~3600+%20sites Internet-success" width="50%" />  
