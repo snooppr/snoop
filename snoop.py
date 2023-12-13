@@ -89,7 +89,7 @@ version = f"{vers}_{OS_}"
 
 print(Fore.CYAN + "#Примеры:" + Style.RESET_ALL)
 if Windows:
-    print(Fore.CYAN + " cd с:\\<path>\\snoop")
+    print(Fore.CYAN + " cd C:\\<path>\\snoop")
     print(Fore.CYAN + " python snoop.py --help" + Style.RESET_ALL, "#справка")
     print(Fore.CYAN + " python snoop.py nickname" + Style.RESET_ALL, "#поиск user-a")
     print(Fore.CYAN + " python snoop.py --module" + Style.RESET_ALL, "#задействовать плагины")
