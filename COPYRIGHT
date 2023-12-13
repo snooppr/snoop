@@ -135,7 +135,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 BSD-2-Clause License
 
-This software uses leafletjs library, which is
+This software uses leaflet library, which is
 Copyright (c) 2010-2023, Volodymyr Agafonkin
 Copyright (c) 2010-2011, CloudMade
 All rights reserved.

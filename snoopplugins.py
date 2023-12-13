@@ -460,7 +460,7 @@ def module2():
 
                 path_dir = "/results/plugins/ReverseVgeocoder/" if sys.platform != 'win32' else "\\results\\plugins\\ReverseVgeocoder\\"
                 print(Style.RESET_ALL + Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
-                      f"\033[36;1m{dirresults}{path_dir}{hvostR}[.txt.html.csv]")
+                      f"\033[36;1m{dirresults}{path_dir}*[.txt.html.csv]")
                 try:
                     if lcoord >= 1:
                         webbrowser.open(str("file://" + mapsme))
