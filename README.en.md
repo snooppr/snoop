@@ -236,7 +236,7 @@ $ snoop_cli --module #Running from release linux
 + The found accounts will be stored in `~/snoop/results/nicknames/*{txt|csv|html}`.  
 + Open csv in office in, field separator **comma**.  
 + Destroy **all** search results — delete the '~/snoop/results' directory.  
-or `snoop_cli.exe --autoclean #Running from release OS Windows`.
+or incl. and reset cache `snoop_cli.exe --autoclean #Running from release OS Windows`.
 ```
 # Update Snoop to test new features in the software
 $ python3 snoop.py --update #Git installation is required

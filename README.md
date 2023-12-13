@@ -254,7 +254,7 @@ $ snoop_cli --donate
 `~/snoop/results/nicknames/*{txt|csv|html}`.  
 + csv открывать в *office, разделитель полей **запятая**.  
 + Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results',
-или `snoop_cli.exe --autoclean #Running from release OS Windows`.
+или в т.ч. и сбросить кэш `snoop_cli.exe --autoclean #Running from release OS Windows`.
 
 ```
 # Обновляйте Snoop для тестирования новых функций в ПО:
