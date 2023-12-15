@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.9d', "s", "d"
+vers, vers_code, demo_full = 'v1.3.9e', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -158,7 +158,7 @@ def web_path_copy():
         if "build" in version and os.path.exists(f"{dirpath}/web") is False:
             shutil.copytree(web_path, f"{dirpath}/web")
             if Linux: # и 'build' in 'version'
-                os.chmod(f"{dirpath}/web", 0o755)        
+                os.chmod(f"{dirpath}/web", 0o755)
                 for total_file_path in glob.iglob(f"{dirpath}/web/**/*", recursive=True):
                     if os.path.isfile(total_file_path) == True:
                         os.chmod(total_file_path, 0o644)
@@ -341,13 +341,14 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
           print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
 
-    #requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.14
+    requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе с процессами.
     #adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
+    #adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
     connections = 200 if not Windows else 50
     maxsize = 100 if not Windows else 30
     requests.packages.urllib3.disable_warnings()
     adapter = requests.adapters.HTTPAdapter()
-    adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
+    adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False)
     requests_future = requests.Session()
     requests_future.max_redirects = 6
     requests_future.verify = False if cert is False else True
@@ -1324,7 +1325,7 @@ def run():
         try:
             patchuserlist = ("{}".format(args.user))
             userfile = patchuserlist.split('/')[-1] if not Windows else patchuserlist.split('\\')[-1]
-            print(Fore.CYAN + format_txt("активирована опция '-u': «розыск nickname(s) из файла:: {0}{1}{2}{3}{4}» {5}", 
+            print(Fore.CYAN + format_txt("активирована опция '-u': «розыск nickname(s) из файла:: {0}{1}{2}{3}{4}» {5}",
                                          k=True).format(Style.BRIGHT, Fore.CYAN, userfile, Style.RESET_ALL, Fore.CYAN, Style.RESET_ALL))
 
             with open(patchuserlist, "r", encoding="utf8") as u1:
@@ -1869,4 +1870,4 @@ if __name__ == '__main__':
         else:
             for child in active_children():
                 child.terminate()
-                time.sleep(0.02)
+                time.sleep(0.1)
