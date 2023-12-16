@@ -112,9 +112,6 @@ Copyright (C) 2013, Martin Journois
 This software uses folium library, which is
 Copyright (C) 2013, Rob Story
 
-This software uses attrs library, which is
-Copyright (c) 2015 Hynek Schlawack
-
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in 
 the Software without restriction, including without limitation the rights 
@@ -141,7 +138,7 @@ Copyright (c) 2010-2011, CloudMade
 All rights reserved.
 
 This software uses pygments library, which is
-Copyright (c) 2006-2020 by the respective authors (see AUTHORS file)
+Copyright (c) 2006-2022 by the respective authors (see AUTHORS file)
 https://github.com/pygments/pygments/blob/master/AUTHORS
 All rights reserved.
 
@@ -184,25 +181,28 @@ Copyright (c) 2010 Jonathan Hartley
 All rights reserved.
 
 This software uses numpy library, which is
-Copyright (c) 2005-2020, NumPy Developers
+Copyright (c) 2005-2023, NumPy Developers
 All rights reserved.
 
-This software uses MarkupSafe, Jinja2 library, which is
+This software uses MarkupSafe library, which is
 Copyright 2010 Pallets
 All rights reserved.
 
+This software uses Jinja2 library, which is
+Copyright 2007 Pallets
+All rights reserved.
+
 This software uses idna library, which is
-Copyright (c) 2013-2020, Kim Davies
+Copyright (c) 2013-2023, Kim Davies and contributors.
 All rights reserved.
 
 This software uses commonmark library, which is
-Copyright (c) 2014, Bibek Kafle and Roland Shoemaker
-Based on stmd.js: Copyright (c) 2014, John MacFarlane
+Copyright (c) 2014-2022, Colin O'Dell.
 All rights reserved.
-
-This software uses scipy library, which is
-Copyright (c) 2001-2002 Enthought, Inc.  2003-2019, SciPy Developers
-All rights reserved.
+Some code based on commonmark.js
+(copyright 2014-2018, John MacFarlane)
+and commonmark-java
+(copyright 2015-2016, Atlassian Pty Ltd).
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -247,17 +247,7 @@ This software uses requests library, which is
 Copyright 2019 Kenneth Reitz
 
 This software uses speedtest-cli library, which is
-Copyright 2013 Matt Martz
-
-This software uses async-timeout, multidict, yarl, libraries, which is
-Copyright 2016 Andrew Svetlov
-
-This software uses aiohttp, frozenlist, aiosignal libraries, which is
-Copyright 2016 Andrew Svetlov
-Copyright 2016 Nikolay Kim
-
-This software uses geoip2, maxminddb libraries, which is
-Copyright 2016 Gregory Oschwald
+Copyright 2012 Matt Martz
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
