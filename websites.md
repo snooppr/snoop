@@ -3358,7 +3358,7 @@
 3357. 🇷🇺 [Thevampirediaries (g. l.)](http://thevampirediaries)
 3358. 🇺🇸 [Theverge](https://www.theverge.com)
 3359. 🇬🇧 [Thewatchforum](https://www.thewatchforum.co.uk)
-3360. 🌎 [TikTok (g. l.)](https://www.tiktok.com/)
+3360. 🌎 [TikTok](https://www.tiktok.com/)
 3361. 🌎 [Tildes](https://tildes.net)
 3362. 🌎 [Tinder](https://tinder.com/)
 3363. 🇷🇺 [Tinkoff_Invest](https://www.tinkoff.ru)
