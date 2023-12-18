@@ -659,8 +659,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if r.content and r.encoding == 'ISO-8859-1': #ловушка (if r is not None ≠ if r)
                         r.encoding = char_detect(r.content).get("encoding")
                         if r.encoding is None: r.encoding = "utf-8"
-                elif r is not None and r != "FakeNone":
-                    if r.content and r.encoding != 'ISO-8859-1':
+                    elif r.content and r.encoding != 'ISO-8859-1' and r.encoding != 'utf-8':
                         if r.encoding == "cp-1251": r.encoding = "cp1251"
                         elif r.encoding == "cp-1252": r.encoding = "cp1252"
                         elif r.encoding == "windows1251": r.encoding = "windows-1251"
