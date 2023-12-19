@@ -431,14 +431,6 @@ def module2():
                     mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
                     maps.save(mapsme)
 
-# Сохраниен/открытие HTML.
-                    save_maps(mapsme=mapsme)
-                    try:
-                        if lcoord >= 1:
-                            webbrowser.open(str("file://" + mapsme))
-                    except Exception:
-                        pass
-
 # Обработка bad (извлечение вложенного списка).
                     wZ1bad_raw = []
                     for i in wZ1bad:
@@ -461,13 +453,13 @@ def module2():
                 path_dir = "/results/plugins/ReverseVgeocoder/" if sys.platform != 'win32' else "\\results\\plugins\\ReverseVgeocoder\\"
                 print(Style.RESET_ALL + Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
                       f"\033[36;1m{dirresults}{path_dir}*[.txt.html.csv]")
+# Сохраниен/открытие HTML.
+                save_maps(mapsme=mapsme)
                 try:
                     if lcoord >= 1:
                         webbrowser.open(str("file://" + mapsme))
                 except Exception:
                     pass
-
-
 # Запись в txt.
                 try:
                     file_txtR = open(dirresults + "/results/plugins/ReverseVgeocoder/" + str(hvostR) + ".txt", "w", encoding="utf-8")
