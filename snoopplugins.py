@@ -82,7 +82,8 @@ def Erf(hvostfile):
 
 
 ## Карты, мета инфо.
-def meta_icon(stat=None, marker_cluster=None, maps=None):
+def meta_icon(bad=None, marker_cluster=None, maps=None, vega_lite_S=None, vega_lite_O=None, vega_lite_G=None,
+              full=False, file=None, Provider=False):
     layer_right = folium.TileLayer('openstreetmap')
     layer_left = folium.TileLayer('OpenTopoMap')
     sbs = folium.plugins.SideBySideLayers(layer_left=layer_left, layer_right=layer_right)
@@ -90,28 +91,22 @@ def meta_icon(stat=None, marker_cluster=None, maps=None):
     layer_right.add_to(maps)
     lay2 = sbs.add_to(maps)
 
-    icon = folium.CustomIcon("https://raw.githubusercontent.com/snooppr/snoop/master/icons/Snoop.png", icon_size=(178, 102))
+    icon = folium.CustomIcon("https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png", icon_size=(80, 80))
 
-    if stat:
-        popup = "💬 Обратите внимание на то, что в <b>Snoop full версии</b> " + \
-                "доступны отчеты с расширенной метрикой и не только в <b>html</b> формате, " + \
-                "но и в <b>csv/txt</b> форматах.<br>{0}<br>{1}".format('~' * 78, stat)
+    if full:
+        popups = "💬 Обратите внимание на то, что в <b>Snoop full версии</b> " + \
+                 "сохранены отчеты с расширенной метрикой и не только в <b>html</b> формате, " + \
+                 "но и в <b>csv/txt</b> форматах. Возврат: \
+                 'F5'.<br>{0}<br><code><b>Необработанные данные из файла '{1}' ({2}):</code> </b>{3}"\
+                 .format('~' * 73, file, len(bad), '/ '.join(i if n % 2 == 0 else f"<b>{i}</b>" for n, i in enumerate(bad)))
     else:
-        popup = "💬 В <b>Snoop demo version</b> доступен лишь HTML-отчёт с <b>урезанным функционалом</b>.<br>" + \
-                "В Snoop full version пользователю предоставляется полноценный HTML-репорт, <br>" +\
-                "а также расширенные отчёты в txt/csv форматах.<br>{0}<br>{1}".format('~' * 73, stat)
+        popups = "💬 В <b>Snoop demo version</b> доступен лишь HTML-отчёт с <b>урезанным функционалом</b>.<br>" + \
+                 "В Snoop full version пользователю предоставляется полноценный HTML-репорт, <br>" +\
+                 "а также расширенные отчёты в txt/csv форматах.\
+                 <br>{0}<br><code><b>Необработанные данные из файла '{1}' ({2}):</code> </b>{3}"\
+                 .format('~' * 73, file, len(bad), '/ '.join(i if n % 2 == 0 else f"<b>{i}</b>" for n, i in enumerate(bad)))
 
-    return folium.Marker(location=[74.733, -1.725], popup=popup, icon=icon).add_to(marker_cluster), lay2
-
-# Памятка.
-def glob_marker(count_country=None, full=False):
-    h = "<b>🌎 GEO:</b> " if full else ""
-    a_tmp = []
-    for k, v in sorted(Counter(count_country).items(), key=lambda x: x[1], reverse=True):
-        a_tmp.append(f"({k} ⇔ {v})")
-    flag_str_sum = h + "; ".join(a_tmp) + ("." if bool(a_tmp) else "")
-
-    return flag_str_sum
+    return folium.Marker(location=[-63.826, 60], popup=popups, icon=icon).add_to(marker_cluster), lay2
 
 # Сохранение html отчета.
 def save_maps(mapsme=None):
@@ -124,7 +119,7 @@ def save_maps(mapsme=None):
 
 # Создание карты для плагинов.
 def foliums():
-    maps = folium.Map(location=[48.5, -33.2], zoom_start=2, no_wrap=True)
+    maps = folium.Map(location=[-37.0, 74.4], zoom_start=2, no_wrap=True, control_scale=True)
     control_ = folium.FeatureGroup(name='Памятка')
     maps.add_child(control_)
 
@@ -406,8 +401,8 @@ def module2():
                     dsc = {}
                     count_country = []
                     for geo_sh_do in coord2:
-# Гео ш-д от +-90/+-180.
-                        if not -90.1 <= geo_sh_do[0] <= 90.1 or not -180.1 <= geo_sh_do[1] <= 180.1:
+# Гео ш-д от +-85/+-180.
+                        if not -85.1 <= geo_sh_do[0] <= 85.1 or not -180.1 <= geo_sh_do[1] <= 180.1:
                             wZ1bad.append(str(geo_sh_do))
                             continue
                         n_yes += 1
@@ -416,21 +411,8 @@ def module2():
                         try:
                             folium.Marker(location=geo_sh_do, popup="🌎 <b>Координаты:</b><br><i> " + str(geo_sh_do[0]) + " " + \
                             str(geo_sh_do[1]) + "<br>" + "~" * 16, icon=folium.Icon(color='blue', icon='ok-sign')).add_to(marker_cluster)
-
-                            flag_str_sum = glob_marker(count_country)
                         except Exception:
                             continue
-
-                    meta_icon(stat=flag_str_sum, marker_cluster=marker_cluster, maps=maps)
-
-                    folium.LayerControl(collapsed=False).add_to(maps)
-
-# Сохранение карты osm.
-                    namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_date)
-                    namemaps = (f'Maps_{namemaps}.html')
-                    mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
-                    maps.save(mapsme)
-
 # Обработка bad (извлечение вложенного списка).
                     wZ1bad_raw = []
                     for i in wZ1bad:
@@ -454,6 +436,15 @@ def module2():
                 print(Style.RESET_ALL + Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
                       f"\033[36;1m{dirresults}{path_dir}*[.txt.html.csv]")
 # Сохраниен/открытие HTML.
+# Html составляющие.
+                meta_icon(bad=wZ1bad_raw2, marker_cluster=marker_cluster, maps=maps, file=hvostR)
+                folium.LayerControl(collapsed=False).add_to(maps)
+
+# Сохранение карты osm.
+                namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_date)
+                namemaps = (f'Maps_{namemaps}.html')
+                mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
+                maps.save(mapsme)
                 save_maps(mapsme=mapsme)
                 try:
                     if lcoord >= 1:

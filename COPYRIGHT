@@ -102,7 +102,7 @@ Copyright 2020 Will McGugan
 This software uses particles library, which is
 Copyright (c) 2015, Vincent Garreau
 
-This software uses urllib3 library, which is
+This software uses urllib3 v1.26.18 library, which is
 Copyright (c) 2008-2020 Andrey Petrov and contributors (see CONTRIBUTORS.txt)
 https://github.com/urllib3/urllib3/blob/master/CONTRIBUTORS.txt
 
@@ -132,12 +132,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 BSD-2-Clause License
 
-This software uses leaflet library, which is
+This software uses leaflet v1.9.4 library, which is
 Copyright (c) 2010-2023, Volodymyr Agafonkin
 Copyright (c) 2010-2011, CloudMade
 All rights reserved.
 
-This software uses pygments library, which is
+This software uses pygments v2.14.0 library, which is
 Copyright (c) 2006-2022 by the respective authors (see AUTHORS file)
 https://github.com/pygments/pygments/blob/master/AUTHORS
 All rights reserved.
@@ -180,8 +180,8 @@ This software uses colorama library, which is
 Copyright (c) 2010 Jonathan Hartley
 All rights reserved.
 
-This software uses numpy library, which is
-Copyright (c) 2005-2023, NumPy Developers
+This software uses numpy v1.23.5 library, which is
+Copyright (c) 2005-2022, NumPy Developers
 All rights reserved.
 
 This software uses MarkupSafe library, which is
@@ -192,8 +192,8 @@ This software uses Jinja2 library, which is
 Copyright 2007 Pallets
 All rights reserved.
 
-This software uses idna library, which is
-Copyright (c) 2013-2023, Kim Davies and contributors.
+This software uses idna v3.4 library, which is
+Copyright (c) 2013-2021, Kim Davies and contributors.
 All rights reserved.
 
 This software uses commonmark library, which is

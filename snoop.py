@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.9e', "s", "d"
+vers, vers_code, demo_full = 'v1.3.9f', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -883,7 +883,7 @@ def autoclean():
             for total_file in glob.iglob(reports + '/**/*', recursive=True):
                 total_size += os.path.getsize(total_file)
                 if os.path.isfile(total_file): delfiles.append(total_file)
-# Удаление каталога 'results'.
+# Сброс кэша и удаление каталога 'results'.
             shutil.rmtree(rm, ignore_errors=True)
             print(f"\n\033[31;1mdeleted --> {rm}\033[0m\033[36m {len(delfiles)} files, {round(total_size/1024/1024, 2)} Mb\033[0m")
         except Exception:
@@ -1139,7 +1139,7 @@ def run():
                   f"\033[36m╭Выберите плагин или действие из списка\033[0m\n" + \
                   f"\033[36m├──\033[0m\033[36;1m[1] --> GEO_IP/domain\033[0m\n" + \
                   f"\033[36m├──\033[0m\033[36;1m[2] --> Reverse Vgeocoder\033[0m\n" + \
-                  f"\033[36m├──\033[0m\033[36;1m[3] --> Yandex_parser\033[0m\n" + \
+                  f"\033[36m├──\033[0m\033[36;1m[3] --> \033[30;1mYandex_parser\033[0m\n" + \
                   f"\033[36m├──\033[0m\033[32;1m[help] --> Справка\033[0m\n" + \
                   f"\033[36m└──\033[0m\033[31;1m[q] --> Выход\033[0m\n")
 
@@ -1163,7 +1163,7 @@ def run():
 
                 snoopplugins.module2()
             elif mod == '3':
-                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green", header_style='bold black')
+                table = Table(title=Style.BRIGHT + Fore.GREEN + "Выбран плагин" + Style.RESET_ALL, style="green", header_style='green')
                 table.add_column("Yandex_parser_v0.5", style="green", justify="center")
                 table.add_row('Яндекс парсер: Я_Отзывы; Я_Кью; Я_Маркет; Я_Музыка; Я_Дзен; Я_Диск; E-mail; Name.')
                 console.print(table)
@@ -1373,8 +1373,8 @@ def run():
                     flipped[value].append(key)
 
             for k,v in flipped.items():
-                k=f"{k} ({len(v)})"
-                d[k]=v
+                k = f"{k} ({len(v)})"
+                d[k] = v
 
             for num, (k, v) in enumerate(d.items(), 1):
                 str_1 = f"[dim yellow]{num}.[/dim yellow] {k} {v}".replace(" (", " ——> ").replace(")", " шт.")
@@ -1613,7 +1613,7 @@ def run():
             file_txt.write("\n" f"Исключённые регионы: {exl}.")
             file_txt.write("\n" f"Выбор конкретных регионов: {one}.")
             file_txt.write("\n" f"Обновлено: {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}.\n")
-            file_txt.write("\n" f"©2020-{time.localtime().tm_year} «Snoop Project».")
+            file_txt.write("\n" f"©2020-{time.localtime().tm_year} «Snoop Project» (demo version).")
             file_txt.close()
 
 
@@ -1792,7 +1792,7 @@ document.getElementById('snoop').innerHTML=""
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_date)])
-            writer.writerow([f'©2020-{time.localtime().tm_year} «Snoop Project».'])
+            writer.writerow([f'©2020-{time.localtime().tm_year} «Snoop Project»\n(demo version).'])
 
             file_csv.close()
 
@@ -1869,4 +1869,4 @@ if __name__ == '__main__':
         else:
             for child in active_children():
                 child.terminate()
-                time.sleep(0.1)
+                time.sleep(0.04)
