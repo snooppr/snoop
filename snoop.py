@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.3.9f', "s", "d"
+vers, vers_code, demo_full = 'v1.4.0', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -106,13 +106,13 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2024, 10, 29, 3, 0, 0, 0, 0, 0)
+ts = (2025, 1, 1, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 up1 = time.gmtime(date_up)
 Do = (f"{up1.tm_mday}/{up1.tm_mon}/{up1.tm_year}")  #в UTC (-3 часа)
 # Чек.
 if time.time() > int(date_up):
-    print(Style.BRIGHT + Fore.RED + "Версия Snoop " + version + " деактивирована согласно лицензии.")
+    print(Style.BRIGHT + Fore.RED + "ПО " + version + " деактивировано согласно лицензии.")
     sys.exit()
 
 
@@ -373,7 +373,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                                                k=True, m=True) + "\n   пропуск\n")
         return False, False
     elif username in еasteregg:
-        with console.status("[bold blue] 💡 Обнаружена пасхалка..."):
+        with console.status("[bold blue] 💡 Обнаружена пасхалка...", spinner='noise'):
             try:
                 r_east = requests_future.get("https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
                 r_repo = requests_future.get('https://api.github.com/repos/snooppr/snoop', timeout=timeout).json()
@@ -381,14 +381,17 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                 console.print(Panel(Markdown(r_east.text.replace("=" * 83, "")),
                                     subtitle="[bold blue]журнал snoop-версий[/bold blue]", style=STL(color="cyan")))
-                console.print(Panel(f"[bold cyan]Дата создания проекта:[/bold cyan] 2020/02/14 ({round((time.time() - 1581638400.0) / 86400)}_дней).\n" + \
-                                    f"[bold cyan]Последнее обновление репозитория:[/bold cyan] {'_'.join(r_repo.get('pushed_at')[0:-4].split('T')).replace('-', '/')} (UTC).\n" + \
+                console.print(Panel(f"[bold cyan]Дата создания проекта:[/bold cyan] 2020/02/14 " + \
+                                    f"({round((time.time() - 1581638400.0) / 86400)}_дней).\n" + \
+                                    f"[bold cyan]Последнее обновление репозитория:[/bold cyan] " + \
+                                    f"{'_'.join(r_repo.get('pushed_at')[0:-4].split('T')).replace('-', '/')} (UTC).\n" + \
                                     f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} Мб.\n" + \
                                     f"[bold cyan]Github-рейтинг:[/bold cyan] {r_repo.get('watchers')} звёзд.\n" + \
                                     f"[bold cyan]Скрытые опции:[/bold cyan]\n'--headers/-H':: Задать user-agent вручную, агент " + \
                                                               f"заключается в кавычки, по умолчанию для каждого сайта задается случайный " + \
                                                               f"либо переопределенный user-agent из БД snoop.\n" + \
-                                                              f"'--cert-on/-C':: Включить проверку сертификатов на серверах, по умолчанию проверка сертификатов на серверах " + \
+                                                              f"'--cert-on/-C':: Включить проверку сертификатов на серверах, " + \
+                                                              f"по умолчанию проверка сертификатов на серверах " + \
                                                               f"отключена, что позволяет обрабатывать проблемные сайты без ошибок.\n"
                                     f"[bold cyan]Последняя версия snoop:[/bold cyan] {r_latestvers[0].get('name')}.",
                                     style=STL(color="cyan"), subtitle="[bold blue]ключевые показатели[/bold blue]", expand=False))
@@ -492,7 +495,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Создание futures на все запросы. Это позволит распараллелить запросы с прерываниями.
     for websites_names, param_websites in BDdemo_new.items():
         results_site = {}
-        # param_websites.pop('comments', None)
         results_site['flagcountry'] = param_websites.get("country")
         results_site['flagcountryklas'] = param_websites.get("country_klas")
         results_site['url_main'] = param_websites.get("urlMain")
@@ -945,12 +947,13 @@ def license_snoop():
 
     termux = f"\nTermux: [dim cyan]{T_v}[/dim cyan]\n" if Android else "\n"
 
+    light_v = True if not 'snoopplugins' in globals() else False
     if python3_8:
         colorama_v = f", (colorama::{version_lib('colorama')})"
         rich_v = f", (rich::{version_lib('rich')})"
         urllib3_v = f", (urllib3::{version_lib('urllib3')})"
-        folium_v = f", (folium::{version_lib('folium')})" if not Android else ""
-        numpy_v = f", (numpy::{version_lib('numpy')})" if not Android else ""
+        folium_v = f", (folium::{version_lib('folium')})" if not Android and light_v is False else ""
+        numpy_v = f", (numpy::{version_lib('numpy')})" if not Android and light_v is False else ""
         psutil_v = f", (psutil::{version_lib('psutil')})"
     else:
         urllib3_v = ""
@@ -960,8 +963,8 @@ def license_snoop():
         rich_v = ""
         psutil_v = ""
 
-    console.print('\n', Panel(f"Program: [dim cyan]{version} {str(platform.architecture(executable=sys.executable, bits='', linkage=''))}" + \
-                              "[/dim cyan]\n" + \
+    console.print('\n', Panel(f"Program: [blue bold]{'light ' if light_v else ''}[/blue bold][dim cyan]{version}"\
+                                             f"{str(platform.architecture(executable=sys.executable, bits='', linkage=''))}[/dim cyan]\n" + \
                               f"OS: [dim cyan]{os_ver}[/dim cyan]" + termux + \
                               f"Locale: [dim cyan]{locale.setlocale(locale.LC_ALL)}[/dim cyan]\n" + \
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
@@ -1132,6 +1135,13 @@ def run():
 ## Опция  '-m'.
 # Информативный вывод.
     if args.module:
+        if not 'snoopplugins' in globals():
+            snoopbanner.logo(text="\nTHIS IS THE LIGHT VERSION OF SNOOP PROJECT WITH PLUGINS DISABLED\n$ snoop_light_cli --version/-V")
+            sys.exit()
+        if 'full' in version:
+            with console.status("[cyan] проверка параметров..."):
+                meta()
+
         print(Fore.CYAN + format_txt("активирована опция '-m': «модульный поиск»", k=True))
 
         def module():
@@ -1210,7 +1220,7 @@ def run():
     try:
         if args.timeout and args.norm is False:
             print(Fore.CYAN + format_txt("активирована опция '-t': ожидание ответа от " + \
-                                        "сайта до{0}{1} {2} {3}{4}с.» {5}".format(Style.BRIGHT, Fore.CYAN, timeout,
+                                         "сайта до{0}{1} {2} {3}{4}с.» {5}".format(Style.BRIGHT, Fore.CYAN, timeout,
                                                                                   Style.RESET_ALL, Fore.CYAN,
                                                                                   Style.RESET_ALL), k=True))
     except Exception:
@@ -1805,7 +1815,7 @@ document.getElementById('snoop').innerHTML=""
             recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       └─или увеличьте значение опции" + \
                            "'\033[36;1m-t\033[0m\033[36m'\033[0m\n"
 
-            direct_results = f"{dirpath}/nicknames/results/*" if not Windows else f"{dirpath}\\results\\*"
+            direct_results = f"{dirpath}/results/nicknames/*" if not Windows else f"{dirpath}\\results\\nicknames\\*"
 
             print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all}_сек__{s_size_all}_Mb)")
             print(f"{Fore.CYAN}├──Сохранено в:{Style.RESET_ALL} {direct_results}")
@@ -1853,6 +1863,10 @@ document.getElementById('snoop').innerHTML=""
         except Exception:
             pass
 
+
+# Метаинформация
+    if 'full' in version:
+        meta()
 ## поиск по выбранным пользователям либо из cli, либо из файла.
     starts(args.username) if args.user is False else starts(USERLIST)
 

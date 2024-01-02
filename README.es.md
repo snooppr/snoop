@@ -50,7 +50,7 @@ Snoop viene con ensamblajes listos para usar (versión) y no requiere dependenci
 <summary> 🟣 Complementos del proyecto Snoop</summary>  
 
 ### 1. Demostración de uno de los métodos en el Complemento — 〘GEO_IP/domain〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+https://github.com/snooppr/snoop/assets/61022210/ab20ec4f-8eb2-40ff-b773-4e3443ad2a70  
 
 $$$$
 
@@ -75,7 +75,7 @@ Informe de búsqueda docena de nombre de usuario (Complemento - Yandex_parser)
 $$$$
 
 ### 3. Demostración de uno de los métodos en el Complemento — 〘Reverse Vgeocoder〙  
-https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+https://github.com/snooppr/snoop/assets/61022210/0be6ac32-c72f-4a18-9c9e-3413085f57c3  
 
 Snoop selecciona solo coordenadas geográficas de datos sucios (números, letras, caracteres especiales), coloca marcadores en el mapa basándose en ellos y los etiqueta con áreas pobladas cercanas.  
 

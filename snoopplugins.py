@@ -15,6 +15,7 @@ import requests
 import shutil
 import signal
 import socket
+import statistics
 import sys
 import threading
 import time
@@ -37,7 +38,6 @@ Android = True if hasattr(sys, 'getandroidapilevel') else False
 if not Android:
     import folium
     from folium.plugins import MarkerCluster
-    from folium.plugins import MousePosition
     from more_itertools import unique_everseen
     from operator import itemgetter
 
@@ -127,7 +127,7 @@ def foliums():
     mcg = folium.plugins.MarkerCluster(control=False)
     maps.add_child(mcg)
 
-    MousePosition().add_to(maps)
+    folium.plugins.MousePosition().add_to(maps)
     folium.plugins.Fullscreen(position="topright", title="Открыть во весь экран",
                               title_cancel="Выход из полноэкранного режима",force_separate_button=True).add_to(maps)
 
@@ -395,11 +395,10 @@ def module2():
                 sys.exit()
             if rGeo == '1':
                 timestartR = time.time()
-                with console.status("[green bold]Ожидайте, идёт геокодирование...", spinner='earth'):
+                with console.status("[green bold](1/2) Ожидайте, идёт геокодирование...", spinner='earth'):
                     n_yes = 0
 
                     dsc = {}
-                    count_country = []
                     for geo_sh_do in coord2:
 # Гео ш-д от +-85/+-180.
                         if not -85.1 <= geo_sh_do[0] <= 85.1 or not -180.1 <= geo_sh_do[1] <= 180.1:
@@ -435,17 +434,18 @@ def module2():
                 path_dir = "/results/plugins/ReverseVgeocoder/" if sys.platform != 'win32' else "\\results\\plugins\\ReverseVgeocoder\\"
                 print(Style.RESET_ALL + Fore.CYAN + "└──Статистические результаты сохранены в: " + Style.RESET_ALL + \
                       f"\033[36;1m{dirresults}{path_dir}*[.txt.html.csv]")
-# Сохраниен/открытие HTML.
-# Html составляющие.
-                meta_icon(bad=wZ1bad_raw2, marker_cluster=marker_cluster, maps=maps, file=hvostR)
-                folium.LayerControl(collapsed=False).add_to(maps)
 
+                with console.status("[green bold](2/2) Ожидайте, идёт процесс создания отчётов...", spinner='noise'):
+# Html составляющие.
+                    meta_icon(bad=wZ1bad_raw2, marker_cluster=marker_cluster, maps=maps, file=hvostR)
+                    folium.LayerControl(collapsed=False).add_to(maps)
 # Сохранение карты osm.
-                namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_date)
-                namemaps = (f'Maps_{namemaps}.html')
-                mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
-                maps.save(mapsme)
-                save_maps(mapsme=mapsme)
+                    namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_date)
+                    namemaps = (f'Maps_{namemaps}.html')
+                    mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
+                    maps.save(mapsme)
+# Сохраниен/открытие HTML.
+                    save_maps(mapsme=mapsme)
                 try:
                     if lcoord >= 1:
                         webbrowser.open(str("file://" + mapsme))
