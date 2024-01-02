@@ -51,7 +51,7 @@ Snoop 带有现成的程序集（发布版），不需要依赖项（库）或 p
 <summary> 🟣 Snoop 项目插件</summary>  
 
 ### 1. 插件中方法之一的演示——〘GEO_IP/domain〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+https://github.com/snooppr/snoop/assets/61022210/ab20ec4f-8eb2-40ff-b773-4e3443ad2a70  
 
 $$$$
 
@@ -76,7 +76,7 @@ $$$$
 $$$$
 
 ### 3. 插件中方法之一的演示——〘Reverse Vgeocoder〙  
-https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+https://github.com/snooppr/snoop/assets/61022210/0be6ac32-c72f-4a18-9c9e-3413085f57c3  
 
 Snoop 仅从脏数据（数字、字母、特殊字符）中选择地理坐标，根据它们在地图上放置标记，并用附近的人口稠密区域标记它们。  
 

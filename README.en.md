@@ -51,7 +51,7 @@ Snoop comes with ready-made assemblies (release) and does not require dependenci
 <summary> 🟣 Snoop Project Plugins</summary>  
 
 ### 1. Demonstration of one of the methods in the Plugin — 〘GEO_IP/domain〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+https://github.com/snooppr/snoop/assets/61022210/ab20ec4f-8eb2-40ff-b773-4e3443ad2a70  
 
 $$$$
 
@@ -76,7 +76,7 @@ Search report dozen username (Plugin — Yandex_parser)
 $$$$
 
 ### 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
-https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+https://github.com/snooppr/snoop/assets/61022210/0be6ac32-c72f-4a18-9c9e-3413085f57c3  
 
 Snoop selects only geocoordinates from dirty data (numbers, letters, special characters), places markers on the map based on them and labels them with nearby populated areas.  
 

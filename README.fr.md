@@ -51,7 +51,7 @@ Snoop est livré avec des assemblages prêts à l'emploi (version) et ne nécess
 <summary> 🟣 Plugins du projet Snoop</summary>  
 
 ### 1. Démonstration de l'une des méthodes du plugin — 〘GEO_IP/domain〙  
-<img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/GEO_IP.gif" />  
+https://github.com/snooppr/snoop/assets/61022210/ab20ec4f-8eb2-40ff-b773-4e3443ad2a70  
 
 $$$$
 
@@ -76,7 +76,7 @@ Nom d'utilisateur du rapport de recherche douzaine (Plugin - Yandex_parser)
 $$$$
 
 ### 3. Démonstration de l'une des méthodes du plugin — 〘Reverse Vgeocoder〙  
-https://github.com/snooppr/snoop/assets/61022210/aeea3c0e-0d1b-429e-8e42-725a6a1a6653  
+https://github.com/snooppr/snoop/assets/61022210/0be6ac32-c72f-4a18-9c9e-3413085f57c3  
 
 Snoop sélectionne uniquement les géocoordonnées à partir de données sales (chiffres, lettres, caractères spéciaux), place des marqueurs sur la carte en fonction de celles-ci et les étiquete avec les zones peuplées à proximité.  
 
