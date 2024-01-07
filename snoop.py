@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.4.0', "s", "d"
+vers, vers_code, demo_full = 'v1.4.0a', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -189,6 +189,26 @@ def info_str(infostr, nick, color=True):
         print(f"{Fore.GREEN}[{Fore.YELLOW}*{Fore.GREEN}] {infostr}{Fore.RED} <{Fore.WHITE} {nick} {Fore.RED}>{Style.RESET_ALL}")
     else:
         print(f"\n[*] {infostr} < {nick} >")
+
+
+## Bad_raw.
+def bad_raw(flagBS_err, time_date, lst_options=[]):
+    print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
+
+    if any(lst_options):
+        print(f"{Fore.CYAN}└────\033[31;1mBad_raw: {flagBS_err}% БД\033[0m")
+    else:
+        if 4 >= flagBS_err >= 2.5:
+            print(f"{Fore.CYAN}└────\033[33;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
+        elif 9 >= flagBS_err > 4:
+            print(f"{Fore.CYAN}└────\033[31;1mВнимание!! Bad_raw: {flagBS_err}% БД\033[0m")
+        elif flagBS_err > 9:
+            print(f"{Fore.CYAN}└────\033[30m\033[41mВнимание!!! Bad_raw: {flagBS_err}% БД, критический уровень\033[0m")
+
+    print(Fore.CYAN + "     └─нестабильное соединение или I_Censorship")
+    print("       \033[36m├─используйте \033[36;1mVPN\033[0m\033[36m/'\033[0m\033[36;1m--web-base\033[0m\033[36m'\033[0m \033[36m\n" + \
+          "       └─или увеличьте значение опции '\033[36;1m-t\033[0m\033[36m'\033[0m\n")
+
 
 
 def format_txt(text, k=False, m=False):
@@ -1798,7 +1818,7 @@ document.getElementById('snoop').innerHTML=""
             writer.writerow('')
             writer.writerow([f'Исключённые_регионы={exl}'])
             writer.writerow([f'Выбор_конкретных_регионов={one}'])
-            writer.writerow([f"Bad_raw:_{flagBS_err}%_БД" if flagBS_err >= 2 else ''])
+            writer.writerow([f"Bad_raw:_{flagBS_err}%_БД" if flagBS_err >= 2.5 else ''])
             writer.writerow('')
             writer.writerow(['Дата'])
             writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_date)])
@@ -1812,20 +1832,16 @@ document.getElementById('snoop').innerHTML=""
 
 ## Финишный вывод.
         if bool(FULL) is True:
-            recomend = "       \033[36m├─используйте \033[36;1mVPN\033[0m \033[36m\n       └─или увеличьте значение опции" + \
-                           "'\033[36;1m-t\033[0m\033[36m'\033[0m\n"
-
             direct_results = f"{dirpath}/results/nicknames/*" if not Windows else f"{dirpath}\\results\\nicknames\\*"
 
             print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} url (сессия: {time_all}_сек__{s_size_all}_Mb)")
             print(f"{Fore.CYAN}├──Сохранено в:{Style.RESET_ALL} {direct_results}")
+
             if flagBS_err >= 2.5:  #perc_%
-                print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
-                print(f"{Fore.CYAN}└────\033[31;1mВнимание! Bad_raw: {flagBS_err}% БД\033[0m")
-                print(f"{Fore.CYAN}     └─нестабильное соединение или I_Censorship")
-                print(recomend)
+                bad_raw(flagBS_err, time_date, lst_options=[args.web, args.exclude_country, args.one_level, args.site_list])
             else:
                 print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
+
             console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
 
 
