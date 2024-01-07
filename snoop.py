@@ -1012,91 +1012,70 @@ def run():
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
     service_group.add_argument("--version", "-V", action="store_true",
-                               help="\033[36mA\033[0mbout: вывод на печать версий:: OS; Snoop; Python и Лицензии"
-                              )
+                               help="\033[36mA\033[0mbout: вывод на печать версий:: OS; Snoop; Python и Лицензии")
     service_group.add_argument("--list-all", "-l", action="store_true", dest="listing",
-                               help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop"
-                              )
+                               help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop")
     service_group.add_argument("--donate", "-d", action="store_true", dest="donation",
                                help="\033[36mП\033[0mожертвовать на развитие Snoop Project-а, получить/приобрести \
-                                     \033[32;1mSnoop full version\033[0m"
-                              )
+                                     \033[32;1mSnoop full version\033[0m")
     service_group.add_argument("--autoclean", "-a", action="store_true", dest="autoclean", default=False,
-                               help="\033[36mУ\033[0mдалить все отчеты, очистить место"
-                              )
+                               help="\033[36mУ\033[0mдалить все отчеты, очистить место")
     service_group.add_argument("--update", "-U", action="store_true", dest="update",
-                               help="\033[36mО\033[0mбновить Snoop"
-                              )
+                               help="\033[36mО\033[0mбновить Snoop")
 # Plugins arguments.
     plugins_group = parser.add_argument_group('\033[36mplugins arguments\033[0m')
     plugins_group.add_argument("--module", "-m", action="store_true", dest="module", default=False,
-                               help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX"
-                              )
+                               help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX")
 # Search arguments.
     search_group = parser.add_argument_group('\033[36msearch arguments\033[0m')
     search_group.add_argument("username", nargs='*', metavar='nickname', action="store", default=None,
                               help="\033[36mН\033[0mикнейм разыскиваемого пользователя. \
                                     Поддерживается поиск одновременно нескольких имен.\
-                                    Ник, содержащий в своем имени пробел, заключается в кавычки"
-                             )
+                                    Ник, содержащий в своем имени пробел, заключается в кавычки")
     search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
-                              help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию"
-                             )
+                              help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию")
     search_group.add_argument("--base", "-b <file>", dest="json_file", default="BDdemo", metavar='',
-                              help=argparse.SUPPRESS if "demo" in version else "\033[36mУ\033[0mказать для поиска 'nickname' другую БД (Локально)"
-                             )
+                              help=argparse.SUPPRESS if "demo" in version else "\033[36mУ\033[0mказать для поиска 'nickname' \
+                                                                                другую БД (Локально)")
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
                               help=f"\033[36mП\033[0mодключиться для поиска 'nickname' к динамично-обновляемой web_БД ({web_sites} сайтов).\
-                                     В demo version функция отключена"
-                             )
+                                     В demo version функция отключена")
     search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list", default=None,
                               help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'nickname' на одном указанном ресурсе, \
-                                    допустимо использовать опцию '-s' несколько раз"
-                             )
+                                    допустимо использовать опцию '-s' несколько раз")
     search_group.add_argument("--exclude", "-e <country_code>", action="append", metavar='', dest="exclude_country", default=None,
-                              help="\033[36mИ\033[0mсключить из поиска выбранный регион, \
-                                    допустимо использовать опцию '-e' несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир"
-                             )
+                              help="\033[36mИ\033[0mсключить из поиска выбранный регион, допустимо использовать опцию '-e' \
+                                    несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир")
     search_group.add_argument("--include", "-i <country_code>", action="append", metavar='', dest="one_level", default=None,
                               help="\033[36mВ\033[0mключить в поиск только выбранный регион, \
-                                    допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине"
-                             )
+                                    допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине")
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
-                              help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту"
-                             )
+                              help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту")
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=9,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                                    "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'.\
-                                    Вкл. эту опцию необходимо при медленном интернет соединении (по умолчанию 9с)"
-                             )
+                                    Вкл. эту опцию необходимо при медленном интернет соединении (по умолчанию 9с)")
     search_group.add_argument("--found-print", "-f", action="store_true", dest="print_found_only", default=False,
-                              help="\033[36mВ\033[0mыводить на печать только найденные аккаунты"
-                             )
+                              help="\033[36mВ\033[0mыводить на печать только найденные аккаунты")
     search_group.add_argument("--no-func", "-n", action="store_true", dest="no_func", default=False,
                               help="\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url \
                                     ✓Запретить открытие web browser-а\
                                     ✓Отключить вывод на печать флагов стран\
-                                    ✓Отключить индикацию и статус прогресса"
-                             )
+                                    ✓Отключить индикацию и статус прогресса")
     search_group.add_argument("--userlist", "-u <file>", metavar='', action="store", dest="user", default=False,
                               help="\033[36mУ\033[0mказать файл со списком user-ов. Snoop интеллектуально обработает \
-                                    данные и предоставит доп.отчеты"
-                             )
+                                    данные и предоставит доп.отчеты")
     search_group.add_argument("--save-page", "-S", action="store_true", dest="reports", default=False,
-                              help="\033[36mС\033[0mохранять найденные странички пользователей в локальные html-файлы"
-                             )
+                              help="\033[36mС\033[0mохранять найденные странички пользователей в локальные html-файлы")
     search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
-                              help=argparse.SUPPRESS
-                             )
+                              help=argparse.SUPPRESS)
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="headerS", nargs=1, default=None,
-                              help=argparse.SUPPRESS
-                             )
+                              help=argparse.SUPPRESS)
     search_group.add_argument("--quick", "-q", action="store_true", dest="norm", default=False,
                               help="""\033[36mБ\033[0mыстрый и агрессивный режим поиска.
                                       Не обрабатывает повторно сбойные ресурсы, в следствие чего, ускоряется поиск, но и немного
                                       повышается Bad_raw. Quick-режим не выводит промежуточные результаты на печать,
-                                      потребляет больше ресурсов, эффективен и предназначен для Snoop full version"""
-                             )
+                                      потребляет больше ресурсов, эффективен и предназначен для Snoop full version""")
 
     args = parser.parse_args()
     # print(args)
