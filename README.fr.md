@@ -108,7 +108,7 @@ $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Si au lieu des drapeaux des pays sont affichés dans des mélanges spéciaux, livrez un ensemble de polices, telles que monochrome
 $ apt-get install ttf-ancient-fonts or color (recommander) $ apt-get install polices-noto-couleur-emoji
-# Sur le système d'exploitation Windows, utilisez CMD ou PowerShell (au choix), mais pas ~~WSL~~ !
+# Sur le système d'exploitation Windows, utilisez CMD ou PowerShell (au choix), mais pas WSL!
 ```
 </details>
 

@@ -922,7 +922,7 @@ def license_snoop():
         if Windows:
             wl = 5 if int(platform.win32_ver()[0]) < 10 else 4
 
-        cop = copyright.read().replace("\ufeffSnoop", "Snoop")
+        cop = copyright.read().replace("\ufeffSnoop", "Snoop", 1)
         cop = cop.replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
         console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
 
@@ -1084,18 +1084,12 @@ def run():
 ## Опции  '-csei' несовместимы между собой и быстрый режим.
     if args.norm and 'full' in version:
         print(Fore.CYAN + format_txt("активирована опция '-q': «быстрый режим поиска»", k=True))
-        args.version, args.listing, args.donation, args.autoclean = False, False, False, False
+        args.version, args.listing, args.donation = False, False, False
         args.update, args.module, args.autoclean = False, False, False
 
         options = []
-        options.append(args.site_list)
-        options.append(args.country)
-        options.append(args.verbose)
-        options.append(args.print_found_only)
-        options.append(args.no_func)
-        options.append(args.reports)
-        options.append(args.cert)
-        options.append(args.headerS)
+        options.extend([args.site_list, args.country, args.verbose, args.print_found_only,
+                        args.no_func, args.reports, args.cert, args.headerS])
 
         if any(options) or args.timeout != 9:
             snoopbanner.logo(text=format_txt("⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']", k=True, m=True))

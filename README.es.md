@@ -107,7 +107,7 @@ $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Si en lugar de las banderas de los países se muestran en mezclas especiales, entregue un paquete de fuentes, como monocromo
 $ apt-get install ttf-ancient-fonts or color (recomendado) $ apt-get install fonts-noto-color-emoji
-# En el sistema operativo Windows, use CMD o PowerShell (para elegir según su conveniencia), ¡pero no ~~WSL~~!
+# En el sistema operativo Windows, use CMD o PowerShell (para elegir según su conveniencia), ¡pero no WSL!
 ```
 </details>
 
