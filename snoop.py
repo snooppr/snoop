@@ -192,7 +192,7 @@ def info_str(infostr, nick, color=True):
 
 
 ## Bad_raw.
-def bad_raw(flagBS_err, time_date, lst_options=[]):
+def bad_raw(flagBS_err, time_date, lst_options):
     print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}")
 
     if any(lst_options):
@@ -1214,8 +1214,8 @@ def run():
         if args.timeout and args.norm is False:
             print(Fore.CYAN + format_txt("активирована опция '-t': ожидание ответа от " + \
                                          "сайта до{0}{1} {2} {3}{4}с.» {5}".format(Style.BRIGHT, Fore.CYAN, timeout,
-                                                                                  Style.RESET_ALL, Fore.CYAN,
-                                                                                  Style.RESET_ALL), k=True))
+                                                                                   Style.RESET_ALL, Fore.CYAN,
+                                                                                   Style.RESET_ALL), k=True))
     except Exception:
         pass
 
@@ -1811,7 +1811,7 @@ document.getElementById('snoop').innerHTML=""
             print(f"{Fore.CYAN}├──Сохранено в:{Style.RESET_ALL} {direct_results}")
 
             if flagBS_err >= 2.5:  #perc_%
-                bad_raw(flagBS_err, time_date, lst_options=[args.web, args.exclude_country, args.one_level, args.site_list])
+                bad_raw(flagBS_err, time_date, [args.web, args.exclude_country, args.one_level, args.site_list])
             else:
                 print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%d/%m/%Y_%H:%M:%S', time_date)}\n")
 
