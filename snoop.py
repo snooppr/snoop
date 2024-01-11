@@ -152,7 +152,7 @@ os.makedirs(f"{dirpath}/results/plugins/ReverseVgeocoder", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/Yandex_parser", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/domain", exist_ok=True)
 
-# Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
+#№ Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
 def web_path_copy():
     try:
         if "build" in version and os.path.exists(f"{dirpath}/web") is False:
@@ -183,7 +183,7 @@ def mem_test():
             return -1
 
 
-## Вывести на печать инфостроки.
+## Вывести на печать инфостроку.
 def info_str(infostr, nick, color=True):
     if color is True:
         print(f"{Fore.GREEN}[{Fore.YELLOW}*{Fore.GREEN}] {infostr}{Fore.RED} <{Fore.WHITE} {nick} {Fore.RED}>{Style.RESET_ALL}")
@@ -210,7 +210,7 @@ def bad_raw(flagBS_err, time_date, lst_options):
           "       └─или увеличьте значение опции '\033[36;1m-t\033[0m\033[36m'\033[0m\n")
 
 
-
+## Форматирование, отступы.
 def format_txt(text, k=False, m=False):
     if Windows:
         gal, ident_h = "[+] ", " " * 4
@@ -375,7 +375,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests_future.mount('http://', adapter)
     requests_future.mount('https://', adapter)
 
-# Печать инфострок.
+
+#№ Печать инфострок.
     еasteregg = ['Snoop', 'snoop', 'SNOOP',
                  'Snoop Project', 'snoop project', 'SNOOP PROJECT',
                  'Snoop_Project', 'snoop_project', 'SNOOP_PROJECT',
@@ -1438,7 +1439,7 @@ def run():
 
 
 ## Работа с базой.
-# опция '-b'. Проверить, существует ли альтернативная база данных, иначе demo.
+# опция '-b'. Проверить, существует ли альтернативная база данных, иначе default.
     if not os.path.exists(str(args.json_file)):
         print(f"\n\033[31;1mОшибка! Неверно указан путь к файлу: '{str(args.json_file)}'.\033[0m")
         sys.exit()
@@ -1803,7 +1804,7 @@ document.getElementById('snoop').innerHTML=""
             d_g_l.clear()
 
 
-## Финишный вывод.
+## Финишный вывод в cli.
         if bool(FULL) is True:
             direct_results = f"{dirpath}/results/nicknames/*" if not Windows else f"{dirpath}\\results\\nicknames\\*"
 
@@ -1853,7 +1854,7 @@ document.getElementById('snoop').innerHTML=""
             pass
 
 
-# Метаинформация
+# Метаинформация.
     if 'full' in version:
         meta()
 ## поиск по выбранным пользователям либо из cli, либо из файла.
