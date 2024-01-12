@@ -152,7 +152,7 @@ os.makedirs(f"{dirpath}/results/plugins/ReverseVgeocoder", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/Yandex_parser", exist_ok=True)
 os.makedirs(f"{dirpath}/results/plugins/domain", exist_ok=True)
 
-#№ Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
+## Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
 def web_path_copy():
     try:
         if "build" in version and os.path.exists(f"{dirpath}/web") is False:
@@ -376,7 +376,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests_future.mount('https://', adapter)
 
 
-#№ Печать инфострок.
+## Печать инфострок.
     еasteregg = ['Snoop', 'snoop', 'SNOOP',
                  'Snoop Project', 'snoop project', 'SNOOP PROJECT',
                  'Snoop_Project', 'snoop_project', 'SNOOP_PROJECT',
