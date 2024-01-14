@@ -1085,14 +1085,14 @@ def run():
 ## Опции  '-csei' несовместимы между собой и быстрый режим.
     if args.norm and 'full' in version:
         print(Fore.CYAN + format_txt("активирована опция '-q': «быстрый режим поиска»", k=True))
-        args.version, args.listing, args.donation = False, False, False
+        args.version, args.listing, args.donation, args.timeout = False, False, False, 8
         args.update, args.module, args.autoclean = False, False, False
 
         options = []
         options.extend([args.site_list, args.country, args.verbose, args.print_found_only,
                         args.no_func, args.reports, args.cert, args.headerS])
 
-        if any(options) or args.timeout != 9:
+        if any(options) or args.timeout != 8:
             snoopbanner.logo(text=format_txt("⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']", k=True, m=True))
     elif args.norm and 'demo' in version:
         snoopbanner.logo(text=format_txt("в demo деактивирован переключатель '-q': «режим SNOOPninja/Quick»", k=True))
