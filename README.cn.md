@@ -191,12 +191,12 @@ $ snoop_cli.exe username1 从发布 Windows 运行
 # 要搜索一个或多个用户：
 $ snoop_cli.exe username1 username2 username3 username4 从发布 Windows 运行
 
-# 搜索大量用户-按国家对结果的输出进行排序；
+# 搜索大量用户；
 # 避免网站冻结（更常见的是"死区"取决于用户的 ip 地址）；
 # 只打印找到的账户； 在本地保存找到的帐户页面；
 # 指定一个包含所需帐户列表的文件；
 # 连接到可扩展和更新的基于 Web 的 Snoop 进行搜索：
-$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #从发行版 linux 运行
+$ snoop_cli -t 6 -f -S -u ~/file.txt -w #从发行版 linux 运行
 # 检查 Snoop 数据库：
 $ snoop_cli --list all #从发行版 linux 运行
 # 打印 Snoop 函数的帮助：

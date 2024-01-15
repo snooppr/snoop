@@ -212,12 +212,12 @@ $ snoop_cli.exe username1 #Ejecución desde ventanas de lanzamiento
 # Para buscar uno o más usuarios:
 $ snoop_cli.exe username1 username2 username3 username4 #Ejecución desde ventanas de lanzamiento
 
-# Busque una gran cantidad de usuarios: ordene la salida de los resultados por país;
+# Busque una gran cantidad de usuarios;
 # evitar bloqueos en sitios web (más a menudo, la "zona muerta" depende de la dirección IP del usuario);
 # imprimir solo las cuentas encontradas; guardar páginas de cuentas encontradas localmente;
 # especificar un archivo con una lista de cuentas buscadas;
 # conectarse a la base web ampliable y actualizada de Snoop para la búsqueda:
-$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #Ejecutando desde la versión de linux
+$ snoop_cli -t 6 -f -S -u ~/file.txt -w #Ejecutando desde la versión de linux
 
 # verifique la base de datos de Snoop:
 $ snoop_cli --list all #Ejecutando desde la versión de Linux

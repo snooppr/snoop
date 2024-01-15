@@ -210,12 +210,12 @@ $ snoop_cli.exe username1 #Running from release win
 # To search for one or more users:
 $ snoop_cli.exe username1 username2 username3 username4 #Running from release win
 
-# Search for a lot of users-sorting the output of results by country;
+# Search for a lot of users;
 # avoiding freezes on websites (more often the "dead zone" depends on the user's ip address);
 # print only found accounts; save pages of found accounts locally; 
 # specify a file with a list of wanted accounts; 
 # connect to the expandable and updated web-base Snoop for search:
-$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w #Running from release linux
+$ snoop_cli -t 6 -f -S -u ~/file.txt -w #Running from release linux
 
 # check the Snoop database:
 $ snoop_cli --list all #Running from release linux
