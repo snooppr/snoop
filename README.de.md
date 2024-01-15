@@ -217,14 +217,14 @@ $ snoop_cli.exe nickname1 #Ausführen eines Builds unter Windows
 # Um nach einem oder mehreren Benutzern zu suchen:
 $ snoop_cli.exe nickname1 nickname2 nickname123321 #Ausführen eines Builds unter Windows
 
-# Suche nach mehreren Benutzern - Sortierung der Ergebnisausgabe nach Ländern;
+# Suche nach mehreren Benutzern;
 # Vermeiden von Einfrieren auf Websites (häufiger hängt die „tote Zone“
 # von der IP-Adresse des Benutzers ab); nur gefundene Accounts drucken;
 # Seiten gefundener Accounts lokal speichern; Geben Sie eine Datei mit einer
 # Liste der gewünschten Konten an. Verbinden Sie sich für die Suche mit der
 # erweiterbaren und aktualisierbaren Snoop-Webbasis; alle Standorte in
 # der Region RU von der Suche ausschließen:
-$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w -e RU #Ausführen eines Builds unter Linux
+$ snoop_cli -t 6 -f -S -u ~/file.txt -w -e RU #Ausführen eines Builds unter Linux
 
 # Überprüfen Sie die Snoop-Datenbank:
 $ snoop_cli --list-all #Ausführen eines Builds unter Linux

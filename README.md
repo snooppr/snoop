@@ -225,13 +225,13 @@ $ snoop_cli.exe nickname1 #Running from release win
 # Для поиска одного и более юзеров:
 $ snoop_cli.exe nickname1 nickname2 nickname123321 #Running from release win
 
-# Поиск множества юзеров — сортировка вывода результатов по странам;
+# Поиск множества юзеров;
 # избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от ip-адреса пользователя);
 # выводить на печать только найденные аккаунты; сохранять странички найденных
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop;
 # исключить из поиска все сайты в RU-регионе:
-$ snoop_cli -с -t 6 -f -S -u ~/file.txt -w -e RU #Running from release linux
+$ snoop_cli -t 6 -f -S -u ~/file.txt -w -e RU #Running from release linux
 
 # Поиск двух username на двух ресурсах:
 $ snoop_cli -s habr -s lichess chikamaria irina
