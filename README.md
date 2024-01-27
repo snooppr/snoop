@@ -86,7 +86,7 @@ $$$$
 ### 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
 https://github.com/snooppr/snoop/assets/61022210/0be6ac32-c72f-4a18-9c9e-3413085f57c3  
 
-Snoop выбирает из грязных данных (цифры, буквы, спецсимволы) лишь геокоррдинаты, расставляет по ним маркеры на карте и подписывает их близлежащими населенными пунками/объектами.  
+Snoop выбирает из грязных данных (цифры, буквы, спецсимволы) лишь геокоррдинаты, расставляет по ним маркеры на карте и подписывает их близлежащими населенными пунктами/объектами.  
 
 Visualization of signed geocoordinates: HTML report (Snoop full version)  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/plugin Reverse Vgeocoder.jpg" />  
