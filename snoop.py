@@ -486,7 +486,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         try:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
             executor1 = ProcessPoolExecutor(max_workers=proc_)
-            #raise Exception("")
+            # raise Exception("")
         except Exception:
             console.log(snoopbanner.err_all(err_="high"))
             global lame_workhorse
@@ -535,7 +535,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             headers.update(param_websites["headers"])
         if headerS is not None:
             headers.update({"User-Agent": ''.join(headerS)})
-        #console.print(headers, websites_names)  #проверка u-агентов
+        # console.print(headers, websites_names)  #проверка u-агентов
 
 # Пропуск временно-отключенного сайта и не делать запрос, если имя пользователя не подходит для сайта.
         exclusionYES = param_websites.get("exclusion")
@@ -750,7 +750,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
                     exists = "увы"
-## Проверка, 4 методов; #4
+## Проверка, 4 методов; #4.
 # Перенаправление.
             elif error_type == "response_url":
 #                print(r.text) #проверка ответа (+- '-S')
