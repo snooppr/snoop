@@ -50,8 +50,8 @@ def donate():
 ╭donate/Buy:
 ├──ЮMoney:: [white]4100111364257544[/white]
 ├──Visa/Сберкарта:: [white]4276100015931808[/white]
-├──Qiwi:: [white]https://qiwi.com/n/SNOOPPROJECT[/white]
-└──PayPal:: [white]snoopproject@protonmail.com[/white]
+├──Qiwi:: [bold black]https://qiwi.com/n/SNOOPPROJECT[/bold black]
+└──PayPal:: [bold black]snoopproject@protonmail.com[bold black]
 
 [bold green]Если пользователя заинтересовало ПО [red]Snoop demo version[/red], то он может приобрести [cyan]Snoop full version[/cyan], поддержав развитие IT-проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
 [bold green]При пожертвовании/покупке в сообщении укажите:[/bold green]
@@ -82,12 +82,13 @@ Snoop full version: плагины без ограничений; {len(DB('BDfla
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]
 
 ❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту[/bold yellow]
-[bold green]Email: [/bold green][cyan]snoopproject@ya.ru[/cyan]""",
+[bold green]Email: [/bold green][cyan]snoopproject@ya.ru
+[bold yellow]Платежные системы PayPal и Qiwi в России сломаны.[/bold yellow][/cyan]""",
                         title="[bold red]demo: (Публичная оферта)",
                         border_style="bold blue"))
 
     try:
-        webbrowser.open("https://qiwi.com/n/SNOOPPROJECT")
+#        webbrowser.open("https://qiwi.com/n/SNOOPPROJECT")
         webbrowser.open("https://yoomoney.ru/to/4100111364257544")
     except Exception:
         print("\033[31;1mНе удалось открыть браузер\033[0m")
