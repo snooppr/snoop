@@ -82,8 +82,8 @@ Snoop full version: плагины без ограничений; {len(DB('BDfla
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]
 
 ❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту[/bold yellow]
-[bold green]Email: [/bold green][cyan]snoopproject@ya.ru
-[bold yellow]Платежные системы PayPal и Qiwi в России сломаны.[/bold yellow][/cyan]""",
+[bold green]Email: [/bold green][cyan]snoopproject@ya.ru[/cyan]
+[bold yellow]Платежные системы PayPal и Qiwi в России сломаны.[/bold yellow]""",
                         title="[bold red]demo: (Публичная оферта)",
                         border_style="bold blue"))
 
