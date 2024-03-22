@@ -108,7 +108,7 @@ e_mail = 'demo: snoopproject@protonmail.com'
 license = 'лицензия'
 ts = (2025, 3, 18, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
-Do = time.strftime('%x', time.gmtime(date_up))
+Do = time.strftime('%Y-%m-%d', time.gmtime(date_up))
 # Чек.
 if time.time() > int(date_up):
     print(Style.BRIGHT + Fore.RED + "ПО " + version + " деактивировано согласно лицензии.")
@@ -192,7 +192,7 @@ def info_str(infostr, nick, color=True):
 
 ## Bad_raw.
 def bad_raw(flagBS_err, time_date, lst_options):
-    print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%x_%H:%M:%S', time_date)}")
+    print(f"{Fore.CYAN}├───Дата поиска:{Style.RESET_ALL} {time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}")
 
     if any(lst_options):
         print(f"{Fore.CYAN}└────\033[31;1mBad_raw: {flagBS_err}% БД\033[0m")
@@ -1409,9 +1409,9 @@ def run():
             for bad_user1, bad_user2 in itertools.zip_longest(short_user, userlists_bad):
                 with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
                     if bad_user1:
-                        bad_nick.write(f"{time.strftime('%x_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user1[1]}'\n")
+                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user1[1]}'\n")
                     if bad_user2:
-                        bad_nick.write(f"{time.strftime('%x_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user2[1]}'\n")
+                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user2[1]}'\n")
 
 
         USERLIST = [i[1] for i in userlists]
@@ -1583,7 +1583,7 @@ def run():
             if bool(FULL) is False:
                 if args.user is False:
                     with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
-                        bad_nick.write(f"{time.strftime('%x_%H:%M:%S', time_date)}  <CLI>  '{username}'\n")
+                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <CLI>  '{username}'\n")
                 continue
 
 ## Запись в txt.
@@ -1615,14 +1615,14 @@ def run():
             file_txt.write("\n" f"База Snoop (demo version): {flagBS} Websites.")
             file_txt.write("\n" f"Исключённые регионы: {exl}.")
             file_txt.write("\n" f"Выбор конкретных регионов: {one}.")
-            file_txt.write("\n" f"Обновлено: {time.strftime('%d/%B/%Y_%H:%M:%S', time_date)}.\n")
+            file_txt.write("\n" f"Обновлено: {time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}.\n")
             file_txt.write("\n" f"©2020-{time.localtime().tm_year} «Snoop Project» (demo version).")
             file_txt.close()
 
 
 ## Запись в html.
             if Android and re.search("[^\W \da-zA-Z]+", nick):
-                username = f"nickname_{time.strftime('%d_%m_%Y_%H-%M-%S')}"
+                username = f"nickname_{time.strftime('%Y-%m-%d_%H-%M-%S')}"
 
             file_html = open(f"{dirpath}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
 
@@ -1661,7 +1661,7 @@ def run():
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
             file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + "</b>.\n")
             file_html.write("<br> База Snoop (demo version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
-            file_html.write("<br> Обновлено: " + "<i><b>" + time.strftime("%d/%B/%Y</b>_%H:%M:%S", time_date) + ".</i><br><br>\n</div>\n")
+            file_html.write("<br> Обновлено: " + "<i><b>" + time.strftime("%Y-%m-%d</b>_%H:%M:%S", time_date) + ".</i><br><br>\n</div>\n")
             file_html.write("""
 <br>
 
@@ -1794,7 +1794,7 @@ document.getElementById('snoop').innerHTML=""
             writer.writerow([f"Bad_raw:_{flagBS_err}%_БД" if flagBS_err >= 2.5 else ''])
             writer.writerow('')
             writer.writerow(['Дата'])
-            writer.writerow([time.strftime("%d/%m/%Y_%H:%M:%S", time_date)])
+            writer.writerow([time.strftime("%Y-%m-%d_%H:%M:%S", time_date)])
             writer.writerow([f'©2020-{time.localtime().tm_year} «Snoop Project»\n(demo version).'])
 
             file_csv.close()
@@ -1813,7 +1813,7 @@ document.getElementById('snoop').innerHTML=""
             if flagBS_err >= 2.5:  #perc_%
                 bad_raw(flagBS_err, time_date, [args.web, args.exclude_country, args.one_level, args.site_list])
             else:
-                print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%x_%H:%M:%S', time_date)}\n")
+                print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}\n")
 
             console.print(Panel(f"{e_mail} до {Do}", title=license, style=STL(color="white", bgcolor="blue")))
 
