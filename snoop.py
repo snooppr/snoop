@@ -390,7 +390,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
     if len(username) < 3:
         print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
-                                                               k=True, m=True) + "\n   пропуск\n")
+                                                   k=True, m=True) + "\n   пропуск\n")
         return False, False
     elif username in еasteregg:
         with console.status("[bold blue] 💡 Обнаружена пасхалка...", spinner='noise'):
@@ -701,9 +701,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 error3 = param_websites.get("errorMsg3") if param_websites.get("errorMsg3") is not None else "FakeNoneNoneNone"
                 if param_websites.get("errorMsg2"):
                     sys.exit()
-#                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #проверка ответа
-#                print(r.encoding) #проверка кодировки
+
                 try:
                     if r.status_code > 200 and param_websites.get("ignore_status_code") is None \
                                                                  or error in r.text or error2 in r.text or error3 in r.text:
@@ -721,8 +719,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Проверка, 4 методов; #2.
 # Проверка username при статусе 301 и 303 (перенаправление и соль).
             elif error_type == "redirection":
-#                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #проверка ответа
                 if r.status_code == 301 or r.status_code == 303:
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
@@ -737,8 +733,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Проверка, 4 методов; #3.
 # Проверяет, является ли код состояния ответа 2..
             elif error_type == "status_code":
-#                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #проверка ответа
                 if not r.status_code >= 300 or r.status_code < 200:
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
@@ -752,8 +746,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Проверка, 4 методов; #4.
 # Перенаправление.
             elif error_type == "response_url":
-#                print(r.text) #проверка ответа (+- '-S')
-#                print(r.status_code) #проверка ответа
                 if 200 <= r.status_code < 300:
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
@@ -1122,7 +1114,7 @@ def run():
     if args.headerS:
         print(Fore.CYAN + format_txt("активирована скрытая опция '-H': «переопределение user-agent(s)»:", k=True), '\n',
               Fore.CYAN + format_txt("user-agent: '{0}{1}{2}{3}{4}'".format(Style.BRIGHT, Fore.CYAN, ''.join(args.headerS),
-                                                                             Style.RESET_ALL, Fore.CYAN)), sep='')
+                                                                            Style.RESET_ALL, Fore.CYAN)), sep='')
 
 
 ## Опция  '-m'.
@@ -1242,10 +1234,10 @@ def run():
 
 # Общий вывод стран (3!).
 # Вывод для full/demo version.
-        def sort_list_all(DB, fore, version, line=None):
+        def sort_list_all(DB, fore, version, line=False):
             listfull = []
             if sortY == "3":
-                if line == "str_line":
+                if line:
                     console.rule("[cyan]Ok, print All Country", style="cyan bold")
                 print("")
                 li = [DB.get(con).get("country_klas") if Windows else DB.get(con).get("country") for con in DB]
@@ -1264,7 +1256,7 @@ def run():
 
 # Сортируем по алфавиту для full/demo version (2!).
             elif sortY == "2":
-                if line == "str_line":
+                if line:
                     console.rule("[cyan]Ok, сортируем по алфавиту", style="cyan bold")
                 if version == "demo version":
                     console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan", bgcolor="red")))
@@ -1284,7 +1276,7 @@ def run():
             elif sortY == "1":
                 listwindows = []
 
-                if line == "str_line":
+                if line:
                     console.rule("[cyan]Ok, сортируем по странам", style="cyan bold")
 
                 for con in DB:
@@ -1302,10 +1294,10 @@ def run():
 
 # Запуск функции '--list-all'.
         if sortY == "1" or sortY == "2":
-            sort_list_all(BDflag, Fore.GREEN, "full version", line="str_line")
+            sort_list_all(BDflag, Fore.GREEN, "full version", line=True)
             sort_list_all(BDdemo, Fore.RED, "demo version")
         elif sortY == "3":
-            sort_list_all(BDdemo, Fore.RED, "demo version", line="str_line")
+            sort_list_all(BDdemo, Fore.RED, "demo version", line=True)
             sort_list_all(BDflag, Fore.GREEN, "full version")
 # Действие не выбрано '--list-all'.
         else:
