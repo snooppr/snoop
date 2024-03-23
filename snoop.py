@@ -102,7 +102,7 @@ console.rule(characters="=", style="cyan")
 print("")
 
 
-## Date +%s конвертер.
+## Date, согласно международному стандарту ISO 8601.
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
@@ -327,7 +327,7 @@ def new_session(url, headers, executor2, requests_future, error_type, username, 
 def sreports(url, headers, executor2, requests_future, error_type, username, websites_names, r):
     os.makedirs(f"{dirpath}/results/nicknames/save reports/{username}", exist_ok=True)
 
-#Сохранять отчеты для метода: redirection.
+# Сохранять отчеты для метода: redirection.
     if error_type == "redirection":
         try:
             response, session_size = new_session(url, headers, executor2, requests_future,
@@ -341,7 +341,7 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
                 session_size = 'Err'  #подсчет извлеченных данных
         except Exception:
             session_size = 'Err'
-#Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
+# Сохранять отчеты для всех остальных методов: status; response; message со стандартными параметрами.
     try:
         with open(f"{dirpath}/results/nicknames/save reports/{username}/{websites_names}.html", 'w', encoding=r.encoding) as rep:
             if 'response' in locals():
@@ -361,8 +361,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
           print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
 
     requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе с процессами.
-    #adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
-    #adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
+    # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
+    # adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
     connections = 200 if not Windows else 50
     maxsize = 100 if not Windows else 30
     requests.packages.urllib3.disable_warnings()
@@ -792,7 +792,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             if verbose is True:
                 ram_free = mem_test()
                 ram_free_color = "[cyan]" if ram_free > 100 else "[red]"
-                R = "[red]" if dif_time > 2.7 and dif_time != ello_time else "[cyan]"  #задержка в общем времени, цвет.
+                R = "[red]" if dif_time > 2.7 and dif_time != ello_time else "[cyan]"  #задержка в общем времени, цвет
                 R1 = "bold red" if dif_time > 2.7 and dif_time != ello_time else "bold blue"
 
                 if session_size == 0 or session_size is None:
