@@ -1270,7 +1270,7 @@ def run():
                     S = datajson_sort.get(con).get("country_klas") if Windows else datajson_sort.get(con).get("country")
                     i += 1
                     listfull.append(f"\033[36;2m{i}.\033[0m \033[36m{S}  {con}")
-                print("\n================\n".join(listfull))
+                print("\n~~~~~~~~~~~~~~~~\n".join(listfull))
 
 # Сортируем по странам для full/demo version (1!).
             elif sortY == "1":
@@ -1290,7 +1290,7 @@ def run():
 
                 for i in enumerate(sorted(listwindows, key=str.lower), 1):
                     listfull.append(f"\033[36;2m{i[0]}. \033[0m\033[36m{i[1]}")
-                print("================\n".join(listfull))
+                print("~~~~~~~~~~~~~~~~\n".join(listfull))
 
 # Запуск функции '--list-all'.
         if sortY == "1" or sortY == "2":
