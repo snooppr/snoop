@@ -1401,9 +1401,9 @@ def run():
             for bad_user1, bad_user2 in itertools.zip_longest(short_user, userlists_bad):
                 with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
                     if bad_user1:
-                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user1[1]}'\n")
+                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <FILE: {userfile}>  '{bad_user1[1]}'\n")
                     if bad_user2:
-                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <{userfile}>  '{bad_user2[1]}'\n")
+                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <FILE: {userfile}>  '{bad_user2[1]}'\n")
 
 
         USERLIST = [i[1] for i in userlists]
