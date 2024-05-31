@@ -113,7 +113,7 @@ search arguments:
   --verbose, -v         When searching for 'nickname', print detailed
                         verbalization
   --web-base, -w        Connect to search for 'nickname' to the updated web_DB
-                        (3000+ websites). In demo version the function is disabled
+                        (4000+ websites). In demo version the function is disabled
   --site , -s <site_name> 
                         Specify the name of the site from the database 
                         '--list-all'. Search for 'nickname' on one specified
