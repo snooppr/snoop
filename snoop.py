@@ -302,7 +302,8 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
 
 ## Сохранение отчетов опция (-S).
 def new_session(url, headers, executor2, requests_future, error_type, username, websites_names, r, t):
-    """Если nickname найден, но актуальная html-страница находится дальше по редиректу,
+    """
+    Если nickname найден, но актуальная html-страница находится дальше по редиректу,
     поднимаем новое соединение и двигаемся по редиректу чтобы ее захватить и сохранить.
     """
 
