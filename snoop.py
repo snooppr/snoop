@@ -27,7 +27,7 @@ import webbrowser
 from charset_normalizer import detect as char_detect
 from collections import Counter
 from colorama import Fore, Style, init
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, TimeoutError
 from multiprocessing import active_children
 from rich.markdown import Markdown
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.4.0a', "s", "d"
+vers, vers_code, demo_full = 'v1.4.0b', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -512,6 +512,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 ## Результаты анализа всех сайтов.
     dic_snoop_full = {}
+    BDdemo_new_quick = {}
     lst_invalid = []
 ## Создание futures на все запросы. Это позволит распараллелить запросы с прерываниями.
     for websites_names, param_websites in BDdemo_new.items():
@@ -579,8 +580,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 # Отправить параллельно все запросы и сохранить future для последующего доступа.
             try:
-                param_websites["request_future"] = executor1.submit(request_method, url=url_API, headers=headers,
-                                                                    allow_redirects=allow_redirects, timeout=timeout)
+                future_ = executor1.submit(request_method, url=url_API, headers=headers,
+                                           allow_redirects=allow_redirects, timeout=timeout)
+
+                if norm: #quick режим
+                    BDdemo_new_quick.update({future_:{websites_names:param_websites}})
+                else: #последовательный режим
+                    param_websites["request_future"] = future_
             except Exception:
                 continue
 # Добавлять во вл. словарь future со всеми другими результатами.
@@ -628,8 +634,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     li_time = [0]
     with progress:
         if color is True:
-            task0 = progress.add_task("", total=len(BDdemo_new))
-        for websites_names, param_websites in BDdemo_new.items():  #БД:-скоррект.Сайт--> флаг,эмодзи,url, url_сайта, gray_lst, запрос-future
+            task0 = progress.add_task("", total=len(BDdemo_new_quick)) if norm else progress.add_task("", total=len(BDdemo_new))
+        iterator_future = iter(as_completed(BDdemo_new_quick)) if norm else iter(BDdemo_new.items())
+        for future in iterator_future:
+            if norm:
+                websites_names = [*BDdemo_new_quick.get(future).keys()][0]
+                param_websites = [*BDdemo_new_quick.get(future).values()][0]
+            else:
+                websites_names = future[0]
+                param_websites = future[1]
             if color is True:
                 progress.update(task0, advance=1, refresh=refresh)  #\nprogress.refresh()
 # Пропустить запрещенный никнейм или пропуск сайта из gray-list.
@@ -643,7 +656,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Получить ожидаемый тип данных 4-х методов.
             error_type = param_websites["errorTypе"]
 # Получить результаты future.
-            r, error_type, response_time = request_res(request_future=param_websites["request_future"], norm=norm,
+            request_future = future if norm else param_websites["request_future"]
+            r, error_type, response_time = request_res(request_future=request_future, norm=norm,
                                                        error_type=error_type, websites_names=websites_names,
                                                        print_found_only=print_found_only, verbose=verbose,
                                                        color=color, timeout=timeout, country_code=f" ~{country_code}")
@@ -828,7 +842,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
 # не удерживать сокетом отработанное по всем п. соединение с сервером и предотвратить утечку памяти.
             requests_future.close()  #не имеет смысла urllib3 v1.26.14+
-            param_websites.pop("request_future", None)
+            if norm:
+                BDdemo_new_quick.pop(future, None)
+            else:
+                param_websites.pop("request_future", None)
+
 # Высвободить незначительную часть ресурсов.
         try:
             if 'executor2' in locals(): executor2.shutdown()
