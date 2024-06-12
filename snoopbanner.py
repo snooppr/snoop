@@ -67,22 +67,27 @@ def donate():
 
 Snoop в исполняемом виде (build-версия) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
 Лицензия для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке: [/bold green]
-[cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], также лицензия доступна по команде '[/bold green][cyan]snoop_cli -V[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe -V[/cyan][bold green]' у исполняемого файла.
+[cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], также лицензия доступна по команде '[/bold green][cyan]snoop_cli --version[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe --version[/cyan][bold green]' у исполняемого файла.
 
 Если ПО Snoop требуется пользователю для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.
 Студентам ПО Snoop full version предоставляется с 50% скидкой.
 
-Snoop full version: плагины без ограничений; {len(DB('BDflag')) // 100}00+ Websites;
-поддержка и обновление Database Snoop;
-подключение к Web_Database Snoop (online), которая расширяется/обновляется;
-отключены всплывающие окна в HTML-отчёте про упоминание Snoop demo-version.[/bold green]
-[bold red]Ограничения demo version: Websites (Database Snoop сокращена в > 15 раз);
-отключены некоторые опции/плагины; необновляемая Database_Snoop.[/bold red]
+Snoop full version:
+ * плагины без ограничений;
+ * 4000+ Websites;
+ * поддержка локальной и онлайн database snoop;
+ * подключение к БД snoop (online), которая расширяется/обновляется;
+ * доступен быстрый и агрессивный режим поиска;
+ * отключены всплывающие окна в HTML-отчёте про упоминание snoop demo version.[/bold green]
+[bold red]Ограничения Snoop demo version:
+ * database Snoop сокращена в > 15 раз;
+ * необновляемая database snoop;
+ * отключены некоторые опции/плагины.[/bold red]
 
 [bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]
 
-❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту[/bold yellow]
+❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту.[/bold yellow]
 [bold green]Email: [/bold green][cyan]snoopproject@ya.ru[/cyan]
 """,
                         title="[bold red]demo: (Публичная оферта)",

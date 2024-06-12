@@ -364,8 +364,18 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе с процессами.
     # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
     # adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
-    connections = 200 if not Windows else 50
-    maxsize = 100 if not Windows else 30
+    if Windows:
+        if os.cpu_count() >= 16:
+            connections_win = 90
+            maxsize_win = 80
+        elif os.cpu_count() == 12:
+            connections_win = 70
+            maxsize_win = 60
+        elif os.cpu_count() <= 8:
+            connections_win = 50
+            maxsize_win = 40
+    connections = 200 if not Windows else connections_win
+    maxsize = 100 if not Windows else maxsize_win
     requests.packages.urllib3.disable_warnings()
     adapter = requests.adapters.HTTPAdapter()
     adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False)
@@ -496,7 +506,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if norm is False:
             tread__ = len(BDdemo_new) if len(BDdemo_new) < 15 else 15
         else:
-            tread__ = len(BDdemo_new) if len(BDdemo_new) < 18 else 18
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (os.cpu_count() * 5)
         executor1 = ThreadPoolExecutor(max_workers=tread__)
     elif Linux:
         if norm is False:
@@ -1083,10 +1093,11 @@ def run():
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="headerS", nargs=1, default=None,
                               help=argparse.SUPPRESS)
     search_group.add_argument("--quick", "-q", action="store_true", dest="norm", default=False,
-                              help="""\033[36mБ\033[0mыстрый и агрессивный режим поиска.
-                                      Не обрабатывает повторно сбойные ресурсы, вследствие чего ускоряется поиск, но и немного
-                                      повышается Bad_raw. Quick-режим не выводит промежуточные результаты на печать,
-                                      потребляет больше ресурсов, эффективен и предназначен для Snoop full version""")
+                              help="""\033[36mБ\033[0mыстрый и агрессивный режим поиска\033[0m.
+                                      Не обрабатывает повторно сбойные ресурсы, вследствие чего ускоряется поиск,
+                                      но и немного повышается Bad_raw. Quick-режим подстраивается под мощность ПК,
+                                      не выводит промежуточные результаты на печать,
+                                      эффективен и предназначен для Snoop full version""")
 
     args = parser.parse_args()
     # print(args)
