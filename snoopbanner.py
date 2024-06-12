@@ -78,6 +78,7 @@ Snoop full version:
  * поддержка локальной и онлайн database snoop;
  * подключение к БД snoop (online), которая расширяется/обновляется;
  * доступен быстрый и агрессивный режим поиска;
+ * доступна пользовательская настройка скорости работы ПО/разгон поиска;
  * отключены всплывающие окна в HTML-отчёте про упоминание snoop demo version.[/bold green]
 [bold red]Ограничения Snoop demo version:
  * database Snoop сокращена в > 15 раз;
@@ -105,7 +106,7 @@ Snoop full version:
 
 
 ## Лого.
-def logo(text):
+def logo(text, exit=True):
     if sys.platform != 'win32':
         with console.screen():
             console.print("""[cyan]
@@ -129,8 +130,9 @@ def logo(text):
     for i in text:
         time.sleep(0.04)
         print(f"\033[31;1m{i}", end='', flush=True)
-    print("\033[31;1m\n\nВыход")
-    sys.exit()
+    if exit:
+        print("\033[31;1m\n\nВыход")
+        sys.exit()
 
 
 # snoop.py Справка Модули 'if mod == 'help'.

@@ -188,6 +188,19 @@ search arguments:
                         Définissez l'agent utilisateur manuellement, l'agent est entouré de
                         guillemets, par défaut, un agent utilisateur aléatoire ou remplacé
                         de la base de données snoop est défini pour chaque site
+  --acceleration , -A <digit> 
+                        Désactivez l'optimisation automatique et définissez l'accélération de
+                        la recherche manuelle de 1 à 160 USD. Par défaut, la limite
+                        personnelle de tout appareil en mode rapide est utilisée ; dans les
+                        autres modes, la limite des PC faibles est utilisée. Définir une
+                        valeur trop basse ou trop élevée peut ralentir considérablement le
+                        logiciel. ~Valeur optimale calculée pour cet appareil, voir bloc
+                        'snoop info' paramètre 'Accélération' option [--version/-V]. Il est recommandé d'utiliser cette option 1) si l'utilisateur dispose d'un
+                        appareil multicœur 2) ne souhaite pas utiliser le mode rapide
+                        [--quick/-q] 3) a l'intention d'accélérer la recherche, par exemple,
+                        dans le mode avec l'option [--found-print/-f'] . L'option est
+                        personnelle et peut accélérer la recherche dans la version complète
+                        de Snoop à des vitesses énormes
   --quick, -q           Mode de recherche rapide et agressif.
                         Ne retraite pas les ressources défaillantes,
                         ce qui accélère la recherche,

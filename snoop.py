@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.4.0b', "s", "d"
+vers, vers_code, demo_full = 'v1.4.0c', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -358,12 +358,13 @@ def sreports(url, headers, executor2, requests_future, error_type, username, web
         return session_size
 
 ## Основная функция.
-def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
+def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False, speed=False,
           print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
 
-    requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе с процессами.
-    # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
-    # adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
+    if speed:
+        connections = speed + 10
+        maxsize = speed
+        
     if Windows and 'full' in version:
         if os.cpu_count() > 16:
             connections_win = 130
@@ -380,9 +381,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     elif Windows and 'demo' in version:
         connections_win = 50
         maxsize_win = 30
-    connections = 200 if not Windows else connections_win
-    maxsize = 100 if not Windows else maxsize_win
+
+    if speed is False:
+        connections = 200 if not Windows else connections_win
+        maxsize = 100 if not Windows else maxsize_win
+
+    requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе с процессами.
     requests.packages.urllib3.disable_warnings()
+    # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
+    # adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
     adapter = requests.adapters.HTTPAdapter()
     adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False)
     requests_future = requests.Session()
@@ -501,25 +508,25 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     if Android:
         try:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
-            executor1 = ProcessPoolExecutor(max_workers=proc_)
+            executor1 = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
             # raise Exception("")
         except Exception:
             console.log(snoopbanner.err_all(err_="high"))
             global lame_workhorse
             lame_workhorse = True
-            executor1 = ThreadPoolExecutor(max_workers=8)
+            executor1 = ThreadPoolExecutor(max_workers=8 if not speed else speed)
     elif Windows:
         if norm is False:
             tread__ = len(BDdemo_new) if len(BDdemo_new) < 15 else 15
         else:
             tread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (os.cpu_count() * 5 if os.cpu_count() <= 24 else 120)
-        executor1 = ThreadPoolExecutor(max_workers=tread__)
+        executor1 = ThreadPoolExecutor(max_workers=tread__ if not speed else speed)
     elif Linux:
         if norm is False:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 80 else 80
         else:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 100 else 100
-        executor1 = ProcessPoolExecutor(max_workers=proc_)
+        executor1 = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if reports:
         executor2 = ThreadPoolExecutor(max_workers=1)
@@ -879,10 +886,22 @@ def timeout_check(value):
         global timeout
         timeout = int(value)
     except Exception:
-        raise argparse.ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'. \033[0m")
+        raise argparse.ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'.\n \033[0m")
     if timeout <= 0:
-        raise argparse.ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время > 0sec. \033[0m")
+        raise argparse.ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время > 0sec.\n \033[0m")
     return timeout
+
+
+## Опция '-A'.
+def speed_snoop(speed):
+    try:
+        speed = int(speed)
+        if speed <= 0 or speed > 160:
+            raise Exception("")
+        return int(speed)
+    except Exception:
+        raise argparse.ArgumentTypeError(f"\n\033[31;1mУскорение = '{speed}' Err,\033[0m" + \
+                                          " \033[36mдиапазон ускорения от 1 до 160 целым числом.\n \033[0m")
 
 
 ## Обновление Snoop.
@@ -1019,7 +1038,8 @@ def license_snoop():
                                              f"(speedtest::{networktest.speedtest.__version__}){rich_v}{psutil_v}" + \
                                              f"{folium_v}{numpy_v}{colorama_v}{urllib3_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
-                              f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}",
+                              f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}\n" + \
+                              f"Acceleration: [dim cyan]{os.cpu_count() * 5} у.е.[/dim cyan]",
                               title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
     sys.exit()
 
@@ -1098,15 +1118,28 @@ def run():
                               help=argparse.SUPPRESS)
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="headerS", nargs=1, default=None,
                               help=argparse.SUPPRESS)
+    search_group.add_argument("--acceleration", "-A <digit>", metavar='', dest="speed", type=speed_snoop, default=False,
+                              help=
+                              """
+                              \033[36mО\033[0mтключить автооптимизацию и задать ручное ускорение поиска от 1 до 160 у.е. По умолчанию используется
+                              персональная предельная граница любого устройства в Quick-режиме, в остальных режимах используется предельная
+                              граница слабых ПК. Слишком низкое или высокое значение может существенно замедлить работу ПО. ~Расчетное
+                              оптимальное значение для данного устройства см. блок 'snoop info' параметр 'Acceleration' опция [--version/-V].
+                              Данную опцию рекомендуется использовать 1) если пользователь имеет многоядерное устройство 2) не желает
+                              использовать Quick-режим [--quick/-q] 3) намеревается ускорить поиск, например, в режиме с опцией 
+                              [--found-print/-f']. Опция персональна и способна разогнать поиск в Snoop full version до огромных скоростей
+                              """)
     search_group.add_argument("--quick", "-q", action="store_true", dest="norm", default=False,
-                              help="""\033[36mБ\033[0mыстрый и агрессивный режим поиска\033[0m.
-                                      Не обрабатывает повторно сбойные ресурсы, вследствие чего ускоряется поиск,
-                                      но и немного повышается Bad_raw. Quick-режим подстраивается под мощность ПК,
-                                      не выводит промежуточные результаты на печать,
-                                      эффективен и предназначен для Snoop full version""")
+                              help=
+                              """
+                              \033[36mБ\033[0mыстрый и агрессивный режим поиска.
+                              Не обрабатывает повторно сбойные ресурсы, вследствие чего ускоряется поиск,
+                              но и немного повышается Bad_raw. Quick-режим подстраивается под мощность ПК,
+                              не выводит промежуточные результаты на печать,
+                              эффективен и предназначен для Snoop full version
+                              """)
 
     args = parser.parse_args()
-    # print(args)
 
 
 ## Опции  '-csei' несовместимы между собой и быстрый режим.
@@ -1117,12 +1150,13 @@ def run():
 
         options = []
         options.extend([args.site_list, args.country, args.verbose, args.print_found_only,
-                        args.no_func, args.reports, args.cert, args.headerS])
+                        args.no_func, args.reports, args.cert, args.headerS, args.speed])
 
         if any(options) or args.timeout != 8:
             snoopbanner.logo(text=format_txt("⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']", k=True, m=True))
     elif args.norm and 'demo' in version:
-        snoopbanner.logo(text=format_txt("в demo деактивирован переключатель '-q': «режим SNOOPninja/Quick»", k=True))
+        snoopbanner.logo(text=format_txt("в demo деактивирован переключатель '-q': «режим SNOOPninja/Quick»", k=True), exit=False)
+        snoopbanner.donate()
     elif args.norm is False and args.listing is False and 'full' in version:
         if Linux:
             print(Fore.CYAN + format_txt("активирован дефолтный поиск '--': «режим SNOOPninja»", k=True))
@@ -1134,6 +1168,16 @@ def run():
         if k == 2:
             snoopbanner.logo(text=format_txt("⛔️ опции ['-c', '-e' '-i', '-s'] несовместимы между собой", k=True, m=True))
 
+
+## Опция  '-A'.
+    if args.speed and 'full' in version:
+        print(Fore.CYAN + format_txt("активирована опция '-A': «настройка ускорения =" + \
+                                     "{0}{1} {2}{3}{4} у.е.» {5}".format(Style.BRIGHT, Fore.CYAN, args.speed,
+                                                                     Style.RESET_ALL, Fore.CYAN,
+                                                                     Style.RESET_ALL), k=True))
+    elif args.speed and 'demo' in version:
+        snoopbanner.logo(text=format_txt("в demo недоступна ручная настройка ускорения опция '-A'", k=True), exit=False)
+        snoopbanner.donate()
 
 ## Опция  '-V' не путать с опцией '-v'.
     if args.version:
@@ -1604,7 +1648,7 @@ def run():
 
             FULL, hardware = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose, cert=args.cert,
                                    norm=args.norm, reports=args.reports, print_found_only=args.print_found_only, timeout=args.timeout,
-                                   color=not args.no_func, headerS=args.headerS)
+                                   color=not args.no_func, headerS=args.headerS, speed=args.speed)
 
             exists_counter = 0
 

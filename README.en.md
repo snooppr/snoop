@@ -186,6 +186,19 @@ search arguments:
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
                         from the snoop database is set for each site
+  --acceleration , -A <digit> 
+                        Disable auto optimization and set manual search acceleration
+                        from 1 to 160 USD. By default, the personal limit of any device
+                        in Quick mode is used; in other modes, the limit of weak PCs is
+                        used. Setting the value too low or high can significantly slow
+                        down the software. ~Calculated optimal value for this device,
+                        see block 'snoop info' parameter 'Acceleration' option
+                        [--version/-V]. This option is recommended to be used 1) if the
+                        user has a multi-core device 2) does not want to use Quick mode
+                        [--quick/-q] 3) intends to speed up the search, for example,
+                        in the mode with the [--found-print/-f'] option . The option is
+                        personal and can accelerate the search in Snoop full version
+                        to enormous speeds
   --quick, -q           Fast and aggressive search mode. 
                         Does not reprocess failed resources,
                         which speeds up the search,
