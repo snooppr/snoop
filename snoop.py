@@ -364,8 +364,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе с процессами.
     # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
     # adapter.init_poolmanager(connections=connections, maxsize=maxsize, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
-    if Windows:
-        if os.cpu_count() >= 16:
+    if Windows and 'full' in version:
+        if os.cpu_count() > 16:
+            connections_win = 130
+            maxsize_win = 120
+        elif os.cpu_count() == 16:
             connections_win = 90
             maxsize_win = 80
         elif os.cpu_count() == 12:
@@ -374,6 +377,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         elif os.cpu_count() <= 8:
             connections_win = 50
             maxsize_win = 40
+    elif Windows and 'demo' in version:
+        connections_win = 50
+        maxsize_win = 30
     connections = 200 if not Windows else connections_win
     maxsize = 100 if not Windows else maxsize_win
     requests.packages.urllib3.disable_warnings()
@@ -506,7 +512,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if norm is False:
             tread__ = len(BDdemo_new) if len(BDdemo_new) < 15 else 15
         else:
-            tread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (os.cpu_count() * 5)
+            tread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (os.cpu_count() * 5 if os.cpu_count() <= 24 else 120)
         executor1 = ThreadPoolExecutor(max_workers=tread__)
     elif Linux:
         if norm is False:
