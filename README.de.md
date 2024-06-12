@@ -191,7 +191,23 @@ search arguments:
                         Setzen Sie den User-Agent manuell, der Agent wird in
                         Anführungszeichen gesetzt, standardmäßig wird ein zufälliger
                         oder überschriebener User-Agent aus der Snoop-Datenbank
-                        für jede Site gesetzt
+                        für jede Site 
+  --acceleration , -A <digit> 
+                        Deaktivieren Sie die automatische Optimierung und stellen Sie
+                        die manuelle Suchbeschleunigung von 1 bis 160 USD ein.
+                        Standardmäßig wird das persönliche Limit eines beliebigen
+                        Geräts im Schnellmodus verwendet; in anderen Modi wird das
+                        Limit schwacher PCs verwendet. Wenn Sie den Wert zu niedrig
+                        oder zu hoch einstellen, kann dies die Software erheblich
+                        verlangsamen. ~Berechneter optimaler Wert für dieses Gerät,
+                        siehe Block-'Snoop-Info'-Parameter 'Beschleunigung'-Option
+                        [--version/-V]. Es wird empfohlen, diese Option zu verwenden,
+                        1) wenn der Benutzer ein Multi-Core-Gerät hat, 2) den
+                        Schnellmodus [--quick/-q] nicht verwenden möchte und
+                        3) beispielsweise die Suche im Modus beschleunigen möchte mit
+                        der Option [--found-print/-f'] . Die Option ist persönlich und
+                        kann die Suche in der Snoop-Vollversion auf enorme
+                        Geschwindigkeiten beschleunigen
   --quick, -q           Schneller und aggressiver Suchmodus.
                         Verarbeitet fehlerhafte Ressourcen nicht erneut,
                         was die Suche beschleunigt, aber auch Bad_raw leicht erhöht.
