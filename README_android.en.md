@@ -150,10 +150,13 @@ search arguments:
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
                         from the snoop database is set for each site
-  --quick, -q           Fast and aggressive search mode. Does not reprocess bad
-                        resources, as a result of which the search is accelerated,
-                        but Bad_raw also increases. Does not print intermediate results.
-                        Consumes more resources. The mode is effective in full version
+  --quick, -q           Fast and aggressive search mode. 
+                        Does not reprocess failed resources,
+                        which speeds up the search,
+                        but also slightly increases Bad_raw.
+                        Quick mode adapts to PC power,
+                        does not print intermediate results,
+                        is effective and is designed for Snoop full version
 ```
 
 **Example**

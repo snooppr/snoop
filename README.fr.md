@@ -188,10 +188,13 @@ search arguments:
                         Définissez l'agent utilisateur manuellement, l'agent est entouré de
                         guillemets, par défaut, un agent utilisateur aléatoire ou remplacé
                         de la base de données snoop est défini pour chaque site
-  --quick, -q           Mode de recherche rapide et agressif. Ne retraite pas les mauvaises
-                        ressources, ce qui accélère la recherche, mais Bad_raw augmente
-                        également. N'imprime pas les résultats intermédiaires. Consomme plus
-                        de ressources. Le mode est efficace en version complète
+  --quick, -q           Mode de recherche rapide et agressif.
+                        Ne retraite pas les ressources défaillantes,
+                        ce qui accélère la recherche,
+                        mais augmente également légèrement Bad_raw.
+                        Le mode rapide s'adapte à la puissance du PC,
+                        n'imprime pas les résultats intermédiaires,
+                        est efficace et est conçu pour la version complète de Snoop
 ```
 
 **Exemple**

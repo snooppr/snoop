@@ -192,11 +192,12 @@ search arguments:
                         Anführungszeichen gesetzt, standardmäßig wird ein zufälliger
                         oder überschriebener User-Agent aus der Snoop-Datenbank
                         für jede Site gesetzt
-  --quick, -q           Schneller und aggressiver Suchmodus. Verarbeitet schlechte
-                        Ressourcen nicht erneut, wodurch die Suche beschleunigt wird,
-                        aber Bad_raw erhöht sich auch. Druckt keine Zwischenergebnisse.
-                        Verbraucht mehr Ressourcen. Der Modus ist in der Vollversion
-                        wirksam
+  --quick, -q           Schneller und aggressiver Suchmodus.
+                        Verarbeitet fehlerhafte Ressourcen nicht erneut,
+                        was die Suche beschleunigt, aber auch Bad_raw leicht erhöht.
+                        Der Schnellmodus passt sich der PC-Leistung an,
+                        druckt keine Zwischenergebnisse,
+                        ist effektiv und für die Snoop-Vollversion konzipiert
 ```  
 
 **Beispiel**

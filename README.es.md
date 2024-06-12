@@ -188,10 +188,11 @@ argumentos de búsqueda:
                         se configura un agente de usuario aleatorio o anulado
                         de la base de datos de snoop para cada sitio
   --quick, -q           Modo de búsqueda rápido y agresivo.
-                        No reprocesa los malos recursos, por lo que se acelera
-                        la búsqueda, pero también aumenta Bad_raw. 
-                        No imprime resultados intermedios. Consume más recursos.
-                        El modo es efectivo en la versión completa
+                        No reprocesa los recursos fallidos, lo que acelera la búsqueda,
+                        pero también aumenta ligeramente Bad_raw.
+                        El modo rápido se adapta a la potencia del PC,
+                        no imprime resultados intermedios,
+                        es efectivo y está diseñado para la versión completa de Snoop
 ```
 
 **Ejemplo**
