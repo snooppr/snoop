@@ -1181,7 +1181,7 @@ def run():
                                                                      Style.RESET_ALL, Fore.CYAN,
                                                                      Style.RESET_ALL), k=True))
     elif args.speed and 'demo' in version:
-        snoopbanner.logo(text=format_txt("в demo недоступна ручная настройка ускорения опция '-A'", k=True), exit=False)
+        snoopbanner.logo(text=format_txt("в demo недоступна опция '-p' пользовательская настройка ускорения", k=True), exit=False)
         snoopbanner.donate()
 
 ## Опция  '-V' не путать с опцией '-v'.
