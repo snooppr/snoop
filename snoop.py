@@ -363,7 +363,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
     if speed:
         connections = speed + 10
-        maxsize = speed
+        maxsize = speed + 5
         
     if Windows and 'full' in version:
         if os.cpu_count() > 16:
@@ -892,7 +892,7 @@ def timeout_check(value):
     return timeout
 
 
-## Опция '-A'.
+## Опция '-p'.
 def speed_snoop(speed):
     try:
         speed = int(speed)
@@ -900,8 +900,8 @@ def speed_snoop(speed):
             raise Exception("")
         return int(speed)
     except Exception:
-        raise argparse.ArgumentTypeError(f"\n\033[31;1mУскорение = '{speed}' Err,\033[0m" + \
-                                          " \033[36mдиапазон ускорения от 1 до 160 целым числом.\n \033[0m")
+        raise argparse.ArgumentTypeError(f"\n\033[31;1mMax. workers thread/proc = '{speed}' Err,\033[0m" + \
+                                          " \033[36m рабочий диапазон от 1 до 160 целым числом.\n \033[0m")
 
 
 ## Обновление Snoop.
@@ -973,6 +973,8 @@ def license_snoop():
         console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
 
     if not Android:
+        pool_ = os.cpu_count() * 5 if Windows else 100
+
         if Windows and 'full' in version:
             ram_av = 1100
         elif Windows and 'demo' in version:
@@ -997,6 +999,8 @@ def license_snoop():
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
     elif Android:
+        pool_ = os.cpu_count() * 2
+
         try:
             ram = subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[1]
             ram_free = int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
@@ -1039,7 +1043,7 @@ def license_snoop():
                                              f"{folium_v}{numpy_v}{colorama_v}{urllib3_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
                               f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}\n" + \
-                              f"Acceleration: [dim cyan]{os.cpu_count() * 5} у.е.[/dim cyan]",
+                              f"Recommended pool: [dim cyan]{pool_}[/dim cyan]",
                               title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
     sys.exit()
 
@@ -1085,8 +1089,7 @@ def run():
                               help=argparse.SUPPRESS if "demo" in version else "\033[36mУ\033[0mказать для поиска 'nickname' \
                                                                                 другую БД (Локально)")
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
-                              help=f"\033[36mП\033[0mодключиться для поиска 'nickname' к динамично-обновляемой web_БД ({web_sites} сайтов).\
-                                     В demo version функция отключена")
+                              help=f"\033[36mП\033[0mодключиться для поиска 'nickname' к динамично-обновляемой web_БД ({web_sites} сайтов)")
     search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list", default=None,
                               help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'nickname' на одном указанном ресурсе, \
                                     допустимо использовать опцию '-s' несколько раз")
@@ -1118,16 +1121,17 @@ def run():
                               help=argparse.SUPPRESS)
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="headerS", nargs=1, default=None,
                               help=argparse.SUPPRESS)
-    search_group.add_argument("--acceleration", "-A <digit>", metavar='', dest="speed", type=speed_snoop, default=False,
+    search_group.add_argument("--pool", "-p <digit>", metavar='', dest="speed", type=speed_snoop, default=False,
                               help=
                               """
-                              \033[36mО\033[0mтключить автооптимизацию и задать ручное ускорение поиска от 1 до 160 у.е. По умолчанию используется
-                              персональная предельная граница любого устройства в Quick-режиме, в остальных режимах используется предельная
-                              граница слабых ПК. Слишком низкое или высокое значение может существенно замедлить работу ПО. ~Расчетное
-                              оптимальное значение для данного устройства см. блок 'snoop info' параметр 'Acceleration' опция [--version/-V].
-                              Данную опцию рекомендуется использовать 1) если пользователь имеет многоядерное устройство 2) не желает
-                              использовать Quick-режим [--quick/-q] 3) намеревается ускорить поиск, например, в режиме с опцией 
-                              [--found-print/-f']. Опция персональна и способна разогнать поиск в Snoop full version до огромных скоростей
+                              \033[36mО\033[0mтключить автооптимизацию и задать вручную ускорение поиска от 1 до 160 макс. рабочих
+                              потоков/процессов. По умолчанию используется персональная предельная граница любого устройства в
+                              Quick-режиме, в остальных режимах используется предельная граница слабых ПК. Слишком низкое или высокое
+                              значение может существенно замедлить работу ПО. ~Расчетное оптимальное значение для данного устройства
+                              см. блок 'snoop info' параметр 'Recommended pool' опция [--version/-V]. Данную опцию рекомендуется
+                              использовать 1) если пользователь имеет многоядерное устройство 2) не желает использовать Quick-режим
+                              [--quick/-q] 3) намеревается ускорить поиск, например, в режиме с опцией [--found-print/-f'].
+                              Опция персональна и способна разогнать поиск в Snoop full version до огромных скоростей
                               """)
     search_group.add_argument("--quick", "-q", action="store_true", dest="norm", default=False,
                               help=
@@ -1169,10 +1173,11 @@ def run():
             snoopbanner.logo(text=format_txt("⛔️ опции ['-c', '-e' '-i', '-s'] несовместимы между собой", k=True, m=True))
 
 
-## Опция  '-A'.
+## Опция  '-p'.
     if args.speed and 'full' in version:
-        print(Fore.CYAN + format_txt("активирована опция '-A': «настройка ускорения =" + \
-                                     "{0}{1} {2}{3}{4} у.е.» {5}".format(Style.BRIGHT, Fore.CYAN, args.speed,
+        thread_proc = "потоков" if Windows else "процессов"
+        print(Fore.CYAN + format_txt(f"активирована опция '-P': «макс. рабочих {thread_proc} =" + \
+                                     "{0}{1} {2}{3}{4}» {5}".format(Style.BRIGHT, Fore.CYAN, args.speed,
                                                                      Style.RESET_ALL, Fore.CYAN,
                                                                      Style.RESET_ALL), k=True))
     elif args.speed and 'demo' in version:

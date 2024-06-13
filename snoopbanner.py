@@ -67,7 +67,8 @@ def donate():
 
 Snoop в исполняемом виде (build-версия) предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.
 Лицензия для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке: [/bold green]
-[cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], также лицензия доступна по команде '[/bold green][cyan]snoop_cli --version[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe --version[/cyan][bold green]' у исполняемого файла.
+[cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], также лицензия доступна по команде::
+'[/bold green][cyan]snoop_cli --version[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe --version[/cyan][bold green]' у исполняемого файла.
 
 Если ПО Snoop требуется пользователю для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.
 Студентам ПО Snoop full version предоставляется с 50% скидкой.
@@ -77,8 +78,8 @@ Snoop full version:
  * 4000+ Websites;
  * поддержка локальной и онлайн database snoop;
  * подключение к БД snoop (online), которая расширяется/обновляется;
- * доступен быстрый и агрессивный режим поиска;
- * доступна пользовательская настройка скорости работы ПО/разгон поиска;
+ * доступен автооптимизированный, быстрый и агрессивный режим поиска;
+ * доступна пользовательская настройка разгона скорости работы ПО;
  * отключены всплывающие окна в HTML-отчёте про упоминание snoop demo version.[/bold green]
 [bold red]Ограничения Snoop demo version:
  * database Snoop сокращена в > 15 раз;
