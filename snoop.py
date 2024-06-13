@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.4.0c', "s", "d"
+vers, vers_code, demo_full = 'v1.4.1', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -953,7 +953,7 @@ def autoclean():
                 if os.path.isfile(total_file): delfiles.append(total_file)
 # Сброс кэша и удаление каталога 'results'.
             shutil.rmtree(rm, ignore_errors=True)
-            print(f"\n\033[31;1mdeleted --> {rm}\033[0m\033[36m {len(delfiles)} files, {round(total_size/1024/1024, 2)} Mb\033[0m")
+            print(f"\n\033[31;1mdeleted --> '{rm}'\033[0m\033[36m {len(delfiles)} files, {round(total_size/1024/1024, 2)} Mb\033[0m")
         except Exception:
             console.log("[red]Ошибка")
     else:
@@ -1658,9 +1658,10 @@ def run():
             exists_counter = 0
 
             if bool(FULL) is False:
-                if args.user is False:
-                    with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
-                        bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}  <CLI>  '{username}'\n")
+                cli_file = " <CLI>       " if args.user is False else f" <FILE: {userfile}>"
+                with open (f"{dirpath}/results/nicknames/bad_nicknames.txt", "a", encoding="utf-8") as bad_nick:
+                    bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', time_date)} {cli_file}  '{username}'\n")
+
                 continue
 
 ## Запись в txt.
