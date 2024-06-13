@@ -187,21 +187,21 @@ argumentos de búsqueda:
                         el agente está entre comillas, de manera predeterminada,
                         se configura un agente de usuario aleatorio o anulado
                         de la base de datos de snoop para cada sitio
-  --acceleration , -A <digit> 
-                        Desactive la optimización automática y configure la aceleración
-                        de búsqueda manual de 1 a 160 USD. De forma predeterminada, se
-                        usa el límite personal de cualquier dispositivo en el modo
-                        Rápido; en otros modos, se usa el límite de PC débiles.
-                        Establecer un valor demasiado alto o bajo puede ralentizar
-                        significativamente el software. ~Valor óptimo calculado para
-                        este dispositivo, consulte la opción 'Aceleración' del parámetro
-                        'información de snoop' del bloque [--versión/-V]. Se recomienda
-                        utilizar esta opción 1) si el usuario tiene un dispositivo
-                        multinúcleo 2) no desea utilizar el modo rápido [--quick/-q]
-                        3) tiene la intención de acelerar la búsqueda, por ejemplo, en
-                        el modo con la opción [--found-print/-f']. La opción es personal
-                        y puede acelerar la búsqueda en la versión completa de Snoop
-                        a velocidades enormes.
+  --pool , -p <digit>  
+                        Desactive la optimización automática y establezca la aceleración
+                        de búsqueda manual de 1 a 160 como máximo. subprocesos/procesos
+                        de trabajo. De forma predeterminada, se usa el límite personal
+                        de cualquier dispositivo en el modo Rápido; en otros modos, se
+                        usa el límite de PC débiles. Establecer un valor demasiado alto
+                        o bajo puede ralentizar significativamente el software. ~Valor
+                        óptimo calculado para este dispositivo, consulte la opción
+                        'Grupo recomendado' del parámetro 'información de snoop' del
+                        bloque [--versión/-V]. Se recomienda utilizar esta opción
+                        1) si el usuario tiene un dispositivo multinúcleo 2) no desea
+                        utilizar el modo rápido [--quick/-q] 3) tiene la intención de
+                        acelerar la búsqueda, por ejemplo, en el modo con la opción
+                        [--found-print/-f']. La opción es personal y puede acelerar la
+                        búsqueda en la versión completa de Snoop a velocidades enormes.
   --quick, -q           Modo de búsqueda rápido y agresivo.
                         No reprocesa los recursos fallidos, lo que acelera la búsqueda,
                         pero también aumenta ligeramente Bad_raw.
