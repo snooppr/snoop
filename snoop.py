@@ -1176,7 +1176,7 @@ def run():
 ## Опция  '-p'.
     if args.speed and 'full' in version:
         thread_proc = "потоков" if Windows else "процессов"
-        print(Fore.CYAN + format_txt(f"активирована опция '-P': «макс. рабочих {thread_proc} =" + \
+        print(Fore.CYAN + format_txt(f"активирована опция '-p': «макс. рабочих {thread_proc} =" + \
                                      "{0}{1} {2}{3}{4}» {5}".format(Style.BRIGHT, Fore.CYAN, args.speed,
                                                                      Style.RESET_ALL, Fore.CYAN,
                                                                      Style.RESET_ALL), k=True))
