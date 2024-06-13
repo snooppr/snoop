@@ -440,7 +440,7 @@ def module2():
                     meta_icon(bad=wZ1bad_raw2, marker_cluster=marker_cluster, maps=maps, file=hvostR)
                     folium.LayerControl(collapsed=False).add_to(maps)
 # Сохранение карты osm.
-                    namemaps = time.strftime("%d_%m_%Y_%H_%M_%S", time_date)
+                    namemaps = time.strftime("%Y-%m-%d_%H_%M_%S", time_date)
                     namemaps = (f'Maps_{namemaps}.html')
                     mapsme = str(dirresults + "/results/plugins/ReverseVgeocoder/" + str(namemaps))
                     maps.save(mapsme)
