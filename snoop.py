@@ -106,7 +106,7 @@ print("")
 e_mail = 'demo: snoopproject@protonmail.com'
 # лицензия: год/месяц/число.
 license = 'лицензия'
-ts = (2025, 3, 18, 3, 0, 0, 0, 0, 0)
+ts = (2025, 6, 13, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 Do = time.strftime('%Y-%m-%d', time.gmtime(date_up))
 # Чек.
