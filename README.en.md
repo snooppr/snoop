@@ -135,7 +135,7 @@ service arguments:
                         Snoop database
   --donate, -d          Donate to the development of the Snoop Project,
                         get/buy Snoop Full Version
-  --autoclean, -a       Delete all reports, clear space
+  --autoclean, -a       Delete all reports, clear cache
   --update, -U          Update Snoop
 
 plugins arguments:
