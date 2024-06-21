@@ -1070,7 +1070,7 @@ def run():
                                help="\033[36mП\033[0mожертвовать на развитие Snoop Project-а, получить/приобрести \
                                      \033[32;1mSnoop full version\033[0m")
     service_group.add_argument("--autoclean", "-a", action="store_true", dest="autoclean", default=False,
-                               help="\033[36mУ\033[0mдалить все отчеты, очистить место")
+                               help="\033[36mУ\033[0mдалить все отчеты, очистить кэш")
     service_group.add_argument("--update", "-U", action="store_true", dest="update",
                                help="\033[36mО\033[0mбновить Snoop")
 # Plugins arguments.

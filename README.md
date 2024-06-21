@@ -143,7 +143,7 @@ service arguments:
                         данных Snoop
   --donate, -d          Пожертвовать на развитие Snoop Project-а,
                         получить/приобрести Snoop full version
-  --autoclean, -a       Удалить все отчеты, очистить место
+  --autoclean, -a       Удалить все отчеты, очистить кэш
   --update, -U          Обновить Snoop
 
 plugins arguments:
