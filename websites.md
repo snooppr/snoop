@@ -4327,3 +4327,4 @@
 4326. 🌎 [Zoimas](https://zoimas.com)
 4327. 🌎 [Zomato](https://www.zomato.com)
 4328. 🇷🇺 [Zonazakona](https://www.zonazakona.ru)
+4329. 🇷🇺 [TechnoDzen] (https://technodzen.com/)
