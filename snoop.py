@@ -1083,8 +1083,6 @@ def run():
                               help="\033[36mН\033[0mикнейм разыскиваемого пользователя. \
                                     Поддерживается поиск одновременно нескольких имен.\
                                     Ник, содержащий в своем имени пробел, заключается в кавычки")
-    search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
-                              help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию")
     search_group.add_argument("--base", "-b <file>", dest="json_file", default="BDdemo", metavar='',
                               help=argparse.SUPPRESS if "demo" in version else "\033[36mУ\033[0mказать для поиска 'nickname' \
                                                                                 другую БД (Локально)")
@@ -1099,19 +1097,21 @@ def run():
     search_group.add_argument("--include", "-i <country_code>", action="append", metavar='', dest="one_level", default=None,
                               help="\033[36mВ\033[0mключить в поиск только выбранный регион, \
                                     допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине")
-    search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
-                              help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту")
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=timeout_check, default=9,
                               help="\033[36mУ\033[0mстановить выделение макс.времени на ожидание ответа от сервера (секунды).\n"
                                    "Влияет на продолжительность поиска. Влияет на 'Timeout ошибки'.\
                                     Вкл. эту опцию необходимо при медленном интернет соединении (по умолчанию 9с)")
-    search_group.add_argument("--found-print", "-f", action="store_true", dest="print_found_only", default=False,
-                              help="\033[36mВ\033[0mыводить на печать только найденные аккаунты")
+    search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
+                              help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту")
     search_group.add_argument("--no-func", "-n", action="store_true", dest="no_func", default=False,
                               help="\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url \
                                     ✓Запретить открытие web browser-а\
                                     ✓Отключить вывод на печать флагов стран\
                                     ✓Отключить индикацию и статус прогресса")
+    search_group.add_argument("--found-print", "-f", action="store_true", dest="print_found_only", default=False,
+                              help="\033[36mВ\033[0mыводить на печать только найденные аккаунты")
+    search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
+                              help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию")
     search_group.add_argument("--userlist", "-u <file>", metavar='', action="store", dest="user", default=False,
                               help="\033[36mУ\033[0mказать файл со списком user-ов. Snoop интеллектуально обработает \
                                     данные и предоставит доп.отчеты")
