@@ -1900,7 +1900,10 @@ document.getElementById('snoop').innerHTML=""
             if args.no_func is False and exists_counter >= 1:
                 try:
                     if not Android:
-                        webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
+                        try:
+                            webbrowser.open(f"file://{dirpath}/results/nicknames/html/{username}.html")
+                        except Exception:
+                            console.print("[bold red]Невозможно открыть web-браузер, проблемы в операционной системе.")
                     else:
                         install_service = Style.DIM + Fore.CYAN + \
                                               "\nДля авто-открытия результатов во внешнем браузере на Android у пользователя " + \
