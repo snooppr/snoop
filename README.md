@@ -460,5 +460,6 @@ https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-
 
 ⋮ **История звёзд.**  
 
-[![Star History Chart](https://api.star-history.com/svg?repos=snooppr/snoop&type=Date)](https://star-history.com/#snooppr/snoop&Date)
+[![Stargazers over time](https://starchart.cc/snooppr/snoop.svg?variant=adaptive)](https://starchart.cc/snooppr/snoop)  
+
 </details>
