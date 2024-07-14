@@ -162,7 +162,7 @@ def web_path_copy():
                     if os.path.isfile(total_file_path) == True:
                         os.chmod(total_file_path, 0o644)
                     else:
-                        os.chmod(total_file_path, 0o755)            
+                        os.chmod(total_file_path, 0o755)
         elif "source" in version and Android and os.path.exists("/data/data/com.termux/files/home/storage/shared/snoop/web") is False:
             shutil.copytree(f"{dirresults}/web", "/data/data/com.termux/files/home/storage/shared/snoop/web")
     except Exception as e:
@@ -364,7 +364,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     if speed:
         connections = speed + 10
         maxsize = speed + 5
-        
+
     if Windows and 'full' in version:
         if os.cpu_count() > 16:
             connections_win = 130

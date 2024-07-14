@@ -15,7 +15,7 @@ c'est-à-dire qu'il est disponible pour l'utilisateur moyen *(date de création 
 Selon la recherche spécialisée de Snoop, il est capable de concurrencer les moteurs de recherche traditionnels.*</sub>  
 
 Comparaison des indexations de bases de données tels outils:  
-<img src="https://img.shields.io/badge/Snoop-~4400+%20sites Internet-success" width="50%" />  
+<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4400+%20sites Internet-success" width="50%" /></a>  
 <img src="https://img.shields.io/badge/Sherlock-~400 sites Internet-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 sites Internet-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 sites Internet-yellowgreen" width="20%" />  
