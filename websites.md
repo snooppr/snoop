@@ -4402,3 +4402,4 @@
 4401. 🌎 [Zoimas](https://zoimas.com)
 4402. 🌎 [Zomato](https://www.zomato.com)
 4403. 🇷🇺 [Zonazakona](https://www.zonazakona.ru)
+4404. 🇺🇸 [weedx.io](https://www.weedx.io/)
