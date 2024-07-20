@@ -359,9 +359,6 @@ An
  • **Snoop ist nicht perfekt:** Websites fallen aus; es gibt keine schließenden Tags; Verbindungen werden zensiert; Hosting wird nicht rechtzeitig bezahlt. All dieser "Web Rock 'n' Roll" muss von Zeit zu Zeit angeschaut werden, daher sind Spenden willkommen:
 [Beispiele für geschlossene/schlechte Websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).    
 
- • **Repository-Komprimierung 27. Januar 2022:** Wenn Sie Probleme haben, erstellen Sie einen neuen „Git-Klon“.  
-
-
  • **Visualisierung von Commits:** von der Geburt des Projekts bis Freitag, den dreizehnten 2023.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  

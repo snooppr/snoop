@@ -343,9 +343,6 @@ on
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
 [example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
 
- • **Merged snoop_termux and master branches October 12, 2023:** To continue receiving updates for Snoop for Android/Termux, switch to the 'master' branch::  
- `$ git checkout master`  
-
  • **Visualization of commits:** from the birth of the project to Friday the thirteenth, 2023.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  

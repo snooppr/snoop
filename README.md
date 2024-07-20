@@ -437,11 +437,6 @@ $ sudo nano /etc/ssl/openssl.cnf
 Время от времени необходимо следить за всем этим "Web rock 'n' roll", поэтому донаты приветствуются:
 [примеры коррекции БД/Example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).    
 
- ⋮ **Сжатие репозитория 27 января 2022г.:** если возникли проблемы сделайте 'git clone' по новому.  
-
- ⋮ **Слияние веток snoop_termux и master 12 октября 2023г.:** чтобы и дальше получать обновления для Snoop for Android/Termux перейдите на ветку 'master'::  
- `$ git checkout master`  
-
  ⋮ **Внимание**❗️ Из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту: snoopproject@ya.ru  
 
  ⋮ **Визуализация  коммитов:** от рождения проекта до пятницы тринадцатого 2023г/~3года.  
