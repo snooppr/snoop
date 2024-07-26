@@ -10,6 +10,16 @@ Ist Ihr Leben eine Diashow? Frag Snoop.
 Das Snoop-Projekt wird entwickelt, ohne die Meinungen der NSA und ihrer Freunde zu berücksichtigen,  
 das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februar 2020)*.  
 
+
+   🇩🇪 **DEUTSCHE readme**  
+ • [🇷🇺 РУССКИЙ readme](https://github.com/snooppr/snoop)  
+ • [🇪🇸 ESPAÑOL readme](https://github.com/snooppr/snoop/blob/master/README.es.md "Por favor, siéntase libre de mejorar la traducción de esta página.")  
+ • [🌎 ENGLISH readme](https://github.com/snooppr/snoop/blob/master/README.en.md)  
+ • [🇨🇳 中国人 readme](https://github.com/snooppr/snoop/blob/master/README.cn.md "请随时改进此页面的翻译。")  
+ • [🇫🇷 FRANÇAIS readme](https://github.com/snooppr/snoop/blob/master/README.fr.md "N'hésitez pas à améliorer la traduction de cette page.")  
+
+ ---
+
 > [!NOTE]
 > <sub>*Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*</sub>  
 

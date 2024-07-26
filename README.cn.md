@@ -10,6 +10,16 @@
 Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发的，  
 即普通用户可用 *（项目创建日期：2020 年 2 月 14 日）。*  
 
+
+  🇨🇳 **中国人 readme**  
+ • [🌎 ENGLISH readme](https://github.com/snooppr/snoop/blob/master/README.en.md "Please feel free to improve the translation of this page.")  
+ • [🇪🇸 ESPAÑOL readme](https://github.com/snooppr/snoop/blob/master/README.es.md "Por favor, siéntase libre de mejorar la traducción de esta página.")  
+ • [🇩🇪 DEUTSCHE readme](https://github.com/snooppr/snoop/blob/master/README.de.md "Bitte zögern Sie nicht, die Übersetzung dieser Seite zu verbessern..")  
+ • [🇷🇺 РУССКИЙ readme](https://github.com/snooppr/snoop)   
+ • [🇫🇷 FRANÇAIS readme](https://github.com/snooppr/snoop/blob/master/README.fr.md "N'hésitez pas à améliorer la traduction de cette page.")  
+
+ ---
+
 > [!NOTE]
 > <sub>Snoop 是一项在互联网上搜索和处理公共数据的研究开发工作（自己的数据库/关闭的 bugbounty）。  
 根据 Snoop 的专业搜索，它有能力与传统搜索引擎竞争。</sub>  

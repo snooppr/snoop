@@ -10,6 +10,16 @@ Proyecto Snoop
 El proyecto Snoop se desarrolla sin tener en cuenta las opiniones de la NSA y sus amigos,  
 es decir, está al alcance del usuario medio *(14 de febrero de 2020)*.  
 
+
+   🇪🇸 **ESPAÑOL readme**  
+ • [🇷🇺 РУССКИЙ readme](https://github.com/snooppr/snoop)  
+ • [🌎 ENGLISH readme](https://github.com/snooppr/snoop/blob/master/README.en.md)  
+ • [🇩🇪 DEUTSCHE readme](https://github.com/snooppr/snoop/blob/master/README.de.md "Bitte zögern Sie nicht, die Übersetzung dieser Seite zu verbessern..")  
+ • [🇨🇳 中国人 readme](https://github.com/snooppr/snoop/blob/master/README.cn.md "请随时改进此页面的翻译。")  
+ • [🇫🇷 FRANÇAIS readme](https://github.com/snooppr/snoop/blob/master/README.fr.md "N'hésitez pas à améliorer la traduction de cette page.")  
+
+ ---
+
 > [!NOTE]
 > <sub>*Snoop es un trabajo de desarrollo de investigación (base de datos propia/bugbounty cerrado) en la búsqueda y procesamiento de datos públicos en Internet. Según la búsqueda especializada de Snoop, es capaz de competir con los motores de búsqueda tradicionales.*</sub>  
 

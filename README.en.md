@@ -10,6 +10,16 @@ Is your life slideshow? Ask Snoop.
 Snoop project is developed without taking into account the opinions of the NSA and their friends,  
 that is, it is available to the average user *(project creation date: February 14, 2020)*.  
 
+
+   🌎 **ENGLISH readme**  
+ • [🇷🇺 РУССКИЙ readme](https://github.com/snooppr/snoop)  
+ • [🇪🇸 ESPAÑOL readme](https://github.com/snooppr/snoop/blob/master/README.es.md "Por favor, siéntase libre de mejorar la traducción de esta página.")  
+ • [🇩🇪 DEUTSCHE readme](https://github.com/snooppr/snoop/blob/master/README.de.md "Bitte zögern Sie nicht, die Übersetzung dieser Seite zu verbessern..")  
+ • [🇨🇳 中国人 readme](https://github.com/snooppr/snoop/blob/master/README.cn.md "请随时改进此页面的翻译。")  
+ • [🇫🇷 FRANÇAIS readme](https://github.com/snooppr/snoop/blob/master/README.fr.md "N'hésitez pas à améliorer la traduction de cette page.")  
+
+ ---
+
 > [!NOTE]
 > <sub>*Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.
 According to Snoop's specialized search, it is capable of competing with traditional search engines.*</sub>  
