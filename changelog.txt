@@ -3,7 +3,7 @@
 ********
 *v1.4.1a*
 ********
-* (a) Убрана страница донатов CloudTips. Build-версии 'snoop_cli' для GNU/Linux переименована в 'snoop_cli.bin'
+* (a) Убрана страница донатов CloudTips. Build-версия 'snoop_cli' для GNU/Linux переименована в 'snoop_cli.bin'
 и другие незначительные некоторые изменения.
 
 * Расширена поисковая web-base Snoop ↑ 4200+ сайтов.
