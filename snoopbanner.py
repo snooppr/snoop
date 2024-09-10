@@ -74,7 +74,7 @@ Snoop в исполняемом виде (build-версия) предостав
 Студентам ПО Snoop full version предоставляется с 50% скидкой.
 
 Snoop full version:
- * 4000+ Websites;
+ * 4400+ Websites;
  * поддержка локальной и онлайн database snoop;
  * подключение к БД snoop (online), которая расширяется/обновляется;
  * доступен автооптимизированный, быстрый и агрессивный режим поиска;
@@ -97,9 +97,7 @@ Snoop full version:
                         border_style="bold blue"))
 
     try:
-#        webbrowser.open("https://qiwi.com/n/SNOOPPROJECT")
         webbrowser.open("https://yoomoney.ru/to/4100111364257544")
-        webbrowser.open("https://pay.cloudtips.ru/p/e4f3e65f")
     except Exception:
         print("\033[31;1mНе удалось открыть браузер\033[0m")
 
