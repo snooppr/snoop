@@ -83,9 +83,9 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 
 ## Using
 ```
-usage: snoop_cli [search arguments...] nickname
+usage: python snoop.py [search arguments...] nickname
 or
-usage: snoop_cli [service arguments | plugins arguments]
+usage: python snoop.py [service arguments | plugins arguments]
 
 $ python snoop.py --help
 
@@ -193,10 +193,10 @@ $ python3 snoop.py username1 username2 username3 username4
 $ python3 snoop.py -с -t 9 -f -S -u ~/file.txt -w
 
 # Поиск двух username на двух ресурсах:
-$ snoop_cli -s habr -s lichess chikamaria irina
+$ python snoop.py -s habr -s lichess chikamaria irina
 
 # Получить Snoop full version:
-$ snoop_cli --donate
+$ python snoop.py --donate
 ```
 **'ctrl + c'** — прервать поиск (остановить корректно ПО).  
 

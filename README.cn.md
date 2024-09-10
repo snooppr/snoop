@@ -126,12 +126,12 @@ $ apt-get install ttf-ancient-fonts 或颜色（推荐） $ apt-get install font
 <summary> 🟢 使用</summary>  
 
 ```
-usage: snoop_cli [search arguments...] nickname
+usage: snoop_cli.bin [search arguments...] nickname
 or
-usage: snoop_cli [service arguments | plugins arguments]
+usage: snoop_cli.bin [service arguments | plugins arguments]
 
 
-$ snoop_cli --help #手动 snoop 构建版本 GNU/Linux
+$ snoop_cli.bin --help #手动 snoop 构建版本 GNU/Linux
 
 Help
 
@@ -196,13 +196,13 @@ search arguments:
 ```
 # 仅搜索一个用户：
 $ python3 snoop.py username1 #从源代码运行
-$ snoop_cli username1 #从发行版 linux 运行
+$ snoop_cli.bin username1 #从发行版 linux 运行
 # 或者，例如，支持西里尔字母：
 $ python3 snoop.py олеся #从源代码运行
 # 要搜索包含空格的名称：
-$ snoop_cli "bob dylan" #从发行版 linux 运行
-$ snoop_cli dob_dylan #从发行版 linux 运行
-$ snoop_cli bob-dylan #从发行版 linux 运行
+$ snoop_cli.bin "bob dylan" #从发行版 linux 运行
+$ snoop_cli.bin dob_dylan #从发行版 linux 运行
+$ snoop_cli.bin bob-dylan #从发行版 linux 运行
 
 # 在 Windows 操作系统上运行：
 $ python snoop.py username1 #从源代码运行
@@ -215,20 +215,20 @@ $ snoop_cli.exe username1 username2 username3 username4 从发布 Windows 运行
 # 只打印找到的账户； 在本地保存找到的帐户页面；
 # 指定一个包含所需帐户列表的文件；
 # 连接到可扩展和更新的基于 Web 的 Snoop 进行搜索：
-$ snoop_cli -t 6 -f -S -u ~/file.txt -w #从发行版 linux 运行
+$ snoop_cli.bin -t 6 -f -S -u ~/file.txt -w #从发行版 linux 运行
 # 检查 Snoop 数据库：
-$ snoop_cli --list all #从发行版 linux 运行
+$ snoop_cli.bin --list all #从发行版 linux 运行
 # 打印 Snoop 函数的帮助：
-$ snoop_cli --help #从发行版 linux 运行
+$ snoop_cli.bin --help #从发行版 linux 运行
 
 # 启用 Snoop 插件：
-$ snoop_cli --module #从发行版 linux 运行
+$ snoop_cli.bin --module #从发行版 linux 运行
 
 # 在两个资源上搜索两个用户名：
-$ snoop_cli -s habr -s lichess chikamaria irina
+$ snoop_cli.bin -s habr -s lichess chikamaria irina
 
 # 获取 Snoop 完整版：
-$ snoop_cli --donate
+$ snoop_cli.bin --donate
 ```
 + 'ctrl-c' — 中止搜索。  
 + 找到的账户将存储在 `~/snoop/results/nicknames/*{txt|csv|html}`.  

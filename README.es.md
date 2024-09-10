@@ -125,12 +125,12 @@ $ apt-get install ttf-ancient-fonts or color (recomendado) $ apt-get install fon
 <summary> 🟢 Usando</summary>  
 
 ```
-uso: snoop_cli [argumentos de búsqueda...] nickname
+uso: snoop_cli.bin [argumentos de búsqueda...] nickname
 o
-uso: snoop_cli [argumentos de servicio | argumentos de complementos]
+uso: snoop_cli.bin [argumentos de servicio | argumentos de complementos]
 
 
-$ snoop_cli --help #versión de compilación manual de snoop GNU/Linux
+$ snoop_cli.bin --help #versión de compilación manual de snoop GNU/Linux
 
 Ayuda
 
@@ -224,13 +224,13 @@ argumentos de búsqueda:
 ```
 # Para buscar solo un usuario:
 $ python3 snoop.py username1 #Ejecutando desde la fuente
-$ snoop_cli username1 #Ejecutando desde la versión de Linux
+$ snoop_cli.bin username1 #Ejecutando desde la versión de Linux
 # O, por ejemplo, se admite cirílico:
 $ python3 snoop.py олеся #Ejecutando desde la fuente
 # Para buscar un nombre que contenga un espacio:
-$ snoop_cli "bob dylan" #Ejecutando desde la versión de linux
-$ snoop_cli dob_dylan #Ejecutando desde la versión de linux
-$ snoop_cli bob-dylan #Ejecutando desde la versión de linux
+$ snoop_cli.bin "bob dylan" #Ejecutando desde la versión de linux
+$ snoop_cli.bin dob_dylan #Ejecutando desde la versión de linux
+$ snoop_cli.bin bob-dylan #Ejecutando desde la versión de linux
 
 # Ejecutándose en el sistema operativo Windows:
 $ python snoop.py username1 #Corriendo desde la fuente
@@ -243,22 +243,22 @@ $ snoop_cli.exe username1 username2 username3 username4 #Ejecución desde ventan
 # imprimir solo las cuentas encontradas; guardar páginas de cuentas encontradas localmente;
 # especificar un archivo con una lista de cuentas buscadas;
 # conectarse a la base web ampliable y actualizada de Snoop para la búsqueda:
-$ snoop_cli -t 6 -f -S -u ~/file.txt -w #Ejecutando desde la versión de linux
+$ snoop_cli.bin -t 6 -f -S -u ~/file.txt -w #Ejecutando desde la versión de linux
 
 # verifique la base de datos de Snoop:
-$ snoop_cli --list all #Ejecutando desde la versión de Linux
+$ snoop_cli.bin --list all #Ejecutando desde la versión de Linux
 
 # imprime la ayuda para las funciones de Snoop:
-$ snoop_cli --help #Ejecutando desde la versión de Linux
+$ snoop_cli.bin --help #Ejecutando desde la versión de Linux
 
 # Busque dos nombres de usuario en dos recursos:
-$ snoop_cli -s habr -s lichess chikamaria irina
+$ snoop_cli.bin -s habr -s lichess chikamaria irina
 
 # Obtener la versión completa de Snoop:
-$ snoop_cli --donate
+$ snoop_cli.bin --donate
 
 # Habilitar los complementos de Snoop:
-$ snoop_cli --module #Ejecutando desde la versión de Linux
+$ snoop_cli.bin --module #Ejecutando desde la versión de Linux
 ```
 + 'ctrl-c' — abortar búsqueda.  
 + Las cuentas encontradas se almacenarán en `~/snoop/results/nicknames/*{txt|csv|html}`.  

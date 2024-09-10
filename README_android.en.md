@@ -80,9 +80,9 @@ NOTE_4!: old patched python versions 3.7-3.10 from are supported [termux_tur rep
 
 ## Using
 ```
-usage: snoop_cli [search arguments...] nickname
+usage: python snoop.py [search arguments...] nickname
 or
-usage: snoop_cli [service arguments | plugins arguments]
+usage: python snoop.py [service arguments | plugins arguments]
 
 $ python snoop.py --help
 
@@ -195,10 +195,10 @@ $ python3 snoop.py username1 username2 username3 username4
 $ python3 snoop.py -c -t 9 -f -S -u ~/file.txt -w
 
 # Search for two usernames on two resources:
-$ snoop_cli -s habr -s lichess chikamaria irina
+$ python snoop.py -s habr -s lichess chikamaria irina
 
 # Get Snoop full version:
-$ snoop_cli --donate
+$ python snoop.py --donate
 
 # 'ctrl-c' — abort search
 ```

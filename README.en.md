@@ -126,12 +126,12 @@ $ apt-get install fonts-noto-color-emoji or (monochrome) $ apt-get install ttf-a
 <summary> 🟢 Using</summary>  
 
 ```
-usage: snoop_cli [search arguments...] nickname
+usage: snoop_cli.bin [search arguments...] nickname
 or
-usage: snoop_cli [service arguments | plugins arguments]
+usage: snoop_cli.bin [service arguments | plugins arguments]
 
 
-$ snoop_cli --help #manual snoop build version GNU/Linux
+$ snoop_cli.bin --help #manual snoop build version GNU/Linux
 
 Help
 
@@ -223,13 +223,13 @@ search arguments:
 ```
 # To search for only one user:
 $ python3 snoop.py username1 #Running from source
-$ snoop_cli username1 #Running from release linux
+$ snoop_cli.bin username1 #Running from release linux
 # Or, for example, Cyrillic is supported:
 $ python3 snoop.py олеся #Running from source
 # To search for a name containing a space:
-$ snoop_cli "bob dylan" #Running from release linux
-$ snoop_cli dob_dylan #Running from release linux
-$ snoop_cli bob-dylan #Running from release linux
+$ snoop_cli.bin "bob dylan" #Running from release linux
+$ snoop_cli.bin dob_dylan #Running from release linux
+$ snoop_cli.bin bob-dylan #Running from release linux
 
 # Running on Windows OS:
 $ python snoop.py username1 #Running from source
@@ -242,22 +242,22 @@ $ snoop_cli.exe username1 username2 username3 username4 #Running from release wi
 # print only found accounts; save pages of found accounts locally; 
 # specify a file with a list of wanted accounts; 
 # connect to the expandable and updated web-base Snoop for search:
-$ snoop_cli -t 6 -f -S -u ~/file.txt -w #Running from release linux
+$ snoop_cli.bin -t 6 -f -S -u ~/file.txt -w #Running from release linux
 
 # check the Snoop database:
-$ snoop_cli --list all #Running from release linux
+$ snoop_cli.bin --list all #Running from release linux
 
 # print the help for Snoop functions:
-$ snoop_cli --help #Running from release linux
+$ snoop_cli.bin --help #Running from release linux
 
 # Searching for two usernames on two resources:
-$ snoop_cli -s habr -s lichess chikamaria irina
+$ snoop_cli.bin -s habr -s lichess chikamaria irina
 
 # Get Snoop full version:
-$ snoop_cli --donate
+$ snoop_cli.bin --donate
 
 # Enable Snoop plugins:
-$ snoop_cli --module #Running from release linux
+$ snoop_cli.bin --module #Running from release linux
 ```
 + 'ctrl-c' — abort search.  
 + The found accounts will be stored in `~/snoop/results/nicknames/*{txt|csv|html}`.  

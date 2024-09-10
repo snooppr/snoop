@@ -126,12 +126,12 @@ $ apt-get install ttf-ancient-fonts oder Farbe (empfohlen) $ apt-get install fon
 <summary> 🟢 Verwendung</summary>  
 
 ```
-usage: snoop_cli [search arguments...] nickname
+usage: snoop_cli.bin [search arguments...] nickname
 or
-usage: snoop_cli [service arguments | plugins arguments]
+usage: snoop_cli.bin [service arguments | plugins arguments]
 
 
-$ snoop_cli --help #Build unter GNU/Linux ausführen
+$ snoop_cli.bin --help #Build unter GNU/Linux ausführen
 
 Hilfe
 
@@ -230,13 +230,13 @@ search arguments:
 ```
 # So suchen Sie nach nur einem Benutzer:
 $ python3 snoop.py nickname1 #Aus dem Quellcode ausgeführt
-$ snoop_cli nickname1 #Ausführen eines Builds unter Linux
+$ snoop_cli.bin nickname1 #Ausführen eines Builds unter Linux
 # Oder es wird beispielsweise Kyrillisch unterstützt:
 $ python3 snoop.py олеся #Aus dem Quellcode ausgeführt
 # So suchen Sie nach einem Namen, der ein Leerzeichen enthält:
-$ snoop_cli "ivan ivanov" #Ausführen eines Builds unter Linux
-$ snoop_cli ivan_ivanov #Ausführen eines Builds unter Linux
-$ snoop_cli ivan-ivanov #Ausführen eines Builds unter Linux
+$ snoop_cli.bin "ivan ivanov" #Ausführen eines Builds unter Linux
+$ snoop_cli.bin ivan_ivanov #Ausführen eines Builds unter Linux
+$ snoop_cli.bin ivan-ivanov #Ausführen eines Builds unter Linux
 
 # Auf dem Betriebssystem Windows ausführen:
 $ python snoop.py nickname1 #Aus dem Quellcode ausgeführt
@@ -251,22 +251,22 @@ $ snoop_cli.exe nickname1 nickname2 nickname123321 #Ausführen eines Builds unte
 # Liste der gewünschten Konten an. Verbinden Sie sich für die Suche mit der
 # erweiterbaren und aktualisierbaren Snoop-Webbasis; alle Standorte in
 # der Region RU von der Suche ausschließen:
-$ snoop_cli -t 6 -f -S -u ~/file.txt -w -e RU #Ausführen eines Builds unter Linux
+$ snoop_cli.bin -t 6 -f -S -u ~/file.txt -w -e RU #Ausführen eines Builds unter Linux
 
 # Überprüfen Sie die Snoop-Datenbank:
-$ snoop_cli --list-all #Ausführen eines Builds unter Linux
+$ snoop_cli.bin --list-all #Ausführen eines Builds unter Linux
 
 # Hilfe zu Snoop-Funktionen drucken:
-$ snoop_cli --help #Ausführen eines Builds unter Linux
+$ snoop_cli.bin --help #Ausführen eines Builds unter Linux
 
 # Snoop-Plugins aktivieren:
-$ snoop_cli --module #Ausführen eines Builds unter Linux
+$ snoop_cli.bin --module #Ausführen eines Builds unter Linux
 
 # Suche nach zwei Benutzernamen auf zwei Ressourcen:
-$ snoop_cli -s habr -s lichess chikamaria irina
+$ snoop_cli.bin -s habr -s lichess chikamaria irina
 
 # Holen Sie sich die Vollversion von Snoop:
-$ snoop_cli --donate
+$ snoop_cli.bin --donate
 ```
 
 + **'ctrl + c'** — Suche abbrechen.  

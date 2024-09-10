@@ -126,12 +126,12 @@ $ apt-get install fonts-noto-color-emoji или $ apt-get install ttf-ancient-fo
 <summary> 🟢 Использование/Using</summary>  
 
 ```
-usage: snoop_cli [search arguments...] nickname
+usage: snoop_cli.bin [search arguments...] nickname
 or
-usage: snoop_cli [service arguments | plugins arguments]
+usage: snoop_cli.bin [service arguments | plugins arguments]
 
 
-$ snoop_cli --help #запуск сборки на GNU/Linux
+$ snoop_cli.bin --help #запуск сборки на GNU/Linux
 
 Справка
 
@@ -218,13 +218,13 @@ search arguments:
 ```
 # Для поиска только одного пользователя:
 $ python3 snoop.py nickname1 #Running from source
-$ snoop_cli nickname1 #Running from release linux
+$ snoop_cli.bin nickname1 #Running from release linux
 # Или, например, кириллица поддерживается:
 $ python3 snoop.py олеся #Running from source
 # Для поиска имени, содержащего пробел:
-$ snoop_cli "ivan ivanov" #Running from release linux
-$ snoop_cli ivan_ivanov #Running from release linux
-$ snoop_cli ivan-ivanov #Running from release linux
+$ snoop_cli.bin "ivan ivanov" #Running from release linux
+$ snoop_cli.bin ivan_ivanov #Running from release linux
+$ snoop_cli.bin ivan-ivanov #Running from release linux
 
 # Запуск на OS Windows:
 $ python snoop.py nickname1 #Running from source
@@ -238,22 +238,22 @@ $ snoop_cli.exe nickname1 nickname2 nickname123321 #Running from release win
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop;
 # исключить из поиска все сайты в RU-регионе:
-$ snoop_cli -t 6 -f -S -u ~/file.txt -w -e RU #Running from release linux
+$ snoop_cli.bin -t 6 -f -S -u ~/file.txt -w -e RU #Running from release linux
 
 # Поиск двух username на двух ресурсах:
-$ snoop_cli -s habr -s lichess chikamaria irina
+$ snoop_cli.bin -s habr -s lichess chikamaria irina
 
 # проверить базу данных Snoop:
-$ snoop_cli --list-all #Running from release linux
+$ snoop_cli.bin --list-all #Running from release linux
 
 # распечатать справку по функциям Snoop:
-$ snoop_cli --help #Running from release linux
+$ snoop_cli.bin --help #Running from release linux
 
 # Задействовать плагины Snoop:
-$ snoop_cli --module #Running from release linux
+$ snoop_cli.bin --module #Running from release linux
 
 # Получить Snoop full version:
-$ snoop_cli --donate
+$ snoop_cli.bin --donate
 ```
 
 + **'ctrl + c'** — прервать поиск.  
