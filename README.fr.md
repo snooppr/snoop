@@ -25,7 +25,7 @@ c'est-à-dire qu'il est disponible pour l'utilisateur moyen *(date de création 
 Selon la recherche spécialisée de Snoop, il est capable de concurrencer les moteurs de recherche traditionnels.*</sub>  
 
 Comparaison des indexations de bases de données tels outils:  
-<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4400+%20sites Internet-success" width="50%" /></a>  
+<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20sites Internet-success" width="50%" /></a>  
 <img src="https://img.shields.io/badge/Sherlock-~400 sites Internet-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 sites Internet-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~300 sites Internet-yellowgreen" width="20%" />  
@@ -47,7 +47,7 @@ Snoop pour OS Windows et GNU/Linux
 
 **Base de données locale Snoop**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Base de données de la version complète de Snoop 4400+ sites Web ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "Database Snoop")  
+[Base de données de la version complète de Snoop 4500+ sites Web ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "Database Snoop")  
 
 ## Libérer
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -160,7 +160,7 @@ search arguments:
   --verbose, -v         Lors de la recherche de "surnom", imprimez la verbalisation
                         détaillée
   --web-base, -w        Connectez-vous pour rechercher 'surnom' dans la base de
-                        données web mise à jour (plus de 4400+ sites Web). 
+                        données web mise à jour (plus de 4500+ sites Web). 
                         Dans la version de démonstration, la fonction est désactivée
   --site , -s <site_name> 
                         Spécifiez le nom du site à partir de la base de données
