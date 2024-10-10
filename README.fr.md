@@ -26,9 +26,9 @@ Selon la recherche spécialisée de Snoop, il est capable de concurrencer les mo
 
 Comparaison des indexations de bases de données tels outils:  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20sites Internet-success" width="50%" /></a>  
+<img src="https://img.shields.io/badge/Whatsmyname-~600 sites Internet-yellowgreen" width="25%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 sites Internet-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 sites Internet-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Whatsmyname-~300 sites Internet-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Namechk-~100 sites Internet-red" width="15%" />  
 
 

@@ -25,9 +25,9 @@ that is, it is available to the average user *(project creation date: February 1
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20websites-success" width="50%" /></a>  
+<img src="https://img.shields.io/badge/Whatsmyname-~600 websites-yellowgreen" width="25%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 websites-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Whatsmyname-~300 websites-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
 
 

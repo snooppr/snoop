@@ -26,9 +26,9 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 
 数据库索引等工具的比较：  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20网站-success" width="50%" /></a>  
+<img src="https://img.shields.io/badge/Whatsmyname-~600 网站-yellowgreen" width="25%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 网站-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 网站-yellowgreen" width="20%" />  
-<img src="https://img.shields.io/badge/Whatsmyname-~300 网站-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Namechk-~100 网站-red" width="15%" />  
 
 
