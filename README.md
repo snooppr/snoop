@@ -1,7 +1,7 @@
 Snoop Project
 =============
 
-### Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов
+### Snoop Project один из самых перспективных OSINT-инструментов — поиск по нику
 - [X] This is the most powerful software taking into account the CIS location.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.jpg" />
@@ -21,7 +21,10 @@ that is, it is available to the average user *(project creation date: February 1
  ---
 
 > [!NOTE]
-> <sub>*Snoop — это исследовательская работа (собственная база данных/закрытые багбаунти) в области поиска и обработки публичных данных в сети интернет. По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.*</sub>  
+> <sub>*Snoop — это исследовательская работа в области поиска и обработки публичных данных в сети интернет (собственная база данных, алгоритмы, закрытые багбаунти). По части специализированного поиска Snoop способен конкурировать с традиционными поисковыми системами.*</sub>  
+
+**Функционал инструмента простой и не требует от пользователей знаний, владений каких-либо технических навыков.**  
+*(скачал софт, указал цель, получил результаты).*  
 
 Сравнение индексаций БД-никнеймов подобных инструментов:  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20websites-success" width="50%" /></a>  

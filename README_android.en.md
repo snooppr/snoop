@@ -1,7 +1,7 @@
 Snoop Project for Termux
 ========================
 
-## Snoop Project is one of the most promising OSINT tools for finding nicknames.
+## Snoop Project is one of the most promising OSINT tools — search by nickname
 - [X] This is the most powerful software taking into account the CIS location.
 
 <p align="center">  

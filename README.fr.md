@@ -1,7 +1,7 @@
 Projet Snoop
 =============
 
-### Projet Snoop L'un des outils OSINT les plus prometteurs pour rechercher des surnoms
+### Snoop Project est l'un des outils OSINT les plus prometteurs — recherche par pseudo
 - [X] C'est le logiciel le plus puissant compte tenu de l'emplacement de la CEI.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
@@ -21,8 +21,10 @@ c'est-à-dire qu'il est disponible pour l'utilisateur moyen *(date de création 
  ---
 
 > [!NOTE]
-> <sub>*Snoop est un dev-work de recherche (base de données propre/bounty fermé) dans la recherche et le traitement de données publiques sur Internet.
-Selon la recherche spécialisée de Snoop, il est capable de concurrencer les moteurs de recherche traditionnels.*</sub>  
+> <sub>*Snoop est un dev-work de recherche (base de données propre/bounty fermé) dans la recherche et le traitement de données publiques sur Internet. Selon la recherche spécialisée de Snoop, il est capable de concurrencer les moteurs de recherche traditionnels.*</sub>  
+
+**La fonctionnalité de l’outil est simple et ne nécessite aucune connaissance ou compétence technique des utilisateurs.**  
+*(téléchargé le logiciel, précisé la cible, reçu les résultats).*  
 
 Comparaison des indexations de bases de données tels outils:  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20sites Internet-success" width="50%" /></a>  

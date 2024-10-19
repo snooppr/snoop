@@ -1,7 +1,7 @@
 Snoop Project
 =============
 
-### Snoop Project One of the most promising OSINT tools to search for nicknames
+### Snoop Project is one of the most promising OSINT tools — search by nickname
 - [X] This is the most powerful software taking into account the CIS location.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
@@ -21,8 +21,10 @@ that is, it is available to the average user *(project creation date: February 1
  ---
 
 > [!NOTE]
-> <sub>*Snoop is a research dev-work (own database/closed bugbounty) in the search and processing of public data on the Internet.
-According to Snoop's specialized search, it is capable of competing with traditional search engines.*</sub>  
+> <sub>*Snoop is a research project in the field of searching and processing public data on the Internet (own database, algorithms, closed bug bounties). In terms of specialized search, Snoop is able to compete with traditional search engines.*</sub>  
+
+**The functionality of the tool is simple and does not require users to have knowledge or any technical skills.**  
+*(downloaded the software, specified the goal, received the results).*  
 
 Comparison of indexations of databases such tools:  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20websites-success" width="50%" />  

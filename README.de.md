@@ -1,7 +1,7 @@
 Snoop Projekt
 =============
 
-### Snoop Projekt ist eines der vielversprechendsten OSINT-Tools zum Finden von Spitznamen
+### Snoop Project ist eines der vielversprechendsten OSINT-Tools — Suche nach Spitznamen
 - [X] Dies ist die leistungsfähigste Software unter Berücksichtigung des GUS-Standorts.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
@@ -21,7 +21,10 @@ das heißt, es steht dem durchschnittlichen Benutzer zur Verfügung *(14. Februa
  ---
 
 > [!NOTE]
-> <sub>*Snoop ist ein Forschungswerk (eigene Datenbank/geschlossenes Bugbounty) im Bereich der Suche und Verarbeitung öffentlicher Daten im Internet. In Bezug auf die spezialisierte Suche kann Snoop mit traditionellen Suchmaschinen konkurrieren.*</sub>  
+> <sub>*Snoop est un travail de recherche dans le domaine de la recherche et du traitement de données publiques sur Internet (sa propre base de données, algorithmes, bug bounties fermés). En termes de recherche spécialisée, Snoop est en mesure de rivaliser avec les moteurs de recherche traditionnels.*</sub>  
+
+**Die Funktionalität des Tools ist einfach und erfordert keine Kenntnisse oder technischen Fähigkeiten des Benutzers.**  
+*(Software heruntergeladen, Ziel angegeben, Ergebnisse erhalten).*  
 
 Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20websites-success" width="50%" /></a>  

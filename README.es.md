@@ -1,7 +1,7 @@
 Proyecto Snoop
 =============
 
-### Snoop Project Una de las herramientas OSINT más prometedoras para buscar apodos
+### Snoop Project es una de las herramientas OSINT más prometedoras: busque por apodo
 - [X] Este es el software más potente teniendo en cuenta la ubicación de la CEI.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
@@ -21,7 +21,10 @@ es decir, está al alcance del usuario medio *(14 de febrero de 2020)*.
  ---
 
 > [!NOTE]
-> <sub>*Snoop es un trabajo de desarrollo de investigación (base de datos propia/bugbounty cerrado) en la búsqueda y procesamiento de datos públicos en Internet. Según la búsqueda especializada de Snoop, es capaz de competir con los motores de búsqueda tradicionales.*</sub>  
+> <sub>*Snoop es un trabajo de investigación en el campo de la búsqueda y procesamiento de datos públicos en Internet (base de datos propia, algoritmos, recompensas de errores cerradas). En términos de búsqueda especializada, Snoop puede competir con los motores de búsqueda tradicionales.*</sub>  
+
+**La funcionalidad de la herramienta es simple y no requiere que los usuarios tengan ningún conocimiento o habilidad técnica.**  
+*(descargué el software, especifiqué el objetivo, recibí los resultados).*  
 
 Comparación de indexaciones de bases de datos tales herramientas:  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20sitios web-success" width="50%" /></a>  

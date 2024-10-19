@@ -1,7 +1,7 @@
 史努比计划
 =============
 
-### Snoop Project 最有前途的 OSINT 工具之一，用于搜索昵称
+### Snoop 项目是最有前途的 OSINT 工具之一 - 按昵称搜索
 - [X] 这是考虑到 CIS 位置的最强大的软件。
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
@@ -21,8 +21,10 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
  ---
 
 > [!NOTE]
-> <sub>Snoop 是一项在互联网上搜索和处理公共数据的研究开发工作（自己的数据库/关闭的 bugbounty）。  
-根据 Snoop 的专业搜索，它有能力与传统搜索引擎竞争。</sub>  
+> <sub>*Snoop 是一项搜索和处理互联网上公共数据领域的研究工作（有自己的数据库、算法、已关闭的 bug 赏金）。在专业搜索方面，Snoop能够与传统搜索引擎竞争。*</sub>  
+
+**该工具的功能很简单，不需要用户具备任何知识或技术技能。**  
+*（下载软件，指定目标，收到结果）。*  
 
 数据库索引等工具的比较：  
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4500+%20网站-success" width="50%" /></a>  

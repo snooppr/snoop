@@ -1,7 +1,7 @@
 Snoop Project for Termux
 ========================
 
-## Snoop Project один из самых перспективных OSINT-инструментов по поиску никнеймов.
+## Snoop Project один из самых перспективных OSINT-инструментов — поиск по нику
 - [X] This is the most powerful software taking into account the CIS location.  
 • [English readme Snoop for Termux](https://github.com/snooppr/snoop/blob/master/README_android.en.md "Please feel free to improve the translation of this page.")  
 
