@@ -47,8 +47,8 @@ $ git clone https://github.com/snooppr/snoop
 
 # Войти в рабочий каталог Snoop
 $ cd ~/snoop
-# Установить зависимости 'requirements_android.txt'
-$ python3 -m pip install -r requirements_android.txt
+# Установить зависимости 'requirements.txt'
+$ python3 -m pip install -r requirements.txt
 
 
 # Опционально↓

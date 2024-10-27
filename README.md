@@ -311,9 +311,9 @@ $ pip install --upgrade pip
 # Клонировать репозиторий
 $ git clone https://github.com/snooppr/snoop
 
-# Войти в рабочий каталог Snoop и установить зависимости 'requirements_android.txt'
+# Войти в рабочий каталог Snoop и установить зависимости 'requirements.txt'
 $ cd ~/snoop
-$ python3 -m pip install -r requirements_android.txt
+$ python3 -m pip install -r requirements.txt
 
 # Опционально ↓
 # Чтобы расширить вывод терминала в Termux (по умолчанию 2к строк отображение в CLI),

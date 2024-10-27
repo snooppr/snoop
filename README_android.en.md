@@ -47,8 +47,8 @@ $ git clone https://github.com/snooppr/snoop
 
 # Enter the Snoop working directory  
 $ cd ~/snoop  
-# Install the 'requirements_android.txt' dependencies  
-$ python3 -m pip install -r requirements_android.txt  
+# Install the 'requirements.txt' dependencies  
+$ python3 -m pip install -r requirements.txt  
 
 
 # Optional↓
