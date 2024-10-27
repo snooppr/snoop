@@ -58,9 +58,9 @@ def donate():
 [bold green]При пожертвовании/покупке в сообщении/письме укажите:[/bold green]
 
     \"\"\"
-    [cyan]На развитие Snoop Project: 20$ ваш e-mail
-    full version for Windows RU или full version for Linux RU,
-    статус пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО).[/cyan]
+    [cyan]На развитие Snoop Project: ваш[/cyan] [bold cyan]e-mail[/bold cyan]
+    [cyan]full[/cyan] [bold cyan]version[/bold cyan] [cyan]for Windows или full version for Linux,[/cyan]
+    [bold cyan]статус[/bold cyan] [cyan]пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО).[/cyan]
     \"\"\"
 
 [bold green]В ближайшее время на email пользователя придёт чек о покупке и ссылка для скачивания Snoop full version готовой сборки, то есть исполняемого файла, для Windows — это 'snoop_cli.exe', для GNU/Linux — 'snoop_cli.bin'.
