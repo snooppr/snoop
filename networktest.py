@@ -3,12 +3,10 @@
 "Самотестирование сети"
 
 import speedtest
-from colorama import Fore, Style, init
 from rich.panel import Panel
 from rich.style import Style as STL
 from rich.console import Console
 
-init(autoreset=True)
 console2 = Console()
 
 def nettest():
@@ -27,7 +25,7 @@ def nettest():
             d = round(a.get("download") / 1_000_000, 2)
             u = round(a.get("upload") / 1_000_000, 2)
             p = round(a.get("ping"))
-            v4 = a.get("client")
+            c = a.get("client")
 
 # Скорость загрузки.
             try:
@@ -52,7 +50,7 @@ def nettest():
             except:
                 p = f"Ping: [bold red]Сбой[/bold red]"
 # Результат.
-            console2.print(Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {v4.get('ip')}\nПровайдер: {v4.get('isp')}\nЛокация: {v4.get('country')}",
+            console2.print(Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {c.get('ip')}\nПровайдер: {c.get('isp')}\nЛокация: {c.get('country')}",
                                      title="🌐 Тест сети", style=STL(color="cyan")))
             console2.log("[cyan]--> завершен")
         except Exception:
