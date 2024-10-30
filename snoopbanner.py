@@ -47,7 +47,7 @@ def DB(db_base):
 def donate():
     print("")
     console.print(Panel(f"""[cyan]
-╭donate/Buy:
+╭Donate/Buy:
 ├──ЮMoney:: [white]4100111364257544[/white]
 ├──Сберкарта:: [white]4276100015931808[/white]
 └──СБП/Банк Юмани (по номеру телефона):: [white]+79004753581[white]
@@ -104,6 +104,79 @@ Snoop full version:
     print(Style.BRIGHT + Fore.RED + "Выход")
     sys.exit()
 
+
+## Buy.
+def buy():
+    donate_buy = """
+<script>
+function bay() {document.write('\
+<html>\
+<head>\
+	<title>💳 Donate/Buy Snoop Project</title>\
+</head>\
+<body style=\"background-color: #c0c0c0\">\
+<p><span style="color:#009a7c">╭<span style="font-size:36px">Donate/Buy</span>:</span><br />\
+<span style="color:#009a7c">├──ЮMoney::</span> <a href="https://yoomoney.ru/to/4100111364257544" target="_blank">4100111364257544</a><br />\
+<span style="color:#009a7c">├──Сберкарта:: </span><strong>4276100015931808</strong><br />\
+<span style="color:#009a7c">├──СБП/Банк Юмани <em>(по номеру телефона)</em>:: </span><strong>+79004753581</strong><br />\
+<span style="color:#009a7c">└──СБП/Банк Сбербанк <em>(приложение СберБанк Онлайн)</em>:: </span><strong>QR код</strong><br />\
+<img alt="QR код только для пользователей Сбербанк Онлайн." src="https://raw.githubusercontent.com/snooppr/snoop/refs/heads/master/web/QR_donate_SberBank.png" style="height:200px; width:200px" /></p>\
+\
+<p><span style="font-size:18px"><span style="color:#007500">Оплатить софт можно по любым реквизитам, но самым предпочтительным способом является &mdash; СБП <em>(перевод по номеру телефона без комиссиий с карты любого банка)</em>.</span></span></p>\
+\
+<p><span style="font-size:18px"><span style="color:#007500">Если пользователя заинтересовало ПО Snoop demo version, то он может приобрести Snoop full version, поддержав развитие IT-проекта <strong>20$</strong> или <strong>1400р</strong>.<br />\
+При пожертвовании/покупке в сообщении/письме укажите:</span></span></p>\
+\
+<p><span style="font-size:18px">&nbsp;&nbsp;&nbsp; \&quot;\&quot;\&quot;<br />\
+<span style="color:#009a7c">&nbsp;&nbsp;&nbsp; На развитие Snoop Project: ваш <strong>e-mail</strong><br />\
+&nbsp;&nbsp;&nbsp; full <strong>version</strong> for Windows или full version for Linux,<br />\
+&nbsp;&nbsp;&nbsp; <strong>статус</strong> пользователя: Физ.лицо; ИП; Юр.лицо <em>(если покупка ПО)</em>.</span><br />\
+&nbsp;&nbsp;&nbsp; \&quot;\&quot;\&quot;</span></p>\
+\
+<p><span style="font-size:18px"><span style="color:#007500">В ближайшее время на email пользователя придёт чек о покупке и ссылка для скачивания Snoop full version готовой сборки, <br>\
+то есть исполняемого файла, для Windows &mdash; это &#39;snoop_cli.exe&#39;, для GNU/Linux &mdash; &#39;snoop_cli.bin&#39;.</span></span></p>\
+\
+<p><span style="font-size:18px"><span style="color:#007500">Snoop в исполняемом виде <em>(build-версия)</em> предоставляется по лицензии, с которой пользователь должен ознакомиться перед покупкой ПО.<br />\
+Лицензия для Snoop Project в исполняемом виде находится в rar-архивах демо версий Snoop по ссылке:</span><br />\
+<a href="https://github.com/snooppr/snoop/releases" target="_blank">https://github.com/snooppr/snoop/releases</a> <span style="color:#007500">, также лицензия доступна по команде::<br />\
+&#39;</span><strong><span style="color:#16a085">snoop_cli.bin --version</span></strong><span style="color:#007500">&#39; или &#39;</span><strong><span style="color:#16a085">snoop_cli.exe --version</span></strong><span style="color:#007500">&#39; у исполняемого файла.</span></span></p>\
+\
+<p><span style="font-size:18px"><span style="color:#007500">Если ПО Snoop требуется пользователю для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.<br />\
+Студентам ПО Snoop full version предоставляется с <strong>50%</strong> скидкой.</span></span></p>\
+\
+<p><span style="font-size:18px"><span style="color:#007500">Snoop full version:</span></span></p>\
+\
+<ul>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;4600+ Websites;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;поддержка локальной и онлайн database snoop;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;подключение к БД snoop (online), которая расширяется/обновляется;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;доступен автооптимизированный, быстрый и агрессивный режим поиска;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;доступна пользовательская настройка разгона скорости работы ПО;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;плагины без ограничений;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;ru техподдержка от разработчика ПО;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;отключены всплывающие окна в HTML-отчёте про упоминание snoop demo version.</span></span></li>\
+</ul>\
+\
+<p><span style="font-size:18px"><span style="color:#e74c3c">Ограничения Snoop demo version:</span></span></p>\
+\
+<ul>\
+	<li><span style="font-size:18px"><span style="color:#e74c3c">database Snoop сокращена в &gt; 15 раз;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#e74c3c">необновляемая database snoop;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#e74c3c">отключены некоторые опции/плагины.</span></span></li>\
+</ul>\
+\
+<p><span style="font-size:18px"><span style="color:#007500">Email:</span> <span style="color:#009a7c"><strong>snoopproject@protonmail.com</strong></span><br />\
+<span style="color:#007500">Исходный код: </span><a href="https://github.com/snooppr/snoop" target="_blank">https://github.com/snooppr/snoop</a></span></p>\
+\
+<p><span style="font-size:18px">❗️<span style="color:#e15700">Обратите внимание, что из-за цензуры письма с &#39;mailru&#39; и &#39;yandex&#39; не доходят до международного почтового сервиса &#39;protonmail&#39;. <br>\
+Пользователи mailru/yandex пишите запросы на запасную почту.</span><br />\
+<span style="color:#007500">Email:</span><span style="color:#009900"> </span><span style="color:#009a7c"><strong>snoopproject@ya.ru</strong></span></span></p>\
+<hr />\
+<p>Возврат: &#39;F5&#39;</p>\
+</body>\
+</html>')}
+</script>"""
+    return donate_buy
 
 ## Лого.
 def logo(text, exit=True):
