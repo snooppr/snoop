@@ -1,5 +1,5 @@
 certifi>=2023.11.17
-charset-normalizer==3.3.2
+charset-normalizer==3.4.0
 colorama==0.4.6
 idna==3.4
 psutil==5.9.6

@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.4.1с', "s", "d"
+vers, vers_code, demo_full = 'v1.4.1d', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -228,7 +228,8 @@ def format_txt(text, k=False, m=False):
 def print_error(websites_names, errstr, country_code, errX, verbose=False, color=True):
     if color is True:
         print(f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]{Style.BRIGHT}" \
-              f"{Fore.GREEN} {websites_names}: {Style.BRIGHT}{Fore.RED}{errstr}{country_code}{Fore.YELLOW} {errX if verbose else ''}")
+              f"{Fore.GREEN} {websites_names}: {Style.BRIGHT}{Fore.RED}{errstr}{country_code}" \
+              f"{Fore.YELLOW} {errX if verbose else ''} {Style.RESET_ALL}")
     else:
         print(f"[!] {websites_names}: {errstr}{country_code} {errX if verbose else ''}")
 
@@ -255,15 +256,50 @@ def print_not_found(websites_names, verbose=False, color=True):
         print(f"[-] {websites_names}: Увы!")
 
 
-## Вывести на печать пропуск сайтов по блок. маске в имени username, gray_list, и пропуск по проблеме с openssl.
+## Вывести на печать пропуск сайтов по блок. маске в имени username, gray_list.
 def print_invalid(websites_names, message, color=True):
     """Ошибка вывода nickname и gray list"""
     if color is True:
         return f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]" \
-               f"{Style.BRIGHT}{Fore.GREEN} {websites_names}: {Style.RESET_ALL}{Fore.YELLOW}{message}\n"
+               f"{Style.BRIGHT}{Fore.GREEN} {websites_names}: {Style.RESET_ALL}{Fore.YELLOW}{message}{Style.RESET_ALL}\n"
     else:
         return f"[-] {websites_names}: {message}\n"
 
+
+#Сеть.
+def req_session(cert, speed=False):
+    """
+    Объект сесси нужен только для расширения пула соединений, существенный минус (многопоточноть/OS Windows):
+    с течением времени происходит утечка процессорного времени. Обходное решение создавать временную сессию
+    на каждое соединение, прирост производительности (Windows) ~25%.
+    """
+
+    if speed:
+        connections = (speed + 10) if speed > 60 else 60
+    elif speed is False:
+        connections = 200 if Linux else (60 if Windows else 40) #L/W/A.
+
+    # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
+    adapter = requests.adapters.HTTPAdapter()
+    try:
+        requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе, процессы.
+        adapter.init_poolmanager(connections=connections, maxsize=20, block=False)
+    except Exception:
+        if not Windows:
+            console.log("[yellow]Внимание! \n\nВ urllib3 >= v2 разработчики отказались от поддержки старых шифров. " + \
+                        "Некоторые, немногочисленные, устаревшие сайты из БД, работающие по старой технологии, будут возвращать " + \
+                        "ошибки соединения, которых можно было бы избежать.[/yellow]\n\n" + \
+                        "Рекомендация: '$ python -m pip install urllib3==1.26.18'")
+        adapter.init_poolmanager(connections=connections, maxsize=20, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
+
+    requests.packages.urllib3.disable_warnings()
+    requests_future = requests.Session()
+    requests_future.max_redirects = 6
+    requests_future.verify = False if cert is False else True
+    requests_future.mount('http://', adapter)
+    requests_future.mount('https://', adapter)
+
+    return requests_future, requests
 
 ## Вернуть результат future for2.
 # Логика: возврат ответа и дуб_метода (из 4-х) в случае успеха/повтора.
@@ -280,7 +316,8 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
             print_error(websites_names, "HTTP Error", country_code, err1, verbose, color)
     except requests.exceptions.ConnectionError as err2:
         censors += 1
-        if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2)):
+        if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2) 
+                                                                                               or "None" == str(err2)):
             if print_found_only is False:
                 print_error(websites_names, "Ошибка соединения", country_code, err2, verbose, color)
             return "FakeNone", "", "-"
@@ -291,6 +328,8 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
         censors_timeout += 1
         if norm is False and print_found_only is False:
             print_error(websites_names, "Timeout ошибка", country_code, err3, verbose, color)
+        if len(str(repr(err3))) == 14:
+            return "FakeStuck", "", "-"
     except requests.exceptions.RequestException as err4:
         if norm is False and print_found_only is False:
             print_error(websites_names, "Непредвиденная ошибка", country_code, err4, verbose, color)
@@ -354,35 +393,10 @@ def sreports(url, headers, requests_future, error_type, username, websites_names
     if error_type == "redirection":
         return session_size
 
+
 ## Основная функция.
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False, speed=False,
           print_found_only=False, timeout=None, color=True, cert=False, headerS=None):
-
-    if speed:
-        connections = speed + 10
-    elif speed is False:
-        connections = 250 if not Windows else 60
-
-    # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
-    adapter = requests.adapters.HTTPAdapter()
-    try:
-        requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе с процессами.
-        adapter.init_poolmanager(connections=connections, maxsize=10, block=False)
-    except Exception:
-        if not Windows:
-            console.log("[yellow]Внимание! \n\nВ urllib3 >= v2 разработчики отказались от поддержки старых шифров. " + \
-                        "Некоторые, немногочисленные, устаревшие сайты из БД, работающие по старой технологии, будут возвращать " + \
-                        "ошибки соединения, которых можно было бы избежать.[/yellow]\n\n" + \
-                        "Рекомендация: '$ python -m pip install urllib3==1.26.18'")
-        adapter.init_poolmanager(connections=connections, maxsize=10, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
-    requests.packages.urllib3.disable_warnings()
-    requests_future = requests.Session()
-    requests_future.max_redirects = 6
-    requests_future.verify = False if cert is False else True
-    requests_future.mount('http://', adapter)
-    requests_future.mount('https://', adapter)
-
-
 ## Печать инфострок.
     еasteregg = ['Snoop', 'snoop', 'SNOOP',
                  'Snoop Project', 'snoop project', 'SNOOP PROJECT',
@@ -399,9 +413,10 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     elif username in еasteregg:
         with console.status("[bold blue] 💡 Обнаружена пасхалка...", spinner='noise'):
             try:
-                r_east = requests_future.get("https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
-                r_repo = requests_future.get('https://api.github.com/repos/snooppr/snoop', timeout=timeout).json()
-                r_latestvers = requests_future.get('https://api.github.com/repos/snooppr/snoop/tags', timeout=timeout).json()
+                requests_sesion, requests = req_session(cert)
+                r_east = requests_sesion.get("https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
+                r_repo = requests_sesion.get('https://api.github.com/repos/snooppr/snoop', timeout=timeout).json()
+                r_latestvers = requests_sesion.get('https://api.github.com/repos/snooppr/snoop/tags', timeout=timeout).json()
 
                 console.print(Panel(Markdown(r_east.text.replace("=" * 83, "")),
                                     subtitle="[bold blue]журнал snoop-версий[/bold blue]", style=STL(color="cyan")))
@@ -498,15 +513,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     elif Windows:
         cpu = 1 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
         if norm is False:
-            thread__ = len(BDdemo_new) if len(BDdemo_new) < (cpu * 5) else (12 if cpu < 4 else 30)
+            thread__ = len(BDdemo_new) if len(BDdemo_new) < (cpu * 5) else (18 if cpu < 4 else 30)
         else:
-            thread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (14 if cpu < 4 else 40)
+            thread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (20 if cpu < 4 else 40)
         executor1 = ThreadPoolExecutor(max_workers=thread__ if not speed else speed)
     elif Linux:
         if norm is False:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if len(os.sched_getaffinity(0)) < 4 else 180)
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if len(os.sched_getaffinity(0)) < 4 else 140)
         else:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 240)
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 220)
         executor1 = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
@@ -566,6 +581,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Использование api/nickname.
             url_API = url if url_API is None else url_API.format(username)
 
+# Дергаем объект сессии не по прямому назначению, спасаем CPU/Windows/Многопоточность на длинной дистанции.
+            requests_future, requests = req_session(cert, speed=False)
+
 # Если нужен только статус кода, не загружать тело страницы, экономим память для status/redirect методов.
             if reports or param_websites["errorTypе"] == 'message' or param_websites["errorTypе"] == 'response_url':
                 request_method = requests_future.get
@@ -601,14 +619,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Прогресс_описание.
     if not verbose:
         refresh = False
+        refresh_per_second = 4.0 if "demo" in version else 1.0
         if not Windows:
             spin_emoj = 'arrow3' if norm else random.choice(["dots", "dots12"])
             progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=spin_emoj),
                                 "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None, complete_style='cyan',
-                                finished_style='cyan bold'), refresh_per_second=1.0)  #transient=True) #исчезает прогресс
+                                finished_style='cyan bold'), refresh_per_second=refresh_per_second)  #transient=True) #исчезает прогресс
         else:
             progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", BarColumn(bar_width=None,
-                                complete_style='cyan', finished_style='cyan bold'), refresh_per_second=1.0)
+                                complete_style='cyan', finished_style='cyan bold'), refresh_per_second=refresh_per_second)
     else:
         refresh = True
         progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
@@ -656,14 +675,15 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             country_Emoj_Code = country_emojis if not Windows else country_code
 # Получить ожидаемый тип данных 4-х методов.
             error_type = param_websites["errorTypе"]
-# Получить результаты future.
+# Получить результаты future и создать новые сессии для репорта/повторных запросов.
+            requests_future, requests = req_session(cert, speed=False)
             request_future = future if norm else param_websites["request_future"]
             r, error_type, response_time = request_res(request_future=request_future, norm=norm,
                                                        error_type=error_type, websites_names=websites_names,
                                                        print_found_only=print_found_only, verbose=verbose,
                                                        color=color, timeout=timeout, country_code=f" ~{country_code}")
 
-# Повторное сбойное соединение через новую сессию надежнее, чем через adapter.
+# Повторный запрос на сбойное соединение.
             if norm is False and r == "FakeNone":
                 global recensor
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -691,12 +711,12 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 del future_rec
 
 # Сбор сбойной локации bad_zone.
-            if r == None or r == "FakeNone":
+            if r == None or r == "FakeNone" or r == "FakeStuck":
                 dic_binding.get("badzone").append(country_code)
 ## Проверка, 4 методов; #1.
 # Автодетектирование кодировки при устаревшей специфике либы requests/ISO-8859-1, или ее смена вручную через БД.
             try:
-                if r is not None and r != "FakeNone":
+                if r is not None and r != "FakeNone" and r != "FakeStuck":
                     if r.content and r.encoding == 'ISO-8859-1': #ловушка (if r is not None ≠ if r)
                         r.encoding = char_detect(r.content).get("encoding")
                         if r.encoding is None: r.encoding = "utf-8"
@@ -780,11 +800,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 exists = "блок"
 
 
-## Попытка получить информацию из запроса.
+## Попытка получить информацию из запроса, пишем в csv.
             try:
-                http_status = r.status_code  #запрос статус-кода.
+                http_status = r.status_code
             except Exception:
-                http_status = "сбой"
+                http_status = "сбой" if r != "FakeStuck" else "завис"
 
             try:  #сессия в КБ
                 if reports is True:
@@ -844,8 +864,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             dic_snoop_full.get(websites_names)['response_time_ms'] = str(ello_time)
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
-# не удерживать сокетом отработанное по всем п. соединение с сервером и предотвратить утечку памяти.
-            requests_future.close()  #не имеет смысла urllib3 v1.26.14+
+# не удерживать ресурсы соединения с сервером; предотвратить утечку памяти: del future.
             if norm:
                 BDdemo_new_quick.pop(future, None)
             else:
@@ -863,13 +882,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Опция '-t'.
 def timeout_check(value):
     try:
-        global timeout
-        timeout = int(value)
+        global glob_timeout
+        glob_timeout = int(value)
     except Exception:
         raise argparse.ArgumentTypeError(f"\n\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время в 'секундах'.\n \033[0m")
-    if timeout <= 0:
+    if glob_timeout <= 0:
         raise argparse.ArgumentTypeError(f"\033[31;1mTimeout '{value}' Err,\033[0m \033[36mукажите время > 0sec.\n \033[0m")
-    return timeout
+    return glob_timeout
 
 
 ## Опция '-p'.
@@ -1289,7 +1308,7 @@ def main_cli():
     try:
         if args.timeout and args.norm is False:
             print(Fore.CYAN + format_txt("активирована опция '-t': ожидание ответа от " + \
-                                         "сайта до{0}{1} {2} {3}{4}с.» {5}".format(Style.BRIGHT, Fore.CYAN, timeout,
+                                         "сайта до{0}{1} {2} {3}{4}с.» {5}".format(Style.BRIGHT, Fore.CYAN, glob_timeout,
                                                                                    Style.RESET_ALL, Fore.CYAN,
                                                                                    Style.RESET_ALL), k=True))
     except Exception:
