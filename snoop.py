@@ -104,7 +104,7 @@ print("")
 
 ## Date, согласно международному стандарту ISO 8601.
 e_mail = 'demo: snoopproject@protonmail.com'
-# лицензия: год/месяц/число.
+# лицензия: год-месяц-день.
 license = 'лицензия'
 ts = (2025, 9, 10, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
@@ -226,6 +226,7 @@ def format_txt(text, k=False, m=False):
 
 ## Вывести на печать ошибки.
 def print_error(websites_names, errstr, country_code, errX, verbose=False, color=True):
+    """Вывести на печать разного рода ошибки сети."""
     if color is True:
         print(f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]{Style.BRIGHT}" \
               f"{Fore.GREEN} {websites_names}: {Style.BRIGHT}{Fore.RED}{errstr}{country_code}" \
@@ -258,7 +259,7 @@ def print_not_found(websites_names, verbose=False, color=True):
 
 ## Вывести на печать пропуск сайтов по блок. маске в имени username, gray_list.
 def print_invalid(websites_names, message, color=True):
-    """Ошибка вывода nickname и gray list"""
+    """Вывести запрещенный nickname/gray list."""
     if color is True:
         return f"{Style.RESET_ALL}{Fore.RED}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.RED}]" \
                f"{Style.BRIGHT}{Fore.GREEN} {websites_names}: {Style.RESET_ALL}{Fore.YELLOW}{message}{Style.RESET_ALL}\n"
@@ -266,12 +267,12 @@ def print_invalid(websites_names, message, color=True):
         return f"[-] {websites_names}: {message}\n"
 
 
-#Сеть.
+##Сеть.
 def req_session(cert, speed=False):
     """
-    Объект сесси нужен только для расширения пула соединений, существенный минус (многопоточноть/OS Windows):
+    Объект сессии нужен для расширения пула сетевых соединений, существенный минус (многопоточноть/OS Windows):
     с течением времени происходит утечка процессорного времени. Обходное решение создавать временную сессию
-    на каждое соединение, прирост производительности (Windows) ~25%.
+    на каждое соединение, прирост производительности (Windows) ~25-30%.
     """
 
     if speed:
@@ -289,7 +290,7 @@ def req_session(cert, speed=False):
             console.log("[yellow]Внимание! \n\nВ urllib3 >= v2 разработчики отказались от поддержки старых шифров. " + \
                         "Некоторые, немногочисленные, устаревшие сайты из БД, работающие по старой технологии, будут возвращать " + \
                         "ошибки соединения, которых можно было бы избежать.[/yellow]\n\n" + \
-                        "Рекомендация: '$ python -m pip install urllib3==1.26.18'")
+                        "Рекомендация: '$ python -m pip install urllib3==1.26.18'.")
         adapter.init_poolmanager(connections=connections, maxsize=20, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
 
     requests.packages.urllib3.disable_warnings()
@@ -301,7 +302,7 @@ def req_session(cert, speed=False):
 
     return requests_future, requests
 
-## Вернуть результат future for2.
+# Вернуть результат future for2.
 # Логика: возврат ответа и дуб_метода (из 4-х) в случае успеха/повтора.
 def request_res(request_future, error_type, websites_names, timeout=None, norm=False,
                 print_found_only=False, verbose=False, color=True, country_code=''):
@@ -676,7 +677,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Получить ожидаемый тип данных 4-х методов.
             error_type = param_websites["errorTypе"]
 # Получить результаты future и создать новые сессии для репорта/повторных запросов.
-            requests_future, requests = req_session(cert, speed=False)
+            req_future, requests = req_session(cert, speed=False)
             request_future = future if norm else param_websites["request_future"]
             r, error_type, response_time = request_res(request_future=request_future, norm=norm,
                                                        error_type=error_type, websites_names=websites_names,
@@ -689,11 +690,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
                               'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
                               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' + \
-                              'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}
+                                            'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}
 
                 for _ in range(3):
                     recensor += 1
-                    future_rec = executor2.submit(requests_future.get, url=url, headers=head_duble,
+                    future_rec = executor2.submit(req_future.get, url=url, headers=head_duble,
                                                   allow_redirects=allow_redirects, timeout=2.9)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
@@ -752,7 +753,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                             print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                         exists = "найден!"
                         if reports:
-                            sreports(url, headers, requests_future, error_type, username, websites_names, r)
+                            sreports(url, headers, req_future, error_type, username, websites_names, r)
                 except UnicodeEncodeError:
                     exists = "увы"
 ## Проверка, 4 методов; #2.
@@ -763,7 +764,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     exists = "найден!"
                     if reports:
-                        session_size = sreports(url, headers, requests_future, error_type, username, websites_names, r)
+                        session_size = sreports(url, headers, req_future, error_type, username, websites_names, r)
                 else:
                     if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
@@ -776,7 +777,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        sreports(url, headers, requests_future, error_type, username, websites_names, r)
+                        sreports(url, headers, req_future, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
@@ -789,7 +790,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        sreports(url, headers, requests_future, error_type, username, websites_names, r)
+                        sreports(url, headers, req_future, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
