@@ -27,6 +27,7 @@ from charset_normalizer import detect as char_detect
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, TimeoutError
+from functools import lru_cache
 from multiprocessing import active_children
 from rich.markdown import Markdown
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
@@ -268,17 +269,18 @@ def print_invalid(websites_names, message, color=True):
 
 
 ##Сеть.
+@lru_cache(typed=True)
 def req_session(cert, speed=False):
     """
     Объект сессии нужен для расширения пула сетевых соединений, существенный минус (многопоточноть/OS Windows):
-    с течением времени происходит утечка процессорного времени. Обходное решение создавать временную сессию
+    с течением времени происходит утечка процессорного времени. Обходное решение: создавать временную сессию
     на каждое соединение, прирост производительности (Windows) ~25-30%.
     """
 
     if speed:
         connections = (speed + 10) if speed > 60 else 60
     elif speed is False:
-        connections = 200 if Linux else (60 if Windows else 40) #L/W/A.
+        connections = 200 if Linux else (70 if Windows else 40) #L/W/A.
 
     # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
     adapter = requests.adapters.HTTPAdapter()
