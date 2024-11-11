@@ -622,7 +622,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Прогресс_описание.
     if not verbose:
         refresh = False
-        refresh_per_second = 4.0 if "demo" in version else 1.0
+        refresh_per_second = 4.0 if "demo" in version else 2.0
         if not Windows:
             spin_emoj = 'arrow3' if norm else random.choice(["dots", "dots12"])
             progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=spin_emoj),
