@@ -27,7 +27,6 @@ from charset_normalizer import detect as char_detect
 from collections import Counter
 from colorama import Fore, Style, init
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed, TimeoutError
-from functools import lru_cache
 from multiprocessing import active_children
 from rich.markdown import Markdown
 from rich.progress import BarColumn, SpinnerColumn, TimeElapsedColumn, Progress
@@ -269,12 +268,11 @@ def print_invalid(websites_names, message, color=True):
 
 
 ##Сеть.
-@lru_cache(typed=True)
 def req_session(cert, speed=False):
     """
     Объект сессии нужен для расширения пула сетевых соединений, существенный минус (многопоточноть/OS Windows):
     с течением времени происходит утечка процессорного времени. Обходное решение: создавать временную сессию
-    на каждое соединение, прирост производительности (Windows) ~25-30%.
+    на каждое соединение без кэширования, прирост производительности (Windows) ~25-30%.
     """
 
     if speed:
@@ -1045,11 +1043,13 @@ def license_snoop():
         rich_v = f", (rich::{version_lib('rich')})"
         urllib3_v = f", (urllib3::{version_lib('urllib3')})"
         psutil_v = f", (psutil::{version_lib('psutil')})"
+        char_v = f", (charset_normalizer::{version_lib('charset_normalizer')})"
     else:
         urllib3_v = ""
         colorama_v = ""
         rich_v = ""
         psutil_v = ""
+        char_v = ""
 
     console.print('\n', Panel(f"Program: [blue bold]{'light ' if light_v else ''}[/blue bold][dim cyan]{version}"\
                                              f"{str(platform.architecture(executable=sys.executable, bits='', linkage=''))}[/dim cyan]\n" + \
@@ -1058,7 +1058,7 @@ def license_snoop():
                               f"Python: [dim cyan]{platform.python_version()}[/dim cyan]\n" + \
                               f"Key libraries: [dim cyan](requests::{requests.__version__}), (certifi::{certifi.__version__}), " + \
                                              f"(speedtest::{snoopnetworktest.speedtest.__version__}){rich_v}{psutil_v}" + \
-                                             f"{colorama_v}{urllib3_v}[/dim cyan]\n" + \
+                                             f"{colorama_v}{urllib3_v}{char_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
                               f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}\n" + \
                               f"Recommended pool: [dim cyan]{pool_}[/dim cyan]",
