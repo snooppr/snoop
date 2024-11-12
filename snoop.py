@@ -276,7 +276,7 @@ def req_session(cert, speed=False):
     """
 
     if speed:
-        connections = (speed + 10) if speed > 60 else 60
+        connections = (speed + 20) if speed >= 60 else (70 if not Windows else 50)
     elif speed is False:
         connections = 200 if Linux else (70 if Windows else 40) #L/W/A.
 
@@ -522,7 +522,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         if norm is False:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if len(os.sched_getaffinity(0)) < 4 else 140)
         else:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 220)
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 180)
         executor1 = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
@@ -583,7 +583,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             url_API = url if url_API is None else url_API.format(username)
 
 # Дергаем объект сессии не по прямому назначению, спасаем CPU/Windows/Многопоточность на длинной дистанции.
-            requests_future, requests = req_session(cert, speed=False)
+            requests_future, requests = req_session(cert, speed=speed)
 
 # Если нужен только статус кода, не загружать тело страницы, экономим память для status/redirect методов.
             if reports or param_websites["errorTypе"] == 'message' or param_websites["errorTypе"] == 'response_url':
@@ -620,7 +620,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Прогресс_описание.
     if not verbose:
         refresh = False
-        refresh_per_second = 4.0 if "demo" in version else 2.0
+        refresh_per_second = 4.0 if "demo" in version else (2.0 if not Windows else 1.0)
         if not Windows:
             spin_emoj = 'arrow3' if norm else random.choice(["dots", "dots12"])
             progress = Progress(TimeElapsedColumn(), SpinnerColumn(spinner_name=spin_emoj),
@@ -677,7 +677,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Получить ожидаемый тип данных 4-х методов.
             error_type = param_websites["errorTypе"]
 # Получить результаты future и создать новые сессии для репорта/повторных запросов.
-            req_future, requests = req_session(cert, speed=False)
+            if not norm:
+                req_future, requests = req_session(cert, speed=speed)
             request_future = future if norm else param_websites["request_future"]
             r, error_type, response_time = request_res(request_future=request_future, norm=norm,
                                                        error_type=error_type, websites_names=websites_names,
