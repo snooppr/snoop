@@ -104,9 +104,6 @@ Copyright (c) 2019 TAHRI Ahmed R.
 The main idea and part of the modified code of this Software:
 Copyright (c) 2019 Sherlock Project
 
-This software uses more-itertools library, which is
-Copyright (c) 2012 Erik Rose
-
 This software uses Rich library, which is
 Copyright 2020 Will McGugan
 
@@ -116,12 +113,6 @@ Copyright (c) 2015, Vincent Garreau
 This software uses urllib3 v1.26.18 library, which is
 Copyright (c) 2008-2020 Andrey Petrov and contributors (see CONTRIBUTORS.txt)
 https://github.com/urllib3/urllib3/blob/master/CONTRIBUTORS.txt
-
-This software uses branca library, which is
-Copyright (C) 2013, Martin Journois
-
-This software uses folium library, which is
-Copyright (C) 2013, Rob Story
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -179,28 +170,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 BSD 3-Clause "New" or "Revised" License
 
-This software uses xyzservices library, which is
-Copyright (c) 2021, GeoPandas
-All rights reserved.
-
 This software uses psutil library, which is
 Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola
 All rights reserved.
 
 This software uses colorama library, which is
 Copyright (c) 2010 Jonathan Hartley
-All rights reserved.
-
-This software uses numpy v1.23.5-v1.24.4 library, which is
-Copyright (c) 2005-2023, NumPy Developers
-All rights reserved.
-
-This software uses MarkupSafe library, which is
-Copyright 2010 Pallets
-All rights reserved.
-
-This software uses Jinja2 library, which is
-Copyright 2007 Pallets
 All rights reserved.
 
 This software uses idna v3.4 library, which is
