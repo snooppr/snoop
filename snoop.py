@@ -110,8 +110,8 @@ ts = (2025, 9, 10, 3, 0, 0, 0, 0, 0)
 date_up = int(time.mktime(ts))  #дата в секундах с начала эпохи
 Do = time.strftime('%Y-%m-%d', time.gmtime(date_up))
 # Чек.
-if time.time() > int(date_up):
-    print(Style.BRIGHT + Fore.RED + "ПО " + version + " деактивировано согласно лицензии.")
+if time.time() > date_up:
+    snoopbanner.logo(text=f"ПО {version} деактивировано согласно лицензии.")
     sys.exit()
 
 
@@ -268,6 +268,7 @@ def print_invalid(websites_names, message, color=True):
 
 
 ##Сеть.
+warning_urllib3_v2 = True
 def req_session(cert, speed=False):
     """
     Объект сессии нужен для расширения пула сетевых соединений, существенный минус (многопоточноть/OS Windows):
@@ -283,14 +284,18 @@ def req_session(cert, speed=False):
     # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
     adapter = requests.adapters.HTTPAdapter()
     try:
-        requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 v1.26.18, в urllib3 v2 баг в либе, процессы.
+        requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 <= v1.26.18, в urllib3 v2 перенастраивать процессы
         adapter.init_poolmanager(connections=connections, maxsize=20, block=False)
     except Exception:
-        if not Windows:
+        global warning_urllib3_v2
+        if warning_urllib3_v2 is True:
             console.log("[yellow]Внимание! \n\nВ urllib3 >= v2 разработчики отказались от поддержки старых шифров. " + \
                         "Некоторые, немногочисленные, устаревшие сайты из БД, работающие по старой технологии, будут возвращать " + \
                         "ошибки соединения, которых можно было бы избежать.[/yellow]\n\n" + \
-                        "Рекомендация: '$ python -m pip install urllib3==1.26.18'.")
+                        "[bold green]Рекомендация: \n$ python -m pip install urllib3==1.26.18[/bold green]", highlight=False)
+            console.rule(characters="=", style="cyan")
+            warning_urllib3_v2 = False
+
         adapter.init_poolmanager(connections=connections, maxsize=20, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
 
     requests.packages.urllib3.disable_warnings()
@@ -314,28 +319,29 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
             return res, error_type, str(round(res.elapsed.total_seconds(), 2))
     except requests.exceptions.HTTPError as err1:
         if norm is False and print_found_only is False:
-            print_error(websites_names, "HTTP Error", country_code, err1, verbose, color)
+            print_error(websites_names, "HTTP Error ", country_code, err1, verbose, color)
     except requests.exceptions.ConnectionError as err2:
         censors += 1
         if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2) 
                                                                                                or "None" == str(err2)):
             if print_found_only is False:
-                print_error(websites_names, "Ошибка соединения", country_code, err2, verbose, color)
+                print_error(websites_names, "Ошибка соединения ", country_code, err2, verbose, color)
             return "FakeNone", "", "-"
         else:
             if norm is False and print_found_only is False:
-                print_error(websites_names, "Censorship | SSL", country_code, err2, verbose, color)
+                print_error(websites_names, "Censorship | SSL ", country_code, err2, verbose, color)
     except (requests.exceptions.Timeout, TimeoutError) as err3:
         censors_timeout += 1
         if norm is False and print_found_only is False:
-            print_error(websites_names, "Timeout ошибка", country_code, err3, verbose, color)
+            print_error(websites_names, "Timeout ошибка ", country_code, err3, verbose, color)
         if len(str(repr(err3))) == 14:
             return "FakeStuck", "", "-"
     except requests.exceptions.RequestException as err4:
         if norm is False and print_found_only is False:
-            print_error(websites_names, "Непредвиденная ошибка", country_code, err4, verbose, color)
-    except Exception:
-        pass
+            print_error(websites_names, "Непредвиденная ошибка ", country_code, err4, verbose, color)
+    except Exception as err5:
+        if norm is False and print_found_only is False:
+            print_error(websites_names, "Network Pool Crash ", country_code, err5, verbose, color)
     return None, "Great Snoop returns None", "-"
 
 
@@ -442,7 +448,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     username = re.sub(" ", "%20", username)
 
 
-## Предотвращение 'DDoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
+## Предотвращение 'DoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
     with open('domainlist.txt', 'r', encoding="utf-8") as err:
         ermail = err.read().splitlines()
 
@@ -510,7 +516,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             console.log(snoopbanner.err_all(err_="high"))
             global lame_workhorse
             lame_workhorse = True
-            executor1 = ThreadPoolExecutor(max_workers=8 if not speed else speed)
+            executor1 = ThreadPoolExecutor(max_workers=10 if not speed else speed)
     elif Windows:
         cpu = 1 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
         if norm is False:
@@ -632,7 +638,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     else:
         refresh = True
         progress = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
-# Панель вербализации.
+
+## Панель вербализации.
         if not Android:
             if color:
                 console.print(Panel("[yellow]время[/yellow] | [magenta]выпол.[/magenta] | [bold cyan]отклик (t=s)[/bold cyan] " + \
@@ -665,20 +672,21 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 websites_names = future[0]
                 param_websites = future[1]
             if color is True:
-                progress.update(task0, advance=1, refresh=refresh)  #\nprogress.refresh()
+                progress.update(task0, advance=1, refresh=refresh)  #progress.refresh()
 # Пропустить запрещенный никнейм или пропуск сайта из gray-list.
             if dic_snoop_full.get(websites_names).get("exists") is not None:
                 continue
-# Получить другую информацию сайта, снова.
+# Получить метаинформацию сайта, снова.
             url = dic_snoop_full.get(websites_names).get("url_user")
             country_emojis = dic_snoop_full.get(websites_names).get("flagcountry")
             country_code = dic_snoop_full.get(websites_names).get("flagcountryklas")
             country_Emoj_Code = country_emojis if not Windows else country_code
 # Получить ожидаемый тип данных 4-х методов.
             error_type = param_websites["errorTypе"]
-# Получить результаты future и создать новые сессии для репорта/повторных запросов.
+# Получить результаты future и создать новые сессии для save pages/повторных запросов.
             if not norm:
                 req_future, requests = req_session(cert, speed=speed)
+# Результат ответа от сервера.
             request_future = future if norm else param_websites["request_future"]
             r, error_type, response_time = request_res(request_future=request_future, norm=norm,
                                                        error_type=error_type, websites_names=websites_names,
@@ -696,7 +704,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 for _ in range(3):
                     recensor += 1
                     future_rec = executor2.submit(req_future.get, url=url, headers=head_duble,
-                                                  allow_redirects=allow_redirects, timeout=2.9)
+                                                  allow_redirects=allow_redirects, timeout=4)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
                               f"{Style.DIM}{Fore.GREEN} ┌──└──повторное соединение{Style.RESET_ALL}")
@@ -710,6 +718,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                     if r != "FakeNone":
                         break
+
                 del future_rec
 
 # Сбор сбойной локации bad_zone.
@@ -822,7 +831,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 session_size = "Err"
 
 
-## Считать 2x-тайминги с приемлемой точностью.
+## Считать тайминги с приемлемой точностью.
 # Реакция.
             ello_time = round(float(time.time() - timestart), 2)  #текущее
             li_time.append(ello_time)
@@ -994,7 +1003,7 @@ def license_snoop():
     if not Android:
         cpu = 2 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
         pool_ = str(cpu * 5 if Windows else (os.cpu_count() * 40)) + f" {'threads' if Windows else 'process'}, " + \
-                                                                     f"(~1Gb_Ram = 100_Process = 10_Mbit/s)"
+                                                                     f"(~2Gb_Ram = 100_Process = 10_Mbit/s)"
 
         if Windows and 'full' in version:
             ram_av = 900
@@ -1002,7 +1011,7 @@ def license_snoop():
             ram_av = 500
 
         if Linux and 'full' in version:
-            ram_av = 3100 if os.cpu_count() > 4 else 1200
+            ram_av = 6000 if os.cpu_count() > 4 else 1200
         elif Linux and 'demo' in version:
             ram_av = 950
 
@@ -1038,7 +1047,6 @@ def license_snoop():
 
     termux = f"\nTermux: [dim cyan]{T_v}[/dim cyan]\n" if Android else "\n"
 
-    light_v = True if not 'snoopplugins' in globals() else False
     if python3_8:
         colorama_v = f", (colorama::{version_lib('colorama')})"
         rich_v = f", (rich::{version_lib('rich')})"
@@ -1052,6 +1060,7 @@ def license_snoop():
         psutil_v = ""
         char_v = ""
 
+    light_v = True if not 'snoopplugins' in globals() else False
     console.print('\n', Panel(f"Program: [blue bold]{'light ' if light_v else ''}[/blue bold][dim cyan]{version}"\
                                              f"{str(platform.architecture(executable=sys.executable, bits='', linkage=''))}[/dim cyan]\n" + \
                               f"OS: [dim cyan]{os_ver}[/dim cyan]" + termux + \
