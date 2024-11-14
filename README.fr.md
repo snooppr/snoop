@@ -193,6 +193,7 @@ search arguments:
                         Snoop traitera intelligemment les données et fournira des rapports 
                         supplémentaires
   --save-page, -S       Enregistrer les pages utilisateur trouvées dans des fichiers locaux
+                        (mode lent)
   --cert-on, -C         Activez la vérification des certificats sur les serveurs. Par défaut,
                         la vérification des certificats sur les serveurs est désactivée,
                         ce qui vous permet de traiter les sites problématiques sans erreurs

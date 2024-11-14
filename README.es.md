@@ -190,7 +190,7 @@ argumentos de búsqueda:
                         Snoop procesará los datos de forma inteligente
                         y proporcionará informes adicionales
   --save-page, -S       Guarde las páginas de usuario encontradas
-                        en archivos html locales
+                        en archivos html locales (modo lento)
   --cert-on, -C         Habilite la verificación de certificados en los servidores.
                         De forma predeterminada, la verificación de certificados
                         en los servidores está deshabilitada,
