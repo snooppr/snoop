@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.4.1d', "s", "d"
+vers, vers_code, demo_full = 'v1.4.1e', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -300,7 +300,7 @@ def req_session(cert, speed=False):
 
     requests.packages.urllib3.disable_warnings()
     requests_future = requests.Session()
-    requests_future.max_redirects = 6
+    requests_future.max_redirects = 9
     requests_future.verify = False if cert is False else True
     requests_future.mount('http://', adapter)
     requests_future.mount('https://', adapter)
@@ -322,8 +322,8 @@ def request_res(request_future, error_type, websites_names, timeout=None, norm=F
             print_error(websites_names, "HTTP Error ", country_code, err1, verbose, color)
     except requests.exceptions.ConnectionError as err2:
         censors += 1
-        if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2) 
-                                                                                               or "None" == str(err2)):
+        if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or "SSLZeroReturnError" in str(err2)
+                                                           or "None: Max retries" in str(err2) or "None" == str(err2)):
             if print_found_only is False:
                 print_error(websites_names, "Ошибка соединения ", country_code, err2, verbose, color)
             return "FakeNone", "", "-"
