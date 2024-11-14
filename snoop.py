@@ -1002,8 +1002,8 @@ def license_snoop():
 
     if not Android:
         cpu = 2 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
-        pool_ = str(cpu * 5 if Windows else (os.cpu_count() * 40)) + f" {'threads' if Windows else 'process'}, " + \
-                                                                     f"(~2Gb_Ram = 100_Process = 10_Mbit/s)"
+        pool_ = str(cpu * 5 if Windows else (os.cpu_count() * 40)) + \
+                f" {'threads (~1_Gb_Ram = 50_Threads = 5_Mbit/s)' if Windows else 'process (~2_Gb_Ram = 100_Process = 10_Mbit/s)'}"
 
         if Windows and 'full' in version:
             ram_av = 900
@@ -1029,7 +1029,7 @@ def license_snoop():
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
     elif Android:
-        pool_ = os.cpu_count() * 3
+        pool_ = str(os.cpu_count() * 3) + f" process, (~512_Mb_Ram = 50_Process = 5_Mbit/s)"
 
         try:
             ram = subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[1]
