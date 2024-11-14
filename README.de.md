@@ -196,6 +196,7 @@ search arguments:
                         Snoop wird die Daten intelligent verarbeiten und
                         zusätzliche Berichte bereitstellen
   --save-page, -S       Gefundene Benutzerseiten in lokalen HTML-Dateien speichern
+                        (langsamer Modus)
   --cert-on, -C         Aktivieren Sie die Überprüfung von Zertifikaten auf Servern.
                         Standardmäßig ist die Zertifikatsüberprüfung auf
                         Servern deaktiviert, sodass Sie problematische Websites

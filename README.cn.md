@@ -175,7 +175,7 @@ search arguments:
                         ✓禁用指示和进度状态
   --userlist , -u <file> 
                         指定一个包含用户列表的文件。 Snoop 将智能处理数据并提供额外的报告
-  --save-page, -S       将找到的用户页面保存到本地文件
+  --save-page, -S       将找到的用户页面保存到本地文件 （慢速模式）
   --cert-on, -C         在服务器上启用证书验证。 默认情况下，服务器上的证书验证是禁用的，
                         这使您可以无误地处理有问题的站点
   --headers , -H <User-Agent> 

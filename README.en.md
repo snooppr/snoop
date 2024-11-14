@@ -190,7 +190,7 @@ search arguments:
   --userlist , -u <file> 
                         Specify a file with a list of users. Snoop will
                         intelligently process the data and provide additional reports
-  --save-page, -S       Save found user pages to local files
+  --save-page, -S       Save found user pages to local files (slow mode)
   --cert-on, -C         Enable verification of certificates on servers.
                         By default, certificate verification on servers is disabled, 
                         which allows you to process problematic sites without errors

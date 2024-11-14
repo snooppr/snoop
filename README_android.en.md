@@ -113,7 +113,7 @@ search arguments:
   --verbose, -v         When searching for 'nickname', print detailed
                         verbalization
   --web-base, -w        Connect to search for 'nickname' to the updated web_DB
-                        (4000+ websites). In demo version the function is disabled
+                        (4600+ websites). In demo version the function is disabled
   --site , -s <site_name> 
                         Specify the name of the site from the database 
                         '--list-all'. Search for 'nickname' on one specified
@@ -142,7 +142,7 @@ search arguments:
   --userlist , -u <file> 
                         Specify a file with a list of users. Snoop will
                         intelligently process the data and provide additional reports
-  --save-page, -S       Save found user pages to local files
+  --save-page, -S       Save found user pages to local files (slow mode)
   --cert-on, -C         Enable verification of certificates on servers.
                         By default, certificate verification on servers is disabled, 
                         which allows you to process problematic sites without errors
