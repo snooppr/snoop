@@ -81,6 +81,7 @@ Snoop full version:
  * доступна пользовательская настройка разгона скорости работы ПО;
  * плагины без ограничений;
  * ru техподдержка от разработчика ПО;
+ * предоставление обновлённых билдов;
  * отключены всплывающие окна в HTML-отчёте про упоминание Snoop demo version.[/bold green]
 [bold red]Ограничения Snoop demo version:
  * database Snoop сокращена в > 15 раз;
@@ -154,6 +155,7 @@ function bay() {document.write('\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;доступна пользовательская настройка разгона скорости работы ПО;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;плагины без ограничений;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;ru техподдержка от разработчика ПО;</span></span></li>\
+    <li><span style="font-size:18px"><span style="color:#007500">&nbsp;предоставление обновлённых билдов;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;отключены всплывающие окна в HTML-отчёте про упоминание Snoop demo version.</span></span></li>\
 </ul>\
 \
