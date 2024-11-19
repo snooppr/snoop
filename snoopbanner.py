@@ -49,7 +49,8 @@ def donate():
     console.print(Panel(f"""[cyan]
 ╭Donate/Buy:
 ├──ЮMoney:: [white]4100111364257544[/white]
-├──Сберкарта:: [white]2202208013277075[/white]
+├──Сбер_карта:: [white]2202208013277075[/white]
+├──Райффайзен_карта:: [white]2200300512321074[/white]
 └──По номеру телефона (СБП/Банк Юмани):: [white]+79004753581[white]
 
 [bold green]Оплатить софт можно по любым реквизитам, но самым предпочтительным способом является — СБП (перевод по номеру телефона без комиссий с карты любого банка).
@@ -118,7 +119,8 @@ function bay() {document.write('\
 <body style=\"background-color: #c0c0c0\">\
 <p><span style="color:#009a7c">╭<span style="font-size:36px">Donate/Buy</span>:</span><br />\
 <span style="color:#009a7c">├──ЮMoney::</span> <a href="https://yoomoney.ru/to/4100111364257544" target="_blank">4100111364257544</a><br />\
-<span style="color:#009a7c">├──Сберкарта:: </span><strong>2202208013277075</strong><br />\
+<span style="color:#009a7c">├──Сбер_карта:: </span><strong>2202208013277075</strong><br />\
+<span style="color:#009a7c">├──Райффайзен_карта:: </span><strong>2200300512321074</strong><br />\
 <span style="color:#009a7c">├──По номеру телефона <em>(СБП: банк Юмани)</em>:: </span><strong>+79004753581</strong><br />\
 <span style="color:#009a7c">└──СберБанк Онлайн <em>(мобильное приложение)</em>:: </span><strong>QR код</strong><br />\
 <img alt="QR код только для пользователей Сбербанк Онлайн." src="https://raw.githubusercontent.com/snooppr/snoop/refs/heads/master/web/QR_donate_SberBank.png" style="height:200px; width:200px" /></p>\

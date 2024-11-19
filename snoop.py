@@ -90,7 +90,7 @@ version = f"{vers}_{OS_}"
 console.print("[dim cyan]Примеры:[dim cyan]")
 console.print(f"[dim cyan] $ [/dim cyan][cyan]{'cd C:' + chr(92) + 'path' + chr(92) + 'snoop' if Windows else 'cd ~/snoop'}[/cyan]")
 console.print(f"[dim cyan] $ [/dim cyan][cyan]{'python' if Windows else 'python3'} snoop.py --help[/cyan] #справка")
-console.print(f"[dim cyan] $ [/dim cyan][cyan]{'python' if Windows else 'python3'} snoop.py --module[/cyan] #задействовать плагины")
+console.print(f"[dim cyan] $ [/dim cyan][cyan]{'python' if Windows else 'python3'} snoop.py --module[/cyan] #плагины")
 console.print(f"[dim cyan] $ [/dim cyan][cyan]{'python' if Windows else 'python3'} snoop.py nickname[/cyan] #поиск user-a")
 console.rule(characters="=", style="cyan")
 print("")
