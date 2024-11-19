@@ -54,7 +54,6 @@ da = requests.adapters.HTTPAdapter(max_retries=2)
 my_session.mount('https://', da)
 
 
-dirresults = os.getcwd()
 progressYa = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
 
 
@@ -281,8 +280,8 @@ def module2():
                         raise Exception("")
                     break
                 except Exception:
-                    print("\033[31;1m└──Указан неверный путь." + \
-                          "Укажите правильный абсолютный путь к файлу или перетащите файл в окно терминала\033[0m")
+                    print("\033[31;1m└──Указан неверный путь. " + \
+                          "Укажите корректный абсолютный путь к объекту или перетащите файл в окно терминала\033[0m")
                     hvostput = os.path.split(put)[1].replace('"', '')
                     Erf(hvostput)
 

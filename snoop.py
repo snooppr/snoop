@@ -1202,7 +1202,8 @@ def main_cli():
         if any(options) or args.timeout != 8:
             snoopbanner.logo(text=format_txt("⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']", k=True, m=True))
     elif args.norm and 'demo' in version:
-        snoopbanner.logo(text=format_txt("в demo деактивирован переключатель '-q': «режим SNOOPninja/Quick»", k=True), exit=False)
+        snoopbanner.logo("в demo деактивирован переключатель '-q': «режим SNOOPninja/Quick»...",
+                         color="\033[37m\033[44m", exit=False)
         snoopbanner.donate()
     elif args.norm is False and args.listing is False and 'full' in version:
         if Linux:
@@ -1224,7 +1225,8 @@ def main_cli():
                                                                     Style.RESET_ALL, Fore.CYAN,
                                                                     Style.RESET_ALL), k=True))
     elif args.speed and 'demo' in version:
-        snoopbanner.logo(text=format_txt("в demo недоступна опция '-p' пользовательская настройка ускорения", k=True), exit=False)
+        snoopbanner.logo("Функция '-p' настройка ускорения поиска доступна пользователям Snoop full version...",
+                         color="\033[37m\033[44m", exit=False)
         snoopbanner.donate()
 
 
@@ -1557,7 +1559,9 @@ def main_cli():
 
 ## Опция '-w'.
     if args.web:
-        print("\n\033[37m\033[44m{}".format("Функция '-w' доступна только пользователям Snoop full version..."))
+        print("")
+        snoopbanner.logo("Функция '-w' доступна только пользователям Snoop full version...",
+                         color="\033[37m\033[44m", exit=False)
         snoopbanner.donate()
 
 
@@ -1958,7 +1962,7 @@ document.getElementById('snoop').innerHTML=""
                 print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%Y-%m-%d_%H:%M:%S', time_date)}\n")
 
             if "demo" in version:
-                console.print(f"[italic]  Получить Snoop Full Version (+4.5K сайтов):[/italic]\n[dim yellow]  " + \
+                console.print(f"[italic]  Получить Snoop Full Version (+4.6K сайтов):[/italic]\n[dim yellow]  " + \
                               f"$ {'python ' if 'source' in version else ''}" + \
                               f"{os.path.basename(sys.argv[0])} --donate/-d[/dim yellow]\n", highlight=False)
             elif "full" in version and Windows and not any(dic_binding.get("options_speed")):

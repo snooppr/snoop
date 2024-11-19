@@ -183,7 +183,7 @@ function bay() {document.write('\
     return donate_buy
 
 ## Лого.
-def logo(text, exit=True):
+def logo(text, color="\033[31;1m", exit=True):
     if sys.platform != 'win32':
         with console.screen():
             console.print("""[cyan]
@@ -206,7 +206,7 @@ def logo(text, exit=True):
             time.sleep(1.4)
     for i in text:
         time.sleep(0.04)
-        print(f"\033[31;1m{i}", end='', flush=True)
+        print(f"{color}{i}", end='', flush=True)
     if exit:
         print("\033[31;1m\n\nВыход")
         sys.exit()
