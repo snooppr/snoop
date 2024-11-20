@@ -68,7 +68,7 @@ init(autoreset=True)
 console = Console()
 
 
-vers, vers_code, demo_full = 'v1.4.1f', "s", "d"
+vers, vers_code, demo_full = 'v1.4.1g', "s", "d"
 
 print(f"""\033[36m
   ___|
@@ -268,21 +268,22 @@ def print_invalid(websites_names, message, color=True):
 
 ## Вывести предупреждение о несоотв. версиях либ.
 def warning_lib():
-    if (int("".join(requests.urllib3.__version__.split("."))) < 12618 or int("".join(requests.urllib3.__version__.split("."))) > 12620) \
-       or (int("".join(requests.__version__.split("."))) > 2310 or int("".join(requests.__version__.split("."))) < 2282):
-        console.log("[yellow]Внимание! \n\nВ Requests > 2.31 / Urllib3 >= v2 разработчики отказались от поддержки старых шифров. " + \
-                    "Некоторые, немногочисленные, устаревшие сайты из БД, работающие по старой технологии, будут возвращать " + \
-                    "ошибки соединения, которых можно было бы избежать.[/yellow]\n\n" + \
-                    "[bold green]Рекомендация: \n$ python -m pip install requests==2.31.0 urllib3==1.26.20[/bold green]", highlight=False)
+    if int(requests.urllib3.__version__.split(".")[0]) < 2 or int("".join(requests.__version__.split("."))) < 2282:
+        console.log("[yellow]Внимание! \n\nВ Requests > v2.28.2 / Urllib3 v2 разработчики отказались от поддержки старых шифров. " + \
+                    "Некоторые, немногочисленные, устаревшие сайты из БД, работающие по старой технологии, будут продолжать " + \
+                    "коннектиться без ошибок (Snoop будет стремиться обеспечивать режим совместимости).[/yellow]\n\n" + \
+                    "[bold green]Все же рекомендуется обновить библиотеки: \n$ python -m pip install requests urllib3 -U[/bold green]", highlight=False)
         console.rule(characters="=", style="cyan")
 
 
 ##Сеть.
-def r_session(cert, connect=0, speed=False, norm = False):
+def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
+              url=None, headers="", allow_redirects=True, timeout=9):
     """
     Объект сессии нужен для расширения пула сетевых соединений, существенный минус (многопоточноть/OS Windows):
     с течением времени происходит утечка процессорного времени. Обходное решение: создавать временную сессию
     на каждое соединение без кэширования, прирост производительности (Windows) ~25-30%.
+    Кроме того, в версии urllib3 > 2 при multiprocessing (Linux) необходимо вручную мариновать объект SSL.
     """
 
     if speed:
@@ -291,27 +292,37 @@ def r_session(cert, connect=0, speed=False, norm = False):
         connections = 200 if Linux else (70 if Windows else 40) #L/W/A.
 
     # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
-    if "full" in version:
+    if "test" in version:
         total = False if norm else None
-        retry = requests.urllib3.util.Retry(total=total, connect=connect, read=0, status=0, other=1, backoff_factor=0.6)
+        retry = requests.urllib3.util.Retry(total=total, connect=connect, read=0, status=0, other=1, backoff_factor=0.1)
         adapter = requests.adapters.HTTPAdapter(max_retries=retry)
     else:
         adapter = requests.adapters.HTTPAdapter()
 
-    try:
-        requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL' #urllib3 <= v1.26.20, в urllib3 v2 перенастраивать процессы
+    try: #urllib3 > 2
+        cert_reqs = ssl.CERT_NONE if cert is False else ssl.CERT_REQUIRED
+        ciphers = 'ECDHE+AESGCM:ECDHE+CHACHA20:DHE+AESGCM:DHE+CHACHA20:ECDH+AESGCM:DH+AESGCM\
+                   :ECDH+AES:DH+AES:RSA+AESGCM:RSA+AES:!aNULL:!eNULL:!MD5:!DSS:HIGH:!DH'
+        ctx = requests.urllib3.util.create_urllib3_context(ciphers=ciphers, cert_reqs=cert_reqs)
+        adapter.init_poolmanager(connections=connections, maxsize=20, block=False,
+                                 ssl_minimum_version=ssl.TLSVersion.TLSv1, ssl_context=ctx)
+    except Exception: #urllib3 < 2, перенастраивать процессы не требуется
+        requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
         adapter.init_poolmanager(connections=connections, maxsize=20, block=False)
-    except Exception:
-        adapter.init_poolmanager(connections=connections, maxsize=20, block=False, ssl_minimum_version=ssl.TLSVersion.TLSv1)
 
     requests.packages.urllib3.disable_warnings()
     r_session = requests.Session()
     r_session.max_redirects = 9
-    r_session.verify = False if cert is False else True
+    r_session.verify = False if cert is False else certifi.where()
     r_session.mount('http://', adapter)
     r_session.mount('https://', adapter)
 
-    return r_session, requests
+    if method == "get":
+        req_session = r_session.get
+    elif method == "head":
+        req_session = r_session.head
+
+    return req_session(url=url, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
 
 # Вернуть результат future for2.
@@ -328,7 +339,9 @@ def r_results(request_future, error_type, websites_names, timeout=None, norm=Fal
         if norm is False and print_found_only is False:
             print_error(websites_names, "HTTP Error ", country_code, err1, verbose, color)
     except requests.exceptions.ConnectionError as err2:
-        if norm is False and "Max retries" not in str(err2):
+        #if norm is False and "Max retries" not in str(err2):
+        if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or
+                              'SSLZeroReturnError' in str(err2) or 'Failed' in str(err2) or 'None' == str(err2)):
             censors += 1
             if print_found_only is False:
                 print_error(websites_names, "Ошибка соединения ", country_code, err2, verbose, color)
@@ -355,13 +368,13 @@ def r_results(request_future, error_type, websites_names, timeout=None, norm=Fal
 
 
 ## Сохранение отчетов опция (-S).
-def new_session(url, headers, requests_future, error_type, username, websites_names, r, t):
+def new_session(url, headers, error_type, username, websites_names, r, t):
     """
     Если nickname найден, но актуальная html-страница находится дальше по редиректу,
     поднимаем новое соединение и двигаемся по редиректу чтобы ее захватить и сохранить.
     """
 
-    response = requests_future.get(url=url, headers=headers, allow_redirects=True, timeout=t)
+    response = r_session(url=url, headers=headers, allow_redirects=True, timeout=t)
 
 # Ловушка на некот.сайтах (if response.content is not None ≠ if response.content).
     if response.content is not None and response.encoding == 'ISO-8859-1':
@@ -378,17 +391,17 @@ def new_session(url, headers, requests_future, error_type, username, websites_na
         session_size = None
     return response, session_size
 
-def sreports(url, headers, requests_future, error_type, username, websites_names, r):
+def sreports(url, headers, error_type, username, websites_names, r):
     os.makedirs(f"{dirpath}/results/nicknames/save reports/{username}", exist_ok=True)
 # Сохранять отчеты для метода: redirection.
     if error_type == "redirection":
         try:
-            response, session_size = new_session(url, headers, requests_future, error_type,
+            response, session_size = new_session(url, headers, error_type,
                                                  username, websites_names, r, t=6)
         except requests.exceptions.ConnectionError:
             time.sleep(0.02)
             try:
-                response, session_size = new_session(url, requests_future, error_type, username,
+                response, session_size = new_session(url, error_type, username,
                                                      websites_names, r, headers="", t=3)
             except Exception:
                 session_size = 'Err'  #подсчет извлеченных данных
@@ -429,10 +442,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     elif username in еasteregg:
         with console.status("[bold blue] 💡 Обнаружена пасхалка...", spinner='noise'):
             try:
-                r3_session, requests = r_session(cert)
-                r_east = r3_session.get("https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
-                r_repo = r3_session.get('https://api.github.com/repos/snooppr/snoop', timeout=timeout).json()
-                r_latestvers = r3_session.get('https://api.github.com/repos/snooppr/snoop/tags', timeout=timeout).json()
+                r_east = r_session(url="https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
+                r_repo = r_session(url='https://api.github.com/repos/snooppr/snoop', timeout=timeout).json()
+                r_latestvers = r_session(url='https://api.github.com/repos/snooppr/snoop/tags', timeout=timeout).json()
 
                 console.print(Panel(Markdown(r_east.text.replace("=" * 83, "")),
                                     subtitle="[bold blue]журнал snoop-версий[/bold blue]", style=STL(color="cyan")))
@@ -595,17 +607,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             url_API = param_websites.get("urlProbe")
 # Использование api/nickname.
             url_API = url if url_API is None else url_API.format(username)
-
-# Дергаем объект сессии не по прямому назначению, спасаем CPU/Windows/Многопоточность на длинной дистанции.
+# Повторы.
             connect = 1 if param_websites.get("country_klas") == "UA" else 2
-            r1_session, requests = r_session(cert, speed=speed, norm=norm, connect=connect)
-
 # Если нужен только статус кода, не загружать тело страницы, экономия памяти, и многие сайты с защитой предпочитают Head.
             if param_websites["errorTypе"] != 'status_code' or reports:
-                r1_future = r1_session.get
+                method = "get"
             else:
-                r1_future = r1_session.head
-
+                method = "head"
 # Сайт перенаправляет запрос на другой URL.
 # Имя найдено. Запретить перенаправление чтобы захватить статус кода из первоначального url.
             if param_websites["errorTypе"] == "response_url" or param_websites["errorTypе"] == "redirection":
@@ -614,10 +622,12 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             else:
                 allow_redirects = True
 
+# Дергаем объект сессии не по прямому назначению, спасаем CPU/Windows/Многопоточность на длинной дистанции.
+# Кроме того SSL замариновать при multiprocessing.
 # Отправить параллельно все запросы и сохранить future для последующего доступа.
             try:
-                future_ = executor1.submit(r1_future, url=url_API, headers=headers,
-                                           allow_redirects=allow_redirects, timeout=timeout)
+                future_ = executor1.submit(r_session, cert=cert, speed=speed, norm=norm, connect=connect, method=method,
+                                           url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
                 if norm: #quick режим
                     BDdemo_new_quick.update({future_:{websites_names:param_websites}})
@@ -702,9 +712,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                                      print_found_only=print_found_only, verbose=verbose,
                                                      color=color, timeout=timeout, country_code=f" ~{country_code}")
 
-# Создать новые сессии для save pages/редких повторных запросов.
-            if reports or r == "FakeNone":
-                r2_session, requests = r_session(cert, speed=speed)
 
 # Повторный запрос на сбойное соединение результативнее, чем через Adapter.
             if norm is False and r == "FakeNone":
@@ -714,9 +721,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' + \
                                             'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}
 
-                for _ in range(3):
+                for num, _ in enumerate(range(3), 1):
                     recensor += 1
-                    r_retry = executor2.submit(r2_session.get, url=url, headers=head_duble,
+                    if num > 2:
+                        head_duble = ""
+                    r_retry = executor2.submit(r_session, url=url, headers=head_duble,
                                                allow_redirects=allow_redirects, timeout=4)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
@@ -776,7 +785,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                             print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                         exists = "найден!"
                         if reports:
-                            sreports(url, headers, r2_session, error_type, username, websites_names, r)
+                            sreports(url, headers, error_type, username, websites_names, r)
                 except UnicodeEncodeError:
                     exists = "увы"
 ## Проверка, 4 методов; #2.
@@ -787,7 +796,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     exists = "найден!"
                     if reports:
-                        session_size = sreports(url, headers, r2_session, error_type, username, websites_names, r)
+                        session_size = sreports(url, headers, error_type, username, websites_names, r)
                 else:
                     if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
@@ -800,7 +809,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        sreports(url, headers, r2_session, error_type, username, websites_names, r)
+                        sreports(url, headers, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
@@ -813,7 +822,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        sreports(url, headers, r2_session, error_type, username, websites_names, r)
+                        sreports(url, headers, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
