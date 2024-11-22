@@ -2041,5 +2041,4 @@ if __name__ == '__main__':
         elif lame_workhorse:
             os.kill(os.getpid(), signal.SIGKILL)
         else:
-            for child in active_children():
-                child.terminate()
+            [pid.terminate() for pid in active_children()]

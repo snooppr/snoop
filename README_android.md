@@ -216,6 +216,4 @@ $ python3 snoop.py --update y #Требуется установка Git.
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Android%20snoop_run.gif" width="40%" />  
 </p>  
 
- • **27 января 2022г. сжатие репозитория/если возникли проблемы сделайте 'git clone' по новому.**  
- • **Слияние веток snoop_termux и master** чтобы и дальше получать обновления для Snoop for Anroid/Termux перейдите на ветку 'master':  
- `$ git checkout master`.  
+ • **27 января 2022г. сжатие репозитория.**
