@@ -351,7 +351,7 @@ on
 
  • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").  
 
- • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; hosting services are not paid on time.  
+ • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; certificates are not renewed; hosting services are not paid on time.  
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
 [example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
 
