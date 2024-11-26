@@ -159,8 +159,6 @@ search arguments:
                         La recherche de plusieurs noms en même temps est prise en
                         charge. Les surnoms contenant un espace dans leur nom sont
                         entre guillemets
-  --verbose, -v         Lors de la recherche de "surnom", imprimez la verbalisation
-                        détaillée
   --web-base, -w        Connectez-vous pour rechercher 'surnom' dans la base de
                         données web mise à jour (plus de 4600+ sites Web). 
                         Dans la version de démonstration, la fonction est désactivée
@@ -183,11 +181,13 @@ search arguments:
                         réponse du serveur (secondes). Affecte la durée de la recherche.
                         Affecte 'Erreurs de dépassement de délai :' Activé. cette option
                         est nécessaire avec une connexion Internet lente (par défaut 9s)
-  --found-print, -f     Imprimer uniquement les comptes trouvés
   --no-func, -n         ✓Terminal monochrome, ne pas utiliser de couleurs dans l'url
                         ✓Désactiver l'ouverture du navigateur Web
                         ✓Désactiver l'impression des drapeaux de pays
                         ✓Désactiver l'indication et l'état de progression
+  --found-print, -f     Imprimer uniquement les comptes trouvés
+  --verbose, -v         Lors de la recherche de "surnom", imprimez la verbalisation
+                        détaillée
   --userlist , -u <file> 
                         Spécifiez un fichier avec une liste d'utilisateurs.
                         Snoop traitera intelligemment les données et fournira des rapports 
@@ -203,14 +203,17 @@ search arguments:
                         de la base de données snoop est défini pour chaque site
   --pool , -p <digit> 
                         Désactivez l'optimisation automatique et définissez l'accélération de
-                        la recherche manuelle de 1 à 160 max. threads/processus de travail.
+                        la recherche manuelle de 1 à 300 max. threads/processus de travail.
                         Par défaut, la limite personnelle de tout appareil en mode rapide est
                         utilisée ; dans les autres modes, la limite des PC faibles est
-                        utilisée. Définir une valeur trop basse ou trop élevée peut ralentir considérablement le logiciel. ~Valeur optimale calculée pour cet
+                        utilisée. Définir une valeur trop basse ou trop élevée peut ralentir 
+                        considérablement le logiciel. ~Valeur optimale calculée pour cet
                         appareil, voir le paramètre du bloc 'snoop info', option
                         'Pool recommandé' [--version/-V]. Il est recommandé d'utiliser cette
                         option 1) si l'utilisateur dispose d'un appareil multicœur 2) ne
-                        souhaite pas utiliser le mode rapide [--quick/-q] 3) a l'intention d'accélérer la recherche, par exemple, dans le mode avec l'option [--found-print/-f'] . L'option est personnelle et peut accélérer la
+                        souhaite pas utiliser le mode rapide [--quick/-q] 3) a l'intention
+                        d'accélérer la recherche, par exemple, dans le mode avec l'option
+                        [--found-print/-f'] . L'option est personnelle et peut accélérer la
                         recherche dans la version complète de Snoop à des vitesses énormes
   --quick, -q           Mode de recherche rapide et agressif.
                         Ne retraite pas les ressources défaillantes,

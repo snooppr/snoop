@@ -159,8 +159,6 @@ search arguments:
                         Suche nach mehreren Namen wird unterstützt. Ein Spitzname,
                         der ein Leerzeichen in seinem Namen enthält, wird in
                         Anführungszeichen eingeschlossen
-  --verbose, -v         Geben Sie bei der Suche nach 'Spitzname' eine detaillierte
-                        Verbalisierung aus
   --web-base, -w        Stellen Sie eine Verbindung zu einer dynamisch aktualisierten
                         web_DB (über 4600+ Websites) her, um nach 'Spitzname'
                         zu suchen. In der Demoversion ist die Funktion deaktiviert
@@ -186,11 +184,13 @@ search arguments:
                         Beeinflusst die Dauer der Suche. Beeinflusst das
                         'Fehlerzeitüberschreitung'. An Diese Option ist für eine
                         langsame Internetverbindung erforderlich (Standard 9s)
-  --found-print, -f     Drucken Sie nur gefundene Konten
   --no-func, -n         ✓Monochrom-Terminal, verwenden Sie keine Farben in der URL
                         ✓Öffnen des Webbrowsers verbieten
                         ✓Deaktivieren Sie das Drucken von Länderflaggen
                         ✓Anzeige und Fortschrittsstatus deaktivieren
+  --found-print, -f     Drucken Sie nur gefundene Konten
+  --verbose, -v         Geben Sie bei der Suche nach 'Spitzname' eine detaillierte
+                        Verbalisierung aus
   --userlist , -u <file> 
                         Geben Sie eine Datei mit einer Liste von Benutzern an.
                         Snoop wird die Daten intelligent verarbeiten und
@@ -208,7 +208,7 @@ search arguments:
                         für jede Site 
   --pool , -p <digit> 
                         Deaktivieren Sie die automatische Optimierung und stellen Sie
-                        die manuelle Suchbeschleunigung von 1 auf maximal 160 ein.
+                        die manuelle Suchbeschleunigung von 1 auf maximal 300 ein.
                         Arbeitsthreads/Prozesse. Standardmäßig wird das persönliche
                         Limit eines beliebigen Geräts im Schnellmodus verwendet; in
                         anderen Modi wird das Limit schwacher PCs verwendet. Wenn Sie

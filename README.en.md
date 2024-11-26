@@ -159,8 +159,6 @@ search arguments:
                         Searching for several names at the same time is 
                         supported. Nicknames containing a space in their name
                         are enclosed in quotation marks
-  --verbose, -v         When searching for 'nickname', print detailed
-                        verbalization
   --web-base, -w        Connect to search for 'nickname' to the updated web_DB
                         (4600+ websites). In demo version the function is disabled
   --site , -s <site_name> 
@@ -182,11 +180,13 @@ search arguments:
                         from the server (seconds). Affects the search duration.
                         Affects 'Timeout errors:' On. this option is necessary
                         with a slow Internet connection (by default 9s)
-  --found-print, -f     Print only found accounts
   --no-func, -n         ✓Monochrome terminal, do not use colors in url
                         ✓Disable opening web browser
                         ✓Disable printing of country flags 
                         ✓Disable indication and progress status
+  --found-print, -f     Print only found accounts
+  --verbose, -v         When searching for 'nickname', print detailed
+                        verbalization
   --userlist , -u <file> 
                         Specify a file with a list of users. Snoop will
                         intelligently process the data and provide additional reports
@@ -200,7 +200,7 @@ search arguments:
                         from the snoop database is set for each site
   --pool , -p <digit>  
                         Disable auto-optimization and set manual search acceleration
-                        from 1 to 160 max. worker threads/processes. By default, the
+                        from 1 to 300 max. worker threads/processes. By default, the
                         personal maximum limit of any device in Quick mode is used,
                         in other modes, the maximum limit of weak PCs is used. Too low
                         or too high a value can significantly slow down the software.
