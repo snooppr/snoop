@@ -41,9 +41,9 @@ import snoopnetworktest
 
 if int(platform.python_version_tuple()[1]) >= 8:
     from importlib.metadata import version as version_lib
-    python3_8 = True
+    python3_8_plus = True
 else:
-    python3_8 = False
+    python3_8_plus = False
 
 Android = True if hasattr(sys, 'getandroidapilevel') else False
 Windows = True if sys.platform == 'win32' else False
@@ -1070,7 +1070,7 @@ def license_snoop():
     termux = f"\nTermux: [dim cyan]{T_v}[/dim cyan]\n" if Android else "\n"
 
     light_v = True if not 'snoopplugins' in globals() else False
-    if python3_8:
+    if python3_8_plus:
         colorama_v = f", (colorama::{version_lib('colorama')})"
         rich_v = f", (rich::{version_lib('rich')})"
         urllib3_v = f", (urllib3::{version_lib('urllib3')})"
