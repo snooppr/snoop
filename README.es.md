@@ -157,7 +157,6 @@ argumentos de búsqueda:
   nickname              Apodo del usuario buscado. Se admite la búsqueda
                         de varios nombres al mismo tiempo. Un apodo que contiene
                         un espacio en su nombre se escribe entre comillas
-  --verbose, -v         Cuando busque 'apodo', imprima verbalización detallada
   --web-base, -w        Conéctese a una web_DB dinámicamente actualizada
                         (más de 4600+ sitios) para buscar 'apodo'.
                         En la versión de demostración, la función está deshabilitada
@@ -180,11 +179,12 @@ argumentos de búsqueda:
                         la búsqueda. Afecta al 'Tiempo de espera de error'.
                         En esta opción es necesaria para una conexión a Internet
                         lenta (9s por defecto)
-  --found-print, -f     Imprimir solo cuentas encontradas
   --no-func, -n         ✓Terminal monocromática, no usar colores en url
                         ✓Deshabilitar la apertura del navegador web
                         ✓Deshabilitar la impresión de banderas de países
                         ✓Indicación de desactivación y estado de progreso
+  --found-print, -f     Imprimir solo cuentas encontradas
+  --verbose, -v         Cuando busque 'apodo', imprima verbalización detallada
   --userlist , -u <file> 
                         Especifique un archivo con una lista de usuarios.
                         Snoop procesará los datos de forma inteligente
@@ -202,7 +202,7 @@ argumentos de búsqueda:
                         de la base de datos de snoop para cada sitio
   --pool , -p <digit>  
                         Desactive la optimización automática y establezca la aceleración
-                        de búsqueda manual de 1 a 160 como máximo. subprocesos/procesos
+                        de búsqueda manual de 1 a 300 como máximo. subprocesos/procesos
                         de trabajo. De forma predeterminada, se usa el límite personal
                         de cualquier dispositivo en el modo Rápido; en otros modos, se
                         usa el límite de PC débiles. Establecer un valor demasiado alto
