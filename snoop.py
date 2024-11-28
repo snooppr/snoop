@@ -136,7 +136,7 @@ def web_path_copy():
                     else:
                         os.chmod(total_file_path, 0o755)
         elif "source" in version and Android and os.path.exists("/data/data/com.termux/files/home/storage/shared/snoop/web") is False:
-            shutil.copytree(f"{dirresults}/web", "/data/data/com.termux/files/home/storage/shared/snoop/web")
+            shutil.copytree(f"{os.getcwd()}/web", "/data/data/com.termux/files/home/storage/shared/snoop/web")
     except Exception as e:
         print(f"ERR: {e}")
 
