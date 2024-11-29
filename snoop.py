@@ -144,13 +144,13 @@ def web_path_copy():
 # Действие лицензии.
 def license(end_of_license):
     date_up = int(time.mktime(end_of_license))  #дата в секундах с начала эпохи
-    Do = time.strftime('%Y-%m-%d', time.gmtime(date_up))
+    End = time.strftime('%Y-%m-%d', time.gmtime(date_up))
 
     if time.time() > date_up:
         snoopbanner.logo(text=f"ПО {version} деактивировано согласно лицензии.")
         sys.exit()
 
-    return Do
+    return End
 
 
 ## Расход памяти.
@@ -202,16 +202,12 @@ def bad_raw(flagBS_err, time_date, bad_zone, nick, lst_options):
 
 ## Форматирование, отступы.
 def format_txt(text, k=False, m=False):
-    if Windows:
-        gal, ident_h = "[+] ", " " * 4
-    else:
-        gal, ident_h = " ✔ ", " " * 3
-
-    ident_e = "" if k else ident_h
+    gal = " • " if Windows else " ✔ "
+    ident_e = "" if k else " " * 3
     gal = gal if k and not m else ""
 
     try:
-        return textwrap.fill(f"{gal}{text}", width=os.get_terminal_size()[0], subsequent_indent=ident_h, initial_indent=ident_e)
+        return textwrap.fill(f"{gal}{text}", width=os.get_terminal_size()[0], subsequent_indent=" " * 3, initial_indent=ident_e)
     except OSError:
         return "ERR"
 
@@ -282,7 +278,7 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
     if speed:
         connections = (speed + 20) if speed >= 60 else (70 if not Windows else 50)
     elif speed is False:
-        connections = 200 if Linux else (70 if Windows else 40) #L/W/A.
+        connections = 200 if Linux else (70 if Windows else 50) #L/W/A.
 
     # adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=0, max_retries=0, pool_block=True)
     if "test" in version:
@@ -1014,8 +1010,8 @@ def license_snoop():
 
     if not Android:
         cpu = 2 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
-        pool_ = str(cpu * 5 if Windows else (os.cpu_count() * 40)) + \
-                f" {'threads (~1_Gb_Ram = 50_Threads = 5_Mbit/s)' if Windows else 'process (~2_Gb_Ram = 100_Process = 10_Mbit/s)'}"
+        pool_ = str(cpu * 7 if Windows else (os.cpu_count() * 40)) + \
+                f" {'threads (~1_Gb_Ram = 50_Threads = 5_Mbit/s)' if Windows else 'process (~1.2_Gb_Ram = 100_Process = 10_Mbit/s)'}"
 
         if Windows and 'full' in version:
             ram_av = 900
@@ -1023,7 +1019,7 @@ def license_snoop():
             ram_av = 500
 
         if Linux and 'full' in version:
-            ram_av = 6000 if os.cpu_count() > 4 else 1200
+            ram_av = 4000 if os.cpu_count() > 4 else 1100
         elif Linux and 'demo' in version:
             ram_av = 950
 
@@ -1041,7 +1037,7 @@ def license_snoop():
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
     elif Android:
-        pool_ = str(os.cpu_count() * 3) + f" process, (~512_Mb_Ram = 25_Process = 4_Mbit/s)"
+        pool_ = str(os.cpu_count() * 3) + f" process, (~300_Mb_Ram = 25_Process = 4_Mbit/s)"
 
         try:
             ram = subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[1]
@@ -1751,7 +1747,7 @@ def main_cli():
 ## Запись в txt.
             file_txt = open(f"{dirpath}/results/nicknames/txt/{username}.txt", "w", encoding="utf-8")
 
-            file_txt.write("Адрес | ресурс" + "\n\n")
+            file_txt.write("Ресурс | Адрес" + "\n\n")
 
             for website_name in FULL:
                 dictionary = FULL[website_name]
@@ -1760,7 +1756,7 @@ def main_cli():
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
                     find_url_lst.append(exists_counter)
-                    file_txt.write(dictionary["url_user"] + " | " + (website_name) + "\n")
+                    file_txt.write(f"{(website_name)}    |    {dictionary['url_user']}\n")
 # Размер сессии персональный и общий, кроме CSV.
             try:
                 sess_size = round(sum(ungzip) / 1024, 2)  #в МБ
@@ -1812,12 +1808,12 @@ def main_cli():
             try:
                 cnt = []
                 for k, v in sorted(Counter(li).items(), key=lambda x: x[1], reverse=True):
-                    cnt.append(f"({k} ⇔ {v})")
+                    cnt.append(f"【{k} ⇔ {v}】")
                 flag_str_sum = "; ".join(cnt)
             except Exception:
                 flag_str_sum = "-1"
 
-            file_html.write("</ol>\n</div>\n\n<br>\n\n<div id='meta'>GEO: " + flag_str_sum + ".\n")
+            file_html.write("</ol>\n</div>\n\n<br>\n\n<div id='meta'>GEO:" + flag_str_sum + ".\n")
             file_html.write("<br> Запрашиваемый объект &lt; <b>" + str(nick) + "</b> &gt; найден: <b>" + \
                             str(exists_counter) + "</b> раз(а).")
             file_html.write("<br> Сессия: " + "<b>" + str(round(timefinish)) + "сек_" + str(sess_size) + "Mb</b>.\n")

@@ -117,7 +117,7 @@ function bay() {document.write('\
 	<title>💳 Donate/Buy Snoop Project</title>\
 </head>\
 <body style=\"background-color: #c0c0c0\">\
-<p><span style="color:#009a7c">╭<span style="font-size:36px">Donate/Buy</span>:</span><br />\
+<p><span style="color:#009a7c"><span style="font-size:36px">╭Donate/Buy</span>:</span><br />\
 <span style="color:#009a7c">├──ЮMoney::</span> <a href="https://yoomoney.ru/to/4100111364257544" target="_blank">4100111364257544</a><br />\
 <span style="color:#009a7c">├──Сбер_карта:: </span><strong>2202208013277075</strong><br />\
 <span style="color:#009a7c">├──Райффайзен_карта:: </span><strong>2200300512321074</strong><br />\
