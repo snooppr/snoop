@@ -1011,10 +1011,10 @@ def license_snoop():
     if not Android:
         cpu = 2 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
         pool_ = str(cpu * 7 if Windows else (os.cpu_count() * 40)) + \
-                f" {'threads (~1_Gb_Ram = 50_Threads = 5_Mbit/s)' if Windows else 'process (~1.2_Gb_Ram = 100_Process = 10_Mbit/s)'}"
+                f" {'threads (~600_Mb_Ram = 50_Threads = 5_Mbit/s)' if Windows else 'process (~1.2_Gb_Ram = 100_Process = 10_Mbit/s)'}"
 
         if Windows and 'full' in version:
-            ram_av = 900
+            ram_av = 800
         elif Windows and 'demo' in version:
             ram_av = 500
 
