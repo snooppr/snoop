@@ -320,8 +320,7 @@ en los nombres de usuario, para ahorrar tiempo: - se filtran las solicitudes)*.
 4. **Cambie su dirección IP**  
 La censura son las razones más comunes por las que el usuario recibe errores de omisión/falsos positivos/y, en algunos casos, '**Alas**'.  
 Al usar Snoop desde la dirección IP del proveedor del operador móvil, la velocidad **puede** disminuir significativamente, según el proveedor.  
-Por ejemplo, la forma más efectiva de resolver el problema es **UTILIZAR UNA VPN**, Tor no es muy adecuado para esta tarea.  
-Regla: un escaneo desde una ip no es suficiente para sacar el máximo provecho de Snoop.
+Por ejemplo, la forma más efectiva de resolver el problema es **[censura][*](https://www.rbc.ru/technology_and_media/21/11/2024/673f2a269a7947a9377068b2) [**](https://telegra.ph/Roskomnadzor-raskryl-kakuyu-informaciyu-o-VPN-zapretit-v-Rossii-11-30)[/censura]**  
 
 5. Abrir en el repositorio de Snoop en Github-e Issue/Pull request  
 *(informar al desarrollador sobre esto).*

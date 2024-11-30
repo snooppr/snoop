@@ -316,8 +316,7 @@ in user names, in order to save time: - requests are filtered).*
 4. **Change your IP address**  
 Сensorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
 When using Snoop from the IP address of the mobile operator's provider, the speed **may** drop significantly, depending on the provider.  
-For example, the most effective way to solve the problem is **TO USE A VPN**, Tor is not very well suited for this task.  
-Rule: one scan from one ip is not enough to get the most out of Snoop.
+For example, the most effective way to solve the problem is **[censored][*](https://www.rbc.ru/technology_and_media/21/11/2024/673f2a269a7947a9377068b2) [**](https://telegra.ph/Roskomnadzor-raskryl-kakuyu-informaciyu-o-VPN-zapretit-v-Rossii-11-30)[/censored]**  
 
 5. Open in the Snoop repository on Github-e Issue/Pull request  
 *(inform the developer about this).*

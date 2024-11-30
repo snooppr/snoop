@@ -321,7 +321,7 @@ dans les noms d'utilisateurs, afin de gagner du temps : - les requêtes sont fil
 4. **Changer votre adresse IP**  
 La censure est la raison la plus courante pour laquelle l'utilisateur reçoit des erreurs de saut/des faux positifs/et dans certains cas '**Hélas**'.  
 Lorsque vous utilisez Snoop à partir de l'adresse IP du fournisseur de l'opérateur mobile, la vitesse **peut** chuter de manière significative, selon le fournisseur.  
-Par exemple, le moyen le plus efficace de résoudre le problème est ** D'UTILISER UN VPN **, Tor n'est pas très bien adapté à cette tâche. Règle : un scan depuis une adresse IP ne suffit pas pour tirer le meilleur parti de Snoop.
+Par exemple, le moyen le plus efficace de résoudre le problème est **[censure][*](https://www.rbc.ru/technology_and_media/21/11/2024/673f2a269a7947a9377068b2) [**](https://telegra.ph/Roskomnadzor-raskryl-kakuyu-informaciyu-o-VPN-zapretit-v-Rossii-11-30)[/censure]**  
 
 5. Ouvrir dans le référentiel Snoop sur Github-e Issue/Pull request  
 *(en informer le développeur).*
