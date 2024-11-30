@@ -332,7 +332,7 @@ in Benutzernamen, um Zeit zu sparen: - Anfragen werden gefiltert)*.
 Internetzensur ist die häufigste Ursache dafür, dass der Benutzer übersprungene/falsch positive Fehler/und in einigen Fällen „**Ach**“ erhält.
 Manchmal: Bei häufigem erneutem Scannen kann der Server einer bestimmten Ressource die IP-Adresse des Clients für eine Weile blockieren.
 Bei der Nutzung von Snoop von der IP-Adresse des Providers des Mobilfunkbetreibers **kann** die Geschwindigkeit je nach Provider deutlich sinken.
-Zum Beispiel ist der effektivste Weg, ein Problem zu lösen, **ein VPN zu VERWENDEN**, Tor ist kein guter Helfer.  
+Zum Beispiel ist der effektivste Weg, ein Problem zu lösen, **[zensiert][*](https://www.rbc.ru/technology_and_media/21/11/2024/673f2a269a7947a9377068b2) [**](https://telegra.ph/Roskomnadzor-raskryl-kakuyu-informaciyu-o-VPN-zapretit-v-Rossii-11-30)[/zensiert]**  
 
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/censorship.png" width="70%" />  

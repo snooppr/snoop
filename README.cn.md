@@ -286,7 +286,7 @@ $ python3 snoop.py --update #需要安装 Git
 4. **更改您的IP地址**
 审查是用户收到跳过错误/误报/在某些情况下"**唉**"的最常见原因。
 从移动运营商提供商的 IP 地址使用 Snoop 时，速度**可能**会显着下降，具体取决于提供商。
-例如，解决问题最有效的方法是**使用 VPN**，Tor 不太适合此任务。
+**[审查的][*](https://www.rbc.ru/technology_and_media/21/11/2024/673f2a269a7947a9377068b2) [**](https://telegra.ph/Roskomnadzor-raskryl-kakuyu-informaciyu-o-VPN-zapretit-v-Rossii-11-30)[/审查的]**  
 规则：来自一个 ip 的一次扫描不足以充分利用 Snoop。
 
 5. 在Github-e Issue/Pull request上打开Snoop仓库
