@@ -211,7 +211,8 @@ argumentos de búsqueda:
                         [--version/-V]. esta opción se propone utilizar
                         1) si el usuario tiene una computadora multinúcleo y un
                         suministro de RAM o, por el contrario, una débil, VPS alquilado
-                        2) acelerar, ralentizar la búsqueda
+                        2) se recomienda acelerar o ralentizar la búsqueda junto con la
+                        opción [--found-print/-f']
   --quick, -q           Modo de búsqueda rápido y agresivo.
                         No reprocesa los recursos fallidos, lo que acelera la búsqueda,
                         pero también aumenta ligeramente Bad_raw.

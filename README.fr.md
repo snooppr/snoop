@@ -212,7 +212,8 @@ search arguments:
                         'Piscine recommandée', option [--version/-V]. Cette option
                         il est proposé d'utiliser 1) si l'utilisateur a un ordinateur
                         multicœur et une réserve de RAM ou, à l'inverse, faible, VPS loué
-                        2) accélérer, ralentir la recherche
+                        2) il est recommandé d'accélérer ou de ralentir la recherche en
+                        tandem avec l'option [--found-print/-f']
   --quick, -q           Mode de recherche rapide et agressif.
                         Ne retraite pas les ressources défaillantes,
                         ce qui accélère la recherche,

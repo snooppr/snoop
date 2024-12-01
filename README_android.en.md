@@ -160,7 +160,8 @@ search arguments:
                         'Recommended pool', option [--version/-V]. This option
                         is suggested to be used 1) if the user has a
                         multi-core computer and RAM reserve or, on the contrary, weak,
-                        rented VPS 2) speed up, slow down the search
+                        rented VPS 2) It is recommended to speed up and slow down the
+                        search in tandem with the option [--found-print/-f']
   --quick, -q           Fast and aggressive search mode. 
                         Does not reprocess failed resources,
                         which speeds up the search,
