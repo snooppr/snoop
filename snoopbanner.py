@@ -50,7 +50,7 @@ def donate():
 ╭Donate/Buy:
 ├──ЮMoney:: [white]4100111364257544[/white]
 ├──Сбер_карта:: [white]2202208013277075[/white]
-├──Райффайзен_карта:: [white]2200300512321074[/white]
+├──Raiffeisen_card:: [white]2200300512321074[/white]
 └──По номеру телефона (СБП/Банк Юмани):: [white]+79004753581[white]
 
 [bold green]Оплатить софт можно по любым реквизитам, но самым предпочтительным способом является — СБП (перевод по номеру телефона без комиссий с карты любого банка).
@@ -59,7 +59,7 @@ def donate():
 [bold green]При пожертвовании/покупке в сообщении/письме укажите:[/bold green]
 
     \"\"\"
-    [cyan]На развитие Snoop Project: ваш[/cyan] [bold cyan]e-mail[/bold cyan]
+    [cyan]На развитие Snoop Project: ваш[/cyan] [bold cyan]e-mail[/bold cyan][cyan],[/cyan]
     [cyan]full[/cyan] [bold cyan]version[/bold cyan] [cyan]for Windows или full version for Linux,[/cyan]
     [bold cyan]статус[/bold cyan] [cyan]пользователя: Физ.лицо; ИП; Юр.лицо (если покупка ПО).[/cyan]
     \"\"\"
@@ -117,12 +117,12 @@ function bay() {document.write('\
 	<title>💳 Donate/Buy Snoop Project</title>\
 </head>\
 <body style=\"background-color: #c0c0c0\">\
-<p><span style="color:#009a7c"><span style="font-size:36px">╭Donate/Buy</span>:</span><br />\
-<span style="color:#009a7c">├──ЮMoney::</span> <a href="https://yoomoney.ru/to/4100111364257544" target="_blank">4100111364257544</a><br />\
-<span style="color:#009a7c">├──Сбер_карта:: </span><strong>2202208013277075</strong><br />\
-<span style="color:#009a7c">├──Райффайзен_карта:: </span><strong>2200300512321074</strong><br />\
-<span style="color:#009a7c">├──По номеру телефона <em>(СБП: банк Юмани)</em>:: </span><strong>+79004753581</strong><br />\
-<span style="color:#009a7c">└──СберБанк Онлайн <em>(мобильное приложение)</em>:: </span><strong>QR код</strong><br />\
+<p><span style="color:#009a7c"><big>╭</big><span style="font-size:36px">Donate/Buy</span>:</span><br />\
+<span style="color:#009a7c"><big>├──</big>ЮMoney::</span> <a href="https://yoomoney.ru/to/4100111364257544" target="_blank">4100111364257544</a><br />\
+<span style="color:#009a7c"><big>├──</big>Сбер_карта:: </span><strong>2202208013277075</strong><br />\
+<span style="color:#009a7c"><big>├──</big>Raiffeisen_card:: </span><strong>2200300512321074</strong><br />\
+<span style="color:#009a7c"><big>├──</big>По номеру телефона <em>(СБП: банк Юмани)</em>:: </span><strong>+79004753581</strong><br />\
+<span style="color:#009a7c"><big>└──</big>СберБанк Онлайн <em>(мобильное приложение)</em>:: </span><strong>QR код</strong><br />\
 <img alt="QR код только для пользователей Сбербанк Онлайн." src="https://raw.githubusercontent.com/snooppr/snoop/refs/heads/master/web/QR_donate_SberBank.png" style="height:200px; width:200px" /></p>\
 \
 <p><span style="font-size:18px"><span style="color:#007500">Оплатить софт можно по <u>любым реквизитам</u>, но самым предпочтительным способом является &mdash; СБП <em>(перевод по номеру телефона без комиссий с карты любого банка)</em>.</span></span></p>\
@@ -131,7 +131,7 @@ function bay() {document.write('\
 При пожертвовании/покупке в сообщении/письме укажите:</span></span></p>\
 \
 <p><span style="font-size:18px">&nbsp;&nbsp;&nbsp; \&quot;\&quot;\&quot;<br />\
-<span style="color:#009a7c">&nbsp;&nbsp;&nbsp; На развитие Snoop Project: ваш <strong>e-mail</strong><br />\
+<span style="color:#009a7c">&nbsp;&nbsp;&nbsp; На развитие Snoop Project: ваш <strong>e-mail</strong>,<br />\
 &nbsp;&nbsp;&nbsp; full <strong>version</strong> for Windows или full version for Linux,<br />\
 &nbsp;&nbsp;&nbsp; <strong>статус</strong> пользователя: Физ.лицо; ИП; Юр.лицо <em>(если покупка ПО)</em>.</span><br />\
 &nbsp;&nbsp;&nbsp; \&quot;\&quot;\&quot;</span></p>\
