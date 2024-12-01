@@ -217,8 +217,9 @@ search arguments:
                         „Empfohlener Pool“, Option [--version/-V]. Diese Option
                         Es wird vorgeschlagen, 1) zu verwenden, wenn der Benutzer dies
                         getan hat ein Multi-Core-Computer und ein Vorrat an RAM oder
-                        umgekehrt ein schwacher, gemieteter VPS 2) Suche beschleunigen,
-                        verlangsamen
+                        umgekehrt ein schwacher, gemieteter VPS 2) Es wird empfohlen,
+                        die Suche zusammen mit der Option [--found-print/-f']
+                        zu beschleunigen oder zu verlangsamen
   --quick, -q           Schneller und aggressiver Suchmodus.
                         Verarbeitet fehlerhafte Ressourcen nicht erneut,
                         was die Suche beschleunigt, aber auch Bad_raw leicht erhöht.
