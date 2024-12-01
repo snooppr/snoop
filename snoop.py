@@ -121,7 +121,7 @@ TIME_DATE = time.localtime()
 
 dic_binding = {"symbol_bad": re.compile("[^a-zA-Zа-яА-Я\_\s\d\%\@\-\.\+]"),
                "badraw": [], "badzone": [], "options_speed": [],
-               "censors": 0, "lame_workhorse": False}
+               "censors": 0, "android_lame_workhorse": False}
 
 
 # Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
@@ -519,7 +519,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             executor1 = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
         except Exception:
             console.log(snoopbanner.err_all(err_="high"))
-            dic_binding.update({'lame_workhorse': True})
+            dic_binding.update({'android_lame_workhorse': True})
             executor1 = ThreadPoolExecutor(max_workers=10 if not speed else speed)
     elif WINDOWS:
         cpu = 1 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
@@ -2059,7 +2059,7 @@ if __name__ == '__main__':
         console.print(f"\n[bold red]Прерывание [italic](Ctrl + c)[/bold red]")
         if WINDOWS:
             os.kill(os.getpid(), signal.SIGBREAK)
-        elif dic_binding.get('lame_workhorse') is True:
+        elif dic_binding.get('android_lame_workhorse') is True:
             os.kill(os.getpid(), signal.SIGKILL)
         else:
             [pid.terminate() for pid in active_children()]
