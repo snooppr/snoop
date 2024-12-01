@@ -200,21 +200,18 @@ argumentos de búsqueda:
                         el agente está entre comillas, de manera predeterminada,
                         se configura un agente de usuario aleatorio o anulado
                         de la base de datos de snoop para cada sitio
-  --pool , -p <digit>  
-                        Desactive la optimización automática y establezca la aceleración
-                        de búsqueda manual de 1 a 300 como máximo. subprocesos/procesos
-                        de trabajo. De forma predeterminada, se usa el límite personal
-                        de cualquier dispositivo en el modo Rápido; en otros modos, se
-                        usa el límite de PC débiles. Establecer un valor demasiado alto
-                        o bajo puede ralentizar significativamente el software. ~Valor
-                        óptimo calculado para este dispositivo, consulte la opción
-                        'Grupo recomendado' del parámetro 'información de snoop' del
-                        bloque [--versión/-V]. Se recomienda utilizar esta opción
-                        1) si el usuario tiene un dispositivo multinúcleo 2) no desea
-                        utilizar el modo rápido [--quick/-q] 3) tiene la intención de
-                        acelerar la búsqueda, por ejemplo, en el modo con la opción
-                        [--found-print/-f']. La opción es personal y puede acelerar la
-                        búsqueda en la versión completa de Snoop a velocidades enormes.
+  --pool , -p <digit>   Deshabilite la optimización automática y configúrela manualmente
+                        velocidad de búsqueda de 1 a 300 máx. procesos. Por
+                        De forma predeterminada, se utiliza una gran carga de recursos
+                        informáticos. en modo Rápido, en otros modos se usa consumo de
+                        energía moderado. Demasiado bajo o un valor alto puede
+                        ralentizar significativamente el funcionamiento POR. ~Valor
+                        óptimo calculado para un determinado los dispositivos se envían
+                        al parámetro 'snoop info' 'Grupo recomendado', opción
+                        [--version/-V]. esta opción se propone utilizar
+                        1) si el usuario tiene una computadora multinúcleo y un
+                        suministro de RAM o, por el contrario, una débil, VPS alquilado
+                        2) acelerar, ralentizar la búsqueda
   --quick, -q           Modo de búsqueda rápido y agresivo.
                         No reprocesa los recursos fallidos, lo que acelera la búsqueda,
                         pero también aumenta ligeramente Bad_raw.

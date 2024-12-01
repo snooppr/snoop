@@ -150,20 +150,17 @@ search arguments:
                         Set the user-agent manually, the agent is enclosed in 
                         quotes, by default a random or overridden user-agent
                         from the snoop database is set for each site
-  --pool , -p <digit>  
-                        Disable auto-optimization and set manual search acceleration
-                        from 1 to 160 max. worker threads/processes. By default, the
-                        personal maximum limit of any device in Quick mode is used,
-                        in other modes, the maximum limit of weak PCs is used. Too low
-                        or too high a value can significantly slow down the software.
-                        ~For the calculated optimal value for this device, see the
-                        'snoop info' block, the 'Recommended pool' parameter, the
-                        [--version/-V] option. This option is recommended for use
-                        1) if the user has a multi-core device 2) does not want to use
-                        the Quick mode [--quick/-q] 3) intends to speed up the search,
-                        for example, in the mode with the [--found-print/-f'] option.
-                        The option is personal and can accelerate the search in
-                        Snoopfull version to enormous speeds
+  --pool , -p <digit>   Disable auto-optimization and set manually
+                        search speed from 1 to 300 max. processes. By
+                        default, high load on computer resources is used
+                        in Quick mode, in other modes, moderate power consumption is
+                        used. Too low or high value can significantly slow down the
+                        operation of software. ~The calculated optimal value for this
+                        device is displayed in 'snoop info', parameter
+                        'Recommended pool', option [--version/-V]. This option
+                        is suggested to be used 1) if the user has a
+                        multi-core computer and RAM reserve or, on the contrary, weak,
+                        rented VPS 2) speed up, slow down the search
   --quick, -q           Fast and aggressive search mode. 
                         Does not reprocess failed resources,
                         which speeds up the search,
