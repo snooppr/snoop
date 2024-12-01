@@ -3,22 +3,21 @@
 "Самотестирование сети"
 
 import speedtest
+from rich.console import Console
 from rich.panel import Panel
 from rich.style import Style as STL
-from rich.console import Console
 
-console2 = Console()
 
 def nettest():
+    console2 = Console()
     with console2.status("[cyan] Ожидайте, идёт самотестирование сети..."):
         servers = []
-        threads = None
         try:
             s = speedtest.Speedtest(secure=True)
             s.get_servers(servers)
             s.get_best_server()
-            s.download(threads=threads)
-            s.upload(threads=threads)
+            s.download(threads=None)
+            s.upload(threads=None)
 
             a = s.results.dict()
 
@@ -50,7 +49,8 @@ def nettest():
             except:
                 p = f"Ping: [bold red]Сбой[/bold red]"
 # Результат.
-            console2.print(Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {c.get('ip')}\nПровайдер: {c.get('isp')}\nЛокация: {c.get('country')}",
+            console2.print(Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {c.get('ip')}\nПровайдер: " + \
+                                     f"{c.get('isp')}\nЛокация: {c.get('country')}",
                                      title="🌐 Тест сети", style=STL(color="cyan")))
             console2.log("[cyan]--> завершен")
         except Exception:
