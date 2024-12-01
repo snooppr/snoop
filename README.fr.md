@@ -201,20 +201,18 @@ search arguments:
                         Définissez l'agent utilisateur manuellement, l'agent est entouré de
                         guillemets, par défaut, un agent utilisateur aléatoire ou remplacé
                         de la base de données snoop est défini pour chaque site
-  --pool , -p <digit> 
-                        Désactivez l'optimisation automatique et définissez l'accélération de
-                        la recherche manuelle de 1 à 300 max. threads/processus de travail.
-                        Par défaut, la limite personnelle de tout appareil en mode rapide est
-                        utilisée ; dans les autres modes, la limite des PC faibles est
-                        utilisée. Définir une valeur trop basse ou trop élevée peut ralentir 
-                        considérablement le logiciel. ~Valeur optimale calculée pour cet
-                        appareil, voir le paramètre du bloc 'snoop info', option
-                        'Pool recommandé' [--version/-V]. Il est recommandé d'utiliser cette
-                        option 1) si l'utilisateur dispose d'un appareil multicœur 2) ne
-                        souhaite pas utiliser le mode rapide [--quick/-q] 3) a l'intention
-                        d'accélérer la recherche, par exemple, dans le mode avec l'option
-                        [--found-print/-f'] . L'option est personnelle et peut accélérer la
-                        recherche dans la version complète de Snoop à des vitesses énormes
+  --pool , -p <digit>   Désactivez l'optimisation automatique et définissez-la manuellement
+                        vitesse de recherche de 1 à 300 max. processus. Par
+                        Par défaut, une charge élevée sur les ressources informatiques est
+                        utilisée en mode rapide, dans les autres modes, il est utilisé
+                        consommation d'énergie modérée. Trop bas ou
+                        une valeur élevée peut ralentir considérablement le fonctionnement
+                        PAR. ~Valeur optimale calculée pour un
+                        les appareils sont envoyés au paramètre « snoop info »
+                        'Piscine recommandée', option [--version/-V]. Cette option
+                        il est proposé d'utiliser 1) si l'utilisateur a un ordinateur
+                        multicœur et une réserve de RAM ou, à l'inverse, faible, VPS loué
+                        2) accélérer, ralentir la recherche
   --quick, -q           Mode de recherche rapide et agressif.
                         Ne retraite pas les ressources défaillantes,
                         ce qui accélère la recherche,
