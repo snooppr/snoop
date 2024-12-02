@@ -2001,10 +2001,10 @@ document.getElementById('snoop').innerHTML=""
                               f"$ {'python ' if 'source' in VERSION else ''}" + \
                               f"{os.path.basename(sys.argv[0])} --donate/-d[/dim yellow]\n", highlight=False)
             elif "full" in VERSION and WINDOWS and not any(dic_binding.get("options_speed")):
-                console.print(format_txt(f" [bold red] ![/bold red] [bold yellow]Обратите внимание: скорость поиска можно " + \
+                console.print(format_txt(f"[bold red] ![/bold red] [bold yellow]Обратите внимание: скорость поиска можно " + \
                                          f"существенно ускорить, используя опции::[/bold yellow]", k=True, m=True))
-                console.print(format_txt(f"[bold yellow]    (-[bold green]-q[/bold green]uick/-[bold green]-p[/bold green]ool/" + \
-                                         f"-[bold green]-f[/bold green]ound-print)[/bold yellow]", k=True, m=True),
+                console.print(format_txt(f"[bold yellow]   [-[bold green]-q[/bold green]uick/-[bold green]-p[/bold green]ool/" + \
+                                         f"-[bold green]-f[/bold green]ound-print][/bold yellow]", k=True, m=True),
                                          "\n", highlight=False)
 
             console.print(Panel(f"{E_MAIL} до {date_off}", title='лицензия', style=STL(color="white", bgcolor="blue")))
