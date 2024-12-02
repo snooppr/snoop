@@ -143,8 +143,8 @@ def web_path_copy():
 
 
 # Действие лицензии.
-def license(end_of_license):
-    date_up = int(time.mktime(end_of_license))  #дата в секундах с начала эпохи
+def license():
+    date_up = int(time.mktime(END_OF_LICENSE))  #дата в секундах с начала эпохи
     End = time.strftime('%Y-%m-%d', time.gmtime(date_up))
 
     if time.time() > date_up:
@@ -1089,7 +1089,7 @@ def license_snoop():
 ## ОСНОВА.
 def main_cli():
     web_path_copy()
-    date_off = license(END_OF_LICENSE)
+    date_off = license()
     BDdemo = snoopbanner.DB('BDdemo')
     BDflag = snoopbanner.DB('BDflag')
     flagBS = len(BDdemo)
@@ -1209,7 +1209,7 @@ def main_cli():
         snoopbanner.logo("в demo деактивирован переключатель '-q': «режим SNOOPninja/Quick»...",
                          color="\033[37m\033[44m", exit=False)
         snoopbanner.donate()
-    elif args.norm is False and args.listing is False and 'full' in VERSION:
+    elif args.norm is False and args.listing is False and args.speed is False and 'full' in VERSION:
         if LINUX:
             print(Fore.CYAN + format_txt("активирован дефолтный поиск '--': «режим SNOOPninja»", k=True))
 
@@ -1747,7 +1747,7 @@ def main_cli():
 ## Запись в txt отчет.
             file_txt = open(f"{DIRPATH}/results/nicknames/txt/{username}.txt", "w", encoding="utf-8")
 
-            file_txt.write("Ресурс | Адрес" + "\n\n")
+            file_txt.write(f"Гео | Ресурс {' ' * 18} | Адрес" + "\n\n")
 
             for website_name in FULL:
                 dictionary = FULL[website_name]
@@ -1756,7 +1756,9 @@ def main_cli():
                 if dictionary.get("exists") == "найден!":
                     exists_counter += 1
                     find_url_lst.append(exists_counter)
-                    file_txt.write(f"{(website_name)}    |    {dictionary['url_user']}\n")
+                    txt_str = f"{dictionary['flagcountryklas']}  |  {(website_name)}"
+                    kef_indent = 30 - (len(txt_str))
+                    file_txt.write(f"{txt_str} {' ' * kef_indent} |  {dictionary['url_user']}\n")
 # Размер сессии персональный и общий, кроме CSV.
             try:
                 sess_size = round(sum(ungzip) / 1024, 2)  #в МБ
@@ -1764,8 +1766,8 @@ def main_cli():
             except Exception:
                 sess_size = 0.000_000_000_1
                 s_size_all = "Err"
+
             timefinish = time.time() - TIME_START - sum(el)
-            
             el.append(timefinish)
             time_all = str(round(time.time() - TIME_START))
             
@@ -1942,10 +1944,10 @@ document.getElementById('snoop').innerHTML=""
 
             writer = csv.writer(file_csv)
             if rus_windows or rus_unix or ANDROID:
-                writer.writerow(['Никнейм', 'Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
+                writer.writerow(['Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
                                  'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/Kb'])
             else:
-                writer.writerow(['username', 'resource', 'country', 'url', 'url_username', 'status', 'http',
+                writer.writerow(['resource', 'country', 'url', 'url_username', 'status', 'http',
                                  'deceleration/s', 'response/s', 'time/s', 'session/Kb'])
 
             for site in FULL:
@@ -1956,15 +1958,16 @@ document.getElementById('snoop').innerHTML=""
                 else:
                     Ssession = "Bad"
 
-                writer.writerow([usernamCSV, site, FULL[site]['countryCSV'], FULL[site]['url_main'], FULL[site]['url_user'],
+                writer.writerow([site, FULL[site]['countryCSV'], FULL[site]['url_main'], FULL[site]['url_user'],
                                  FULL[site]['exists'], FULL[site]['http_status'],
                                  FULL[site]['response_time_site_ms'].replace('.', locale.localeconv()['decimal_point']),
                                  FULL[site]['check_time_ms'].replace('.', locale.localeconv()['decimal_point']),
                                  FULL[site]['response_time_ms'].replace('.', locale.localeconv()['decimal_point']),
                                  Ssession])
 
-            writer.writerow(['«' + '-'*30, '-'*8, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32, '-'*13, '-'*23, '-'*16 + '»'])
-            writer.writerow([f'БД_(demoversion)={flagBS}_Websites'])
+            writer.writerow(['«' + '-'*35, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32, '-'*13, '-'*23, '-'*16 + '»'])
+            writer.writerow([f'БД_(fullversion)={flagBS}_Websites'])
+            writer.writerow([f"Nick={usernamCSV}"])
             writer.writerow('')
             writer.writerow([f'Исключённые_регионы={exl}'])
             writer.writerow([f'Выбор_конкретных_регионов={one}'])
