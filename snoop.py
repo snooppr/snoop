@@ -183,9 +183,9 @@ def bad_raw(flagBS_err, bad_zone, nick, lst_options):
     else:
         if 4 >= flagBS_err >= 2:
             print(f"{Fore.CYAN}└────\033[33;1mВнимание! Bad_raw: {flagBS_err}% БД, bad_zone {bad_zone}\033[0m")
-        elif 9 >= flagBS_err > 4:
+        elif 12 >= flagBS_err > 4:
             print(f"{Fore.CYAN}└────\033[31;1mВнимание!! Bad_raw: {flagBS_err}% БД, bad_zone {bad_zone}\033[0m")
-        elif flagBS_err > 9:
+        elif flagBS_err > 12:
             print(f"{Fore.CYAN}└────\033[30m\033[41mВнимание!!! Bad_raw: {flagBS_err}% БД, критический уровень, " + \
                   f"bad_zone {bad_zone}\033[0m")
 
@@ -549,7 +549,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         results_site['flagcountry'] = param_websites.get("country")
         results_site['flagcountryklas'] = param_websites.get("country_klas")
         results_site['url_main'] = param_websites.get("urlMain")
-        # username = param_websites.get("usernameON")
+        username = param_websites.get("usernameON")
 
 # Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое — постоянный с расширенным заголовком.
         majR = random.choice(range(101, 124, 1))
