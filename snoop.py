@@ -549,7 +549,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         results_site['flagcountry'] = param_websites.get("country")
         results_site['flagcountryklas'] = param_websites.get("country_klas")
         results_site['url_main'] = param_websites.get("urlMain")
-        username = param_websites.get("usernameON")
+        # username = param_websites.get("usernameON")
 
 # Пользовательский user-agent браузера (рандомно на каждый сайт), а при сбое — постоянный с расширенным заголовком.
         majR = random.choice(range(101, 124, 1))
