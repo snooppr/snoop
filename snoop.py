@@ -55,9 +55,9 @@ console = Console()
 def version_snoop(vers, vers_code, demo_full):
     print(f"""\033[36m
   ___|
-\___ \  __ \   _ \   _ \  __ \  
+\\___ \\  __ \\   _ \\   _ \\  __ \\ 
       | |   | (   | (   | |   | 
-_____/ _|  _|\___/ \___/  .__/  
+_____/ _|  _|\\___/ \\___/  .__/  
                          _|    \033[0m \033[37m\033[44m{vers}\033[0m
 """)
 
@@ -119,7 +119,7 @@ TIME_START = time.time()
 TIME_DATE = time.localtime()
 
 
-dic_binding = {"symbol_bad": re.compile("[^a-zA-Zа-яА-Я\_\s\d\%\@\-\.\+]"),
+dic_binding = {"symbol_bad": re.compile("[^a-zA-Zа-яА-Я\\_\\s\\d\\%\\@\\-\\.\\+]"),
                "badraw": [], "badzone": [], "options_speed": [],
                "censors": 0, "android_lame_workhorse": False}
 
@@ -961,7 +961,7 @@ def autoclean():
 \033[36mВы действительно хотите:\033[0m \033[31;1m
                _                _  
  _| _ |  _.|| |_) _ ._  _ .-_|_  ) 
-(_|(/_| (_||| | \(/_|_)(_)|  |_ o  
+(_|(/_| (_||| | \\(/_|_)(_)|  |_ o  
                     |             \033[0m""")
 
     while True:
@@ -1783,7 +1783,7 @@ def main_cli():
 
 
 ## Запись в html отчет.
-            if ANDROID and re.search("[^\W \da-zA-Z]+", nick):
+            if ANDROID and re.search("[^\\W \\da-zA-Z]+", nick):
                 username = f"nickname_{time.strftime('%Y-%m-%d_%H-%M-%S')}"
 
             file_html = open(f"{DIRPATH}/results/nicknames/html/{username}.html", "w", encoding="utf-8")
