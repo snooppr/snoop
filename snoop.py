@@ -277,9 +277,9 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
     """
 
     if speed:
-        connections = (speed + 20) if speed >= 60 else (70 if not WINDOWS else 50)
+        connections = (speed + 30) if speed >= 60 else (70 if not WINDOWS else 50)
     elif speed is False:
-        connections = 200 if LINUX else (70 if WINDOWS else 50) #L/W/A.
+        connections = 200 if LINUX else (70 if WINDOWS else 110) #L/W/A.
 
     if "test" in VERSION:
         total = False if norm else None
