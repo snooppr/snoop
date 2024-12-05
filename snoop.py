@@ -277,7 +277,7 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
     """
 
     if speed:
-        connections = (speed + 30) if speed >= 60 else (70 if not WINDOWS else 50)
+        connections = (speed + 20) if speed >= 60 else (70 if not WINDOWS else 50)
     elif speed is False:
         connections = 200 if LINUX else (70 if WINDOWS else 110) #L/W/A.
 
@@ -301,7 +301,7 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
 
     requests.packages.urllib3.disable_warnings()
     r_session = requests.Session()
-    r_session.max_redirects = 6
+    r_session.max_redirects = 6 if ANDROID else 9
     r_session.verify = False if cert is False else certifi.where()
     r_session.mount('http://', adapter)
     r_session.mount('https://', adapter)
