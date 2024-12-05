@@ -1344,7 +1344,8 @@ def main_cli():
                                      "сайта до{0}{1} {2} {3}{4}с.» {5}".format(Style.BRIGHT, Fore.CYAN, args.timeout,
                                                                                Style.RESET_ALL, Fore.CYAN,
                                                                                Style.RESET_ALL), k=True))
-
+    if args.timeout == 8.9:
+        args.timeout = 9
 
 ## Опция '-f'.
     if args.print_found_only:
