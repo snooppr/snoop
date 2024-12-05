@@ -301,7 +301,7 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
 
     requests.packages.urllib3.disable_warnings()
     r_session = requests.Session()
-    r_session.max_redirects = 9
+    r_session.max_redirects = 6
     r_session.verify = False if cert is False else certifi.where()
     r_session.mount('http://', adapter)
     r_session.mount('https://', adapter)
@@ -320,7 +320,7 @@ def r_results(request_future, error_type, websites_names, timeout=None, norm=Fal
               print_found_only=False, verbose=False, color=True, country_code=''):
 
     try:
-        res = request_future.result(timeout=timeout + 20)
+        res = request_future.result(timeout=timeout + 10)
         if res.status_code:
             return res, error_type, str(round(res.elapsed.total_seconds(), 2))
     except requests.exceptions.HTTPError as err1:
@@ -882,10 +882,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Добавление результатов этого сайта в окончательный словарь со всеми другими результатами.
             dic_snoop_full[websites_names] = dic_snoop_full.get(websites_names)
 # не удерживать ресурсы соединения с сервером; предотвратить утечку памяти: del future.
-            if norm:
-                BDdemo_new_quick.pop(future, None)
-            else:
-                param_websites.pop("request_future", None)
+            if r != "FakeStuck":
+                if norm:
+                    BDdemo_new_quick.pop(future, None)
+                else:
+                    param_websites.pop("request_future", None)
 
 # Высвободить незначительную часть ресурсов.
         try:
