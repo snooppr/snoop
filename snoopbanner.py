@@ -75,7 +75,7 @@ Snoop в исполняемом виде (build-версия) предостав
 Всем студентам (независимо от учебного заведения или направления) ПО Snoop full version предоставляется с 50% скидкой.
 
 Snoop full version:
- * 4600+ Websites;
+ * 4700+ Websites;
  * поддержка локальной и онлайн database Snoop;
  * подключение к БД Snoop (online), которая расширяется/обновляется;
  * доступен автооптимизированный, быстрый и агрессивный режим поиска;
@@ -150,7 +150,7 @@ function bay() {document.write('\
 <p><span style="font-size:18px"><span style="color:#007500">Snoop full version:</span></span></p>\
 \
 <ul>\
-	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;4600+ Websites;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;4700+ Websites;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;поддержка локальной и онлайн database Snoop;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;подключение к БД Snoop (online), которая расширяется/обновляется;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;доступен автооптимизированный, быстрый и агрессивный режим поиска;</span></span></li>\
