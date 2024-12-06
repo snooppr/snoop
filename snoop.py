@@ -279,7 +279,7 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
     if speed:
         connections = (speed + 20) if speed >= 60 else (70 if not WINDOWS else 50)
     elif speed is False:
-        connections = 200 if LINUX else (70 if WINDOWS else 110) #L/W/A.
+        connections = 200 if LINUX else (70 if WINDOWS else 40) #L/W/A.
 
     if "test" in VERSION:
         total = False if norm else None
@@ -293,7 +293,7 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
         ciphers = 'ECDHE+AESGCM:ECDHE+CHACHA20:DHE+AESGCM:DHE+CHACHA20:ECDH+AESGCM:DH+AESGCM\
                    :ECDH+AES:DH+AES:RSA+AESGCM:RSA+AES:!aNULL:!eNULL:!MD5:!DSS:HIGH:!DH'
         ctx = requests.urllib3.util.create_urllib3_context(ciphers=ciphers, cert_reqs=cert_reqs)
-        adapter.init_poolmanager(connections=connections, maxsize=20, block=False,
+        adapter.init_poolmanager(connections=connections, maxsize=40 if ANDROID else 20, block=False,
                                  ssl_minimum_version=ssl.TLSVersion.TLSv1, ssl_context=ctx)
     except Exception: #urllib3 < 2, перенастраивать процессы не требуется
         requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
@@ -1346,6 +1346,7 @@ def main_cli():
                                                                                Style.RESET_ALL), k=True))
     if args.timeout == 8.9:
         args.timeout = 9
+
 
 ## Опция '-f'.
     if args.print_found_only:
