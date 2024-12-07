@@ -1961,7 +1961,7 @@ document.getElementById('snoop').innerHTML=""
                                  Ssession])
 
             writer.writerow(['«' + '-'*35, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32, '-'*13, '-'*23, '-'*16 + '»'])
-            writer.writerow([f'БД_(fullversion)={flagBS}_Websites'])
+            writer.writerow([f'БД_(demoversion)={flagBS}_Websites'])
             writer.writerow([f"Nick={usernamCSV}"])
             writer.writerow('')
             writer.writerow([f'Исключённые_регионы={exl}'])
