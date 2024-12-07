@@ -334,7 +334,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 # (возможно и у других поставщиков связи) на мобильных операторах Мегафон/Yota упала в ~2 раза.
 ```
 ПРИМЕЧАНИЕ_4!: если у пользователя Android ущербный (то есть 12+) и ломает Termux, читайте инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
-ПРИМЕЧАНИЕ_5!: поддерживаются старые пропатченные python версии 3.7-3.10 из [termux_tur repo](https://github.com/termux-user-repository/tur/tree/master/tur).  
+ПРИМЕЧАНИЕ_5!: поддерживаются старые пропатченные python версии 3.7-3.11 из [termux_tur repo](https://github.com/termux-user-repository/tur/tree/master/tur).  
 
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Android%20snoop_run.gif" width="40%" />  
