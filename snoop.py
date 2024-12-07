@@ -1080,7 +1080,7 @@ def license_snoop():
                                              f"(speedtest::{snoopnetworktest.speedtest.__version__}){rich_v}{psutil_v}" + \
                                              f"{colorama_v}{urllib3_v}{char_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
-                              f"Ram: [dim cyan]{ram} Мб,[/dim cyan] available: {A}{ram_free} Мб{B}\n" + \
+                              f"Ram: [dim cyan]{ram} Mb,[/dim cyan] available: {A}{ram_free} Mb{B}\n" + \
                               f"Recommended pool: [dim cyan]{pool_}[/dim cyan]",
                               title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
     sys.exit()
