@@ -1012,7 +1012,7 @@ def license_snoop():
     if not ANDROID:
         cpu = 2 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
         pool_ = str(cpu * 7 if WINDOWS else (os.cpu_count() * 40)) + \
-                f" {'threads (~600_Mb_Ram = 50_Threads = 5_Mbit/s)' if WINDOWS else 'process (~1.2_Gb_Ram = 100_Process = 10_Mbit/s)'}"
+                f" {'threads (~600_MB_Ram = 50_Threads = 5_Mbit/s)' if WINDOWS else 'process (~1.2_GB_Ram = 100_Process = 10_Mbit/s)'}"
 
         if WINDOWS and 'full' in VERSION:
             ram_av = 800
@@ -1038,7 +1038,7 @@ def license_snoop():
                           f"но кажется используется что-то другое 💻\n\nВыход")
             sys.exit()
     elif ANDROID:
-        pool_ = str(os.cpu_count() * 3) + f" process, (~300_Mb_Ram = 25_Process = 4_Mbit/s)"
+        pool_ = str(os.cpu_count() * 3) + f" process, (~300_MB_Ram = 25_Process = 4_Mbit/s)"
 
         try:
             ram = subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[1]
@@ -1080,7 +1080,7 @@ def license_snoop():
                                              f"(speedtest::{snoopnetworktest.speedtest.__version__}){rich_v}{psutil_v}" + \
                                              f"{colorama_v}{urllib3_v}{char_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
-                              f"Ram: [dim cyan]{ram} Mb,[/dim cyan] available: {A}{ram_free} Mb{B}\n" + \
+                              f"Ram: [dim cyan]{ram} MB,[/dim cyan] available: {A}{ram_free} MB{B}\n" + \
                               f"Recommended pool: [dim cyan]{pool_}[/dim cyan]",
                               title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
     sys.exit()
