@@ -120,7 +120,7 @@ TIME_DATE = time.localtime()
 
 
 dic_binding = {"symbol_bad": re.compile("[^a-zA-Zа-яА-Я\\_\\s\\d\\%\\@\\-\\.\\+]"),
-               "badraw": [], "badzone": [], "options_speed": [],
+               "badraw": [], "badzone": [],
                "censors": 0, "android_lame_workhorse": False}
 
 
@@ -318,7 +318,6 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
 # Логика: возврат ответа и дублирующего метода (из 4-х) в случае успеха/повтора.
 def r_results(request_future, error_type, websites_names, timeout=None, norm=False,
               print_found_only=False, verbose=False, color=True, country_code=''):
-
     try:
         res = request_future.result(timeout=timeout + 10)
         if res.status_code:
@@ -943,12 +942,12 @@ def update_snoop():
 
     while True:
         print("\033[36mВыберите действие:\033[0m [y/n] ", end='')
-        upd = input()
-        if upd == "y" or upd == "Y":
+        upd = input().lower()
+        if upd == "y":
             print("\033[36mПримечание: функция обновления Snoop работает при помощи утилиты < Git >\033[0m")
             os.startfile("update.bat") if WINDOWS else os.system("./update.sh")
             break
-        elif upd == "n" or upd == "N":
+        elif upd == "n":
             print(Style.BRIGHT + Fore.RED + "\nОбновление отклонено\nВыход")
             break
         else:
@@ -967,8 +966,8 @@ def autoclean():
 
     while True:
         print("\033[36mВыберите действие:\033[0m [y/n] ", end='')
-        del_all = input()
-        if del_all == "y" or del_all == "Y":
+        del_all = input().lower()
+        if del_all == "y":
             try:
 # Определение директорий.
                 path_build_del = "/results" if not WINDOWS else "\\results"
@@ -991,7 +990,7 @@ def autoclean():
             except Exception:
                 console.log("[red]Ошибка")
             break
-        elif del_all == "n" or del_all == "N":
+        elif del_all == "n":
             print(Style.BRIGHT + Fore.RED + "\nОтмена действия\nВыход")
             break
         else:
@@ -1003,8 +1002,8 @@ def autoclean():
 def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         wl = 4
-        if WINDOWS:
-            wl = 5 if int(platform.win32_ver()[0]) < 10 else 4
+        if WINDOWS and int(platform.win32_ver()[0]) < 10:
+            wl = 5
 
         cop = copyright.read().replace("\ufeffSnoop", "Snoop", 1)
         cop = cop.replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
@@ -1021,9 +1020,9 @@ def license_snoop():
             ram_av = 500
 
         if LINUX and 'full' in VERSION:
-            ram_av = 4000 if os.cpu_count() > 4 else 1100
+            ram_av = 3000 if os.cpu_count() > 4 else 700
         elif LINUX and 'demo' in VERSION:
-            ram_av = 950
+            ram_av = 200
 
         try:
             ram = int(psutil.virtual_memory().total / 1024 / 1024)
@@ -1191,8 +1190,6 @@ def main_cli():
 
     args = parser.parse_args()
 
-    dic_binding.get("options_speed").extend([args.norm, args.speed, args.one_level, args.site_list])
-
 ## Опции  '-csei' несовместимы между собой и quick-режим.
     if args.norm and 'full' in VERSION:
         print(Fore.CYAN + format_txt("активирована опция '-q': «быстрый режим поиска»", k=True))
@@ -1214,12 +1211,8 @@ def main_cli():
         if LINUX:
             print(Fore.CYAN + format_txt("активирован дефолтный поиск '--': «режим SNOOPninja»", k=True))
 
-    k = 0
-    for _ in bool(args.site_list), bool(args.country), bool(args.exclude_country), bool(args.one_level):
-        if _ is True:
-            k += 1
-        if k == 2:
-            snoopbanner.logo(text=format_txt("⛔️ опции ['-c', '-e' '-i', '-s'] несовместимы между собой", k=True, m=True))
+    if [args.country, bool(args.site_list), bool(args.exclude_country), bool(args.one_level)].count(True) >= 2:
+        snoopbanner.logo(text=format_txt("⛔️ опции ['-c', '-e' '-i', '-s'] несовместимы между собой", k=True, m=True))
 
 
 ## Опция  '-p'.
@@ -1571,8 +1564,7 @@ def main_cli():
         snoopbanner.donate()
 
 
-## Работа с базой.
-# опция '-b'. Проверить, существует ли альтернативная база данных, иначе default.
+## Опция '-b'. Проверить, существует ли альтернативная база данных, иначе default.
     if not os.path.exists(str(args.json_file)):
         print(f"\n\033[31;1mОшибка! Неверно указан путь к файлу: '{str(args.json_file)}'.\033[0m")
         sys.exit()
@@ -1699,7 +1691,7 @@ def main_cli():
         print("\033[31;1mInvalid загружаемая база данных.\033[0m")
 
 
-## Проверка версий lib 'requests/urllib3'.
+## Проверка версий lib: 'requests/urllib3'.
     warning_lib()
 
 
@@ -2000,10 +1992,10 @@ document.getElementById('snoop').innerHTML=""
                 print(f"{Fore.CYAN}└───Дата поиска:{Style.RESET_ALL} {time.strftime('%Y-%m-%d__%H:%M:%S', TIME_DATE)}\n")
 
             if "demo" in VERSION:
-                console.print(f"[italic]  Получить Snoop Full Version (4.6K+ сайтов):[/italic]\n[dim yellow]  " + \
+                console.print(f"[italic]  Получить Snoop Full Version ({web_sites} сайтов):[/italic]\n[dim yellow]  " + \
                               f"$ {'python ' if 'source' in VERSION else ''}" + \
-                              f"{os.path.basename(sys.argv[0])} --donate/-d[/dim yellow]\n", highlight=False)
-            elif "full" in VERSION and WINDOWS and not any(dic_binding.get("options_speed")):
+                              f"{os.path.basename(sys.argv[0])} --donate[/dim yellow]\n", highlight=False)
+            elif "full" in VERSION and WINDOWS and not any([args.norm, args.speed, args.one_level, args.site_list]):
                 console.print(format_txt(f"[bold red] ![/bold red] [bold yellow]Обратите внимание: скорость поиска можно " + \
                                          f"существенно ускорить, используя опции::[/bold yellow]", k=True, m=True))
                 console.print(format_txt(f"[bold yellow]   [-[bold green]-q[/bold green]uick/-[bold green]-p[/bold green]ool/" + \
@@ -2053,7 +2045,7 @@ document.getElementById('snoop').innerHTML=""
             pass
 
 
-## поиск по выбранным пользователям либо из CLI, либо из файла.
+## Поиск по выбранным пользователям: либо из CLI, либо из файла.
     starts(args.username) if args.user is False else starts(USERLIST)
 
 
@@ -2062,7 +2054,7 @@ if __name__ == '__main__':
     try:
         main_cli()
     except KeyboardInterrupt:
-        console.print(f"\n[bold red]Прерывание [italic](Ctrl + c)[/bold red]")
+        console.print(f"\n[bold red]Прерывание [italic](Ctrl + c)[/italic][/bold red]")
         if WINDOWS:
             os.kill(os.getpid(), signal.SIGBREAK)
         elif dic_binding.get('android_lame_workhorse') is True:
