@@ -281,13 +281,13 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
     elif speed is False:
         connections = 200 if LINUX else (70 if WINDOWS else 40) #L/W/A.
 
-    if "test" in VERSION:
-        total = False if norm else None
-        retry = requests.urllib3.util.Retry(total=total, connect=connect, read=0, status=0, other=1, backoff_factor=0.1)
-        adapter = requests.adapters.HTTPAdapter(max_retries=retry)
-    else:
-        adapter = requests.adapters.HTTPAdapter()
-
+    # if "test" in VERSION:
+    #     total = False if norm else None
+    #     retry = requests.urllib3.util.Retry(total=total, connect=connect, read=0, status=0, other=1, backoff_factor=0.1)
+    #     adapter = requests.adapters.HTTPAdapter(max_retries=retry)
+    # else:
+    #     adapter = requests.adapters.HTTPAdapter()
+    adapter = requests.adapters.HTTPAdapter()
     try: #urllib3 > 2
         cert_reqs = ssl.CERT_NONE if cert is False else ssl.CERT_REQUIRED
         ciphers = 'ECDHE+AESGCM:ECDHE+CHACHA20:DHE+AESGCM:DHE+CHACHA20:ECDH+AESGCM:DH+AESGCM\
@@ -439,7 +439,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                     f"({round((time.time() - 1581638400) / 86400)}_дней).\n" + \
                                     f"[bold cyan]Последнее обновление репозитория:[/bold cyan] " + \
                                     f"{'_'.join(r_repo.get('pushed_at')[0:-4].split('T'))} (UTC).\n" + \
-                                    f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} Мб.\n" + \
+                                    f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} MB.\n" + \
                                     f"[bold cyan]Github-рейтинг:[/bold cyan] {r_repo.get('watchers')} звёзд.\n" + \
                                     f"[bold cyan]Скрытые опции:[/bold cyan]\n'--headers/-H':: Задать user-agent вручную, агент " + \
                                                               f"заключается в кавычки, по умолчанию для каждого сайта задается " + \
@@ -859,11 +859,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                 if color is True:
                     console.print(f"[cyan] [*{response_time} s] {R}[*{ello_time} s] [cyan][*{Ssession_size}]",
-                                  f"{ram_free_color}[*{ram_free} Мб]")
+                                  f"{ram_free_color}[*{ram_free} MB]")
                     console.rule("", style=R1)
                 else:
                     console.print(f" [*{response_time} s T] >>", f"[*{ello_time} s t]", f"[*{Ssession_size}]",
-                                  f"[*{ram_free} Мб]", highlight=False)
+                                  f"[*{ram_free} MB]", highlight=False)
                     console.rule(style="color")
 
 
@@ -986,7 +986,7 @@ def autoclean():
 # Сброс кэша и удаление каталога 'results'.
                 shutil.rmtree(rm, ignore_errors=True)
                 print(f"\n\033[31;1mdeleted --> '{rm}'\033[0m\033[36m {len(delfiles)} files, " + \
-                      f"{round(total_size/1024/1024, 2)} Mb\033[0m")
+                      f"{round(total_size/1024/1024, 2)} MB\033[0m")
             except Exception:
                 console.log("[red]Ошибка")
             break
@@ -1768,7 +1768,7 @@ def main_cli():
             
 
             file_txt.write("\n" f"Запрашиваемый объект: <{nick}> найден: {exists_counter} раз(а).")
-            file_txt.write("\n" f"Сессия: {str(round(timefinish))}сек {str(sess_size)}Mb.")
+            file_txt.write("\n" f"Сессия: {str(round(timefinish))}сек {str(sess_size)}MB.")
             file_txt.write("\n" f"База Snoop (demo version): {flagBS} Websites.")
             file_txt.write("\n" f"Исключённые регионы: {exl}.")
             file_txt.write("\n" f"Выбор конкретных регионов: {one}.")
@@ -1815,7 +1815,7 @@ def main_cli():
             file_html.write("</ol>\n</div>\n\n<br>\n\n<div id='meta'>GEO:" + flag_str_sum + ".\n")
             file_html.write("<br> Запрашиваемый объект &lt; <b>" + str(nick) + "</b> &gt; найден: <b>" + \
                             str(exists_counter) + "</b> раз(а).")
-            file_html.write("<br> Сессия: " + "<b>" + str(round(timefinish)) + "сек_" + str(sess_size) + "Mb</b>.\n")
+            file_html.write("<br> Сессия: " + "<b>" + str(round(timefinish)) + "сек_" + str(sess_size) + "MB</b>.\n")
             file_html.write("<br> Исключённые регионы: <b>" + str(exl) + "</b>.\n")
             file_html.write("<br> Выбор конкретных регионов: <b>" + str(one) + "</b>.\n")
             file_html.write("<br> База Snoop (demo version): <b>" + str(flagBS) + "</b>" + " Websites.\n")
@@ -1939,10 +1939,10 @@ document.getElementById('snoop').innerHTML=""
 
             writer = csv.writer(file_csv)
             if rus_windows or rus_unix or ANDROID:
-                writer.writerow(['Ресурс', 'Страна', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
+                writer.writerow(['Ресурс', 'Гео', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
                                  'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/Kb'])
             else:
-                writer.writerow(['resource', 'country', 'url', 'url_username', 'status', 'http',
+                writer.writerow(['resource', 'Geo', 'url', 'url_username', 'status', 'http',
                                  'deceleration/s', 'response/s', 'time/s', 'session/Kb'])
 
             for site in FULL:
@@ -1983,7 +1983,7 @@ document.getElementById('snoop').innerHTML=""
             direct_results = f"{DIRPATH}/results/nicknames/*" if not WINDOWS else f"{DIRPATH}\\results\\nicknames\\*"
 
             print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} " + \
-                  f"url (сессия: {time_all}_сек__{s_size_all}_Mb)")
+                  f"url (сессия: {time_all}_сек__{s_size_all}_MB)")
             print(f"{Fore.CYAN}├──Сохранено в:{Style.RESET_ALL} {direct_results}")
 
             if flagBS_err >= 2:  #perc_%
