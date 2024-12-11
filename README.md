@@ -463,4 +463,7 @@ https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-
 
 [![Stargazers over time](https://starchart.cc/snooppr/snoop.svg?variant=adaptive)](https://starchart.cc/snooppr/snoop)  
 
+ ⋮ **Проведено агрессивное сжатие репозитория 11 декабря 2024г.** Сохранен полный бэкап истории.
+ Пользователи, собирающие Snoop из исходного кода, должны сделать 'git clone' по-новому.  
+
 </details>

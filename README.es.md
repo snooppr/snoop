@@ -359,6 +359,9 @@ De vez en cuando, es necesario seguir todo este "rock'n'roll web", por lo que la
  • **Visualización de commits:** from the birth of the project to Friday the thirteenth, 2023.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
+
+⋮ **La compresión agresiva del repositorio se llevó a cabo el 11 de diciembre de 2024** Se guardó una copia de seguridad completa del historial. Los usuarios que creen Snoop desde el código fuente deben hacer 'git clone' de una nueva manera.  
+
 </details>
 
 【RU -> ES】 Este es un [➰Léame en ruso](https://github.com/snooppr/snoop "Si lo desea, puede mejorar (PR) la traducción automática de esta página en español").

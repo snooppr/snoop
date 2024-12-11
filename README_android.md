@@ -216,4 +216,5 @@ $ python3 snoop.py --update y #Требуется установка Git.
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Android%20snoop_run.gif" width="40%" />  
 </p>  
 
- • **27 января 2022г. сжатие репозитория.**
+ • **Проведено агрессивное сжатие репозитория 11 декабря 2024г.** Сохранен полный бэкап истории.
+ Пользователи, собирающие Snoop из исходного кода, должны сделать 'git clone' по-новому.  

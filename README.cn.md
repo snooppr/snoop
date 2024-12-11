@@ -326,6 +326,9 @@ $ sudo nano /etc/ssl/openssl.cnf
  • **提交的可视化：**从项目诞生到 2023 年十三号星期五。  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
+
+⋮ **于 2024 年 12 月 11 日对存储库进行了积极压缩** 保存了历史记录的完整备份。从源代码构建 Snoop 的用户必须以新的方式进行“git clone”。  
+
 </details>
 
 【RU -> CN】 这是翻译的 [➰俄语自述文件](https://github.com/snooppr/snoop "如果你愿意，你可以改进（PR）这个页面在中国的机器翻译").

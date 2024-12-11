@@ -216,4 +216,4 @@ $ python3 snoop.py --update #requires a Git installation.
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Android%20snoop_run.gif" width="40%" />  
 </p>  
 
- • **January 27 2022 compress the repository.**
+ • ⋮ **Run an aggressive repository compaction on December 11, 2024.** A full history backup was saved. Users building Snoop from source should do a new 'git clone'.  

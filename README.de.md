@@ -374,6 +374,9 @@ An
  • **Visualisierung von Commits:** von der Geburt des Projekts bis Freitag, den dreizehnten 2023.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
+
+ • **Am 11. Dezember 2024 wurde eine aggressive Komprimierung des Repositorys durchgeführt** Eine vollständige Sicherung des Verlaufs wurde gespeichert. Benutzer, die Snoop aus dem Quellcode erstellen, müssen „Git Clone“ auf eine neue Art und Weise durchführen.  
+
 </details>
 
 【RU -> DE】 Dies ist eine übersetzte [➰Readme auf Russisch](https://github.com/snooppr/snoop "Wenn Sie möchten, können Sie die maschinelle Übersetzung dieser Seite auf Deutsche verbessern (PR)").

@@ -354,6 +354,9 @@ From time to time, it is necessary to follow all this "Web rock' n 'roll", so do
  • **Visualization of commits:** from the birth of the project to Friday the thirteenth, 2023.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
+
+ • **Run an aggressive repository compaction on December 11, 2024.** A full history backup was saved. Users building Snoop from source should do a new 'git clone'.  
+
 </details>
 
 【RU -> EN】 This is a translated [➰Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English").
