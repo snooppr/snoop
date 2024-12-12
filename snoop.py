@@ -439,7 +439,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                     f"({round((time.time() - 1581638400) / 86400)}_дней).\n" + \
                                     f"[bold cyan]Последнее обновление репозитория:[/bold cyan] " + \
                                     f"{'_'.join(r_repo.get('pushed_at')[0:-4].split('T'))} (UTC).\n" + \
-                                    f"[bold cyan]Сжатие репозитория:[/bold cyan] 2024-12-11\n" + \
+                                    f"[bold cyan]Сжатие репозитория:[/bold cyan] 2024-12-11.\n" + \
                                     f"[bold cyan]Размер репозитория:[/bold cyan] {round(int(r_repo.get('size')) / 1024, 1)} MB.\n" + \
                                     f"[bold cyan]Github-рейтинг:[/bold cyan] {r_repo.get('watchers')} звёзд.\n" + \
                                     f"[bold cyan]Скрытые опции:[/bold cyan]\n'--headers/-H':: Задать user-agent вручную, агент " + \
