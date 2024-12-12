@@ -113,7 +113,7 @@ LINUX = True if ANDROID is False and WINDOWS is False else False
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2025, 9, 10, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
-VERSION = version_snoop('v1.4.1h', "s", "d")
+VERSION = version_snoop('v1.4.1i', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -537,6 +537,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
     if norm is False:
         executor2 = ThreadPoolExecutor(max_workers=1)
+    if reports is True:
+        executor3 = ThreadPoolExecutor(max_workers=2)
 
 
 ## Анализ всех сайтов.
@@ -770,7 +772,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                             print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                         exists = "найден!"
                         if reports:
-                            sreports(url, headers, error_type, username, websites_names, r)
+                            executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
                 except UnicodeEncodeError:
                     exists = "увы"
 ## Проверка, 4 методов; #2.
@@ -781,7 +783,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     exists = "найден!"
                     if reports:
-                        session_size = sreports(url, headers, error_type, username, websites_names, r)
+                        session_size = executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
                 else:
                     if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
@@ -794,7 +796,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        sreports(url, headers, error_type, username, websites_names, r)
+                        executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
@@ -807,7 +809,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        sreports(url, headers, error_type, username, websites_names, r)
+                        executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
@@ -895,6 +897,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         try:
             if 'executor2' in locals():
                 executor2.shutdown()
+            if 'executor3' in locals():
+                executor3.shutdown()
         except Exception:
             console.log(snoopbanner.err_all(err_="low"))
 # Вернуть словарь со всеми данными на запрос функции snoop и пробросить удерживаемые ресурсы (позже, закрыть в фоне).
@@ -928,7 +932,7 @@ def speed_snoop(speed):
             raise argparse.ArgumentTypeError(f"\n\033[31;1mMax. workers proc = '{speed}' Err,\033[0m" + \
                                               " \033[36m рабочий диапазон от '1' до '300' целым числом.\n \033[0m")
         else:
-            snoopbanner.logo(text=format_txt(f" !  Задана слишком высокая многопоточноть: '{speed} поток' не имеет смысла, " + \
+            snoopbanner.logo(text=format_txt(f" ! Задана слишком высокая многопоточноть: '{speed} поток' не имеет смысла, " + \
                                              f"уменьшите значение '--pool/-p <= 60'. Обратите внимание, что, например, " + \
                                              f"в OS GNU/Linux используется иная технология, которую имеет смысл разгонять.",
                                              k=True, m=True) + "\n\n", exit=False)
@@ -1005,10 +1009,7 @@ def autoclean():
 ## Лицензия/системная информация.
 def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
-        wl = 4
-        if WINDOWS and int(platform.win32_ver()[0]) < 10:
-            wl = 5
-
+        wl = 5 if WINDOWS and int(platform.win32_ver()[0]) < 10 else 4
         cop = copyright.read().replace("\ufeffSnoop", "Snoop", 1)
         cop = cop.replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
         console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
