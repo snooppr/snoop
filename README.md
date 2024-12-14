@@ -325,15 +325,15 @@ $ cd && echo "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc && bas
 # не используя опцию "--list-all", используя команду "snoopcheck".
 $ cd && echo "alias snoopcheck='cd && cd snoop && echo 2 | python snoop.py --list-all | grep -i'" >> .bashrc && bash  
 
-# ПРИМЕЧАНИЕ_2!: Snoop довольно умён и может автоматически открывать результаты поиска во внешнем веб-браузере:  
+# ПРИМЕЧАНИЕ_2!: Snoop довольно умён и может автоматически открывать результаты поиска во внешнем веб-браузере, не смотря на Google ограничения:  
 $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/termux.properties  
 # перезапустить Termux.  
-# По окончанию поиска работы snoop на запрос выбора, "чем открыть результаты поиска" выбрать дефолтный/системный HTMLviewer.  
+# По окончанию поиска работы snoop на запрос выбора, "чем открыть результаты поиска" выбрать, встоенный в OS Android, дефолтный/системный HTMLviewer.  
 
 # ПРИМЕЧАНИЕ_3!: после отключения РФ от Лондонской точки обмена интернет-трафиком скорость поиска Snoop
-# (возможно и у других поставщиков связи) на мобильных операторах Мегафон/Yota упала в ~2 раза.
+# (возможно и у других провайдеров связи) на Мегафон/Yota упала ~в 2 раза.
 ```
-ПРИМЕЧАНИЕ_4!: если у пользователя Android ущербный (то есть 12+) и ломает Termux, читайте инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
+ПРИМЕЧАНИЕ_4!: если у пользователя Android ущербный (то есть версия OS 12+ со множеством ограничений) и ломает Termux, читайте инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
 ПРИМЕЧАНИЕ_5!: поддерживаются старые пропатченные python версии 3.7-3.11 из [termux_tur repo](https://github.com/termux-user-repository/tur/tree/master/tur).  
 
 <p align="center">  

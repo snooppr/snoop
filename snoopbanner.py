@@ -71,7 +71,7 @@ Snoop в исполняемом виде (build-версия) предостав
 [cyan]https://github.com/snooppr/snoop/releases[/cyan][bold green], также лицензия доступна по команде::
 '[/bold green][cyan]snoop_cli.bin --version[/cyan][bold green]' или '[/bold green][cyan]snoop_cli.exe --version[/cyan][bold green]' у исполняемого файла.
 
-Если ПО Snoop требуется пользователю для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.
+Если софт требуется пользователю для служебных или образовательных задач, например, десять лицензий на ПО для ВУЗа, напишите письмо на e-mail разработчика в свободной форме.
 Всем студентам (независимо от учебного заведения или направления) ПО Snoop full version предоставляется с 50% скидкой.
 
 Snoop full version:
@@ -144,7 +144,7 @@ function bay() {document.write('\
 <a href="https://github.com/snooppr/snoop/releases" target="_blank">https://github.com/snooppr/snoop/releases</a> <span style="color:#007500">, также лицензия доступна по команде::<br />\
 &#39;</span><strong><span style="color:#16a085">snoop_cli.bin --version</span></strong><span style="color:#007500">&#39; или &#39;</span><strong><span style="color:#16a085">snoop_cli.exe --version</span></strong><span style="color:#007500">&#39; у исполняемого файла.</span></span></p>\
 \
-<p><span style="font-size:18px"><span style="color:#007500">Если ПО Snoop требуется пользователю для служебных или образовательных задач, напишите письмо на e-mail разработчика в свободной форме.<br />\
+<p><span style="font-size:18px"><span style="color:#007500">Если софт требуется пользователю для служебных или образовательных задач, например, десять лицензий на ПО для ВУЗа, напишите письмо на e-mail разработчика в свободной форме.<br />\
 Всем студентам <em>(независимо от учебного заведения или направления)</em> ПО Snoop full version предоставляется с <strong>50%</strong> скидкой.</span></span></p>\
 \
 <p><span style="font-size:18px"><span style="color:#007500">Snoop full version:</span></span></p>\
