@@ -722,7 +722,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
                     r, error_type, response_time = r_results(request_future=r_retry, error_type=param_websites.get("errorTypе"),
                                                              websites_names=websites_names, print_found_only=print_found_only,
-                                                             verbose=verbose, color=color, timeout=4.5,
+                                                             verbose=verbose, color=color, timeout=4,
                                                              country_code=f" ~{country_code}")
 
                     if r != "FakeNone":
