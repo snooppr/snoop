@@ -106,7 +106,7 @@ def mkdir_path():
     return dirpath
 
 
-# Константы.
+## Константы.
 ANDROID = True if hasattr(sys, 'getandroidapilevel') else False
 WINDOWS = True if sys.platform == 'win32' else False
 LINUX = True if ANDROID is False and WINDOWS is False else False
@@ -124,7 +124,7 @@ dic_binding = {"symbol_bad": re.compile("[^a-zA-Zа-яА-Я\\_\\s\\d\\%\\@\\-\\.
                "censors": 0, "android_lame_workhorse": False}
 
 
-# Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
+## Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
 def web_path_copy():
     try:
         if "build" in VERSION and os.path.exists(f"{DIRPATH}/web") is False:
@@ -142,7 +142,7 @@ def web_path_copy():
         print(f"ERR: {e}")
 
 
-# Действие лицензии.
+## Действие лицензии.
 def license():
     date_up = int(time.mktime(END_OF_LICENSE)) #дата в секундах с начала эпохи
     End = time.strftime('%Y-%m-%d', time.gmtime(date_up))
@@ -314,7 +314,7 @@ def r_session(cert=False, connect=0, speed=False, norm = False, method="get",
     return req_session(url=url, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
 
-# Вернуть результат future for2.
+## Вернуть результат future.
 # Логика: возврат ответа и дублирующего метода (из 4-х) в случае успеха/повтора.
 def r_results(request_future, error_type, websites_names, timeout=None, norm=False,
               print_found_only=False, verbose=False, color=True, country_code=''):
@@ -376,6 +376,7 @@ def new_session(url, headers, error_type, username, websites_names, r, t):
     except UnicodeEncodeError:
         session_size = None
     return response, session_size
+
 
 def sreports(url, headers, error_type, username, websites_names, r):
     os.makedirs(f"{DIRPATH}/results/nicknames/save reports/{username}", exist_ok=True)
