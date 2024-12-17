@@ -203,7 +203,7 @@ def bad_raw(flagBS_err, bad_zone, nick, lst_options):
 
 ## Форматирование, отступы.
 def format_txt(text, k=False, m=False):
-    gal = " • " if WINDOWS else " ✔ "
+    gal = " · " if WINDOWS else " ✔ "
     indent_end = "" if k else " " * 3
     gal = gal if k and not m else ""
 
@@ -516,29 +516,29 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     if ANDROID:
         try:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
-            executor1 = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
+            executor_req = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
         except Exception:
             console.log(snoopbanner.err_all(err_="high"))
             dic_binding.update({'android_lame_workhorse': True})
-            executor1 = ThreadPoolExecutor(max_workers=10 if not speed else speed)
+            executor_req = ThreadPoolExecutor(max_workers=10 if not speed else speed)
     elif WINDOWS:
         cpu = 1 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
         if norm is False:
             thread__ = len(BDdemo_new) if len(BDdemo_new) < (cpu * 5) else (18 if cpu < 4 else 30)
         else:
             thread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (20 if cpu < 4 else 40)
-        executor1 = ThreadPoolExecutor(max_workers=thread__ if not speed else speed)
+        executor_req = ThreadPoolExecutor(max_workers=thread__ if not speed else speed)
     elif LINUX:
         if norm is False:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if len(os.sched_getaffinity(0)) < 4 else 140)
         else:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 180)
-        executor1 = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
+        executor_req = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
-        executor2 = ThreadPoolExecutor(max_workers=1)
+        executor_req_retry = ThreadPoolExecutor(max_workers=1)
     if reports is True:
-        executor3 = ThreadPoolExecutor(max_workers=2)
+        executor_req_save = ThreadPoolExecutor(max_workers=2)
 
 
 ## Анализ всех сайтов.
@@ -612,9 +612,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 # Кроме того SSL замариновать при multiprocessing.
 # Отправить параллельно все запросы и сохранить future для последующего доступа.
             try:
-                future_ = executor1.submit(r_session, cert=cert, speed=speed, norm=norm,
-                                           connect=connect, method=method, req_retry=req_retry,
-                                           url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
+                future_ = executor_req.submit(r_session, cert=cert, speed=speed, norm=norm,
+                                              connect=connect, method=method, req_retry=req_retry,
+                                              url=url_API, headers=headers, allow_redirects=allow_redirects, timeout=timeout)
 
                 if norm: #quick режим
                     BDdemo_new_quick.update({future_:{websites_names:param_websites}})
@@ -699,7 +699,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                                      print_found_only=print_found_only, verbose=verbose,
                                                      color=color, timeout=timeout, country_code=f" ~{country_code}")
 
-
 # Повторный запрос на сбойное соединение результативнее, чем через Adapter.
             if norm is False and r == "FakeNone":
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -711,8 +710,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     dic_binding.update({'censors': dic_binding.get('censors') - 1})
                     if num > 2:
                         head_duble = ""
-                    r_retry = executor2.submit(r_session, url=url, headers=head_duble,
-                                               allow_redirects=allow_redirects, timeout=4)
+                    r_retry = executor_req_retry.submit(r_session, url=url, headers=head_duble,
+                                                        allow_redirects=allow_redirects, timeout=4)
                     if color is True and print_found_only is False:
                         print(f"{Style.RESET_ALL}{Fore.CYAN}[{Style.BRIGHT}{Fore.RED}-{Style.RESET_ALL}{Fore.CYAN}]" \
                               f"{Style.DIM}{Fore.GREEN} ┌──└──повторное соединение{Style.RESET_ALL}")
@@ -772,7 +771,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                             print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                         exists = "найден!"
                         if reports:
-                            executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
+                            executor_req_save.submit(sreports, url, headers, error_type, username, websites_names, r)
                 except UnicodeEncodeError:
                     exists = "увы"
 ## Проверка, 4 методов; #2.
@@ -783,7 +782,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     exists = "найден!"
                     if reports:
-                        session_size = executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
+                        session_size = executor_req_save.submit(sreports, url, headers, error_type, username, websites_names, r)
                 else:
                     if not print_found_only and not norm:
                         print_not_found(websites_names, verbose, color)
@@ -796,7 +795,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
+                        executor_req_save.submit(sreports, url, headers, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
@@ -809,7 +808,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                     if not norm:
                         print_found_country(websites_names, url, country_Emoj_Code, verbose, color)
                     if reports:
-                        executor3.submit(sreports, url, headers, error_type, username, websites_names, r)
+                        executor_req_save.submit(sreports, url, headers, error_type, username, websites_names, r)
                     exists = "найден!"
                 else:
                     if not print_found_only and not norm:
@@ -818,7 +817,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 ## Если все 4 метода не сработали, например, из-за ошибки доступа (красный) или из-за неизвестной ошибки.
             else:
                 exists = "блок"
-
 
 ## Попытка получить информацию из запроса, пишем в csv.
             try:
@@ -839,7 +837,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             except Exception:
                 session_size = "Err"
 
-
 ## Считать тайминги отклики сайтов с приемлемой точностью.
 # Реакция.
             ello_time = round(float(time.time() - TIME_START), 2) #текущее
@@ -849,6 +846,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 os.execl(sys.executable, sys.executable, *sys.argv) if len(BDdemo_new) > int(403.9) else "dif_time"
             except Exception:
                 pass
+
 ## Опция '-v'.
             if verbose is True:
                 ram_free = mem_test()
@@ -872,7 +870,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                   f"[*{ram_free} MB]", highlight=False)
                     console.rule(style="color")
 
-
 ## Служебная информация/CSV, обновление словаря с финальными результатами.
             if dif_time > 2.7 and dif_time != ello_time:
                 dic_snoop_full.get(websites_names)['response_time_site_ms'] = str(dif_time)
@@ -895,14 +892,12 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 # Высвободить незначительную часть ресурсов.
         try:
-            if 'executor2' in locals():
-                executor2.shutdown()
-            if 'executor3' in locals():
-                executor3.shutdown()
+            if 'executor_req_retry' in locals(): executor_req_retry.shutdown()
+            if 'executor_req_save' in locals(): executor_req_save.shutdown()
         except Exception:
             console.log(snoopbanner.err_all(err_="low"))
 # Вернуть словарь со всеми данными на запрос функции snoop и пробросить удерживаемые ресурсы (позже, закрыть в фоне).
-        return dic_snoop_full, executor1, nick
+        return dic_snoop_full, executor_req, nick
 
 
 ## Опция '-t'.
@@ -1010,8 +1005,7 @@ def autoclean():
 def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         wl = 5 if WINDOWS and int(platform.win32_ver()[0]) < 10 else 4
-        cop = copyright.read().replace("\ufeffSnoop", "Snoop", 1)
-        cop = cop.replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
+        cop = copyright.read().replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
         console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
 
     if not ANDROID:
@@ -1070,10 +1064,10 @@ def license_snoop():
         psutil_v = f", (psutil::{version_lib('psutil')})"
         char_v = f", (charset_normalizer::{version_lib('charset_normalizer')})"
     else:
-        urllib3_v = ""
+        urllib3_v = f", (urllib3::{requests.urllib3.__version__})"
         colorama_v = ""
         rich_v = ""
-        psutil_v = ""
+        psutil_v = f", (psutil::{psutil.__version__})"
         char_v = ""
 
     console.print('\n', Panel(f"Program: [blue bold]{'light ' if light_v else ''}[/blue bold][dim cyan]{VERSION}" + \

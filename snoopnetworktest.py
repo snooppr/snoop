@@ -10,7 +10,7 @@ from rich.style import Style as STL
 
 def nettest():
     console2 = Console()
-    with console2.status("[cyan] Ожидайте, идёт самотестирование сети..."):
+    with console2.status("[cyan] Ожидайте, идёт самотестирование сети...", spinner='noise'):
         servers = []
         try:
             s = speedtest.Speedtest(secure=True)
