@@ -85,10 +85,17 @@ def mkdir_path():
     if WINDOWS:
         dirhome = os.environ['LOCALAPPDATA'] + "\\snoop"
     elif ANDROID:
-        try:
-            dirhome = "/data/data/com.termux/files/home/storage/shared/snoop"
-        except Exception:
+        if not os.access("/data/data/com.termux/files/home/storage/shared", os.W_OK):
+            console.print("[bold yellow]Согласитесь на разовую, стандартную операцию в Termux, открыв доступ к " + \
+                          "диску, иначе результаты поиска невозможно будет сохранить в общедоступном каталоге на OS Android, " + \
+                          "подробнее см. Wiki Termux: https://wiki.termux.com/wiki/Termux-setup-storage[/bold yellow]\n")
+            code = subprocess.run("termux-setup-storage", shell=True)
+            if code.returncode == 1:
+                console.print("\n[bold red]каталог для результатов поиска: '/storage/emulated/0/snoop' не создан, " + \
+                              "отклонено пользователем.[bold red]\n")
             dirhome = os.environ['HOME'] + "/snoop"
+        else:
+            dirhome = "/data/data/com.termux/files/home/storage/shared/snoop"
     elif LINUX:
         dirhome = os.environ['HOME'] + "/snoop"
 
