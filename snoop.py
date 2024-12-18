@@ -1749,7 +1749,7 @@ def main_cli():
 ## Запись в txt отчет.
             file_txt = open(f"{DIRPATH}/results/nicknames/txt/{username}.txt", "w", encoding="utf-8")
 
-            file_txt.write(f"Гео | Ресурс {' ' * 18} | Адрес" + "\n\n")
+            file_txt.write(f"GEO | RESOURCE {' ' * 16} | URL" + "\n\n")
 
             for website_name in FULL:
                 dictionary = FULL[website_name]
@@ -1947,10 +1947,10 @@ document.getElementById('snoop').innerHTML=""
             writer = csv.writer(file_csv)
             if rus_windows or rus_unix or ANDROID:
                 writer.writerow(['Ресурс', 'Гео', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
-                                 'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/Kb'])
+                                 'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/kB'])
             else:
-                writer.writerow(['resource', 'Geo', 'url', 'url_username', 'status', 'http',
-                                 'deceleration/s', 'response/s', 'time/s', 'session/Kb'])
+                writer.writerow(['Resource', 'Geo', 'Url', 'Url_username', 'Status', 'Http_code',
+                                 'Deceleration/s', 'Response/s', 'Time/s', 'Session/kB'])
 
             for site in FULL:
                 if FULL[site]['session_size'] == 0:
@@ -1967,7 +1967,7 @@ document.getElementById('snoop').innerHTML=""
                                  FULL[site]['response_time_ms'].replace('.', locale.localeconv()['decimal_point']),
                                  Ssession])
 
-            writer.writerow(['«' + '-'*35, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*32, '-'*13, '-'*23, '-'*16 + '»'])
+            writer.writerow(['«' + '-'*35, '-'*4, '-'*35, '-'*56, '-'*13, '-'*17, '-'*37, '-'*17, '-'*28, '-'*15 + '»'])
             writer.writerow([f'БД_(demoversion)={flagBS}_Websites'])
             writer.writerow([f"Nick={usernamCSV}"])
             writer.writerow('')
