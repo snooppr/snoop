@@ -68,8 +68,7 @@ _____/ _|  _|\\___/ \\___/  .__/
     elif ANDROID: OS_ = f"ru Snoop for Termux {sb} {_sb}"
     elif LINUX: OS_ = f"ru Snoop for GNU/Linux {sb} {_sb}"
 
-    console.print("[dim cyan]Примеры:[dim cyan]")
-    console.print(f"[dim cyan] $ [/dim cyan]" + \
+    console.print(f"[dim cyan]Примеры:\n $ [/dim cyan]" + \
                   f"[cyan]{'cd C:' + chr(92) + 'path' + chr(92) + 'snoop' if WINDOWS else 'cd ~/snoop'}[/cyan]")
     console.print(f"[dim cyan] $ [/dim cyan][cyan]{'python' if WINDOWS else 'python3'} snoop.py --help[/cyan] #справка")
     console.print(f"[dim cyan] $ [/dim cyan][cyan]{'python' if WINDOWS else 'python3'} snoop.py --module[/cyan] #плагины")
@@ -832,7 +831,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             except Exception:
                 http_status = "сбой" if r != "FakeStuck" else "завис"
 
-            try: #сессия в КБ
+            try: #сессия в kB
                 if reports is True:
                     session_size = session_size if error_type == 'redirection' else len(str(r.content))
                 else:
