@@ -34,9 +34,8 @@ Snoop Project разработан без учета мнения АНБ и их
 $ termux-change-repo 
 # и выбрать получение обновлений (для всех репо) из другого зеркала-репозитория.
 
-# Войти в домашнюю папку Termux (т.е. просто открыть Termux)
+# Открыть доступ к диску
 $ termux-setup-storage
-$ pwd #/data/data/com.termux/files/home # дефолтный/домашний каталог
 
 # Установить python3 и зависимости
 $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git

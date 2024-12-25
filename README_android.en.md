@@ -34,9 +34,8 @@ Install [Termux](https://f-droid.org/en/packages/com.termux/ "Termux with F-Droi
 $ termux-change-repo
 # and choose to get updates (for all repo) from another mirror repository.
 
-# Enter Termux home folder (i.e. just open Termux)
+# Open access to disk
 $ termux-setup-storage
-$ pwd #/data/data/com.termux/files/home # default/home directory
 
 # Install python3 and dependencies
 $ apt update && pkg upgrade && pkg install python libcrypt libxml2 libxslt git
