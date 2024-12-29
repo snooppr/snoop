@@ -332,7 +332,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 # ПРИМЕЧАНИЕ_3!: после отключения РФ от Лондонской точки обмена интернет-трафиком скорость поиска Snoop
 # (возможно и у других провайдеров связи) на Мегафон/Yota упала ~в 2 раза.
 ```
-ПРИМЕЧАНИЕ_4!: если у пользователя Android ущербный (то есть версия OS 12+ со множеством ограничений) и ломает Termux, читайте инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
+ПРИМЕЧАНИЕ_4!: если у пользователя Android ущербный (то есть версия OS 12+ со множеством ограничений) и ломает Termux, прочтите инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
 ПРИМЕЧАНИЕ_5!: поддерживаются старые пропатченные python версии 3.7-3.11 из [termux_tur repo](https://github.com/termux-user-repository/tur/tree/master/tur).  
 
 <p align="center">  
@@ -379,7 +379,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 
 4. Интернет цензура: внутренняя и внешняя по локационному признаку/санкции — самое частое из-за чего пользователь получает ошибки 
 пропуска/ложного срабатывания и в некоторых случаях 'Увы'. Пример, вот уже несколько месяцев, с осени 2024г. было замечено на 
-недоступность, блокировки свыше **95%** Украинских интернет ресурсов *(зона UA)* из Рунета у провайдеров Мегафон/Yota, возможно, 
+недоступность, блокировки свыше **95%** Украинских интернет ресурсов *(зона UA)* из Рунета у провайдеров Мегафон/Yota/Tele2, возможно, 
 и у других РФ провайдеров также. Одно из решений, если требуется немного ускорить поиск в Snoop и не тратить ресурсы вхолостую на 
 timeout и ошибки соединения — это, используя фильтры, исключить из поиска "сбойные" у Россиян сайты: отключить поиск по зоне "UA", пример::  
 `snoop_cli.exe --exclude ua nickname123321`  

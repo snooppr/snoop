@@ -55,7 +55,7 @@ def donate():
 
 [bold green]Оплатить софт можно по любым реквизитам, но самым предпочтительным способом является — СБП (перевод по номеру телефона без комиссий с карты любого банка).
 
-Если пользователя заинтересовало ПО [red]Snoop demo version[/red], то он может приобрести [cyan]Snoop full version[/cyan], поддержав развитие IT-проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1400р.[/bold cyan]
+Если пользователя заинтересовало ПО [red]Snoop demo version[/red], то он может приобрести [cyan]Snoop full version[/cyan], поддержав развитие IT-проекта[/bold green] [bold cyan]20$[/bold cyan] [bold green]или[/bold green] [bold cyan]1600р.[/bold cyan]
 [bold green]При пожертвовании/покупке в сообщении/письме укажите:[/bold green]
 
     \"\"\"
@@ -127,7 +127,7 @@ function bay() {document.write('\
 \
 <p><span style="font-size:18px"><span style="color:#007500">Оплатить софт можно по <u>любым реквизитам</u>, но самым предпочтительным способом является &mdash; СБП <em>(перевод по номеру телефона без комиссий с карты любого банка)</em>.</span></span></p>\
 \
-<p><span style="font-size:18px"><span style="color:#007500">Если пользователя заинтересовало ПО Snoop demo version, то он может приобрести <strong>Snoop full version</strong>, поддержав развитие IT-проекта <strong>20$</strong> или <strong>1400р</strong>.<br />\
+<p><span style="font-size:18px"><span style="color:#007500">Если пользователя заинтересовало ПО Snoop demo version, то он может приобрести <strong>Snoop full version</strong>, поддержав развитие IT-проекта <strong>20$</strong> или <strong>1600р</strong>.<br />\
 При пожертвовании/покупке в сообщении/письме укажите:</span></span></p>\
 \
 <p><span style="font-size:18px">&nbsp;&nbsp;&nbsp; \&quot;\&quot;\&quot;<br />\
