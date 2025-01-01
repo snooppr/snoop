@@ -118,8 +118,8 @@ WINDOWS = True if sys.platform == 'win32' else False
 LINUX = True if ANDROID is False and WINDOWS is False else False
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
-END_OF_LICENSE = (2025, 9, 10, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
-VERSION = version_snoop('v1.4.1i', "s", "d")
+END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
+VERSION = version_snoop('v1.4.2', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
