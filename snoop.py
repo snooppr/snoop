@@ -203,7 +203,7 @@ def bad_raw(flagBS_err, bad_zone, nick, lst_options):
             nick = f"'{nick}'" if nick.count(" ") > 0 else nick
             print(f"\033[36m\n       └─или исключите из поиска bad_zone: '\033[36;1m" + \
                   f"{bad_zone.split('/')[0].replace('~', '')}\033[0m" + \
-                  f"\033[36m'\n         └─$ {os.path.basename(sys.argv[0])} --exclude " + \
+                  f"\033[36m'\n         └─$ {os.path.basename(sys.argv[0])} -w --exclude " + \
                   f"{bad_zone.split('/')[0].replace('~', '')} {nick}\033[0m\n")
 
 
