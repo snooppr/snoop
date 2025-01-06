@@ -350,7 +350,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 | Клиент    |Блокировка соединения проактивной защитой (*Kaspersky) |    1    |
 |           |Недостаточная скорость интернет соединения EDGE/3G     |    2    |
 |           |Слишком низкое значение опции '-t'                     |    2    |
-|           |недопустимое nickname                                  |    3    |
+|           |Недопустимое nickname                                  |    3    |
 |           |Ошибки соединения: [GipsysTeam; Nixp; Ddo; Mamochki;   |    7    |
 |           |Ложные результаты (Беларусь): [D3; ChangeORG]          |    4    |
 |           |Отсутствие результатов (РФ): [Strava]                  |    4    |

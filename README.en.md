@@ -285,7 +285,7 @@ $ python3 snoop.py --update #Git installation is required
 | Client    |Block the connection with proactive protection Firewall|    1    |
 |           |Insufficient speed of the EDGE/3G Internet connection  |    2    |
 |           |The value of the '-t' option is too low                |    2    |
-|           |invalid username                                       |    3    |
+|           |Invalid username                                       |    3    |
 |           |Connection errors: [GipsysTeam; Nixp; Ddo; Mamochki]   |    7    |
 | ========= |=======================================================| ======= |
 | Provider  |Internet Censorship                                    |    4    |
