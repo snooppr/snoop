@@ -1545,11 +1545,11 @@ def main_cli():
                         bad_nick.write(f"{time.strftime('%Y-%m-%d_%H:%M:%S', TIME_DATE)}  <FILE: {userfile}>  '{bad_user2[1]}'\n")
 
 
-        USERLIST = [i[1] for i in userlists]
+        user_list = [i[1] for i in userlists]
 
         del userlists, duble, userlists_bad, _duble, short_user, flipped, d
 
-        if bool(USERLIST) is False:
+        if bool(user_list) is False:
             print("\n", Style.BRIGHT + Fore.RED + format_txt("⛔️ Файл '{0}' не содержит ни одного валидного nickname".format(userfile),
                                                              k=True, m=True), "\n\n\033[31;1mВыход\033[0m\n", sep="")
             sys.exit()
@@ -1683,7 +1683,7 @@ def main_cli():
 
 
 ## Опция '-v'.
-    if args.verbose and bool(args.username) or args.verbose and bool(USERLIST):
+    if args.verbose and bool(args.username) or args.verbose and bool(user_list):
         print(Fore.CYAN + format_txt("активирована опция '-v': «подробная вербализация в CLI»\n", k=True))
         snoopnetworktest.nettest()
 
@@ -2052,7 +2052,7 @@ document.getElementById('snoop').innerHTML=""
 
 
 ## Поиск по выбранным пользователям: либо из CLI, либо из файла.
-    starts(args.username) if args.user is False else starts(USERLIST)
+    starts(args.username) if args.user is False else starts(user_list)
 
 
 ## Arbeiten...
