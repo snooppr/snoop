@@ -34,14 +34,14 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 <img src="https://img.shields.io/badge/Namechk-~100 网站-red" width="15%" />  
 
 
-| 操作系统平台              | 支持 |
-|-----------------------|:---------:|
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux             |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64)  |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |  
+| 操作系统平台                                                                                                                 | 支持 |
+|------------------------------------------------------------------------------------------------------------------------|:---------:|
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
 
 
 适用于操作系统 Windows 和 GNU/Linux 的 Snoop
@@ -105,7 +105,7 @@ Snoop 仅从脏数据（数字、字母、特殊字符）中选择地理坐标�
 *（安装不同，请参阅下面的专用部分）。*
 + 注意：要求 Python 3.7+ 版本
 
-```
+```sh
 # 克隆存储库
 $ git clone https://github.com/snooppr/snoop
 
@@ -194,7 +194,7 @@ search arguments:
 ```
 
 **例子**
-```
+```sh
 # 仅搜索一个用户：
 $ python3 snoop.py username1 #从源代码运行
 $ snoop_cli.bin username1 #从发行版 linux 运行
@@ -236,7 +236,7 @@ $ snoop_cli.bin --donate
 + 在office中打开csv，字段分隔符**逗号**。  
 + 销毁**所有**搜索结果——删除 '~/snoop/results' 目录.  
 或者 `snoop_cli.exe --autoclean` #从发布操作系统 Windows 运行。
-```
+```sh
 # 更新 Snoop 以测试软件中的新功能
 $ python3 snoop.py --update #需要安装 Git
 ```
@@ -295,7 +295,7 @@ $ python3 snoop.py --update #需要安装 Git
 
 7. 在某些 GNU/Linux 发行版中，openssl 存在 [问题](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "问题很简单且可解决")，还有问题 多年未更新的网站。 如果用户故意使用"--cert-on"选项开始侦听，就会出现这些问题。  
 解决：
-```
+```sh
 $ sudo nano /etc/ssl/openssl.cnf
 
 # 编辑文件最底部的行：

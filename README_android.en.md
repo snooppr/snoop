@@ -26,7 +26,7 @@ that is, it is available to the average user.
 **Native Installation**  
 
 Install [Termux](https://f-droid.org/en/packages/com.termux/ "Termux with F-Droid, GP Termux is no longer updated!")  
-```
+```sh
 # NOTE_1!: if the user has errors with $ 'pkg update', for example due to country censorship,
 # and/or due to the fact that Termux has not been updated for a long time on the user's device,
 # then removing/installing Termux application will not help,
@@ -171,7 +171,7 @@ search arguments:
 ```
 
 **Example**
-```
+```sh
 # To search for just one user:
 $ python3 snoop.py username1
 # Or, for example, Cyrillic is supported:
@@ -205,7 +205,7 @@ csv open in *office, field separator **comma**.
 Destroy **all** search results - delete the directory '~/snoop/results'.
 or ```python snoop.py --autoclean```
 
-```
+```sh
 # Update Snoop to test new software features:
 $ python3 snoop.py --update #requires a Git installation.
 ```

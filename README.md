@@ -34,14 +34,14 @@ that is, it is available to the average user *(project creation date: February 1
 <img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
 
 
-| Платформа             | Поддержка |
-|-----------------------|:---------:|
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux             |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64)  |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |  
+| Платформа                                                                                                              | Поддержка |
+|------------------------------------------------------------------------------------------------------------------------|:---------:|
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
 
 
 Snoop for OS Windows and GNU/Linux
@@ -83,7 +83,7 @@ $$$$
 
 $$$$
 
-Search report dozen nickname (Plugin — Yandex_parser)  
+Search report a dozen nicknames (Plugin — Yandex_parser)  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
 $$$$
@@ -106,7 +106,7 @@ Visualization of signed geocoordinates: HTML report (Snoop full version)
 *(установка отличается, для этого смотри специальный пункт ниже).*  
 + Примечание: требуемая версия python 3.7+
 
-```
+```sh
 # Клонировать репозиторий
 $ git clone https://github.com/snooppr/snoop
 
@@ -216,7 +216,7 @@ search arguments:
 ```  
 
 **Example**
-```
+```sh
 # Для поиска только одного пользователя:
 $ python3 snoop.py nickname1 #Running from source
 $ snoop_cli.bin nickname1 #Running from release linux
@@ -264,7 +264,7 @@ $ snoop_cli.bin --donate
 + Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results',
 или в т.ч. и сбросить кэш `snoop_cli.exe --autoclean #Running from release OS Windows`.
 
-```
+```sh
 # Обновляйте Snoop для тестирования новых функций в ПО:
 $ python3 snoop.py --update #требуется установка Git.
 ```
@@ -288,7 +288,7 @@ $$plugins$$
 **Native Installation**  
 
 Установить [Termux](https://f-droid.org/ru/packages/com.termux/ "F-Droid")  
-```
+```sh
 # ПРИМЕЧАНИЕ_1!: если у пользователя ошибки при $ 'pkg update', например, из-за того,
 # что Termux давно не обновлялся на устройстве пользователя,
 # то удаление/установка Termux-приложения не поможет,
@@ -443,7 +443,7 @@ $ sudo nano /etc/ssl/openssl.cnf
 
  ⋮ **Внимание**❗️ Из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex пишите запросы на запасную почту: snoopproject@ya.ru  
 
- ⋮ **Визуализация  коммитов:** от рождения проекта до пятницы тринадцатого 2023г/~3года.  
+ ⋮ **Визуализация коммитов:** от рождения проекта до пятницы тринадцатого 2023г/~3года.  
 
 https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-86cb-c52503ee53c4.mp4  
 

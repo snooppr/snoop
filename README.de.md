@@ -34,14 +34,14 @@ Vergleich der Indizierung von Datenbank-Nicknames ähnlicher Tools:
 <img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
 
 
-| Plattform             | Unterstützung |
-|-----------------------|:---------:|
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux             |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64)  |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |  
+| Plattform                                                                                                              | Unterstützung |
+|------------------------------------------------------------------------------------------------------------------------|:---------:|
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
 
 
 Snoop für Betriebssysteme Windows und GNU/Linux
@@ -106,7 +106,7 @@ Visualisierung signierter Geokoordinaten: HTML-Bericht (Snoop-Vollversion).
 *(Die Installation ist anders, siehe dazu den speziellen Absatz unten).*  
 + Hinweis: Die erforderliche Python-Version ist 3.7+
 
-```
+```sh
 # Repository klonen
 $ git clone https://github.com/snooppr/snoop
 
@@ -229,7 +229,7 @@ search arguments:
 ```  
 
 **Beispiel**
-```
+```sh
 # So suchen Sie nach nur einem Benutzer:
 $ python3 snoop.py nickname1 #Aus dem Quellcode ausgeführt
 $ snoop_cli.bin nickname1 #Ausführen eines Builds unter Linux
@@ -278,7 +278,7 @@ $ snoop_cli.bin --donate
 + **Alle** Suchergebnisse beenden - Verzeichnis '~/snoop/results' löschen,
 oder `snoop_cli.exe --autoclean #Ausführen eines Builds unter Windows
 
-```
+```sh
 # Aktualisieren Sie Snoop, um neue Funktionen in der Software zu testen:
 $ python3 snoop.py --update #Git-Installation erforderlich.
 ```
@@ -343,7 +343,7 @@ Zum Beispiel ist der effektivste Weg, ein Problem zu lösen, **[zensiert][*](htt
 
 7. [Problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "das problem ist einfach und lösbar") mit openssl auf einigen GNU/Linux-Distributionen und ein Problem mit Seiten, die seit Jahren nicht aktualisiert wurden. Dieses Problem tritt auf, wenn der Benutzer Snoop absichtlich mit der Option „--cert-on“ gestartet hat.
 Die Lösung besteht darin, die Option "--cert-on" nicht zu verwenden, oder:
-```
+```sh
 $ sudo nano /etc/ssl/openssl.cnf
 
 # Ändern Sie die Zeile ganz unten in der Datei:
