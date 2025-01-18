@@ -22,8 +22,7 @@ Snoop Project разработан без учета мнения АНБ и их
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" width="90%" />  
 </p>  
 
-**Self-build software from source**  
-**Native Installation**  
+**Инсталляция**  
 
 Установить [Termux](https://f-droid.org/ru/packages/com.termux/ "Termux с F-Droid, на GP Termux больше не обновляется!")  
 ```
@@ -170,7 +169,7 @@ search arguments:
 ```
 
 
-**Example**
+**Примеры**
 ```
 # Для поиска только одного пользователя:
 $ python3 snoop.py username1
@@ -210,7 +209,7 @@ csv открывать в *office, разделитель полей **запя�
 $ python3 snoop.py --update #Требуется установка Git.
 ```
 
-**An example snoop for android**  
+**Пример работы snoop for Android/Termux**  
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Android%20snoop_run.gif" width="40%" />  
 </p>  
