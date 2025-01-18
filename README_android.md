@@ -16,7 +16,7 @@ Snoop Project for Termux
 Ваша жизнь Слайд-шоу? Спросите снуп.  
 Snoop Project разработан без учета мнения АНБ и их приятелей, то есть доступен рядовому пользователю.  
 
-## Самостоятельная сборка ПО из исходно кода  
+## Самостоятельная сборка ПО из исходного кода  
 **Snoop for Android/Demo**  
 <p align="center">  
   <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Snoop_termux.plugins.png" width="90%" />  
@@ -80,7 +80,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 </p>  
 
 
-## Using
+## Использование
 ```
 usage: python snoop.py [search arguments...] nickname
 or
