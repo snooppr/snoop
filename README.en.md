@@ -1,13 +1,13 @@
 Snoop Project
 =============
 
-### Snoop Project is one of the most promising OSINT tools — search by nickname
-- [X] This is the most powerful software taking into account the CIS location.
+### Snoop Project is one of the most promising OSINT tools allowing to search by nickname
+- [X] This is the most powerful software for CIS region.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
 
 Is your life slideshow? Ask Snoop.  
-Snoop project is developed without taking into account the opinions of the NSA and their friends,  
+Snoop project is developed without taking into account the opinions of the NSA and their friends;  
 that is, it is available to the average user *(project creation date: February 14, 2020)*.  
 
 
@@ -21,12 +21,15 @@ that is, it is available to the average user *(project creation date: February 1
  ---
 
 > [!NOTE]
-> <sub>*Snoop is a research project in the field of searching and processing public data on the Internet (own database, algorithms, closed bug bounties). In terms of specialized search, Snoop is able to compete with traditional search engines.*</sub>  
+> <sub>*Snoop is a research project in the field of searching and processing public data on the Internet
+> (own database, algorithms, closed bug bounties). In terms of specialized search, Snoop is able to compete
+> with traditional search engines.*</sub>  
 
 **The functionality of the tool is simple and does not require users to have knowledge or any technical skills.**  
-*(downloaded the software, specified the goal, received the results).*  
+*(downloaded the software, specify the goal, received the results).*  
 
-Comparison of indexations of databases such tools:  
+Comparison of similar tool databases:
+
 <a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~4800+%20websites-success" width="50%" />  
 <img src="https://img.shields.io/badge/Whatsmyname-~600 websites-yellowgreen" width="25%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 websites-yellowgreen" width="20%" />  
@@ -34,14 +37,14 @@ Comparison of indexations of databases such tools:
 <img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
 
 
-| Platform              | Support |
-|-----------------------|:---------:|
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux             |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64)  |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)      |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                 |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> IOS                   |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                   |     🚫    |  
+| Platform                                                                                                               | Support |
+|------------------------------------------------------------------------------------------------------------------------|:---------:|
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
 
 
 Snoop for OS Windows and GNU/Linux
@@ -54,7 +57,8 @@ Snoop for OS Windows and GNU/Linux
 ## Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
+Snoop comes as a binary and does not require any dependencies, libraries or Python installation. 
+It runs on a clean machine with Windows or GNU/Linux.  
 ┗━━ ⬇️[Download Snoop Project](https://github.com/snooppr/snoop/releases "download the ready-made SNOOP assembly for Windows and GNU/Linux")  
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Run.gif"/>  
@@ -82,7 +86,7 @@ $$$$
 
 $$$$
 
-Search report dozen username (Plugin — Yandex_parser)  
+Search report a dozen username (Plugin — Yandex_parser)  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/Yandex_parser 4.png" />  
 
 $$$$
@@ -90,9 +94,10 @@ $$$$
 ### 3. Demonstration of one of the methods in the Plugin — 〘Reverse Vgeocoder〙  
 https://github.com/snooppr/snoop/assets/61022210/0be6ac32-c72f-4a18-9c9e-3413085f57c3  
 
-Snoop selects only geocoordinates from dirty data (numbers, letters, special characters), places markers on the map based on them and labels them with nearby populated areas/objects.  
+Snoop selects geo coordinates from dirty data (numbers, letters, special characters),
+places markers on the map based on them and labels them with nearby populated areas/objects.  
 
-Visualization of signed geocoordinates: HTML report (Snoop full version)  
+Visualization of signed geo coordinates as HTML report (Snoop full version)  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/plugin Reverse Vgeocoder.jpg" />  
 
 </details>
@@ -102,10 +107,10 @@ Visualization of signed geocoordinates: HTML report (Snoop full version)
 
 **Native Installation**  
 + Note: don't do this if you want to install snoop on android/termux
-*(installation is different, see dedicated section below for that).*  
+*(installation is different, see the dedicated section below for that).*  
 + Note: the required version of Python 3.7+
 
-```
+```sh
 # Clone the repository
 $ git clone https://github.com/snooppr/snoop
 
@@ -219,7 +224,7 @@ search arguments:
 ```
 
 **Example**
-```
+```sh
 # To search for only one user:
 $ python3 snoop.py username1 #Running from source
 $ snoop_cli.bin username1 #Running from release linux
@@ -263,7 +268,7 @@ $ snoop_cli.bin --module #Running from release linux
 + Open csv in office in, field separator **comma**.  
 + Destroy **all** search results — delete the '~/snoop/results' directory.  
 or incl. and reset cache `snoop_cli.exe --autoclean #Running from release OS Windows`.
-```
+```sh
 # Update Snoop to test new features in the software
 $ python3 snoop.py --update #Git installation is required
 ```
@@ -308,10 +313,10 @@ At low speed, increase the 'x' value of the '--time-out x' option:
 
 3. In fact, this is not a mistake. Fix username  
 *(for example, some sites do not allow Cyrillic characters; "spaces" or "Vietnamese-Chinese encoding"
-in user names, in order to save time: - requests are filtered).*
+in usernames, to save time: - requests are filtered).*
 
 4. **Change your IP address**  
-Сensorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
+Censorship are the most common reasons why the user receives skip errors/false positives/and in some cases '**Alas**'.  
 When using Snoop from the IP address of the mobile operator's provider, the speed **may** drop significantly, depending on the provider.  
 For example, the most effective way to solve the problem is **[censored][*](https://www.rbc.ru/technology_and_media/21/11/2024/673f2a269a7947a9377068b2) [**](https://telegra.ph/Roskomnadzor-raskryl-kakuyu-informaciyu-o-VPN-zapretit-v-Rossii-11-30)[/censored]**  
 
@@ -320,7 +325,7 @@ For example, the most effective way to solve the problem is **[censored][*](http
 
 6. Do not pay attention, sites sometimes go for repair work and return to operation.
 
-7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions, and also the problem with sites that haven't been updated in years. These problems occur if the user intentionally started snoop with the '--cert-on' option.  
+7. There is [problem](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "the problem is simple and solvable") with openssl in some GNU/Linux distributions, and also a problem with sites that haven't been updated in years. These problems occur if the user intentionally started snoop with the '--cert-on' option.  
 Solving:
 ```
 $ sudo nano /etc/ssl/openssl.cnf
@@ -347,7 +352,7 @@ on
 
  • **Public key fingerprint:**	[076DB9A00B583FFB606964322F1154A0203EAE9D](https://raw.githubusercontent.com/snooppr/snoop/master/PublicKey.asc "pgp key").  
 
- • **Snoop is not perfect**: web sites are falling; closing tags are missing; the network is being censored; certificates are not renewed; hosting services are not paid on time.  
+ • **Snoop is not perfect**: websites are falling; closing tags are missing; the network is being censored; certificates are not renewed; hosting services are not paid on time.  
 From time to time, it is necessary to follow all this "Web rock' n 'roll", so donations are welcome:
 [example close/bad websites](https://drive.google.com/file/d/1CJxGRJECezDsaGwxpEw34iJ8MJ9LXCIG/view?usp=sharing).  
 
@@ -359,4 +364,4 @@ https://user-images.githubusercontent.com/61022210/212534128-bc0e5779-a367-4d0a-
 
 </details>
 
-【RU -> EN】 This is a translated [➰Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English").
+【RU → EN】 This is a translated [➰Readme in Russian](https://github.com/snooppr/snoop "If you wish, you can improve (PR) the machine translation of this page in English").
