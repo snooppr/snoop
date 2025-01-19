@@ -120,7 +120,7 @@ $ apt-get update && apt-get install python3 python3-pip
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Wenn anstelle von Länderflaggen Sonderzeichen angezeigt werden, liefern Sie ein Schriftpaket, z. B. monochrom
-$ apt-get install ttf-ancient-fonts oder Farbe (empfohlen) $ apt-get install fonts-noto-color-emoji
+$ apt-get install ttf-ancient-fonts #oder Farbe (empfohlen) $ apt-get install fonts-noto-color-emoji
 # Verwenden Sie unter Windows-Betriebssystemen cmd oder Powershell (der Einfachheit halber Ihre Wahl), aber nicht WSL!
 ```
 </details>

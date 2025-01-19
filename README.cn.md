@@ -119,7 +119,7 @@ $ apt-get update && apt-get install python3 python3-pip
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # 如果不是以特殊混合方式显示国家国旗，请提供字体包，例如单色
-$ apt-get install ttf-ancient-fonts 或颜色（推荐） $ apt-get install fonts-noto-color-emoji
+$ apt-get install ttf-ancient-fonts #或颜色（推荐） $ apt-get install fonts-noto-color-emoji
 # 在 Windows 操作系统上使用 CMD 或 PowerShell（从方便中选择），而不是 WSL！
 ```
 </details>

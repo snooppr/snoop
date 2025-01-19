@@ -2,7 +2,7 @@ Snoop Project
 =============
 
 ### Snoop Project is one of the most promising OSINT tools allowing to search by nickname
-- [X] This is the most powerful software for CIS region.
+- [X] This is the most powerful software taking into account the CIS location.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN__snoop.png" />
 
@@ -124,7 +124,7 @@ $ apt-get update && apt-get install python3 python3-pip
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # If instead of the flags of countries are displayed in letter country code, deliver a font package, such as color
-$ apt-get install fonts-noto-color-emoji or (monochrome) $ apt-get install ttf-ancient-fonts
+$ apt-get install fonts-noto-color-emoji #or (monochrome) $ apt-get install ttf-ancient-fonts
 # On Windows OS use CMD or PowerShell (to choose from convenience), but not WSL!
 ```
 </details>

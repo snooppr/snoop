@@ -2,7 +2,7 @@ Snoop Project
 =============
 
 ### Snoop Project один из самых перспективных OSINT-инструментов — поиск по нику
-- [X] This is the most powerful software taking into account the CIS location.
+- [X] This is the most powerful software taking into account the CIS region.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.jpg" />
 
@@ -120,7 +120,7 @@ $ apt-get update && apt-get install python3 python3-pip
 $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Если вместо флагов стран отображаются буквенные коды, доставить пакет шрифта, например (цветной)
-$ apt-get install fonts-noto-color-emoji или $ apt-get install ttf-ancient-fonts (монохромный)
+$ apt-get install fonts-noto-color-emoji #или $ apt-get install ttf-ancient-fonts (монохромный)
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
 ```
 </details>
