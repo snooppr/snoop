@@ -713,9 +713,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' + \
                                             'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}
 
-                for num, _ in enumerate(range(3), 1):
+                for num, _ in enumerate(range(2), 1):
                     dic_binding.update({'censors': dic_binding.get('censors') - 1})
-                    if num > 2:
+                    if num > 1:
                         head_duble = ""
                     r_retry = executor_req_retry.submit(r_session, url=url, headers=head_duble,
                                                         allow_redirects=allow_redirects, timeout=4)
