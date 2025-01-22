@@ -2,7 +2,7 @@ Snoop Project
 =============
 
 ### Snoop Project один из самых перспективных OSINT-инструментов — поиск по нику
-- [X] This is the most powerful software taking into account the CIS region.
+- [X] 𝕋𝕙𝕚𝕤 𝕚𝕤 𝕥𝕙𝕖 𝕞𝕠𝕤𝕥 𝕡𝕠𝕨𝕖𝕣𝕗𝕦𝕝 𝕤𝕠𝕗𝕥𝕨𝕒𝕣𝕖 𝕥𝕒𝕜𝕚𝕟𝕘 𝕚𝕟𝕥𝕠 𝕒𝕔𝕔𝕠𝕦𝕟𝕥 𝕥𝕙𝕖 ℂ𝕀𝕊 𝕣𝕖𝕘𝕚𝕠𝕟.
 
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop.jpg" />
 
@@ -34,14 +34,14 @@ that is, it is available to the average user *(project creation date: February 1
 <img src="https://img.shields.io/badge/Namechk-~100 websites-red" width="15%" />  
 
 
-| Платформа                                                                                                              | Поддержка |
-|------------------------------------------------------------------------------------------------------------------------|:---------:|
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
+| Платформа                                                                                                          | Поддержка |
+|--------------------------------------------------------------------------------------------------------------------|:---------:|
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> 𝔾ℕ𝕌/𝕃𝕚𝕟𝕦𝕩                      |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> 𝕎𝕚𝕟𝕕𝕠𝕨𝕤 𝟟/𝟙𝟙          |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> 𝔸𝕟𝕕𝕣𝕠𝕚𝕕 (𝕋𝕖𝕣𝕞𝕦𝕩) |     ✅    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> 𝕞𝕒𝕔𝕆𝕊                                |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> 𝕚𝕆𝕊                                         |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> 𝕎𝕊𝕃                                         |     🚫    |   
 
 
 Snoop for OS Windows and GNU/Linux
