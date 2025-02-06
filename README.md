@@ -129,9 +129,9 @@ $ apt-get install fonts-noto-color-emoji #или $ apt-get install ttf-ancient-f
 <summary> 🟢 Использование/Using</summary>  
 
 ```
-usage: python3 snoop.py [search arguments...] nickname
+usage: snoop_cli.bin [search arguments...] nickname
 or
-usage: python3 snoop.py [service arguments | plugins arguments]
+usage: snoop_cli.bin [service arguments | plugins arguments]
 
 
 service arguments:
