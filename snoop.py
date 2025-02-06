@@ -1106,7 +1106,7 @@ def main_cli():
     class SnoopArgumentParser(argparse.ArgumentParser):
         def print_help(self, out_help = sys.stdout):
             del_str_help = self.format_help()
-            del_str_help = re.sub(r'-h, --help.*\n|this.*|message.*|optional arguments:\n', '', del_str_help)
+            del_str_help = re.sub(r'-h, --help.*\n|this.*|mess.*\n|opti.*\n|and.*\n|sho.*|exit.*', '', del_str_help)
             out_help.write(del_str_help)
 
 
