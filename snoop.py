@@ -119,7 +119,7 @@ LINUX = True if ANDROID is False and WINDOWS is False else False
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
-VERSION = version_snoop('v1.4.2', "s", "d")
+VERSION = version_snoop('v1.4.2a', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -1101,11 +1101,18 @@ def main_cli():
     flagBS = len(BDdemo)
     web_sites = f"{len(BDflag) // 100}00+"
 
-# Назначение опций Snoop.
-    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+
+# Назначение опций Snoop Project.
+    class SnoopArgumentParser(argparse.ArgumentParser):
+        def print_help(self, out_help = sys.stdout):
+            del_str_help = self.format_help()
+            del_str_help = re.sub(r'-h, --help.*\n|this.*|message.*|optional arguments:\n', '', del_str_help)
+            out_help.write(del_str_help)
+
+
+    parser = SnoopArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                      usage="python3 snoop.py [search arguments...] nickname\nor\n" + \
                                            "usage: python3 snoop.py [service arguments | plugins arguments]\n",
-                                     description=f"{Fore.CYAN}\nСправка{Style.RESET_ALL}",
                                      epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
                                              f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
                                              f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: " + \
@@ -1113,61 +1120,61 @@ def main_cli():
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
     service_group.add_argument("--version", "-V", action="store_true",
-                               help="\033[36mA\033[0mbout: вывод на печать версии ПО, snoop info и Лицензии")
+                               help="\033[36mA\033[0mbout: вывод на печать версии ПО, snoop info и Лицензии.")
     service_group.add_argument("--list-all", "-l", action="store_true", dest="listing",
-                               help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop")
+                               help="\033[36mВ\033[0mывести на печать детальную информацию о базе данных Snoop.")
     service_group.add_argument("--donate", "-d", action="store_true", dest="donation",
                                help="\033[36mП\033[0mожертвовать на развитие Snoop Project-а, получить/приобрести \
-                                     \033[32;1mSnoop full version\033[0m")
+                                     \033[32;1mSnoop full version\033[0m.")
     service_group.add_argument("--autoclean", "-a", action="store_true", dest="autoclean", default=False,
-                               help="\033[36mУ\033[0mдалить все отчеты, очистить кэш")
+                               help="\033[36mУ\033[0mдалить все отчеты, очистить кэш.")
     service_group.add_argument("--update", "-U", action="store_true", dest="update",
-                               help="\033[36mО\033[0mбновить Snoop")
+                               help="\033[36mО\033[0mбновить Snoop.")
 # Plugins arguments.
     plugins_group = parser.add_argument_group('\033[36mplugins arguments\033[0m')
     plugins_group.add_argument("--module", "-m", action="store_true", dest="module", default=False,
-                               help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX")
+                               help="\033[36mO\033[0mSINT поиск: задействовать различные плагины Snoop:: IP/GEO/YANDEX.")
 # Search arguments.
     search_group = parser.add_argument_group('\033[36msearch arguments\033[0m')
     search_group.add_argument("username", nargs='*', metavar='nickname', action="store", default=None,
                               help="\033[36mН\033[0mикнейм разыскиваемого пользователя. \
                                     Поддерживается поиск одновременно нескольких имен.\
-                                    Ник, содержащий в своем имени пробел, заключается в кавычки")
+                                    Ник, содержащий в своем имени пробел, заключается в кавычки.")
     search_group.add_argument("--base", "-b <file>", dest="json_file", default="BDdemo", metavar='',
                               help=argparse.SUPPRESS if "demo" in VERSION else "\033[36mУ\033[0mказать для поиска 'nickname' \
-                                                                                другую БД (Локально)")
+                                                                                другую БД (Локально).")
     search_group.add_argument("--web-base", "-w", action="store_true", dest="web", default=False,
                               help=f"\033[36mП\033[0mодключиться для поиска 'nickname' к динамично-обновляемой web_БД \
-                                    ({web_sites} сайтов)")
+                                    ({web_sites} сайтов).")
     search_group.add_argument("--site", "-s <site_name>", action="append", metavar='', dest="site_list", default=None,
                               help="\033[36mУ\033[0mказать имя сайта из БД '--list-all'. Поиск 'nickname' на одном указанном ресурсе, \
-                                    допустимо использовать опцию '-s' несколько раз")
+                                    допустимо использовать опцию '-s' несколько раз.")
     search_group.add_argument("--exclude", "-e <country_code>", action="append", metavar='', dest="exclude_country", default=None,
                               help="\033[36mИ\033[0mсключить из поиска выбранный регион, допустимо использовать опцию '-e' \
-                                    несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир")
+                                    несколько раз, например, '-e RU -e WR' исключить из поиска Россию и Мир.")
     search_group.add_argument("--include", "-i <country_code>", action="append", metavar='', dest="one_level", default=None,
                               help="\033[36mВ\033[0mключить в поиск только выбранный регион, \
-                                    допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине")
+                                    допустимо использовать опцию '-i' несколько раз, например, '-i US -i UA' поиск по США и Украине.")
     search_group.add_argument("--time-out", "-t <digit>", action="store", metavar='', dest="timeout", type=set_timeout, default=8.9,
                               help="\033[36mУ\033[0mстановить max время ожидания ответа от сервера (секунды).\n"
-                                   "Влияет на продолжительность поиска и 'timeout ошибки', по умолчанию задано 9 сек")
+                                   "Влияет на продолжительность поиска и 'timeout ошибки' (по умолчанию задано 9 сек).")
     search_group.add_argument("--country-sort", "-c", action="store_true", dest="country", default=False,
-                              help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту")
+                              help="\033[36mП\033[0mечать и запись результатов по странам, а не по алфавиту.")
     search_group.add_argument("--no-func", "-n", action="store_true", dest="no_func", default=False,
                               help="\033[36m✓\033[0mМонохромный терминал, не использовать цвета в url \
                                     ✓Запретить открытие web browser-а\
                                     ✓Отключить вывод на печать флагов стран\
-                                    ✓Отключить индикацию и статус прогресса")
+                                    ✓Отключить индикацию и статус прогресса.")
     search_group.add_argument("--found-print", "-f", action="store_true", dest="print_found_only", default=False,
-                              help="\033[36mВ\033[0mыводить на печать только найденные аккаунты")
+                              help="\033[36mВ\033[0mыводить на печать только найденные аккаунты.")
     search_group.add_argument("--verbose", "-v", action="store_true", dest="verbose", default=False,
-                              help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию")
+                              help="\033[36mВ\033[0mо время поиска 'nickname' выводить на печать подробную вербализацию.")
     search_group.add_argument("--userlist", "-u <file>", metavar='', action="store", dest="user", default=False,
                               help="\033[36mУ\033[0mказать файл со списком user-ов. Snoop интеллектуально обработает \
-                                    данные и предоставит доп.отчеты")
+                                    данные и предоставит доп.отчеты.")
     search_group.add_argument("--save-page", "-S", action="store_true", dest="reports", default=False,
                               help="\033[36mС\033[0mохранять найденные странички пользователей в локальные html-файлы,\
-                              медленный режим")
+                              медленный режим.")
     search_group.add_argument("--cert-on", "-C", default=False, action="store_true", dest="cert",
                               help=argparse.SUPPRESS)
     search_group.add_argument("--headers", "-H <User-Agent>", metavar='', dest="header_custom", nargs=1, default=None,
@@ -1182,7 +1189,7 @@ def main_cli():
                                замедлить работу ПО. ~Расчетное оптимальное значение для данного устройства выводится в 'snoop info',
                                параметр 'Recommended pool', опция [--version/-V]. Данную опцию предлагается задействовать
                                1) если пользователь имеет многоядерную ЭВМ и запас ОЗУ или наоборот слабую, арендованную VPS 
-                               2) ускорять, замедлять поиск рекомендуется в тандеме с опцией [--found-print/-f']
+                               2) ускорять, замедлять поиск рекомендуется в тандеме с опцией [--found-print/-f'].
                                """)
     search_group.add_argument("--quick", "-q", action="store_true", dest="norm", default=False,
                               help=
@@ -1191,7 +1198,7 @@ def main_cli():
                               Не обрабатывает повторно сбойные ресурсы, вследствие чего ускоряется поиск,
                               но и немного повышается Bad_raw. Quick-режим подстраивается под мощность ПК,
                               не выводит промежуточные результаты на печать,
-                              эффективен и предназначен для Snoop full version
+                              эффективен и предназначен для Snoop full version.
                               """)
 
     args = parser.parse_args()
