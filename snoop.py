@@ -1034,9 +1034,9 @@ def license_snoop():
             ram = int(psutil.virtual_memory().total / 1024 / 1024)
             ram_free = int(psutil.virtual_memory().available / 1024 / 1024)
             if ram_free < ram_av:
-                A, B = "[bold red]", "[/bold red]"
+                ram_free = f"[bold red]{ram_free}[/bold red]"
             else:
-                A, B = "[dim cyan]", "[/dim cyan]"
+                ram_free = f"[dim cyan]{ram_free}[/dim cyan]"
             os_ver = platform.platform(aliased=True, terse=0)
             threadS = f"thread(s) per core: [dim cyan]{int(psutil.cpu_count() / psutil.cpu_count(logical=False))}[/dim cyan]"
         except Exception:
@@ -1050,16 +1050,16 @@ def license_snoop():
             ram = subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[1]
             ram_free = int(subprocess.check_output("free -m", shell=True, text=True).splitlines()[1].split()[-1])
             if ram_free <= 200:
-                A, B = "[bold red]", "[/bold red]"
+                ram_free = f"[bold red]{ram_free}[/bold red]"
             else:
-                A, B = "[dim cyan]", "[/dim cyan]"
+                ram_free = f"[dim cyan]{ram_free}[/dim cyan]"
             os_ver = 'Android ' + subprocess.check_output("getprop ro.build.version.release", shell=True, text=True).strip()
             threadS = f'model: [dim cyan]{subprocess.check_output("getprop ro.product.cpu.abi", shell=True, text=True).strip()}' + \
                       f'[/dim cyan]'
             T_v = dict(os.environ).get("TERMUX_VERSION")
         except Exception:
-            T_v, ram_free, os_ver, threadS, A, B = "Not Termux?!", "?", "?", "?", "[bold red]", "[/bold red]"
-            ram = "pkg install procps |"
+            T_v, ram_free, os_ver, threadS = "Not Termux?!", "?", "?", "?"
+            ram = "please 'pkg install procps' ... |"
 
     termux = f"\nTermux: [dim cyan]{T_v}[/dim cyan]\n" if ANDROID else "\n"
 
@@ -1086,7 +1086,7 @@ def license_snoop():
                                              f"(speedtest::{snoopnetworktest.speedtest.__version__}){rich_v}{psutil_v}" + \
                                              f"{colorama_v}{urllib3_v}{char_v}[/dim cyan]\n" + \
                               f"CPU(s): [dim cyan]{os.cpu_count()},[/dim cyan] {threadS}\n" + \
-                              f"Ram: [dim cyan]{ram} MB,[/dim cyan] available: {A}{ram_free} MB{B}\n" + \
+                              f"Ram: [dim cyan]{ram} MB,[/dim cyan] available: {ram_free} [dim cyan]MB[/dim cyan]\n" + \
                               f"Recommended pool: [dim cyan]{pool_}[/dim cyan]",
                               title='[bold cyan]snoop info[/bold cyan]', style=STL(color="cyan")))
     sys.exit()
@@ -1111,12 +1111,12 @@ def main_cli():
 
 
     parser = SnoopArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
-                                     usage="python3 snoop.py [search arguments...] nickname\nor\n" + \
-                                           "usage: python3 snoop.py [service arguments | plugins arguments]\n",
-                                     epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
-                                             f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
-                                             f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: " + \
-                                             f"\033[36;1m{web_sites} \033[0m\033[36mWebsites!!!\033[0m\n\n"))
+                                 usage="python3 snoop.py [search arguments...] nickname\nor\n" + \
+                                       "usage: python3 snoop.py [service arguments | plugins arguments]\n",
+                                 epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
+                                         f"{Fore.CYAN}поддержка: \033[31;1m{flagBS}\033[0m \033[36mWebsites!\n{Fore.CYAN}" + \
+                                         f"Snoop \033[36;1mfull version\033[0m \033[36mподдержка: " + \
+                                         f"\033[36;1m{web_sites} \033[0m\033[36mWebsites!!!\033[0m\n\n"))
 # Service arguments.
     service_group = parser.add_argument_group('\033[36mservice arguments\033[0m')
     service_group.add_argument("--version", "-V", action="store_true",
