@@ -67,6 +67,7 @@ _____/ _|  _|\\___/ \\___/  .__/
     if WINDOWS: OS_ = f"ru Snoop for Windows {sb} {_sb}"
     elif ANDROID: OS_ = f"ru Snoop for Termux {sb} {_sb}"
     elif LINUX: OS_ = f"ru Snoop for GNU/Linux {sb} {_sb}"
+    elif OSX: OS_ = f"ru Snoop for MacOS {sb} {_sb}"
 
     console.print(f"[dim cyan]Примеры:\n $ [/dim cyan]" + \
                   f"[cyan]{'cd C:' + chr(92) + 'path' + chr(92) + 'snoop' if WINDOWS else 'cd ~/snoop'}[/cyan]")
@@ -95,7 +96,7 @@ def mkdir_path():
             dirhome = os.environ['HOME'] + "/snoop"
         else:
             dirhome = "/data/data/com.termux/files/home/storage/shared/snoop"
-    elif LINUX:
+    elif LINUX or OSX:
         dirhome = os.environ['HOME'] + "/snoop"
 
     dirpath = os.getcwd() if 'source' in VERSION and not ANDROID else dirhome
@@ -113,9 +114,11 @@ def mkdir_path():
 
 
 ## Константы.
-ANDROID = True if hasattr(sys, 'getandroidapilevel') else False
-WINDOWS = True if sys.platform == 'win32' else False
-LINUX = True if ANDROID is False and WINDOWS is False else False
+ANDROID = platform.system() == "Android"
+WINDOWS = platform.system() == "Windows"
+LINUX = platform.system() == "Linux"
+OSX = platform.system() == "Darwin"
+OS_ = platform.system()
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
@@ -541,6 +544,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         else:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 180)
         executor_req = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
+    elif OSX:
+        cpu_count = os.cpu_count() or 1
+        if norm is False:
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if cpu_count < 4 else 140)
+        else:
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if cpu_count < 4 else 180)
+        executor_req = ThreadPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
         executor_req_retry = ThreadPoolExecutor(max_workers=1)
