@@ -39,7 +39,7 @@ Comparación de indexaciones de bases de datos tales herramientas:
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     ❗️    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
 
@@ -121,6 +121,7 @@ $ python3 -m pip install -r requirements.txt
 # Si en lugar de las banderas de los países se muestran en mezclas especiales, entregue un paquete de fuentes, como monocromo
 $ apt-get install ttf-ancient-fonts #or color (recomendado) $ apt-get install fonts-noto-color-emoji
 # En el sistema operativo Windows, use CMD o PowerShell (para elegir según su conveniencia), ¡pero no WSL!
+# Se agregó compatibilidad con macOS (experimental).
 ```
 </details>
 

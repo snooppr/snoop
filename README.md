@@ -39,7 +39,7 @@ that is, it is available to the average user *(project creation date: February 1
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> 𝔾ℕ𝕌/𝕃𝕚𝕟𝕦𝕩                      |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> 𝕎𝕚𝕟𝕕𝕠𝕨𝕤 𝟟/𝟙𝟙          |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> 𝔸𝕟𝕕𝕣𝕠𝕚𝕕 (𝕋𝕖𝕣𝕞𝕦𝕩) |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> 𝕞𝕒𝕔𝕆𝕊                                |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> 𝕞𝕒𝕔𝕆𝕊                                |     ❗️    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> 𝕚𝕆𝕊                                         |     🚫    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> 𝕎𝕊𝕃                                         |     🚫    |   
 
@@ -122,6 +122,7 @@ $ python3 -m pip install -r requirements.txt
 # Если вместо флагов стран отображаются буквенные коды, доставить пакет шрифта, например (цветной)
 $ apt-get install fonts-noto-color-emoji #или $ apt-get install ttf-ancient-fonts (монохромный)
 # На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
+# Добавлена поддержка и macOS (экспериментально).
 ```
 </details>
 

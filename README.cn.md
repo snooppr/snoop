@@ -39,7 +39,7 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     ❗️    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
 
@@ -121,6 +121,7 @@ $ python3 -m pip install -r requirements.txt
 # 如果不是以特殊混合方式显示国家国旗，请提供字体包，例如单色
 $ apt-get install ttf-ancient-fonts #或颜色（推荐） $ apt-get install fonts-noto-color-emoji
 # 在 Windows 操作系统上使用 CMD 或 PowerShell（从方便中选择），而不是 WSL！
+# 添加了 macOS 支持（实验性）。
 ```
 </details>
 

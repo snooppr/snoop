@@ -39,7 +39,7 @@ Comparaison des indexations de bases de données tels outils:
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> GNU/Linux              |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> Windows 7/11 (32/64) |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> Android (Termux)     |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> macOS                  |     ❗️    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> iOS                      |     🚫    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> WSL                      |     🚫    |  
 
@@ -121,6 +121,7 @@ $ python3 -m pip install -r requirements.txt
 # Si au lieu des drapeaux des pays sont affichés dans des mélanges spéciaux, livrez un ensemble de polices, telles que monochrome
 $ apt-get install ttf-ancient-fonts or color #(recommander) $ apt-get install polices-noto-couleur-emoji
 # Sur le système d'exploitation Windows, utilisez CMD ou PowerShell (au choix), mais pas WSL!
+# Ajout du support macOS (expérimental).
 ```
 </details>
 

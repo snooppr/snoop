@@ -27,7 +27,7 @@ from charset_normalizer import detect as char_detect
 from collections import Counter
 from colorama import Fore, init, Style
 from concurrent.futures import as_completed, ProcessPoolExecutor, ThreadPoolExecutor, TimeoutError
-from multiprocessing import active_children
+from multiprocessing import active_children, set_start_method
 from rich.console import Console
 from rich.markdown import Markdown
 from rich.panel import Panel
@@ -536,10 +536,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             thread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (20 if cpu < 4 else 40)
         executor_req = ThreadPoolExecutor(max_workers=thread__ if not speed else speed)
     elif LINUX:
-        if norm is False:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if len(os.sched_getaffinity(0)) < 4 else 140)
-        else:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 180)
+        try: #поддержка macOS (экспериментально)
+            if norm is False:
+                proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if len(os.sched_getaffinity(0)) < 4 else 140)
+            else:
+                proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 180)
+        except Exception:
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 50 else 50
         executor_req = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
@@ -2065,6 +2068,8 @@ document.getElementById('snoop').innerHTML=""
 ## Arbeiten...
 if __name__ == '__main__':
     try:
+        if not WINDOWS:
+            set_start_method('fork')
         main_cli()
     except KeyboardInterrupt:
         console.print(f"\n[bold red]Прерывание [italic](Ctrl + c)[/italic][/bold red]")

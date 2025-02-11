@@ -42,7 +42,7 @@ Comparison of similar tool databases:
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Linux.png" width="5%" /> 𝔾ℕ𝕌/𝕃𝕚𝕟𝕦𝕩                      |     ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Windows.png" width="5%" /> 𝕎𝕚𝕟𝕕𝕠𝕨𝕤 𝟟/𝟙𝟙          |    ✅    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/Android.png" width="5%" /> 𝔸𝕟𝕕𝕣𝕠𝕚𝕕 (𝕋𝕖𝕣𝕞𝕦𝕩) |     ✅    |
-| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> 𝕞𝕒𝕔𝕆𝕊                                |     🚫    |
+| <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/macOS.png" width="5%" /> 𝕞𝕒𝕔𝕆𝕊                                |     ❗️    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/IOS.png" width="5%" /> 𝕚𝕆𝕊                                         |     🚫    |
 | <img src="https://raw.githubusercontent.com/snooppr/snoop/master/icons/WSL.png" width="5%" /> 𝕎𝕊𝕃                                         |     🚫    |
 
@@ -126,6 +126,7 @@ $ python3 -m pip install -r requirements.txt
 # If instead of the flags of countries are displayed in letter country code, deliver a font package, such as color
 $ apt-get install fonts-noto-color-emoji #or (monochrome) $ apt-get install ttf-ancient-fonts
 # On Windows OS use CMD or PowerShell (to choose from convenience), but not WSL!
+# Added macOS support (experimental).
 ```
 </details>
 
