@@ -536,13 +536,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             thread__ = len(BDdemo_new) if len(BDdemo_new) < (os.cpu_count() * 5) else (20 if cpu < 4 else 40)
         executor_req = ThreadPoolExecutor(max_workers=thread__ if not speed else speed)
     elif LINUX:
-        try: #поддержка macOS (экспериментально)
+        try:
             if norm is False:
                 proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (50 if len(os.sched_getaffinity(0)) < 4 else 140)
             else:
                 proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 180)
         except Exception:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 50 else 50
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 50 else 50 #поддержка macOS (экспериментально)
         executor_req = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
