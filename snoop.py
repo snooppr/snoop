@@ -119,7 +119,7 @@ LINUX = True if ANDROID is False and WINDOWS is False else False
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
-VERSION = version_snoop('v1.4.2b', "s", "d")
+VERSION = version_snoop('v1.4.2c', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -520,6 +520,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 
 ## Создать многопоточный/процессный сеанс для всех запросов.
+    if not WINDOWS:
+        set_start_method('fork')
+
     if ANDROID:
         try:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
@@ -546,9 +549,9 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         executor_req = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
-        executor_req_retry = ThreadPoolExecutor(max_workers=1)
+        executor_req_retry = ProcessPoolExecutor(max_workers=1) if not WINDOWS else ThreadPoolExecutor(max_workers=1)
     if reports is True:
-        executor_req_save = ThreadPoolExecutor(max_workers=2)
+        executor_req_save = ProcessPoolExecutor(max_workers=2) if not WINDOWS else ThreadPoolExecutor(max_workers=2)
 
 
 ## Анализ всех сайтов.
@@ -2068,8 +2071,6 @@ document.getElementById('snoop').innerHTML=""
 ## Arbeiten...
 if __name__ == '__main__':
     try:
-        if not WINDOWS:
-            set_start_method('fork')
         main_cli()
     except KeyboardInterrupt:
         console.print(f"\n[bold red]Прерывание [italic](Ctrl + c)[/italic][/bold red]")
