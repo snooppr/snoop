@@ -26,13 +26,11 @@ from urllib.parse import urlparse
 import snoopbanner
 
 
-Android = True if hasattr(sys, 'getandroidapilevel') else False
-
 locale.setlocale(locale.LC_ALL, '')
 init(autoreset=True)
 console = Console()
 time_date = time.localtime()
-head0 = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ' + \
+head0 = {f'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ' + \
          f'Chrome/{random.choice(range(97, 108, 1))}.0.{random.choice(range(2007, 3008, 23))}.100 Safari/537.36'}
 
 
@@ -49,12 +47,12 @@ azS = []  #список результатов future request
 coord = []  #координаты многоцелевой список
 
 
-my_session = requests.Session()
-da = requests.adapters.HTTPAdapter(max_retries=2)
-my_session.mount('https://', da)
+def my_session():
+    session = requests.Session()
+    da = requests.adapters.HTTPAdapter(max_retries=2)
+    session.mount('https://', da)
 
-
-progressYa = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
+    return session
 
 
 ## ERR.
@@ -84,7 +82,7 @@ def module3():
                 urlYa = f'https://yandex.ru/collections/api/users/{login}/'
                 #urlYa = f'https://yandex.ru/znatoki/api/user/public/{login}/'
                 try:
-                    r = my_session.get(urlYa, headers=head0, timeout=3)
+                    r = my_session().get(urlYa, headers=head0, timeout=3)
                     azS.append(r)
                 except Exception:
                     print(f"\n{Fore.RED}Ошибка сети пропуск —> '{Style.RESET_ALL}{Style.BRIGHT}" + \
@@ -93,6 +91,7 @@ def module3():
                         ravno()
                     continue
 
+            progressYa = Progress(TimeElapsedColumn(), "[progress.percentage]{task.percentage:>1.0f}%", auto_refresh=False)
             with progressYa:
                 if Ya == '4':
                     task = progressYa.add_task("", total=len(listlogin))
@@ -201,7 +200,7 @@ def module3():
             urlYD = console.input("[cyan]url --->  [/cyan]")
 
             try:
-                r2 = my_session.get(urlYD, headers=head0, timeout=3)
+                r2 = my_session().get(urlYD, headers=head0, timeout=3)
             except Exception:
                 print(Fore.RED + "\nОшибка" + Style.RESET_ALL)
                 console.rule(characters='=', style="cyan bold\n")
@@ -239,7 +238,7 @@ def module3():
 
 ## Модуль Reverse Vgeocoder.
 def module2():
-    if Android:
+    if hasattr(sys, 'getandroidapilevel'):
         print(Style.BRIGHT + Fore.RED + "└──Плагин Reverse Vgeocoder 'сложен' и не поддерживается (по умолчанию) " + \
               "в Snoop for Termux\n\nВыход\n" + Style.RESET_ALL)
         sys.exit()
@@ -445,14 +444,14 @@ def module1():
             else: url_api = f"{url_api}{res4}"
 
             try:
-                r = my_session.get(url=url_api, headers=head0, timeout=3)
+                r = my_session().get(url=url_api, headers=head0, timeout=3)
                 dip_dic = json.loads(r.text)
                 T1 = dip_dic["country_code"] if err is False else dip_dic["country"]["isoCode"]
                 T2 = dip_dic["region"] if err is False else dip_dic["city"]["name"]
                 T3 = dip_dic["latitude"] if err is False else dip_dic["location"]["latitude"]
                 T4 = dip_dic["longitude"] if err is False else dip_dic["location"]["longitude"]
                 if err is True and res4 == '-':
-                    T5 = my_session.get(url=f"https://ipinfo.io/ip", timeout=3).text
+                    T5 = my_session().get(url=f"https://ipinfo.io/ip", timeout=3).text
                 else:
                     T5 = dip_dic.get("ip")
             except Exception:
@@ -462,9 +461,9 @@ def module1():
                         elif res4 != '-': p = res4 + '/'
                         else: dip + '/'
                         console.log("[bold yellow]--> Внимание! Последний доступный url_ip[/bold yellow]")
-                        T1 = my_session.get(url=f"https://ipinfo.io/{p}country", timeout=3).text
-                        T2 = my_session.get(url=f"https://ipinfo.io/{p}region", timeout=3).text
-                        T5 = my_session.get(url=f"https://ipinfo.io/{p}ip", timeout=3).text
+                        T1 = my_session().get(url=f"https://ipinfo.io/{p}country", timeout=3).text
+                        T2 = my_session().get(url=f"https://ipinfo.io/{p}region", timeout=3).text
+                        T5 = my_session().get(url=f"https://ipinfo.io/{p}ip", timeout=3).text
 
                         T3 = "stop"
                         T4 = "stop"
