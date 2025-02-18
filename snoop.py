@@ -119,7 +119,7 @@ LINUX = True if ANDROID is False and WINDOWS is False else False
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
-VERSION = version_snoop('v1.4.2c', "s", "d")
+VERSION = version_snoop('v1.4.2d', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -209,7 +209,21 @@ def bad_raw(flagBS_err, bad_zone, nick, lst_options):
 
 ## Форматирование, отступы.
 def format_txt(text, k=False, m=False):
-    gal = " · " if WINDOWS else " ✔ "
+    """
+    Некоторые консоли на Windows не поддерживают символ "•", 'subprocess.run' — на некотрых версиях Windows
+    работает в отличной от дефолтной кодировки/шрифта. Более надежным решением было бы осуществить проверку символов
+    через временную смену потока 'io', но тогда сломаются цвета в консоли. Остальная часть кода — регулирует отступы.
+    """
+    if WINDOWS:
+        try:
+            for symbol in ["•", "·", "*", "-", "+"]:
+                check_symbol = subprocess.run(['cmd.exe', '/c', 'echo', symbol], capture_output=True, text=True).stdout.strip()
+                if symbol in check_symbol:
+                    break
+        except Exception:
+            symbol = "+"
+
+    gal = f" {symbol} " if WINDOWS else " ✔ "
     indent_end = "" if k else " " * 3
     gal = gal if k and not m else ""
 

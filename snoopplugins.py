@@ -262,7 +262,7 @@ def module2():
 
 # выбрать файл с геокоординатами.
         elif Vgeo == '1':
-            float_patern = '[-]? (?: (?: \d* \. \d+ ))'
+            float_patern = '[-]? (?: (?: \\d* \\. \\d+ ))'
             rx = re.compile(float_patern, re.VERBOSE)
             while True:
                 print("\033[36m└──Введите \033[0m\033[32;1mабсолютный путь\033[0m \033[36mк файлу (кодировка файла -> utf-8) с данными: \n\
