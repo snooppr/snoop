@@ -78,7 +78,7 @@ Snoop full version:
  * 4900+ Websites;
  * поддержка локальной и онлайн database Snoop;
  * подключение к БД Snoop (online), которая расширяется/обновляется;
- * доступен автооптимизированный, быстрый и агрессивный режим поиска;
+ * доступен автооптимизированный, быстрый и агрессивный режимы поиска;
  * доступна пользовательская настройка разгона скорости работы ПО;
  * плагины без ограничений;
  * ru техподдержка от разработчика ПО;
@@ -153,7 +153,7 @@ function bay() {document.write('\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;4900+ Websites;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;поддержка локальной и онлайн database Snoop;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;подключение к БД Snoop (online), которая расширяется/обновляется;</span></span></li>\
-	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;доступен автооптимизированный, быстрый и агрессивный режим поиска;</span></span></li>\
+	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;доступен автооптимизированный, быстрый и агрессивный режимы поиска;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;доступна пользовательская настройка разгона скорости работы ПО;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;плагины без ограничений;</span></span></li>\
 	<li><span style="font-size:18px"><span style="color:#007500">&nbsp;ru техподдержка от разработчика ПО;</span></span></li>\
