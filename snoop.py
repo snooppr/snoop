@@ -119,7 +119,7 @@ LINUX = True if ANDROID is False and WINDOWS is False else False
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
-VERSION = version_snoop('v1.4.2d', "s", "d")
+VERSION = version_snoop('v1.4.2e', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -1288,7 +1288,7 @@ def main_cli():
             sys.exit()
         if 'full' in VERSION:
             with console.status("[cyan] проверка параметров..."):
-                meta()
+                meta(cert=args.cert)
 
         print(Fore.CYAN + format_txt("активирована опция '-m': «модульный поиск»", k=True))
 
@@ -1732,7 +1732,7 @@ def main_cli():
     def starts(SQ):
 # Метаинформация.
         if 'full' in VERSION:
-            meta()
+            meta(cert=args.cert)
 
 # Выбор корректной кодировки для CSV с учетом OS/геолокации.
         try:
