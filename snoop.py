@@ -116,6 +116,7 @@ def mkdir_path():
 ANDROID = True if hasattr(sys, 'getandroidapilevel') else False
 WINDOWS = True if sys.platform == 'win32' else False
 LINUX = True if ANDROID is False and WINDOWS is False else False
+MACOS = True if platform.system() == "Darwin" else False #поддержка macOS (экспериментальная).
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
@@ -534,7 +535,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 
 ## Создать многопоточный/процессный сеанс для всех запросов.
-    if not WINDOWS:
+    if not WINDOWS and not MACOS:
         set_start_method('fork')
 
     if ANDROID:
@@ -545,7 +546,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             console.log(snoopbanner.err_all(err_="high"))
             dic_binding.update({'android_lame_workhorse': True})
             executor_req = ThreadPoolExecutor(max_workers=10 if not speed else speed)
-    elif WINDOWS:
+    elif WINDOWS or MACOS:
         cpu = 1 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
         if norm is False:
             thread__ = len(BDdemo_new) if len(BDdemo_new) < (cpu * 5) else (18 if cpu < 4 else 30)
@@ -559,13 +560,13 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             else:
                 proc_ = len(BDdemo_new) if len(BDdemo_new) < 70 else (60 if len(os.sched_getaffinity(0)) < 4 else 180)
         except Exception:
-            proc_ = len(BDdemo_new) if len(BDdemo_new) < 50 else 50 #поддержка macOS (экспериментально)
+            proc_ = len(BDdemo_new) if len(BDdemo_new) < 50 else 50
         executor_req = ProcessPoolExecutor(max_workers=proc_ if not speed else speed)
 
     if norm is False:
-        executor_req_retry = ProcessPoolExecutor(max_workers=1) if not WINDOWS else ThreadPoolExecutor(max_workers=1)
+        executor_req_retry = ProcessPoolExecutor(max_workers=1) if not WINDOWS and not MACOS else ThreadPoolExecutor(max_workers=1)
     if reports is True:
-        executor_req_save = ProcessPoolExecutor(max_workers=2) if not WINDOWS else ThreadPoolExecutor(max_workers=2)
+        executor_req_save = ProcessPoolExecutor(max_workers=2) if not WINDOWS and not MACOS else ThreadPoolExecutor(max_workers=2)
 
 
 ## Анализ всех сайтов.
@@ -2090,7 +2091,7 @@ if __name__ == '__main__':
         console.print(f"\n[bold red]Прерывание [italic](Ctrl + c)[/italic][/bold red]")
         if WINDOWS:
             os.kill(os.getpid(), signal.SIGBREAK)
-        elif dic_binding.get('android_lame_workhorse') is True:
-            os.kill(os.getpid(), signal.SIGKILL)
+        elif dic_binding.get('android_lame_workhorse') or MACOS:
+            os.kill(os.getpid(), signal.SIGTERM)
         else:
             [pid.terminate() for pid in active_children()]
