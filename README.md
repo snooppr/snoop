@@ -254,7 +254,7 @@ $ snoop_cli.bin --donate
 + **'ctrl + c'** — прервать поиск.  
 + Найденные учетные записи будут храниться в
 `~/snoop/results/nicknames/*{txt|csv|html}`.  
-+ csv открывать в *office, разделитель полей **запятая**.  
++ csv-отчёты открывать в *office, разделитель полей **запятая**.  
 + Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results',
 или в т.ч. и сбросить кэш `snoop_cli.exe --autoclean #Running from release OS Windows`.
 
