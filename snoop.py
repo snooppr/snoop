@@ -81,9 +81,9 @@ _____/ _|  _|\\___/ \\___/  .__/
 
 ## Создание директорий результатов.
 def mkdir_path():
-    if WINDOWS:
-        dirhome = os.environ['LOCALAPPDATA'] + "\\snoop"
-    elif ANDROID:
+    dirhome = os.path.join(os.environ["LOCALAPPDATA" if WINDOWS else "HOME"], "snoop")
+
+    if ANDROID:
         if not os.access("/data/data/com.termux/files/home/storage/shared", os.W_OK):
             console.print("[bold yellow]Согласитесь на разовую, стандартную операцию в Termux, открыв доступ к " + \
                           "диску, иначе результаты поиска невозможно будет сохранить в общедоступном каталоге на OS Android, " + \
@@ -92,11 +92,8 @@ def mkdir_path():
             if code.returncode == 1:
                 console.print("\n[bold red]каталог для результатов поиска: '/storage/emulated/0/snoop' не создан, " + \
                               "отклонено пользователем.[bold red]\n")
-            dirhome = os.environ['HOME'] + "/snoop"
         else:
             dirhome = "/data/data/com.termux/files/home/storage/shared/snoop"
-    elif LINUX:
-        dirhome = os.environ['HOME'] + "/snoop"
 
     dirpath = os.getcwd() if 'source' in VERSION and not ANDROID else dirhome
 
@@ -1000,22 +997,15 @@ def autoclean():
         del_all = input().lower()
         if del_all == "y":
             try:
-# Определение директорий.
-                path_build_del = "/results" if not WINDOWS else "\\results"
-                if 'source' in VERSION and not ANDROID:
-                    rm = DIRPATH + path_build_del
-                    reports = rm
-                else:
-                    rm = DIRPATH
-                    reports = rm + path_build_del
-# Подсчет файлов и размера удаляемого каталога 'results'.
                 total_size = 0
                 delfiles = []
-                for total_file in glob.iglob(reports + '/**/*', recursive=True):
+                for total_file in glob.iglob(os.path.join(DIRPATH, "results") + '/**/*', recursive=True):
                     total_size += os.path.getsize(total_file)
                     if os.path.isfile(total_file): delfiles.append(total_file)
-# Сброс кэша и удаление каталога 'results'.
+
+                rm = os.path.join(DIRPATH, "results") if 'source' in VERSION and not ANDROID else DIRPATH
                 shutil.rmtree(rm, ignore_errors=True)
+
                 print(f"\n\033[31;1mdeleted --> '{rm}'\033[0m\033[36m {len(delfiles)} files, " + \
                       f"{round(total_size/1024/1024, 2)} MB\033[0m")
             except Exception:
@@ -2014,8 +2004,7 @@ document.getElementById('snoop').innerHTML=""
 
 ## Финишный вывод в CLI.
         if bool(FULL) is True:
-            direct_results = f"{DIRPATH}/results/nicknames/*" if not WINDOWS else f"{DIRPATH}\\results\\nicknames\\*"
-
+            direct_results = os.path.join(DIRPATH, "results", "nicknames", "*")
             print(f"{Fore.CYAN}├─Результаты:{Style.RESET_ALL} найдено --> {len(find_url_lst)} " + \
                   f"url (сессия: {time_all}_сек__{s_size_all}_MB)")
             print(f"{Fore.CYAN}├──Сохранено в:{Style.RESET_ALL} {direct_results}")
