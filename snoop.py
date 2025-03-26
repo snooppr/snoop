@@ -1854,9 +1854,9 @@ function sortList() {
     var items = Array.from(list.getElementsByTagName('LI'));
 
     items.sort(function(a, b) {
-        var aText = a.querySelector('.shad').innerText; // Сохраняем эмодзи и текст
-        var bText = b.querySelector('.shad').innerText; // Сохраняем эмодзи и текст
-        return aText.localeCompare(bText, 'ru', { sensitivity: 'base' });
+        var aText = a.querySelector('.shad').innerText;
+        var bText = b.querySelector('.shad').innerText;
+        return aText.localeCompare(bText, 'en', { sensitivity: 'base' });
     });
 
     list.innerHTML = '';
