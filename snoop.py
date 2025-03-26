@@ -116,8 +116,8 @@ LINUX = True if ANDROID is False and WINDOWS is False else False
 MACOS = True if platform.system() == "Darwin" else False #поддержка macOS (экспериментальная).
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
-END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601, год-месяц-день.
-VERSION = version_snoop('v1.4.2e', "s", "d")
+END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
+VERSION = version_snoop('v1.4.2f', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -432,11 +432,7 @@ def sreports(url, headers, error_type, username, websites_names, r):
 def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
           speed=False, print_found_only=False, timeout=None, color=True, cert=False, header_custom=None):
 ## Печать инфострок.
-    еasteregg = ['Snoop', 'snoop', 'SNOOP',
-                 'Snoop Project', 'snoop project', 'SNOOP PROJECT',
-                 'Snoop_Project', 'snoop_project', 'SNOOP_PROJECT',
-                 'Snoop-Project', 'snoop-project', 'SNOOP-PROJECT',
-                 'Snooppr', 'snooppr', 'SNOOPPR']
+    еasteregg = ['snoop', 'snoop project', 'snoop_project', 'snoop-project', 'snooppr']
 
     nick = username.replace("%20", " ") #username 2-переменные (args/info)
     info_str("разыскиваем:", nick, color)
@@ -445,7 +441,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
                                                    k=True, m=True) + "\n   пропуск\n")
         return False, False, nick
-    elif username in еasteregg:
+    elif username.lower() in еasteregg:
         with console.status("[bold blue] 💡 Обнаружена пасхалка...", spinner='noise'):
             try:
                 r_east = r_session(url="https://raw.githubusercontent.com/snooppr/snoop/master/changelog.txt", timeout=timeout)
@@ -728,6 +724,10 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
             if norm is False and r == "FakeNone":
                 head_duble = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
                               'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
+                              'Sec-Fetch-Mode': 'navigate',
+                              'Sec-Fetch-Site': 'none',
+                              'Sec-Fetch-User':'?1',
+                              'Sec-GPC': '1',
                               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' + \
                                             'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}
 
@@ -1850,24 +1850,19 @@ def main_cli():
 
 <script>
 function sortList() {
-  var list, i, switching, b, shouldSwitch;
-  list = document.getElementById('id777');
-  switching = true;
-  while (switching) {
-    switching = false;
-    b = list.getElementsByTagName("LI");
-    for (i = 0; i < (b.length - 1); i++) {
-      shouldSwitch = false;
-      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-        shouldSwitch = true;
-        break;
-      }
-    }
-    if (shouldSwitch) {
-      b[i].parentNode.insertBefore(b[i + 1], b[i]);
-      switching = true;
-    }
-  }
+    var list = document.getElementById('id777');
+    var items = Array.from(list.getElementsByTagName('LI'));
+
+    items.sort(function(a, b) {
+        var aText = a.querySelector('.shad').innerText; // Сохраняем эмодзи и текст
+        var bText = b.querySelector('.shad').innerText; // Сохраняем эмодзи и текст
+        return aText.localeCompare(bText, 'ru', { sensitivity: 'base' });
+    });
+
+    list.innerHTML = '';
+    items.forEach(function(item) {
+        list.appendChild(item);
+    });
 }
 
 function rnd(min, max) {
