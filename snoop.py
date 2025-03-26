@@ -1851,18 +1851,38 @@ def main_cli():
 <script>
 function sortList() {
     var list = document.getElementById('id777');
+
+    if (!list) {
+        console.error("Ошибка: элемент 'id777' не найден.");
+        return;
+    }
+
     var items = Array.from(list.getElementsByTagName('LI'));
 
-    items.sort(function(a, b) {
-        var aText = a.querySelector('.shad').innerText;
-        var bText = b.querySelector('.shad').innerText;
-        return aText.localeCompare(bText, 'en', { sensitivity: 'base' });
+    if (items.length === 0) {
+        return;
+    }
+
+    var itemsWithKeys = items.map(function(item) {
+        var sortElement = item.querySelector('.shad');
+        var sortKey = sortElement ? sortElement.innerText : '';
+        return {
+            element: item,
+            key: sortKey
+        };
+    });
+
+    itemsWithKeys.sort(function(a, b) {
+        return a.key.localeCompare(b.key, 'en', { sensitivity: 'base' });
+    });
+
+    var fragment = document.createDocumentFragment();
+    itemsWithKeys.forEach(function(itemData) {
+        fragment.appendChild(itemData.element);
     });
 
     list.innerHTML = '';
-    items.forEach(function(item) {
-        list.appendChild(item);
-    });
+    list.appendChild(fragment);
 }
 
 function rnd(min, max) {
