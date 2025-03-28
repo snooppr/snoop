@@ -27,7 +27,7 @@ c'est-à-dire qu'il est disponible pour l'utilisateur moyen *(date de création 
 *(téléchargé le logiciel, précisé la cible, reçu les résultats).*  
 
 Comparaison des indexations de bases de données tels outils:  
-<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~5000+%20sites Internet-success" width="50%" /></a>  
+<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~5100+%20sites Internet-success" width="50%" /></a>  
 <img src="https://img.shields.io/badge/Whatsmyname-~600 sites Internet-yellowgreen" width="25%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 sites Internet-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 sites Internet-yellowgreen" width="20%" />  
@@ -49,7 +49,7 @@ Snoop pour OS Windows et GNU/Linux
 
 **Base de données locale Snoop**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Base de données de la version complète de Snoop 5000+ sites Web ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "Database Snoop")  
+[Base de données de la version complète de Snoop 5100+ sites Web ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "Database Snoop")  
 
 ## Libérer
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -161,7 +161,7 @@ search arguments:
                         charge. Les surnoms contenant un espace dans leur nom sont
                         entre guillemets
   --web-base, -w        Connectez-vous pour rechercher 'surnom' dans la base de
-                        données web mise à jour (plus de 5000+ sites Web). 
+                        données web mise à jour (plus de 5100+ sites Web). 
                         Dans la version de démonstration, la fonction est désactivée
   --site , -s <site_name> 
                         Spécifiez le nom du site à partir de la base de données

@@ -2096,6 +2096,6 @@ if __name__ == '__main__':
         if WINDOWS:
             os.kill(os.getpid(), signal.SIGBREAK)
         elif dic_binding.get('android_lame_workhorse') or MACOS:
-            os.kill(os.getpid(), signal.SIGTERM)
+            os.kill(os.getpid(), signal.SIGKILL)
         else:
             [pid.terminate() for pid in active_children()]
