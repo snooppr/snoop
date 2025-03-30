@@ -258,7 +258,7 @@ def help_module_1():
 Предназначение плагина — OSINT.
 
 Подробнее о плагинах см. 'Общее руководство Snoop Project.pdf'.\033[0m""")
-    console.rule("[bold red]Конец справки")
+    console.rule("[bold red]Конец справки[/bold red]")
 
 
 # snoopplugins.py Справка Модуль Reverse Vgeocoder 'elif Vgeo == "help"'.

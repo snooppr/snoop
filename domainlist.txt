@@ -7992,6 +7992,7 @@ Invalid_emails
 @protestant.com
 @protonmail.ch
 @protonmail.com
+@proton.me
 @proxymail.eu
 @proxyparking.com
 @prtnx.com
