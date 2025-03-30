@@ -117,14 +117,13 @@ MACOS = True if platform.system() == "Darwin" else False #поддержка mac
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
-VERSION = version_snoop('v1.4.2f', "s", "d")
+VERSION = version_snoop('v1.4.2g', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
 
 
-dic_binding = {"symbol_bad": re.compile("[^a-zA-Zа-яА-Я\\_\\s\\d\\%\\@\\-\\.\\+]"),
-               "badraw": [], "badzone": [],
+dic_binding = {"badraw": [], "badzone": [],
                "censors": 0, "android_lame_workhorse": False}
 
 
@@ -176,6 +175,83 @@ def info_str(infostr, nick, color=True):
         print(f"{Fore.GREEN}[{Fore.YELLOW}*{Fore.GREEN}] {infostr}{Fore.RED} <{Fore.WHITE} {nick} {Fore.RED}>{Style.RESET_ALL}")
     else:
         print(f"\n[*] {infostr} < {nick} >")
+
+
+## Проверка username.
+def check_invalid_username(username, symbol_bad_username=None, phone=None, dot=None, email=None):
+    if symbol_bad_username: #проверка username на спецсимволы
+        symbol_bad = re.compile(r"[^a-zA-Zа-яА-Я\_\s\d\%\@\-\.\+]")
+        err_nick = re.findall(symbol_bad, username)
+
+        if err_nick:
+            print(Style.BRIGHT + Fore.RED + format_txt("⛔️ недопустимые символы в nickname: " + \
+                                                       "{0}{1}{2}{3}{4}".format(Style.RESET_ALL, Fore.RED, err_nick,
+                                                                                Style.RESET_ALL, Style.BRIGHT + Fore.RED),
+                                                        k=True, m=True) + "\n   пропуск\n")
+            return False
+
+    if phone: #проверка username на номер телефона
+        patterns = {'Россия/Казахстан': r'^(?:\+7|7|8)\d{10}$', 'Беларусь': r'^(?:\+375|375|80)\d{9}$',
+                    'Украина': r'^(?:\+380|380)\d{9}$', 'EU/СНГ/AU/ЮАР': r'^(?:0)\d{9}$',
+                    'Узбекистан': r'^(?:\+998|998)\d{9}$', 'Таджикистан': r'^(?:\+992|992)\d{9}$',
+                    'Киргизия': r'^(?:\+996|996|0)\d{9}$', 'Армения': r'^(?:\+374|374)\d{8}$',
+                    'Азербайджан': r'^(?:\+994|994)\d{9}$', 'Молдова': r'^(?:\+373|373)\d{8}$',
+                    'Грузия': r'^(?:\+995|995)\d{9}$', 'Туркменистан': r'^(?:\+993|993)\d{8}$',
+                    'Великобритания': r'^(?:\+44|44)\d{10}$', 'Венгрия': r'^\+36\d{9}$',
+                    'Кипр': r'^(?:\+357|357)\d{8}$', 'Латвия': r'^(?:\+371|371)\d{8}$',
+                    'Литва': r'^(?:\+370|370)\d{8}$', 'Нидерланды': r'^(?:\+31|31)\d{9}$',
+                    'Норвегия': r'^(?:\+47|47)\d{8}$', 'Польша': r'^(?:\+48|48)\d{9}$',
+                    'Португалия': r'^(?:\+351|351)\d{9}$', 'Румыния': r'^(?:\+40|40)\d{9}$',
+                    'Словакия': r'^(?:\+421|421)\d{9}$', 'Словения': r'^(?:\+386|386)\d{8}$',
+                    'Турция': r'^(?:\+90|90)\d{10}$', 'Франция': r'^(?:\+33|33)\d{9}$',
+                    'Чехия': r'^(?:\+420|420)\d{9}$', 'Швейцария': r'^(?:\+41|41)\d{9}$',
+                    'США/Канада': r'^(?:\+1|1)\d{10}$', 'Австралия': r'^(?:\+61|61)\d{9}$',
+                    'Индия': r'^(?:\+91|91)\d{10}$', 'Китай': r'^(?:\+86|86)?\d{11}$',
+                    'Япония': r'^(?:\+81|81)\d{10}$', 'Мексика': r'^(?:\+52|52)?\d{10}$', 
+                    'ЮАР': r'^(?:\+27|27)\d{9}$'}
+        
+        for country, pattern in patterns.items():
+            if re.match(pattern, username):
+                print(Style.BRIGHT + Fore.RED + format_txt("⛔️ snoop выслеживает учетки пользователей, " + \
+                                                           "но не номера телефонов, определен номер телефона из локации: '{0}'"
+                                                           .format(country), k=True, m=True) + "\n   пропуск\n")
+                return False
+
+    if dot: #проверка username на точку/email
+        if '.' in username and '@' not in username or username.count(".") > 1:
+            print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname, содержащий спецсимвол [.], — ограничен для поиска, " + \
+                                                       "причина: многократная сложность поддержки БД...",
+                                                       k=True, m=True) + "\n   пропуск\n")
+            return False
+
+    if email: #проверка username на e_mail
+        with open('domainlist.txt', 'r', encoding="utf-8") as err:
+            ermail = err.read().splitlines()
+            username_bad = username.rsplit(sep='@', maxsplit=1)
+            username_bad = '@bro'.join(username_bad).lower()
+
+        for ermail_iter in ermail:
+            if ermail_iter.lower() == username.lower():
+                print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ bad nickname: '{0}' (обнаружен чистый домен)"
+                                                                  .format(ermail_iter), k=True, m=True) + "\n   пропуск\n")
+                return False
+            elif ermail_iter.lower() in username.lower():
+                usernameR = username.rsplit(sep=ermail_iter.lower(), maxsplit=1)[1]
+                username = username.rsplit(sep='@', maxsplit=1)[0]
+
+                if len(username) == 0:
+                    username = usernameR
+                print(f"\n{Fore.CYAN}Обнаружен E-mail адрес, извлекаем nickname: " + \
+                      f"'{Style.BRIGHT}{Fore.CYAN}{username}{Style.RESET_ALL}" + \
+                      f"{Fore.CYAN}'\nSnoop способен отличать e-mail от логина, например, поиск '{username_bad}'\n" + \
+                      f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
+
+                if len(username) != 0 and len(username) < 3:
+                    print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
+                                                               k=True, m=True) + "\n   пропуск\n")
+                    return False
+
+    return username
 
 
 ## Bad_raw, bad_zone.
@@ -473,57 +549,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 
 ## Предотвращение 'DoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
-    with open('domainlist.txt', 'r', encoding="utf-8") as err:
-        ermail = err.read().splitlines()
-
-        username_bad = username.rsplit(sep='@', maxsplit=1)
-        username_bad = '@bro'.join(username_bad).lower()
-
-        for ermail_iter in ermail:
-            if ermail_iter.lower() == username.lower():
-                print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ bad nickname: '{0}' (обнаружен чистый домен)"
-                                                                  .format(ermail_iter), k=True, m=True) + "\n   пропуск\n")
-                return False, False, nick
-            elif ermail_iter.lower() in username.lower():
-                usernameR = username.rsplit(sep=ermail_iter.lower(), maxsplit=1)[1]
-                username = username.rsplit(sep='@', maxsplit=1)[0]
-
-                if len(username) == 0:
-                    username = usernameR
-                print(f"\n{Fore.CYAN}Обнаружен E-mail адрес, извлекаем nickname: " + \
-                      f"'{Style.BRIGHT}{Fore.CYAN}{username}{Style.RESET_ALL}" + \
-                      f"{Fore.CYAN}'\nSnoop способен отличать e-mail от логина, например, поиск '{username_bad}'\n" + \
-                      f"не является валидной электропочтой, но может существовать как nickname, следовательно — не будет обрезан\n")
-
-                if len(username) == 0 and len(usernameR) == 0:
-                    print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ bad nickname: '{0}' (обнаружен чистый домен)"\
-                                                                      .format(ermail_iter), k=True, m=True) + "\n   пропуск\n")
-                    return False, False, nick
-                elif len(username) != 0 and len(username) < 3:
-                    print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname не может быть короче 3-х символов",
-                                                               k=True, m=True) + "\n   пропуск\n")
-                    return False, False, nick
-        del ermail
-
-
-    err_nick = re.findall(dic_binding.get("symbol_bad"), username)
-    if err_nick:
-        print(Style.BRIGHT + Fore.RED + format_txt("⛔️ недопустимые символы в nickname: " + \
-                                                   "{0}{1}{2}{3}{4}".format(Style.RESET_ALL, Fore.RED, err_nick,
-                                                                            Style.RESET_ALL, Style.BRIGHT + Fore.RED),
-                                                   k=True, m=True) + "\n   пропуск\n")
-        return False, False, nick
-
-
-    ernumber = ['76', '77', '78', '79', '89', "38", "37", "9", "+"]
-    if any(ernumber in username[0:2] for ernumber in ernumber):
-        if len(username) >= 10 and len(username) <= 13 and username[1:].isdigit() is True:
-            print(Style.BRIGHT + Fore.RED + format_txt("⛔️ snoop выслеживает учётки пользователей, " + \
-                                                       "но не номера телефонов...", k=True, m=True) + "\n   пропуск\n")
-            return False, False, nick
-    elif '.' in username and '@' not in username:
-        print(Style.BRIGHT + Fore.RED + format_txt("⛔️ nickname, содержащий [.] и не являющийся email, " + \
-                                                   "невалидный...", k=True, m=True) + "\n   пропуск\n")
+    username = check_invalid_username(username, symbol_bad_username=True, phone=True, dot=True, email=True) #username в e_mail
+    if username is False:
         return False, False, nick
 
 
@@ -1484,7 +1511,7 @@ def main_cli():
 
                 for num, user in userlist:
                     i_for = (num, user)
-                    if re.findall(dic_binding.get("symbol_bad"), user):
+                    if check_invalid_username(user, symbol_bad_username=True, phone=True, dot=True, email=True) is False:
                         if all(i_for[1] != x[1] for x in userlists_bad):
                             userlists_bad.append(i_for)
                         else:
@@ -1501,13 +1528,15 @@ def main_cli():
                         else:
                             duble.append(i_for)
 
-        except Exception:
+        except Exception as e:
             print(f"\n\033[31;1mНе могу найти_прочитать файл: '{userfile}'.\033[0m \033[36m\n " + \
                   f"\nПожалуйста, укажите текстовый файл в кодировке —\033[0m \033[36;1mutf-8.\033[0m\n" + \
                   f"\033[36mПо умолчанию, например, блокнот в OS Windows сохраняет текст в кодировке — ANSI.\033[0m\n" + \
                   f"\033[36mОткройте ваш файл '{userfile}' и измените кодировку [файл ---> сохранить как ---> utf-8].\n" + \
                   f"\033[36mИли удалите из файла нечитаемые спецсимволы.")
             sys.exit()
+
+        console.rule("[green]Анализ данных[/green]")
 
 # good user.
         if userlists:
