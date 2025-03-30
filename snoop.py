@@ -126,6 +126,11 @@ TIME_DATE = time.localtime()
 dic_binding = {"badraw": [], "badzone": [],
                "censors": 0, "android_lame_workhorse": False}
 
+try:
+    if WINDOWS:
+        subprocess.call(['chcp', '65001'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, shell=True)
+except Exception:
+    console.log(snoopbanner.err_all(err_="high"))
 
 ## Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
 def web_path_copy():
