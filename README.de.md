@@ -273,8 +273,7 @@ $ snoop_cli.bin --donate
 ```
 
 + **'ctrl + c'** — Suche abbrechen.  
-+ Gefundene Konten werden gespeichert in
-`~/snoop/results/nicknames/*{txt|csv|html}`.  
++ Die Ergebnisse werden gespeichert in `~/snoop/results/nicknames/*{txt|csv|html}`.  
 + csv in *office öffnen, Feldtrenner **Komma**.  
 + **Alle** Suchergebnisse beenden - Verzeichnis '~/snoop/results' löschen,
 oder `snoop_cli.exe --autoclean #Ausführen eines Builds unter Windows

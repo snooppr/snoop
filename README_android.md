@@ -190,7 +190,7 @@ $ python snoop.py --donate
 ```
 **'ctrl + c'** — прервать поиск (остановить корректно ПО).  
 
-Найденные учетные записи будут храниться в '/storage/emulated/0/snoop/results/nicknames/*{txt|csv|html}'.  
+Результаты будут сохранены в в '/storage/emulated/0/snoop/results/nicknames/*{txt|csv|html}'.  
 csv открывать в *office, разделитель полей **запятая**.  
 
 Уничтожить **все** результаты поиска — удалить каталог '~/snoop/results'.  

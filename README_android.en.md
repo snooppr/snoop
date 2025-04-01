@@ -199,7 +199,7 @@ $ python snoop.py --donate
 
 # 'ctrl-c' — abort search
 ```
-Found accounts will be stored in '/storage/emulated/0/snoop/results/nicknames/*{txt|csv|html}'.  
+The results will be saved in '/storage/emulated/0/snoop/results/nicknames/*{txt|csv|html}'.  
 csv open in *office, field separator **comma**.    
 
 Destroy **all** search results - delete the directory '~/snoop/results'.

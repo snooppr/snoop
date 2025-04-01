@@ -233,7 +233,7 @@ $ snoop_cli.bin -s habr -s lichess chikamaria irina
 $ snoop_cli.bin --donate
 ```
 + 'ctrl-c' — 中止搜索。  
-+ 找到的账户将存储在 `~/snoop/results/nicknames/*{txt|csv|html}`.  
++ 结果将保存在 `~/snoop/results/nicknames/*{txt|csv|html}`.  
 + 在office中打开csv，字段分隔符**逗号**。  
 + 销毁**所有**搜索结果——删除 '~/snoop/results' 目录.  
 或者 `snoop_cli.exe --autoclean` #从发布操作系统 Windows 运行。

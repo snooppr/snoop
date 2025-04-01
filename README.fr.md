@@ -265,7 +265,7 @@ $ snoop_cli.bin --donate
 $ snoop_cli.bin --module #Exécution à partir de la version Linux
 ```
 + 'ctrl-c' — abandonner la recherche.  
-+ Les comptes trouvés seront stockés dans `~/snoop/results/nicknames/*{txt|csv|html}`.  
++ Les résultats seront enregistrés dans `~/snoop/results/nicknames/*{txt|csv|html}`.  
 + Ouvrir csv dans office in, séparateur de champs **virgule**.  
 + Détruire **tous** les résultats de la recherche — supprimez le répertoire '~/snoop/results'.  
 ou `snoop_cli.exe --autoclean #Exécution à partir de la version du système d'exploitation Windows`.
