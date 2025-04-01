@@ -54,7 +54,7 @@ Snoop for OS Windows and GNU/Linux
 ## Релиз/Release
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
 
-**RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки python,
+**RU**: Snoop поставляется готовыми сборками (релиз) и не требует зависимостей (библиотек) или установки Python,
 то есть работает на чистой машине с OS Windows или GNU/Linux.  
 **EN**: Snoop comes with ready-made assemblies (release) and does not require dependencies (libraries) or python installation, that is, it runs on a clean machine with OS Windows or GNU/Linux.  
 ┗━━ ⬇️[Download Snoop Project](https://github.com/snooppr/snoop/releases "скачать готовую сборку Snoop для Windows и GNU/Linux")  
@@ -228,7 +228,7 @@ $ snoop_cli.exe nickname1 #Running from release win
 $ snoop_cli.exe nickname1 nickname2 nickname123321 #Running from release win
 
 # Поиск множества юзеров;
-# избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от ip-адреса пользователя);
+# избежание зависаний на сайтах (чаще 'мёртвая зона' зависит от IP-адреса пользователя);
 # выводить на печать только найденные аккаунты; сохранять странички найденных
 # аккаунтов локально; указать файл со списком разыскиваемых аккаунтов;
 # подключиться для поиска к расширяемой и обновляемой web-base Snoop;
@@ -318,12 +318,12 @@ $ cd && echo "alias snoop='cd && cd snoop && python snoop.py'" >> .bashrc && bas
 # не используя опцию "--list-all", используя команду "snoopcheck".
 $ cd && echo "alias snoopcheck='cd && cd snoop && echo 2 | python snoop.py --list-all | grep -i'" >> .bashrc && bash  
 
-# ПРИМЕЧАНИЕ_2!: Snoop довольно умён и может автоматически открывать результаты поиска во внешнем веб-браузере, не смотря на Google ограничения:  
+# ПРИМЕЧАНИЕ_2!: Snoop довольно умён и может автоматически открывать результаты поиска во внешнем веб-браузере, несмотря на Google ограничения:  
 $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/termux.properties  
 # перезапустить Termux.  
-# По окончанию поиска работы snoop на запрос выбора, "чем открыть результаты поиска" выбрать, встоенный в OS Android, дефолтный/системный HTMLviewer.  
+# По окончании поиска: на запрос выбора, "чем открыть результаты поиска" — выбрать, встоенный в OS Android, дефолтный/системный HTMLviewer.  
 
-# ПРИМЕЧАНИЕ_3!: после отключения РФ от Лондонской точки обмена интернет-трафиком скорость поиска Snoop
+# ПРИМЕЧАНИЕ_3!: после отключения РФ от Лондонской точки обмена интернет-трафиком, скорость поиска Snoop
 # (возможно и у других провайдеров связи) на Мегафон/Yota упала ~в 2 раза.
 ```
 ПРИМЕЧАНИЕ_4!: если у пользователя Android ущербный (то есть версия OS 12+ со множеством ограничений) и ломает Termux, прочтите инструкцию по решению проблемы [здесь](https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md#how-to-disable-the-phantom-processes-killing).  
@@ -352,7 +352,7 @@ $ cd && pkg install termux-tools; echo 'allow-external-apps=true' >>.termux/term
 | Провайдер |Internet Censorship                                    |    4    |
 | ========= |=======================================================| ======= |
 | Сервер    |Сайт изменил свой ответ/API; обновился CF/WAF          |    5    |
-|           |Блокировка сервером диапазона ip-адресов клиента       |    4    |
+|           |Блокировка сервером диапазона IP-адресов клиента       |    4    |
 |           |Срабатывание/защита ресурса captch-ей                  |    4    |
 |           |Некоторые сайты временно недоступны, технические работы|    6    |
 | ========= |=======================================================| ======= |
@@ -402,7 +402,7 @@ timeout и ошибки соединения — это, используя фи
 
 7. [Проблема](https://wiki.debian.org/ContinuousIntegration/TriagingTips/openssl-1.1.1 "проблема простая и решаемая") с openssl в некоторых, 
 старых дистрибутивах GNU/Linux, а также траблы с сайтами, которые не обновлялись годами. Проблема эта встречается, если пользователь намеренно запустил Snoop с опцией '--cert-on'.  
-Решение не использовать опцию «--cert-on» или:
+Решение: не использовать опцию «--cert-on» или::
 ```
 $ sudo nano /etc/ssl/openssl.cnf
 
