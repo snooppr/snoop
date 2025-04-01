@@ -125,7 +125,9 @@ $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # If instead of the flags of countries are displayed in letter country code, deliver a font package, such as color
 $ apt-get install fonts-noto-color-emoji #or (monochrome) $ apt-get install ttf-ancient-fonts
-# On Windows OS use CMD or PowerShell (to choose from convenience), but not WSL!
+# On Windows OS use CMD, but not WSL!
+# OS Windows. If the user's fonts are not displayed correctly, right-click in cmd, properties and select the font:
+# "Lucida Console" or "TrueType".
 # Added macOS support (experimental).
 ```
 </details>

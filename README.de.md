@@ -121,7 +121,9 @@ $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Wenn anstelle von Länderflaggen Sonderzeichen angezeigt werden, liefern Sie ein Schriftpaket, z. B. monochrom
 $ apt-get install ttf-ancient-fonts #oder Farbe (empfohlen) $ apt-get install fonts-noto-color-emoji
-# Verwenden Sie unter Windows-Betriebssystemen cmd oder Powershell (der Einfachheit halber Ihre Wahl), aber nicht WSL!
+# Verwenden Sie unter Windows-Betriebssystemen cmd, aber nicht WSL!
+# Betriebssystem Windows. Wenn die Schriftarten des Benutzers nicht richtig angezeigt werden, klicken Sie mit der
+# rechten Maustaste in cmd, Eigenschaften und wählen Sie die Schriftart: „Lucida Console“ oder „TrueType“.
 # macOS-Unterstützung hinzugefügt (experimentell).
 ```
 </details>

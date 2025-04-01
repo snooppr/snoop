@@ -121,7 +121,7 @@ $ pip install --upgrade pip
 $ python3 -m pip install -r requirements.txt
 # Если вместо флагов стран отображаются буквенные коды, доставить пакет шрифта, например (цветной)
 $ apt-get install fonts-noto-color-emoji #или $ apt-get install ttf-ancient-fonts (монохромный)
-# На OS Windows использовать cmd или powershell (на выбор по удобству), но не WSL!
+# На OS Windows использовать cmd, но не WSL!
 # Добавлена поддержка и macOS (экспериментально).
 ```
 </details>
