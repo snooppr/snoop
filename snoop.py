@@ -126,11 +126,13 @@ TIME_DATE = time.localtime()
 dic_binding = {"badraw": [], "badzone": [],
                "censors": 0, "android_lame_workhorse": False}
 
+
 try:
     if WINDOWS:
         subprocess.call(['chcp', '65001'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, shell=True)
 except Exception:
     console.log(snoopbanner.err_all(err_="high"))
+
 
 ## Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
 def web_path_copy():
@@ -553,8 +555,8 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
     username = re.sub(" ", "%20", username)
 
 
-## Предотвращение 'DoS' из-за невалидных логинов; номеров телефонов, ошибок поиска из-за спецсимволов.
-    username = check_invalid_username(username, symbol_bad_username=True, phone=True, dot=True, email=True) #username в e_mail
+## Предотвращение 'DoS' из-за невалидных логинов; номеров телефонов, ошибок поиска, спецсимволов.
+    username = check_invalid_username(username, symbol_bad_username=True, phone=True, dot=True, email=True)
     if username is False:
         return False, False, nick
 
