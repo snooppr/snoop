@@ -429,7 +429,7 @@ def r_results(request_future, error_type, websites_names, timeout=None, norm=Fal
     except requests.exceptions.ConnectionError as err2:
         if norm is False and ('aborted' in str(err2) or 'None: None' in str(err2) or
                               'SSLZeroReturnError' in str(err2) or 'Failed' in str(err2) or 'None' == str(err2)):
-            dic_binding.update({'censors': dic_binding.get('censors') + 1})
+            dic_binding["censors"] += 1
             if print_found_only is False:
                 print_error(websites_names, "Ошибка соединения ", country_code, err2, verbose, color)
             return "FakeNone", "", "-"
@@ -440,7 +440,7 @@ def r_results(request_future, error_type, websites_names, timeout=None, norm=Fal
         if norm is False and print_found_only is False:
             print_error(websites_names, "Timeout ошибка ", country_code, err3, verbose, color)
         if len(str(repr(err3))) == 14:
-            dic_binding.update({'censors': dic_binding.get('censors') + 1})
+            dic_binding["censors"] += 1
             return "FakeStuck", "", "-"
     except requests.exceptions.RequestException as err4:
         if norm is False and print_found_only is False:
@@ -449,7 +449,7 @@ def r_results(request_future, error_type, websites_names, timeout=None, norm=Fal
         if norm is False and print_found_only is False:
             print_error(websites_names, "Network Pool Crash ", country_code, err5, verbose, color)
 
-    dic_binding.update({'censors': dic_binding.get('censors') + 1})
+    dic_binding["censors"] += 1
 
     return None, "Great Snoop returns None", "-"
 
@@ -766,7 +766,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                                             'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'}
 
                 for num, _ in enumerate(range(2), 1):
-                    dic_binding.update({'censors': dic_binding.get('censors') - 1})
+                    dic_binding["censors"] -= 1
                     if num > 1:
                         head_duble = ""
                     r_retry = executor_req_retry.submit(r_session, url=url, headers=head_duble,
