@@ -27,7 +27,7 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 *（下载软件，指定目标，收到结果）。*  
 
 数据库索引等工具的比较：  
-<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~5100+%20网站-success" width="50%" /></a>  
+<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~5200+%20网站-success" width="50%" /></a>  
 <img src="https://img.shields.io/badge/Whatsmyname-~600 网站-yellowgreen" width="25%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 网站-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 网站-yellowgreen" width="20%" />  
@@ -49,7 +49,7 @@ Snoop 项目是在没有考虑 NSA 和他们的朋友的意见的情况下开发
 
 **探听本地数据库**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Snoop 完整版数据库 5100+ 个网站 ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "数据库探听")  
+[Snoop 完整版数据库 5200+ 个网站 ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "数据库探听")  
 
 ## 发布
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -154,7 +154,7 @@ plugins arguments:
 
 search arguments:
   nickname              被通缉用户的昵称。 支持同时搜索多个名称。 名称中包含空格的昵称用引号引起来
-  --web-base, -w        连接以在更新的 web_DB（5100+ 多个网站）中搜索'昵称'。 在演示版本中，
+  --web-base, -w        连接以在更新的 web_DB（5200+ 多个网站）中搜索'昵称'。 在演示版本中，
                         该功能被禁用
   --site , -s <site_name> 
                         从数据库'--list-all'中指定站点名称。 在一个指定的资源上搜索'昵称'，
