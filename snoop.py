@@ -1139,6 +1139,8 @@ def license_snoop():
 
 ## ОСНОВА.
 def main_cli():
+    if "full" in VERSION:
+        premium()
     web_path_copy()
     date_off = license()
     BDdemo = snoopbanner.DB('BDdemo')
