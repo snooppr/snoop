@@ -89,11 +89,11 @@ Snoop full version:
  * необновляемая database Snoop;
  * отключены некоторые опции/плагины.[/bold red]
 
-[bold green]Email:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
+[bold green]E-mail:[/bold green] [cyan]snoopproject@protonmail.com[/cyan]
 [bold green]Исходный код:[/bold green] [cyan]https://github.com/snooppr/snoop[/cyan]
 
 ❗️[bold yellow] Обратите внимание, что из-за цензуры письма с 'mailru' и 'yandex' не доходят до международного почтового сервиса 'protonmail'. Пользователи mailru/yandex, пишите запросы на запасную почту.[/bold yellow]
-[bold green]Email: [/bold green][cyan]snoopproject@ya.ru[/cyan]
+[bold green]E-mail: [/bold green][cyan]snoopproject@ya.ru[/cyan]
 """,
                         title="[bold red]demo: (Публичная оферта)",
                         border_style="bold blue"))
@@ -169,12 +169,12 @@ function bay() {document.write('\
 	<li><span style="font-size:18px"><span style="color:#e74c3c">отключены некоторые опции/плагины.</span></span></li>\
 </ul>\
 \
-<p><span style="font-size:18px"><span style="color:#007500">Email:</span> <span style="color:#009a7c"><strong>snoopproject@protonmail.com</strong></span><br />\
+<p><span style="font-size:18px"><span style="color:#007500">E-mail:</span> <span style="color:#009a7c"><strong>snoopproject@protonmail.com</strong></span><br />\
 <span style="color:#007500">Исходный код: </span><a href="https://github.com/snooppr/snoop" target="_blank">https://github.com/snooppr/snoop</a></span></p>\
 \
 <p><span style="font-size:18px">❗️<span style="color:#e15700">Обратите внимание, что из-за цензуры письма с &#39;mailru&#39; и &#39;yandex&#39; не доходят до международного почтового сервиса &#39;protonmail&#39;. <br>\
 Пользователи mailru/yandex пишите запросы на запасную почту.</span><br />\
-<span style="color:#007500">Email:</span><span style="color:#009900"> </span><span style="color:#009a7c"><strong>snoopproject@ya.ru</strong></span></span></p>\
+<span style="color:#007500">E-mail:</span><span style="color:#009900"> </span><span style="color:#009a7c"><strong>snoopproject@ya.ru</strong></span></span></p>\
 <hr />\
 <p>Возврат: &#39;F5&#39;</p>\
 </body>\

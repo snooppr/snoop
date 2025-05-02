@@ -117,7 +117,7 @@ MACOS = True if platform.system() == "Darwin" else False #поддержка mac
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
-VERSION = version_snoop('v1.4.2g', "s", "d")
+VERSION = version_snoop('v1.4.2h', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -709,7 +709,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 console.print(Panel("[yellow]время[/yellow] | [magenta]выпол.[/magenta] | [bold cyan]отклик (t=s)[/bold cyan] " + \
                                     "| [bold red]общ.[bold cyan]время (T=s)[/bold cyan][/bold red] | " + \
                                     "[bold cyan]разм.данных[/bold cyan] | [bold cyan]дост.память[/bold cyan]",
-                                    title="Обозначение", style=STL(color="cyan")))
+                                    title="[cyan]Обозначение[/cyan]", style=STL(color="cyan")))
             else:
                 console.print(Panel("отклик сайта (t=s) | общ.время (T=s) | разм.данных | дост.память", title="Обозначение"))
         else:
@@ -717,7 +717,7 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
                 console.print(Panel("[yellow]time[/yellow] | [magenta]perc.[/magenta] | [bold cyan]response (t=s)[/bold cyan] " + \
                                     "| [bold red]total [bold cyan]time (T=s)[/bold cyan][/bold red] | [bold cyan]data [/bold cyan]" + \
                                     "| [bold cyan]avail.ram[/bold cyan]",
-                                    title="Designation", style=STL(color="cyan")))
+                                    title="[cyan]Designation[/cyan]", style=STL(color="cyan")))
             else:
                 console.print(Panel("time | perc. | response (t=s) | total time (T=s) | data | avail.ram", title="Designation"))
 
@@ -1058,7 +1058,9 @@ def license_snoop():
     with open('COPYRIGHT', 'r', encoding="utf8") as copyright:
         wl = 5 if WINDOWS and int(platform.win32_ver()[0]) < 10 else 4
         cop = copyright.read().replace('=' * 80, "~" * (os.get_terminal_size()[0] - wl)).strip()
-        console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]', style=STL(color="white", bgcolor="blue")))
+        console.print(Panel(cop, title='[bold white]COPYRIGHT[/bold white]',
+                            style=STL(color="white", bgcolor="blue"),
+                            border_style=STL(color="white", bgcolor="blue")))
 
     if not ANDROID:
         cpu = 2 if psutil.cpu_count(logical=False) == None else psutil.cpu_count(logical=False)
@@ -2078,7 +2080,9 @@ document.getElementById('snoop').innerHTML=""
                                          f"-[bold green]-f[/bold green]ound-print][/bold yellow]", k=True, m=True),
                                          "\n", highlight=False)
 
-            console.print(Panel(f"{E_MAIL} до {date_off}", title='лицензия', style=STL(color="white", bgcolor="blue")))
+            console.print(Panel(f"{E_MAIL} до {date_off}", title='лицензия',
+                                style=STL(color="white", bgcolor="blue"),
+                                border_style=STL(color="white", bgcolor="blue")))
 
 
 ## Открывать/нет браузер с результатами поиска.

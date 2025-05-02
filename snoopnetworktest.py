@@ -51,7 +51,7 @@ def nettest():
 # Результат.
             console2.print(Panel.fit(f"{d}\n{u}\n{p}\n\nВаш ip: {c.get('ip')}\nПровайдер: " + \
                                      f"{c.get('isp')}\nЛокация: {c.get('country')}",
-                                     title="🌐 Тест сети", style=STL(color="cyan")))
+                                     title="[cyan]🌐 Тест сети[/cyan]", style=STL(color="cyan")))
             console2.log("[cyan]--> завершен")
         except Exception:
             console2.print(f"[bold red]Аномалии в сети.\nТест будет пропущен...")
