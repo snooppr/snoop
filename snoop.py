@@ -1449,9 +1449,11 @@ def main_cli():
                 if line:
                     console.rule("[cyan]Ok, сортируем по алфавиту", style="cyan bold")
                 if version == "demo version":
-                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan", bgcolor="red")))
+                    console.print('\n', Panel.fit("++База данных++", title=version,
+                    style=STL(color="cyan", bgcolor="red"), border_style=STL(color="cyan", bgcolor="red")))
                 else:
-                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
+                    console.print('\n', Panel.fit("++База данных++", title=version,
+                    style=STL(color="cyan"), border_style=STL(color="cyan")))
                 i = 0
                 sorted_dict_v_listtuple = sorted(DB.items(), key=lambda x: x[0].lower()) #сорт.слов. по глав.ключу без уч. регистра
                 datajson_sort = dict(sorted_dict_v_listtuple) #преобр обратно в словарь (отсортированный)
@@ -1474,9 +1476,11 @@ def main_cli():
                     listwindows.append(f"{S}  {con}\n")
 
                 if version == "demo version":
-                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan", bgcolor="red")))
+                    console.print('\n', Panel.fit("++База данных++", title=version,
+                    style=STL(color="cyan", bgcolor="red"), border_style=STL(color="cyan", bgcolor="red")))
                 else:
-                    console.print('\n', Panel.fit("++База данных++", title=version, style=STL(color="cyan")))
+                    console.print('\n', Panel.fit("++База данных++",
+                    title=version, style=STL(color="cyan"), border_style=STL(color="cyan")))
 
                 for i in enumerate(sorted(listwindows, key=str.lower), 1):
                     listfull.append(f"\033[36;2m{i[0]}. \033[0m\033[36m{i[1]}")
@@ -1552,8 +1556,8 @@ def main_cli():
 # good user.
         if userlists:
             _userlists = [f"[dim cyan]{num}.[/dim cyan] {v} [{k}]".replace("", "") for num, (k, v) in enumerate(userlists, 1)]
-            console.print(Panel.fit("\n".join(_userlists).replace("%20", " "), title=f"valid ({len(userlists)})",
-                                    style=STL(color="cyan")))
+            console.print(Panel.fit("\n".join(_userlists).replace("%20", " "),
+                                    title=f"[cyan]valid ({len(userlists)})[/cyan]", style=STL(color="cyan")))
 
 # duplicate user.
         if duble:
@@ -1575,14 +1579,16 @@ def main_cli():
 
             print(f"\n\033[36mследующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[33mдубли\033[0m\033[36m и будут пропущены:\033[0m")
-            console.print(Panel.fit("\n".join(_duble), title=f"duplicate ({len(duble)})", style=STL(color="yellow")))
+            console.print(Panel.fit("\n".join(_duble), title=f"[yellow]duplicate ({len(duble)})[/yellow]",
+                                    style=STL(color="yellow")))
 
 # bad user.
         if userlists_bad:
             _userlists_bad = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(userlists_bad, 1)]
             print(f"\n\033[36mследующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m' содержат " + \
                   f"\033[31;1mN/A-символы\033[0m\033[36m и будут пропущены:\033[0m")
-            console.print(Panel.fit("\n".join(_userlists_bad), title=f"invalid_data ({len(userlists_bad)})",
+            console.print(Panel.fit("\n".join(_userlists_bad),
+                                    title=f"[bold red]invalid_data ({len(userlists_bad)})[/bold red]",
                                     style=STL(color="bright_red")))
 
 # Short user.
@@ -1590,7 +1596,8 @@ def main_cli():
             _short_user = [f"[dim red]{num}.[/dim red] {v} [{k}]" for num, (k, v) in enumerate(short_user, 1)]
             print(f"\n\033[36mследующие nickname(s) из '\033[36;1m{userfile}\033[0m\033[36m'\033[0m " + \
                   f"\033[31;1mкороче 3-х символов\033[0m\033[36m и будут пропущены:\033[0m")
-            console.print(Panel.fit("\n".join(_short_user).replace("%20", " "), title=f"short nickname ({len(short_user)})",
+            console.print(Panel.fit("\n".join(_short_user).replace("%20", " "),
+                                    title=f"[bold red]short nickname ({len(short_user)})[/bold red]",
                                     style=STL(color="bright_red")))
 
 # Сохранение bad_nickname(s) в отдельном txt файле.
