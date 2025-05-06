@@ -103,6 +103,13 @@ Copyright (c) 2019 Sherlock Project
 This software uses Rich library, which is
 Copyright 2020 Will McGugan
 
+This software uses markdown-it-py library, which is
+Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.
+
+This software uses mdurl library, which is
+Copyright (c) 2015 Vitaly Puzrin, Alex Kocharin.
+Copyright (c) 2021 Taneli Hukkinen
+
 This software uses particles library, which is
 Copyright (c) 2015, Vincent Garreau
 
