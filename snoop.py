@@ -194,7 +194,7 @@ def check_invalid_username(username, symbol_bad_username=None, phone=None, dot=N
             print(Style.BRIGHT + Fore.RED + format_txt("⛔️ недопустимые символы в nickname: " + \
                                                        "{0}{1}{2}{3}{4}".format(Style.RESET_ALL, Fore.RED, err_nick,
                                                                                 Style.RESET_ALL, Style.BRIGHT + Fore.RED),
-                                                        k=True, m=True) + "\n   пропуск\n")
+                                                       k=True, m=True) + "\n   пропуск\n")
             return False
 
     if phone: #проверка username на номер телефона
@@ -1264,7 +1264,7 @@ def main_cli():
 
         if any(options) or args.timeout != 8:
             snoopbanner.logo(text=format_txt("⛔️ с quick-режимом ['-q'] совместимы лишь опции ['-w', '-u', '-e', '-i']",
-                             k=True, m=True))
+                                             k=True, m=True))
     elif args.norm and 'demo' in VERSION:
         snoopbanner.logo("в demo деактивирован переключатель '-q': «режим SNOOPninja/Quick»...",
                          color="\033[37m\033[44m", exit=False)
