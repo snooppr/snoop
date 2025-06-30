@@ -27,7 +27,7 @@ es decir, está al alcance del usuario medio *(14 de febrero de 2020)*.
 *(descargué el software, especifiqué el objetivo, recibí los resultados).*  
 
 Comparación de indexaciones de bases de datos tales herramientas:  
-<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~5200+%20sitios web-success" width="50%" /></a>  
+<a href="https://raw.githubusercontent.com/snooppr/snoop/master/websites.md" Target="_blank"><img src="https://img.shields.io/badge/Snoop-~5300+%20sitios web-success" width="50%" /></a>  
 <img src="https://img.shields.io/badge/Whatsmyname-~600 sitios web-yellowgreen" width="25%" />  
 <img src="https://img.shields.io/badge/Sherlock-~400 sitios web-yellowgreen" width="20%" />  
 <img src="https://img.shields.io/badge/Spiderfoot-~350 sitios web-yellowgreen" width="20%" />  
@@ -49,7 +49,7 @@ Snoop para SO Windows y GNU/Linux
 
 **Snoop Local database**  
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/EN_DB.png" />  
-[Base de datos de la versión completa de Snoop Más de 5200+ sitios web ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "Database Snoop")  
+[Base de datos de la versión completa de Snoop Más de 5300+ sitios web ⚡️⚡️⚡️](https://raw.githubusercontent.com/snooppr/snoop/master/websites.md "Database Snoop")  
 
 ## Liberar
 <img src="https://raw.githubusercontent.com/snooppr/snoop/master/images/snoop box.png" width="35%" />  
@@ -161,7 +161,7 @@ argumentos de búsqueda:
                         de varios nombres al mismo tiempo. Un apodo que contiene
                         un espacio en su nombre se escribe entre comillas
   --web-base, -w        Conéctese a una web_DB dinámicamente actualizada
-                        (más de 5200+ sitios) para buscar 'apodo'.
+                        (más de 5300+ sitios) para buscar 'apodo'.
                         En la versión de demostración, la función está deshabilitada
   --site , -s <site_name> 
                         Especifique el nombre del sitio de la base de datos '--list-all'.
