@@ -1007,7 +1007,7 @@ def update_snoop():
         upd = input().lower()
         if upd == "y":
             print("\033[36mПримечание: функция обновления Snoop работает при помощи утилиты < Git >\033[0m")
-            os.startfile("update.bat") if WINDOWS else os.system("./update.sh")
+            subprocess.run("update.bat", shell=True) if WINDOWS else os.system("./update.sh")
             break
         elif upd == "n":
             print(Style.BRIGHT + Fore.RED + "\nОбновление отклонено\nВыход")

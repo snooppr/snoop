@@ -1,4 +1,4 @@
-﻿echo "Для обновления Snoop на OS Windows у вас должен быть установлен пакет <Git>"
+@﻿echo off
 git stash
 git pull
 exit
