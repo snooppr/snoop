@@ -117,7 +117,7 @@ MACOS = True if platform.system() == "Darwin" else False #поддержка mac
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
-VERSION = version_snoop('v1.4.2h', "s", "d")
+VERSION = version_snoop('v1.4.2i', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()

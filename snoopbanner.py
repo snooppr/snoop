@@ -5,6 +5,7 @@
 import base64
 import json
 import locale
+import platform
 import sys
 import time
 import webbrowser
@@ -184,7 +185,7 @@ function bay() {document.write('\
 
 ## Лого.
 def logo(text, color="\033[31;1m", exit=True):
-    if sys.platform != 'win32':
+    if sys.platform != 'win32' or (sys.platform == 'win32' and int(platform.version().split('.')[2]) >= 19045):
         with console.screen():
             console.print("""[cyan]
  ____                                      
