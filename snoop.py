@@ -117,7 +117,7 @@ MACOS = True if platform.system() == "Darwin" else False #поддержка mac
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
-VERSION = version_snoop('v1.4.2i', "s", "d")
+VERSION = version_snoop('v1.4.2j', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -512,7 +512,7 @@ def sreports(url, headers, error_type, username, websites_names, r):
 
 
 ## Snoop функция.
-def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False,
+def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=False, country=False, lst_username=None,
           speed=False, print_found_only=False, timeout=None, color=True, cert=False, header_custom=None):
 ## Печать инфострок.
     еasteregg = ['snoop', 'snoop project', 'snoop_project', 'snoop-project', 'snooppr']
@@ -562,9 +562,6 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
 
 
 ## Создать многопоточный/процессный сеанс для всех запросов.
-    if not WINDOWS and not MACOS:
-        set_start_method('fork')
-
     if ANDROID:
         try:
             proc_ = len(BDdemo_new) if len(BDdemo_new) < 17 else 17
@@ -953,6 +950,11 @@ def snoop(username, BDdemo_new, verbose=False, norm=False, reports=False, user=F
         try:
             if 'executor_req_retry' in locals(): executor_req_retry.shutdown()
             if 'executor_req_save' in locals(): executor_req_save.shutdown()
+            try:
+                if len(lst_username) != 1:
+                    executor_req.shutdown()
+            except Exception:
+                pass
         except Exception:
             console.log(snoopbanner.err_all(err_="low"))
 # Вернуть словарь со всеми данными на запрос функции snoop и пробросить удерживаемые ресурсы (позже, закрыть в фоне).
@@ -1141,6 +1143,8 @@ def license_snoop():
 
 ## ОСНОВА.
 def main_cli():
+    if not WINDOWS and not MACOS:
+        set_start_method('fork')
     if "full" in VERSION:
         premium()
     web_path_copy()
@@ -1795,7 +1799,7 @@ def main_cli():
             sort_sites = sort_web_BDdemo_new if args.country is True else BDdemo_new
 
             FULL, hardware, nick = snoop(username, sort_sites, country=args.country, user=args.user, verbose=args.verbose,
-                                         cert=args.cert, norm=args.norm, reports=args.reports,
+                                         cert=args.cert, norm=args.norm, reports=args.reports, lst_username=args.username,
                                          print_found_only=args.print_found_only, timeout=args.timeout,
                                          color=not args.no_func, header_custom=args.header_custom, speed=args.speed)
 
@@ -2127,7 +2131,8 @@ document.getElementById('snoop').innerHTML=""
                 except Exception:
                     print(f"\n\033[31;1mНе удалось открыть результаты\033[0m")
         try:
-            hardware.shutdown()
+            if len(SQ) == 1:
+                hardware.shutdown()
         except Exception:
             pass
 
