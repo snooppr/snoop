@@ -184,7 +184,9 @@ def info_str(infostr, nick, color=True):
         print(f"\n[*] {infostr} < {nick} >")
 
 
-## Проверка username.
+## Проверка usernames.
+with open('domainlist.txt', 'r', encoding="utf-8") as err:
+    ERMAIL_SET = set(line.strip() for line in err if line.strip())
 def check_invalid_username(username, symbol_bad_username=None, phone=None, dot=None, email=None):
     if symbol_bad_username: #проверка username на спецсимволы
         symbol_bad = re.compile(r"[^a-zA-Zа-яА-Я\_\s\d\%\@\-\.\+]")
@@ -232,12 +234,10 @@ def check_invalid_username(username, symbol_bad_username=None, phone=None, dot=N
             return False
 
     if email: #проверка username на e_mail
-        with open('domainlist.txt', 'r', encoding="utf-8") as err:
-            ermail = err.read().splitlines()
-            username_bad = username.rsplit(sep='@', maxsplit=1)
-            username_bad = '@bro'.join(username_bad).lower()
+        username_bad = username.rsplit(sep='@', maxsplit=1)
+        username_bad = '@bro'.join(username_bad).lower()
 
-        for ermail_iter in ermail:
+        for ermail_iter in ERMAIL_SET:
             if ermail_iter.lower() == username.lower():
                 print("\n" + Style.BRIGHT + Fore.RED + format_txt("⛔️ bad nickname: '{0}' (обнаружен чистый домен)"
                                                                   .format(ermail_iter), k=True, m=True) + "\n   пропуск\n")
