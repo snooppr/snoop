@@ -81,7 +81,15 @@ _____/ _|  _|\\___/ \\___/  .__/
 
 ## Создание директорий результатов.
 def mkdir_path():
-    dirhome = os.path.join(os.environ["LOCALAPPDATA" if WINDOWS else "HOME"], "snoop")
+    try:
+        if not WINDOWS and "build" in VERSION:
+            replace_snoop_dir = os.path.join(os.environ["HOME"], 'snoop')
+            if os.path.exists(replace_snoop_dir):
+                shutil.move(replace_snoop_dir, os.path.join(os.environ["HOME"], '.snoop'))
+    except Exception:
+        pass
+
+    dirhome = os.path.join(os.environ["LOCALAPPDATA" if WINDOWS else "HOME"], "snoop" if WINDOWS else '.snoop')
 
     if ANDROID:
         if not os.access("/data/data/com.termux/files/home/storage/shared", os.W_OK):
@@ -117,7 +125,7 @@ MACOS = True if platform.system() == "Darwin" else False #поддержка mac
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
 END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
-VERSION = version_snoop('v1.4.2j', "s", "d")
+VERSION = version_snoop('v1.4.2k', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -1966,13 +1974,13 @@ func1 = setTimeout(() => {id777.onmouseover = function() {document.write(don1)}}
 <script src="../../../web/particles.js"></script>
 <script src="../../../web/app.js"></script>
 
-<audio title="Megapolis (remix).mp3" controls="controls" autoplay="autoplay">
+<audio title="Megapolis.mp3 (the year 2020)" controls="controls" autoplay="autoplay">
 <source src="../../../web/Megapolis%20(remix).mp3" type="audio/mpeg">
 </audio>
 
 <br>
 
-<audio title="for snoop in cyberpunk.mp3" controls="controls">
+<audio title="for snoop in cyberpunk.mp3 (the year 2020)" controls="controls">
 <source src="../../../web/for%20snoop%20in%20cyberpunk.mp3" type="audio/mpeg">
 </audio>
 
