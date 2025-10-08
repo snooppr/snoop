@@ -1165,13 +1165,22 @@ def main_cli():
 
 # Назначение опций Snoop Project.
     class SnoopArgumentParser(argparse.ArgumentParser):
-        def print_help(self, out_help = sys.stdout):
+        def __init__(self, *args, color=None, **kwargs): #'color' по дефолту появился в python3.14+, не вызывать ошибку в python < 3.14.
+            if color is not None:
+                try:
+                    argparse.ArgumentParser(color=color)
+                    kwargs['color'] = color
+                except Exception:
+                    pass
+            super().__init__(*args, **kwargs)
+
+        def print_help(self, out_help = sys.stdout): #удаляем из справки "--help".
             del_str_help = self.format_help()
             del_str_help = re.sub(r'-h, --help.*\n|this.*|mess.*\n|opti.*\n|and.*\n|sho.*|exit.*', '', del_str_help)
             out_help.write(del_str_help)
 
 
-    parser = SnoopArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+    parser = SnoopArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, color=False,
                                  usage="python3 snoop.py [search arguments...] nickname\nor\n" + \
                                        "usage: python3 snoop.py [service arguments | plugins arguments]\n",
                                  epilog=(f"{Fore.CYAN}Snoop {Style.BRIGHT}{Fore.RED}demo version {Style.RESET_ALL}" + \
