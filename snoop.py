@@ -137,7 +137,7 @@ dic_binding = {"badraw": [], "badzone": [],
 
 try:
     if WINDOWS:
-        subprocess.call(['chcp', '65001'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, shell=True)
+        subprocess.call("chcp 65001", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, shell=True)
 except Exception:
     console.log(snoopbanner.err_all(err_="high"))
 
