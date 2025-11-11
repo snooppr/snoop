@@ -1,4 +1,4 @@
-certifi>=2024.08.30
+certifi>=2025.10.5
 charset-normalizer==3.4.0
 colorama==0.4.6
 idna==3.10
