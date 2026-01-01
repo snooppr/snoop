@@ -54,4 +54,4 @@ def nettest():
                                      title="[cyan]🌐 Тест сети[/cyan]", style=STL(color="cyan")))
             console2.log("[cyan]--> завершен")
         except Exception:
-            console2.print(f"[bold red]Аномалии в сети.\nТест будет пропущен...")
+            console2.print(f"[bold red]Аномалии в сети (internet_censorship?).\nТест будет пропущен...")

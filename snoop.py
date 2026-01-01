@@ -124,8 +124,8 @@ LINUX = True if ANDROID is False and WINDOWS is False else False
 MACOS = True if platform.system() == "Darwin" else False #поддержка macOS (экспериментальная).
 
 E_MAIL = 'demo: snoopproject@protonmail.com'
-END_OF_LICENSE = (2026, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
-VERSION = version_snoop('v1.4.2k', "s", "d")
+END_OF_LICENSE = (2027, 1, 1, 3, 0, 0, 0, 0, 0) #формат даты согласно международному стандарту ISO 8601: год-месяц-день.
+VERSION = version_snoop('v1.4.3', "s", "d")
 DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
@@ -133,13 +133,6 @@ TIME_DATE = time.localtime()
 
 dic_binding = {"badraw": [], "badzone": [],
                "censors": 0, "android_lame_workhorse": False}
-
-
-try:
-    if WINDOWS:
-        subprocess.call("chcp 65001", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, shell=True)
-except Exception:
-    console.log(snoopbanner.err_all(err_="high"))
 
 
 ## Создание web-каталога и его контроль, но не файлов внутри + раздача верных прав "-x -R" после компиляции двоичных данных [.mp3].
@@ -1795,7 +1788,7 @@ def main_cli():
 
 # Выбор корректной кодировки для CSV с учетом OS/геолокации.
         try:
-            if os.environ.get('LANG') is not None and 'ru' in os.environ.get('LANG'):
+            if "ru" in os.getenv("LANG", ""): #if os.environ.get('LANG') is not None and 'ru' in os.environ.get('LANG'):
                 rus_unix = True
             else:
                 rus_unix = False
@@ -2022,10 +2015,7 @@ document.getElementById('snoop').innerHTML=""
 
 
 ## Запись в csv отчет.
-            if rus_windows is False:
-                file_csv = open(f"{DIRPATH}/results/nicknames/csv/{username}.csv", "w", newline='', encoding="utf-8")
-            else:
-                file_csv = open(f"{DIRPATH}/results/nicknames/csv/{username}.csv", "w", newline='') #для ru_пользователей
+            file_csv = open(f"{DIRPATH}/results/nicknames/csv/{username}.csv", "w", newline='', encoding="utf-8-sig")
 
             usernamCSV = re.sub(" ", "_", nick)
 
@@ -2044,7 +2034,7 @@ document.getElementById('snoop').innerHTML=""
                 except IndexError:
                     bad_zone = "ERR"
 
-            writer = csv.writer(file_csv)
+            writer = csv.writer(file_csv, delimiter=';' if rus_windows else ",")
             if rus_windows or rus_unix or ANDROID:
                 writer.writerow(['Ресурс', 'Гео', 'Url', 'Ссылка_на_профиль', 'Статус', 'Статус_http',
                                  'Общее_замедление/сек', 'Отклик/сек', 'Общее_время/сек', 'Сессия/kB'])
