@@ -130,6 +130,9 @@ DIRPATH = mkdir_path()
 TIME_START = time.time()
 TIME_DATE = time.localtime()
 
+#Патч для wayland.
+if LINUX and not os.environ.get('BROWSER') and shutil.which('xdg-open'):
+    os.environ['BROWSER'] = 'xdg-open'
 
 dic_binding = {"badraw": [], "badzone": [],
                "censors": 0, "android_lame_workhorse": False}
